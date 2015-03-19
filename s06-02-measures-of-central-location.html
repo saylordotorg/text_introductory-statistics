@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Measures of Central Location</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-01-three-popular-data-displays.html"><img src="shared/images/batch-left.png"></a> <a href="s06-01-three-popular-data-displays.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-03-measures-of-variability.html">Next Section</a> <a href="s06-03-measures-of-variability.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch02_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">2.2</span> Measures of Central Location</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch02_s02_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch02_s02_o01" numeration="arabic">
+            <li>To learn the concept of the “center” of a data set.</li>
+            <li>To learn the meaning of each of three measures of the center of a data set—the mean, the median, and the mode—and how to compute each one.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch02_s02_p01">This section could be titled “three kinds of averages of a data set.” Any kind of “average” is meant to be an answer to the question “Where do the data center?” It is thus a measure of the central location of the data set. We will see that the nature of the data set, as indicated by a relative frequency histogram, will determine what constitutes a good answer. Different shapes of the histogram call for different measures of central location.</p>
+    <div class="section" id="fwk-shafer-ch02_s02_s01" version="5.0" lang="en">
+        <h2 class="title editable block">The Mean</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s01_p01">The first measure of central location is the usual “average” that is familiar to everyone. In the formula in the following definition we introduce the standard summation notation Σ, where Σ is the capital Greek letter sigma. In general, the notation Σ followed by a second mathematical symbol means to add up all the values that the second symbol can take in the context of the problem. Here is an example to illustrate this.</p>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p02">Find <span class="inlineequation" id="shafer-20121106-125753-084800"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0040" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-084816"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0041" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-084832"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0042" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></math></span> for the data set</p>
+            <span class="informalequation" id="shafer-20121106-125753-084848"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0043" display="block"><mrow><mn>1</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <span class="informalequation" id="shafer-20121106-125753-084864"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0044" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none"><mtr><mtd columnalign="right"><mi mathvariant="normal">Σ</mi><mi>x</mi></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>4</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>+</mo><mn>16</mn><mo>=</mo><mn>26</mn></mtd></mtr><mtr><mtd columnalign="right"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd columnalign="center"><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mn>0</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>13</mn></mtd></mtr></mtable></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s01_p03">In the definition we follow the convention of using lowercase <em class="emphasis">n</em> to denote the number of measurements in a sample, which is called the <strong class="emphasis bold">sample size</strong>.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s02_s01_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p04"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">sample mean</a><span class="glossdef">The familiar average of a sample data set.</span></span> <em class="emphasis">of a set of</em> <em class="emphasis">n</em> <em class="emphasis">sample data is the number</em> <span class="inlineequation" id="shafer-20121106-125753-084880"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0045" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> <em class="emphasis">defined by the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-084896"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0046" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s01_n03">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p05">Find the mean of the sample data</p>
+            <span class="informalequation" id="shafer-20121106-125753-084911"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0047" display="block"><mrow><mn>2</mn><mtext> </mtext><mtext>−</mtext><mn>1</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>2</mn></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <span class="informalequation" id="shafer-20121106-125753-084928"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0048" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mo>+</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>0</mn><mo>+</mo><mn>2</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>=</mo><mn>0.75</mn></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s01_n04">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p06">A random sample of ten students is taken from the student body of a college and their GPAs are recorded as follows.</p>
+            <span class="informalequation" id="shafer-20121106-125753-084952"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0049" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none none none none none none none none"><mtr><mtd columnalign="center"><mn>1.90</mn></mtd><mtd columnalign="center"><mn>3.00</mn></mtd><mtd columnalign="center"><mn>2.53</mn></mtd><mtd columnalign="center"><mn>3.71</mn></mtd><mtd columnalign="center"><mn>2.12</mn></mtd><mtd columnalign="center"><mn>1.76</mn></mtd><mtd columnalign="center"><mn>2.71</mn></mtd><mtd columnalign="center"><mn>1.39</mn></mtd><mtd columnalign="center"><mn>4.00</mn></mtd><mtd columnalign="center"><mn>3.33</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p07">Find the sample mean.</p>
+            <p class="simpara">Solution:</p>
+            <span class="informalequation" id="shafer-20121106-125753-084969"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0050" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mrow><mn>1.90</mn><mo>+</mo><mn>3.00</mn><mo>+</mo><mn>2.53</mn><mo>+</mo><mn>3.71</mn><mo>+</mo><mn>2.12</mn><mo>+</mo><mn>1.76</mn><mo>+</mo><mn>2.71</mn><mo>+</mo><mn>1.39</mn><mo>+</mo><mn>4.00</mn><mo>+</mo><mn>3.33</mn></mrow><mrow><mn>10</mn></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mrow><mn>26.45</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>=</mo><mn>2.645</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s01_n05">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p08">A random sample of 19 women beyond child-bearing age gave the following data, where <em class="emphasis">x</em> is the number of children and <em class="emphasis">f</em> is the <em class="emphasis">frequency</em> of that value, the number of times it occurred in the data set.</p>
+            <span class="informalequation" id="shafer-20121106-125753-084985"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0051" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p09">Find the sample mean.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p10">In this example the data are presented by means of a data frequency table, introduced in <a class="xref" href="fwk-shafer-ch01#fwk-shafer-ch01">Chapter 1 "Introduction"</a>. Each number in the first line of the table is a number that appears in the data set; the number below it is how many times it occurs. Thus the value 0 is observed three times, that is, three of the measurements in the data set are 0, the value 1 is observed six times, and so on. In the context of the problem this means that three women in the sample have had no children, six have had exactly one child, and so on. The explicit list of all the observations in this data set is therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-085000"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0052" display="block"><mrow><mn>0</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p11">The sample size can be read directly from the table, without first listing the entire data set, as the sum of the frequencies: <span class="inlineequation" id="shafer-20121106-125753-085017"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0053" display="inline"><mi>n</mi><mo>=</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>19</mn><mo>.</mo></math></span> The sample mean can be computed directly from the table as well:</p>
+            <span class="informalequation" id="shafer-20121106-125753-085032"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0054" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>0</mn><mo>×</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo>×</mo><mn>6</mn><mo>+</mo><mn>2</mn><mo>×</mo><mn>6</mn><mo>+</mo><mn>3</mn><mo>×</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>×</mo><mn>1</mn></mrow><mrow><mn>19</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>31</mn></mrow><mrow><mn>19</mn></mrow></mfrac><mo>=</mo><mn>1.6316</mn></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch02_s02_s01_p12">In the examples above the data sets were described as samples. Therefore the means were sample means, denoted by <span class="inlineequation" id="shafer-20121106-125753-085049"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0055" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> If the data come from a census, so that there is a measurement for every element of the population, then the mean is calculated by exactly the same process of summing all the measurements and dividing by how many of them there are, but it is now the <em class="emphasis">population mean</em> and is denoted by <em class="emphasis">μ</em>, the lower case Greek letter mu.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s02_s01_n06">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s01_p13"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">population mean</a><span class="glossdef">The familiar average of a population data set.</span></span> <em class="emphasis">of a set of</em> <em class="emphasis">N</em> <em class="emphasis">population data is the number</em> <em class="emphasis">μ</em> <em class="emphasis">defined by the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-085065"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0056" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>N</mi></mrow></mfrac></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s01_p14">The mean of two numbers is the number that is halfway between them. For example, the average of the numbers 5 and 17 is (5 + 17) ∕ 2 = 11, which is 6 units above 5 and 6 units below 17. In this sense the average 11 is the “center” of the data set {5,17}. For larger data sets the mean can similarly be regarded as the “center” of the data.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch02_s02_s02" version="5.0" lang="en">
+        <h2 class="title editable block">The Median</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s02_p01">To see why another concept of average is needed, consider the following situation. Suppose we are interested in the average yearly income of employees at a large corporation. We take a random sample of seven employees, obtaining the sample data (rounded to the nearest hundred dollars, and expressed in thousands of dollars).</p>
+        <span class="informalequation block" id="shafer-20121106-125753-085081"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0057" display="block"><mrow><mn>24.8</mn><mtext> </mtext><mn>22.8</mn><mtext> </mtext><mn>24.6</mn><mtext> </mtext><mn>192.5</mn><mtext> </mtext><mn>25.2</mn><mtext> </mtext><mn>18.5</mn><mtext> </mtext><mn>23.7</mn></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch02_s02_s02_p02">The mean (rounded to one decimal place) is <span class="inlineequation" id="shafer-20121106-125753-085097"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0058" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>47.4</mn></math></span>, but the statement “the average income of employees at this corporation is $47,400” is surely misleading. It is approximately twice what six of the seven employees in the sample make and is nowhere near what any of them makes. It is easy to see what went wrong: the presence of the one executive in the sample, whose salary is so large compared to everyone else’s, caused the numerator in the formula for the sample mean to be far too large, pulling the mean far to the right of where we think that the average “ought” to be, namely around $24,000 or $25,000. The number 192.5 in our data set is called an <strong class="emphasis bold">outlier</strong>, a number that is far removed from most or all of the remaining measurements. Many times an outlier is the result of some sort of error, but not always, as is the case here. We would get a better measure of the “center” of the data if we were to arrange the data in numerical order,</p>
+        <span class="informalequation block" id="shafer-20121106-125753-085113"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0059" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>18.5</mn></mrow></mtd><mtd><mrow><mn>22.8</mn></mrow></mtd><mtd><mrow><mn>23.7</mn></mrow></mtd><mtd><mrow><mn>24.6</mn></mrow></mtd><mtd><mrow><mn>24.8</mn></mrow></mtd><mtd><mrow><mn>25.2</mn></mrow></mtd><mtd><mrow><mn>192.5</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s02_p03">then select the middle number in the list, in this case 24.6. The result is called the <em class="emphasis">median</em> of the data set, and has the property that roughly half of the measurements are larger than it is, and roughly half are smaller. In this sense it locates the center of the data. If there are an even number of measurements in the data set, then there will be two middle elements when all are lined up in order, so we take the mean of the middle two as the median. Thus we have the following definition.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s02_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p04"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">sample median</a><span class="glossdef">The middle value when data are listed in numerical order.</span></span> <span class="inlineequation" id="shafer-20121106-125753-085129"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0060" display="inline" baseline="70%"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow></math></span> <em class="emphasis">of a set of sample data for which there are an odd number of measurements is the middle measurement when the data are arranged in numerical order. The sample median <span class="inlineequation" id="shafer-20121106-125753-085145"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0061" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow></math></span> of a set of sample data for which there are an even number of measurements is the mean of the two middle measurements when the data are arranged in numerical order.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s02_p05">The population median is defined in a similar way, but we will not have occasion to refer to it again in this text.</p>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s02_p06">The median is a value that divides the observations in a data set so that 50% of the data are on its left and the other 50% on its right. In accordance with <a class="xref" href="fwk-shafer-ch02_s01#fwk-shafer-ch02_s01_s03_f03">Figure 2.6 "A Very Fine Relative Frequency Histogram"</a>, therefore, in the curve that represents the distribution of the data, a vertical line drawn at the median divides the area in two, area 0.5 (50% of the total area 1) to the left and area 0.5 (50% of the total area 1) to the right, as shown in <a class="xref" href="#fwk-shafer-ch02_s02_s02_f01">Figure 2.7 "The Median"</a>. In our income example the median, $24,600, clearly gave a much better measure of the middle of the data set than did the mean $47,400. This is typical for situations in which the distribution is skewed. (Skewness and symmetry of distributions are discussed at the end of this subsection.)</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s02_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 2.7</span> The Median</p>
+            <img src="section_06/93901701128551a7274badd950102716.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s02_n02">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p07">Compute the sample median for the data of <a class="xref" href="#fwk-shafer-ch02_s02_s01_n03" xrefstyle="select: title">Note 2.11 "Example 2"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p08">The data in numerical order are −1, 0, 2, 2. The two middle measurements are 0 and 2, so <span class="inlineequation" id="shafer-20121106-125753-085160"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0062" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mn>0</mn><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>∕</mo><mn>2</mn><mo>=</mo><mn>1</mn><mo>.</mo></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s02_n03">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p09">Compute the sample median for the data of <a class="xref" href="#fwk-shafer-ch02_s02_s01_n04" xrefstyle="select: title">Note 2.12 "Example 3"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p10">The data in numerical order are</p>
+            <span class="informalequation" id="shafer-20121106-125753-085176"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0063" display="block"><mrow><mn>1.39</mn><mtext> </mtext><mn>1.76</mn><mtext> </mtext><mn>1.90</mn><mtext> </mtext><mn>2.12</mn><mtext> </mtext><mn>2.53</mn><mtext> </mtext><mn>2.71</mn><mtext> </mtext><mn>3.00</mn><mtext> </mtext><mn>3.33</mn><mtext> </mtext><mn>3.71</mn><mtext> </mtext><mn>4.00</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p11">The number of observations is ten, which is even, so there are two middle measurements, the fifth and sixth, which are 2.53 and 2.71. Therefore the median of these data is <span class="inlineequation" id="shafer-20121106-125753-085192"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0064" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2.53</mn><mo>+</mo><mn>2.71</mn></mrow><mo stretchy="false">)</mo></mrow><mo>∕</mo><mn>2</mn><mo>=</mo><mn>2.62</mn><mo>.</mo></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s02_n04">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p12">Compute the sample median for the data of <a class="xref" href="#fwk-shafer-ch02_s02_s01_n05" xrefstyle="select: title">Note 2.13 "Example 4"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p13">The data in numerical order are</p>
+            <span class="informalequation" id="shafer-20121106-125753-085208"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0065" display="block"><mrow><mn>0</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p14">The number of observations is 19, which is odd, so there is one middle measurement, the tenth. Since the tenth measurement is 2, the median is <span class="inlineequation" id="shafer-20121106-125753-085224"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0066" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch02_s02_s02_p15">It is important to note that we could have computed the median without first explicitly listing all the observations in the data set. We already saw in <a class="xref" href="#fwk-shafer-ch02_s02_s01_n05" xrefstyle="select: title">Note 2.13 "Example 4"</a> how to find the number of observations directly from the frequencies listed in the table: <span class="inlineequation" id="shafer-20121106-125753-085239"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0067" display="inline"><mi>n</mi><mo>=</mo><mn>3</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>19</mn><mo>.</mo></math></span> As just above we figure out that the median is the tenth observation. The second line of the table in <a class="xref" href="#fwk-shafer-ch02_s02_s01_n05" xrefstyle="select: title">Note 2.13 "Example 4"</a> shows that when the data are listed in order there will be three 0s followed by six 1s, so the tenth observation is a 2. The median is therefore 2.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s02_p16">The relationship between the mean and the median for several common shapes of distributions is shown in <a class="xref" href="#fwk-shafer-ch02_s02_s02_f02">Figure 2.8 "Skewness of Relative Frequency Histograms"</a>. The distributions in panels (a) and (b) are said to be <em class="emphasis">symmetric</em> because of the symmetry that they exhibit. The distributions in the remaining two panels are said to be <em class="emphasis">skewed</em>. In each distribution we have drawn a vertical line that divides the area under the curve in half, which in accordance with <a class="xref" href="#fwk-shafer-ch02_s02_s02_f01">Figure 2.7 "The Median"</a> is located at the median. The following facts are true in general: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s02_s02_o01" numeration="loweralpha">                <li>When the distribution is symmetric, as in panels (a) and (b) of <a class="xref" href="#fwk-shafer-ch02_s02_s02_f02">Figure 2.8 "Skewness of Relative Frequency Histograms"</a>, the mean and the median are equal.</li>
+                <li>When the distribution is as shown in panel (c) of <a class="xref" href="#fwk-shafer-ch02_s02_s02_f02">Figure 2.8 "Skewness of Relative Frequency Histograms"</a>, it is said to be <em class="emphasis">skewed right</em>. The mean has been pulled to the right of the median by the long “right tail” of the distribution, the few relatively large data values.</li>
+                <li>When the distribution is as shown in panel (d) of <a class="xref" href="#fwk-shafer-ch02_s02_s02_f02">Figure 2.8 "Skewness of Relative Frequency Histograms"</a>, it is said to be <em class="emphasis">skewed left</em>. The mean has been pulled to the left of the median by the long “left tail” of the distribution, the few relatively small data values.</li>
+</ol>
+        <div class="figure large editable block" id="fwk-shafer-ch02_s02_s02_f02">
+            <p class="title"><span class="title-prefix">Figure 2.8</span> Skewness of Relative Frequency Histograms</p>
+            <img src="section_06/52c5252bed301c7ba46719c5cd5b4ee0.jpg">
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch02_s02_s03" version="5.0" lang="en">
+        <h2 class="title editable block">The Mode</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s03_p01">Perhaps you have heard a statement like “The average number of automobiles owned by households in the United States is 1.37,” and have been amused at the thought of a fraction of an automobile sitting in a driveway. In such a context the following measure for central location might make more sense.</p>
+        <div class="callout editable block" id="fwk-shafer-ch02_s02_s03_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">sample mode</a><span class="glossdef">The most frequent value in a data set.</span></span> <em class="emphasis">of a set of sample data is the most frequently occurring value.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s03_p03">The population mode is defined in a similar way, but we will not have occasion to refer to it again in this text.</p>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s03_p04">On a relative frequency histogram, the highest point of the histogram corresponds to the mode of the data set. <a class="xref" href="#fwk-shafer-ch02_s02_s03_f01">Figure 2.9 "Mode"</a> illustrates the mode.</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s02_s03_f01">
+            <p class="title"><span class="title-prefix">Figure 2.9</span> Mode</p>
+            <img src="section_06/4a3fe4024f24270667c6a8c260f07ad0.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s03_p05">For any data set there is always exactly one mean and exactly one median. This need not be true of the mode; several different values could occur with the highest frequency, as we will see. It could even happen that every value occurs with the same frequency, in which case the concept of the mode does not make much sense.</p>
+        <div class="exercises block" id="fwk-shafer-ch02_s02_s03_n02">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p06">Find the mode of the following data set.</p>
+            <span class="informalequation" id="shafer-20121106-125753-085255"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0068" display="block"><mrow><mtext>−</mtext><mn>1</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>0</mn></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p07">The value 0 is most frequently observed and therefore the mode is 0.</p>
+        </div>
+        <div class="exercises editable block" id="fwk-shafer-ch02_s02_s03_n03">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p08">Compute the sample mode for the data of <a class="xref" href="#fwk-shafer-ch02_s02_s01_n05" xrefstyle="select: title">Note 2.13 "Example 4"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p09">The two most frequently observed values in the data set are 1 and 2. Therefore mode is a set of two values: {1,2}.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s02_s03_p10">The mode is a measure of central location since most real-life data sets have more observations near the center of the data range and fewer observations on the lower and upper ends. The value with the highest frequency is often in the middle of the data range.</p>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch02_s02_s03_n04">
+            <h3 class="title">Key Takeaway</h3>
+            <p class="para" id="fwk-shafer-ch02_s02_s03_p11">The mean, the median, and the mode each answer the question “Where is the center of the data set?” The nature of the data set, as indicated by a relative frequency histogram, determines which one gives the best answer.</p>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s02_qs01" condition="1col" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s02_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p01">For the sample data set {1,2,6} find </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o01" numeration="loweralpha">                                <li><span class="inlineequation" id="shafer-20121106-125753-085272"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0069" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085288"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0070" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085304"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0071" display="inline"><mi mathvariant="normal">Σ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mtext>−</mtext><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085321"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0072" display="inline"><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mtext>−</mtext><mn>3</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p02">For the sample data set <span class="inlineequation" id="shafer-20121106-125753-085337"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0073" display="inline"><mrow><mo stretchy="false">{</mo><mrow><mtext>−</mtext><mn>1,0,1,4</mn></mrow><mo stretchy="false">}</mo></mrow></math></span> find </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o03" numeration="loweralpha">                                <li><span class="inlineequation" id="shafer-20121106-125753-085354"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0074" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085370"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0075" display="inline"><mrow><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085387"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0076" display="inline"><mi mathvariant="normal">Σ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></span></li>
+                                <li><span class="inlineequation" id="shafer-20121106-125753-085403"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0077" display="inline"><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p03">Find the mean, the median, and the mode for the sample</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085419"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0078" display="block"><mrow><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p05">Find the mean, the median, and the mode for the sample</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085483"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0082" display="block"><mrow><mn>3</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p07">Find the mean, the median, and the mode for the sample</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085546"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0086" display="block"><mrow><mn>2</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>7</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p09">Find the mean, the median, and the mode for the sample</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085610"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0090" display="block"><mrow><mtext>−</mtext><mn>1</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>4</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p11">Find the mean, the median, and the mode for the sample data represented by the table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085673"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0094" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p13">Find the mean, the median, and the mode for the sample data represented by the table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085738"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0098" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mtext>−</mtext><mn>1</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p15">Create a sample data set of size <em class="emphasis">n</em> = 3 for which the mean <span class="inlineequation" id="shafer-20121106-125753-085801"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0102" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is greater than the median <span class="inlineequation" id="shafer-20121106-125753-085817"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0103" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p17">Create a sample data set of size <em class="emphasis">n</em> = 3 for which the mean <span class="inlineequation" id="shafer-20121106-125753-085832"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0104" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is less than the median <span class="inlineequation" id="shafer-20121106-125753-085848"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0105" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p19">Create a sample data set of size <em class="emphasis">n</em> = 4 for which the mean <span class="inlineequation" id="shafer-20121106-125753-085864"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0106" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, the median <span class="inlineequation" id="shafer-20121106-125753-085880"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0107" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow></math></span>, and the mode are all identical.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p21">Create a data set of size <em class="emphasis">n</em> = 4 for which the median <span class="inlineequation" id="shafer-20121106-125753-085896"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0108" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow></math></span> and the mode are identical but the mean <span class="inlineequation" id="shafer-20121106-125753-085912"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0109" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is different.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s02_qs01_qd02" start="13">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p23">Find the mean and the median for the LDL cholesterol level in a sample of ten heart patients.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085928"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0110" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>132</mn></mrow></mtd><mtd><mrow><mn>162</mn></mrow></mtd><mtd><mrow><mn>133</mn></mrow></mtd><mtd><mrow><mn>145</mn></mrow></mtd><mtd><mrow><mn>148</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>139</mn></mrow></mtd><mtd><mrow><mn>147</mn></mrow></mtd><mtd><mrow><mn>160</mn></mrow></mtd><mtd><mrow><mn>150</mn></mrow></mtd><mtd><mrow><mn>153</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p25">Find the mean and the median, for the LDL cholesterol level in a sample of ten heart patients on a special diet.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-085975"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0113" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>127</mn></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd><mtd><mrow><mn>138</mn></mrow></mtd><mtd><mrow><mn>110</mn></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>113</mn></mrow></mtd><mtd><mrow><mn>131</mn></mrow></mtd><mtd><mrow><mn>148</mn></mrow></mtd><mtd><mrow><mn>135</mn></mrow></mtd><mtd><mrow><mn>158</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p27">Find the mean, the median, and the mode for the number of vehicles owned in a survey of 52 households.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086023"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0116" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>15</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p29">The number of passengers in each of 120 randomly observed vehicles during morning rush hour was recorded, with the following results.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086087"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0120" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>84</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p30">Find the mean, the median, and the mode of this data set.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p32">Twenty-five 1-lb boxes of 16d nails were randomly selected and the number of nails in each box was counted, with the following results.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086151"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0124" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>47</mn></mtd><mtd columnalign="center"><mn>48</mn></mtd><mtd columnalign="center"><mn>49</mn></mtd><mtd columnalign="center"><mn>50</mn></mtd><mtd columnalign="center"><mn>51</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>18</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p33">Find the mean, the median, and the mode of this data set.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s02_qs01_qd03" start="18">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p35">Five laboratory mice with thymus leukemia are observed for a predetermined period of 500 days. After 500 days, four mice have died but the fifth one survives. The recorded survival times for the five mice are</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086215"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0128" display="block"><mrow><mn>493</mn><mtext> </mtext><mn>421</mn><mtext> </mtext><mn>222</mn><mtext> </mtext><mn>378</mn><mtext> </mtext><mn>50</mn><mn>0*</mn></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p36">where <span class="inlineequation" id="shafer-20121106-125753-086231"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0129" display="inline"><mrow><mn>500*</mn></mrow></math></span> indicates that the fifth mouse survived for at least 500 days but the survival time (i.e., the exact value of the observation) is unknown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o05" numeration="loweralpha">
+                            <li>Can you find the sample mean for the data set? If so, find it. If not, why not?</li>
+                            <li>Can you find the sample median for the data set? If so, find it. If not, why not?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p37">Five laboratory mice with thymus leukemia are observed for a predetermined period of 500 days. After 450 days, three mice have died, and one of the remaining mice is sacrificed for analysis. By the end of the observational period, the last remaining mouse still survives. The recorded survival times for the five mice are</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086263"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0131" display="block"><mrow><mn>222</mn><mtext> </mtext><mn>421</mn><mtext> </mtext><mn>378</mn><mtext> </mtext><mn>45</mn><mn>0*</mn><mtext> </mtext><mn>50</mn><mn>0*</mn></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p38">where * indicates that the mouse survived for at least the given number of days but the exact value of the observation is unknown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o07" numeration="loweralpha">
+                            <li>Can you find the sample mean for the data set? If so, find it. If not, explain why not.</li>
+                            <li>Can you find the sample median for the data set? If so, find it. If not, explain why not.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p39">A player keeps track of all the rolls of a pair of dice when playing a board game and obtains the following data.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086296"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0133" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>10</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>40</mn></mtd><mtd columnalign="center"><mn>56</mn></mtd><mtd columnalign="center"><mn>68</mn></mtd><mtd columnalign="center"><mn>77</mn></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-086312"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0134" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>67</mn></mtd><mtd columnalign="center"><mn>55</mn></mtd><mtd columnalign="center"><mn>39</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p40">Find the mean, the median, and the mode.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p42">Cordelia records her daily commute time to work each day, to the nearest minute, for two months, and obtains the following data.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086375"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0138" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>26</mn></mtd><mtd columnalign="center"><mn>27</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>30</mn></mtd><mtd columnalign="center"><mn>31</mn></mtd><mtd columnalign="center"><mn>32</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>16</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o09" numeration="loweralpha">
+                            <li>Based on the frequencies, do you expect the mean and the median to be about the same or markedly different, and why?</li>
+                            <li>Compute the mean, the median, and the mode.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p44">An ordered stem and leaf diagram gives the scores of 71 students on an exam.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086438"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0142" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none none none none none none none none"><mtr><mtd columnalign="right"><mn>10</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>8</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>6</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o10" numeration="loweralpha">
+                            <li>Based on the shape of the display, do you expect the mean and the median to be about the same or markedly different, and why?</li>
+                            <li>Compute the mean, the median, and the mode.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p46">A man tosses a coin repeatedly until it lands heads and records the number of tosses required. (For example, if it lands heads on the first toss he records a 1; if it lands tails on the first two tosses and heads on the third he records a 3.) The data are shown.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086502"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0146" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>384</mn></mtd><mtd columnalign="center"><mn>208</mn></mtd><mtd columnalign="center"><mn>98</mn></mtd><mtd columnalign="center"><mn>56</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o11" numeration="loweralpha">
+                            <li>Find the mean of the data.</li>
+                            <li>Find the median of the data.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p48"></p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o12" numeration="loweralpha">                                <li>Construct a data set consisting of ten numbers, all but one of which is above average, where the average is the mean.</li>
+                                <li>Is it possible to construct a data set as in part (a) when the average is the median? Explain.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p49">Show that no matter what kind of average is used (mean, median, or mode) it is impossible for all members of a data set to be above average.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa26">
+                    <div class="question">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o14" numeration="loweralpha">
+                            <li>Twenty sacks of grain weigh a total of 1,003 lb. What is the mean weight per sack?</li>
+                            <li>Can the median weight per sack be calculated based on the information given? If not, construct two data sets with the same total but different medians.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p51">Begin with the following set of data, call it Data Set I.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-086694"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0158" display="block"><mrow><mn>5</mn><mtext> </mtext><mtext>−</mtext><mn>2</mn><mtext> </mtext><mn>6</mn><mtext> </mtext><mn>14</mn><mtext> </mtext><mtext>−</mtext><mn>3</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>4</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>5</mn></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o16" numeration="loweralpha">
+                            <li>Compute the mean, median, and mode.</li>
+                            <li>Form a new data set, Data Set II, by adding 3 to each number in Data Set I. Calculate the mean, median, and mode of Data Set II.</li>
+                            <li>Form a new data set, Data Set III, by subtracting 6 from each number in Data Set I. Calculate the mean, median, and mode of Data Set III.</li>
+                            <li>Comparing the answers to parts (a), (b), and (c), can you guess the pattern? State the general principle that you expect to be true.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s02_qs01_qd04" start="28">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa28">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p52">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p53"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o18" numeration="loweralpha">
+                            <li>Compute the mean and median of the 1,000 SAT scores.</li>
+                            <li>Compute the mean and median of the 1,000 GPAs.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa29">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p54">Large Data Set 1 lists the SAT scores of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p55"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o20" numeration="loweralpha">
+                            <li>Regard the data as arising from a census of all students at a high school, in which the SAT score of every student was measured. Compute the population mean <em class="emphasis">μ</em>.</li>
+                            <li>Regard the first 25 observations as a random sample drawn from this population. Compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-086919"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0172" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and compare it to <em class="emphasis">μ</em>.</li>
+                            <li>Regard the next 25 observations as a random sample drawn from this population. Compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-086935"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0173" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and compare it to <em class="emphasis">μ</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa30">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p56">Large Data Set 1 lists the GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p57"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o22" numeration="loweralpha">
+                            <li>Regard the data as arising from a census of all freshman at a small college at the end of their first academic year of college study, in which the GPA of every such person was measured. Compute the population mean <em class="emphasis">μ</em>.</li>
+                            <li>Regard the first 25 observations as a random sample drawn from this population. Compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-086985"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0176" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and compare it to <em class="emphasis">μ</em>.</li>
+                            <li>Regard the next 25 observations as a random sample drawn from this population. Compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-087002"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0177" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and compare it to <em class="emphasis">μ</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa31">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p58">Large Data Sets 7, 7A, and 7B list the survival times in days of 140 laboratory mice with thymic leukemia from onset to death.</p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p59"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p60"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p61"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o24" numeration="loweralpha">
+                            <li>Compute the mean and median survival time for all mice, without regard to gender.</li>
+                            <li>Compute the mean and median survival time for the 65 male mice (separately recorded in Large Data Set 7A).</li>
+                            <li>Compute the mean and median survival time for the 75 female mice (separately recorded in Large Data Set 7B).</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s02_qs01_ans" condition="1col" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o02_ans" numeration="loweralpha">
+                            <li>9.</li>
+                            <li>41.</li>
+                            <li>0.</li>
+                            <li>14.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p04_ans"><span class="inlineequation" id="shafer-20121106-125753-085435_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0079" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085451_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0080" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085467_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0081" display="inline"><mtext>mode</mtext><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p08_ans"><span class="inlineequation" id="shafer-20121106-125753-085562_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0087" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085578_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0088" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085594_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0089" display="inline"><mtext>mode</mtext><mo>=</mo><mn>2</mn><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p12_ans"><span class="inlineequation" id="shafer-20121106-125753-085690_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0095" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085706_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0096" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085722_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0097" display="inline"><mtext>mode</mtext><mo>=</mo><mn>2</mn><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p16_ans">{0,0,3}.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p20_ans">{0,1,1,2}.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="13">
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p24_ans"><span class="inlineequation" id="shafer-20121106-125753-085944_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0111" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>146.9</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-085960_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0112" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>147.5</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p28_ans"><span class="inlineequation" id="shafer-20121106-125753-086039_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0117" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2.6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086055_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0118" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086071_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0119" display="inline"><mtext>mode</mtext><mo>=</mo><mn>2</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p34_ans"><span class="inlineequation" id="shafer-20121106-125753-086167_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0125" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>48.96</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086183_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0126" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>49</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086199_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0127" display="inline"><mtext>mode</mtext><mo>=</mo><mn>49</mn></math></span></p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="18">
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o08_ans" numeration="loweralpha">
+                            <li>No, the survival times of the fourth and fifth mice are unknown.</li>
+                            <li>Yes, <span class="inlineequation" id="shafer-20121106-125753-086280_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0132" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>421</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p43_ans"><span class="inlineequation" id="shafer-20121106-125753-086391_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0139" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>28.55</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086406_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0140" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>28</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086422_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0141" display="inline"><mtext>mode</mtext><mo>=</mo><mn>28</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa23_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p47_ans"><span class="inlineequation" id="shafer-20121106-125753-086518_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0147" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2.05</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086534_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0148" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086550_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0149" display="inline"><mtext>mode</mtext><mo>=</mo><mn>1</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s02_qs01_p50_ans">Mean: <span class="inlineequation" id="shafer-20121106-125753-086582_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0151" display="inline"><mi>n</mi><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>≤</mo><mi mathvariant="normal">Σ</mi><mi>x</mi></math></span> so dividing by <em class="emphasis">n</em> yields <span class="inlineequation" id="shafer-20121106-125753-086598_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0152" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>≤</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, so the minimum value is not above average. Median: the middle measurement, or average of the two middle measurements, <span class="inlineequation" id="shafer-20121106-125753-086614_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0153" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow></math></span>, is at least as large as <span class="inlineequation" id="shafer-20121106-125753-086630_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0154" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub></math></span>, so the minimum value is not above average. Mode: the mode is one of the measurements, and is not greater than itself.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd03_qa27_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o17_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-086710_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0159" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3</mn><mo>.</mo><mrow><mover accent="true"><mn>18</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086726_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0160" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086742_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0161" display="inline"><mtext>mode</mtext><mo>=</mo><mn>5</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-086758_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0162" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>6</mn><mo>.</mo><mrow><mover accent="true"><mn>18</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086774_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0163" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086790_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0164" display="inline"><mtext>mode</mtext><mo>=</mo><mn>8</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-086805_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0165" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2</mn><mo>.</mo><mrow><mover accent="true"><mn>81</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086822_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0166" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-086838_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0167" display="inline"><mtext>mode</mtext><mo>=</mo><mtext>−</mtext><mn>1</mn><mo>.</mo></math></span>
+</li>
+                            <li>If a number is added to every measurement in a data set, then the mean, median, and mode all change by that number.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="28">
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa29_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o21_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">μ</em> = 1528.74</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-086952_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0174" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1502.8</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-086969_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0175" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1535.2</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s02_qs01_qd04_qa31_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s02_qs01_o25_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-087050_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0180" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>553.4286</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-087066_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0181" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>552.5</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-087082_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0182" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>665.9692</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-087098_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0183" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>667</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-087114_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0184" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>455.8933</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-087130_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0185" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>448</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-01-three-popular-data-displays.html"><img src="shared/images/batch-left.png"></a> <a href="s06-01-three-popular-data-displays.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-03-measures-of-variability.html">Next Section</a> <a href="s06-03-measures-of-variability.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

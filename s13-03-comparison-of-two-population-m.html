@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Comparison of Two Population Means: Paired Samples</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-02-comparison-of-two-population-m.html"><img src="shared/images/batch-left.png"></a> <a href="s13-02-comparison-of-two-population-m.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s13-04-comparison-of-two-population-p.html">Next Section</a> <a href="s13-04-comparison-of-two-population-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch09_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">9.3</span> Comparison of Two Population Means: Paired Samples</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch09_s03_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch09_s03_o01" numeration="arabic">
+            <li>To learn the distinction between independent samples and paired samples.</li>
+            <li>To learn how to construct a confidence interval for the difference in the means of two distinct populations using paired samples.</li>
+            <li>To learn how to perform a test of hypotheses concerning the difference in the means of two distinct populations using paired samples.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch09_s03_p01">Suppose chemical engineers wish to compare the fuel economy obtained by two different formulations of gasoline. Since fuel economy varies widely from car to car, if the mean fuel economy of two independent samples of vehicles run on the two types of fuel were compared, even if one formulation were better than the other the large variability from vehicle to vehicle might make any difference arising from difference in fuel difficult to detect. Just imagine one random sample having many more large vehicles than the other. Instead of independent random samples, it would make more sense to select pairs of cars of the same make and model and driven under similar circumstances, and compare the fuel economy of the two cars in each pair. Thus the data would look something like <a class="xref" href="#fwk-shafer-ch09_s03_t01">Table 9.1 "Fuel Economy of Pairs of Vehicles"</a>, where the first car in each pair is operated on one formulation of the fuel (call it Type 1 gasoline) and the second car is operated on the second (call it Type 2 gasoline).</p>
+    <div class="table block" id="fwk-shafer-ch09_s03_t01">
+        <p class="title"><span class="title-prefix">Table 9.1</span> Fuel Economy of Pairs of Vehicles</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="left">Make and Model</th>
+                    <th align="center">Car 1</th>
+                    <th align="center">Car 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="left">Buick LaCrosse</td>
+                    <td align="center">17.0</td>
+                    <td align="center">17.0</td>
+                </tr>
+                <tr>
+                    <td align="left">Dodge Viper</td>
+                    <td align="center">13.2</td>
+                    <td align="center">12.9</td>
+                </tr>
+                <tr>
+                    <td align="left">Honda CR-Z</td>
+                    <td align="center">35.3</td>
+                    <td align="center">35.4</td>
+                </tr>
+                <tr>
+                    <td align="left">Hummer H 3</td>
+                    <td align="center">13.6</td>
+                    <td align="center">13.2</td>
+                </tr>
+                <tr>
+                    <td align="left">Lexus RX</td>
+                    <td align="center">32.7</td>
+                    <td align="center">32.5</td>
+                </tr>
+                <tr>
+                    <td align="left">Mazda CX-9</td>
+                    <td align="center">18.4</td>
+                    <td align="center">18.1</td>
+                </tr>
+                <tr>
+                    <td align="left">Saab 9-3</td>
+                    <td align="center">22.5</td>
+                    <td align="center">22.5</td>
+                </tr>
+                <tr>
+                    <td align="left">Toyota Corolla</td>
+                    <td align="center">26.8</td>
+                    <td align="center">26.7</td>
+                </tr>
+                <tr>
+                    <td align="left">Volvo XC 90</td>
+                    <td align="center">15.1</td>
+                    <td align="center">15.0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para block" id="fwk-shafer-ch09_s03_p02">The first column of numbers form a sample from Population 1, the population of all cars operated on Type 1 gasoline; the second column of numbers form a sample from Population 2, the population of all cars operated on Type 2 gasoline. It would be incorrect to analyze the data using the formulas from the previous section, however, since the samples were not drawn independently. What <em class="emphasis">is</em> correct is to compute the difference in the numbers in each pair (subtracting in the same order each time) to obtain the third column of numbers as shown in <a class="xref" href="#fwk-shafer-ch09_s03_t02">Table 9.2 "Fuel Economy of Pairs of Vehicles"</a> and treat the differences as the data. At this point, the new sample of differences <span class="inlineequation" id="shafer-20121106-125753-140489"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0658" display="inline"><msub><mrow><mi>d</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0.0</mn><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow><mi>d</mi></mrow><mrow><mn>9</mn></mrow></msub><mo>=</mo><mn>0.1</mn></math></span> in the third column of <a class="xref" href="#fwk-shafer-ch09_s03_t02">Table 9.2 "Fuel Economy of Pairs of Vehicles"</a> may be considered as a random sample of size <em class="emphasis">n</em> = 9 selected from a population with mean <span class="inlineequation" id="shafer-20121106-125753-140505"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0659" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span> This approach essentially transforms the paired two-sample problem into a one-sample problem as discussed in the previous two chapters.</p>
+    <div class="table block" id="fwk-shafer-ch09_s03_t02">
+        <p class="title"><span class="title-prefix">Table 9.2</span> Fuel Economy of Pairs of Vehicles</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="left">Make and Model</th>
+                    <th align="center">Car 1</th>
+                    <th align="center">Car 2</th>
+                    <th align="center">Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="left">Buick LaCrosse</td>
+                    <td align="center">17.0</td>
+                    <td align="center">17.0</td>
+                    <td align="center">0.0</td>
+                </tr>
+                <tr>
+                    <td align="left">Dodge Viper</td>
+                    <td align="center">13.2</td>
+                    <td align="center">12.9</td>
+                    <td align="center">0.3</td>
+                </tr>
+                <tr>
+                    <td align="left">Honda CR-Z</td>
+                    <td align="center">35.3</td>
+                    <td align="center">35.4</td>
+                    <td align="center">−0.1</td>
+                </tr>
+                <tr>
+                    <td align="left">Hummer H 3</td>
+                    <td align="center">13.6</td>
+                    <td align="center">13.2</td>
+                    <td align="center">0.4</td>
+                </tr>
+                <tr>
+                    <td align="left">Lexus RX</td>
+                    <td align="center">32.7</td>
+                    <td align="center">32.5</td>
+                    <td align="center">0.2</td>
+                </tr>
+                <tr>
+                    <td align="left">Mazda CX-9</td>
+                    <td align="center">18.4</td>
+                    <td align="center">18.1</td>
+                    <td align="center">0.3</td>
+                </tr>
+                <tr>
+                    <td align="left">Saab 9-3</td>
+                    <td align="center">22.5</td>
+                    <td align="center">22.5</td>
+                    <td align="center">0.0</td>
+                </tr>
+                <tr>
+                    <td align="left">Toyota Corolla</td>
+                    <td align="center">26.8</td>
+                    <td align="center">26.7</td>
+                    <td align="center">0.1</td>
+                </tr>
+                <tr>
+                    <td align="left">Volvo XC 90</td>
+                    <td align="center">15.1</td>
+                    <td align="center">15.0</td>
+                    <td align="center">0.1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch09_s03_p03">Note carefully that although it does not matter what order the subtraction is done, it must be done in the <em class="emphasis">same</em> order for all pairs. This is why there are both positive and negative quantities in the third column of numbers in <a class="xref" href="#fwk-shafer-ch09_s03_t02">Table 9.2 "Fuel Economy of Pairs of Vehicles"</a>.</p>
+    <div class="section" id="fwk-shafer-ch09_s03_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Confidence Intervals</h2>
+        <p class="para block" id="fwk-shafer-ch09_s03_s01_p01">When the population of differences is normally distributed the following formula for a confidence interval for <span class="inlineequation" id="shafer-20121106-125753-140521"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0660" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> is valid.</p>
+        <div class="callout block" id="fwk-shafer-ch09_s03_s01_n01">
+            <h3 class="title">
+<span class="inlineequation" id="shafer-20121106-125753-140537"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0661" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow><mi>%</mi></math></span> Confidence Interval for the Difference Between Two Population Means: Paired Difference Samples</h3>
+            <span class="informalequation" id="shafer-20121106-125753-140554"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0662" display="block"><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p02">where there are <em class="emphasis">n</em> pairs, <span class="inlineequation" id="shafer-20121106-125753-140578"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0663" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is the mean and <em class="emphasis">s<sub class="subscript">d</sub></em> is the standard deviation of their differences.</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p03">The number of degrees of freedom is <span class="inlineequation" id="shafer-20121106-125753-140596"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0664" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>n</mi><mtext>−</mtext><mn>1</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p04">The population of differences must be normally distributed.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch09_s03_s01_n02">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p05">Using the data in <a class="xref" href="#fwk-shafer-ch09_s03_t01">Table 9.1 "Fuel Economy of Pairs of Vehicles"</a> construct a point estimate and a 95% confidence interval for the difference in average fuel economy between cars operated on Type 1 gasoline and cars operated on Type 2 gasoline.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p06">We have referred to the data in <a class="xref" href="#fwk-shafer-ch09_s03_t01">Table 9.1 "Fuel Economy of Pairs of Vehicles"</a> because that is the way that the data are typically presented, but we emphasize that with paired sampling one immediately computes the differences, as given in <a class="xref" href="#fwk-shafer-ch09_s03_t02">Table 9.2 "Fuel Economy of Pairs of Vehicles"</a>, and uses the differences as the data.</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p07">The mean and standard deviation of the differences are</p>
+            <span class="informalequation" id="shafer-20121106-125753-140612"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0665" display="block"><mtable columnspacing="0.5em"><mtr><mtd><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>d</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1.3</mn></mrow><mrow><mn>9</mn></mrow></mfrac><mo>=</mo><mn>0.1</mn><mrow><mover accent="true"><mn>4</mn><mo stretchy="true">-</mo></mover></mrow></mrow></mtd><mtd><mtext>and</mtext></mtd><mtd><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mi>d</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>d</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>0.41</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>9</mn></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mn>1.3</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.1</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></mtd></mtr></mtable></math></span>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p08">The point estimate of <span class="inlineequation" id="shafer-20121106-125753-140633"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0666" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> is</p>
+            <span class="informalequation" id="shafer-20121106-125753-140650"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0667" display="block"><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0.14</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p09">In words, we estimate that the average fuel economy of cars using Type 1 gasoline is 0.14 mpg greater than the average fuel economy of cars using Type 2 gasoline.</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p10">To apply the formula for the confidence interval, we must find <span class="inlineequation" id="shafer-20121106-125753-140666"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0668" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>.</mo></math></span> The 95% confidence level means that <span class="inlineequation" id="shafer-20121106-125753-140682"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0669" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.95</mn><mo>=</mo><mn>0.05</mn></math></span> so that <span class="inlineequation" id="shafer-20121106-125753-140697"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0670" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>.</mo></math></span> From <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a>, in the row with the heading <span class="inlineequation" id="shafer-20121106-125753-140713"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0671" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>9</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>8</mn></math></span> we read that <span class="inlineequation" id="shafer-20121106-125753-140735"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0672" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>=</mo><mn>2.306</mn><mo>.</mo></math></span> Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-140750"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0673" display="block"><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mn>0.14</mn><mo>±</mo><mn>2.306</mn><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mn>0.1</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>9</mn></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>≈</mo><mn>0.14</mn><mo>±</mo><mn>0.13</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s03_s01_p11">We are 95% confident that the difference in the population means lies in the interval <span class="inlineequation" id="shafer-20121106-125753-140767"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0674" display="inline"><mrow><mo>[</mo><mrow><mn>0</mn><mo>.</mo><mn>01,0</mn><mo>.</mo><mn>27</mn></mrow><mo>]</mo></mrow></math></span>, in the sense that in repeated sampling 95% of all intervals constructed from the sample data in this manner will contain <span class="inlineequation" id="shafer-20121106-125753-140782"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0675" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span> Stated differently, we are 95% confident that mean fuel economy is between 0.01 and 0.27 mpg greater with Type 1 gasoline than with Type 2 gasoline.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch09_s03_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Hypothesis Testing</h2>
+        <p class="para block" id="fwk-shafer-ch09_s03_s02_p01">Testing hypotheses concerning the difference of two population means using paired difference samples is done precisely as it is done for independent samples, although now the null and alternative hypotheses are expressed in terms of <span class="inlineequation" id="shafer-20121106-125753-140798"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0676" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> instead of <span class="inlineequation" id="shafer-20121106-125753-140814"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0677" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span> Thus the null hypothesis will always be written</p>
+        <span class="informalequation block" id="shafer-20121106-125753-140829"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0678" display="block"><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi>D</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch09_s03_s02_p02">The three forms of the alternative hypothesis, with the terminology for each case, are:</p>
+        <div class="informaltable block">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="left">Form of <span class="inlineequation" id="shafer-20121106-125753-140845"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0679" display="inline"><msub><mi>H</mi><mi>a</mi></msub></math></span>
+</th>
+                        <th align="left">Terminology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-140868"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0680" display="inline"><mrow><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">μ</mi><mi>d</mi></msub><mo>&lt;</mo><msub><mi>D</mi><mn>0</mn></msub></mrow></math></span></td>
+                        <td align="left">Left-tailed</td>
+                    </tr>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-140884"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0681" display="inline"><mrow><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">μ</mi><mi>d</mi></msub><mo>&gt;</mo><msub><mi>D</mi><mn>0</mn></msub></mrow></math></span></td>
+                        <td align="left">Right-tailed</td>
+                    </tr>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-140900"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0682" display="inline"><mrow><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">μ</mi><mi>d</mi></msub><mo>≠</mo><msub><mi>D</mi><mn>0</mn></msub></mrow></math></span></td>
+                        <td align="left">Two-tailed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch09_s03_s02_p03">The same conditions on the population of differences that was required for constructing a confidence interval for the difference of the means must also be met when hypotheses are tested. Here is the standardized test statistic that is used in the test.</p>
+        <div class="callout block" id="fwk-shafer-ch09_s03_s02_n01">
+            <h3 class="title">Standardized Test Statistic for Hypothesis Tests Concerning the Difference Between Two Population Means: Paired Difference Samples</h3>
+            <span class="informalequation" id="shafer-20121106-125753-140916"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0683" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mi>D</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p04">where there are <em class="emphasis">n</em> pairs, <span class="inlineequation" id="shafer-20121106-125753-140932"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0684" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is the mean and <em class="emphasis">s<sub class="subscript">d</sub></em> is the standard deviation of their differences.</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p05">The test statistic has Student’s <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-140948"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0685" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>n</mi><mtext>−</mtext><mn>1</mn></math></span> degrees of freedom.</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p06">The population of differences must be normally distributed.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch09_s03_s02_n02">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p07">Using the data of <a class="xref" href="#fwk-shafer-ch09_s03_t02">Table 9.2 "Fuel Economy of Pairs of Vehicles"</a> test the hypothesis that mean fuel economy for Type 1 gasoline is greater than that for Type 2 gasoline against the null hypothesis that the two formulations of gasoline yield the same mean fuel economy. Test at the 5% level of significance using the critical value approach.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p08">The only part of the table that we use is the third column, the differences.</p>
+            <ul class="itemizedlist" id="fwk-shafer-ch09_s03_s02_l01" mark="none">
+                <li>
+                    <p class="para">Step 1. Since the differences were computed in the order <span class="inlineequation" id="shafer-20121106-125753-140965"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0686" display="inline"><mtext> Type 1 mpg</mtext><mo>−</mo><mtext> Type 2 mpg</mtext></math></span>, better fuel economy with Type 1 fuel corresponds to <span class="inlineequation" id="shafer-20121106-125753-140981"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0687" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>&gt;</mo><mn>0</mn><mo>.</mo></math></span> Thus the test is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-140996"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0688" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></mtd><mtd><mo>&gt;</mo></mtd><mtd><mn>0</mn></mtd><mtd><mi>@</mi><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.05</mn></mtd></mtr></mtable></math></span>
+                    <p class="para">(If the differences had been computed in the opposite order then the alternative hypotheses would have been <span class="inlineequation" id="shafer-20121106-125753-141024"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0689" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>&lt;</mo><mn>0</mn><mo>.</mo></math></span>)</p>
+                </li>
+                <li>
+                    <p class="para">Step 2. Since the sampling is in pairs the test statistic is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-141040"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0690" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mi>D</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Step 3. We have already computed <span class="inlineequation" id="shafer-20121106-125753-141056"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0691" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em> in the previous example. Inserting their values and <span class="inlineequation" id="shafer-20121106-125753-141072"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0692" display="inline"><msub><mrow><mi>D</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></math></span> into the formula for the test statistic gives</p>
+                    <span class="informalequation" id="shafer-20121106-125753-141088"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0693" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mi>D</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>0.1</mn><mrow><mover accent="true"><mn>4</mn><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>0.1</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow><mo>∕</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mn>2.600</mn></mrow></math></span>
+                </li>
+                <li>Step 4. Since the symbol in <em class="emphasis">H<sub class="subscript">a</sub></em> is “&gt;” this is a right-tailed test, so there is a single critical value, <span class="inlineequation" id="shafer-20121106-125753-141103"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0694" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>=</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub></math></span> with 8 degrees of freedom, which from the row labeled <span class="inlineequation" id="shafer-20121106-125753-141120"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0695" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>8</mn></math></span> in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we read off as 1.860. The rejection region is <span class="inlineequation" id="shafer-20121106-125753-141136"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0696" display="inline"><mrow><mo>[</mo><mrow><mn>1.860</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                <li>
+                    <p class="para">Step 5. As shown in <a class="xref" href="#fwk-shafer-ch09_s03_s02_f01">Figure 9.5 "Rejection Region and Test Statistic for "</a> the test statistic falls in the rejection region. The decision is to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. In the context of the problem our conclusion is:</p>
+                    <div class="figure large small-height" id="fwk-shafer-ch09_s03_s02_f01">
+                    <p class="title"><span class="title-prefix">Figure 9.5</span> Rejection Region and Test Statistic for <a class="xref" href="#fwk-shafer-ch09_s03_s02_n02" xrefstyle="select: title">Note 9.20 "Example 8"</a></p>
+                        <img src="section_13/65c475a429d83d1c543748d068992428.jpg">
+                    </div>
+                    <p class="para">The data provide sufficient evidence, at the 5% level of significance, to conclude that the mean fuel economy provided by Type 1 gasoline is greater than that for Type 2 gasoline.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch09_s03_s02_n03">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p09">Perform the test of <a class="xref" href="#fwk-shafer-ch09_s03_s02_n02" xrefstyle="select: title">Note 9.20 "Example 8"</a> using the <em class="emphasis">p</em>-value approach.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s03_s02_p10">The first three steps are identical to those in <a class="xref" href="#fwk-shafer-ch09_s03_s02_n02" xrefstyle="select: title">Note 9.20 "Example 8"</a>.</p>
+            <ul class="itemizedlist" id="fwk-shafer-ch09_s03_s02_l02" mark="none">
+                <li>
+                    <p class="para">Step 4. Because the test is one-tailed the observed significance or <em class="emphasis">p</em>-value of the test is just the area of the right tail of Student’s <em class="emphasis">t</em>-distribution, with 8 degrees of freedom, that is cut off by the test statistic <em class="emphasis">T</em> = 2.600. We can only approximate this number. Looking in the row of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> headed <span class="inlineequation" id="shafer-20121106-125753-141157"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0697" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>8</mn></math></span>, the number 2.600 is between the numbers 2.306 and 2.896, corresponding to <em class="emphasis">t</em><sub class="subscript">0.025</sub> and <em class="emphasis">t</em><sub class="subscript">0.010</sub>.</p>
+                    <p class="para">The area cut off by <em class="emphasis">t</em> = 2.306 is 0.025 and the area cut off by <em class="emphasis">t</em> = 2.896 is 0.010. Since 2.600 is between 2.306 and 2.896 the area it cuts off is between 0.025 and 0.010. Thus the <em class="emphasis">p</em>-value is between 0.025 and 0.010. In particular it is less than 0.025. See <a class="xref" href="#fwk-shafer-ch09_s03_s02_f02">Figure 9.6</a>.</p>
+                </li>
+            </ul>
+            <div class="figure large small-height" id="fwk-shafer-ch09_s03_s02_f02">
+                <p class="title"><span class="title-prefix">Figure 9.6</span> <em class="emphasis">P</em>-Value for <a class="xref" href="#fwk-shafer-ch09_s03_s02_n03" xrefstyle="select: title">Note 9.21 "Example 9"</a></p>
+                <img src="section_13/39fabc97b76e2fcd598df4157a5af35c.jpg">
+            </div>
+            <ul class="itemizedlist" id="fwk-shafer-ch09_s03_s02_l03" mark="none">
+                <li>
+                    <p class="para">Step 5. Since 0.025 &lt; 0.05, <span class="inlineequation" id="shafer-20121106-125753-141174"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0698" display="inline"><mi>p</mi><mo>&lt;</mo><mi>α</mi></math></span> so the decision is to reject the null hypothesis:</p>
+                    <p class="para">The data provide sufficient evidence, at the 5% level of significance, to conclude that the mean fuel economy provided by Type 1 gasoline is greater than that for Type 2 gasoline.</p>
+                </li>
+            </ul>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch09_s03_s02_p11">The paired two-sample experiment is a very powerful study design. It bypasses many unwanted sources of “statistical noise” that might otherwise influence the outcome of the experiment, and focuses on the possible difference that might arise from the one factor of interest.</p>
+        <p class="para block" id="fwk-shafer-ch09_s03_s02_p12">If the sample is large (meaning that <em class="emphasis">n</em> ≥ 30) then in the formula for the confidence interval we may replace <span class="inlineequation" id="shafer-20121106-125753-141190"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0699" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> by <span class="inlineequation" id="shafer-20121106-125753-141207"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0700" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>.</mo></math></span> For hypothesis testing when the number of pairs is at least 30, we may use the same statistic as for small samples for hypothesis testing, except now it follows a standard normal distribution, so we use the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> to compute critical values, and <em class="emphasis">p</em>-values can be computed exactly with <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a>, not merely estimated using <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a>.</p>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch09_s03_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch09_s03_s02_l04" mark="bullet">
+                <li>When the data are collected in pairs, the differences computed for each pair are the data that are used in the formulas.</li>
+                <li>A confidence interval for the difference in two population means using paired sampling is computed using a formula in the same fashion as was done for a single population mean.</li>
+                <li>The same five-step procedure used to test hypotheses concerning a single population mean is used to test hypotheses concerning the difference between two population means using pair sampling. The only difference is in the formula for the standardized test statistic.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch09_s03_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch09_s03_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <p class="para" id="fwk-shafer-ch09_s03_qs01_p01">In all exercises for this section assume that the population of differences is normal.</p>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p02">Use the following paired sample data for this exercise.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-141223"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0701" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>1</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>35</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>32</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>35</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>35</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>36</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>35</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>36</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>2</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>28</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>26</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>27</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>26</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>29</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>27</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>29</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o01" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-141248"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0702" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-141264"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0703" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 95% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-141282"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0704" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141304"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0705" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>&gt;</mo><mn>7</mn></math></span> as an alternative to the null hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141321"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0706" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>7</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p03">Use the following paired sample data for this exercise.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-141443"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0713" display="block"><mrow><mtable columnspacing="0.5em"><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>1</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>103</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>127</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>96</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>110</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>2</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>81</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>106</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>73</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>88</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-141471"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0714" display="block"><mrow><mtable columnspacing="0.5em"><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>1</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>90</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>118</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>130</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>106</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>2</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>70</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>95</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>109</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>83</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o03" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-141487"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0715" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-141509"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0716" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 90% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-141525"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0717" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141541"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0718" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>&lt;</mo><mn>24</mn></math></span> as an alternative to the null hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141557"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0719" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>24</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p04">Use the following paired sample data for this exercise.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-141692"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0727" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>1</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>40</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>27</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>55</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>34</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>2</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>53</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>42</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>68</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>50</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o05" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-141709"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0728" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-141725"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0729" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 99% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-141747"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0730" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141763"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0731" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≠</mo><mtext>−</mtext><mn>12</mn></math></span> as an alternative to the null hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141781"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0732" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>12</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p05">Use the following paired sample data for this exercise.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-141917"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0740" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>1</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>196</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>165</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>181</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>201</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>190</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Population</mtext><mtext> </mtext><mn>2</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>212</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>182</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>199</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>210</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>205</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o07" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-141933"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0741" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-141948"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0742" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 98% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-141964"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0743" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 2% level of significance, the hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141980"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0744" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≠</mo><mtext>−</mtext><mn>20</mn></math></span> as an alternative to the null hypothesis that <span class="inlineequation" id="shafer-20121106-125753-141996"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0745" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>20</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch09_s03_qs01_qd02" start="5">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p06">Each of five laboratory mice was released into a maze twice. The five pairs of times to escape were:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="center">Mouse</th>
+                                        <th align="center">1</th>
+                                        <th align="center">2</th>
+                                        <th align="center">3</th>
+                                        <th align="center">4</th>
+                                        <th align="center">5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center">First release</td>
+                                        <td align="center">129</td>
+                                        <td align="center">89</td>
+                                        <td align="center">136</td>
+                                        <td align="center">163</td>
+                                        <td align="center">118</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Second release</td>
+                                        <td align="center">113</td>
+                                        <td align="center">97</td>
+                                        <td align="center">139</td>
+                                        <td align="center">85</td>
+                                        <td align="center">75</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o09" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-142115"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0752" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-142132"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0753" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 90% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-142148"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0754" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that it takes mice less time to run the maze on the second trial, on average.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p07">Eight golfers were asked to submit their latest scores on their favorite golf courses. These golfers were each given a set of newly designed clubs. After playing with the new clubs for a few months, the golfers were again asked to submit their latest scores on the same golf courses. The results are summarized below.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="center">Golfer</th>
+                                        <th align="center">1</th>
+                                        <th align="center">2</th>
+                                        <th align="center">3</th>
+                                        <th align="center">4</th>
+                                        <th align="center">5</th>
+                                        <th align="center">6</th>
+                                        <th align="center">7</th>
+                                        <th align="center">8</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center">Own clubs</td>
+                                        <td align="center">77</td>
+                                        <td align="center">80</td>
+                                        <td align="center">69</td>
+                                        <td align="center">73</td>
+                                        <td align="center">73</td>
+                                        <td align="center">72</td>
+                                        <td align="center">75</td>
+                                        <td align="center">77</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">New clubs</td>
+                                        <td align="center">72</td>
+                                        <td align="center">81</td>
+                                        <td align="center">68</td>
+                                        <td align="center">73</td>
+                                        <td align="center">75</td>
+                                        <td align="center">70</td>
+                                        <td align="center">73</td>
+                                        <td align="center">75</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o11" numeration="loweralpha">
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-142252"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0760" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span> and <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-142269"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0761" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Construct the 99% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-142285"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0762" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> from these data.</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that on average golf scores are lower with the new clubs.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p08">A neighborhood home owners association suspects that the recent appraisal values of the houses in the neighborhood conducted by the county government for taxation purposes is too high. It hired a private company to appraise the values of ten houses in the neighborhood. The results, in thousands of dollars, are</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left">House</th>
+                                        <th align="center">County Government</th>
+                                        <th align="center">Private Company</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">1</td>
+                                        <td align="center">217</td>
+                                        <td align="center">219</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">2</td>
+                                        <td align="center">350</td>
+                                        <td align="center">338</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">3</td>
+                                        <td align="center">296</td>
+                                        <td align="center">291</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">4</td>
+                                        <td align="center">237</td>
+                                        <td align="center">237</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">5</td>
+                                        <td align="center">237</td>
+                                        <td align="center">235</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">6</td>
+                                        <td align="center">272</td>
+                                        <td align="center">269</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">7</td>
+                                        <td align="center">257</td>
+                                        <td align="center">239</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">8</td>
+                                        <td align="center">277</td>
+                                        <td align="center">275</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">9</td>
+                                        <td align="center">312</td>
+                                        <td align="center">320</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">10</td>
+                                        <td align="center">335</td>
+                                        <td align="center">335</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o13" numeration="loweralpha">
+                            <li>Give a point estimate for the difference between the mean private appraisal of all such homes and the government appraisal of all such homes.</li>
+                            <li>Construct the 99% confidence interval based on these data for the difference.</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that appraised values by the county government of all such houses is greater than the appraised values by the private appraisal company.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p09">In order to cut costs a wine producer is considering using duo or 1 + 1 corks in place of full natural wood corks, but is concerned that it could affect buyers’s perception of the quality of the wine. The wine producer shipped eight pairs of bottles of its best young wines to eight wine experts. Each pair includes one bottle with a natural wood cork and one with a duo cork. The experts are asked to rate the wines on a one to ten scale, higher numbers corresponding to higher quality. The results are:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left">Wine Expert</th>
+                                        <th align="center">Duo Cork</th>
+                                        <th align="center">Wood Cork</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">1</td>
+                                        <td align="center">8.5</td>
+                                        <td align="center">8.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">2</td>
+                                        <td align="center">8.0</td>
+                                        <td align="center">8.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">3</td>
+                                        <td align="center">6.5</td>
+                                        <td align="center">8.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">4</td>
+                                        <td align="center">7.5</td>
+                                        <td align="center">8.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">5</td>
+                                        <td align="center">8.0</td>
+                                        <td align="center">7.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">6</td>
+                                        <td align="center">8.0</td>
+                                        <td align="center">8.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">7</td>
+                                        <td align="center">9.0</td>
+                                        <td align="center">9.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">8</td>
+                                        <td align="center">7.0</td>
+                                        <td align="center">7.5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o15" numeration="loweralpha">
+                            <li>Give a point estimate for the difference between the mean ratings of the wine when bottled are sealed with different kinds of corks.</li>
+                            <li>Construct the 90% confidence interval based on these data for the difference.</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that on the average duo corks decrease the rating of the wine.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p10">Engineers at a tire manufacturing corporation wish to test a new tire material for increased durability. To test the tires under realistic road conditions, new front tires are mounted on each of 11 company cars, one tire made with a production material and the other with the experimental material. After a fixed period the 11 pairs were measured for wear. The amount of wear for each tire (in mm) is shown in the table:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left">Car</th>
+                                        <th align="center">Production</th>
+                                        <th align="center">Experimental</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">1</td>
+                                        <td align="center">5.1</td>
+                                        <td align="center">5.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">2</td>
+                                        <td align="center">6.5</td>
+                                        <td align="center">6.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">3</td>
+                                        <td align="center">3.6</td>
+                                        <td align="center">3.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">4</td>
+                                        <td align="center">3.5</td>
+                                        <td align="center">3.7</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">5</td>
+                                        <td align="center">5.7</td>
+                                        <td align="center">4.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">6</td>
+                                        <td align="center">5.0</td>
+                                        <td align="center">4.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">7</td>
+                                        <td align="center">6.4</td>
+                                        <td align="center">5.3</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">8</td>
+                                        <td align="center">4.7</td>
+                                        <td align="center">2.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">9</td>
+                                        <td align="center">3.2</td>
+                                        <td align="center">3.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">10</td>
+                                        <td align="center">3.5</td>
+                                        <td align="center">3.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">11</td>
+                                        <td align="center">6.4</td>
+                                        <td align="center">5.1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o17" numeration="loweralpha">
+                            <li>Give a point estimate for the difference in mean wear.</li>
+                            <li>Construct the 99% confidence interval for the difference based on these data.</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that the mean wear with the experimental material is less than that for the production material.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p11">A marriage counselor administered a test designed to measure overall contentment to 30 randomly selected married couples. The scores for each couple are given below. A higher number corresponds to greater contentment or happiness.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="center">Couple</th>
+                                        <th align="center">Husband</th>
+                                        <th align="center">Wife</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center">1</td>
+                                        <td align="center">47</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">2</td>
+                                        <td align="center">44</td>
+                                        <td align="center">46</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">3</td>
+                                        <td align="center">49</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">4</td>
+                                        <td align="center">53</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">5</td>
+                                        <td align="center">42</td>
+                                        <td align="center">43</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">6</td>
+                                        <td align="center">45</td>
+                                        <td align="center">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">7</td>
+                                        <td align="center">48</td>
+                                        <td align="center">47</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">8</td>
+                                        <td align="center">45</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">9</td>
+                                        <td align="center">52</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">10</td>
+                                        <td align="center">47</td>
+                                        <td align="center">42</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">11</td>
+                                        <td align="center">40</td>
+                                        <td align="center">34</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">12</td>
+                                        <td align="center">45</td>
+                                        <td align="center">42</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">13</td>
+                                        <td align="center">40</td>
+                                        <td align="center">43</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">14</td>
+                                        <td align="center">46</td>
+                                        <td align="center">41</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">15</td>
+                                        <td align="center">47</td>
+                                        <td align="center">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">16</td>
+                                        <td align="center">46</td>
+                                        <td align="center">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">17</td>
+                                        <td align="center">46</td>
+                                        <td align="center">41</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">18</td>
+                                        <td align="center">46</td>
+                                        <td align="center">41</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">19</td>
+                                        <td align="center">44</td>
+                                        <td align="center">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">20</td>
+                                        <td align="center">45</td>
+                                        <td align="center">43</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">21</td>
+                                        <td align="center">48</td>
+                                        <td align="center">38</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">22</td>
+                                        <td align="center">42</td>
+                                        <td align="center">46</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">23</td>
+                                        <td align="center">50</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">24</td>
+                                        <td align="center">46</td>
+                                        <td align="center">51</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">25</td>
+                                        <td align="center">43</td>
+                                        <td align="center">45</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">26</td>
+                                        <td align="center">50</td>
+                                        <td align="center">40</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">27</td>
+                                        <td align="center">46</td>
+                                        <td align="center">46</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">28</td>
+                                        <td align="center">42</td>
+                                        <td align="center">41</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">29</td>
+                                        <td align="center">51</td>
+                                        <td align="center">41</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">30</td>
+                                        <td align="center">46</td>
+                                        <td align="center">47</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o19" numeration="loweralpha">
+                            <li>Test, at the 1% level of significance, the hypothesis that on average men and women are not equally happy in marriage.</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that on average men are happier than women in marriage.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch09_s03_qs01_qd03" start="11">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p12">Large Data Set 5 lists the scores for 25 randomly selected students on practice SAT reading tests before and after taking a two-week SAT preparation course. Denote the population of all students who have taken the course as Population 1 and the population of all students who have not taken the course as Population 2.</p>
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p13"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data5.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data5.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o21" numeration="loweralpha">
+                            <li>Compute the 25 differences in the order <span class="inlineequation" id="shafer-20121106-125753-142633"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0782" display="inline"><mtext> after</mtext><mo>−</mo><mtext> before</mtext></math></span>, their mean <span class="inlineequation" id="shafer-20121106-125753-142649"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0783" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, and their sample standard deviation <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-142665"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0784" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span>, the difference in the mean score of all students who have taken the course and the mean score of all who have not.</li>
+                            <li>Construct a 98% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-142681"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0785" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that the mean SAT score increases by at least ten points by taking the two-week preparation course.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p14">Large Data Set 12 lists the scores on one round for 75 randomly selected members at a golf course, first using their own original clubs, then two months later after using new clubs with an experimental design. Denote the population of all golfers using their own original clubs as Population 1 and the population of all golfers using the new style clubs as Population 2.</p>
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p15"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o23" numeration="loweralpha">
+                            <li>Compute the 75 differences in the order <span class="inlineequation" id="shafer-20121106-125753-142831"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0794" display="inline"><mtext> original clubs</mtext><mo>−</mo><mtext> new clubs</mtext></math></span>, their mean <span class="inlineequation" id="shafer-20121106-125753-142847"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0795" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, and their sample standard deviation <em class="emphasis">s<sub class="subscript">d</sub></em>.</li>
+                            <li>Give a point estimate for <span class="inlineequation" id="shafer-20121106-125753-142864"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0796" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span>, the difference in the mean score of all golfers using their original clubs and the mean score of all golfers using the new kind of clubs.</li>
+                            <li>Construct a 90% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-142880"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0797" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that the mean golf score decreases by at least one stroke by using the new kind of clubs.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s03_qs01_p16">Consider the previous problem again. Since the data set is so large, it is reasonable to use the standard normal distribution instead of Student’s <em class="emphasis">t</em>-distribution with 74 degrees of freedom.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o25" numeration="loweralpha">
+                            <li>Construct a 90% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-143039"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0806" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> using the standard normal distribution, meaning that the formula is <span class="inlineequation" id="shafer-20121106-125753-143055"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0807" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>.</mo></math></span> (The computations done in part (a) of the previous problem still apply and need not be redone.) How does the result obtained here compare to the result obtained in part (c) of the previous problem?</li>
+                            <li>Test, at the 1% level of significance, the hypothesis that the mean golf score decreases by at least one stroke by using the new kind of clubs, using the standard normal distribution. (All the work done in part (d) of the previous problem applies, except the critical value is now <span class="inlineequation" id="shafer-20121106-125753-143071"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0808" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi></mrow></msub></math></span> instead of <span class="inlineequation" id="shafer-20121106-125753-143088"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0809" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub></math></span> (or the <em class="emphasis">p</em>-value can be computed exactly instead of only approximated, if you used the <em class="emphasis">p</em>-value approach).) How does the result obtained here compare to the result obtained in part (c) of the previous problem?</li>
+                            <li>Construct the 99% confidence intervals for <span class="inlineequation" id="shafer-20121106-125753-143104"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0810" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> using both the <span class="inlineequation" id="shafer-20121106-125753-143120"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0811" display="inline"><mi>t</mi><mi>-</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-143136"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0812" display="inline"><mi>z</mi><mi>-</mi></math></span>distributions. How much difference is there in the results now?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch09_s03_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o02_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141337_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0707" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>7.4286</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-141354_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0708" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>0.9759</mn></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141372_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0709" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>7.4286</mn></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141388_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0710" display="inline"><mrow><mo>(</mo><mrow><mn>6</mn><mo>.</mo><mn>53,8</mn><mo>.</mo><mn>33</mn></mrow><mo>)</mo></mrow></math></span>,</li>
+                            <li>
+<em class="emphasis">T</em> = 1.162, <span class="inlineequation" id="shafer-20121106-125753-141405_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0711" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-141427_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0712" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>1.44</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o06_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141797_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0733" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>14.25</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-141814_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0734" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>1.5</mn></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141829_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0735" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>14.25</mn></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141845_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0736" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>18.63</mn><mo>,</mo><mtext>−</mtext><mn>9.87</mn></mrow><mo>)</mo></mrow></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-141862_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0737" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>3.000</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-141885_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0738" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-141901_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0739" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mo>±</mo><mn>2.353</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="5">
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o10_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-142171_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0755" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>25.2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-142188_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0756" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>35.6609</mn></math></span>,</li>
+                            <li>25.2,</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-142204_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0757" display="inline"><mn>25.2</mn><mo>±</mo><mn>34.0</mn></math></span></li>
+                            <li>
+<em class="emphasis">T</em> = 1.580, <span class="inlineequation" id="shafer-20121106-125753-142220_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0758" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-142236_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0759" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>1.533</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub> (takes less time)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o14_ans" numeration="loweralpha">
+                            <li>3.2,</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-142388_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0768" display="inline"><mn>3.2</mn><mo>±</mo><mn>7.5</mn></math></span></li>
+                            <li>
+<em class="emphasis">T</em> = 1.392, <span class="inlineequation" id="shafer-20121106-125753-142404_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0769" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>9</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-142420_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0770" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>2.821</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub> (government appraisals not higher)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o18_ans" numeration="loweralpha">
+                            <li>0.65,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-142514_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0775" display="inline"><mn>0.65</mn><mo>±</mo><mn>0.69</mn></math></span>,</li>
+                            <li>
+<em class="emphasis">T</em> = 3.014, <span class="inlineequation" id="shafer-20121106-125753-142530_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0776" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>10</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-142546_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0777" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>=</mo><mn>2.764</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub> (experimental material wears less)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd02_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="11">
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o22_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-142697_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0786" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>16.68</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-142714_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0787" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>10.77</mn></math></span>
+</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-142730_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0788" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>16.68</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-142746_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0789" display="inline"><mrow><mo>(</mo><mrow><mn>11</mn><mo>.</mo><mn>31,22</mn><mo>.</mo><mn>05</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-142768_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0790" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>10</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-142784_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0791" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>&gt;</mo><mn>10</mn><mo>.</mo></math></span> Test Statistic: <em class="emphasis">T</em> = 3.1014. <span class="inlineequation" id="shafer-20121106-125753-142800_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0792" display="inline"><mi>d</mi><mo>.</mo><mi>f</mi><mo>.</mo><mo>=</mo><mn>24</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-142815_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0793" display="inline"><mrow><mo>[</mo><mrow><mn>2.492</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s03_qs01_qd03_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s03_qs01_o26_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-143152_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0813" display="inline"><mrow><mo>(</mo><mrow><mn>1</mn><mo>.</mo><mn>6266,2</mn><mo>.</mo><mn>6401</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Endpoints change in the third deciaml place.</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-143174_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0814" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>1</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-143191_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0815" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>&gt;</mo><mn>1</mn><mo>.</mo></math></span> Test Statistic: <em class="emphasis">Z</em> = 3.6791. Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-143207_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0816" display="inline"><mrow><mo>[</mo><mrow><mn>2.33</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Reject <em class="emphasis">H</em><sub class="subscript">0</sub>. The decision is the same as in the previous problem.</li>
+                            <li>Using the <span class="inlineequation" id="shafer-20121106-125753-143223_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0817" display="inline"><mi>t</mi><mo>−</mo></math></span>distribution, <span class="inlineequation" id="shafer-20121106-125753-143240_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0818" display="inline"><mrow><mo>(</mo><mrow><mn>1</mn><mo>.</mo><mn>3188,2</mn><mo>.</mo><mn>9478</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Using the <span class="inlineequation" id="shafer-20121106-125753-143256_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0819" display="inline"><mi>z</mi><mo>−</mo></math></span>distribution, <span class="inlineequation" id="shafer-20121106-125753-143272_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch09-m0820" display="inline"><mrow><mo>(</mo><mrow><mn>1</mn><mo>.</mo><mn>3401,2</mn><mo>.</mo><mn>9266</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> There is a difference.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-02-comparison-of-two-population-m.html"><img src="shared/images/batch-left.png"></a> <a href="s13-02-comparison-of-two-population-m.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s13-04-comparison-of-two-population-p.html">Next Section</a> <a href="s13-04-comparison-of-two-population-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

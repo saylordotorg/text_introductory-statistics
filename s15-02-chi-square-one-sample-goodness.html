@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Chi-Square One-Sample Goodness-of-Fit Tests</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s15-01-chi-square-tests-for-independe.html"><img src="shared/images/batch-left.png"></a> <a href="s15-01-chi-square-tests-for-independe.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s15-03-f-tests-for-equality-of-two-va.html">Next Section</a> <a href="s15-03-f-tests-for-equality-of-two-va.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch11_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">11.2</span> Chi-Square One-Sample Goodness-of-Fit Tests</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch11_s02_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch11_s02_o01" numeration="arabic">
+            <li>To understand how to use a chi-square test to judge whether a sample fits a particular population well.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch11_s02_p01">Suppose we wish to determine if an ordinary-looking six-sided die is fair, or balanced, meaning that every face has probability 1/6 of landing on top when the die is tossed. We could toss the die dozens, maybe hundreds, of times and compare the actual number of times each face landed on top to the expected number, which would be 1/6 of the total number of tosses. We wouldn’t expect each number to be exactly 1/6 of the total, but it should be close. To be specific, suppose the die is tossed <em class="emphasis">n</em> = 60 times with the results summarized in <a class="xref" href="#fwk-shafer-ch11_s02_t01">Table 11.8 "Die Contingency Table"</a>. For ease of reference we add a column of expected frequencies, which in this simple example is simply a column of 10s. The result is shown as <a class="xref" href="#fwk-shafer-ch11_s02_t02">Table 11.9 "Updated Die Contingency Table"</a>. In analogy with the previous section we call this an “updated” table. A measure of how much the data deviate from what we would expect to see if the die really were fair is the sum of the squares of the differences between the observed frequency <em class="emphasis">O</em> and the expected frequency <em class="emphasis">E</em> in each row, or, standardizing by dividing each square by the expected number, the sum <span class="inlineequation" id="shafer-20121106-125753-165445"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0185" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>∕</mo><mi>E</mi><mo>.</mo></math></span> If we formulate the investigation as a test of hypotheses, the test is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-165461"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0186" display="block"><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The die is fair</mtext></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The die is </mtext><mi>n</mi><mi>o</mi><mi>t</mi><mtext> fair</mtext></mtd></mtr></mtable></math></span>
+    <div class="table block" id="fwk-shafer-ch11_s02_t01">
+        <p class="title"><span class="title-prefix">Table 11.8</span> Die Contingency Table</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Die Value</th>
+                    <th align="center">Assumed Distribution</th>
+                    <th align="center">Observed Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">1/6</td>
+                    <td align="center">9</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">1/6</td>
+                    <td align="center">15</td>
+                </tr>
+                <tr>
+                    <td align="center">3</td>
+                    <td align="center">1/6</td>
+                    <td align="center">9</td>
+                </tr>
+                <tr>
+                    <td align="center">4</td>
+                    <td align="center">1/6</td>
+                    <td align="center">8</td>
+                </tr>
+                <tr>
+                    <td align="center">5</td>
+                    <td align="center">1/6</td>
+                    <td align="center">6</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">1/6</td>
+                    <td align="center">13</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table block" id="fwk-shafer-ch11_s02_t02">
+        <p class="title"><span class="title-prefix">Table 11.9</span> Updated Die Contingency Table</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Die Value</th>
+                    <th align="center">Assumed Distribution</th>
+                    <th align="center">Observed Freq.</th>
+                    <th align="center">Expected Freq.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">1/6</td>
+                    <td align="center">9</td>
+                    <td align="center">10</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">1/6</td>
+                    <td align="center">15</td>
+                    <td align="center">10</td>
+                </tr>
+                <tr>
+                    <td align="center">3</td>
+                    <td align="center">1/6</td>
+                    <td align="center">9</td>
+                    <td align="center">10</td>
+                </tr>
+                <tr>
+                    <td align="center">4</td>
+                    <td align="center">1/6</td>
+                    <td align="center">8</td>
+                    <td align="center">10</td>
+                </tr>
+                <tr>
+                    <td align="center">5</td>
+                    <td align="center">1/6</td>
+                    <td align="center">6</td>
+                    <td align="center">10</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">1/6</td>
+                    <td align="center">13</td>
+                    <td align="center">10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para block" id="fwk-shafer-ch11_s02_p02">We would reject the null hypothesis that the die is fair only if the number <span class="inlineequation" id="shafer-20121106-125753-165477"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0187" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>∕</mo><mi>E</mi></math></span> is large, so the test is right-tailed. In this example the random variable <span class="inlineequation" id="shafer-20121106-125753-165493"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0188" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>∕</mo><mi>E</mi></math></span> has the chi-square distribution with five degrees of freedom. If we had decided at the outset to test at the 10% level of significance, the critical value defining the rejection region would be, reading from <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a>, <span class="inlineequation" id="shafer-20121106-125753-165510"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0189" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.10</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>9.236</mn></math></span>, so that the rejection region would be the interval <span class="inlineequation" id="shafer-20121106-125753-165525"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0190" display="inline"><mrow><mo>[</mo><mrow><mn>9.236</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> When we compute the value of the standardized test statistic using the numbers in the last two columns of <a class="xref" href="#fwk-shafer-ch11_s02_t02">Table 11.9 "Updated Die Contingency Table"</a>, we obtain</p>
+    <span class="informalequation block" id="shafer-20121106-125753-165542"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0191" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><mi mathvariant="normal">Σ</mi><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>E</mi></mrow></mfrac></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mn>0.1</mn><mo>+</mo><mn>2.5</mn><mo>+</mo><mn>0.1</mn><mo>+</mo><mn>0.4</mn><mo>+</mo><mn>1.6</mn><mo>+</mo><mn>0.9</mn></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mn>5.6</mn></mtd></mtr></mtable></math></span>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p03">Since 5.6 &lt; 9.236 the decision is not to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. See <a class="xref" href="#fwk-shafer-ch11_s02_f01">Figure 11.5 "Balanced Die"</a>. The data do not provide sufficient evidence, at the 10% level of significance, to conclude that the die is loaded.</p>
+    <div class="figure large small-height editable block" id="fwk-shafer-ch11_s02_f01">
+        <p class="title"><span class="title-prefix">Figure 11.5</span> Balanced Die</p>
+        <img src="section_15/3406a41dcf8b2ad498d3271e90a762c1.jpg">
+    </div>
+    <p class="para block" id="fwk-shafer-ch11_s02_p04">In the general situation we consider a discrete random variable that can take <em class="emphasis">I</em> different values, <span class="inlineequation" id="shafer-20121106-125753-165558"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0192" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>,</mo><msub><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>I</mi></mrow></msub></math></span>, for which the default assumption is that the probability distribution is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-165574"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0193" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr columnalign="center"><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="center"><mrow><msub><mi>x</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="center"><mo>…</mo></mtd><mtd columnalign="center"><mrow><msub><mi>x</mi><mi>I</mi></msub></mrow></mtd></mtr><mtr columnalign="center"><mtd columnalign="center"><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mtd><mtd columnalign="center"><mrow><msub><mi>p</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="center"><mrow><msub><mi>p</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="center"><mo>…</mo></mtd><mtd columnalign="center"><mrow><msub><mi>p</mi><mi>I</mi></msub></mrow></mtd></mtr></mtable></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p05">We wish to test the hypotheses</p>
+    <span class="informalequation block" id="shafer-20121106-125753-165596"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0194" display="block"><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The assumed probability distribution for </mtext><mi>X</mi><mtext> is valid</mtext></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The assumed probability distribution for </mtext><mi>X</mi><mtext> is </mtext><mi>n</mi><mi>o</mi><mi>t</mi><mtext> valid</mtext></mtd></mtr></mtable></math></span>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p06">We take a sample of size <em class="emphasis">n</em> and obtain a list of observed frequencies. This is shown in <a class="xref" href="#fwk-shafer-ch11_s02_t03">Table 11.10 "General Contingency Table"</a>. Based on the assumed probability distribution we also have a list of assumed frequencies, each of which is defined and computed by the formula</p>
+    <div class="callout block" id="fwk-shafer-ch11_s02_n02">
+        <span class="informalequation" id="shafer-20121106-125753-165612"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0195" display="block"><mrow><msub><mrow><mi>E</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mi>n</mi><mo>×</mo><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math></span>
+    </div>
+    <div class="table block" id="fwk-shafer-ch11_s02_t03">
+        <p class="title"><span class="title-prefix">Table 11.10</span> General Contingency Table</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Factor Levels</th>
+                    <th align="center">Assumed Distribution</th>
+                    <th align="center">Observed Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">1</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">O</em><sub class="subscript">1</sub>
+</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">2</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">O</em><sub class="subscript">2</sub>
+</td>
+                </tr>
+                <tr>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                </tr>
+                <tr>
+                    <td align="center"><em class="emphasis">I</em></td>
+                    <td align="center"><em class="emphasis">p<sub class="subscript">I</sub></em></td>
+                    <td align="center"><em class="emphasis">O<sub class="subscript">I</sub></em></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p07"><a class="xref" href="#fwk-shafer-ch11_s02_t03">Table 11.10 "General Contingency Table"</a> is updated to <a class="xref" href="#fwk-shafer-ch11_s02_t04">Table 11.11 "Updated General Contingency Table"</a> by adding the expected frequency for each value of <em class="emphasis">X</em>. To simplify the notation we drop indices for the observed and expected frequencies and represent <a class="xref" href="#fwk-shafer-ch11_s02_t04">Table 11.11 "Updated General Contingency Table"</a> by <a class="xref" href="#fwk-shafer-ch11_s02_t05">Table 11.12 "Simplified Updated General Contingency Table"</a>.</p>
+    <div class="table block" id="fwk-shafer-ch11_s02_t04">
+        <p class="title"><span class="title-prefix">Table 11.11</span> Updated General Contingency Table</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Factor Levels</th>
+                    <th align="center">Assumed Distribution</th>
+                    <th align="center">Observed Freq.</th>
+                    <th align="center">Expected Freq.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">1</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">O</em><sub class="subscript">1</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">E</em><sub class="subscript">1</sub>
+</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">2</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">O</em><sub class="subscript">2</sub>
+</td>
+                    <td align="center">
+<em class="emphasis">E</em><sub class="subscript">2</sub>
+</td>
+                </tr>
+                <tr>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                </tr>
+                <tr>
+                    <td align="center"><em class="emphasis">I</em></td>
+                    <td align="center"><em class="emphasis">p<sub class="subscript">I</sub></em></td>
+                    <td align="center"><em class="emphasis">O<sub class="subscript">I</sub></em></td>
+                    <td align="center"><em class="emphasis">E<sub class="subscript">I</sub></em></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table block" id="fwk-shafer-ch11_s02_t05">
+        <p class="title"><span class="title-prefix">Table 11.12</span> Simplified Updated General Contingency Table</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Factor Levels</th>
+                    <th align="center">Assumed Distribution</th>
+                    <th align="center">Observed Freq.</th>
+                    <th align="center">Expected Freq.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">1</sub>
+</td>
+                    <td align="center"><em class="emphasis">O</em></td>
+                    <td align="center"><em class="emphasis">E</em></td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">
+<em class="emphasis">p</em><sub class="subscript">2</sub>
+</td>
+                    <td align="center"><em class="emphasis">O</em></td>
+                    <td align="center"><em class="emphasis">E</em></td>
+                </tr>
+                <tr>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                </tr>
+                <tr>
+                    <td align="center"><em class="emphasis">I</em></td>
+                    <td align="center"><em class="emphasis">p<sub class="subscript">I</sub></em></td>
+                    <td align="center"><em class="emphasis">O</em></td>
+                    <td align="center"><em class="emphasis">E</em></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p08">Here is the test statistic for the general hypothesis based on <a class="xref" href="#fwk-shafer-ch11_s02_t05">Table 11.12 "Simplified Updated General Contingency Table"</a>, together with the conditions that it follow a chi-square distribution.</p>
+    <div class="callout block" id="fwk-shafer-ch11_s02_n03">
+        <h3 class="title">Test Statistic for Testing Goodness of Fit to a Discrete Probability Distribution</h3>
+        <span class="informalequation" id="shafer-20121106-125753-165629"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0196" display="block"><mrow><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mi mathvariant="normal">Σ</mi><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>E</mi></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch11_s02_p09">where the sum is over all the rows of the table (one for each value of <em class="emphasis">X</em>).</p>
+        <p class="para" id="fwk-shafer-ch11_s02_p10">If</p>
+        <ol class="orderedlist" id="fwk-shafer-ch11_s02_o02" numeration="arabic">
+            <li>the true probability distribution of <em class="emphasis">X</em> is as assumed, and</li>
+            <li>the observed count <em class="emphasis">O</em> of each cell in <a class="xref" href="#fwk-shafer-ch11_s02_t05">Table 11.12 "Simplified Updated General Contingency Table"</a> is at least 5,</li>
+        </ol>
+        <p class="para" id="fwk-shafer-ch11_s02_p11">then <span class="inlineequation" id="shafer-20121106-125753-165645"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0197" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> approximately follows a chi-square distribution with <span class="inlineequation" id="shafer-20121106-125753-165661"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0198" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>I</mi><mtext>−</mtext><mn>1</mn></math></span> degrees of freedom.</p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch11_s02_p12">The test is known as a <em class="emphasis">goodness-of-fit</em> <span class="inlineequation" id="shafer-20121106-125753-165677"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0199" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> test since it tests the null hypothesis that the sample fits the assumed probability distribution well. It is always right-tailed, since deviation from the assumed probability distribution corresponds to large values of <span class="inlineequation" id="shafer-20121106-125753-165693"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0200" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span></p>
+    <p class="para editable block" id="fwk-shafer-ch11_s02_p13">Testing is done using either of the usual five-step procedures.</p>
+    <div class="exercises block" id="fwk-shafer-ch11_s02_n04">
+        <h3 class="title">Example 2</h3>
+        <p class="para" id="fwk-shafer-ch11_s02_p14"><a class="xref" href="#fwk-shafer-ch11_s02_t06">Table 11.13 "Ethnic Groups in the Census Year"</a> shows the distribution of various ethnic groups in the population of a particular state based on a decennial U.S. census. Five years later a random sample of 2,500 residents of the state was taken, with the results given in <a class="xref" href="#fwk-shafer-ch11_s02_t07">Table 11.14 "Sample Data Five Years After the Census Year"</a> (along with the probability distribution from the census year). Test, at the 1% level of significance, whether there is sufficient evidence in the sample to conclude that the distribution of ethnic groups in this state five years after the census had changed from that in the census year.</p>
+        <div class="table" id="fwk-shafer-ch11_s02_t06">
+            <p class="title"><span class="title-prefix">Table 11.13</span> Ethnic Groups in the Census Year</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="center">Ethnicity</th>
+                        <th align="center">White</th>
+                        <th align="center">Black</th>
+                        <th align="center">Amer.-Indian</th>
+                        <th align="center">Hispanic</th>
+                        <th align="center">Asian</th>
+                        <th align="center">Others</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">Proportion</td>
+                        <td align="center">0.743</td>
+                        <td align="center">0.216</td>
+                        <td align="center">0.012</td>
+                        <td align="center">0.012</td>
+                        <td align="center">0.008</td>
+                        <td align="center">0.009</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table" id="fwk-shafer-ch11_s02_t07">
+            <p class="title"><span class="title-prefix">Table 11.14</span> Sample Data Five Years After the Census Year</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="center">Ethnicity</th>
+                        <th align="center">Assumed Distribution</th>
+                        <th align="center">Observed Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">White</td>
+                        <td align="center">0.743</td>
+                        <td align="center">1732</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Black</td>
+                        <td align="center">0.216</td>
+                        <td align="center">538</td>
+                    </tr>
+                    <tr>
+                        <td align="center">American-Indian</td>
+                        <td align="center">0.012</td>
+                        <td align="center">32</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Hispanic</td>
+                        <td align="center">0.012</td>
+                        <td align="center">42</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Asian</td>
+                        <td align="center">0.008</td>
+                        <td align="center">133</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Others</td>
+                        <td align="center">0.009</td>
+                        <td align="center">23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch11_s02_p15">We test using the critical value approach.</p>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s02_l01" mark="none">
+            <li>
+                <p class="para">Step 1. The hypotheses of interest in this case can be expressed as</p>
+                <span class="informalequation" id="shafer-20121106-125753-165709"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0201" display="block"><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The distribution of ethnic groups has not changed</mtext></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>The distribution of ethnic groups </mtext><mi>h</mi><mi>a</mi><mi>s</mi><mtext> changed</mtext></mtd></mtr></mtable></math></span>
+            </li>
+            <li>Step 2. The distribution is chi-square.</li>
+            <li>
+                <p class="para">Step 3. To compute the value of the test statistic we must first compute the expected number for each row of <a class="xref" href="#fwk-shafer-ch11_s02_t07">Table 11.14 "Sample Data Five Years After the Census Year"</a>. Since <em class="emphasis">n</em> = 2500, using the formula <span class="inlineequation" id="shafer-20121106-125753-165725"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0202" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mi>n</mi><mo>×</mo><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub></math></span> and the values of <em class="emphasis">p<sub class="subscript">i</sub></em> from either <a class="xref" href="#fwk-shafer-ch11_s02_t06">Table 11.13 "Ethnic Groups in the Census Year"</a> or <a class="xref" href="#fwk-shafer-ch11_s02_t07">Table 11.14 "Sample Data Five Years After the Census Year"</a>,</p>
+                <span class="informalequation" id="shafer-20121106-125753-165748"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0203" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>1</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.743</mn><mo>=</mo><mn>1857.5</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.216</mn><mo>=</mo><mn>540</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>3</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.012</mn><mo>=</mo><mn>30</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>4</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.012</mn><mo>=</mo><mn>30</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>5</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.008</mn><mo>=</mo><mn>20</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mi>E</mi></mrow><mrow><mn>6</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2500</mn><mo>×</mo><mn>0.009</mn><mo>=</mo><mn>22.5</mn></mtd></mtr></mtable></math></span>
+                <p class="para"><a class="xref" href="#fwk-shafer-ch11_s02_t07">Table 11.14 "Sample Data Five Years After the Census Year"</a> is updated to <a class="xref" href="#fwk-shafer-ch11_s02_t08">Table 11.15 "Observed and Expected Frequencies Five Years After the Census Year"</a>.</p>
+                <div class="table" id="fwk-shafer-ch11_s02_t08">
+                <p class="title"><span class="title-prefix">Table 11.15</span> Observed and Expected Frequencies Five Years After the Census Year</p>
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th align="center">Ethnicity</th>
+                                <th align="center">Assumed Dist.</th>
+                                <th align="center">Observed Freq.</th>
+                                <th align="center">Expected Freq.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">White</td>
+                                <td align="center">0.743</td>
+                                <td align="center">1732</td>
+                                <td align="center">1857.5</td>
+                            </tr>
+                            <tr>
+                                <td align="center">Black</td>
+                                <td align="center">0.216</td>
+                                <td align="center">538</td>
+                                <td align="center">540</td>
+                            </tr>
+                            <tr>
+                                <td align="center">American-Indian</td>
+                                <td align="center">0.012</td>
+                                <td align="center">32</td>
+                                <td align="center">30</td>
+                            </tr>
+                            <tr>
+                                <td align="center">Hispanic</td>
+                                <td align="center">0.012</td>
+                                <td align="center">42</td>
+                                <td align="center">30</td>
+                            </tr>
+                            <tr>
+                                <td align="center">Asian</td>
+                                <td align="center">0.008</td>
+                                <td align="center">133</td>
+                                <td align="center">20</td>
+                            </tr>
+                            <tr>
+                                <td align="center">Others</td>
+                                <td align="center">0.009</td>
+                                <td align="center">23</td>
+                                <td align="center">22.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="para">The value of the test statistic is</p>
+                <span class="informalequation" id="shafer-20121106-125753-165764"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0204" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi mathvariant="normal">Σ</mi><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>E</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>1732</mn><mo>−</mo><mn>1857.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>1857.5</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>538</mn><mo>−</mo><mn>540</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>540</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>32</mn><mo>−</mo><mn>30</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>30</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>42</mn><mo>−</mo><mn>30</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>30</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd></mtd><mtd columnalign="right"><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>133</mn><mo>−</mo><mn>20</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>20</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>23</mn><mo>−</mo><mn>22.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>22.5</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>651.881</mn></mtd></mtr></mtable></math></span>
+            </li>
+            <li>
+                <p class="para">Since the random variable takes six values, <em class="emphasis">I</em> = 6. Thus the test statistic follows the chi-square distribution with <span class="inlineequation" id="shafer-20121106-125753-165780"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0205" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>5</mn></math></span> degrees of freedom.</p>
+                <p class="para">Since the test is right-tailed, the critical value is <span class="inlineequation" id="shafer-20121106-125753-165797"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0206" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>.</mo></math></span> Reading from <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a>, <span class="inlineequation" id="shafer-20121106-125753-165813"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0207" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>15.086</mn></math></span>, so the rejection region is <span class="inlineequation" id="shafer-20121106-125753-165828"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0208" display="inline"><mrow><mo>[</mo><mrow><mn>15.086</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+            </li>
+            <li>Since 651.881 &gt; 15.086 the decision is to reject the null hypothesis. See <a class="xref" href="#fwk-shafer-ch11_s02_f02">Figure 11.6</a>. The data provide sufficient evidence, at the 1% level of significance, to conclude that the ethnic distribution in this state has changed in the five years since the U.S. census.</li>
+        </ul>
+        <div class="figure medium" id="fwk-shafer-ch11_s02_f02">
+            <p class="title"><span class="title-prefix">Figure 11.6</span> <a class="xref" href="#fwk-shafer-ch11_s02_n04" xrefstyle="select: title">Note 11.15 "Example 2"</a></p>
+            <img src="section_15/85a1393f4233c942c36e25df39e0b384.jpg">
+        </div>
+    </div>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch11_s02_n05">
+        <h3 class="title">Key Takeaway</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s02_l02" mark="bullet">
+            <li>The <span class="margin_term"><a class="glossterm">chi-square goodness-of-fit test</a><span class="glossdef">A test based on a chi-square statistic to check whether a sample is taken from a population with a hypothesized probability distribution.</span></span> can be used to evaluate the hypothesis that a sample is taken from a population with an assumed specific probability distribution.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch11_s02_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s02_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p01">A data sample is sorted into five categories with an assumed probability distribution.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx01">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Factor Levels</th>
+                                    <th align="center">Assumed Distribution</th>
+                                    <th align="center">Observed Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">1</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165845"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0209" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0.1</mn></math></span></td>
+                                    <td align="center">10</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165861"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0210" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>0.4</mn></math></span></td>
+                                    <td align="center">35</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165884"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0211" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>0.4</mn></math></span></td>
+                                    <td align="center">45</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">4</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165901"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0212" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>4</mn></mrow></msub><mo>=</mo><mn>0.1</mn></math></span></td>
+                                    <td align="center">10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s02_qs01_o01" numeration="loweralpha">
+                        <li>Find the size <em class="emphasis">n</em> of the sample.</li>
+                        <li>Find the expected number <em class="emphasis">E</em> of observations for each level, if the sampled population has a probability distribution as assumed (that is, just use the formula <span class="inlineequation" id="shafer-20121106-125753-165918"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0213" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mi>n</mi><mo>×</mo><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub></math></span>).</li>
+                        <li>Find the chi-square test statistic <span class="inlineequation" id="shafer-20121106-125753-165934"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0214" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span>
+</li>
+                        <li>Find the number of degrees of freedom of the chi-square test statistic.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p02">A data sample is sorted into five categories with an assumed probability distribution.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx02">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Factor Levels</th>
+                                    <th align="center">Assumed Distribution</th>
+                                    <th align="center">Observed Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">1</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165982"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0217" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0.3</mn></math></span></td>
+                                    <td align="center">23</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-165999"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0218" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>0.3</mn></math></span></td>
+                                    <td align="center">30</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-166022"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0219" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>0.2</mn></math></span></td>
+                                    <td align="center">19</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">4</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-166038"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0220" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>4</mn></mrow></msub><mo>=</mo><mn>0.1</mn></math></span></td>
+                                    <td align="center">8</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">5</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-166055"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0221" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>5</mn></mrow></msub><mo>=</mo><mn>0.1</mn></math></span></td>
+                                    <td align="center">10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s02_qs01_o03" numeration="loweralpha">
+                        <li>Find the size <em class="emphasis">n</em> of the sample.</li>
+                        <li>Find the expected number <em class="emphasis">E</em> of observations for each level, if the sampled population has a probability distribution as assumed (that is, just use the formula <span class="inlineequation" id="shafer-20121106-125753-166071"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0222" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>=</mo><mi>n</mi><mo>×</mo><msub><mrow><mi>p</mi></mrow><mrow><mi>i</mi></mrow></msub></math></span>).</li>
+                        <li>Find the chi-square test statistic <span class="inlineequation" id="shafer-20121106-125753-166088"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0223" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span>
+</li>
+                        <li>Find the number of degrees of freedom of the chi-square test statistic.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s02_qs01_qd02" start="3">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p03">Retailers of collectible postage stamps often buy their stamps in large quantities by weight at auctions. The prices the retailers are willing to pay depend on how old the postage stamps are. Many collectible postage stamps at auctions are described by the proportions of stamps issued at various periods in the past. Generally the older the stamps the higher the value. At one particular auction, a lot of collectible stamps is advertised to have the age distribution given in the table provided. A retail buyer took a sample of 73 stamps from the lot and sorted them by age. The results are given in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that the age distribution of the lot is different from what was claimed by the seller.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx03">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Year</th>
+                                    <th align="center">Claimed Distribution</th>
+                                    <th align="center">Observed Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">Before 1940</td>
+                                    <td align="center">0.10</td>
+                                    <td align="center">6</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">1940 to 1959</td>
+                                    <td align="center">0.25</td>
+                                    <td align="center">15</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">1960 to 1979</td>
+                                    <td align="center">0.45</td>
+                                    <td align="center">30</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">After 1979</td>
+                                    <td align="center">0.20</td>
+                                    <td align="center">22</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p05">The litter size of Bengal tigers is typically two or three cubs, but it can vary between one and four. Based on long-term observations, the litter size of Bengal tigers in the wild has the distribution given in the table provided. A zoologist believes that Bengal tigers in captivity tend to have different (possibly smaller) litter sizes from those in the wild. To verify this belief, the zoologist searched all data sources and found 316 litter size records of Bengal tigers in captivity. The results are given in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that the distribution of litter sizes in captivity differs from that in the wild.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx04">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Litter Size</th>
+                                    <th align="center">Wild Litter Distribution</th>
+                                    <th align="center">Observed Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">1</td>
+                                    <td align="center">0.11</td>
+                                    <td align="center">41</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2</td>
+                                    <td align="center">0.69</td>
+                                    <td align="center">243</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3</td>
+                                    <td align="center">0.18</td>
+                                    <td align="center">27</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">4</td>
+                                    <td align="center">0.02</td>
+                                    <td align="center">5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p07">An online shoe retailer sells men’s shoes in sizes 8 to 13. In the past orders for the different shoe sizes have followed the distribution given in the table provided. The management believes that recent marketing efforts may have expanded their customer base and, as a result, there may be a shift in the size distribution for future orders. To have a better understanding of its future sales, the shoe seller examined 1,040 sales records of recent orders and noted the sizes of the shoes ordered. The results are given in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to conclude that the shoe size distribution of future sales will differ from the historic one.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx05">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Shoe Size</th>
+                                    <th align="center">Past Size Distribution</th>
+                                    <th align="center">Recent Size Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">8.0</td>
+                                    <td align="center">0.03</td>
+                                    <td align="center">25</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">8.5</td>
+                                    <td align="center">0.06</td>
+                                    <td align="center">43</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">9.0</td>
+                                    <td align="center">0.09</td>
+                                    <td align="center">88</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">9.5</td>
+                                    <td align="center">0.19</td>
+                                    <td align="center">221</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">10.0</td>
+                                    <td align="center">0.23</td>
+                                    <td align="center">272</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">10.5</td>
+                                    <td align="center">0.14</td>
+                                    <td align="center">150</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">11.0</td>
+                                    <td align="center">0.10</td>
+                                    <td align="center">107</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">11.5</td>
+                                    <td align="center">0.06</td>
+                                    <td align="center">51</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">12.0</td>
+                                    <td align="center">0.05</td>
+                                    <td align="center">37</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">12.5</td>
+                                    <td align="center">0.03</td>
+                                    <td align="center">35</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">13.0</td>
+                                    <td align="center">0.02</td>
+                                    <td align="center">11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p09">An online shoe retailer sells women’s shoes in sizes 5 to 10. In the past orders for the different shoe sizes have followed the distribution given in the table provided. The management believes that recent marketing efforts may have expanded their customer base and, as a result, there may be a shift in the size distribution for future orders. To have a better understanding of its future sales, the shoe seller examined 1,174 sales records of recent orders and noted the sizes of the shoes ordered. The results are given in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to conclude that the shoe size distribution of future sales will differ from the historic one.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx06">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Shoe Size</th>
+                                    <th align="center">Past Size Distribution</th>
+                                    <th align="center">Recent Size Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">5.0</td>
+                                    <td align="center">0.02</td>
+                                    <td align="center">20</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">5.5</td>
+                                    <td align="center">0.03</td>
+                                    <td align="center">23</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">6.0</td>
+                                    <td align="center">0.07</td>
+                                    <td align="center">88</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">6.5</td>
+                                    <td align="center">0.08</td>
+                                    <td align="center">90</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">7.0</td>
+                                    <td align="center">0.20</td>
+                                    <td align="center">222</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">7.5</td>
+                                    <td align="center">0.20</td>
+                                    <td align="center">258</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">8.0</td>
+                                    <td align="center">0.15</td>
+                                    <td align="center">177</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">8.5</td>
+                                    <td align="center">0.11</td>
+                                    <td align="center">121</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">9.0</td>
+                                    <td align="center">0.08</td>
+                                    <td align="center">91</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">9.5</td>
+                                    <td align="center">0.04</td>
+                                    <td align="center">53</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">10.0</td>
+                                    <td align="center">0.02</td>
+                                    <td align="center">31</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p11">A chess opening is a sequence of moves at the beginning of a chess game. There are many well-studied named openings in chess literature. French Defense is one of the most popular openings for black, although it is considered a relatively weak opening since it gives black probability 0.344 of winning, probability 0.405 of losing, and probability 0.251 of drawing. A chess master believes that he has discovered a new variation of French Defense that may alter the probability distribution of the outcome of the game. In his many Internet chess games in the last two years, he was able to apply the new variation in 77 games. The wins, losses, and draws in the 77 games are given in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that the newly discovered variation of French Defense alters the probability distribution of the result of the game.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx07">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Result for Black</th>
+                                    <th align="center">Probability Distribution</th>
+                                    <th align="center">New Variation Wins</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">Win</td>
+                                    <td align="center">0.344</td>
+                                    <td align="center">31</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Loss</td>
+                                    <td align="center">0.405</td>
+                                    <td align="center">25</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Draw</td>
+                                    <td align="center">0.251</td>
+                                    <td align="center">21</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p13">The Department of Parks and Wildlife stocks a large lake with fish every six years. It is determined that a healthy diversity of fish in the lake should consist of 10% largemouth bass, 15% smallmouth bass, 10% striped bass, 10% trout, and 20% catfish. Therefore each time the lake is stocked, the fish population in the lake is restored to maintain that particular distribution. Every three years, the department conducts a study to see whether the distribution of the fish in the lake has shifted away from the target proportions. In one particular year, a research group from the department observed a sample of 292 fish from the lake with the results given in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that the fish population distribution has shifted since the last stocking.</p>
+                    <div class="informaltable" id="fwk-shafer-ch11_s02_qs01_tx08">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Fish</th>
+                                    <th align="center">Target Distribution</th>
+                                    <th align="center">Fish in Sample</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">Largemouth Bass</td>
+                                    <td align="center">0.10</td>
+                                    <td align="center">14</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Smallmouth Bass</td>
+                                    <td align="center">0.15</td>
+                                    <td align="center">49</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Striped Bass</td>
+                                    <td align="center">0.10</td>
+                                    <td align="center">21</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Trout</td>
+                                    <td align="center">0.10</td>
+                                    <td align="center">22</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Catfish</td>
+                                    <td align="center">0.20</td>
+                                    <td align="center">75</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Other</td>
+                                    <td align="center">0.35</td>
+                                    <td align="center">111</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s02_qs01_qd03" start="9">
+            <h3 class="title">Large Data Set Exercise</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd03_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p15">Large Data Set 4 records the result of 500 tosses of six-sided die. Test, at the 10% level of significance, whether there is sufficient evidence in the data to conclude that the die is not “fair” (or “balanced”), that is, that the probability distribution differs from probability 1/6 for each of the six faces on the die.</p>
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p16"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data4.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data4.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch11_s02_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s02_qs01_o02_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 100,</li>
+                        <li>
+<em class="emphasis">E</em> = 10, <em class="emphasis">E</em> = 40, <em class="emphasis">E</em> = 40, <em class="emphasis">E</em> = 10;</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-165950_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0215" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>1.25</mn></math></span>,</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-165966_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0216" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="3">
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p04_ans"><span class="inlineequation" id="shafer-20121106-125753-166137_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0226" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>4.8082</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-166161_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0227" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.05</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>7.81</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p08_ans"><span class="inlineequation" id="shafer-20121106-125753-166210_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0230" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>26.5765</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-166227_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0231" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>23.21</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p12_ans"><span class="inlineequation" id="shafer-20121106-125753-166276_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0234" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>2.1401</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-166298_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0235" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.05</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>5.99</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd02_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="9">
+            <li class="qandaentry" id="fwk-shafer-ch11_s02_qs01_qd03_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s02_qs01_p17_ans"><span class="inlineequation" id="shafer-20121106-125753-166348_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0238" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>2.944</mn><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-166365_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0239" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>5</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-166380_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0240" display="inline"><mrow><mo>[</mo><mrow><mn>9.236</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Fail to reject <em class="emphasis">H</em><sub class="subscript">0</sub> of balance.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s15-01-chi-square-tests-for-independe.html"><img src="shared/images/batch-left.png"></a> <a href="s15-01-chi-square-tests-for-independe.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s15-03-f-tests-for-equality-of-two-va.html">Next Section</a> <a href="s15-03-f-tests-for-equality-of-two-va.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Sampling Distribution of the Sample Mean</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-01-the-mean-and-standard-deviatio.html"><img src="shared/images/batch-left.png"></a> <a href="s10-01-the-mean-and-standard-deviatio.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-03-the-sample-proportion.html">Next Section</a> <a href="s10-03-the-sample-proportion.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch06_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">6.2</span> The Sampling Distribution of the Sample Mean</h2>
+    <div class="learning_objectives block" id="fwk-shafer-ch06_s02_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s02_o01" numeration="arabic">
+            <li>To learn what the sampling distribution of <span class="inlineequation" id="shafer-20121106-125753-108371"><math xml:id="fwk-shafer-ch06-m0052" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is when the sample size is large.</li>
+            <li>To learn what the sampling distribution of <span class="inlineequation" id="shafer-20121106-125753-108388"><math xml:id="fwk-shafer-ch06-m0053" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is when the population is normal.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch06_s02_s01" version="5.0" lang="en">
+        <h2 class="title editable block">The Central Limit Theorem</h2>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p01">In <a class="xref" href="fwk-shafer-ch06_s01#fwk-shafer-ch06_s01_n02" xrefstyle="select: title">Note 6.5 "Example 1"</a> in <a class="xref" href="fwk-shafer-ch06_s01#fwk-shafer-ch06_s01">Section 6.1 "The Mean and Standard Deviation of the Sample Mean"</a> we constructed the probability distribution of the sample mean for samples of size two drawn from the population of four rowers. The probability distribution is:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-108415"><math xml:id="fwk-shafer-ch06-m0054" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none" rowlines="solid"><mtr><mtd><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd><mtd><mrow><mn>154</mn></mrow></mtd><mtd><mrow><mn>156</mn></mrow></mtd><mtd><mrow><mn>158</mn></mrow></mtd><mtd><mrow><mn>160</mn></mrow></mtd><mtd><mrow><mn>162</mn></mrow></mtd><mtd><mrow><mn>164</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p02"><a class="xref" href="#fwk-shafer-ch06_s02_s01_f01">Figure 6.1 "Distribution of a Population and a Sample Mean"</a> shows a side-by-side comparison of a histogram for the original population and a histogram for this distribution. Whereas the distribution of the population is uniform, the sampling distribution of the mean has a shape approaching the shape of the familiar bell curve. This phenomenon of the sampling distribution of the mean taking on a bell shape even though the population distribution is not bell-shaped happens in general. Here is a somewhat more realistic example.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch06_s02_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 6.1</span> Distribution of a Population and a Sample Mean</p>
+            <img src="section_10/c3b2aca7c7131e34c962382d64253af6.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p03">Suppose we take samples of size 1, 5, 10, or 20 from a population that consists entirely of the numbers 0 and 1, half the population 0, half 1, so that the population mean is 0.5. The sampling distributions are:</p>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p04"><em class="emphasis">n</em> = 1:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-108431"><math xml:id="fwk-shafer-ch06-m0055" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p05"><em class="emphasis">n</em> = 5:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-108502"><math xml:id="fwk-shafer-ch06-m0056" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>0.2</mn></mrow></mtd><mtd><mrow><mn>0.4</mn></mrow></mtd><mtd><mrow><mn>0.6</mn></mrow></mtd><mtd><mrow><mn>0.8</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mn>0.03</mn></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.31</mn></mrow></mtd><mtd><mrow><mn>0.31</mn></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.03</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p06"><em class="emphasis">n</em> = 10:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-108520"><math xml:id="fwk-shafer-ch06-m0057" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>0.1</mn></mrow></mtd><mtd><mrow><mn>0.2</mn></mrow></mtd><mtd><mrow><mn>0.3</mn></mrow></mtd><mtd><mrow><mn>0.4</mn></mrow></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd><mtd><mrow><mn>0.6</mn></mrow></mtd><mtd><mrow><mn>0.7</mn></mrow></mtd><mtd><mrow><mn>0.8</mn></mrow></mtd><mtd><mrow><mn>0.9</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.01</mn></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd><mtd><mrow><mn>0.12</mn></mrow></mtd><mtd><mrow><mn>0.21</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.21</mn></mrow></mtd><mtd><mrow><mn>0.12</mn></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd><mtd><mrow><mn>0.01</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p07"><em class="emphasis">n</em> = 20:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-108543"><math xml:id="fwk-shafer-ch06-m0058" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>0.05</mn></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd><mtd><mrow><mn>0.15</mn></mrow></mtd><mtd><mrow><mn>0.20</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.30</mn></mrow></mtd><mtd><mrow><mn>0.35</mn></mrow></mtd><mtd><mrow><mn>0.40</mn></mrow></mtd><mtd><mrow><mn>0.45</mn></mrow></mtd><mtd><mrow><mn>0.50</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.01</mn></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd><mtd><mrow><mn>0.07</mn></mrow></mtd><mtd><mrow><mn>0.12</mn></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.18</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <span class="informalequation block" id="shafer-20121106-125753-108559"><math xml:id="fwk-shafer-ch06-m0059" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mrow><mn>0.55</mn></mrow></mtd><mtd><mrow><mn>0.60</mn></mrow></mtd><mtd><mrow><mn>0.65</mn></mrow></mtd><mtd><mrow><mn>0.70</mn></mrow></mtd><mtd><mrow><mn>0.75</mn></mrow></mtd><mtd><mrow><mn>0.80</mn></mrow></mtd><mtd><mrow><mn>0.85</mn></mrow></mtd><mtd><mrow><mn>0.90</mn></mrow></mtd><mtd><mrow><mn>0.95</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.12</mn></mrow></mtd><mtd><mrow><mn>0.07</mn></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd><mtd><mrow><mn>0.01</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd><mtd><mrow><mn>0.00</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p08">Histograms illustrating these distributions are shown in <a class="xref" href="#fwk-shafer-ch06_s02_s01_f02">Figure 6.2 "Distributions of the Sample Mean"</a>.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch06_s02_s01_f02">
+            <p class="title"><span class="title-prefix">Figure 6.2</span> Distributions of the Sample Mean</p>
+            <img src="section_10/1137490f079c63b40d08ff8df24a962b.jpg">
+        </div>
+        <p class="para block" id="fwk-shafer-ch06_s02_s01_p09">As <em class="emphasis">n</em> increases the sampling distribution of <span class="inlineequation" id="shafer-20121106-125753-108575"><math xml:id="fwk-shafer-ch06-m0060" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> evolves in an interesting way: the probabilities on the lower and the upper ends shrink and the probabilities in the middle become larger in relation to them. If we were to continue to increase <em class="emphasis">n</em> then the shape of the sampling distribution would become smoother and more bell-shaped.</p>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p10">What we are seeing in these examples does not depend on the particular population distributions involved. In general, one may start with any distribution and the sampling distribution of the sample mean will increasingly resemble the bell-shaped normal curve as the sample size increases. This is the content of the Central Limit Theorem.</p>
+        <div class="callout block" id="fwk-shafer-ch06_s02_s01_n01">
+            <h3 class="title">The Central Limit Theorem</h3>
+            <p class="para" id="fwk-shafer-ch06_s02_s01_p11">For samples of size 30 or more, the sample mean is approximately normally distributed, with mean <span class="inlineequation" id="shafer-20121106-125753-108591"><math xml:id="fwk-shafer-ch06-m0061" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-108613"><math xml:id="fwk-shafer-ch06-m0062" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></math></span>, where <em class="emphasis">n</em> is the sample size. The larger the sample size, the better the approximation.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p12">The Central Limit Theorem is illustrated for several common population distributions in <a class="xref" href="#fwk-shafer-ch06_s02_s01_f03">Figure 6.3 "Distribution of Populations and Sample Means"</a>.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch06_s02_s01_f03">
+            <p class="title"><span class="title-prefix">Figure 6.3</span> Distribution of Populations and Sample Means</p>
+            <img src="section_10/17fa70bfc1cbbc6d6476b9f45c9e9d07.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p13">The dashed vertical lines in the figures locate the population mean. Regardless of the distribution of the population, as the sample size is increased the shape of the sampling distribution of the sample mean becomes increasingly bell-shaped, centered on the population mean. Typically by the time the sample size is 30 the distribution of the sample mean is practically the same as a normal distribution.</p>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s01_p14">The importance of the Central Limit Theorem is that it allows us to make probability statements about the sample mean, specifically in relation to its value in comparison to the population mean, as we will see in the examples. But to use the result properly we must first realize that there are two separate random variables (and therefore two probability distributions) at play:</p>
+        <ol class="orderedlist block" id="fwk-shafer-ch06_s02_s01_o01" numeration="arabic">
+            <li>
+<em class="emphasis">X</em>, the measurement of a single element selected at random from the population; the distribution of <em class="emphasis">X</em> is the distribution of the population, with mean the population mean <em class="emphasis">μ</em> and standard deviation the population standard deviation <em class="emphasis">σ</em>;</li>
+            <li>
+<span class="inlineequation" id="shafer-20121106-125753-108630"><math xml:id="fwk-shafer-ch06-m0063" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, the mean of the measurements in a sample of size <em class="emphasis">n</em>; the distribution of <span class="inlineequation" id="shafer-20121106-125753-108646"><math xml:id="fwk-shafer-ch06-m0064" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is its sampling distribution, with mean <span class="inlineequation" id="shafer-20121106-125753-108662"><math xml:id="fwk-shafer-ch06-m0065" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-108678"><math xml:id="fwk-shafer-ch06-m0066" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>.</mo></math></span>
+</li>
+        </ol>
+        <div class="exercises block" id="fwk-shafer-ch06_s02_s01_n02">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch06_s02_s01_p15">Let <span class="inlineequation" id="shafer-20121106-125753-108694"><math xml:id="fwk-shafer-ch06-m0067" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> be the mean of a random sample of size 50 drawn from a population with mean 112 and standard deviation 40.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch06_s02_s01_o02" numeration="loweralpha">
+                <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-108710"><math xml:id="fwk-shafer-ch06-m0068" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span>
+</li>
+                <li>Find the probability that <span class="inlineequation" id="shafer-20121106-125753-108730"><math xml:id="fwk-shafer-ch06-m0069" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> assumes a value between 110 and 114.</li>
+                <li>Find the probability that <span class="inlineequation" id="shafer-20121106-125753-108754"><math xml:id="fwk-shafer-ch06-m0070" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> assumes a value greater than 113.</li>
+            </ol>
+            <p class="simpara">Solution</p>
+            <ol class="orderedlist" id="fwk-shafer-ch06_s02_s01_o03" numeration="loweralpha">
+                <li>
+                    <p class="para">By the formulas in the previous section</p>
+                    <span class="informalequation" id="shafer-20121106-125753-108770"><math xml:id="fwk-shafer-ch06-m0071" display="block"><mrow><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>112</mn><mstyle><mtext> </mtext><mtext>and</mtext></mstyle><mtext> </mtext><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mfrac><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>40</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>50</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mn>5.65685</mn></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Since the sample size is at least 30, the Central Limit Theorem applies: <span class="inlineequation" id="shafer-20121106-125753-108786"><math xml:id="fwk-shafer-ch06-m0072" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is approximately normally distributed. We compute probabilities using <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> in the usual way, just being careful to use <span class="inlineequation" id="shafer-20121106-125753-108802"><math xml:id="fwk-shafer-ch06-m0073" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> and not <em class="emphasis">σ</em> when we standardize:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-108818"><math xml:id="fwk-shafer-ch06-m0074" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mn>110</mn><mo>&lt;</mo><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&lt;</mo><mn>114</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>110</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>114</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>110</mn><mo>−</mo><mn>112</mn></mrow><mrow><mn>5.65685</mn></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>114</mn><mo>−</mo><mn>112</mn></mrow><mrow><mn>5.65685</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>0.35</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>0.35</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.6368</mn><mo>−</mo><mn>0.3632</mn><mo>=</mo><mn>0.2736</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Similarly</p>
+                    <span class="informalequation" id="shafer-20121106-125753-108834"><math xml:id="fwk-shafer-ch06-m0075" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&gt;</mo><mn>113</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mfrac><mrow><mn>113</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mfrac><mrow><mn>113</mn><mo>−</mo><mn>112</mn></mrow><mrow><mn>5.65685</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mn>0.18</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mo>(</mo><mi>Z</mi><mo>&lt;</mo><mn>0.18</mn><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.5714</mn><mo>=</mo><mn>0.4286</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+            </ol>
+        </div>
+        <p class="para block" id="fwk-shafer-ch06_s02_s01_p16">Note that if in <a class="xref" href="#fwk-shafer-ch06_s02_s01_n02" xrefstyle="select: title">Note 6.11 "Example 3"</a> we had been asked to compute the probability that the value of a single randomly selected element of the population exceeds 113, that is, to compute the number <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 113), we would not have been able to do so, since we do not know the distribution of <em class="emphasis">X</em>, but only that its mean is 112 and its standard deviation is 40. By contrast we could compute <span class="inlineequation" id="shafer-20121106-125753-108850"><math xml:id="fwk-shafer-ch06-m0076" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&gt;</mo><mn>113</mn></mrow><mo>)</mo></mrow></math></span> even without complete knowledge of the distribution of <em class="emphasis">X</em> because the Central Limit Theorem guarantees that <span class="inlineequation" id="shafer-20121106-125753-108866"><math xml:id="fwk-shafer-ch06-m0077" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is approximately normal.</p>
+        <div class="exercises block" id="fwk-shafer-ch06_s02_s01_n03">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-shafer-ch06_s02_s01_p17">The numerical population of grade point averages at a college has mean 2.61 and standard deviation 0.5. If a random sample of size 100 is taken from the population, what is the probability that the sample mean will be between 2.51 and 2.71?</p>
+            <p class="simpara">Solution</p>
+            <p class="para" id="fwk-shafer-ch06_s02_s01_p18">The sample mean <span class="inlineequation" id="shafer-20121106-125753-108882"><math xml:id="fwk-shafer-ch06-m0078" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> has mean <span class="inlineequation" id="shafer-20121106-125753-108905"><math xml:id="fwk-shafer-ch06-m0079" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>2.61</mn></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-108921"><math xml:id="fwk-shafer-ch06-m0080" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>=</mo><mn>0.5</mn><mo>/</mo><mn>10</mn><mo>=</mo><mn>0.05</mn></math></span>, so</p>
+            <span class="informalequation" id="shafer-20121106-125753-108938"><math xml:id="fwk-shafer-ch06-m0081" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mn>2.51</mn><mo>&lt;</mo><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&lt;</mo><mn>2.71</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>2.51</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>2.71</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>2.51</mn><mo>−</mo><mn>2.61</mn></mrow><mrow><mn>0.05</mn></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>2.71</mn><mo>−</mo><mn>2.61</mn></mrow><mrow><mn>0.05</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>2</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mtext>−</mtext><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mn>0.9772</mn><mo>−</mo><mn>0.0228</mn><mo>=</mo><mn>0.9544</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch06_s02_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Normally Distributed Populations</h2>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s02_p01">The Central Limit Theorem says that no matter what the distribution of the population is, as long as the sample is “large,” meaning of size 30 or more, the sample mean is approximately normally distributed. If the population is normal to begin with then the sample mean also has a normal distribution, regardless of the sample size.</p>
+        <div class="callout block" id="fwk-shafer-ch06_s02_s02_n01">
+            <p class="para" id="fwk-shafer-ch06_s02_s02_p02">For samples of <em class="emphasis">any</em> size drawn from a normally distributed population, the sample mean is normally distributed, with mean <span class="inlineequation" id="shafer-20121106-125753-108954"><math xml:id="fwk-shafer-ch06-m0082" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-108970"><math xml:id="fwk-shafer-ch06-m0083" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></math></span>, where <em class="emphasis">n</em> is the sample size.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch06_s02_s02_p03">The effect of increasing the sample size is shown in <a class="xref" href="#fwk-shafer-ch06_s02_s02_f04">Figure 6.4 "Distribution of Sample Means for a Normal Population"</a>.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch06_s02_s02_f04">
+            <p class="title"><span class="title-prefix">Figure 6.4</span> Distribution of Sample Means for a Normal Population</p>
+            <img src="section_10/86efb32d8f607d8fc448b44f66c8a4c7.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch06_s02_s02_n02">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-shafer-ch06_s02_s02_p04">A prototype automotive tire has a design life of 38,500 miles with a standard deviation of 2,500 miles. Five such tires are manufactured and tested. On the assumption that the actual population mean is 38,500 miles and the actual population standard deviation is 2,500 miles, find the probability that the sample mean will be less than 36,000 miles. Assume that the distribution of lifetimes of such tires is normal.</p>
+            <p class="simpara">Solution</p>
+            <p class="para" id="fwk-shafer-ch06_s02_s02_p05">For simplicity we use units of thousands of miles. Then the sample mean <span class="inlineequation" id="shafer-20121106-125753-108986"><math xml:id="fwk-shafer-ch06-m0084" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> has mean <span class="inlineequation" id="shafer-20121106-125753-109002"><math xml:id="fwk-shafer-ch06-m0085" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>38.5</mn></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-109024"><math xml:id="fwk-shafer-ch06-m0086" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>=</mo><mn>2.5</mn><mo>/</mo><msqrt><mrow><mn>5</mn></mrow></msqrt><mo>=</mo><mn>1.11803</mn><mo>.</mo></math></span> Since the population is normally distributed, so is <span class="inlineequation" id="shafer-20121106-125753-109047"><math xml:id="fwk-shafer-ch06-m0087" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, hence</p>
+            <span class="informalequation" id="shafer-20121106-125753-109063"><math xml:id="fwk-shafer-ch06-m0088" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&lt;</mo><mn>36</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>36</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>36</mn><mo>−</mo><mn>38.5</mn></mrow><mrow><mn>1.11803</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mtext>−</mtext><mn>2.24</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.0125</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch06_s02_s02_p06">That is, if the tires perform as designed, there is only about a 1.25% chance that the average of a sample of this size would be so low.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch06_s02_s02_n03">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-shafer-ch06_s02_s02_p07">An automobile battery manufacturer claims that its midgrade battery has a mean life of 50 months with a standard deviation of 6 months. Suppose the distribution of battery lives of this particular brand is approximately normal.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch06_s02_s02_o01" numeration="loweralpha">
+                <li>On the assumption that the manufacturer’s claims are true, find the probability that a randomly selected battery of this type will last less than 48 months.</li>
+                <li>On the same assumption, find the probability that the mean of a random sample of 36 such batteries will be less than 48 months.</li>
+            </ol>
+            <p class="simpara">Solution</p>
+            <ol class="orderedlist" id="fwk-shafer-ch06_s02_s02_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">Since the population is known to have a normal distribution</p>
+                    <span class="informalequation" id="shafer-20121106-125753-109079"><math xml:id="fwk-shafer-ch06-m0089" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>48</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>48</mn><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mi mathvariant="italic">σ</mi></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>48</mn><mo>−</mo><mn>50</mn></mrow><mn>6</mn></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mtext>−</mtext><mn>0.33</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.3707</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">The sample mean has mean <span class="inlineequation" id="shafer-20121106-125753-109095"><math xml:id="fwk-shafer-ch06-m0090" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>50</mn></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-109331"><math xml:id="fwk-shafer-ch06-m0091" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo>/</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>=</mo><mn>6</mn><mo>/</mo><msqrt><mrow><mn>36</mn></mrow></msqrt><mo>=</mo><mn>1</mn><mo>.</mo></math></span> Thus</p>
+                    <span class="informalequation" id="shafer-20121106-125753-109348"><math xml:id="fwk-shafer-ch06-m0092" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&lt;</mo><mn>48</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>48</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>48</mn><mo>−</mo><mn>50</mn></mrow><mn>1</mn></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mtext>−</mtext><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.0228</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+            </ol>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch06_s02_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch06_s02_s02_l01" mark="bullet">
+                <li>When the sample size is at least 30 the sample mean is normally distributed.</li>
+                <li>When the population is normal the sample mean is normally distributed regardless of the sample size.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch06_s02_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch06_s02_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p01">A population has mean 128 and standard deviation 22.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o01" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109364"><math xml:id="fwk-shafer-ch06-m0093" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 36.</li>
+                            <li>Find the probability that the mean of a sample of size 36 will be within 10 units of the population mean, that is, between 118 and 138.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p02">A population has mean 1,542 and standard deviation 246.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o03" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109421"><math xml:id="fwk-shafer-ch06-m0096" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 100.</li>
+                            <li>Find the probability that the mean of a sample of size 100 will be within 100 units of the population mean, that is, between 1,442 and 1,642.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p03">A population has mean 73.5 and standard deviation 2.5.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o05" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109470"><math xml:id="fwk-shafer-ch06-m0099" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 30.</li>
+                            <li>Find the probability that the mean of a sample of size 30 will be less than 72.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p04">A population has mean 48.4 and standard deviation 6.3.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o07" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109518"><math xml:id="fwk-shafer-ch06-m0102" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 64.</li>
+                            <li>Find the probability that the mean of a sample of size 64 will be less than 46.7.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p05">A normally distributed population has mean 25.6 and standard deviation 3.3.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o09" numeration="loweralpha">
+                            <li>Find the probability that a single randomly selected element <em class="emphasis">X</em> of the population exceeds 30.</li>
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109575"><math xml:id="fwk-shafer-ch06-m0105" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 9.</li>
+                            <li>Find the probability that the mean of a sample of size 9 drawn from this population exceeds 30.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p06">A normally distributed population has mean 57.7 and standard deviation 12.1.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o11" numeration="loweralpha">
+                            <li>Find the probability that a single randomly selected element <em class="emphasis">X</em> of the population is less than 45.</li>
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109640"><math xml:id="fwk-shafer-ch06-m0108" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 16.</li>
+                            <li>Find the probability that the mean of a sample of size 16 drawn from this population is less than 45.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p07">A population has mean 557 and standard deviation 35.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o13" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109689"><math xml:id="fwk-shafer-ch06-m0111" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 50.</li>
+                            <li>Find the probability that the mean of a sample of size 50 will be more than 570.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p08">A population has mean 16 and standard deviation 1.7.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o15" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109827"><math xml:id="fwk-shafer-ch06-m0114" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 80.</li>
+                            <li>Find the probability that the mean of a sample of size 80 will be more than 16.4.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p09">A normally distributed population has mean 1,214 and standard deviation 122.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o17" numeration="loweralpha">
+                            <li>Find the probability that a single randomly selected element <em class="emphasis">X</em> of the population is between 1,100 and 1,300.</li>
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109889"><math xml:id="fwk-shafer-ch06-m0117" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 25.</li>
+                            <li>Find the probability that the mean of a sample of size 25 drawn from this population is between 1,100 and 1,300.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p10">A normally distributed population has mean 57,800 and standard deviation 750.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o19" numeration="loweralpha">
+                            <li>Find the probability that a single randomly selected element <em class="emphasis">X</em> of the population is between 57,000 and 58,000.</li>
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109938"><math xml:id="fwk-shafer-ch06-m0120" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 100.</li>
+                            <li>Find the probability that the mean of a sample of size 100 drawn from this population is between 57,000 and 58,000.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p11">A population has mean 72 and standard deviation 6.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o21" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-109994"><math xml:id="fwk-shafer-ch06-m0123" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 45.</li>
+                            <li>Find the probability that the mean of a sample of size 45 will differ from the population mean 72 by at least 2 units, that is, is either less than 70 or more than 74. (Hint: One way to solve the problem is to first find the probability of the complementary event.)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p12">A population has mean 12 and standard deviation 1.5.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o23" numeration="loweralpha">
+                            <li>Find the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-110043"><math xml:id="fwk-shafer-ch06-m0126" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for samples of size 90.</li>
+                            <li>Find the probability that the mean of a sample of size 90 will differ from the population mean 12 by at least 0.3 unit, that is, is either less than 11.7 or more than 12.3. (Hint: One way to solve the problem is to first find the probability of the complementary event.)</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch06_s02_qs01_qd02" start="13">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p13">Suppose the mean number of days to germination of a variety of seed is 22, with standard deviation 2.3 days. Find the probability that the mean germination time of a sample of 160 seeds will be within 0.5 day of the population mean.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p15">Suppose the mean length of time that a caller is placed on hold when telephoning a customer service center is 23.8 seconds, with standard deviation 4.6 seconds. Find the probability that the mean length of time on hold in a sample of 1,200 calls will be within 0.5 second of the population mean.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p17">Suppose the mean amount of cholesterol in eggs labeled “large” is 186 milligrams, with standard deviation 7 milligrams. Find the probability that the mean amount of cholesterol in a sample of 144 eggs will be within 2 milligrams of the population mean.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p19">Suppose that in one region of the country the mean amount of credit card debt per household in households having credit card debt is $15,250, with standard deviation $7,125. Find the probability that the mean amount of credit card debt in a sample of 1,600 such households will be within $300 of the population mean.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p21">Suppose speeds of vehicles on a particular stretch of roadway are normally distributed with mean 36.6 mph and standard deviation 1.7 mph.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o25" numeration="loweralpha">
+                            <li>Find the probability that the speed <em class="emphasis">X</em> of a randomly selected vehicle is between 35 and 40 mph.</li>
+                            <li>Find the probability that the mean speed <span class="inlineequation" id="shafer-20121106-125753-110093"><math xml:id="fwk-shafer-ch06-m0129" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> of 20 randomly selected vehicles is between 35 and 40 mph.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p22">Many sharks enter a state of tonic immobility when inverted. Suppose that in a particular species of sharks the time a shark remains in a state of tonic immobility when inverted is normally distributed with mean 11.2 minutes and standard deviation 1.1 minutes.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o27" numeration="loweralpha">
+                            <li>If a biologist induces a state of tonic immobility in such a shark in order to study it, find the probability that the shark will remain in this state for between 10 and 13 minutes.</li>
+                            <li>When a biologist wishes to estimate the mean time that such sharks stay immobile by inducing tonic immobility in each of a sample of 12 sharks, find the probability that mean time of immobility in the sample will be between 10 and 13 minutes.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p23">Suppose the mean cost across the country of a 30-day supply of a generic drug is $46.58, with standard deviation $4.84. Find the probability that the mean of a sample of 100 prices of 30-day supplies of this drug will be between $45 and $50.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p25">Suppose the mean length of time between submission of a state tax return requesting a refund and the issuance of the refund is 47 days, with standard deviation 6 days. Find the probability that in a sample of 50 returns requesting a refund, the mean such time will be more than 50 days.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p27">Scores on a common final exam in a large enrollment, multiple-section freshman course are normally distributed with mean 72.7 and standard deviation 13.1.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o29" numeration="loweralpha">
+                            <li>Find the probability that the score <em class="emphasis">X</em> on a randomly selected exam paper is between 70 and 80.</li>
+                            <li>Find the probability that the mean score <span class="inlineequation" id="shafer-20121106-125753-110116"><math xml:id="fwk-shafer-ch06-m0130" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> of 38 randomly selected exam papers is between 70 and 80.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p28">Suppose the mean weight of school children’s bookbags is 17.4 pounds, with standard deviation 2.2 pounds. Find the probability that the mean weight of a sample of 30 bookbags will exceed 17 pounds.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p30">Suppose that in a certain region of the country the mean duration of first marriages that end in divorce is 7.8 years, standard deviation 1.2 years. Find the probability that in a sample of 75 divorces, the mean age of the marriages is at most 8 years.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p32">Borachio eats at the same fast food restaurant every day. Suppose the time <em class="emphasis">X</em> between the moment Borachio enters the restaurant and the moment he is served his food is normally distributed with mean 4.2 minutes and standard deviation 1.3 minutes.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o31" numeration="loweralpha">
+                            <li>Find the probability that when he enters the restaurant today it will be at least 5 minutes until he is served.</li>
+                            <li>Find the probability that average time until he is served in eight randomly selected visits to the restaurant will be at least 5 minutes.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch06_s02_qs01_qd03" start="25">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd03_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p33">A high-speed packing machine can be set to deliver between 11 and 13 ounces of a liquid. For any delivery setting in this range the amount delivered is normally distributed with mean some amount <em class="emphasis">μ</em> and with standard deviation 0.08 ounce. To calibrate the machine it is set to deliver a particular amount, many containers are filled, and 25 containers are randomly selected and the amount they contain is measured. Find the probability that the sample mean will be within 0.05 ounce of the actual mean amount being delivered to all containers.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd03_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p35">A tire manufacturer states that a certain type of tire has a mean lifetime of 60,000 miles. Suppose lifetimes are normally distributed with standard deviation <span class="inlineequation" id="shafer-20121106-125753-110132"><math xml:id="fwk-shafer-ch06-m0131" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><mstyle><mtext> </mtext><mtext>3,500</mtext></mstyle></math></span> miles.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o33" numeration="loweralpha">
+                            <li>Find the probability that if you buy one such tire, it will last only 57,000 or fewer miles. If you had this experience, is it particularly strong evidence that the tire is not as good as claimed?</li>
+                            <li>A consumer group buys five such tires and tests them. Find the probability that average lifetime of the five tires will be 57,000 miles or less. If the mean is so low, is that particularly strong evidence that the tire is not as good as claimed?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch06_s02_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o02_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-109382_ans"><math xml:id="fwk-shafer-ch06-m0094" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>128</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-109405_ans"><math xml:id="fwk-shafer-ch06-m0095" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>3.67</mn></math></span>
+</li>
+                            <li>0.9936</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o06_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-109487_ans"><math xml:id="fwk-shafer-ch06-m0100" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>73.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-109503_ans"><math xml:id="fwk-shafer-ch06-m0101" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.456</mn></math></span>
+</li>
+                            <li>0.0005</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o10_ans" numeration="loweralpha">
+                            <li>0.0918</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-109592_ans"><math xml:id="fwk-shafer-ch06-m0106" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>25.6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-109608_ans"><math xml:id="fwk-shafer-ch06-m0107" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>1.1</mn></math></span>
+</li>
+                            <li>0.0000</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o14_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-109712_ans"><math xml:id="fwk-shafer-ch06-m0112" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>557</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-109728_ans"><math xml:id="fwk-shafer-ch06-m0113" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>4.9497</mn></math></span>
+</li>
+                            <li>0.0043</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o18_ans" numeration="loweralpha">
+                            <li>0.5818</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-109905_ans"><math xml:id="fwk-shafer-ch06-m0118" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>1214</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-109922_ans"><math xml:id="fwk-shafer-ch06-m0119" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>24.4</mn></math></span>
+</li>
+                            <li>0.9998</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o22_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-110010_ans"><math xml:id="fwk-shafer-ch06-m0124" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>72</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-110027_ans"><math xml:id="fwk-shafer-ch06-m0125" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.8944</mn></math></span>
+</li>
+                            <li>0.0250</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="13">
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p14_ans">0.9940</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p18_ans">0.9994</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o26_ans" numeration="loweralpha">
+                            <li>0.8036</li>
+                            <li>1.0000</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p24_ans">0.9994</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch06_s02_qs01_o30_ans" numeration="loweralpha">
+                            <li>0.2955</li>
+                            <li>0.8977</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p31_ans">0.9251</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="25">
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd03_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch06_s02_qs01_p34_ans">0.9982</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch06_s02_qs01_qd03_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-01-the-mean-and-standard-deviatio.html"><img src="shared/images/batch-left.png"></a> <a href="s10-01-the-mean-and-standard-deviatio.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-03-the-sample-proportion.html">Next Section</a> <a href="s10-03-the-sample-proportion.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

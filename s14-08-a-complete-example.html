@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>A Complete Example</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-07-estimation-and-prediction.html"><img src="shared/images/batch-left.png"></a> <a href="s14-07-estimation-and-prediction.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-09-formula-list.html">Next Section</a> <a href="s14-09-formula-list.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s08" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.8</span> A Complete Example</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s08_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s08_o01" numeration="arabic">
+            <li>To see a complete linear correlation and regression analysis, in a practical setting, as a cohesive whole.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p01">In the preceding sections numerous concepts were introduced and illustrated, but the analysis was broken into disjoint pieces by sections. In this section we will go through a complete example of the use of correlation and regression analysis of data from start to finish, touching on all the topics of this chapter in sequence.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p02">In general educators are convinced that, all other factors being equal, class attendance has a significant bearing on course performance. To investigate the relationship between attendance and performance, an education researcher selects for study a multiple section introductory statistics course at a large university. Instructors in the course agree to keep an accurate record of attendance throughout one semester. At the end of the semester 26 students are selected a random. For each student in the sample two measurements are taken: <em class="emphasis">x</em>, the number of days the student was absent, and <em class="emphasis">y</em>, the student’s score on the common final exam in the course. The data are summarized in <a class="xref" href="#fwk-shafer-ch10_s08_t01">Table 10.4 "Absence and Score Data"</a>.</p>
+    <div class="table block" id="fwk-shafer-ch10_s08_t01" frame="none">
+        <p class="title"><span class="title-prefix">Table 10.4</span> Absence and Score Data</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Absences</th>
+                    <th align="center">Score</th>
+                    <th align="center">Absences</th>
+                    <th align="center">Score</th>
+                </tr>
+                <tr>
+                    <th align="center"><em class="emphasis">x</em></th>
+                    <th align="center"><em class="emphasis">y</em></th>
+                    <th align="center"><em class="emphasis">x</em></th>
+                    <th align="center"><em class="emphasis">y</em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">76</td>
+                    <td align="center">4</td>
+                    <td align="center">41</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">29</td>
+                    <td align="center">5</td>
+                    <td align="center">63</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">96</td>
+                    <td align="center">4</td>
+                    <td align="center">88</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">63</td>
+                    <td align="center">0</td>
+                    <td align="center">98</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">79</td>
+                    <td align="center">1</td>
+                    <td align="center">99</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">71</td>
+                    <td align="center">0</td>
+                    <td align="center">89</td>
+                </tr>
+                <tr>
+                    <td align="center">0</td>
+                    <td align="center">88</td>
+                    <td align="center">1</td>
+                    <td align="center">96</td>
+                </tr>
+                <tr>
+                    <td align="center">0</td>
+                    <td align="center">92</td>
+                    <td align="center">3</td>
+                    <td align="center">90</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">55</td>
+                    <td align="center">1</td>
+                    <td align="center">90</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">70</td>
+                    <td align="center">3</td>
+                    <td align="center">68</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">80</td>
+                    <td align="center">1</td>
+                    <td align="center">84</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">75</td>
+                    <td align="center">3</td>
+                    <td align="center">80</td>
+                </tr>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">63</td>
+                    <td align="center">1</td>
+                    <td align="center">78</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p03">A scatter plot of the data is given in <a class="xref" href="#fwk-shafer-ch10_s08_f01">Figure 10.13 "Plot of the Absence and Exam Score Pairs"</a>. There is a downward trend in the plot which indicates that on average students with more absences tend to do worse on the final examination.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch10_s08_f01">
+        <p class="title"><span class="title-prefix">Figure 10.13</span> Plot of the Absence and Exam Score Pairs</p>
+        <img src="section_14/13a3aacb719bc1a9c4ee14e3c9aef408.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p04">The trend observed in <a class="xref" href="#fwk-shafer-ch10_s08_f01">Figure 10.13 "Plot of the Absence and Exam Score Pairs"</a> as well as the fairly constant width of the apparent band of points in the plot makes it reasonable to assume a relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> of the form</p>
+    <span class="informalequation block" id="shafer-20121106-125753-159897"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0549" display="block"><mrow><mi>y</mi><mo>=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi mathvariant="italic">ε</mi></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p05">where <span class="inlineequation" id="shafer-20121106-125753-159915"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0550" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-159933"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0551" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> are unknown parameters and <em class="emphasis">ε</em> is a normal random variable with mean zero and unknown standard deviation <em class="emphasis">σ</em>. Note carefully that this model is being proposed for the population of all students taking this course, not just those taking it this semester, and certainly not just those in the sample. The numbers <span class="inlineequation" id="shafer-20121106-125753-159950"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0552" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-159966"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0553" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, and <em class="emphasis">σ</em> are parameters relating to this large population.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p06">First we perform preliminary computations that will be needed later. The data are processed in <a class="xref" href="#fwk-shafer-ch10_s08_t02">Table 10.5 "Processed Absence and Score Data"</a>.</p>
+    <div class="table block" id="fwk-shafer-ch10_s08_t02" frame="none">
+        <p class="title"><span class="title-prefix">Table 10.5</span> Processed Absence and Score Data</p>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center"><em class="emphasis">x</em></th>
+                    <th align="center"><em class="emphasis">y</em></th>
+                    <th align="center"><em class="emphasis">x<sup class="superscript">2</sup></em></th>
+                    <th align="center"><em class="emphasis">xy</em></th>
+                    <th align="center"><em class="emphasis">y<sup class="superscript">2</sup></em></th>
+                    <th align="center"><em class="emphasis">x</em></th>
+                    <th align="center"><em class="emphasis">y</em></th>
+                    <th align="center"><em class="emphasis">x<sup class="superscript">2</sup></em></th>
+                    <th align="center"><em class="emphasis">xy</em></th>
+                    <th align="center"><em class="emphasis">y<sup class="superscript">2</sup></em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">76</td>
+                    <td align="center">4</td>
+                    <td align="center">152</td>
+                    <td align="center">5776</td>
+                    <td align="center">4</td>
+                    <td align="center">41</td>
+                    <td align="center">16</td>
+                    <td align="center">164</td>
+                    <td align="center">1681</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">29</td>
+                    <td align="center">49</td>
+                    <td align="center">203</td>
+                    <td align="center">841</td>
+                    <td align="center">5</td>
+                    <td align="center">63</td>
+                    <td align="center">25</td>
+                    <td align="center">315</td>
+                    <td align="center">3969</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">96</td>
+                    <td align="center">4</td>
+                    <td align="center">192</td>
+                    <td align="center">9216</td>
+                    <td align="center">4</td>
+                    <td align="center">88</td>
+                    <td align="center">16</td>
+                    <td align="center">352</td>
+                    <td align="center">7744</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">63</td>
+                    <td align="center">49</td>
+                    <td align="center">441</td>
+                    <td align="center">3969</td>
+                    <td align="center">0</td>
+                    <td align="center">98</td>
+                    <td align="center">0</td>
+                    <td align="center">0</td>
+                    <td align="center">9604</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">79</td>
+                    <td align="center">4</td>
+                    <td align="center">158</td>
+                    <td align="center">6241</td>
+                    <td align="center">1</td>
+                    <td align="center">99</td>
+                    <td align="center">1</td>
+                    <td align="center">99</td>
+                    <td align="center">9801</td>
+                </tr>
+                <tr>
+                    <td align="center">7</td>
+                    <td align="center">71</td>
+                    <td align="center">49</td>
+                    <td align="center">497</td>
+                    <td align="center">5041</td>
+                    <td align="center">0</td>
+                    <td align="center">89</td>
+                    <td align="center">0</td>
+                    <td align="center">0</td>
+                    <td align="center">7921</td>
+                </tr>
+                <tr>
+                    <td align="center">0</td>
+                    <td align="center">88</td>
+                    <td align="center">0</td>
+                    <td align="center">0</td>
+                    <td align="center">7744</td>
+                    <td align="center">1</td>
+                    <td align="center">96</td>
+                    <td align="center">1</td>
+                    <td align="center">96</td>
+                    <td align="center">9216</td>
+                </tr>
+                <tr>
+                    <td align="center">0</td>
+                    <td align="center">92</td>
+                    <td align="center">0</td>
+                    <td align="center">0</td>
+                    <td align="center">8464</td>
+                    <td align="center">3</td>
+                    <td align="center">90</td>
+                    <td align="center">9</td>
+                    <td align="center">270</td>
+                    <td align="center">8100</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">55</td>
+                    <td align="center">36</td>
+                    <td align="center">330</td>
+                    <td align="center">3025</td>
+                    <td align="center">1</td>
+                    <td align="center">90</td>
+                    <td align="center">1</td>
+                    <td align="center">90</td>
+                    <td align="center">8100</td>
+                </tr>
+                <tr>
+                    <td align="center">6</td>
+                    <td align="center">70</td>
+                    <td align="center">36</td>
+                    <td align="center">420</td>
+                    <td align="center">4900</td>
+                    <td align="center">3</td>
+                    <td align="center">68</td>
+                    <td align="center">9</td>
+                    <td align="center">204</td>
+                    <td align="center">4624</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">80</td>
+                    <td align="center">4</td>
+                    <td align="center">160</td>
+                    <td align="center">6400</td>
+                    <td align="center">1</td>
+                    <td align="center">84</td>
+                    <td align="center">1</td>
+                    <td align="center">84</td>
+                    <td align="center">7056</td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center">75</td>
+                    <td align="center">4</td>
+                    <td align="center">150</td>
+                    <td align="center">5625</td>
+                    <td align="center">3</td>
+                    <td align="center">80</td>
+                    <td align="center">9</td>
+                    <td align="center">240</td>
+                    <td align="center">6400</td>
+                </tr>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center">63</td>
+                    <td align="center">1</td>
+                    <td align="center">63</td>
+                    <td align="center">3969</td>
+                    <td align="center">1</td>
+                    <td align="center">78</td>
+                    <td align="center">1</td>
+                    <td align="center">78</td>
+                    <td align="center">6084</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p07">Adding up the numbers in each column in <a class="xref" href="#fwk-shafer-ch10_s08_t02">Table 10.5 "Processed Absence and Score Data"</a> gives</p>
+    <span class="informalequation block" id="shafer-20121106-125753-159982"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0554" display="block"><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>71</mn><mo>,</mo><mtext> </mtext><mi mathvariant="normal">Σ</mi><mi>y</mi><mo>=</mo><mn>2001</mn><mo>,</mo><mtext> </mtext><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>329</mn><mo>,</mo><mtext> </mtext><mi mathvariant="normal">Σ</mi><mi>x</mi><mi>y</mi><mo>=</mo><mn>4758</mn><mo>,</mo><mtext> </mtext><mtext> and</mtext><mtext> </mtext><mi mathvariant="normal">Σ</mi><msup><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>161511</mn><mo>.</mo></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p08">Then</p>
+    <span class="informalequation block" id="shafer-20121106-125753-159998"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0555" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>329</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>26</mn></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mn>71</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>135.1153846</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><mi>x</mi><mi>y</mi><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>y</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>4758</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>26</mn></mrow></mfrac><mrow><mo>(</mo><mrow><mn>71</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>2001</mn></mrow><mo>)</mo></mrow><mo>=</mo><mtext>−</mtext><mn>706.2692308</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><msup><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>161511</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>26</mn></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mn>2001</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>7510.961538</mn></mtd></mtr></mtable></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p09">and</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160026"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0556" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>71</mn></mrow><mrow><mn>26</mn></mrow></mfrac><mo>=</mo><mn>2.730769231</mn><mtext> </mtext><mtext> and</mtext><mtext> </mtext><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>y</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2001</mn></mrow><mrow><mn>26</mn></mrow></mfrac><mo>=</mo><mn>76.96153846</mn></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p10">We begin the actual modelling by finding the least squares regression line, the line that best fits the data. Its slope and <em class="emphasis">y</em>-intercept are</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160042"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0557" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mtext>−</mtext><mn>706.2692308</mn></mrow><mrow><mn>135.1153846</mn></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>5.227156278</mn></mtd></mtr><mtr><mtd columnalign="right"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>=</mo></mtd><mtd><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>76.96153846</mn><mo>−</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>5.227156278</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>2.730769231</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>91.23569553</mn></mtd></mtr></mtable></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p11">Rounding these numbers to two decimal places, the least squares regression line for these data is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160058"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0558" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>5.23</mn><mtext> </mtext><mi>x</mi><mo>+</mo><mn>91.24</mn><mo>.</mo></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p12">The goodness of fit of this line to the scatter plot, the sum of its squared errors, is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160074"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0559" display="block"><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>7510.961538</mn><mo>−</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>5.227156278</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>706.2692308</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3819.181894</mn></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p13">This number is not particularly informative in itself, but we use it to compute the important statistic</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160090"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0560" display="block"><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>2</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>3819.181894</mn></mrow><mrow><mn>24</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>12.11988495</mn></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p14">The statistic <span class="inlineequation" id="shafer-20121106-125753-160106"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0561" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span> estimates the standard deviation <em class="emphasis">σ</em> of the normal random variable <em class="emphasis">ε</em> in the model. Its meaning is that among all students with the same number of absences, the standard deviation of their scores on the final exam is about 12.1 points. Such a large value on a 100-point exam means that the final exam scores of each sub-population of students, based on the number of absences, are highly variable.</p>
+    <p class="para block" id="fwk-shafer-ch10_s08_p15">The size and sign of the slope <span class="inlineequation" id="shafer-20121106-125753-160122"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0562" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>5.23</mn></math></span> indicate that, for every class missed, students tend to score about 5.23 fewer points lower on the final exam on average. Similarly for every two classes missed students tend to score on average <span class="inlineequation" id="shafer-20121106-125753-160144"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0563" display="inline"><mn>2</mn><mo>×</mo><mn>5.23</mn><mo>=</mo><mn>10.46</mn></math></span> fewer points on the final exam, or about a letter grade worse on average.</p>
+    <p class="para block" id="fwk-shafer-ch10_s08_p16">Since 0 is in the range of <em class="emphasis">x</em>-values in the data set, the <em class="emphasis">y</em>-intercept also has meaning in this problem. It is an estimate of the average grade on the final exam of all students who have perfect attendance. The predicted average of such students is <span class="inlineequation" id="shafer-20121106-125753-160160"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0564" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>91.24</mn><mo>.</mo></math></span></p>
+    <p class="para block" id="fwk-shafer-ch10_s08_p17">Before we use the regression equation further, or perform other analyses, it would be a good idea to examine the utility of the linear regression model. We can do this in two ways: 1) by computing the correlation coefficient <em class="emphasis">r</em> to see how strongly the number of absences <em class="emphasis">x</em> and the score <em class="emphasis">y</em> on the final exam are correlated, and 2) by testing the null hypothesis <span class="inlineequation" id="shafer-20121106-125753-160176"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0565" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math></span> (the slope of the <em class="emphasis">population</em> regression line is zero, so <em class="emphasis">x</em> is not a good predictor of <em class="emphasis">y</em>) against the natural alternative <span class="inlineequation" id="shafer-20121106-125753-160193"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0566" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>&lt;</mo><mn>0</mn></math></span> (the slope of the population regression line is negative, so final exam scores <em class="emphasis">y</em> go down as absences <em class="emphasis">x</em> go up).</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p18">The correlation coefficient <em class="emphasis">r</em> is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160209"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0567" display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mtext>−</mtext><mn>706.2692308</mn></mrow><mrow><mpadded height="1.4em"><msqrt><mrow><mrow><mo>(</mo><mrow><mn>135.1153846</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>7510.961538</mn></mrow><mo>)</mo></mrow></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>0.7010840977</mn></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p19">a moderate negative correlation.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p20">Turning to the test of hypotheses, let us test at the commonly used 5% level of significance. The test is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160225"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0568" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>&lt;</mo><mn>0</mn><mtext> </mtext><mo>@</mo><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.05</mn></mtd></mtr></mtable></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p21">From <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a>, with <span class="inlineequation" id="shafer-20121106-125753-160241"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0569" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>26</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>24</mn></math></span> degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-160263"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0570" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.711</mn></math></span>, so the rejection region is <span class="inlineequation" id="shafer-20121106-125753-160279"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0571" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><mn>1.711</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span> The value of the standardized test statistic is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160294"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0572" display="block"><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mtext>−</mtext><mn>5.227156278</mn><mo>−</mo><mn>0</mn></mrow><mrow><mn>12.11988495</mn><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mn>135.1153846</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>5.013</mn></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p22">which falls in the rejection region. We reject <em class="emphasis">H</em><sub class="subscript">0</sub> in favor of <em class="emphasis">H<sub class="subscript">a</sub></em>. The data provide sufficient evidence, at the 5% level of significance, to conclude that <span class="inlineequation" id="shafer-20121106-125753-160317"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0573" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> is negative, meaning that as the number of absences increases average score on the final exam decreases.</p>
+    <p class="para block" id="fwk-shafer-ch10_s08_p23">As already noted, the value <span class="inlineequation" id="shafer-20121106-125753-160334"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0574" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>5.23</mn></math></span> gives a point estimate of how much one additional absence is reflected in the average score on the final exam. For each additional absence the average drops by about 5.23 points. We can widen this point estimate to a confidence interval for <span class="inlineequation" id="shafer-20121106-125753-160351"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0575" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span> At the 95% confidence level, from <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> with <span class="inlineequation" id="shafer-20121106-125753-160366"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0576" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>26</mn><mo>−</mo><mn>2</mn><mo>=</mo><mn>24</mn></math></span> degrees of freedom, <span class="inlineequation" id="shafer-20121106-125753-160382"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0577" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>=</mo><mn>2.064</mn><mo>.</mo></math></span> The 95% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-160398"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0578" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> based on our sample data is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160414"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0579" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>5.23</mn><mo>±</mo><mn>2.064</mn><mtext> </mtext><mfrac><mrow><mn>12.11988495</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>135.1153846</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>5.23</mn><mo>±</mo><mn>2.15</mn></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p24">or <span class="inlineequation" id="shafer-20121106-125753-160430"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0580" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>7.38</mn><mo>,</mo><mtext>−</mtext><mn>3.08</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> We are 95% confident that, among all students who ever take this course, for each additional class missed the average score on the final exam goes down by between 3.08 and 7.38 points.</p>
+    <p class="para block" id="fwk-shafer-ch10_s08_p25">If we restrict attention to the sub-population of all students who have exactly five absences, say, then using the least squares regression equation <span class="inlineequation" id="shafer-20121106-125753-160452"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0581" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>5.23</mn><mi>x</mi><mo>+</mo><mn>91.24</mn></math></span> we estimate that the average score on the final exam for those students is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160468"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0582" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>5.23</mn><mrow><mo>(</mo><mrow><mn>5</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>91.24</mn><mo>=</mo><mn>65.09</mn></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p26">This is also our best guess as to the score on the final exam of any particular student who is absent five times. A 95% confidence interval for the average score on the final exam for all students with five absences is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160484"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0583" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt></mtd><mtd><mo>=</mo></mtd><mtd><mn>65.09</mn><mo>±</mo><mrow><mo>(</mo><mrow><mn>2.064</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>12.11988495</mn></mrow><mo>)</mo></mrow><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>26</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>5</mn><mo>−</mo><mn>2.730769231</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>135.1153846</mn></mrow></mfrac></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd><mn>65.09</mn><mo>±</mo><mn>25.01544254</mn><msqrt><mrow><mn>0.0765727299</mn></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd><mn>65.09</mn><mo>±</mo><mn>6.92</mn></mtd></mtr></mtable></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p27">which is the interval <span class="inlineequation" id="shafer-20121106-125753-160500"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0584" display="inline"><mrow><mo>(</mo><mrow><mn>58</mn><mo>.</mo><mn>17,72</mn><mo>.</mo><mn>01</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> This confidence interval suggests that the true mean score on the final exam for all students who are absent from class exactly five times during the semester is likely to be between 58.17 and 72.01.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p28">If a particular student misses exactly five classes during the semester, his score on the final exam is predicted with 95% confidence to be in the interval</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160516"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0585" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><msqrt><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt></mtd><mtd><mo>=</mo></mtd><mtd><mn>65.09</mn><mo>±</mo><mn>25.01544254</mn><msqrt><mrow><mn>1.0765727299</mn></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd><mn>65.09</mn><mo>±</mo><mn>25.96</mn></mtd></mtr></mtable></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s08_p29">which is the interval <span class="inlineequation" id="shafer-20121106-125753-160532"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0586" display="inline"><mrow><mo>(</mo><mrow><mn>39</mn><mo>.</mo><mn>13,91</mn><mo>.</mo><mn>05</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> This prediction interval suggests that this individual student’s final exam score is likely to be between 39.13 and 91.05. Whereas the 95% confidence interval for the average score of all student with five absences gave real information, this interval is so wide that it says practically nothing about what the individual student’s final exam score might be. This is an example of the dramatic effect that the presence of the extra summand 1 under the square sign in the prediction interval can have.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p30">Finally, the proportion of the variability in the scores of students on the final exam that is explained by the linear relationship between that score and the number of absences is estimated by the coefficient of determination, <em class="emphasis">r</em><sup class="superscript">2</sup>. Since we have already computed <em class="emphasis">r</em> above we easily find that</p>
+    <span class="informalequation block" id="shafer-20121106-125753-160549"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0587" display="block"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>0.7010840977</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>0.491518912</mn></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s08_p31">or about 49%. Thus although there is a significant correlation between attendance and performance on the final exam, and we can estimate with fair accuracy the average score of students who miss a certain number of classes, nevertheless less than half the total variation of the exam scores in the sample is explained by the number of absences. This should not come as a surprise, since there are many factors besides attendance that bear on student performance on exams.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch10_s08_n02">
+        <h3 class="title">Key Takeaway</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s08_l01" mark="bullet">
+            <li>It is a good idea to attend class.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s08_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s08_qs01_qd01">
+            <p class="para" id="fwk-shafer-ch10_s08_qs01_p01">The exercises in this section are unrelated to those in previous sections.</p>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p02">The data give the amount <em class="emphasis">x</em> of silicofluoride in the water (mg/L) and the amount <em class="emphasis">y</em> of lead in the bloodstream (<em class="emphasis">μ</em>g/dL) of ten children in various communities with and without municipal water. Perform a complete analysis of the data, in analogy with the discussion in this section (that is, make a scatter plot, do preliminary computations, find the least squares regression line, find <span class="inlineequation" id="shafer-20121106-125753-160565"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0588" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160587"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0589" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span>, and <em class="emphasis">r</em>, and so on). In the hypothesis test use as the alternative hypothesis <span class="inlineequation" id="shafer-20121106-125753-160603"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0590" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>&gt;</mo><mn>0</mn></math></span>, and test at the 5% level of significance. Use confidence level 95% for the confidence interval for <span class="inlineequation" id="shafer-20121106-125753-160619"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0591" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span> Construct 95% confidence and predictions intervals at <span class="inlineequation" id="shafer-20121106-125753-160635"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0592" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>2</mn></math></span> at the end.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-160651"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0593" display="block"><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>0.0</mn></mrow></mtd><mtd><mrow><mn>0.0</mn></mrow></mtd><mtd><mrow><mn>1.1</mn></mrow></mtd><mtd><mrow><mn>1.4</mn></mrow></mtd><mtd><mrow><mn>1.6</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>0.3</mn></mrow></mtd><mtd><mrow><mn>0.1</mn></mrow></mtd><mtd><mrow><mn>4.7</mn></mrow></mtd><mtd><mrow><mn>3.2</mn></mrow></mtd><mtd><mrow><mn>5.1</mn></mrow></mtd></mtr></mtable></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-160667"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0594" display="block"><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>1.7</mn></mrow></mtd><mtd><mrow><mn>2.0</mn></mrow></mtd><mtd><mrow><mn>2.0</mn></mrow></mtd><mtd><mrow><mn>2.2</mn></mrow></mtd><mtd><mrow><mn>2.2</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>7.0</mn></mrow></mtd><mtd><mrow><mn>5.0</mn></mrow></mtd><mtd><mrow><mn>6.1</mn></mrow></mtd><mtd><mrow><mn>8.6</mn></mrow></mtd><mtd><mrow><mn>9.5</mn></mrow></mtd></mtr></mtable></math></span>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p14">The table gives the weight <em class="emphasis">x</em> (thousands of pounds) and available heat energy <em class="emphasis">y</em> (million BTU) of a standard cord of various species of wood typically used for heating. Perform a complete analysis of the data, in analogy with the discussion in this section (that is, make a scatter plot, do preliminary computations, find the least squares regression line, find <span class="inlineequation" id="shafer-20121106-125753-161066"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0617" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-161082"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0618" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span>, and <em class="emphasis">r</em>, and so on). In the hypothesis test use as the alternative hypothesis <span class="inlineequation" id="shafer-20121106-125753-161099"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0619" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>&gt;</mo><mn>0</mn></math></span>, and test at the 5% level of significance. Use confidence level 95% for the confidence interval for <span class="inlineequation" id="shafer-20121106-125753-161115"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0620" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span> Construct 95% confidence and predictions intervals at <span class="inlineequation" id="shafer-20121106-125753-161137"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0621" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>5</mn></math></span> at the end.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-161153"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0622" display="block"><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>3.37</mn></mrow></mtd><mtd><mrow><mn>3.50</mn></mrow></mtd><mtd><mrow><mn>4.29</mn></mrow></mtd><mtd><mrow><mn>4.00</mn></mrow></mtd><mtd><mrow><mn>4.64</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>23.6</mn></mrow></mtd><mtd><mrow><mn>17.5</mn></mrow></mtd><mtd><mrow><mn>20.1</mn></mrow></mtd><mtd><mrow><mn>21.6</mn></mrow></mtd><mtd><mrow><mn>28.1</mn></mrow></mtd></mtr></mtable></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-161169"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0623" display="block"><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>4.99</mn></mrow></mtd><mtd><mrow><mn>4.94</mn></mrow></mtd><mtd><mrow><mn>5.48</mn></mrow></mtd><mtd><mrow><mn>3.26</mn></mrow></mtd><mtd><mrow><mn>4.16</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>25.3</mn></mrow></mtd><mtd><mrow><mn>27.0</mn></mrow></mtd><mtd><mrow><mn>30.7</mn></mrow></mtd><mtd><mrow><mn>18.9</mn></mrow></mtd><mtd><mrow><mn>20.7</mn></mrow></mtd></mtr></mtable></math></span>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s08_qs01_qd02" start="3">
+            <h3 class="title">Large Data Set Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p25">Large Data Sets 3 and 3A list the shoe sizes and heights of 174 customers entering a shoe store. The gender of the customer is not indicated in Large Data Set 3. However, men’s and women’s shoes are not measured on the same scale; for example, a size 8 shoe for men is not the same size as a size 8 shoe for women. Thus it would not be meaningful to apply regression analysis to Large Data Set 3. Nevertheless, compute the scatter diagrams, with shoe size as the independent variable (<em class="emphasis">x</em>) and height as the dependent variable (<em class="emphasis">y</em>), for (i) just the data on men, (ii) just the data on women, and (iii) the full mixed data set with both men and women. Does the third, invalid scatter diagram look markedly different from the other two?</p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p26"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3.xls</a></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p27"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p29">Separate out from Large Data Set 3A just the data on men and do a complete analysis, with shoe size as the independent variable (<em class="emphasis">x</em>) and height as the dependent variable (<em class="emphasis">y</em>). Use <span class="inlineequation" id="shafer-20121106-125753-161556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0646" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-161578"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0647" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>10</mn></math></span> whenever appropriate.</p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p30"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p32">Separate out from Large Data Set 3A just the data on women and do a complete analysis, with shoe size as the independent variable (<em class="emphasis">x</em>) and height as the dependent variable (<em class="emphasis">y</em>). Use <span class="inlineequation" id="shafer-20121106-125753-161760"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0658" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-161777"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0659" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>10</mn></math></span> whenever appropriate.</p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p33"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s08_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p03_ans"><span class="inlineequation" id="shafer-20121106-125753-160683_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0595" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle><mo>=</mo><mn>14.2</mn></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160706_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0596" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle><mo>=</mo><mn>49.6</mn></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160723_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0597" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mi>y</mi></mrow></mstyle><mo>=</mo><mn>91.73</mn></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160738_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0598" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle><mo>=</mo><mn>26.3</mn></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160754_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0599" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>=</mo><mn>333.86</mn></mrow><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p04_ans"><span class="inlineequation" id="shafer-20121106-125753-160769_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0600" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>6.136</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160785_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0601" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>21.298</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160800_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0602" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>87.844</mn><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p05_ans"><span class="inlineequation" id="shafer-20121106-125753-160816_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0603" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1.42</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160833_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0604" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>4.96</mn><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p06_ans"><span class="inlineequation" id="shafer-20121106-125753-160851_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0605" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>3.47</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-160882_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0606" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>0.03</mn><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p07_ans"><span class="inlineequation" id="shafer-20121106-125753-160898_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0607" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mn>13.92</mn><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p08_ans"><span class="inlineequation" id="shafer-20121106-125753-160915_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0608" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>=</mo><mn>1.32</mn><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p09_ans"><em class="emphasis">r</em> = 0.9174, <em class="emphasis">r</em><sup class="superscript">2</sup> = 0.8416.</p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p10_ans"><span class="inlineequation" id="shafer-20121106-125753-160931_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0609" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>8</mn></math></span>, <em class="emphasis">T</em> = 6.518.</p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p11_ans">The 95% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-160947_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0610" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> is: <span class="inlineequation" id="shafer-20121106-125753-160963_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0611" display="inline"><mrow><mo>(</mo><mrow><mn>2</mn><mo>.</mo><mn>24,4</mn><mo>.</mo><mn>70</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p12_ans">At <span class="inlineequation" id="shafer-20121106-125753-160979_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0612" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>2</mn></math></span>, the 95% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-161002_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0613" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>y</mi></mrow><mo>)</mo></mrow></math></span> is <span class="inlineequation" id="shafer-20121106-125753-161018_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0614" display="inline"><mrow><mo>(</mo><mrow><mn>5</mn><mo>.</mo><mn>77,8</mn><mo>.</mo><mn>17</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p13_ans">At <span class="inlineequation" id="shafer-20121106-125753-161033_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0615" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>2</mn></math></span>, the 95% prediction interval for <em class="emphasis">y</em> is <span class="inlineequation" id="shafer-20121106-125753-161050_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0616" display="inline"><mrow><mo>(</mo><mrow><mn>3</mn><mo>.</mo><mn>73,10</mn><mo>.</mo><mn>21</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="3">
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p28_ans">The positively correlated trend seems less profound than that in each of the previous plots.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s08_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s08_qs01_p34_ans">The regression line: <span class="inlineequation" id="shafer-20121106-125753-161792_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0660" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>3.3426</mn><mi>x</mi><mo>+</mo><mn>138.7692</mn><mo>.</mo></math></span> Coefficient of Correlation: <em class="emphasis">r</em> = 0.9431. Coefficient of Determination: <em class="emphasis">r</em><sup class="superscript">2</sup> = 0.8894. <span class="inlineequation" id="shafer-20121106-125753-161809_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0661" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mn>283.2473</mn><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-161825_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0662" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi>e</mi></mrow></msub><mo>=</mo><mn>1.9305</mn><mo>.</mo></math></span> A 95% confidence interval for <span class="inlineequation" id="shafer-20121106-125753-161847_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0663" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>: <span class="inlineequation" id="shafer-20121106-125753-161863_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0664" display="inline"><mrow><mo>(</mo><mrow><mn>3</mn><mo>.</mo><mn>0733,3</mn><mo>.</mo><mn>6120</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Test Statistic for <span class="inlineequation" id="shafer-20121106-125753-161879_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0665" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></math></span>: <em class="emphasis">T</em> = 24.7209. At <span class="inlineequation" id="shafer-20121106-125753-161895_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0666" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>10</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-161911_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0667" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>172.1956</mn></math></span>; a 95% confidence interval for the mean value of <em class="emphasis">y</em> is: <span class="inlineequation" id="shafer-20121106-125753-161928_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0668" display="inline"><mrow><mo>(</mo><mrow><mn>171</mn><mo>.</mo><mn>5577,172</mn><mo>.</mo><mn>8335</mn></mrow><mo>)</mo></mrow></math></span>; and a 95% prediction interval for an individual value of <em class="emphasis">y</em> is: <span class="inlineequation" id="shafer-20121106-125753-161944_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0669" display="inline"><mrow><mo>(</mo><mrow><mn>168</mn><mo>.</mo><mn>2974,176</mn><mo>.</mo><mn>0938</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <p class="para block"> </p>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-07-estimation-and-prediction.html"><img src="shared/images/batch-left.png"></a> <a href="s14-07-estimation-and-prediction.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-09-formula-list.html">Next Section</a> <a href="s14-09-formula-list.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

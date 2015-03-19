@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>F-Tests in One-Way ANOVA</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s15-03-f-tests-for-equality-of-two-va.html"><img src="shared/images/batch-left.png"></a> <a href="s15-03-f-tests-for-equality-of-two-va.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s16-appendix.html">Next Section</a> <a href="s16-appendix.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch11_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">11.4</span> <em class="emphasis">F</em>-Tests in One-Way ANOVA</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch11_s04_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch11_s04_o01" numeration="arabic">
+            <li>To understand how to use an <em class="emphasis">F</em>-test to judge whether several population means are all equal.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch11_s04_p01">In <a class="xref" href="fwk-shafer-ch09#fwk-shafer-ch09">Chapter 9 "Two-Sample Problems"</a> we saw how to compare two population means <span class="inlineequation" id="shafer-20121106-125753-173212"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0636" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-173228"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0637" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span> In this section we will learn to compare three or more population means at the same time, which is often of interest in practical applications. For example, an administrator at a university may be interested in knowing whether student grade point averages are the same for different majors. In another example, an oncologist may be interested in knowing whether patients with the same type of cancer have the same average survival times under several different competing cancer treatments.</p>
+    <p class="para block" id="fwk-shafer-ch11_s04_p02">In general, suppose there are <em class="emphasis">K</em> normal populations with possibly different means, <span class="inlineequation" id="shafer-20121106-125753-173244"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0638" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>,</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>K</mi></mrow></msub></math></span>, but all with the same variance <span class="inlineequation" id="shafer-20121106-125753-173260"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0639" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span> The study question is whether all the <em class="emphasis">K</em> population means are the same. We formulate this question as the test of hypotheses</p>
+    <span class="informalequation block" id="shafer-20121106-125753-173283"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0640" display="block"><mtable columnspacing="0.2em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mtext> · · · </mtext><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>K</mi></mrow></msub></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><mtext> not all </mtext><mi>K</mi><mtext> population means are equal</mtext></mtd></mtr></mtable></math></span>
+    <p class="para editable block" id="fwk-shafer-ch11_s04_p03">To perform the test <em class="emphasis">K</em> independent random samples are taken from the <em class="emphasis">K</em> normal populations. The <em class="emphasis">K</em> sample means, the <em class="emphasis">K</em> sample variances, and the <em class="emphasis">K</em> sample sizes are summarized in the table:</p>
+    <div class="informaltable block">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center">Population</th>
+                    <th align="center">Sample Size</th>
+                    <th align="center">Sample Mean</th>
+                    <th align="center">Sample Variance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="center">1</td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173299"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0641" display="inline"><mrow><msub><mi>n</mi><mn>1</mn></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173316"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0642" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>1</mn></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173331"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0643" display="inline"><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup></mrow></math></span></td>
+                </tr>
+                <tr>
+                    <td align="center">2</td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173348"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0644" display="inline"><mrow><msub><mi>n</mi><mn>2</mn></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173363"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0645" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173380"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0646" display="inline"><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup></mrow></math></span></td>
+                </tr>
+                <tr>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                    <td align="center">⋮</td>
+                </tr>
+                <tr>
+                    <td align="center"><em class="emphasis">K</em></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173396"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0647" display="inline"><mrow><msub><mi>n</mi><mi>K</mi></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173427"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0648" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mi>K</mi></msub></mrow></math></span></td>
+                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173445"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0649" display="inline"><mrow><msubsup><mi>s</mi><mi>K</mi><mn>2</mn></msubsup></mrow></math></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s04_p04">Define the following quantities:</p>
+    <div class="callout block" id="fwk-shafer-ch11_s04_n02">
+        <p class="para" id="fwk-shafer-ch11_s04_p05">The <strong class="emphasis bold">combined sample size</strong>:</p>
+        <span class="informalequation" id="shafer-20121106-125753-173461"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0650" display="block"><mrow><mi>n</mi><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>+</mo><mtext> · · · </mtext><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>K</mi></mrow></msub></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch11_s04_p06">The <strong class="emphasis bold">mean of the combined sample</strong> of all <em class="emphasis">n</em> observations:</p>
+        <span class="informalequation" id="shafer-20121106-125753-173478"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0651" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mo>+</mo><mtext> · · · </mtext><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>K</mi></mrow></msub><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mi>K</mi></mrow></msub></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch11_s04_p07">The <strong class="emphasis bold">mean square for treatment</strong>:</p>
+        <span class="informalequation" id="shafer-20121106-125753-173494"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0652" display="block"><mrow><mi>M</mi><mi>S</mi><mi>T</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mtext> · · · </mtext><mo>+</mo><msub><mrow><mi>n</mi></mrow><mrow><mi>K</mi></mrow></msub><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mi>K</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>K</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch11_s04_p08">The <strong class="emphasis bold">mean square for error</strong>:</p>
+        <span class="informalequation" id="shafer-20121106-125753-173510"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0653" display="block"><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mfrac><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><msubsup><mrow><mi>s</mi></mrow><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>+</mo><mrow><mo>(</mo><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><msubsup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>+</mo><mtext> · · · </mtext><mo>+</mo><mrow><mo>(</mo><mrow><msub><mrow><mi>n</mi></mrow><mrow><mi>K</mi></mrow></msub><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><msubsup><mrow><mi>s</mi></mrow><mrow><mi>K</mi></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><mi>n</mi><mo>−</mo><mi>K</mi></mrow></mfrac></mrow></math></span>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s04_p09"><span class="margin_term"><a class="glossterm">MST</a><span class="glossdef">Mean square for treatment.</span></span> can be thought of as the variance between the <em class="emphasis">K</em> individual independent random samples and <span class="margin_term"><a class="glossterm">MSE</a><span class="glossdef">Mean square for error.</span></span> as the variance within the samples. This is the reason for the name “analysis of variance,” universally abbreviated <span class="margin_term"><a class="glossterm">ANOVA</a><span class="glossdef">Analysis of variance.</span></span>. The adjective “one-way” has to do with the fact that the sampling scheme is the simplest possible, that of taking one random sample from each population under consideration. If the means of the <em class="emphasis">K</em> populations are all the same then the two quantities MST and MSE should be close to the same, so the null hypothesis will be rejected if the ratio of these two quantities is significantly greater than 1. This yields the following test statistic and methods and conditions for its use.</p>
+    <div class="callout block" id="fwk-shafer-ch11_s04_n03">
+        <h3 class="title">Test Statistic for Testing the Null Hypothesis that <em class="emphasis">K</em> Population Means Are Equal</h3>
+        <span class="informalequation" id="shafer-20121106-125753-173526"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0654" display="block"><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>M</mi><mi>S</mi><mi>T</mi></mrow><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch11_s04_p10">If the <em class="emphasis">K</em> populations are normally distributed with a common variance and if <span class="inlineequation" id="shafer-20121106-125753-173543"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0655" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext> · · · </mtext><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>K</mi></mrow></msub></math></span> is true then under independent random sampling <em class="emphasis">F</em> approximately follows an <em class="emphasis">F</em>-distribution with degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-173565"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0656" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>K</mi><mtext>−</mtext><mn>1</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-173582"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0657" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mi>n</mi><mo>−</mo><mi>K</mi><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch11_s04_p11">The test is right-tailed: <em class="emphasis">H</em><sub class="subscript">0</sub> is rejected at level of significance <span class="inlineequation" id="shafer-20121106-125753-173597"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0658" display="inline"><mi>α</mi></math></span> if <span class="inlineequation" id="shafer-20121106-125753-173614"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0659" display="inline"><mstyle mathvariant="bold-italic"><mi>F</mi></mstyle><mo>≥</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>.</mo></math></span></p>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s04_p12">As always the test is performed using the usual five-step procedure.</p>
+    <div class="exercises block" id="fwk-shafer-ch11_s04_n04">
+        <h3 class="title">Example 8</h3>
+        <p class="para" id="fwk-shafer-ch11_s04_p13">The average of grade point averages (GPAs) of college courses in a specific major is a measure of difficulty of the major. An educator wishes to conduct a study to find out whether the difficulty levels of different majors are the same. For such a study, a random sample of major grade point averages (GPA) of 11 graduating seniors at a large university is selected for each of the four majors mathematics, English, education, and biology. The data are given in <a class="xref" href="#fwk-shafer-ch11_s04_t01">Table 11.17 "Difficulty Levels of College Majors"</a>. Test, at the 5% level of significance, whether the data contain sufficient evidence to conclude that there are differences among the average major GPAs of these four majors.</p>
+        <div class="table" id="fwk-shafer-ch11_s04_t01">
+            <p class="title"><span class="title-prefix">Table 11.17</span> Difficulty Levels of College Majors</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="center">Mathematics</th>
+                        <th align="center">English</th>
+                        <th align="center">Education</th>
+                        <th align="center">Biology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">2.59</td>
+                        <td align="center">3.64</td>
+                        <td align="center">4.00</td>
+                        <td align="center">2.78</td>
+                    </tr>
+                    <tr>
+                        <td align="center">3.13</td>
+                        <td align="center">3.19</td>
+                        <td align="center">3.59</td>
+                        <td align="center">3.51</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.97</td>
+                        <td align="center">3.15</td>
+                        <td align="center">2.80</td>
+                        <td align="center">2.65</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.50</td>
+                        <td align="center">3.78</td>
+                        <td align="center">2.39</td>
+                        <td align="center">3.16</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.53</td>
+                        <td align="center">3.03</td>
+                        <td align="center">3.47</td>
+                        <td align="center">2.94</td>
+                    </tr>
+                    <tr>
+                        <td align="center">3.29</td>
+                        <td align="center">2.61</td>
+                        <td align="center">3.59</td>
+                        <td align="center">2.32</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.53</td>
+                        <td align="center">3.20</td>
+                        <td align="center">3.74</td>
+                        <td align="center">2.58</td>
+                    </tr>
+                    <tr>
+                        <td align="center">3.17</td>
+                        <td align="center">3.30</td>
+                        <td align="center">3.77</td>
+                        <td align="center">3.21</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.70</td>
+                        <td align="center">3.54</td>
+                        <td align="center">3.13</td>
+                        <td align="center">3.23</td>
+                    </tr>
+                    <tr>
+                        <td align="center">3.88</td>
+                        <td align="center">3.25</td>
+                        <td align="center">3.00</td>
+                        <td align="center">3.57</td>
+                    </tr>
+                    <tr>
+                        <td align="center">2.64</td>
+                        <td align="center">4.00</td>
+                        <td align="center">3.47</td>
+                        <td align="center">3.22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="simpara">Solution:</p>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s04_l01" mark="none">
+            <li>
+                <p class="para">Step 1. The test of hypotheses is</p>
+                <span class="informalequation" id="shafer-20121106-125753-173630"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0660" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>4</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><mtext> not all four population means are equal</mtext><mtext> </mtext><mtext> </mtext><mi>@</mi><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.05</mn></mtd></mtr></mtable></math></span>
+            </li>
+            <li>Step 2. The test statistic is <span class="inlineequation" id="shafer-20121106-125753-173646"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0661" display="inline"><mstyle mathvariant="bold-italic"><mi>F</mi></mstyle><mo>=</mo><mi>M</mi><mi>S</mi><mi>T</mi><mo>∕</mo><mi>M</mi><mi>S</mi><mi>E</mi></math></span> with (since <em class="emphasis">n</em> = 44 and <em class="emphasis">K</em> = 4) degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-173663"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0662" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>K</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>4</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>3</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-173679"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0663" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mi>n</mi><mo>−</mo><mi>K</mi><mo>=</mo><mn>44</mn><mo>−</mo><mn>4</mn><mo>=</mo><mn>40</mn><mo>.</mo></math></span>
+</li>
+            <li>
+                <p class="para">Step 3. If we index the population of mathematics majors by 1, English majors by 2, education majors by 3, and biology majors by 4, then the sample sizes, sample means, and sample variances of the four samples in <a class="xref" href="#fwk-shafer-ch11_s04_t01">Table 11.17 "Difficulty Levels of College Majors"</a> are summarized (after rounding for simplicity) by:</p>
+                <div class="informaltable">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th align="center">Major</th>
+                                <th align="center">Sample Size</th>
+                                <th align="center">Sample Mean</th>
+                                <th align="center">Sample Variance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">Mathematics</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173702"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0664" display="inline"><mrow><mi>n</mi><msub><malignmark></malignmark><mn>1</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173719"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0665" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mn>2.90</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173735"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0666" display="inline"><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.188</mn></mrow></math></span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">English</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173751"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0667" display="inline"><mrow><mi>n</mi><msub><malignmark></malignmark><mn>2</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173767"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0668" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msub><mo>=</mo><mn>3.34</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173784"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0669" display="inline"><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.148</mn></mrow></math></span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Education</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173801"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0670" display="inline"><mrow><mi>n</mi><msub><malignmark></malignmark><mn>3</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173823"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0671" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>3</mn></msub><mo>=</mo><mn>3.36</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173839"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0672" display="inline"><mrow><msubsup><mi>s</mi><mn>3</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.229</mn></mrow></math></span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Biology</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173856"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0673" display="inline"><mrow><mi>n</mi><msub><malignmark></malignmark><mn>4</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173872"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0674" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>4</mn></msub><mo>=</mo><mn>3.02</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-173888"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0675" display="inline"><mrow><msubsup><mi>s</mi><mn>4</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.157</mn></mrow></math></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="para">The average of all 44 observations is (after rounding for simplicity) <span class="inlineequation" id="shafer-20121106-125753-173905"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0676" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3.15</mn><mo>.</mo></math></span> We compute (rounding for simplicity)</p>
+                <span class="informalequation" id="shafer-20121106-125753-173921"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0677" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>M</mi><mi>S</mi><mi>T</mi></mtd><mtd><mo>=</mo><mfrac><mrow><mn>11</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>2.90</mn><mo>−</mo><mn>3.15</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>11</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3.34</mn><mo>−</mo><mn>3.15</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>11</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3.36</mn><mo>−</mo><mn>3.15</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>11</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>3.02</mn><mo>−</mo><mn>3.15</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>4</mn><mo>−</mo><mn>1</mn></mrow></mfrac></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo><mfrac><mrow><mn>1.7556</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo><mn>0.585</mn></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr></mtable></math></span>
+                <p class="para">and</p>
+                <span class="informalequation" id="shafer-20121106-125753-173937"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0678" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mrow><mo>(</mo><mrow><mn>11</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.188</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>11</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.148</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>11</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.229</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>11</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.157</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>44</mn><mo>−</mo><mn>4</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>7.22</mn></mrow><mrow><mn>40</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd columnalign="left"><mo>=</mo></mtd><mtd columnalign="left"><mn>0.181</mn></mtd></mtr></mtable></math></span>
+                <p class="para">so that</p>
+                <span class="informalequation" id="shafer-20121106-125753-173954"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0679" display="block"><mrow><mstyle mathvariant="bold-italic"><mi>F</mi></mstyle><mo>=</mo><mfrac><mrow><mi>M</mi><mi>S</mi><mi>T</mi></mrow><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>0.585</mn></mrow><mrow><mn>0.181</mn></mrow></mfrac><mo>=</mo><mn>3.232</mn></mrow></math></span>
+            </li>
+            <li>Step 4. The test is right-tailed. The single critical value is (since <span class="inlineequation" id="shafer-20121106-125753-173970"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0680" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>3</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-173997"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0681" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>40</mn></math></span>) <span class="inlineequation" id="shafer-20121106-125753-174014"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0682" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>=</mo><msub><mrow><mi>F</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>2.84</mn><mo>.</mo></math></span> Thus the rejection region is <span class="inlineequation" id="shafer-20121106-125753-174030"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0683" display="inline"><mrow><mo>[</mo><mrow><mn>2.84</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span>, as illustrated in <a class="xref" href="#fwk-shafer-ch11_s04_f01">Figure 11.12</a>.</li>
+        </ul>
+        <div class="figure medium" id="fwk-shafer-ch11_s04_f01">
+            <p class="title"><span class="title-prefix">Figure 11.12</span> <a class="xref" href="#fwk-shafer-ch11_s04_n04" xrefstyle="select: title">Note 11.36 "Example 8"</a> Rejection Region</p>
+            <img src="section_15/c89e2a4bd81e46a6967fd270bd1cba69.jpg">
+        </div>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s04_l02" mark="none">
+            <li>Step 5. Since <span class="inlineequation" id="shafer-20121106-125753-174046"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0684" display="inline"><mi>F</mi><mo>=</mo><mn>3.232</mn><mo>&gt;</mo><mn>2.84</mn></math></span>, we reject <em class="emphasis">H</em><sub class="subscript">0</sub>. The data provide sufficient evidence, at the 5% level of significance, to conclude that the averages of major GPAs for the four majors considered are not all equal.</li>
+        </ul>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch11_s04_n05">
+        <h3 class="title">Example 9</h3>
+        <p class="para" id="fwk-shafer-ch11_s04_p14">A research laboratory developed two treatments which are believed to have the potential of prolonging the survival times of patients with an acute form of thymic leukemia. To evaluate the potential treatment effects 33 laboratory mice with thymic leukemia were randomly divided into three groups. One group received Treatment 1, one received Treatment 2, and the third was observed as a control group. The survival times of these mice are given in <a class="xref" href="#fwk-shafer-ch11_s04_t02">Table 11.18 "Mice Survival Times in Days"</a>. Test, at the 1% level of significance, whether these data provide sufficient evidence to confirm the belief that at least one of the two treatments affects the average survival time of mice with thymic leukemia.</p>
+        <div class="table" id="fwk-shafer-ch11_s04_t02">
+            <p class="title"><span class="title-prefix">Table 11.18</span> Mice Survival Times in Days</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" align="center">Treatment 1</th>
+                        <th align="center">Treatment 2</th>
+                        <th align="center">Control</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">71</td>
+                        <td align="center">75</td>
+                        <td align="center">77</td>
+                        <td align="center">81</td>
+                    </tr>
+                    <tr>
+                        <td align="center">72</td>
+                        <td align="center">73</td>
+                        <td align="center">67</td>
+                        <td align="center">79</td>
+                    </tr>
+                    <tr>
+                        <td align="center">75</td>
+                        <td align="center">72</td>
+                        <td align="center">79</td>
+                        <td align="center">73</td>
+                    </tr>
+                    <tr>
+                        <td align="center">80</td>
+                        <td align="center">65</td>
+                        <td align="center">78</td>
+                        <td align="center">71</td>
+                    </tr>
+                    <tr>
+                        <td align="center">60</td>
+                        <td align="center">63</td>
+                        <td align="center">81</td>
+                        <td align="center">75</td>
+                    </tr>
+                    <tr>
+                        <td align="center">65</td>
+                        <td align="center">69</td>
+                        <td align="center">72</td>
+                        <td align="center">84</td>
+                    </tr>
+                    <tr>
+                        <td align="center">63</td>
+                        <td align="center">64</td>
+                        <td align="center">71</td>
+                        <td align="center">77</td>
+                    </tr>
+                    <tr>
+                        <td align="center">78</td>
+                        <td align="center">71</td>
+                        <td align="center">84</td>
+                        <td align="center">67</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center">91</td>
+                        <td align="center"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="simpara">Solution:</p>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s04_l03" mark="none">
+            <li>
+                <p class="para">Step 1. The test of hypotheses is</p>
+                <span class="informalequation" id="shafer-20121106-125753-174062"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0685" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd><mtext>not all three population means are equal</mtext><mtext> </mtext><mtext> </mtext><mi>@</mi><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.01</mn></mtd></mtr></mtable></math></span>
+            </li>
+            <li>Step 2. The test statistic is <span class="inlineequation" id="shafer-20121106-125753-174079"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0686" display="inline"><mstyle mathvariant="bold-italic"><mi>F</mi></mstyle><mo>=</mo><mi>M</mi><mi>S</mi><mi>T</mi><mo>∕</mo><mi>M</mi><mi>S</mi><mi>E</mi></math></span> with (since <em class="emphasis">n</em> = 33 and <em class="emphasis">K</em> = 3) degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-174095"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0687" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>K</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>3</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>2</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-174111"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0688" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mi>n</mi><mo>−</mo><mi>K</mi><mo>=</mo><mn>33</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>30</mn><mo>.</mo></math></span>
+</li>
+            <li>
+                <p class="para">Step 3. If we index the population of mice receiving Treatment 1 by 1, Treatment 2 by 2, and no treatment by 3, then the sample sizes, sample means, and sample variances of the three samples in <a class="xref" href="#fwk-shafer-ch11_s04_t02">Table 11.18 "Mice Survival Times in Days"</a> are summarized (after rounding for simplicity) by:</p>
+                <div class="informaltable">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th align="center">Group</th>
+                                <th align="center">Sample Size</th>
+                                <th align="center">Sample Mean</th>
+                                <th align="center">Sample Variance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">Treatment 1</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174134"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0689" display="inline"><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>16</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174151"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0690" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mn>69.75</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174167"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0691" display="inline"><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>34.47</mn></mrow></math></span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Treatment 2</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174183"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0692" display="inline"><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174199"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0693" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msub><mo>=</mo><mn>77.78</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174215"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0694" display="inline"><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>52.69</mn></mrow></math></span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Control</td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174232"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0695" display="inline"><mrow><msub><mi>n</mi><mn>3</mn></msub><mo>=</mo><mn>8</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174247"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0696" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>3</mn></msub><mo>=</mo><mn>75.88</mn></mrow></math></span></td>
+                                <td align="center"><span class="inlineequation" id="shafer-20121106-125753-174263"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0697" display="inline"><mrow><msubsup><mi>s</mi><mn>3</mn><mn>2</mn></msubsup><mo>=</mo><mn>30.69</mn></mrow></math></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="para">The average of all 33 observations is (after rounding for simplicity) <span class="inlineequation" id="shafer-20121106-125753-174290"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0698" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>73.42</mn><mo>.</mo></math></span> We compute (rounding for simplicity)</p>
+                <span class="informalequation" id="shafer-20121106-125753-174306"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0699" display="block"><mrow><mi>M</mi><mi>S</mi><mi>T</mi><mo>=</mo><mfrac><mrow><mn>16</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>69.75</mn><mo>−</mo><mn>73.42</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>9</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>77.78</mn><mo>−</mo><mn>73.42</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>8</mn><msup><mrow><mrow><mo>(</mo><mrow><mn>75.88</mn><mo>−</mo><mn>73.42</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>3</mn><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>434.63</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>=</mo><mn>217.50</mn></mrow></math></span>
+                <p class="para">and</p>
+                <span class="informalequation" id="shafer-20121106-125753-174322"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0700" display="block"><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mfrac><mrow><mrow><mo>(</mo><mrow><mn>16</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>34.47</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>9</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>52.69</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>8</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>30.69</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>33</mn><mo>−</mo><mn>3</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1153.4</mn></mrow><mrow><mn>30</mn></mrow></mfrac><mo>=</mo><mn>38.45</mn></mrow></math></span>
+                <p class="para">so that</p>
+                <span class="informalequation" id="shafer-20121106-125753-174339"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0701" display="block"><mrow><mstyle mathvariant="bold-italic"><mi>F</mi></mstyle><mo>=</mo><mfrac><mrow><mi>M</mi><mi>S</mi><mi>T</mi></mrow><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>217.50</mn></mrow><mrow><mn>38.45</mn></mrow></mfrac><mo>=</mo><mn>5.65</mn></mrow></math></span>
+            </li>
+            <li>Step 4. The test is right-tailed. The single critical value is <span class="inlineequation" id="shafer-20121106-125753-174354"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0702" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>=</mo><msub><mrow><mi>F</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>=</mo><mn>5.39</mn><mo>.</mo></math></span> Thus the rejection region is <span class="inlineequation" id="shafer-20121106-125753-174377"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0703" display="inline"><mrow><mo>[</mo><mrow><mn>5.39</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span>, as illustrated in <a class="xref" href="#fwk-shafer-ch11_s04_f02">Figure 11.13</a>.</li>
+        </ul>
+        <div class="figure medium" id="fwk-shafer-ch11_s04_f02">
+            <p class="title"><span class="title-prefix">Figure 11.13</span> <a class="xref" href="#fwk-shafer-ch11_s04_n05" xrefstyle="select: title">Note 11.37 "Example 9"</a> Rejection Region</p>
+            <img src="section_15/0cebffc666cda270843e897188456909.jpg">
+        </div>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s04_l04" mark="none">
+            <li>Step 5. Since <span class="inlineequation" id="shafer-20121106-125753-174393"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0704" display="inline"><mi>F</mi><mo>=</mo><mn>5.65</mn><mo>&gt;</mo><mn>5.39</mn></math></span>, we reject <em class="emphasis">H</em><sub class="subscript">0</sub>. The data provide sufficient evidence, at the 1% level of significance, to conclude that a treatment effect exists at least for one of the two treatments in increasing the mean survival time of mice with thymic leukemia.</li>
+        </ul>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch11_s04_p15">It is important to to note that, if the null hypothesis of equal population means is rejected, the statistical implication is that not all population means are equal. It does not however tell which population mean is different from which. The inference about where the suggested difference lies is most frequently made by a follow-up study.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch11_s04_n06">
+        <h3 class="title">Key Takeaway</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch11_s04_l05" mark="bullet">
+            <li>An <em class="emphasis">F</em>-test can be used to evaluate the hypothesis that the means of several normal populations, all with the same standard deviation, are identical.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch11_s04_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s04_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p01">The following three random samples are taken from three normal populations with respective means <span class="inlineequation" id="shafer-20121106-125753-174416"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0705" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174433"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0706" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-174449"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0707" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub></math></span>, and the same variance <span class="inlineequation" id="shafer-20121106-125753-174465"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0708" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span></p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Sample 1</th>
+                                    <th align="center">Sample 2</th>
+                                    <th align="center">Sample 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">2</td>
+                                    <td align="center">3</td>
+                                    <td align="center">0</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2</td>
+                                    <td align="center">5</td>
+                                    <td align="center">1</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3</td>
+                                    <td align="center">7</td>
+                                    <td align="center">2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">5</td>
+                                    <td align="center"></td>
+                                    <td align="center">1</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3</td>
+                                    <td align="center"></td>
+                                    <td align="center"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o01" numeration="loweralpha">
+                        <li>Find the combined sample size <em class="emphasis">n</em>.</li>
+                        <li>Find the combined sample mean <span class="inlineequation" id="shafer-20121106-125753-174481"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0709" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span>
+</li>
+                        <li>Find the sample mean for each of the three samples.</li>
+                        <li>Find the sample variance for each of the three samples.</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174497"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0710" display="inline"><mi>M</mi><mi>S</mi><mi>T</mi><mo>.</mo></math></span>
+</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174514"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0711" display="inline"><mi>M</mi><mi>S</mi><mi>E</mi><mo>.</mo></math></span>
+</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174531"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0712" display="inline"><mi>F</mi><mo>=</mo><mi>M</mi><mi>S</mi><mi>T</mi><mo>∕</mo><mi>M</mi><mi>S</mi><mi>E</mi><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p02">The following three random samples are taken from three normal populations with respective means <span class="inlineequation" id="shafer-20121106-125753-174702"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0722" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174726"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0723" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-174743"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0724" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub></math></span>, and a same variance <span class="inlineequation" id="shafer-20121106-125753-174759"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0725" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span></p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Sample 1</th>
+                                    <th align="center">Sample 2</th>
+                                    <th align="center">Sample 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">0.0</td>
+                                    <td align="center">1.3</td>
+                                    <td align="center">0.2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">0.1</td>
+                                    <td align="center">1.5</td>
+                                    <td align="center">0.2</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">0.2</td>
+                                    <td align="center">1.7</td>
+                                    <td align="center">0.3</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">0.1</td>
+                                    <td align="center"></td>
+                                    <td align="center">0.5</td>
+                                </tr>
+                                <tr>
+                                    <td align="center"></td>
+                                    <td align="center"></td>
+                                    <td align="center">0.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o03" numeration="loweralpha">
+                        <li>Find the combined sample size <em class="emphasis">n</em>.</li>
+                        <li>Find the combined sample mean <span class="inlineequation" id="shafer-20121106-125753-174774"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0726" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span>
+</li>
+                        <li>Find the sample mean for each of the three samples.</li>
+                        <li>Find the sample variance for each of the three samples.</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174792"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0727" display="inline"><mi>M</mi><mi>S</mi><mi>T</mi><mo>.</mo></math></span>
+</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174807"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0728" display="inline"><mi>M</mi><mi>S</mi><mi>E</mi><mo>.</mo></math></span>
+</li>
+                        <li>Find <span class="inlineequation" id="shafer-20121106-125753-174824"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0729" display="inline"><mi>F</mi><mo>=</mo><mi>M</mi><mi>S</mi><mi>T</mi><mo>∕</mo><mi>M</mi><mi>S</mi><mi>E</mi><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p03">Refer to Exercise 1.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o05" numeration="loweralpha">
+                        <li>Find the number of populations under consideration <em class="emphasis">K</em>.</li>
+                        <li>Find the degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-174999"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0739" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>K</mi><mtext>−</mtext><mn>1</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-175015"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0740" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mi>n</mi><mo>−</mo><mi>K</mi><mo>.</mo></math></span>
+</li>
+                        <li>For <span class="inlineequation" id="shafer-20121106-125753-175031"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0741" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, find <span class="inlineequation" id="shafer-20121106-125753-175047"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0742" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mi>α</mi></mrow></msub></math></span> with the degrees of freedom computed above.</li>
+                        <li>
+                            <p class="para">At <span class="inlineequation" id="shafer-20121106-125753-175063"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0743" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, test hypotheses</p>
+                            <span class="informalequation" id="shafer-20121106-125753-175079"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0744" display="block"><mrow><mtable columnspacing="0.2em" columnlines="none none" equalcolumns="false"><mtr><mtd columnalign="left"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right"><mtext>vs. </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>at least one pair of the</mtext></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"><mtext> population means are not equal</mtext></mtd></mtr></mtable></mrow></math></span>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p04">Refer to Exercise 2.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o07" numeration="loweralpha">
+                        <li>Find the number of populations under consideration <em class="emphasis">K</em>.</li>
+                        <li>Find the degrees of freedoms <span class="inlineequation" id="shafer-20121106-125753-175149"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0748" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>K</mi><mtext>−</mtext><mn>1</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-175166"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0749" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mi>n</mi><mo>−</mo><mi>K</mi><mo>.</mo></math></span>
+</li>
+                        <li>For <span class="inlineequation" id="shafer-20121106-125753-175185"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0750" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, find <span class="inlineequation" id="shafer-20121106-125753-175201"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0751" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mi>α</mi></mrow></msub></math></span> with the degrees of freedom computed above.</li>
+                        <li>
+                            <p class="para">At <span class="inlineequation" id="shafer-20121106-125753-175216"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0752" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, test hypotheses</p>
+                            <span class="informalequation" id="shafer-20121106-125753-175232"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0753" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none" equalcolumns="false"><mtr><mtd columnalign="left"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>3</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right"><mtext>vs. </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mtext>at least one pair of the </mtext></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"><mtext>population means are not equal</mtext></mtd></mtr></mtable></mrow></math></span>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s04_qs01_qd02" start="5">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p05">The Mozart effect refers to a boost of average performance on tests for elementary school students if the students listen to Mozart’s chamber music for a period of time immediately before the test. In order to attempt to test whether the Mozart effect actually exists, an elementary school teacher conducted an experiment by dividing her third-grade class of 15 students into three groups of 5. The first group was given an end-of-grade test without music; the second group listened to Mozart’s chamber music for 10 minutes; and the third groups listened to Mozart’s chamber music for 20 minutes before the test. The scores of the 15 students are given below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Group 1</th>
+                                    <th align="center">Group 2</th>
+                                    <th align="center">Group 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">80</td>
+                                    <td align="center">79</td>
+                                    <td align="center">73</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">63</td>
+                                    <td align="center">73</td>
+                                    <td align="center">82</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">74</td>
+                                    <td align="center">74</td>
+                                    <td align="center">79</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">71</td>
+                                    <td align="center">77</td>
+                                    <td align="center">82</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">70</td>
+                                    <td align="center">81</td>
+                                    <td align="center">84</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p06">Using the <span class="margin_term"><a class="glossterm">ANOVA <em class="emphasis">F</em>-test</a><span class="glossdef">a test based on an <em class="emphasis">F</em> statistic to check whether several population means are equal.</span></span> at <span class="inlineequation" id="shafer-20121106-125753-175303"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0757" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn></math></span>, is there sufficient evidence in the data to suggest that the Mozart effect exists?</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p08">The Mozart effect refers to a boost of average performance on tests for elementary school students if the students listen to Mozart’s chamber music for a period of time immediately before the test. Many educators believe that such an effect is not necessarily due to Mozart’s music per se but rather a relaxation period before the test. To support this belief, an elementary school teacher conducted an experiment by dividing her third-grade class of 15 students into three groups of 5. Students in the first group were asked to give themselves a self-administered facial massage; students in the second group listened to Mozart’s chamber music for 15 minutes; students in the third group listened to Schubert’s chamber music for 15 minutes before the test. The scores of the 15 students are given below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">Group 1</th>
+                                    <th align="center">Group 2</th>
+                                    <th align="center">Group 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">79</td>
+                                    <td align="center">82</td>
+                                    <td align="center">80</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">81</td>
+                                    <td align="center">84</td>
+                                    <td align="center">81</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">80</td>
+                                    <td align="center">86</td>
+                                    <td align="center">71</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">89</td>
+                                    <td align="center">91</td>
+                                    <td align="center">90</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">86</td>
+                                    <td align="center">82</td>
+                                    <td align="center">86</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p09">Test, using the ANOVA <em class="emphasis">F</em>-test at the 10% level of significance, whether the data provide sufficient evidence to conclude that any of the three relaxation method does better than the others.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p11">Precision weighing devices are sensitive to environmental conditions. Temperature and humidity in a laboratory room where such a device is installed are tightly controlled to ensure high precision in weighing. A newly designed weighing device is claimed to be more robust against small variations of temperature and humidity. To verify such a claim, a laboratory tests the new device under four settings of temperature-humidity conditions. First, two levels of <em class="emphasis">high</em> and <em class="emphasis">low</em> temperature and two levels of <em class="emphasis">high</em> and <em class="emphasis">low</em> humidity are identified. Let <em class="emphasis">T</em> stand for temperature and <em class="emphasis">H</em> for humidity. The four experimental settings are defined and noted as (<em class="emphasis">T</em>, <em class="emphasis">H</em>): (high, high), (high, low), (low, high), and (low, low). A pre-calibrated standard weight of 1 kg was weighed by the new device four times in each setting. The results in terms of error (in micrograms mcg) are given below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">(high, high)</th>
+                                    <th align="center">(high, low)</th>
+                                    <th align="center">(low, high)</th>
+                                    <th align="center">(low, low)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">−1.50</td>
+                                    <td align="center">11.47</td>
+                                    <td align="center">−14.29</td>
+                                    <td align="center">5.54</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">−6.73</td>
+                                    <td align="center">9.28</td>
+                                    <td align="center">−18.11</td>
+                                    <td align="center">10.34</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">11.69</td>
+                                    <td align="center">5.58</td>
+                                    <td align="center">−11.16</td>
+                                    <td align="center">15.23</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">−5.72</td>
+                                    <td align="center">10.80</td>
+                                    <td align="center">−10.41</td>
+                                    <td align="center">−5.69</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p12">Test, using the ANOVA <em class="emphasis">F</em>-test at the 1% level of significance, whether the data provide sufficient evidence to conclude that the mean weight readings by the newly designed device vary among the four settings.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p14">To investigate the real cost of owning different makes and models of new automobiles, a consumer protection agency followed 16 owners of new vehicles of four popular makes and models, call them <span class="inlineequation" id="shafer-20121106-125753-175370"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0761" display="inline"><mi>T</mi><mi>C</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-175386"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0762" display="inline"><mi>H</mi><mi>A</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-175401"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0763" display="inline"><mi>N</mi><mi>A</mi></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-175418"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0764" display="inline"><mi>F</mi><mi>T</mi></math></span>, and kept a record of each of the owner’s real cost in dollars for the first five years. The five-year costs of the 16 car owners are given below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="center">TC</th>
+                                    <th align="center">HA</th>
+                                    <th align="center">NA</th>
+                                    <th align="center">FT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">8423</td>
+                                    <td align="center">7776</td>
+                                    <td align="center">8907</td>
+                                    <td align="center">10333</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">7889</td>
+                                    <td align="center">7211</td>
+                                    <td align="center">9077</td>
+                                    <td align="center">9217</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">8665</td>
+                                    <td align="center">6870</td>
+                                    <td align="center">8732</td>
+                                    <td align="center">10540</td>
+                                </tr>
+                                <tr>
+                                    <td align="center"></td>
+                                    <td align="center">7129</td>
+                                    <td align="center">9747</td>
+                                    <td align="center"></td>
+                                </tr>
+                                <tr>
+                                    <td align="center"></td>
+                                    <td align="center">7359</td>
+                                    <td align="center">8677</td>
+                                    <td align="center"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p15">Test, using the ANOVA <em class="emphasis">F</em>-test at the 5% level of significance, whether the data provide sufficient evidence to conclude that there are differences among the mean real costs of ownership for these four models.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p17">Helping people to lose weight has become a huge industry in the United States, with annual revenue in the hundreds of billion dollars. Recently each of the three market-leading weight reducing programs claimed to be the most effective. A consumer research company recruited 33 people who wished to lose weight and sent them to the three leading programs. After six months their weight losses were recorded. The results are summarized below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="left">Statistic</th>
+                                    <th align="left">Prog. 1</th>
+                                    <th align="left">Prog. 2</th>
+                                    <th align="left">Prog. 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left">Sample Mean</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175456"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0766" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mn>10.65</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175473"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0767" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msub><mo>=</mo><mn>8.90</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175490"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0768" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>3</mn></msub><mo>=</mo><mn>9.33</mn></mrow></math></span></td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sample Variance</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175506"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0769" display="inline"><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>27.20</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175523"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0770" display="inline"><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>16.86</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175540"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0771" display="inline"><mrow><msubsup><mi>s</mi><mn>3</mn><mn>2</mn></msubsup><mo>=</mo><mn>32.40</mn></mrow></math></span></td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sample Size</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0772" display="inline"><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175578"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0773" display="inline"><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175595"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0774" display="inline"><mrow><msub><mi>n</mi><mn>3</mn></msub><mo>=</mo><mn>11</mn></mrow></math></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p18">The mean weight loss of the combined sample of all 33 people was <span class="inlineequation" id="shafer-20121106-125753-175611"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0775" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>9.63</mn><mo>.</mo></math></span> Test, using the ANOVA <em class="emphasis">F</em>-test at the 5% level of significance, whether the data provide sufficient evidence to conclude that some program is more effective than the others.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p20">A leading pharmaceutical company in the disposable contact lenses market has always taken for granted that the sales of certain peripheral products such as contact lens solutions would automatically go with the established brands. The long-standing culture in the company has been that lens solutions would not make a significant difference in user experience. Recent market research surveys, however, suggest otherwise. To gain a better understanding of the effects of contact lens solutions on user experience, the company conducted a comparative study in which 63 contact lens users were randomly divided into three groups, each of which received one of three top selling lens solutions on the market, including one of the company’s own. After using the assigned solution for two weeks, each participant was asked to rate the solution on the scale of 1 to 5 for satisfaction, with 5 being the highest level of satisfaction. The results of the study are summarized below:</p>
+                    <div class="informaltable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th align="left">Statistics</th>
+                                    <th align="left">Sol. 1</th>
+                                    <th align="left">Sol. 2</th>
+                                    <th align="left">Sol. 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left">Sample Mean</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175645"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0777" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mn>3.28</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175662"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0778" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msub><mo>=</mo><mn>3.96</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175677"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0779" display="inline"><mrow><msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mn>3</mn></msub><mo>=</mo><mn>4.10</mn></mrow></math></span></td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sample Variance</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175693"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0780" display="inline"><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.15</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175710"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0781" display="inline"><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.32</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175732"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0782" display="inline"><mrow><msubsup><mi>s</mi><mn>3</mn><mn>2</mn></msubsup><mo>=</mo><mn>0.36</mn></mrow></math></span></td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sample Size</td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175749"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0783" display="inline"><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>18</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175766"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0784" display="inline"><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>23</mn></mrow></math></span></td>
+                                    <td align="left"><span class="inlineequation" id="shafer-20121106-125753-175782"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0785" display="inline"><mrow><msub><mi>n</mi><mn>3</mn></msub><mo>=</mo><mn>22</mn></mrow></math></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p21">The mean satisfaction level of the combined sample of all 63 participants was <span class="inlineequation" id="shafer-20121106-125753-175797"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0786" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3.81</mn><mo>.</mo></math></span> Test, using the ANOVA <em class="emphasis">F</em>-test at the 5% level of significance, whether the data provide sufficient evidence to conclude that not all three average satisfaction levels are the same.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch11_s04_qs01_qd03" start="11">
+            <h3 class="title">Large Data Set Exercise</h3>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd03_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p23">Large Data Set 9 records the costs of materials (textbook, solution manual, laboratory fees, and so on) in each of ten different courses in each of three different subjects, chemistry, computer science, and mathematics. Test, at the 1% level of significance, whether the data provide sufficient evidence to conclude that the mean costs in the three disciplines are not all the same.</p>
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p24"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data9.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data9.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch11_s04_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o02_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 12,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-174547_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0713" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2.8333</mn></math></span>,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-174572_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0714" display="inline"><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174589_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0715" display="inline"><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174605_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0716" display="inline"><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>1</mn></math></span>,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-174622_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0717" display="inline"><msubsup><mrow><mi>s</mi></mrow><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>1.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174638_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0718" display="inline"><msubsup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>4</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-174654_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0719" display="inline"><msubsup><mrow><mi>s</mi></mrow><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>0.6667</mn></math></span>,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-174670_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0720" display="inline"><mi>M</mi><mi>S</mi><mi>T</mi><mo>=</mo><mn>13.83</mn></math></span>,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-174686_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0721" display="inline"><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mn>1.78</mn></math></span>,</li>
+                        <li>
+<em class="emphasis">F</em> = 7.7812</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch11_s04_qs01_o06_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">K</em> = 3;</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-175095_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0745" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-175117_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0746" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>9</mn></math></span>;</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-175133_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0747" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>4.26</mn></math></span>;</li>
+                        <li>
+<em class="emphasis">F</em> = 5.53, reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="5">
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p07_ans"><em class="emphasis">F</em> = 3.9647, <span class="inlineequation" id="shafer-20121106-125753-175320_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0758" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>2.81</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p13_ans"><em class="emphasis">F</em> = 9.6018, <span class="inlineequation" id="shafer-20121106-125753-175353_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0760" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>=</mo><mn>5.95</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p19_ans"><em class="emphasis">F</em> = 0.3589, <span class="inlineequation" id="shafer-20121106-125753-175628_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0776" display="inline"><msub><mrow><mi>F</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>3.32</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd02_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch11_s04_qs01_qd03_qa11_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch11_s04_qs01_p25_ans"><em class="emphasis">F</em> = 1.418. <span class="inlineequation" id="shafer-20121106-125753-175830_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0788" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-175853_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0789" display="inline"><mi>d</mi><msub><mrow><mi>f</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>27</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-175869_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0790" display="inline"><mrow><mo>[</mo><mrow><mn>5.4881</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Fail to reject <em class="emphasis">H</em><sub class="subscript">0</sub> of equal means.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s15-03-f-tests-for-equality-of-two-va.html"><img src="shared/images/batch-left.png"></a> <a href="s15-03-f-tests-for-equality-of-two-va.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s16-appendix.html">Next Section</a> <a href="s16-appendix.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

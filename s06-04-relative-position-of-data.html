@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Relative Position of Data</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-03-measures-of-variability.html"><img src="shared/images/batch-left.png"></a> <a href="s06-03-measures-of-variability.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-05-the-empirical-rule-and-chebysh.html">Next Section</a> <a href="s06-05-the-empirical-rule-and-chebysh.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch02_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">2.4</span> Relative Position of Data</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch02_s04_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch02_s04_o01" numeration="arabic">
+            <li>To learn the concept of the relative position of an element of a data set.</li>
+            <li>To learn the meaning of each of two measures, the percentile rank and the <em class="emphasis">z</em>-score, of the relative position of a measurement and how to compute each one.</li>
+            <li>To learn the meaning of the three quartiles associated to a data set and how to compute them.</li>
+            <li>To learn the meaning of the five-number summary of a data set, how to construct the box plot associated to it, and how to interpret the box plot.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch02_s04_p01">When you take an exam, what is often as important as your actual score on the exam is the way your score compares to other students’ performance. If you made a 70 but the average score (whether the mean, median, or mode) was 85, you did relatively poorly. If you made a 70 but the average score was only 55 then you did relatively well. In general, the significance of one observed value in a data set strongly depends on how that value compares to the other observed values in a data set. Therefore we wish to attach to each observed value a number that measures its relative position.</p>
+    <div class="section" id="fwk-shafer-ch02_s04_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Percentiles and Quartiles</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s04_s01_p01">Anyone who has taken a national standardized test is familiar with the idea of being given both a score on the exam and a “percentile ranking” of that score. You may be told that your score was 625 and that it is the 85th percentile. The first number tells how you actually did on the exam; the second says that 85% of the scores on the exam were less than or equal to your score, 625.</p>
+        <div class="callout editable block" id="fwk-shafer-ch02_s04_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p02"><em class="emphasis">Given an observed value</em> <em class="emphasis">x</em> <em class="emphasis">in a data set</em>, <em class="emphasis">x</em> <em class="emphasis">is the</em> <span class="margin_term"><a class="glossterm"><em class="emphasis">P</em>th percentile</a><span class="glossdef">The measurement <em class="emphasis">x</em>, if it exists, such that <em class="emphasis">P</em> percent of the data are less than or equal to <em class="emphasis">x</em>.</span></span> <em class="emphasis">of the data if the percentage of the data that are less than or equal to</em> <em class="emphasis">x</em> <em class="emphasis">is</em> <em class="emphasis">P</em><em class="emphasis">. The number</em> <em class="emphasis">P</em> <em class="emphasis">is the</em> <span class="margin_term"><a class="glossterm">percentile rank</a><span class="glossdef">Of a measurement <em class="emphasis">x</em>, the percentage of the data that are less than or equal to <em class="emphasis">x</em>.</span></span> <em class="emphasis">of</em> <em class="emphasis">x</em>.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s01_n02">
+            <h3 class="title">Example 13</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p03">What percentile is the value 1.39 in the data set of ten GPAs considered in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02_s01_n04" xrefstyle="select: title">Note 2.12 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02">Section 2.2 "Measures of Central Location"</a>? What percentile is the value 3.33?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p04">The data written in increasing order are</p>
+            <span class="informalequation" id="shafer-20121106-125753-088047"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0241" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mn>1.39</mn></mtd><mtd><mn>1.76</mn></mtd><mtd><mn>1.90</mn></mtd><mtd><mn>2.12</mn></mtd><mtd><mn>2.53</mn></mtd><mtd><mn>2.71</mn></mtd><mtd><mn>3.00</mn></mtd><mtd><mn>3.33</mn></mtd><mtd><mn>3.71</mn></mtd><mtd><mn>4.00</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p05">The only data value that is less than or equal to 1.39 is 1.39 itself. Since 1 is 1∕10 = .10 or 10% of 10, the value 1.39 is the 10th percentile. Eight data values are less than or equal to 3.33. Since 8 is 8∕10 = .80 or 80% of 10, the value 3.33 is the 80th percentile.</p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch02_s04_s01_p06">The <em class="emphasis">P</em>th percentile cuts the data set in two so that approximately <em class="emphasis">P</em>% of the data lie below it and <span class="inlineequation" id="shafer-20121106-125753-088063"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0242" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mn>100</mn><mo>−</mo><mi>P</mi></mrow><mo stretchy="false">)</mo></mrow></math></span>% of the data lie above it. In particular, the three percentiles that cut the data into fourths, as shown in <a class="xref" href="#fwk-shafer-ch02_s04_s01_f01">Figure 2.12 "Data Division by Quartiles"</a>, are called the <span class="margin_term"><a class="glossterm">quartiles</a><span class="glossdef">Of a data set, the three numbers <span class="inlineequation" id="shafer-20121106-125753-088079"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0243" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088096"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0244" display="inline"><msub><mi>Q</mi><mn>2</mn></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088112"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0245" display="inline"><msub><mi>Q</mi><mn>3</mn></msub></math></span> that divide the data approximately into fourths.</span></span>. The following simple computational definition of the three quartiles works well in practice.</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s04_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 2.12</span> Data Division by Quartiles</p>
+            <img src="section_06/bd498ec19e330a43ba648c1e7df70db9.jpg">
+        </div>
+        <div class="callout block" id="fwk-shafer-ch02_s04_s01_n03">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p07"><em class="emphasis">For any data set:</em>
+</p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s04_s01_o01" numeration="arabic">                    <li>
+<em class="emphasis">The</em> <strong class="emphasis bold">second quartile</strong> <span class="inlineequation" id="shafer-20121106-125753-088241"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0246" display="inline"><msub><mi>Q</mi><mn>2</mn></msub></math></span> <em class="emphasis">of the data set is its median.</em>
+</li>
+                    <li>
+<em class="emphasis">Define two subsets:</em>
+<ol class="orderedlist" id="fwk-shafer-ch02_s04_s01_o02" numeration="loweralpha">                            <li>
+<em class="emphasis">the lower set: all observations that are strictly less than</em> <span class="inlineequation" id="shafer-20121106-125753-088260"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0247" display="inline"><msub><mi>Q</mi><mn>2</mn></msub></math></span>;</li>
+                            <li>
+<em class="emphasis">the upper set: all observations that are strictly greater than</em> <span class="inlineequation" id="shafer-20121106-125753-088277"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0248" display="inline"><msub><mi>Q</mi><mn>2</mn></msub><mo>.</mo></math></span>
+</li>
+</ol>
+</li>
+                    <li>
+<em class="emphasis">The</em> <strong class="emphasis bold">first quartile</strong> <span class="inlineequation" id="shafer-20121106-125753-088293"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0249" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math></span> <em class="emphasis">of the data set is the median of the lower set.</em>
+</li>
+                    <li>
+<em class="emphasis">The</em> <strong class="emphasis bold">third quartile</strong> <span class="inlineequation" id="shafer-20121106-125753-088309"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0250" display="inline"><msub><mi>Q</mi><mn>3</mn></msub></math></span> <em class="emphasis">of the data set is the median of the upper set.</em>
+</li>
+</ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s01_n04">
+            <h3 class="title">Example 14</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p08">Find the quartiles of the data set of GPAs of <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02_s01_n04" xrefstyle="select: title">Note 2.12 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02">Section 2.2 "Measures of Central Location"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p09">As in the previous example we first list the data in numerical order:</p>
+            <span class="informalequation" id="shafer-20121106-125753-088325"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0251" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mn>1.39</mn></mtd><mtd><mn>1.76</mn></mtd><mtd><mn>1.90</mn></mtd><mtd><mn>2.12</mn></mtd><mtd><mn>2.53</mn></mtd><mtd><mn>2.71</mn></mtd><mtd><mn>3.00</mn></mtd><mtd><mn>3.33</mn></mtd><mtd><mn>3.71</mn></mtd><mtd><mn>4.00</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p10">This data set has <em class="emphasis">n</em> = 10 observations. Since 10 is an even number, the median is the mean of the two middle observations: <span class="inlineequation" id="shafer-20121106-125753-088341"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0252" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2.53</mn><mo>+</mo><mn>2.71</mn></mrow><mo stretchy="false">)</mo></mrow><mo>∕</mo><mn>2</mn><mo>=</mo><mn>2.62</mn><mo>.</mo></math></span> Thus the second quartile is <span class="inlineequation" id="shafer-20121106-125753-088358"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0253" display="inline"><msub><mi>Q</mi><mn>2</mn></msub><mo>=</mo><mn>2.62</mn><mo>.</mo></math></span> The lower and upper subsets are</p>
+            <span class="informalequation" id="shafer-20121106-125753-088374"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0254" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mtext>Lower:</mtext><mtext> </mtext><mi>L</mi></mtd><mtd><mo>=</mo><mrow><mo>{</mo><mrow><mn>1</mn><mo>.</mo><mn>39,1</mn><mo>.</mo><mn>76,1</mn><mo>.</mo><mn>90,2</mn><mo>.</mo><mn>12,2</mn><mo>.</mo><mn>53</mn></mrow><mo>}</mo></mrow></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr><mtr><mtd columnalign="left"><mtext>Upper:</mtext><mtext> </mtext><mi>U</mi></mtd><mtd><mo>=</mo><mrow><mo>{</mo><mrow><mn>2</mn><mo>.</mo><mn>71,3</mn><mo>.</mo><mn>00,3</mn><mo>.</mo><mn>33,3</mn><mo>.</mo><mn>71,4</mn><mo>.</mo><mn>00</mn></mrow><mo>}</mo></mrow></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr></mtable></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p11">Each has an odd number of elements, so the median of each is its middle observation. Thus the first quartile is <span class="inlineequation" id="shafer-20121106-125753-088390"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0255" display="inline"><msub><mi>Q</mi><mn>1</mn></msub><mo>=</mo><mn>1.90</mn></math></span>, the median of <em class="emphasis">L</em>, and the third quartile is <span class="inlineequation" id="shafer-20121106-125753-088406"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0256" display="inline"><msub><mi>Q</mi><mn>3</mn></msub><mo>=</mo><mn>3.33</mn></math></span>, the median of <em class="emphasis">U</em>.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s01_n05">
+            <h3 class="title">Example 15</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p12">Adjoin the observation 3.88 to the data set of the previous example and find the quartiles of the new set of data.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p13">As in the previous example we first list the data in numerical order:</p>
+            <span class="informalequation" id="shafer-20121106-125753-088422"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0257" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mn>1.39</mn></mtd><mtd><mn>1.76</mn></mtd><mtd><mn>1.90</mn></mtd><mtd><mn>2.12</mn></mtd><mtd><mn>2.53</mn></mtd><mtd><mn>2.71</mn></mtd><mtd><mn>3.00</mn></mtd><mtd><mn>3.33</mn></mtd><mtd><mn>3.71</mn></mtd><mtd><mn>3.88</mn></mtd><mtd><mn>4.00</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p14">This data set has 11 observations. The second quartile is its median, the middle value 2.71. Thus <span class="inlineequation" id="shafer-20121106-125753-088437"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0258" display="inline"><msub><mi>Q</mi><mn>2</mn></msub><mo>=</mo><mn>2.71</mn><mo>.</mo></math></span> The lower and upper subsets are now</p>
+            <span class="informalequation" id="shafer-20121106-125753-088453"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0259" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mtext>Lower:</mtext><mtext> </mtext><mi>L</mi></mtd><mtd><mo>=</mo><mrow><mo>{</mo><mrow><mn>1</mn><mo>.</mo><mn>39,1</mn><mo>.</mo><mn>76,1</mn><mo>.</mo><mn>90,2</mn><mo>.</mo><mn>12,2</mn><mo>.</mo><mn>53</mn></mrow><mo>}</mo></mrow></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr><mtr><mtd columnalign="right"><mtext>Upper:</mtext><mtext> </mtext><mi>U</mi></mtd><mtd><mo>=</mo><mrow><mo>{</mo><mrow><mn>3</mn><mo>.</mo><mn>00,3</mn><mo>.</mo><mn>33,3</mn><mo>.</mo><mn>71,3</mn><mo>.</mo><mn>88,4</mn><mo>.</mo><mn>00</mn></mrow><mo>}</mo></mrow></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr></mtable></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p15">The lower set <em class="emphasis">L</em> has median the middle value 1.90, so <span class="inlineequation" id="shafer-20121106-125753-088469"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0260" display="inline"><msub><mi>Q</mi><mn>1</mn></msub><mo>=</mo><mn>1.90</mn><mo>.</mo></math></span> The upper set has median the middle value 3.71, so <span class="inlineequation" id="shafer-20121106-125753-088485"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0261" display="inline"><msub><mi>Q</mi><mn>3</mn></msub><mo>=</mo><mn>3.71</mn><mo>.</mo></math></span></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch02_s04_s01_p16">In addition to the three quartiles, the two extreme values, the minimum <span class="inlineequation" id="shafer-20121106-125753-088501"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0262" display="inline"><msub><mi>x</mi><mtext>min</mtext></msub></math></span> and the maximum <span class="inlineequation" id="shafer-20121106-125753-088517"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0263" display="inline"><msub><mi>x</mi><mtext>max</mtext></msub></math></span> are also useful in describing the entire data set. Together these five numbers are called the <span class="margin_term"><a class="glossterm">five-number summary</a><span class="glossdef">Of a data set, the list <span class="inlineequation" id="shafer-20121106-125753-088533"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0264" display="inline"><mo>{</mo><msub><mi>x</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo>,</mo><mtext> </mtext><msub><mi>Q</mi><mn>1</mn></msub><mo>,</mo><mtext> </mtext><msub><mi>Q</mi><mn>2</mn></msub><mo>,</mo><mtext> </mtext><msub><mi>Q</mi><mn>3</mn></msub><mo>,</mo><mtext> </mtext><msub><mi>x</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>}</mo><mo>.</mo></math></span></span></span> of the data set:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-088549"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0265" display="block"><mrow><mrow><mo>{</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>,</mo><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>,</mo><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>,</mo><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>,</mo><mtext> </mtext><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub></mrow><mo>}</mo></mrow></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch02_s04_s01_p17">The five-number summary is used to construct a <span class="margin_term"><a class="glossterm">box plot</a><span class="glossdef">For a data set, a diagram constructed using the five-number summary, as in <a class="xref" href="#fwk-shafer-ch02_s04_s01_f02">Figure 2.13 "The Box Plot"</a>, which graphically summarizes the distribution of the data.</span></span> as in <a class="xref" href="#fwk-shafer-ch02_s04_s01_f02">Figure 2.13 "The Box Plot"</a>. Each of the five numbers is represented by a vertical line segment, a box is formed using the line segments at <span class="inlineequation" id="shafer-20121106-125753-088565"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0266" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-088581"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0267" display="inline"><msub><mi>Q</mi><mn>3</mn></msub></math></span> as its two vertical sides, and two horizontal line segments are extended from the vertical segments marking <span class="inlineequation" id="shafer-20121106-125753-088597"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0268" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-088612"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0269" display="inline"><msub><mi>Q</mi><mn>3</mn></msub></math></span> to the adjacent extreme values. (The two horizontal line segments are referred to as “whiskers,” and the diagram is sometimes called a “box and whisker plot.”) We caution the reader that there are other types of box plots that differ somewhat from the ones we are constructing, although all are based on the three quartiles.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch02_s04_s01_f02">
+            <p class="title"><span class="title-prefix">Figure 2.13</span> The Box Plot</p>
+            <img src="section_06/cf516ad64fc6aacd308c937ab4f7bcd5.jpg">
+        </div>
+        <p class="para block" id="fwk-shafer-ch02_s04_s01_p18">Note that the distance from <span class="inlineequation" id="shafer-20121106-125753-088628"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0270" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math></span> to <span class="inlineequation" id="shafer-20121106-125753-088644"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0271" display="inline"><msub><mi>Q</mi><mn>3</mn></msub></math></span> is the length of the interval over which the middle half of the data range. Thus it has the following special name.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s04_s01_n06">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p19"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">interquartile range (IQR)</a><span class="glossdef">Of a data set, the difference between the first and third quartiles.</span></span> <em class="emphasis">is the quantity</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-088661"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0272" display="block"><mrow><mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>−</mo><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s01_n07">
+            <h3 class="title">Example 16</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p20">Construct a box plot and find the IQR for the data in <a class="xref" href="#fwk-shafer-ch02_s04_s01_n04" xrefstyle="select: title">Note 2.44 "Example 14"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p21">From our work in <a class="xref" href="#fwk-shafer-ch02_s04_s01_n04" xrefstyle="select: title">Note 2.44 "Example 14"</a> we know that the five-number summary is</p>
+            <span class="informalequation" id="shafer-20121106-125753-088676"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0273" display="block"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>1.39</mn><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>1.90</mn><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>2.62</mn><mtext> </mtext><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>3.33</mn><mtext> </mtext><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>4.00</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p22">The box plot is</p>
+            <div class="informalfigure large">
+                <img src="section_06/513b9995859fcb622bba8376c09253d8.jpg">
+            </div>
+            <p class="para" id="fwk-shafer-ch02_s04_s01_p23">The interquartile range is <span class="inlineequation" id="shafer-20121106-125753-088692"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0274" display="inline"><mtext>IQR</mtext><mo>=</mo><mn>3.33</mn><mo>−</mo><mn>1.90</mn><mo>=</mo><mn>1.43</mn><mo>.</mo></math></span></p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch02_s04_s02" version="5.0" lang="en">
+        <h2 class="title editable block">
+<em class="emphasis">z</em>-scores</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s04_s02_p01">Another way to locate a particular observation <em class="emphasis">x</em> in a data set is to compute its distance from the mean in units of standard deviation.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s04_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm"><em class="emphasis">z</em>-score</a><span class="glossdef">Of a measurement <em class="emphasis">x</em>, the distance of <em class="emphasis">x</em> from the mean in units of standard deviation.</span></span> <em class="emphasis">of an observation</em> <em class="emphasis">x</em> <em class="emphasis">is the number</em> <em class="emphasis">z</em> <em class="emphasis">given by the computational formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-088708"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0275" display="block"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mi>s</mi></mrow></mfrac><mtext> </mtext><mi>o</mi><mi>r</mi><mtext> </mtext><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p03"><em class="emphasis">according to whether the data set is a sample or is the entire population.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s04_s02_p04">The formulas in the definition allow us to compute the <em class="emphasis">z</em>-score when <em class="emphasis">x</em> is known. If the <em class="emphasis">z</em>-score is known then <em class="emphasis">x</em> can be recovered using the corresponding inverse formulas</p>
+        <span class="informalequation block" id="shafer-20121106-125753-088724"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0276" display="block"><mrow><mi>x</mi><mo>=</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mi>s</mi><mi>z</mi><mtext> </mtext><mtext>or</mtext><mtext> </mtext><mi>x</mi><mo>=</mo><mi mathvariant="italic">μ</mi><mo>+</mo><mi mathvariant="italic">σ</mi><mi>z</mi></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch02_s04_s02_p05">The <em class="emphasis">z</em>-score indicates how many standard deviations an individual observation <em class="emphasis">x</em> is from the center of the data set, its mean. If <em class="emphasis">z</em> is negative then <em class="emphasis">x</em> is below average. If <em class="emphasis">z</em> is 0 then <em class="emphasis">x</em> is equal to the average. If <em class="emphasis">z</em> is positive then <em class="emphasis">x</em> is above average. See <a class="xref" href="#fwk-shafer-ch02_s04_s02_f01">Figure 2.14</a>.</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s04_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 2.14</span> <em class="emphasis">x</em>-Scale versus <em class="emphasis">z</em>-Score</p>
+            <img src="section_06/26fd571691fc0707b45b01d2c189d453.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s02_n02">
+            <h3 class="title">Example 17</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p06">Find the <em class="emphasis">z</em>-scores for all ten observations in the GPA sample data in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02_s01_n04" xrefstyle="select: title">Note 2.12 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02">Section 2.2 "Measures of Central Location"</a>.</p>
+            <span class="informalequation" id="shafer-20121106-125753-088740"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0277" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none none none none none none none none"><mtr><mtd columnalign="center"><mn>1.90</mn></mtd><mtd columnalign="center"><mn>3.00</mn></mtd><mtd columnalign="center"><mn>2.53</mn></mtd><mtd columnalign="center"><mn>3.71</mn></mtd><mtd columnalign="center"><mn>2.12</mn></mtd><mtd columnalign="center"><mn>1.76</mn></mtd><mtd columnalign="center"><mn>2.71</mn></mtd><mtd columnalign="center"><mn>1.39</mn></mtd><mtd columnalign="center"><mn>4.00</mn></mtd><mtd columnalign="center"><mn>3.33</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p07">For these data <span class="inlineequation" id="shafer-20121106-125753-088756"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0278" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2.645</mn></math></span> and <em class="emphasis">s</em> = 0.8674. The first observation <em class="emphasis">x</em> = 1.9 in the data set has <em class="emphasis">z</em>-score</p>
+            <span class="informalequation" id="shafer-20121106-125753-088772"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0279" display="block"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mi>s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1.9</mn><mo>−</mo><mn>2.645</mn></mrow><mrow><mn>0.8674</mn></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>0.8589</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p08">which means that <em class="emphasis">x</em> = 1.90 is 0.8589 standard deviations <em class="emphasis">below</em> the sample mean. The second observation <em class="emphasis">x</em> = 3.00 has <em class="emphasis">z</em>-score</p>
+            <span class="informalequation" id="shafer-20121106-125753-088788"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0280" display="block"><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mi>s</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3.00</mn><mo>−</mo><mn>2.645</mn></mrow><mrow><mn>0.8674</mn></mrow></mfrac><mo>=</mo><mn>0.4093</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p09">which means that <em class="emphasis">x</em> = 3.00 is 0.4093 standard deviations <em class="emphasis">above</em> the sample mean. Repeating the process for the remaining observations gives the full set of <em class="emphasis">z</em>-scores</p>
+            <span class="informalequation" id="shafer-20121106-125753-088804"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0281" display="block"><mrow><mtext>−</mtext><mn>0.86</mn><mtext> </mtext><mn>0.41</mn><mtext> </mtext><mtext>−</mtext><mn>0.13</mn><mtext> </mtext><mn>1.23</mn><mtext> </mtext><mtext>−</mtext><mn>0.61</mn><mtext> </mtext><mtext>−</mtext><mn>1.02</mn><mtext> </mtext><mn>0.07</mn><mtext> </mtext><mtext>−</mtext><mn>1.45</mn><mtext> </mtext><mn>1.56</mn><mtext> </mtext><mn>0.79</mn></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s04_s02_n03">
+            <h3 class="title">Example 18</h3>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p10">Suppose the mean and standard deviation of the GPAs of all currently registered students at a college are <em class="emphasis">μ</em> = 2.70 and <em class="emphasis">σ</em> = 0.50. The <em class="emphasis">z</em>-scores of the GPAs of two students, Antonio and Beatrice, are <span class="inlineequation" id="shafer-20121106-125753-088819"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0282" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>0.62</mn></math></span> and <em class="emphasis">z</em> = 1.28, respectively. What are their GPAs?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s04_s02_p11">Using the second formula right after the definition of <em class="emphasis">z</em>-scores we compute the GPAs as</p>
+            <span class="informalequation" id="shafer-20121106-125753-088836"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0283" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mtext>Antonio: </mtext><mi>x</mi><mo>=</mo><mi mathvariant="italic">μ</mi><mo>+</mo><mi>z</mi><mtext> </mtext><mi mathvariant="italic">σ</mi><mo>=</mo><mn>2.70</mn><mo>+</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>0.62</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.50</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>2.39</mn></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr><mtr><mtd columnalign="right"><mtext>Beatrice: </mtext><mi>x</mi><mo>=</mo><mi mathvariant="italic">μ</mi><mo>+</mo><mi>z</mi><mtext> </mtext><mi mathvariant="italic">σ</mi><mo>=</mo><mn>2.70</mn><mo>+</mo><mrow><mo>(</mo><mrow><mn>1.28</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.50</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3.34</mn></mtd><mtd columnalign="right"></mtd><mtd></mtd></mtr></mtable></math></span>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch02_s04_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch02_s04_s02_l01" mark="bullet">
+                <li>The percentile rank and <em class="emphasis">z</em>-score of a measurement indicate its relative position with regard to the other measurements in a data set.</li>
+                <li>The three quartiles divide a data set into fourths.</li>
+                <li>The five-number summary and its associated box plot summarize the location and distribution of the data.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s04_qs01" condition="1col" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s04_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p01">Consider the data set</p>
+                        <span class="informalequation" id="shafer-20121106-125753-088852"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0284" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>69</mn></mrow></mtd><mtd><mrow><mn>92</mn></mrow></mtd><mtd><mrow><mn>68</mn></mrow></mtd><mtd><mrow><mn>77</mn></mrow></mtd><mtd><mrow><mn>80</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>93</mn></mrow></mtd><mtd><mrow><mn>75</mn></mrow></mtd><mtd><mrow><mn>76</mn></mrow></mtd><mtd><mrow><mn>82</mn></mrow></mtd><mtd><mrow><mn>100</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>70</mn></mrow></mtd><mtd><mrow><mn>85</mn></mrow></mtd><mtd><mrow><mn>88</mn></mrow></mtd><mtd><mrow><mn>85</mn></mrow></mtd><mtd><mrow><mn>96</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>53</mn></mrow></mtd><mtd><mrow><mn>70</mn></mrow></mtd><mtd><mrow><mn>70</mn></mrow></mtd><mtd><mrow><mn>82</mn></mrow></mtd><mtd><mrow><mn>85</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o01" numeration="loweralpha">
+                            <li>Find the percentile rank of 82.</li>
+                            <li>Find the percentile rank of 68.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p02">Consider the data set</p>
+                        <span class="informalequation" id="shafer-20121106-125753-088868"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0285" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>8.5</mn></mrow></mtd><mtd><mrow><mn>8.2</mn></mrow></mtd><mtd><mrow><mn>7.0</mn></mrow></mtd><mtd><mrow><mn>7.0</mn></mrow></mtd><mtd><mrow><mn>4.9</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>9.6</mn></mrow></mtd><mtd><mrow><mn>8.5</mn></mrow></mtd><mtd><mrow><mn>8.8</mn></mrow></mtd><mtd><mrow><mn>8.5</mn></mrow></mtd><mtd><mrow><mn>8.7</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>6.5</mn></mrow></mtd><mtd><mrow><mn>8.2</mn></mrow></mtd><mtd><mrow><mn>7.6</mn></mrow></mtd><mtd><mrow><mn>1.5</mn></mrow></mtd><mtd><mrow><mn>9.3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>8.0</mn></mrow></mtd><mtd><mrow><mn>7.7</mn></mrow></mtd><mtd><mrow><mn>2.9</mn></mrow></mtd><mtd><mrow><mn>9.2</mn></mrow></mtd><mtd><mrow><mn>6.9</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o03" numeration="loweralpha">
+                            <li>Find the percentile rank of 6.5.</li>
+                            <li>Find the percentile rank of 7.7.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p03">Consider the data set represented by the ordered stem and leaf diagram</p>
+                        <span class="informalequation" id="shafer-20121106-125753-088884"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0286" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none none none none none none none none"><mtr><mtd columnalign="right"><mn>10</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>8</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>6</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o05" numeration="loweralpha">
+                            <li>Find the percentile rank of the grade 75.</li>
+                            <li>Find the percentile rank of the grade 57.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p04">Is the 90th percentile of a data set always equal to 90%? Why or why not?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p06">The 29th percentile in a large data set is 5.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o07" numeration="loweralpha">
+                            <li>Approximately what percentage of the observations are less than 5?</li>
+                            <li>Approximately what percentage of the observations are greater than 5?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p07">The 54th percentile in a large data set is 98.6.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o09" numeration="loweralpha">
+                            <li>Approximately what percentage of the observations are less than 98.6?</li>
+                            <li>Approximately what percentage of the observations are greater than 98.6?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p08">In a large data set the 29th percentile is 5 and the 79th percentile is 10. Approximately what percentage of observations lie between 5 and 10?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p10">In a large data set the 40th percentile is 125 and the 82nd percentile is 158. Approximately what percentage of observations lie between 125 and 158?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p12">Find the five-number summary and the IQR and sketch the box plot for the sample represented by the stem and leaf diagram in <a class="xref" href="fwk-shafer-ch02_s01#fwk-shafer-ch02_s01_s01_f02">Figure 2.2 "Ordered Stem and Leaf Diagram"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p14">Find the five-number summary and the IQR and sketch the box plot for the sample explicitly displayed in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02_s02_n04" xrefstyle="select: title">Note 2.20 "Example 7"</a> in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02">Section 2.2 "Measures of Central Location"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p16">Find the five-number summary and the IQR and sketch the box plot for the sample represented by the data frequency table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089099"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0299" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p18">Find the five-number summary and the IQR and sketch the box plot for the sample represented by the data frequency table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089211"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0306" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>5</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>3</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>2</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mi>f</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p20">Find the <em class="emphasis">z</em>-score of each measurement in the following sample data set.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089324"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0313" display="block"><mrow><mtext>−</mtext><mn>5</mn><mtext> </mtext><mn>6</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mtext>−</mtext><mn>1</mn><mtext> </mtext><mn>0</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p22">Find the <em class="emphasis">z</em>-score of each measurement in the following sample data set.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089340"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0314" display="block"><mrow><mn>1.6</mn><mtext> </mtext><mn>5.2</mn><mtext> </mtext><mn>2.8</mn><mtext> </mtext><mn>3.7</mn><mtext> </mtext><mn>4.0</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p24">The sample with data frequency table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089356"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0315" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p25">has mean <span class="inlineequation" id="shafer-20121106-125753-089372"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0316" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>3</mn></math></span> and standard deviation <em class="emphasis">s</em> ≈ 2.71. Find the <em class="emphasis">z</em>-score for every value in the sample.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p27">The sample with data frequency table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089428"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0319" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mtext>−</mtext><mn>1</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p28">has mean <span class="inlineequation" id="shafer-20121106-125753-089444"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0320" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1</mn></math></span> and standard deviation <em class="emphasis">s</em> ≈ 1.67. Find the <em class="emphasis">z</em>-score for every value in the sample.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p30">For the population</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089515"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0324" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none none"><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p31">compute each of the following.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o11" numeration="loweralpha">
+                            <li>The population mean <em class="emphasis">μ</em>.</li>
+                            <li>The population variance <em class="emphasis">σ</em><sup class="superscript">2</sup>.</li>
+                            <li>The population standard deviation <em class="emphasis">σ</em>.</li>
+                            <li>The <em class="emphasis">z</em>-score for every value in the population data set.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p32">For the population</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089548"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0326" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none none"><mtr><mtd columnalign="center"><mn>0.5</mn></mtd><mtd columnalign="center"><mn>2.1</mn></mtd><mtd columnalign="center"><mn>4.4</mn></mtd><mtd columnalign="center"><mn>1.0</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p33">compute each of the following.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o13" numeration="loweralpha">
+                            <li>The population mean <em class="emphasis">μ</em>.</li>
+                            <li>The population variance <em class="emphasis">σ</em><sup class="superscript">2</sup>.</li>
+                            <li>The population standard deviation <em class="emphasis">σ</em>.</li>
+                            <li>The <em class="emphasis">z</em>-score for every value in the population data set.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p34">A measurement <em class="emphasis">x</em> in a sample with mean <span class="inlineequation" id="shafer-20121106-125753-089603"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0329" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>10</mn></math></span> and standard deviation <em class="emphasis">s</em> = 3 has <em class="emphasis">z</em>-score <em class="emphasis">z</em> = 2. Find <em class="emphasis">x</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p36">A measurement <em class="emphasis">x</em> in a sample with mean <span class="inlineequation" id="shafer-20121106-125753-089619"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0330" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>10</mn></math></span> and standard deviation <em class="emphasis">s</em> = 3 has <em class="emphasis">z</em>-score <span class="inlineequation" id="shafer-20121106-125753-089636"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0331" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>1</mn><mo>.</mo></math></span> Find <em class="emphasis">x</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p38">A measurement <em class="emphasis">x</em> in a population with mean <em class="emphasis">μ</em> = 2.3 and standard deviation <em class="emphasis">σ</em> = 1.3 has <em class="emphasis">z</em>-score <em class="emphasis">z</em> = 2. Find <em class="emphasis">x</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p40">A measurement <em class="emphasis">x</em> in a sample with mean <em class="emphasis">μ</em> = 2.3 and standard deviation <em class="emphasis">σ</em> = 1.3 has <em class="emphasis">z</em>-score <span class="inlineequation" id="shafer-20121106-125753-089652"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0332" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>1.2</mn><mo>.</mo></math></span> Find <em class="emphasis">x</em>.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s04_qs01_qd02" start="23">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p42">The weekly sales for the last 20 weeks in a kitchen appliance store for an electric automatic rice cooker are</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089668"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0333" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>20</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd><mtd><mrow><mn>18</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>19</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>17</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd><mtd><mrow><mn>18</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>19</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o15" numeration="loweralpha">
+                            <li>Find the percentile rank of 15.</li>
+                            <li>If the sample accurately reflects the population, then what percentage of weeks would an inventory of 15 rice cookers be adequate?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p43">The table shows the number of vehicles owned in a survey of 52 households.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089691"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0334" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>15</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o17" numeration="loweralpha">
+                            <li>Find the percentile rank of 2.</li>
+                            <li>If the sample accurately reflects the population, then what percentage of households have at most two vehicles?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p44">For two months Cordelia records her daily commute time to work each day to the nearest minute and obtains the following data:</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089707"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0335" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>26</mn></mtd><mtd columnalign="center"><mn>27</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>30</mn></mtd><mtd columnalign="center"><mn>31</mn></mtd><mtd columnalign="center"><mn>32</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>16</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p45">Cordelia is supposed to be at work at 8:00 a.m. but refuses to leave her house before 7:30 a.m.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o19" numeration="loweralpha">
+                            <li>Find the percentile rank of 30, the time she has to get to work.</li>
+                            <li>Assuming that the sample accurately reflects the population of <em class="emphasis">all</em> of Cordelia’s commute times, use your answer to part (a) to predict the proportion of the work days she is late for work.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p46">The mean score on a standardized grammar exam is 49.6; the standard deviation is 1.35. Dromio is told that the <em class="emphasis">z</em>-score of his exam score is −1.19.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o21" numeration="loweralpha">
+                            <li>Is Dromio’s score above average or below average?</li>
+                            <li>What was Dromio’s actual score on the exam?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p47">A random sample of 49 invoices for repairs at an automotive body shop is taken. The data are arrayed in the stem and leaf diagram shown. (Stems are thousands of dollars, leaves are hundreds, so that for example the largest observation is 3,800.)</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089724"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0336" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none"><mtr><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p48">For these data, <span class="inlineequation" id="shafer-20121106-125753-089740"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0337" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>101,100</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089756"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0338" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>244,830,000</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o23" numeration="loweralpha">
+                            <li>Find the <em class="emphasis">z</em>-score of the repair that cost $1,100.</li>
+                            <li>Find the <em class="emphasis">z</em>-score of the repairs that cost $2,700.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa28">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p49">The stem and leaf diagram shows the time in seconds that callers to a telephone-order center were on hold before their call was taken.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089772"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0339" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none"><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o25" numeration="loweralpha">
+                            <li>Find the quartiles.</li>
+                            <li>Give the five-number summary of the data.</li>
+                            <li>Find the range and the IQR.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s04_qs01_qd03" start="29">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa29">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p50">Consider the data set represented by the ordered stem and leaf diagram</p>
+                        <span class="informalequation" id="shafer-20121106-125753-089939"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0349" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none none none none none none none none"><mtr><mtd columnalign="right"><mn>10</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>8</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>6</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>1</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>3</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>4</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>7</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="left"><mn>2</mn></mtd><mtd columnalign="left"><mn>5</mn></mtd><mtd columnalign="left"><mn>6</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"><mn>8</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"><mn>9</mn></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd><mtd columnalign="left"></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o27" numeration="loweralpha">
+                            <li>Find the three quartiles.</li>
+                            <li>Give the five-number summary of the data.</li>
+                            <li>Find the range and the IQR.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa30">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p51">For the following stem and leaf diagram the units on the stems are thousands and the units on the leaves are hundreds, so that for example the largest observation is 3,800.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-090104"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0359" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none"><mtr><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o29" numeration="loweralpha">
+                            <li>Find the percentile rank of 800.</li>
+                            <li>Find the percentile rank of 3,200.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa31">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p52">Find the five-number summary for the following sample data.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-090119"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0360" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>26</mn></mtd><mtd columnalign="center"><mn>27</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>30</mn></mtd><mtd columnalign="center"><mn>31</mn></mtd><mtd columnalign="center"><mn>32</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>16</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa32">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p54">Find the five-number summary for the following sample data.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-090223"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0366" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>384</mn></mtd><mtd columnalign="center"><mn>208</mn></mtd><mtd columnalign="center"><mn>98</mn></mtd><mtd columnalign="center"><mn>56</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa33">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p56">For the following stem and leaf diagram the units on the stems are thousands and the units on the leaves are hundreds, so that for example the largest observation is 3,800.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-090323"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0372" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none"><mtr><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o31" numeration="loweralpha">
+                            <li>Find the three quartiles.</li>
+                            <li>Find the IQR.</li>
+                            <li>Give the five-number summary of the data.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa34">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p57">Determine whether the following statement is true. “In any data set, if an observation <span class="inlineequation" id="shafer-20121106-125753-090491"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0382" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></span> is greater than another observation <span class="inlineequation" id="shafer-20121106-125753-090507"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0383" display="inline"><msub><mi>x</mi><mn>2</mn></msub></math></span>, then the <em class="emphasis">z</em>-score of <span class="inlineequation" id="shafer-20121106-125753-090523"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0384" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></span> is greater than the <em class="emphasis">z</em>-score of <span class="inlineequation" id="shafer-20121106-125753-090539"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0385" display="inline"><msub><mi>x</mi><mn>2</mn></msub><mo>.</mo></math></span>”</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa35">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p59">Emilia and Ferdinand took the same freshman chemistry course, Emilia in the fall, Ferdinand in the spring. Emilia made an 83 on the common final exam that she took, on which the mean was 76 and the standard deviation 8. Ferdinand made a 79 on the common final exam that he took, which was more difficult, since the mean was 65 and the standard deviation 12. The one who has a higher <em class="emphasis">z</em>-score did relatively better. Was it Emilia or Ferdinand?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa36">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p61">Refer to the previous exercise. On the final exam in the same course the following semester, the mean is 68 and the standard deviation is 9. What grade on the exam matches Emilia’s performance? Ferdinand’s?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa37">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p63">Rosencrantz and Guildenstern are on a weight-reducing diet. Rosencrantz, who weighs 178 lb, belongs to an age and body-type group for which the mean weight is 145 lb and the standard deviation is 15 lb. Guildenstern, who weighs 204 lb, belongs to an age and body-type group for which the mean weight is 165 lb and the standard deviation is 20 lb. Assuming <em class="emphasis">z</em>-scores are good measures for comparison in this context, who is more overweight for his age and body type?</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s04_qs01_qd04" start="38">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa38">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p65">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p66"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o33" numeration="loweralpha">
+                            <li>Compute the three quartiles and the interquartile range of the 1,000 SAT scores.</li>
+                            <li>Compute the three quartiles and the interquartile range of the 1,000 GPAs.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa39">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p67">Large Data Set 10 records the scores of 72 students on a statistics exam.</p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p68"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data10.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data10.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o35" numeration="loweralpha">
+                            <li>Compute the five-number summary of the data.</li>
+                            <li>Describe in words the performance of the class on the exam in the light of the result in part (a).</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa40">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p69">Large Data Sets 3 and 3A list the heights of 174 customers entering a shoe store.</p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p70"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p71"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data3A.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o37" numeration="loweralpha">
+                            <li>Compute the five-number summary of the heights, without regard to gender.</li>
+                            <li>Compute the five-number summary of the heights of the men in the sample.</li>
+                            <li>Compute the five-number summary of the heights of the women in the sample.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa41">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p72">Large Data Sets 7, 7A, and 7B list the survival times in days of 140 laboratory mice with thymic leukemia from onset to death.</p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p73"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p74"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p75"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o39" numeration="loweralpha">
+                            <li>Compute the three quartiles and the interquartile range of the survival times for all mice, without regard to gender.</li>
+                            <li>Compute the three quartiles and the interquartile range of the survival times for the 65 male mice (separately recorded in Large Data Set 7A).</li>
+                            <li>Compute the three quartiles and the interquartile range of the survival times for the 75 female mice (separately recorded in Large Data Set 7B).</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s04_qs01_ans" condition="1col" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o02_ans" numeration="loweralpha">
+                            <li>60.</li>
+                            <li>10.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o06_ans" numeration="loweralpha">
+                            <li>59.</li>
+                            <li>23.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o08_ans" numeration="loweralpha">
+                            <li>29.</li>
+                            <li>71.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p09_ans">50%.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p13_ans"><span class="inlineequation" id="shafer-20121106-125753-088899_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0287" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>25</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088916_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0288" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>70</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088932_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0289" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>77.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088949_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0290" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>90</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088964_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0291" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>100</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-088981_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0292" display="inline"><mtext>IQR</mtext><mo>=</mo><mn>20</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p17_ans"><span class="inlineequation" id="shafer-20121106-125753-089115_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0300" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>1</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089131_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0301" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>1.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089147_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0302" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>6.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089163_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0303" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>8</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089179_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0304" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>9</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089195_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0305" display="inline"><mtext>IQR</mtext><mo>=</mo><mn>6.5</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p21_ans">−1.3, 1.39, 0.4, −0.35, −0.11.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p26_ans"><span class="inlineequation" id="shafer-20121106-125753-089388_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0317" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>0.74</mn></math></span> for <em class="emphasis">x</em> = 1, <span class="inlineequation" id="shafer-20121106-125753-089404_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0318" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>0.37</mn></math></span> for <em class="emphasis">x</em> = 2, <em class="emphasis">z</em> = 1.48 for <em class="emphasis">x</em> = 7.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o12_ans" numeration="loweralpha">
+                            <li>1.</li>
+                            <li>1.</li>
+                            <li>1.</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-089532_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0325" display="inline"><mi>z</mi><mo>=</mo><mtext>−</mtext><mn>1</mn></math></span> for <em class="emphasis">x</em> = 0, <em class="emphasis">z</em> = 1 for <em class="emphasis">x</em> = 2.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p35_ans">16.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p39_ans">4.9.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="23">
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o16_ans" numeration="loweralpha">
+                            <li>55.</li>
+                            <li>55.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa25_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o20_ans" numeration="loweralpha">
+                            <li>93.</li>
+                            <li>0.07.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa27_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o24_ans" numeration="loweralpha">
+                            <li>−1.11.</li>
+                            <li>0.73.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd02_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="29">
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa29_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o28_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-089955_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0350" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>59</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089970_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0351" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>70</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-089993_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0352" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>81</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-090008_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0353" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>39</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090025_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0354" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>59</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090040_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0355" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>70</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090055_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0356" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>81</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090072_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0357" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>100</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<em class="emphasis">R</em> = 61, <span class="inlineequation" id="shafer-20121106-125753-090088_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0358" display="inline"><mtext>IQR</mtext><mo>=</mo><mn>22</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa31_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p53_ans"><span class="inlineequation" id="shafer-20121106-125753-090144_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0361" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>26</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090161_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0362" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>28</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090176_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0363" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>28</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090192_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0364" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>29</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090208_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0365" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>32</mn><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa33_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o32_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-090340_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0373" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>1450</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090356_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0374" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>2000</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090372_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0375" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>2800</mn><mo>.</mo></math></span>
+</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-090389_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0376" display="inline"><mtext>IQR</mtext><mo>=</mo><mn>1350</mn><mo>.</mo></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-090405_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0377" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub><mo>=</mo><mn>400</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090427_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0378" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>1450</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090443_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0379" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>2000</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090459_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0380" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>2800</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090475_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0381" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>=</mo><mn>3800</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa35_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p60_ans">Emilia: <span class="inlineequation" id="shafer-20121106-125753-090555_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0386" display="inline"><mi>z</mi><mo>=</mo><mo>.</mo><mn>875</mn></math></span>, Ferdinand: <span class="inlineequation" id="shafer-20121106-125753-090578_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0387" display="inline"><mi>z</mi><mo>=</mo><mn>1.1</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd03_qa37_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s04_qs01_p64_ans">Rosencrantz: <em class="emphasis">z</em> = 2.2, Guildenstern: <em class="emphasis">z</em> = 1.95. Rosencrantz is more overweight for his age and body type.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="38">
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa39_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o36_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-090727_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0396" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo>=</mo><mn>15</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090744_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0397" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>51</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090759_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0398" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>67</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-090775_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0399" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>82</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-090792_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0400" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>97</mn><mo>.</mo></math></span>
+</li>
+                            <li>The data set appears to be skewed to the left.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s04_qs01_qd04_qa41_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s04_qs01_o40_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-091060_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0416" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>440</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091076_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0417" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>552.5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091092_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0418" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>661</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-091107_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0419" display="inline"><mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><mn>221</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-091123_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0420" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>641</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091145_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0421" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>667</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091161_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0422" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>700</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-091177_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0423" display="inline"><mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><mn>59</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-091193_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0424" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>407</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091210_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0425" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>448</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-091225_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0426" display="inline"><msub><mrow><mi>Q</mi></mrow><mrow><mn>3</mn></mrow></msub><mo>=</mo><mn>504</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-091241_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0427" display="inline"><mi>I</mi><mi>Q</mi><mi>R</mi><mo>=</mo><mn>97</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-03-measures-of-variability.html"><img src="shared/images/batch-left.png"></a> <a href="s06-03-measures-of-variability.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-05-the-empirical-rule-and-chebysh.html">Next Section</a> <a href="s06-05-the-empirical-rule-and-chebysh.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

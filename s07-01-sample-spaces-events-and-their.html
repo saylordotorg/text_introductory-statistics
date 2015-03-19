@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Sample Spaces, Events, and Their Probabilities</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-05-the-empirical-rule-and-chebysh.html"><img src="shared/images/batch-left.png"></a> <a href="s06-05-the-empirical-rule-and-chebysh.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-02-complements-intersections-and-.html">Next Section</a> <a href="s07-02-complements-intersections-and-.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch03_s01" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">3.1</span> Sample Spaces, Events, and Their Probabilities</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch03_s01_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch03_s01_o01" numeration="arabic">
+            <li>To learn the concept of the sample space associated with a random experiment.</li>
+            <li>To learn the concept of an event associated with a random experiment.</li>
+            <li>To learn the concept of the probability of an event.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch03_s01_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Sample Spaces and Events</h2>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s01_p01">Rolling an ordinary six-sided die is a familiar example of a <em class="emphasis">random experiment</em>, an action for which all possible outcomes can be listed, but for which the actual outcome on any given trial of the experiment cannot be predicted with certainty. In such a situation we wish to assign to each outcome, such as rolling a two, a number, called the <em class="emphasis">probability</em> of the outcome, that indicates how likely it is that the outcome will occur. Similarly, we would like to assign a probability to any <em class="emphasis">event</em>, or collection of outcomes, such as rolling an even number, which indicates how likely it is that the event will occur if the experiment is performed. This section provides a framework for discussing probability problems, using the terms just mentioned.</p>
+        <div class="callout editable block" id="fwk-shafer-ch03_s01_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p02"><em class="emphasis">A</em> <strong class="emphasis bold">random experiment</strong> <em class="emphasis">is a mechanism that produces a definite outcome that cannot be predicted with certainty. The</em> <span class="margin_term"><a class="glossterm">sample space</a><span class="glossdef">The set of all possible outcomes of a random experiment.</span></span> <em class="emphasis">associated with a random experiment is the set of all possible outcomes. An</em> <span class="margin_term"><a class="glossterm">event</a><span class="glossdef">Any set of outcomes.</span></span> <em class="emphasis">is a subset of the sample space.</em></p>
+        </div>
+        <div class="callout editable block" id="fwk-shafer-ch03_s01_s01_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p03"><em class="emphasis">An event</em> <em class="emphasis">E</em> <em class="emphasis">is said to</em> <strong class="emphasis bold">occur</strong> <em class="emphasis">on a particular trial of the experiment if the outcome observed is an element of the set</em> <em class="emphasis">E</em>.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s01_n03">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p04">Construct a sample space for the experiment that consists of tossing a single coin.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p05">The outcomes could be labeled <em class="emphasis">h</em> for heads and <em class="emphasis">t</em> for tails. Then the sample space is the set <span class="inlineequation" id="shafer-20121106-125753-092141"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0001" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mo>,</mo><mi>t</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s01_n04">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p06">Construct a sample space for the experiment that consists of rolling a single die. Find the events that correspond to the phrases “an even number is rolled” and “a number greater than two is rolled.”</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p07">The outcomes could be labeled according to the number of dots on the top face of the die. Then the sample space is the set <span class="inlineequation" id="shafer-20121106-125753-092158"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0002" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4,5,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p08">The outcomes that are even are 2, 4, and 6, so the event that corresponds to the phrase “an even number is rolled” is the set {2,4,6}, which it is natural to denote by the letter <em class="emphasis">E</em>. We write <span class="inlineequation" id="shafer-20121106-125753-092174"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0003" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p09">Similarly the event that corresponds to the phrase “a number greater than two is rolled” is the set <span class="inlineequation" id="shafer-20121106-125753-092196"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0004" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span>, which we have denoted <em class="emphasis">T</em>.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s01_p10">A graphical representation of a sample space and events is a <strong class="emphasis bold">Venn diagram</strong>, as shown in <a class="xref" href="#fwk-shafer-ch03_s01_s01_f01">Figure 3.1 "Venn Diagrams for Two Sample Spaces"</a> for <a class="xref" href="#fwk-shafer-ch03_s01_s01_n03" xrefstyle="select: title">Note 3.6 "Example 1"</a> and <a class="xref" href="#fwk-shafer-ch03_s01_s01_n04" xrefstyle="select: title">Note 3.7 "Example 2"</a>. In general the sample space <em class="emphasis">S</em> is represented by a rectangle, outcomes by points within the rectangle, and events by ovals that enclose the outcomes that compose them.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch03_s01_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 3.1</span> Venn Diagrams for Two Sample Spaces</p>
+            <img src="section_07/97b468eaa2da56c52e300c556c23a24f.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s01_n05">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p11">A random experiment consists of tossing two coins.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s01_o01" numeration="loweralpha">
+                <li>Construct a sample space for the situation that the coins are indistinguishable, such as two brand new pennies.</li>
+                <li>Construct a sample space for the situation that the coins are distinguishable, such as one a penny and the other a nickel.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s01_o02" numeration="loweralpha">
+                <li>After the coins are tossed one sees either two heads, which could be labeled <span class="inlineequation" id="shafer-20121106-125753-092212"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0005" display="inline"><mn>2</mn><mi>h</mi></math></span>, two tails, which could be labeled <span class="inlineequation" id="shafer-20121106-125753-092228"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0006" display="inline"><mn>2</mn><mi>t</mi></math></span>, or coins that differ, which could be labeled <em class="emphasis">d</em>. Thus a sample space is <span class="inlineequation" id="shafer-20121106-125753-092244"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0007" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2</mn><mi>h</mi><mo>,</mo><mn>2</mn><mi>t</mi><mo>,</mo><mi>d</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span>
+</li>
+                <li>Since we can tell the coins apart, there are now two ways for the coins to differ: the penny heads and the nickel tails, or the penny tails and the nickel heads. We can label each outcome as a pair of letters, the first of which indicates how the penny landed and the second of which indicates how the nickel landed. A sample space is then <span class="inlineequation" id="shafer-20121106-125753-092260"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0008" display="inline"><mrow><mi>S</mi><mi>′</mi></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span>
+</li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s01_p12">A device that can be helpful in identifying all possible outcomes of a random experiment, particularly one that can be viewed as proceeding in stages, is what is called a <strong class="emphasis bold">tree diagram</strong>. It is described in the following example.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s01_n06">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p13">Construct a sample space that describes all three-child families according to the genders of the children with respect to birth order.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p14">Two of the outcomes are “two boys then a girl,” which we might denote <span class="inlineequation" id="shafer-20121106-125753-092275"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0009" display="inline"><mi>b</mi><mi>b</mi><mi>g</mi></math></span>, and “a girl then two boys,” which we would denote <span class="inlineequation" id="shafer-20121106-125753-092291"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0010" display="inline"><mi>g</mi><mi>b</mi><mi>b</mi><mo>.</mo></math></span> Clearly there are many outcomes, and when we try to list all of them it could be difficult to be sure that we have found them all unless we proceed systematically. The tree diagram shown in <a class="xref" href="#fwk-shafer-ch03_s01_s01_f02">Figure 3.2 "Tree Diagram For Three-Child Families"</a>, gives a systematic approach.</p>
+            <div class="figure medium small-height" id="fwk-shafer-ch03_s01_s01_f02">
+                <p class="title"><span class="title-prefix">Figure 3.2</span> Tree Diagram For Three-Child Families</p>
+                <img src="section_07/e9de1d9b1c09ed5a0870567d7e5ad809.jpg">
+            </div>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p15">The diagram was constructed as follows. There are two possibilities for the first child, boy or girl, so we draw two line segments coming out of a starting point, one ending in a <em class="emphasis">b</em> for “boy” and the other ending in a <em class="emphasis">g</em> for “girl.” For each of these two possibilities for the first child there are two possibilities for the second child, “boy” or “girl,” so from each of the <em class="emphasis">b</em> and <em class="emphasis">g</em> we draw two line segments, one segment ending in a <em class="emphasis">b</em> and one in a <em class="emphasis">g</em>. For each of the four ending points now in the diagram there are two possibilities for the third child, so we repeat the process once more.</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p16">The line segments are called <strong class="emphasis bold">branches</strong> of the tree. The right ending point of each branch is called a <strong class="emphasis bold">node</strong>. The nodes on the extreme right are the <strong class="emphasis bold">final nodes</strong>; to each one there corresponds an outcome, as shown in the figure.</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s01_p17">From the tree it is easy to read off the eight outcomes of the experiment, so the sample space is, reading from the top to the bottom of the final nodes in the tree,</p>
+            <span class="informalequation" id="shafer-20121106-125753-092313"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0011" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></mrow></math></span>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch03_s01_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Probability</h2>
+        <div class="callout editable block" id="fwk-shafer-ch03_s01_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p01"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">probability of an outcome</a><span class="glossdef">A number that measures the likelihood of the outcome.</span></span> <em class="emphasis">e</em> <em class="emphasis">in a sample space</em> <em class="emphasis">S</em> <em class="emphasis">is a number</em> <em class="emphasis">p</em> <em class="emphasis">between 0 and 1 that measures the likelihood that</em> <em class="emphasis">e</em> <em class="emphasis">will occur on a single trial of the corresponding random experiment. The value</em> <em class="emphasis">p</em> = 0 <em class="emphasis">corresponds to the outcome</em> <em class="emphasis">e</em> <em class="emphasis">being impossible and the value</em> <em class="emphasis">p</em> = 1 <em class="emphasis">corresponds to the outcome</em> <em class="emphasis">e</em> <em class="emphasis">being certain.</em></p>
+        </div>
+        <div class="callout block" id="fwk-shafer-ch03_s01_s02_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">probability of an event</a><span class="glossdef">A number that measures the likelihood of the event.</span></span> <em class="emphasis">A</em> <em class="emphasis">is the sum of the probabilities of the individual outcomes of which it is composed. It is denoted</em> <span class="inlineequation" id="shafer-20121106-125753-092329"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0012" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s02_p03">The following formula expresses the content of the definition of the probability of an event:</p>
+        <div class="callout block" id="fwk-shafer-ch03_s01_s02_n03">
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p04">If an event <em class="emphasis">E</em> is <span class="inlineequation" id="shafer-20121106-125753-092345"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0013" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><msub><mrow><mi>e</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>,</mo><msub><mrow><mi>e</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow><mi>e</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow><mo>}</mo></mrow></math></span>, then</p>
+            <span class="informalequation" id="shafer-20121106-125753-092361"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0014" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>e</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>e</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>+</mo><mtext> · · · </mtext><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>e</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow><mo>)</mo></mrow></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s02_p05"><a class="xref" href="#fwk-shafer-ch03_s01_s02_f01">Figure 3.3 "Sample Spaces and Probability"</a> graphically illustrates the definitions.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch03_s01_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 3.3</span> Sample Spaces and Probability</p>
+            <img src="section_07/b1371037e2e863e76e91bc00adf37f63.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s02_p06">Since the whole sample space <em class="emphasis">S</em> is an event that is certain to occur, the sum of the probabilities of all the outcomes must be the number 1.</p>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s02_p07">In ordinary language probabilities are frequently expressed as percentages. For example, we would say that there is a 70% chance of rain tomorrow, meaning that the probability of rain is 0.70. We will use this practice here, but in all the computational formulas that follow we will use the form 0.70 and not 70%.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s02_n04">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p08">A coin is called “balanced” or “fair” if each side is equally likely to land up. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair coin.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p09">With the outcomes labeled <em class="emphasis">h</em> for heads and <em class="emphasis">t</em> for tails, the sample space is the set <span class="inlineequation" id="shafer-20121106-125753-092377"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0015" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mo>,</mo><mi>t</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Since the outcomes have the same probabilities, which must add up to 1, each outcome is assigned probability 1/2.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s02_n05">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p10">A die is called “balanced” or “fair” if each side is equally likely to land on top. Assign a probability to each outcome in the sample space for the experiment that consists of tossing a single fair die. Find the probabilities of the events <em class="emphasis">E</em>: “an even number is rolled” and <em class="emphasis">T</em>: “a number greater than two is rolled.”</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p11">With outcomes labeled according to the number of dots on the top face of the die, the sample space is the set <span class="inlineequation" id="shafer-20121106-125753-092393"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0016" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4,5,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Since there are six equally likely outcomes, which must add up to 1, each is assigned probability 1/6.</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p12">Since <span class="inlineequation" id="shafer-20121106-125753-092410"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0017" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092425"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0018" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>6</mn><mo>+</mo><mn>1</mn><mo>∕</mo><mn>6</mn><mo>+</mo><mn>1</mn><mo>∕</mo><mn>6</mn><mo>=</mo><mn>3</mn><mo>∕</mo><mn>6</mn><mo>=</mo><mn>1</mn><mo>∕</mo><mn>2</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p13">Since <span class="inlineequation" id="shafer-20121106-125753-092441"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0019" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092457"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0020" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mo>∕</mo><mn>6</mn><mo>=</mo><mn>2</mn><mo>∕</mo><mn>3</mn><mo>.</mo></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s02_n06">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p14">Two fair coins are tossed. Find the probability that the coins match, i.e., either both land heads or both land tails.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p15">In <a class="xref" href="#fwk-shafer-ch03_s01_s01_n05" xrefstyle="select: title">Note 3.8 "Example 3"</a> we constructed the sample space <span class="inlineequation" id="shafer-20121106-125753-092479"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0021" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2</mn><mi>h</mi><mo>,</mo><mn>2</mn><mi>t</mi><mo>,</mo><mi>d</mi></mrow><mo>}</mo></mrow></math></span> for the situation in which the coins are identical and the sample space <span class="inlineequation" id="shafer-20121106-125753-092495"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0022" display="inline"><mrow><mi>S</mi></mrow><mrow><mi>′</mi></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span> for the situation in which the two coins can be told apart.</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p16">The theory of probability does not tell us <em class="emphasis">how</em> to assign probabilities to the outcomes, only what to do with them once they are assigned. Specifically, using sample space <em class="emphasis">S</em>, matching coins is the event <span class="inlineequation" id="shafer-20121106-125753-092512"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0023" display="inline"><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2</mn><mi>h</mi><mo>,</mo><mn>2</mn><mi>t</mi></mrow><mo>}</mo></mrow></math></span>, which has probability <span class="inlineequation" id="shafer-20121106-125753-092528"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0024" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>t</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Using sample space <span class="inlineequation" id="shafer-20121106-125753-092544"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0025" display="inline"><mrow><mi>S</mi><mi>′</mi></mrow></math></span>, matching coins is the event <span class="inlineequation" id="shafer-20121106-125753-092560"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0026" display="inline"><mi>M</mi><mi>′</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span>, which has probability <span class="inlineequation" id="shafer-20121106-125753-092575"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0027" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>t</mi><mi>t</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> In the physical world it should make no difference whether the coins are identical or not, and so we would like to assign probabilities to the outcomes so that the numbers <span class="inlineequation" id="shafer-20121106-125753-092597"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0028" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-092614"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0029" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mi>M</mi><mi>′</mi></mrow></mrow><mo>)</mo></mrow></math></span> are the same and best match what we observe when actual physical experiments are performed with coins that seem to be fair. Actual experience suggests that the outcomes in <span class="inlineequation" id="shafer-20121106-125753-092634"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0030" display="inline"><mrow><mi>S</mi><mi>′</mi></mrow></math></span> are equally likely, so we assign to each probability 1∕4, and then</p>
+            <span class="informalequation" id="shafer-20121106-125753-092650"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0031" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mi>M</mi><mi>′</mi></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>t</mi><mi>t</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p17">Similarly, from experience appropriate choices for the outcomes in <em class="emphasis">S</em> are:</p>
+            <span class="informalequation" id="shafer-20121106-125753-092667"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0032" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>t</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p18">which give the same final answer</p>
+            <span class="informalequation" id="shafer-20121106-125753-092682"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0033" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>t</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s01_s02_p19">The previous three examples illustrate how probabilities can be computed simply by counting when the sample space consists of a finite number of equally likely outcomes. In some situations the individual outcomes of any sample space that represents the experiment are unavoidably unequally likely, in which case probabilities cannot be computed merely by counting, but the computational formula given in the definition of the probability of an event must be used.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s02_n07">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p20">The breakdown of the student body in a local high school according to race and ethnicity is 51% white, 27% black, 11% Hispanic, 6% Asian, and 5% for all others. A student is randomly selected from this high school. (To select “randomly” means that every student has the same chance of being selected.) Find the probabilities of the following events:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s02_o01" numeration="loweralpha">
+                <li>
+<em class="emphasis">B</em>: the student is black,</li>
+                <li>
+<em class="emphasis">M</em>: the student is minority (that is, not white),</li>
+                <li>
+<em class="emphasis">N</em>: the student is not black.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p21">The experiment is the action of randomly selecting a student from the student population of the high school. An obvious sample space is <span class="inlineequation" id="shafer-20121106-125753-092698"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0034" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>w</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>o</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Since 51% of the students are white and all students have the same chance of being selected, <span class="inlineequation" id="shafer-20121106-125753-092714"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0035" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>w</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.51</mn></math></span>, and similarly for the other outcomes. This information is summarized in the following table:</p>
+            <span class="informalequation" id="shafer-20121106-125753-092730"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0036" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mtext>Outcome</mtext></mrow></mtd><mtd columnalign="center"><mi>w</mi></mtd><mtd columnalign="center"><mi>b</mi></mtd><mtd columnalign="center"><mi>h</mi></mtd><mtd columnalign="center"><mi>a</mi></mtd><mtd columnalign="center"><mi>o</mi></mtd></mtr><mtr><mtd columnalign="left"><mrow><mtext>Probability</mtext></mrow></mtd><mtd columnalign="center"><mrow><mn>0.51</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.27</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.11</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.06</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.05</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s02_o02" numeration="loweralpha">
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092746"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0037" display="inline"><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092768"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0038" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.27</mn><mo>.</mo></math></span>
+</li>
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092785"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0039" display="inline"><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>o</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092801"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0040" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>o</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.27</mn><mo>+</mo><mn>0.11</mn><mo>+</mo><mn>0.06</mn><mo>+</mo><mn>0.05</mn><mo>=</mo><mn>0.49</mn></mrow></math></span>
+</li>
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092816"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0041" display="inline"><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>w</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>o</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092832"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0042" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>N</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>w</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>o</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.51</mn><mo>+</mo><mn>0.11</mn><mo>+</mo><mn>0.06</mn><mo>+</mo><mn>0.05</mn><mo>=</mo><mn>0.73</mn></mrow></math></span>
+</li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s01_s02_n08">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p22">The student body in the high school considered in <a class="xref" href="#fwk-shafer-ch03_s01_s02_n07" xrefstyle="select: title">Note 3.18 "Example 8"</a> may be broken down into ten categories as follows: 25% white male, 26% white female, 12% black male, 15% black female, 6% Hispanic male, 5% Hispanic female, 3% Asian male, 3% Asian female, 1% male of other minorities combined, and 4% female of other minorities combined. A student is randomly selected from this high school. Find the probabilities of the following events:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s02_o03" numeration="loweralpha">
+                <li>
+<em class="emphasis">B</em>: the student is black,</li>
+                <li>
+<span class="inlineequation" id="shafer-20121106-125753-092848"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0043" display="inline"><mi>M</mi><mi>F</mi></math></span>: the student is minority female,</li>
+                <li>
+<span class="inlineequation" id="shafer-20121106-125753-092864"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0044" display="inline"><mi>F</mi><mi>N</mi></math></span>: the student is female and is not black.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s01_s02_p23">Now the sample space is <span class="inlineequation" id="shafer-20121106-125753-092886"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0045" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>w</mi><mi>m</mi><mo>,</mo><mi>b</mi><mi>m</mi><mo>,</mo><mi>h</mi><mi>m</mi><mo>,</mo><mi>a</mi><mi>m</mi><mo>,</mo><mi>o</mi><mi>m</mi><mo>,</mo><mi>w</mi><mi>f</mi><mo>,</mo><mi>b</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> The information given in the example can be summarized in the following table, called a <em class="emphasis">two-way</em> <em class="emphasis">contingency table</em>:</p>
+            <div class="informaltable">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" align="left">Gender</th>
+                            <th colspan="5" align="center">Race / Ethnicity</th>
+                        </tr>
+                        <tr>
+                            <th align="center">White</th>
+                            <th align="center">Black</th>
+                            <th align="center">Hispanic</th>
+                            <th align="center">Asian</th>
+                            <th align="center">Others</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left">Male</td>
+                            <td align="center">0.25</td>
+                            <td align="center">0.12</td>
+                            <td align="center">0.06</td>
+                            <td align="center">0.03</td>
+                            <td align="center">0.01</td>
+                        </tr>
+                        <tr>
+                            <td align="left">Female</td>
+                            <td align="center">0.26</td>
+                            <td align="center">0.15</td>
+                            <td align="center">0.05</td>
+                            <td align="center">0.03</td>
+                            <td align="center">0.04</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s01_s02_o04" numeration="loweralpha">
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092902"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0046" display="inline"><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>m</mi><mo>,</mo><mi>b</mi><mi>f</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092918"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0047" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi><mi>m</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.12</mn><mo>+</mo><mn>0.15</mn><mo>=</mo><mn>0.27</mn><mo>.</mo></math></span>
+</li>
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092934"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0048" display="inline"><mi>M</mi><mi>F</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092950"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0049" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>o</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.15</mn><mo>+</mo><mn>0.05</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.04</mn><mo>=</mo><mn>0.27</mn></mrow></math></span>
+</li>
+                <li>Since <span class="inlineequation" id="shafer-20121106-125753-092966"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0050" display="inline"><mi>F</mi><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>w</mi><mi>f</mi><mo>,</mo><mi>h</mi><mi>f</mi><mo>,</mo><mi>a</mi><mi>f</mi><mo>,</mo><mi>o</mi><mi>f</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-092982"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0051" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>F</mi><mi>N</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>w</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>h</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>o</mi><mi>f</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.26</mn><mo>+</mo><mn>0.05</mn><mo>+</mo><mn>0.03</mn><mo>+</mo><mn>0.04</mn><mo>=</mo><mn>0.38</mn></mrow></math></span>
+</li>
+            </ol>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch03_s01_s02_n09">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch03_s01_s02_l01" mark="bullet">
+                <li>The sample space of a random experiment is the collection of all possible outcomes.</li>
+                <li>An event associated with a random experiment is a subset of the sample space.</li>
+                <li>The probability of any outcome is a number between 0 and 1. The probabilities of all the outcomes add up to 1.</li>
+                <li>The probability of any event <em class="emphasis">A</em> is the sum of the probabilities of the outcomes in <em class="emphasis">A</em>.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch03_s01_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s01_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p01">A box contains 10 white and 10 black marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, two marbles in succession and noting the color each time. (To draw “with replacement” means that the first marble is put back before the second marble is drawn.)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p03">A box contains 16 white and 16 black marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, three marbles in succession and noting the color each time. (To draw “with replacement” means that each marble is put back before the next marble is drawn.)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p05">A box contains 8 red, 8 yellow, and 8 green marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, two marbles in succession and noting the color each time.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p07">A box contains 6 red, 6 yellow, and 6 green marbles. Construct a sample space for the experiment of randomly drawing out, with replacement, three marbles in succession and noting the color each time.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p09">In the situation of Exercise 1, list the outcomes that comprise each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o01" numeration="loweralpha">
+                            <li>At least one marble of each color is drawn.</li>
+                            <li>No white marble is drawn.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p10">In the situation of Exercise 2, list the outcomes that comprise each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o03" numeration="loweralpha">
+                            <li>At least one marble of each color is drawn.</li>
+                            <li>No white marble is drawn.</li>
+                            <li>More black than white marbles are drawn.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p11">In the situation of Exercise 3, list the outcomes that comprise each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o05" numeration="loweralpha">
+                            <li>No yellow marble is drawn.</li>
+                            <li>The two marbles drawn have the same color.</li>
+                            <li>At least one marble of each color is drawn.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p12">In the situation of Exercise 4, list the outcomes that comprise each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o07" numeration="loweralpha">
+                            <li>No yellow marble is drawn.</li>
+                            <li>The three marbles drawn have the same color.</li>
+                            <li>At least one marble of each color is drawn.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p13">Assuming that each outcome is equally likely, find the probability of each event in Exercise 5.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p14">Assuming that each outcome is equally likely, find the probability of each event in Exercise 6.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p15">Assuming that each outcome is equally likely, find the probability of each event in Exercise 7.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p16">Assuming that each outcome is equally likely, find the probability of each event in Exercise 8.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p17">A sample space is <span class="inlineequation" id="shafer-20121106-125753-093239"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0066" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Identify two events as <span class="inlineequation" id="shafer-20121106-125753-093255"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0067" display="inline"><mi>U</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>d</mi></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093271"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0068" display="inline"><mi>V</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Suppose <span class="inlineequation" id="shafer-20121106-125753-093287"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0069" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi></mrow><mo>)</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093303"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0070" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi></mrow><mo>)</mo></mrow></math></span> are each 0.2 and <span class="inlineequation" id="shafer-20121106-125753-093319"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0071" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>c</mi></mrow><mo>)</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093341"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0072" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>d</mi></mrow><mo>)</mo></mrow></math></span> are each 0.1.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o13" numeration="loweralpha">
+                            <li>Determine what <span class="inlineequation" id="shafer-20121106-125753-093357"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0073" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>e</mi></mrow><mo>)</mo></mrow></math></span> must be.</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093373"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0074" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093389"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0075" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>V</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p18">A sample space is <span class="inlineequation" id="shafer-20121106-125753-093406"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0076" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo>,</mo><mi>x</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Identify two events as <span class="inlineequation" id="shafer-20121106-125753-093422"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0077" display="inline"><mi>A</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093437"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0078" display="inline"><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>u</mi><mo>,</mo><mi>w</mi><mo>,</mo><mi>x</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Suppose <span class="inlineequation" id="shafer-20121106-125753-093453"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0079" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>u</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.22</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-093476"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0080" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>w</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.36</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-093492"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0081" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.27</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o15" numeration="loweralpha">
+                            <li>Determine what <span class="inlineequation" id="shafer-20121106-125753-093507"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0082" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>v</mi></mrow><mo>)</mo></mrow></math></span> must be.</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093524"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0083" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093540"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0084" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p19">A sample space is <span class="inlineequation" id="shafer-20121106-125753-093556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0085" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>m</mi><mo>,</mo><mi>n</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>s</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Identify two events as <span class="inlineequation" id="shafer-20121106-125753-093573"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0086" display="inline"><mi>U</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>m</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>s</mi></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093589"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0087" display="inline"><mi>V</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>n</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> The probabilities of some of the outcomes are given by the following table:</p>
+                        <span class="informalequation" id="shafer-20121106-125753-093611"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0088" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mtext>Outcome</mtext></mrow></mtd><mtd columnalign="center"><mi>m</mi></mtd><mtd columnalign="center"><mi>n</mi></mtd><mtd columnalign="center"><mi>q</mi></mtd><mtd columnalign="center"><mi>r</mi></mtd><mtd columnalign="center"><mi>s</mi></mtd></mtr><mtr><mtd columnalign="left"><mrow><mtext>Probablity</mtext></mrow></mtd><mtd columnalign="center"><mrow><mn>0.18</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.16</mn></mrow></mtd><mtd columnalign="center"><mrow></mrow></mtd><mtd columnalign="center"><mrow><mn>0.24</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.21</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o17" numeration="loweralpha">
+                            <li>Determine what <span class="inlineequation" id="shafer-20121106-125753-093627"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0089" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>q</mi></mrow><mo>)</mo></mrow></math></span> must be.</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093643"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0090" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093659"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0091" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>V</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p20">A sample space is <span class="inlineequation" id="shafer-20121106-125753-093675"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0092" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>d</mi><mo>,</mo><mi>e</mi><mo>,</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo>,</mo><mi>h</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Identify two events as <span class="inlineequation" id="shafer-20121106-125753-093691"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0093" display="inline"><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>e</mi><mo>,</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo>,</mo><mi>h</mi></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-093707"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0094" display="inline"><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>d</mi><mo>,</mo><mi>g</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> The probabilities of some of the outcomes are given by the following table:</p>
+                        <span class="informalequation" id="shafer-20121106-125753-093723"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0095" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mtext>Outcome</mtext></mrow></mtd><mtd columnalign="center"><mi>d</mi></mtd><mtd columnalign="center"><mi>e</mi></mtd><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mi>g</mi></mtd><mtd columnalign="center"><mi>h</mi></mtd></mtr><mtr><mtd columnalign="left"><mrow><mtext>Probablity</mtext></mrow></mtd><mtd columnalign="center"><mrow><mn>0.22</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.13</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>0.27</mn></mrow></mtd><mtd columnalign="center"><mrow></mrow></mtd><mtd columnalign="center"><mrow><mn>0.19</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o19" numeration="loweralpha">
+                            <li>Determine what <span class="inlineequation" id="shafer-20121106-125753-093739"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0096" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>g</mi></mrow><mo>)</mo></mrow></math></span> must be.</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093770"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0097" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Find <span class="inlineequation" id="shafer-20121106-125753-093786"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0098" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>N</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s01_qs01_qd02" start="17">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p21">The sample space that describes all three-child families according to the genders of the children with respect to birth order was constructed in <a class="xref" href="#fwk-shafer-ch03_s01_s01_n06" xrefstyle="select: title">Note 3.9 "Example 4"</a>. Identify the outcomes that comprise each of the following events in the experiment of selecting a three-child family at random.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o21" numeration="loweralpha">
+                            <li>At least one child is a girl.</li>
+                            <li>At most one child is a girl.</li>
+                            <li>All of the children are girls.</li>
+                            <li>Exactly two of the children are girls.</li>
+                            <li>The first born is a girl.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p22">The sample space that describes three tosses of a coin is the same as the one constructed in <a class="xref" href="#fwk-shafer-ch03_s01_s01_n06" xrefstyle="select: title">Note 3.9 "Example 4"</a> with “boy” replaced by “heads” and “girl” replaced by “tails.” Identify the outcomes that comprise each of the following events in the experiment of tossing a coin three times.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o23" numeration="loweralpha">
+                            <li>The coin lands heads more often than tails.</li>
+                            <li>The coin lands heads the same number of times as it lands tails.</li>
+                            <li>The coin lands heads at least twice.</li>
+                            <li>The coin lands heads on the last toss.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p23">Assuming that the outcomes are equally likely, find the probability of each event in Exercise 17.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p24">Assuming that the outcomes are equally likely, find the probability of each event in Exercise 18.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s01_qs01_qd03" start="21">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p25">The following two-way contingency table gives the breakdown of the population in a particular locale according to age and tobacco usage:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Age</th>
+                                        <th colspan="2" align="center">Tobacco Use</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Smoker</th>
+                                        <th align="center">Non-smoker</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">Under 30</td>
+                                        <td align="center">0.05</td>
+                                        <td align="center">0.20</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Over 30</td>
+                                        <td align="center">0.20</td>
+                                        <td align="center">0.55</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p26">A person is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o27" numeration="loweralpha">
+                            <li>The person is a smoker.</li>
+                            <li>The person is under 30.</li>
+                            <li>The person is a smoker who is under 30.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p27">The following two-way contingency table gives the breakdown of the population in a particular locale according to party affiliation (<em class="emphasis">A</em>, <em class="emphasis">B</em>, <em class="emphasis">C</em>, or <em class="emphasis">None</em>) and opinion on a bond issue:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Affiliation</th>
+                                        <th colspan="3" align="center">Opinion</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Favors</th>
+                                        <th align="center">Opposes</th>
+                                        <th align="center">Undecided</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">A</em></td>
+                                        <td align="center">0.12</td>
+                                        <td align="center">0.09</td>
+                                        <td align="center">0.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">B</em></td>
+                                        <td align="center">0.16</td>
+                                        <td align="center">0.12</td>
+                                        <td align="center">0.14</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">C</em></td>
+                                        <td align="center">0.04</td>
+                                        <td align="center">0.03</td>
+                                        <td align="center">0.06</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">None</em></td>
+                                        <td align="center">0.08</td>
+                                        <td align="center">0.06</td>
+                                        <td align="center">0.03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p28">A person is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o29" numeration="loweralpha">
+                            <li>The person is affiliated with party <em class="emphasis">B</em>.</li>
+                            <li>The person is affiliated with some party.</li>
+                            <li>The person is in favor of the bond issue.</li>
+                            <li>The person has no party affiliation and is undecided about the bond issue.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p29">The following two-way contingency table gives the breakdown of the population of married or previously married women beyond child-bearing age in a particular locale according to age at first marriage and number of children:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Age</th>
+                                        <th colspan="3" align="center">Number of Children</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">0</th>
+                                        <th align="center">1 or 2</th>
+                                        <th align="center">3 or More</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">Under 20</td>
+                                        <td align="center">0.02</td>
+                                        <td align="center">0.14</td>
+                                        <td align="center">0.08</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">20–29</td>
+                                        <td align="center">0.07</td>
+                                        <td align="center">0.37</td>
+                                        <td align="center">0.11</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">30 and above</td>
+                                        <td align="center">0.10</td>
+                                        <td align="center">0.10</td>
+                                        <td align="center">0.01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p30">A woman is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o31" numeration="loweralpha">
+                            <li>The woman was in her twenties at her first marriage.</li>
+                            <li>The woman was 20 or older at her first marriage.</li>
+                            <li>The woman had no children.</li>
+                            <li>The woman was in her twenties at her first marriage and had at least three children.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p31">The following two-way contingency table gives the breakdown of the population of adults in a particular locale according to highest level of education and whether or not the individual regularly takes dietary supplements:</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Education</th>
+                                        <th colspan="2" align="center">Use of Supplements</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Takes</th>
+                                        <th align="center">Does Not Take</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">No High School Diploma</td>
+                                        <td align="center">0.04</td>
+                                        <td align="center">0.06</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">High School Diploma</td>
+                                        <td align="center">0.06</td>
+                                        <td align="center">0.44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Undergraduate Degree</td>
+                                        <td align="center">0.09</td>
+                                        <td align="center">0.28</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Graduate Degree</td>
+                                        <td align="center">0.01</td>
+                                        <td align="center">0.02</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p32">An adult is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o33" numeration="loweralpha">
+                            <li>The person has a high school diploma and takes dietary supplements regularly.</li>
+                            <li>The person has an undergraduate degree and takes dietary supplements regularly.</li>
+                            <li>The person takes dietary supplements regularly.</li>
+                            <li>The person does not take dietary supplements regularly.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s01_qs01_qd04" start="25">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd04_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p33">Large Data Sets 4 and 4A record the results of 500 tosses of a coin. Find the relative frequency of each outcome 1, 2, 3, 4, 5, and 6. Does the coin appear to be “balanced” or “fair”?</p>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p34"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data4.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data4.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p35"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data4A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data4A.xls</a></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd04_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p37">Large Data Sets 6, 6A, and 6B record results of a random survey of 200 voters in each of two regions, in which they were asked to express whether they prefer Candidate <em class="emphasis">A</em> for a U.S. Senate seat or prefer some other candidate.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o35" numeration="loweralpha">
+                            <li>Find the probability that a randomly selected voter among these 400 prefers Candidate <em class="emphasis">A</em>.</li>
+                            <li>Find the probability that a randomly selected voter among the 200 who live in Region 1 prefers Candidate <em class="emphasis">A</em> (separately recorded in Large Data Set 6A).</li>
+                            <li>Find the probability that a randomly selected voter among the 200 who live in Region 2 prefers Candidate <em class="emphasis">A</em> (separately recorded in Large Data Set 6B).</li>
+                        </ol>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p38"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data6.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data6.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p39"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data6A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data6A.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p40"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data6B.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data6B.xls</a></p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch03_s01_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p02_ans"><span class="inlineequation" id="shafer-20121106-125753-092998_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0052" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>b</mi><mo>,</mo><mi>w</mi><mi>w</mi></mrow><mo>}</mo></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p06_ans"><span class="inlineequation" id="shafer-20121106-125753-093036_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0054" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>r</mi><mi>r</mi><mo>,</mo><mi>r</mi><mi>y</mi><mo>,</mo><mi>r</mi><mi>g</mi><mo>,</mo><mi>y</mi><mi>r</mi><mo>,</mo><mi>y</mi><mi>y</mi><mo>,</mo><mi>y</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>r</mi><mo>,</mo><mi>g</mi><mi>y</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o02_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093069_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0056" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>w</mi><mo>,</mo><mi>w</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093086_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0057" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o06_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093151_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0061" display="inline"><mrow><mo>{</mo><mrow><mi>r</mi><mi>r</mi><mo>,</mo><mi>r</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>r</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093173_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0062" display="inline"><mrow><mo>{</mo><mrow><mi>r</mi><mi>r</mi><mo>,</mo><mi>y</mi><mi>y</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li>∅</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o09_ans" numeration="loweralpha">
+                            <li>2/4</li>
+                            <li>1/4</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o11_ans" numeration="loweralpha">
+                            <li>4/9</li>
+                            <li>3/9</li>
+                            <li>0</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa13_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o14_ans" numeration="loweralpha">
+                            <li>0.4</li>
+                            <li>0.5</li>
+                            <li>0.4</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa15_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o18_ans" numeration="loweralpha">
+                            <li>0.21</li>
+                            <li>0.6</li>
+                            <li>0.61</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="17">
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o22_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093803_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0099" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093819_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0100" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093835_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0101" display="inline"><mrow><mo>{</mo><mrow><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093852_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0102" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-093868_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch03-m0103" display="inline"><mrow><mo>{</mo><mrow><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o25_ans" numeration="loweralpha">
+                            <li>7/8</li>
+                            <li>4/8</li>
+                            <li>1/8</li>
+                            <li>3/8</li>
+                            <li>4/8</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="21">
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o28_ans" numeration="loweralpha">
+                            <li>0.25</li>
+                            <li>0.25</li>
+                            <li>0.05</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s01_qs01_o32_ans" numeration="loweralpha">
+                            <li>0.55</li>
+                            <li>0.76</li>
+                            <li>0.19</li>
+                            <li>0.11</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd03_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="25">
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd04_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch03_s01_qs01_p36_ans">The relative frequencies for 1 through 6 are 0.16, 0.194, 0.162, 0.164, 0.154 and 0.166. It would appear that the die is not balanced.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s01_qs01_qd04_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-05-the-empirical-rule-and-chebysh.html"><img src="shared/images/batch-left.png"></a> <a href="s06-05-the-empirical-rule-and-chebysh.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-02-complements-intersections-and-.html">Next Section</a> <a href="s07-02-complements-intersections-and-.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

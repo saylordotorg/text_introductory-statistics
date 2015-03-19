@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Sample Proportion</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-02-the-sampling-distribution-of-t.html"><img src="shared/images/batch-left.png"></a> <a href="s10-02-the-sampling-distribution-of-t.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s11-01-large-sample-estimation-of-a-p.html">Next Section</a> <a href="s11-01-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch06_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">6.3</span> The Sample Proportion</h2>
+    <div class="learning_objectives block" id="fwk-shafer-ch06_s03_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s03_o01" numeration="arabic">
+            <li>To recognize that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-110148"><math xml:id="fwk-shafer-ch06-m0132" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is a random variable.</li>
+            <li>To understand the meaning of the formulas for the mean and standard deviation of the sample proportion.</li>
+            <li>To learn what the sampling distribution of <span class="inlineequation" id="shafer-20121106-125753-110188"><math xml:id="fwk-shafer-ch06-m0133" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is when the sample size is large.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch06_s03_p01">Often sampling is done in order to estimate the proportion of a population that has a specific characteristic, such as the proportion of all items coming off an assembly line that are defective or the proportion of all people entering a retail store who make a purchase before leaving. The population proportion is denoted <em class="emphasis">p</em> and the sample proportion is denoted <span class="inlineequation" id="shafer-20121106-125753-110205"><math xml:id="fwk-shafer-ch06-m0134" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span> Thus if in reality 43% of people entering a store make a purchase before leaving, <em class="emphasis">p</em> = 0.43; if in a sample of 200 people entering the store, 78 make a purchase, <span class="inlineequation" id="shafer-20121106-125753-110227"><math xml:id="fwk-shafer-ch06-m0135" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>78</mn><mo>/</mo><mn>200</mn><mo>=</mo><mn>0.39</mn><mo>.</mo></math></span></p>
+    <p class="para block" id="fwk-shafer-ch06_s03_p02">The sample proportion is a random variable: it varies from sample to sample in a way that cannot be predicted with certainty. Viewed as a random variable it will be written <span class="inlineequation" id="shafer-20121106-125753-110243"><math xml:id="fwk-shafer-ch06-m0136" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span> It has a <span class="margin_term"><a class="glossterm">mean</a><span class="glossdef">The number about which proportions computed from samples of the same size center.</span></span> <span class="inlineequation" id="shafer-20121106-125753-110259"><math xml:id="fwk-shafer-ch06-m0137" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></math></span> and a <span class="margin_term"><a class="glossterm">standard deviation</a><span class="glossdef">A measure of the variability of proportions computed from samples of the same size.</span></span> <span class="inlineequation" id="shafer-20121106-125753-110275"><math xml:id="fwk-shafer-ch06-m0138" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>.</mo></math></span> Here are formulas for their values.</p>
+    <div class="callout block" id="fwk-shafer-ch06_s03_n02">
+        <p class="para" id="fwk-shafer-ch06_s03_p03">Suppose random samples of size <em class="emphasis">n</em> are drawn from a population in which the proportion with a characteristic of interest is <em class="emphasis">p</em>. The mean <span class="inlineequation" id="shafer-20121106-125753-110298"><math xml:id="fwk-shafer-ch06-m0139" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-110314"><math xml:id="fwk-shafer-ch06-m0140" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></math></span> of the sample proportion <span class="inlineequation" id="shafer-20121106-125753-110330"><math xml:id="fwk-shafer-ch06-m0141" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> satisfy</p>
+        <span class="informalequation" id="shafer-20121106-125753-110346"><math xml:id="fwk-shafer-ch06-m0142" display="block"><mrow><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub><mo>=</mo><mi>p</mi><mtext> </mtext><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mtext> </mtext><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><mrow><mi>p</mi><mi>q</mi></mrow><mi>n</mi></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch06_s03_p04">where <span class="inlineequation" id="shafer-20121106-125753-110362"><math xml:id="fwk-shafer-ch06-m0143" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>.</mo></math></span></p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch06_s03_p05">The Central Limit Theorem has an analogue for the population proportion <span class="inlineequation" id="shafer-20121106-125753-110377"><math xml:id="fwk-shafer-ch06-m0144" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span> To see how, imagine that every element of the population that has the characteristic of interest is labeled with a 1, and that every element that does not is labeled with a 0. This gives a numerical population consisting entirely of zeros and ones. Clearly the proportion of the population with the special characteristic is the proportion of the numerical population that are ones; in symbols,</p>
+    <span class="informalequation block" id="shafer-20121106-125753-110393"><math xml:id="fwk-shafer-ch06-m0145" display="block"><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mtext>number</mtext><mtext> </mtext><mtext>of</mtext><mtext> </mtext><mn>1</mn><mtext>s</mtext></mrow><mi>N</mi></mfrac></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch06_s03_p06">But of course the sum of all the zeros and ones is simply the number of ones, so the mean <em class="emphasis">μ</em> of the numerical population is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-110409"><math xml:id="fwk-shafer-ch06-m0146" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mfrac><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mi>N</mi></mfrac><mo>=</mo><mfrac><mrow><mtext>number</mtext><mtext> </mtext><mtext>of</mtext><mtext> </mtext><mn>1</mn><mtext>s</mtext></mrow><mi>N</mi></mfrac></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch06_s03_p07">Thus the population proportion <em class="emphasis">p</em> is the same as the mean <em class="emphasis">μ</em> of the corresponding population of zeros and ones. In the same way the sample proportion <span class="inlineequation" id="shafer-20121106-125753-110451"><math xml:id="fwk-shafer-ch06-m0147" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is the same as the sample mean <span class="inlineequation" id="shafer-20121106-125753-110470"><math xml:id="fwk-shafer-ch06-m0148" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> Thus the Central Limit Theorem applies to <span class="inlineequation" id="shafer-20121106-125753-110486"><math xml:id="fwk-shafer-ch06-m0149" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span> However, the condition that the sample be large is a little more complicated than just being of size at least 30.</p>
+    <div class="callout block" id="fwk-shafer-ch06_s03_n03">
+        <h3 class="title">The Sampling Distribution of the Sample Proportion</h3>
+        <p class="para" id="fwk-shafer-ch06_s03_p08">For large samples, the sample proportion is approximately normally distributed, with mean <span class="inlineequation" id="shafer-20121106-125753-110508"><math xml:id="fwk-shafer-ch06-m0150" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mi>p</mi></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-110524"><math xml:id="fwk-shafer-ch06-m0151" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><msqrt><mrow><mi>p</mi><mi>q</mi><mo>/</mo><mi>n</mi></mrow></msqrt><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch06_s03_p09">A sample is large if the interval <span class="inlineequation" id="shafer-20121106-125753-110540"><math xml:id="fwk-shafer-ch06-m0152" display="inline"><mrow><mo>[</mo><mrow><mi>p</mi><mtext>−</mtext><mn>3</mn><mtext> </mtext><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>,</mo><mtext> </mtext><mi>p</mi><mo>+</mo><mn>3</mn><mtext> </mtext><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></mrow><mo>]</mo></mrow></math></span> lies wholly within the interval <span class="inlineequation" id="shafer-20121106-125753-110557"><math xml:id="fwk-shafer-ch06-m0153" display="inline"><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span></p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch06_s03_p10">In actual practice <em class="emphasis">p</em> is not known, hence neither is <span class="inlineequation" id="shafer-20121106-125753-110572"><math xml:id="fwk-shafer-ch06-m0154" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>.</mo></math></span> In that case in order to check that the sample is sufficiently large we substitute the known quantity <span class="inlineequation" id="shafer-20121106-125753-110588"><math xml:id="fwk-shafer-ch06-m0155" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> for <em class="emphasis">p</em>. This means checking that the interval</p>
+    <span class="informalequation block" id="shafer-20121106-125753-110610"><math xml:id="fwk-shafer-ch06-m0156" display="block"><mrow><mrow><mo>[</mo><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mtext>−</mtext><mn>3</mn><mtext> </mtext><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>(</mo><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>)</mo></mrow><mi>n</mi></mfrac></mrow></msqrt><mo>,</mo><mtext> </mtext><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>+</mo><mn>3</mn><mtext> </mtext><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>(</mo><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>)</mo></mrow><mi>n</mi></mfrac></mrow></msqrt></mrow><mtext> </mtext><mo>]</mo></mrow></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch06_s03_p11">lies wholly within the interval <span class="inlineequation" id="shafer-20121106-125753-110626"><math xml:id="fwk-shafer-ch06-m0157" display="inline"><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span> This is illustrated in the examples.</p>
+    <p class="para editable block" id="fwk-shafer-ch06_s03_p12"><a class="xref" href="#fwk-shafer-ch06_s03_f05">Figure 6.5 "Distribution of Sample Proportions"</a> shows that when <em class="emphasis">p</em> = 0.1 a sample of size 15 is too small but a sample of size 100 is acceptable. <a class="xref" href="#fwk-shafer-ch06_s03_f06">Figure 6.6 "Distribution of Sample Proportions for "</a> shows that when <em class="emphasis">p</em> = 0.5 a sample of size 15 is acceptable.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch06_s03_f05">
+        <p class="title"><span class="title-prefix">Figure 6.5</span> Distribution of Sample Proportions</p>
+        <img src="section_10/1f88d2a9e0be51323bf4afea7ec3a305.jpg">
+    </div>
+    <div class="figure large small-height editable block" id="fwk-shafer-ch06_s03_f06">
+        <p class="title"><span class="title-prefix">Figure 6.6</span> Distribution of Sample Proportions for <em class="emphasis">p</em> = 0.5 and <em class="emphasis">n</em> = 15</p>
+        <img src="section_10/50631caf59b26b1b3cdb66efe4c303ac.jpg">
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch06_s03_n04">
+        <h3 class="title">Example 7</h3>
+        <p class="para" id="fwk-shafer-ch06_s03_p13">Suppose that in a population of voters in a certain region 38% are in favor of particular bond issue. Nine hundred randomly selected voters are asked if they favor the bond issue.</p>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s03_o02" numeration="loweralpha">
+            <li>Verify that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-110642"><math xml:id="fwk-shafer-ch06-m0158" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> computed from samples of size 900 meets the condition that its sampling distribution be approximately normal.</li>
+            <li>Find the probability that the sample proportion computed from a sample of size 900 will be within 5 percentage points of the true population proportion.</li>
+        </ol>
+        <p class="simpara">Solution</p>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s03_o03" numeration="loweralpha">
+            <li>
+                <p class="para">The information given is that <em class="emphasis">p</em> = 0.38, hence <span class="inlineequation" id="shafer-20121106-125753-110658"><math xml:id="fwk-shafer-ch06-m0159" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>=</mo><mn>0.62</mn><mo>.</mo></math></span> First we use the formulas to compute the mean and standard deviation of <span class="inlineequation" id="shafer-20121106-125753-110673"><math xml:id="fwk-shafer-ch06-m0160" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span>:</p>
+                <span class="informalequation" id="shafer-20121106-125753-110690"><math xml:id="fwk-shafer-ch06-m0161" display="block"><mrow><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub><mo>=</mo><mi>p</mi><mo>=</mo><mn>0.38</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><mrow><mi>p</mi><mi>q</mi></mrow><mi>n</mi></mfrac></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><mrow><mo>(</mo><mn>0.38</mn><mo>)</mo><mo>(</mo><mn>0.62</mn><mo>)</mo></mrow><mrow><mn>900</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.01618</mn></mrow></math></span>
+                <p class="para" id="fwk-shafer-ch06_s03_p14">Then <span class="inlineequation" id="shafer-20121106-125753-110705"><math xml:id="fwk-shafer-ch06-m0162" display="inline"><mn>3</mn><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mn>3</mn><mrow><mo>(</mo><mrow><mn>0.01618</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.04854</mn><mo>≈</mo><mn>0.05</mn></math></span> so</p>
+                <span class="informalequation" id="shafer-20121106-125753-110770"><math xml:id="fwk-shafer-ch06-m0163" display="block"><mrow><mrow><mo>[</mo><mrow><mi>p</mi><mtext>−</mtext><mn>3</mn><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>,</mo><mi>p</mi><mo>+</mo><mn>3</mn><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mn>0.38</mn><mo>−</mo><mn>0</mn><mo>.</mo><mn>05,0</mn><mo>.</mo><mn>38</mn><mo>+</mo><mn>0.05</mn></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>.</mo><mn>33,0</mn><mo>.</mo><mn>43</mn></mrow><mo>]</mo></mrow></mrow></math></span>
+                <p class="para" id="fwk-shafer-ch06_s03_p15">which lies wholly within the interval <span class="inlineequation" id="shafer-20121106-125753-110787"><math xml:id="fwk-shafer-ch06-m0164" display="inline"><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo></mrow></math></span>, so it is safe to assume that <span class="inlineequation" id="shafer-20121106-125753-110809"><math xml:id="fwk-shafer-ch06-m0165" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is approximately normally distributed.</p>
+            </li>
+            <li>
+                <p class="para">To be within 5 percentage points of the true population proportion 0.38 means to be between <span class="inlineequation" id="shafer-20121106-125753-110826"><math xml:id="fwk-shafer-ch06-m0166" display="inline"><mn>0.38</mn><mo>−</mo><mn>0.05</mn><mo>=</mo><mn>0.33</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-110841"><math xml:id="fwk-shafer-ch06-m0167" display="inline"><mn>0.38</mn><mo>+</mo><mn>0.05</mn><mo>=</mo><mn>0.43</mn><mo>.</mo></math></span> Thus</p>
+                <span class="informalequation" id="shafer-20121106-125753-110857"><math xml:id="fwk-shafer-ch06-m0168" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mn>0.33</mn><mo>&lt;</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>&lt;</mo><mn>0.43</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>0.33</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>0.43</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mn>0.33</mn><mo>−</mo><mn>0.38</mn></mrow><mrow><mn>0.01618</mn></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>0.43</mn><mo>−</mo><mn>0.38</mn></mrow><mrow><mn>0.01618</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>3.09</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>3.09</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>3.09</mn></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>3.09</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mn>0.9990</mn><mo>−</mo><mn>0.0010</mn><mo>=</mo><mn>0.9980</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            </li>
+        </ol>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch06_s03_n05">
+        <h3 class="title">Example 8</h3>
+        <p class="para" id="fwk-shafer-ch06_s03_p16">An online retailer claims that 90% of all orders are shipped within 12 hours of being received. A consumer group placed 121 orders of different sizes and at different times of day; 102 orders were shipped within 12 hours.</p>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s03_o04" numeration="loweralpha">
+            <li>Compute the sample proportion of items shipped within 12 hours.</li>
+            <li>Confirm that the sample is large enough to assume that the sample proportion is normally distributed. Use <em class="emphasis">p</em> = 0.90, corresponding to the assumption that the retailer’s claim is valid.</li>
+            <li>Assuming the retailer’s claim is true, find the probability that a sample of size 121 would produce a sample proportion so low as was observed in this sample.</li>
+            <li>Based on the answer to part (c), draw a conclusion about the retailer’s claim.</li>
+        </ol>
+        <p class="simpara">Solution</p>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s03_o05" numeration="loweralpha">
+            <li>
+                <p class="para">The sample proportion is the number <em class="emphasis">x</em> of orders that are shipped within 12 hours divided by the number <em class="emphasis">n</em> of orders in the sample:</p>
+                <span class="informalequation" id="shafer-20121106-125753-110874"><math xml:id="fwk-shafer-ch06-m0169" display="block"><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>102</mn></mrow><mrow><mn>121</mn></mrow></mfrac><mo>=</mo><mn>0.84</mn></mrow></math></span>
+            </li>
+            <li>
+                <p class="para">Since <em class="emphasis">p</em> = 0.90, <span class="inlineequation" id="shafer-20121106-125753-110896"><math xml:id="fwk-shafer-ch06-m0170" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>=</mo><mn>0.10</mn></math></span>, and <em class="emphasis">n</em> = 121,</p>
+                <span class="informalequation" id="shafer-20121106-125753-110912"><math xml:id="fwk-shafer-ch06-m0171" display="block"><mrow><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><mrow><mrow><mo>(</mo><mrow><mn>0.90</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.10</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>121</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.0</mn><mrow><mover accent="true"><mn>27</mn><mo stretchy="true">-</mo></mover></mrow></mrow></math></span>
+                <p class="para" id="fwk-shafer-ch06_s03_p17">hence</p>
+                <span class="informalequation" id="shafer-20121106-125753-110934"><math xml:id="fwk-shafer-ch06-m0172" display="block"><mrow><mrow><mo>[</mo><mrow><mi>p</mi><mtext>−</mtext><mn>3</mn><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>,</mo><mi>p</mi><mo>+</mo><mn>3</mn><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mn>0.90</mn><mo>−</mo><mn>0</mn><mo>.</mo><mn>08,0</mn><mo>.</mo><mn>90</mn><mo>+</mo><mn>0.08</mn></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>.</mo><mn>82,0</mn><mo>.</mo><mn>98</mn></mrow><mo>]</mo></mrow></mrow></math></span>
+                <p class="para" id="fwk-shafer-ch06_s03_p18">Because <span class="inlineequation" id="shafer-20121106-125753-110951"><math xml:id="fwk-shafer-ch06-m0228a" display="block"><mrow><mrow><mo>[</mo><mrow><mn>0.82</mn><mo>,</mo><mtext> </mtext><mn>0.98</mn></mrow><mo>]</mo></mrow><mo>⊂</mo><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo></mrow><mo>,</mo></mrow></math></span> it is appropriate to use the normal distribution to compute probabilities related to the sample proportion <span class="inlineequation" id="shafer-20121106-125753-110972"><math xml:id="fwk-shafer-ch06-m0173" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span></p>
+            </li>
+            <li>
+                <p class="para">Using the value of <span class="inlineequation" id="shafer-20121106-125753-110988"><math xml:id="fwk-shafer-ch06-m0174" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> from part (a) and the computation in part (b),</p>
+                <span class="informalequation" id="shafer-20121106-125753-111020"><math xml:id="fwk-shafer-ch06-m0175" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>P</mi><mo>(</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.84</mn><mo>)</mo></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>≤</mo><mfrac><mrow><mn>0.84</mn><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>≤</mo><mfrac><mrow><mn>0.84</mn><mo>−</mo><mn>0.90</mn></mrow><mrow><mn>0.0</mn><mrow><mover accent="true"><mn>27</mn><mo stretchy="true">-</mo></mover></mrow></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>≤</mo><mtext>−</mtext><mn>2.20</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.0139</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            </li>
+            <li>The computation shows that a random sample of size 121 has only about a 1.4% chance of producing a sample proportion as the one that was observed, <span class="inlineequation" id="shafer-20121106-125753-111036"><math xml:id="fwk-shafer-ch06-m0176" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.84</mn></math></span>, when taken from a population in which the actual proportion is 0.90. This is so unlikely that it is reasonable to conclude that the actual value of <em class="emphasis">p</em> is less than the 90% claimed.</li>
+        </ol>
+    </div>
+    <div class="key_takeaways block" id="fwk-shafer-ch06_s03_n06">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch06_s03_l01" mark="bullet">
+            <li>The sample proportion is a random variable <span class="inlineequation" id="shafer-20121106-125753-111052"><math xml:id="fwk-shafer-ch06-m0177" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>.</mo></math></span>
+</li>
+            <li>There are formulas for the mean <span class="inlineequation" id="shafer-20121106-125753-111069"><math xml:id="fwk-shafer-ch06-m0178" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-111092"><math xml:id="fwk-shafer-ch06-m0179" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub></math></span> of the sample proportion.</li>
+            <li>When the sample size is large the sample proportion is normally distributed.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch06_s03_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch06_s03_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p01">The proportion of a population with a characteristic of interest is <em class="emphasis">p</em> = 0.37. Find the mean and standard deviation of the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111109"><math xml:id="fwk-shafer-ch06-m0180" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> obtained from random samples of size 1,600.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p03">The proportion of a population with a characteristic of interest is <em class="emphasis">p</em> = 0.82. Find the mean and standard deviation of the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111157"><math xml:id="fwk-shafer-ch06-m0183" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> obtained from random samples of size 900.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p05">The proportion of a population with a characteristic of interest is <em class="emphasis">p</em> = 0.76. Find the mean and standard deviation of the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111205"><math xml:id="fwk-shafer-ch06-m0186" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> obtained from random samples of size 1,200.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p07">The proportion of a population with a characteristic of interest is <em class="emphasis">p</em> = 0.37. Find the mean and standard deviation of the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111337"><math xml:id="fwk-shafer-ch06-m0189" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> obtained from random samples of size 125.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p09">Random samples of size 225 are drawn from a population in which the proportion with the characteristic of interest is 0.25. Decide whether or not the sample size is large enough to assume that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111386"><math xml:id="fwk-shafer-ch06-m0192" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is normally distributed.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p11">Random samples of size 1,600 are drawn from a population in which the proportion with the characteristic of interest is 0.05. Decide whether or not the sample size is large enough to assume that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111418"><math xml:id="fwk-shafer-ch06-m0194" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is normally distributed.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p13">Random samples of size <em class="emphasis">n</em> produced sample proportions <span class="inlineequation" id="shafer-20121106-125753-111451"><math xml:id="fwk-shafer-ch06-m0196" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> as shown. In each case decide whether or not the sample size is large enough to assume that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111474"><math xml:id="fwk-shafer-ch06-m0197" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o01" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 50, <span class="inlineequation" id="shafer-20121106-125753-111490"><math xml:id="fwk-shafer-ch06-m0198" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.48</mn></math></span>
+</li>
+                        <li>
+<em class="emphasis">n</em> = 50, <span class="inlineequation" id="shafer-20121106-125753-111507"><math xml:id="fwk-shafer-ch06-m0199" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.12</mn></math></span>
+</li>
+                        <li>
+<em class="emphasis">n</em> = 100, <span class="inlineequation" id="shafer-20121106-125753-111523"><math xml:id="fwk-shafer-ch06-m0200" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.12</mn></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p14">Samples of size <em class="emphasis">n</em> produced sample proportions <span class="inlineequation" id="shafer-20121106-125753-111607"><math xml:id="fwk-shafer-ch06-m0204" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> as shown. In each case decide whether or not the sample size is large enough to assume that the sample proportion <span class="inlineequation" id="shafer-20121106-125753-111629"><math xml:id="fwk-shafer-ch06-m0205" display="inline"><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o03" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 30, <span class="inlineequation" id="shafer-20121106-125753-111646"><math xml:id="fwk-shafer-ch06-m0206" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.72</mn></math></span>
+</li>
+                        <li>
+<em class="emphasis">n</em> = 30, <span class="inlineequation" id="shafer-20121106-125753-111662"><math xml:id="fwk-shafer-ch06-m0207" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.84</mn></math></span>
+</li>
+                        <li>
+<em class="emphasis">n</em> = 75, <span class="inlineequation" id="shafer-20121106-125753-111678"><math xml:id="fwk-shafer-ch06-m0208" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.84</mn></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p15">A random sample of size 121 is taken from a population in which the proportion with the characteristic of interest is <em class="emphasis">p</em> = 0.47. Find the indicated probabilities.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o05" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111743"><math xml:id="fwk-shafer-ch06-m0212" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.45</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.50</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111759"><math xml:id="fwk-shafer-ch06-m0213" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≥</mo><mn>0.50</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p16">A random sample of size 225 is taken from a population in which the proportion with the characteristic of interest is <em class="emphasis">p</em> = 0.34. Find the indicated probabilities.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o07" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111784"><math xml:id="fwk-shafer-ch06-m0214" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.25</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.40</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111800"><math xml:id="fwk-shafer-ch06-m0215" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.35</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p17">A random sample of size 900 is taken from a population in which the proportion with the characteristic of interest is <em class="emphasis">p</em> = 0.62. Find the indicated probabilities.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o09" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111816"><math xml:id="fwk-shafer-ch06-m0216" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.60</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.64</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111833"><math xml:id="fwk-shafer-ch06-m0217" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.57</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.67</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p18">A random sample of size 1,100 is taken from a population in which the proportion with the characteristic of interest is <em class="emphasis">p</em> = 0.28. Find the indicated probabilities.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o11" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111849"><math xml:id="fwk-shafer-ch06-m0218" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.27</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.29</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-111865"><math xml:id="fwk-shafer-ch06-m0219" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0.23</mn><mo>≤</mo><mrow><mover accent="true"><mi fontsize="80%">P</mi><mo stretchy="true">^</mo></mover></mrow><mo>≤</mo><mn>0.33</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch06_s03_qs01_qd02" start="13">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p19">Suppose that 8% of all males suffer some form of color blindness. Find the probability that in a random sample of 250 men at least 10% will suffer some form of color blindness. First verify that the sample is sufficiently large to use the normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p21">Suppose that 29% of all residents of a community favor annexation by a nearby municipality. Find the probability that in a random sample of 50 residents at least 35% will favor annexation. First verify that the sample is sufficiently large to use the normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p23">Suppose that 2% of all cell phone connections by a certain provider are dropped. Find the probability that in a random sample of 1,500 calls at most 40 will be dropped. First verify that the sample is sufficiently large to use the normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p25">Suppose that in 20% of all traffic accidents involving an injury, driver distraction in some form (for example, changing a radio station or texting) is a factor. Find the probability that in a random sample of 275 such accidents between 15% and 25% involve driver distraction in some form. First verify that the sample is sufficiently large to use the normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p27">An airline claims that 72% of all its flights to a certain region arrive on time. In a random sample of 30 recent arrivals, 19 were on time. You may assume that the normal distribution applies.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o13" numeration="loweralpha">
+                        <li>Compute the sample proportion.</li>
+                        <li>Assuming the airline’s claim is true, find the probability of a sample of size 30 producing a sample proportion so low as was observed in this sample.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p28">A humane society reports that 19% of all pet dogs were adopted from an animal shelter. Assuming the truth of this assertion, find the probability that in a random sample of 80 pet dogs, between 15% and 20% were adopted from a shelter. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p30">In one study it was found that 86% of all homes have a functional smoke detector. Suppose this proportion is valid for all homes. Find the probability that in a random sample of 600 homes, between 80% and 90% will have a functional smoke detector. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p32">A state insurance commission estimates that 13% of all motorists in its state are uninsured. Suppose this proportion is valid. Find the probability that in a random sample of 50 motorists, at least 5 will be uninsured. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p34">An outside financial auditor has observed that about 4% of all documents he examines contain an error of some sort. Assuming this proportion to be accurate, find the probability that a random sample of 700 documents will contain at least 30 with some sort of error. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p36">Suppose 7% of all households have no home telephone but depend completely on cell phones. Find the probability that in a random sample of 450 households, between 25 and 35 will have no home telephone. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch06_s03_qs01_qd03" start="23">
+            <h3 class="title">Additional Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p38">Some countries allow individual packages of prepackaged goods to weigh less than what is stated on the package, subject to certain conditions, such as the average of all packages being the stated weight or greater. Suppose that one requirement is that at most 4% of all packages marked 500 grams can weigh less than 490 grams. Assuming that a product actually meets this requirement, find the probability that in a random sample of 150 such packages the proportion weighing less than 490 grams is at least 3%. You may assume that the normal distribution applies.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p40">An economist wishes to investigate whether people are keeping cars longer now than in the past. He knows that five years ago, 38% of all passenger vehicles in operation were at least ten years old. He commissions a study in which 325 automobiles are randomly sampled. Of them, 132 are ten years old or older.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o15" numeration="loweralpha">
+                        <li>Find the sample proportion.</li>
+                        <li>Find the probability that, when a sample of size 325 is drawn from a population in which the true proportion is 0.38, the sample proportion will be as large as the value you computed in part (a). You may assume that the normal distribution applies.</li>
+                        <li>Give an interpretation of the result in part (b). Is there strong evidence that people are keeping their cars longer than was the case five years ago?</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p41">A state public health department wishes to investigate the effectiveness of a campaign against smoking. Historically 22% of all adults in the state regularly smoked cigars or cigarettes. In a survey commissioned by the public health department, 279 of 1,500 randomly selected adults stated that they smoke regularly.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o17" numeration="loweralpha">
+                        <li>Find the sample proportion.</li>
+                        <li>Find the probability that, when a sample of size 1,500 is drawn from a population in which the true proportion is 0.22, the sample proportion will be no larger than the value you computed in part (a). You may assume that the normal distribution applies.</li>
+                        <li>Give an interpretation of the result in part (b). How strong is the evidence that the campaign to reduce smoking has been effective?</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p42">In an effort to reduce the population of unwanted cats and dogs, a group of veterinarians set up a low-cost spay/neuter clinic. At the inception of the clinic a survey of pet owners indicated that 78% of all pet dogs and cats in the community were spayed or neutered. After the low-cost clinic had been in operation for three years, that figure had risen to 86%.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o19" numeration="loweralpha">
+                        <li>What information is missing that you would need to compute the probability that a sample drawn from a population in which the proportion is 78% (corresponding to the assumption that the low-cost clinic had had no effect) is as high as 86%?</li>
+                        <li>Knowing that the size of the original sample three years ago was 150 and that the size of the recent sample was 125, compute the probability mentioned in part (a). You may assume that the normal distribution applies.</li>
+                        <li>Give an interpretation of the result in part (b). How strong is the evidence that the presence of the low-cost clinic has increased the proportion of pet dogs and cats that have been spayed or neutered?</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p43">An ordinary die is “fair” or “balanced” if each face has an equal chance of landing on top when the die is rolled. Thus the proportion of times a three is observed in a large number of tosses is expected to be close to 1/6 or <span class="inlineequation" id="shafer-20121106-125753-112018"><math xml:id="fwk-shafer-ch06-m0228" display="inline"><mn>0.1</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> Suppose a die is rolled 240 times and shows three on top 36 times, for a sample proportion of 0.15.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o21" numeration="loweralpha">
+                        <li>Find the probability that a fair die would produce a proportion of 0.15 or less. You may assume that the normal distribution applies.</li>
+                        <li>Give an interpretation of the result in part (b). How strong is the evidence that the die is not fair?</li>
+                        <li>Suppose the sample proportion 0.15 came from rolling the die 2,400 times instead of only 240 times. Rework part (a) under these circumstances.</li>
+                        <li>Give an interpretation of the result in part (c). How strong is the evidence that the die is not fair?</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch06_s03_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p02_ans"><span class="inlineequation" id="shafer-20121106-125753-111125_ans"><math xml:id="fwk-shafer-ch06-m0181" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.37</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-111141_ans"><math xml:id="fwk-shafer-ch06-m0182" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.012</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p06_ans"><span class="inlineequation" id="shafer-20121106-125753-111222_ans"><math xml:id="fwk-shafer-ch06-m0187" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.76</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-111319_ans"><math xml:id="fwk-shafer-ch06-m0188" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>P</mi><mo stretchy="true">^</mo></mover></mrow></mrow></msub><mo>=</mo><mn>0.012</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p10_ans"><span class="inlineequation" id="shafer-20121106-125753-111402_ans"><math xml:id="fwk-shafer-ch06-m0193" display="inline"><mi>p</mi><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mi>p</mi><mi>q</mi></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.25</mn><mo>±</mo><mn>0.087</mn></math></span>, yes</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o02_ans" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-111539_ans"><math xml:id="fwk-shafer-ch06-m0201" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mover accent="true"><mi>q</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.48</mn><mo>±</mo><mn>0.21</mn></math></span>, yes</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-111556_ans"><math xml:id="fwk-shafer-ch06-m0202" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mover accent="true"><mi>q</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.12</mn><mo>±</mo><mn>0.14</mn></math></span>, no</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-111589_ans"><math xml:id="fwk-shafer-ch06-m0203" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mover accent="true"><mi>q</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.12</mn><mo>±</mo><mn>0.10</mn></math></span>, yes</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o06_ans" numeration="loweralpha">
+                        <li>0.4154</li>
+                        <li>0.2546</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa11_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o10_ans" numeration="loweralpha">
+                        <li>0.7850</li>
+                        <li>0.9980</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd01_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="13">
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p20_ans"><span class="inlineequation" id="shafer-20121106-125753-111882_ans"><math xml:id="fwk-shafer-ch06-m0220" display="inline"><mi>p</mi><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mi>p</mi><mi>q</mi></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.08</mn><mo>±</mo><mn>0.05</mn></math></span></p>
+                    <p class="para">and</p>
+                    <p class="para"><span class="inlineequation" id="shafer-20121106-125753-111898_ans"><math xml:id="fwk-shafer-ch06-m0221" display="inline"><mrow><mo>[</mo><mrow><mn>0</mn><mo>.</mo><mn>03,0</mn><mo>.</mo><mn>13</mn></mrow><mo>]</mo></mrow><mo>⊂</mo><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo><mo>,</mo><mn>0.1210</mn></mrow></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa03_ans">
+                <div class="answer">
+                    <p class="para"><span class="inlineequation" id="shafer-20121106-125753-111953_ans"><math xml:id="fwk-shafer-ch06-m0224" display="inline"><mi>p</mi><mo>±</mo><mn>3</mn><msqrt><mrow><mfrac><mrow><mi>p</mi><mi>q</mi></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>0.02</mn><mo>±</mo><mn>0.01</mn></math></span></p>
+                    <p class="para">and</p>
+                    <p class="para"><span class="inlineequation" id="shafer-20121106-125753-111969_ans"><math xml:id="fwk-shafer-ch06-m0225" display="inline"><mrow><mo>[</mo><mrow><mn>0</mn><mo>.</mo><mn>01,0</mn><mo>.</mo><mn>03</mn></mrow><mo>]</mo></mrow><mo>⊂</mo><mrow><mo>[</mo><mrow><mn>0,1</mn></mrow><mo>]</mo><mo>,</mo><mn>0.9671</mn></mrow></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o14_ans" numeration="loweralpha">
+                        <li>0.63</li>
+                        <li>0.1446</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p31_ans">0.9977</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p35_ans">0.3483</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd02_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="23">
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s03_qs01_p39_ans">0.7357</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o18_ans" numeration="loweralpha">
+                        <li>0.186</li>
+                        <li>0.0007</li>
+                        <li>In a population in which the true proportion is 22% the chance that a random sample of size 1500 would produce a sample proportion of 18.6% or less is only 7/100 of 1%. This is strong evidence that currently a smaller proportion than 22% smoke.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s03_qs01_qd03_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s03_qs01_o22_ans" numeration="loweralpha">
+                        <li>0.2451</li>
+                        <li>We would expect a sample proportion of 0.15 or less in about 24.5% of all samples of size 240, so this is practically no evidence at all that the die is not fair.</li>
+                        <li>0.0139</li>
+                        <li>We would expect a sample proportion of 0.15 or less in only about 1.4% of all samples of size 2400, so this is strong evidence that the die is not fair.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-02-the-sampling-distribution-of-t.html"><img src="shared/images/batch-left.png"></a> <a href="s10-02-the-sampling-distribution-of-t.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s11-01-large-sample-estimation-of-a-p.html">Next Section</a> <a href="s11-01-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

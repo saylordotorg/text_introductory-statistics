@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Mean and Standard Deviation of the Sample Mean</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s09-04-areas-of-tails-of-distribution.html"><img src="shared/images/batch-left.png"></a> <a href="s09-04-areas-of-tails-of-distribution.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-02-the-sampling-distribution-of-t.html">Next Section</a> <a href="s10-02-the-sampling-distribution-of-t.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch06_s01" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">6.1</span> The Mean and Standard Deviation of the Sample Mean</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch06_s01_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch06_s01_o01" numeration="arabic">
+            <li>To become familiar with the concept of the probability distribution of the sample mean.</li>
+            <li>To understand the meaning of the formulas for the mean and standard deviation of the sample mean.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch06_s01_p01">Suppose we wish to estimate the mean <em class="emphasis">μ</em> of a population. In actual practice we would typically take just one sample. Imagine however that we take sample after sample, all of the same size <em class="emphasis">n</em>, and compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-107504"><math xml:id="fwk-shafer-ch06-m0002" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> of each one. We will likely get a different value of <span class="inlineequation" id="shafer-20121106-125753-107526"><math xml:id="fwk-shafer-ch06-m0003" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> each time. The sample mean <span class="inlineequation" id="shafer-20121106-125753-107542"><math xml:id="fwk-shafer-ch06-m0004" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is a random variable: it varies from sample to sample in a way that cannot be predicted with certainty. We will write <span class="inlineequation" id="shafer-20121106-125753-107558"><math xml:id="fwk-shafer-ch06-m0005" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> when the sample mean is thought of as a random variable, and write <span class="inlineequation" id="shafer-20121106-125753-107574"><math xml:id="fwk-shafer-ch06-m0006" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> for the values that it takes. The random variable <span class="inlineequation" id="shafer-20121106-125753-107590"><math xml:id="fwk-shafer-ch06-m0007" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> has a <span class="margin_term"><a class="glossterm">mean</a><span class="glossdef">The number about which means computed from samples of the same size center.</span></span>, denoted <span class="inlineequation" id="shafer-20121106-125753-107606"><math xml:id="fwk-shafer-ch06-m0008" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span>, and a <span class="margin_term"><a class="glossterm">standard deviation</a><span class="glossdef">A measure of the variability of means computed from samples of the same size.</span></span>, denoted <span class="inlineequation" id="shafer-20121106-125753-107622"><math xml:id="fwk-shafer-ch06-m0009" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>.</mo></math></span> Here is an example with such a small population and small sample size that we can actually write down every single sample.</p>
+    <div class="exercises block" id="fwk-shafer-ch06_s01_n02">
+        <h3 class="title">Example 1</h3>
+        <p class="para" id="fwk-shafer-ch06_s01_p02">A rowing team consists of four rowers who weigh 152, 156, 160, and 164 pounds. Find all possible random samples with replacement of size two and compute the sample mean for each one. Use them to find the probability distribution, the mean, and the standard deviation of the sample mean <span class="inlineequation" id="shafer-20121106-125753-107637"><math xml:id="fwk-shafer-ch06-m0010" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span></p>
+        <p class="simpara">Solution</p>
+        <p class="para" id="fwk-shafer-ch06_s01_p03">The following table shows all possible samples with replacement of size two, along with the mean of each:</p>
+        <div class="informaltable" frame="all">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="center">Sample</th>
+                        <th align="center">Mean</th>
+                        <th> </th>
+                        <th align="center">Sample</th>
+                        <th align="center">Mean</th>
+                        <th> </th>
+                        <th align="center">Sample</th>
+                        <th align="center">Mean</th>
+                        <th> </th>
+                        <th align="center">Sample</th>
+                        <th align="center">Mean</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center">152, 152</td>
+                        <td align="center">152</td>
+                        <td> </td>
+                        <td align="center">156, 152</td>
+                        <td align="center">154</td>
+                        <td> </td>
+                        <td align="center">160, 152</td>
+                        <td align="center">156</td>
+                        <td> </td>
+                        <td align="center">164, 152</td>
+                        <td align="center">158</td>
+                    </tr>
+                    <tr>
+                        <td align="center">152, 156</td>
+                        <td align="center">154</td>
+                        <td> </td>
+                        <td align="center">156, 156</td>
+                        <td align="center">156</td>
+                        <td> </td>
+                        <td align="center">160, 156</td>
+                        <td align="center">158</td>
+                        <td> </td>
+                        <td align="center">164, 156</td>
+                        <td align="center">160</td>
+                    </tr>
+                    <tr>
+                        <td align="center">152, 160</td>
+                        <td align="center">156</td>
+                        <td> </td>
+                        <td align="center">156, 160</td>
+                        <td align="center">158</td>
+                        <td> </td>
+                        <td align="center">160, 160</td>
+                        <td align="center">160</td>
+                        <td> </td>
+                        <td align="center">164, 160</td>
+                        <td align="center">162</td>
+                    </tr>
+                    <tr>
+                        <td align="center">152, 164</td>
+                        <td align="center">158</td>
+                        <td> </td>
+                        <td align="center">156, 164</td>
+                        <td align="center">160</td>
+                        <td> </td>
+                        <td align="center">160, 164</td>
+                        <td align="center">162</td>
+                        <td> </td>
+                        <td align="center">164, 164</td>
+                        <td align="center">164</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para" id="fwk-shafer-ch06_s01_p04">The table shows that there are seven possible values of the sample mean <span class="inlineequation" id="shafer-20121106-125753-107654"><math xml:id="fwk-shafer-ch06-m0011" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> The value <span class="inlineequation" id="shafer-20121106-125753-107676"><math xml:id="fwk-shafer-ch06-m0012" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>152</mn></math></span> happens only one way (the rower weighing 152 pounds must be selected both times), as does the value <span class="inlineequation" id="shafer-20121106-125753-107692"><math xml:id="fwk-shafer-ch06-m0013" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>164</mn></math></span>, but the other values happen more than one way, hence are more likely to be observed than 152 and 164 are. Since the 16 samples are equally likely, we obtain the probability distribution of the sample mean just by counting:</p>
+        <span class="informalequation" id="shafer-20121106-125753-107707"><math xml:id="fwk-shafer-ch06-m0014" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none" rowlines="solid"><mtr><mtd><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd><mtd><mrow><mn>154</mn></mrow></mtd><mtd><mrow><mn>156</mn></mrow></mtd><mtd><mrow><mn>158</mn></mrow></mtd><mtd><mrow><mn>160</mn></mrow></mtd><mtd><mrow><mn>162</mn></mrow></mtd><mtd><mrow><mn>164</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch06_s01_p05">Now we apply the formulas from <a class="xref" href="fwk-shafer-ch04_s02#fwk-shafer-ch04_s02_s02">Section 4.2.2 "The Mean and Standard Deviation of a Discrete Random Variable"</a> in <a class="xref" href="fwk-shafer-ch04#fwk-shafer-ch04">Chapter 4 "Discrete Random Variables"</a> for the mean and standard deviation of a discrete random variable to <span class="inlineequation" id="shafer-20121106-125753-107724"><math xml:id="fwk-shafer-ch06-m0015" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> For <span class="inlineequation" id="shafer-20121106-125753-107740"><math xml:id="fwk-shafer-ch06-m0016" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> we obtain.</p>
+        <span class="informalequation" id="shafer-20121106-125753-107756"><math xml:id="fwk-shafer-ch06-m0017" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="right"><mrow><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mtext> </mtext><mi>P</mi><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mstyle></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mn>152</mn><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>154</mn><mrow><mo>(</mo><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>156</mn><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>158</mn><mrow><mo>(</mo><mrow><mfrac><mn>4</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>160</mn><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>162</mn><mrow><mo>(</mo><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><mn>164</mn><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mn>158</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch06_s01_p06">For <span class="inlineequation" id="shafer-20121106-125753-107772"><math xml:id="fwk-shafer-ch06-m0018" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> we first compute <span class="inlineequation" id="shafer-20121106-125753-107787"><math xml:id="fwk-shafer-ch06-m0019" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msup><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow></mrow></mstyle></mrow></math></span>:</p>
+        <span class="informalequation" id="shafer-20121106-125753-107810"><math xml:id="fwk-shafer-ch06-m0020" display="block"><mrow><msup><mrow><mn>152</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>154</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>156</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>158</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>4</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>160</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>162</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>2</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mn>164</mn></mrow><mn>2</mn></msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><mn>16</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch06_s01_p07">which is 24,974, so that</p>
+        <span class="informalequation" id="shafer-20121106-125753-107826"><math xml:id="fwk-shafer-ch06-m0021" display="block"><mrow><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub><mo>=</mo><msqrt><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msup><mi>P</mi><mrow><mo>(</mo><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mo>)</mo></mrow><mo>−</mo><msubsup><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow><mn>2</mn></msubsup></mrow></mstyle></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>24,974</mn><mo>−</mo><msup><mrow><mn>158</mn></mrow><mn>2</mn></msup></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>10</mn></mrow></msqrt></mrow></math></span>
+    </div>
+    <p class="para block" id="fwk-shafer-ch06_s01_p08">The mean and standard deviation of the population {152,156,160,164} in the example are <em class="emphasis">μ</em> = 158 and <span class="inlineequation" id="shafer-20121106-125753-107842"><math xml:id="fwk-shafer-ch06-m0022" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mn>20</mn></mrow></msqrt><mo>.</mo></math></span> The mean of the sample mean <span class="inlineequation" id="shafer-20121106-125753-107857"><math xml:id="fwk-shafer-ch06-m0023" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> that we have just computed is exactly the mean of the population. The standard deviation of the sample mean <span class="inlineequation" id="shafer-20121106-125753-107873"><math xml:id="fwk-shafer-ch06-m0024" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> that we have just computed is the standard deviation of the population divided by the square root of the sample size: <span class="inlineequation" id="shafer-20121106-125753-107889"><math xml:id="fwk-shafer-ch06-m0025" display="inline"><msqrt><mrow><mn>10</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>20</mn></mrow></msqrt><mo>/</mo><msqrt><mrow><mn>2</mn></mrow></msqrt><mo>.</mo></math></span> These relationships are not coincidences, but are illustrations of the following formulas.</p>
+    <div class="callout block" id="fwk-shafer-ch06_s01_n03">
+        <p class="para" id="fwk-shafer-ch06_s01_p09">Suppose random samples of size <em class="emphasis">n</em> are drawn from a population with mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em>. The mean <span class="inlineequation" id="shafer-20121106-125753-107904"><math xml:id="fwk-shafer-ch06-m0026" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-107920"><math xml:id="fwk-shafer-ch06-m0027" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> of the sample mean <span class="inlineequation" id="shafer-20121106-125753-107936"><math xml:id="fwk-shafer-ch06-m0028" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> satisfy</p>
+        <span class="informalequation" id="shafer-20121106-125753-107958"><math xml:id="fwk-shafer-ch06-m0029" display="block"><mrow><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mtext> </mtext><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mtext> </mtext><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub><mo>=</mo><mfrac><mi mathvariant="italic">σ</mi><mrow><mpadded height="1.2em"><msqrt><mi>n</mi></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch06_s01_p10">The first formula says that if we could take every possible sample from the population and compute the corresponding sample mean, then those numbers would center at the number we wish to estimate, the population mean <em class="emphasis">μ</em>.</p>
+    <p class="para editable block" id="fwk-shafer-ch06_s01_p11">The second formula says that averages computed from samples vary less than individual measurements on the population do, and quantifies the relationship.</p>
+    <div class="exercises block" id="fwk-shafer-ch06_s01_n04">
+        <h3 class="title">Example 2</h3>
+        <p class="para" id="fwk-shafer-ch06_s01_p12">The mean and standard deviation of the tax value of all vehicles registered in a certain state are <span class="inlineequation" id="shafer-20121106-125753-107973"><math xml:id="fwk-shafer-ch06-m0030" display="inline"><mi mathvariant="italic">μ</mi><mo>=</mo><mi>$</mi><mn>13,525</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-107989"><math xml:id="fwk-shafer-ch06-m0031" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><mi>$</mi><mn>4,180</mn><mo>.</mo></math></span> Suppose random samples of size 100 are drawn from the population of vehicles. What are the mean <span class="inlineequation" id="shafer-20121106-125753-108005"><math xml:id="fwk-shafer-ch06-m0032" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-108026"><math xml:id="fwk-shafer-ch06-m0033" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> of the sample mean <span class="inlineequation" id="shafer-20121106-125753-108042"><math xml:id="fwk-shafer-ch06-m0034" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span>?</p>
+        <p class="simpara">Solution</p>
+        <p class="para" id="fwk-shafer-ch06_s01_p13">Since <em class="emphasis">n</em> = 100, the formulas yield</p>
+        <span class="informalequation" id="shafer-20121106-125753-108058"><math xml:id="fwk-shafer-ch06-m0035" display="block"><mrow><msub><mi mathvariant="italic">μ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mi>$</mi><mn>13,525</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><msub><mi mathvariant="italic">σ</mi><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></msub><mo>=</mo><mfrac><mi mathvariant="italic">σ</mi><mrow><mpadded height="1.2em"><msqrt><mi>n</mi></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>$</mi><mn>4180</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>100</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mi>$</mi><mn>418</mn></mrow></math></span>
+    </div>
+    <div class="key_takeaways block" id="fwk-shafer-ch06_s01_n05">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch06_s01_l01" mark="bullet">
+            <li>The sample mean is a random variable; as such it is written <span class="inlineequation" id="shafer-20121106-125753-108090"><math xml:id="fwk-shafer-ch06-m0036" display="inline"><mrow><mover accent="true"><mi mathvariant="italic" fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-108107"><math xml:id="fwk-shafer-ch06-m0037" display="inline"><mrow><mover accent="true"><mi mathvariant="italic">x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> stands for individual values it takes.</li>
+            <li>As a random variable the sample mean has a probability distribution, a mean <span class="inlineequation" id="shafer-20121106-125753-108133"><math xml:id="fwk-shafer-ch06-m0038" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span>, and a standard deviation <span class="inlineequation" id="shafer-20121106-125753-108149"><math xml:id="fwk-shafer-ch06-m0039" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>.</mo></math></span>
+</li>
+            <li>There are formulas that relate the mean and standard deviation of the sample mean to the mean and standard deviation of the population from which the sample is drawn.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch06_s01_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch06_s01_qs01_qd01">
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s01_qs01_p01">Random samples of size 225 are drawn from a population with mean 100 and standard deviation 20. Find the mean and standard deviation of the sample mean.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s01_qs01_p03">Random samples of size 64 are drawn from a population with mean 32 and standard deviation 5. Find the mean and standard deviation of the sample mean.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s01_qs01_p05">A population has mean 75 and standard deviation 12.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s01_qs01_o01" numeration="loweralpha">
+                        <li>Random samples of size 121 are taken. Find the mean and standard deviation of the sample mean.</li>
+                        <li>How would the answers to part (a) change if the size of the samples were 400 instead of 121?</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch06_s01_qs01_p06">A population has mean 5.75 and standard deviation 1.02.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s01_qs01_o03" numeration="loweralpha">
+                        <li>Random samples of size 81 are taken. Find the mean and standard deviation of the sample mean.</li>
+                        <li>How would the answers to part (a) change if the size of the samples were 25 instead of 81?</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch06_s01_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch06_s01_qs01_p02_ans"><span class="inlineequation" id="shafer-20121106-125753-108165_ans"><math xml:id="fwk-shafer-ch06-m0040" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>100</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-108182_ans"><math xml:id="fwk-shafer-ch06-m0041" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>1.33</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch06_s01_qs01_o02_ans" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-108236_ans"><math xml:id="fwk-shafer-ch06-m0044" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>75</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-108259_ans"><math xml:id="fwk-shafer-ch06-m0045" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mn>1.09</mn></math></span>
+</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-108275_ans"><math xml:id="fwk-shafer-ch06-m0046" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> stays the same but <span class="inlineequation" id="shafer-20121106-125753-108291_ans"><math xml:id="fwk-shafer-ch06-m0047" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi mathvariant="italic">X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub></math></span> decreases to 0.6</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch06_s01_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s09-04-areas-of-tails-of-distribution.html"><img src="shared/images/batch-left.png"></a> <a href="s09-04-areas-of-tails-of-distribution.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-02-the-sampling-distribution-of-t.html">Next Section</a> <a href="s10-02-the-sampling-distribution-of-t.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

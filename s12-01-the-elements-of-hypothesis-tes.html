@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Elements of Hypothesis Testing</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-04-sample-size-considerations.html"><img src="shared/images/batch-left.png"></a> <a href="s11-04-sample-size-considerations.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-02-large-sample-tests-for-a-popul.html">Next Section</a> <a href="s12-02-large-sample-tests-for-a-popul.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch08_s01" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">8.1</span> The Elements of Hypothesis Testing</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch08_s01_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch08_s01_o01" numeration="arabic">
+            <li>To understand the logical framework of tests of hypotheses.</li>
+            <li>To learn basic terminology connected with hypothesis testing.</li>
+            <li>To learn fundamental facts about hypothesis testing.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch08_s01_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Types of Hypotheses</h2>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s01_p01">A <em class="emphasis">hypothesis</em> about the value of a population parameter is an assertion about its value. As in the introductory example we will be concerned with testing the truth of two competing hypotheses, only one of which can be true.</p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">null hypothesis</a><span class="glossdef">The statement that is assumed to be true unless there is convincing evidence to the contrary.</span></span><em class="emphasis">, denoted</em> <em class="emphasis">H</em><sub class="subscript">0</sub><em class="emphasis">, is the statement about the population parameter that is assumed to be true unless there is convincing evidence to the contrary</em>.</p>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p03"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">alternative hypothesis</a><span class="glossdef">A statement that is accepted as true only if there is convincing evidence in favor of it.</span></span><em class="emphasis">, denoted</em> <em class="emphasis">H<sub class="subscript">a</sub></em><em class="emphasis">, is a statement about the population parameter that is contradictory to the null hypothesis, and is accepted as true only if there is convincing evidence in favor of it.</em></p>
+        </div>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s01_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p04"><span class="margin_term"><a class="glossterm">Hypothesis testing</a><span class="glossdef">A statistical procedure in which a choice is made between a null hypothesis and a specific alternative hypothesis based on information in a sample.</span></span> <em class="emphasis">is a statistical procedure in which a choice is made between a null hypothesis and an alternative hypothesis based on information in a sample.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s01_p05">The end result of a hypotheses testing procedure is a choice of one of the following two possible conclusions:
+</p>
+<ol class="orderedlist" id="fwk-shafer-ch08_s01_s01_o01" numeration="arabic">                <li>Reject <em class="emphasis">H</em><sub class="subscript">0</sub> (and therefore accept <em class="emphasis">H<sub class="subscript">a</sub></em>), or</li>
+                <li>Fail to reject <em class="emphasis">H</em><sub class="subscript">0</sub> (and therefore fail to accept <em class="emphasis">H<sub class="subscript">a</sub></em>).</li>
+</ol>
+        <p class="para block" id="fwk-shafer-ch08_s01_s01_p06">The null hypothesis typically represents the status quo, or what has historically been true. In the example of the respirators, we would believe the claim of the manufacturer unless there is reason not to do so, so the null hypotheses is <span class="inlineequation" id="shafer-20121106-125753-116574"><math xml:id="fwk-shafer-ch08-m0001" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>75</mn><mo>.</mo></math></span> The alternative hypothesis in the example is the contradictory statement <span class="inlineequation" id="shafer-20121106-125753-116598"><math xml:id="fwk-shafer-ch08-m0002" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>75</mn><mo>.</mo></math></span> The null hypothesis will always be an assertion containing an equals sign, but depending on the situation the alternative hypothesis can have any one of three forms: with the symbol “&lt;,” as in the example just discussed, with the symbol “&gt;,” or with the symbol “≠” The following two examples illustrate the latter two cases.</p>
+        <div class="exercises block" id="fwk-shafer-ch08_s01_s01_n03">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p07">A publisher of college textbooks claims that the average price of all hardbound college textbooks is $127.50. A student group believes that the actual mean is higher and wishes to test their belief. State the relevant null and alternative hypotheses.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p08">The default option is to accept the publisher’s claim unless there is compelling evidence to the contrary. Thus the null hypothesis is <span class="inlineequation" id="shafer-20121106-125753-116614"><math xml:id="fwk-shafer-ch08-m0003" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>127.50</mn><mo>.</mo></math></span> Since the student group thinks that the average textbook price is <em class="emphasis">greater</em> than the publisher’s figure, the alternative hypothesis in this situation is <span class="inlineequation" id="shafer-20121106-125753-116636"><math xml:id="fwk-shafer-ch08-m0004" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>127.50</mn><mo>.</mo></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch08_s01_s01_n04">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p09">The recipe for a bakery item is designed to result in a product that contains 8 grams of fat per serving. The quality control department samples the product periodically to insure that the production process is working as designed. State the relevant null and alternative hypotheses.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch08_s01_s01_p10">The default option is to assume that the product contains the amount of fat it was formulated to contain unless there is compelling evidence to the contrary. Thus the null hypothesis is <span class="inlineequation" id="shafer-20121106-125753-116651"><math xml:id="fwk-shafer-ch08-m0005" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>8.0</mn><mo>.</mo></math></span> Since to contain either more fat than desired or to contain less fat than desired are both an indication of a faulty production process, the alternative hypothesis in this situation is that the mean is <em class="emphasis">different</em> from 8.0, so <span class="inlineequation" id="shafer-20121106-125753-116668"><math xml:id="fwk-shafer-ch08-m0006" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>8.0</mn><mo>.</mo></math></span></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s01_p11">In <a class="xref" href="#fwk-shafer-ch08_s01_s01_n03" xrefstyle="select: title">Note 8.8 "Example 1"</a>, the textbook example, it might seem more natural that the publisher’s claim be that the average price is at most $127.50, not exactly $127.50. If the claim were made this way, then the null hypothesis would be <span class="inlineequation" id="shafer-20121106-125753-116684"><math xml:id="fwk-shafer-ch08-m0007" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≤</mo><mn>127.50</mn></math></span>, and the value $127.50 given in the example would be the one that is least favorable to the publisher’s claim, the null hypothesis. It is always true that if the null hypothesis is retained for its least favorable value, then it is retained for every other value.</p>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s01_p12">Thus in order to make the null and alternative hypotheses easy for the student to distinguish, in every example and problem in this text we will always present one of the two competing claims about the value of a parameter with an equality. <em class="emphasis">The claim expressed with an equality is the null hypothesis.</em> This is the same as always stating the null hypothesis in the least favorable light. So in the introductory example about the respirators, we stated the manufacturer’s claim as “the average is 75 minutes” instead of the perhaps more natural “the average is at least 75 minutes,” essentially reducing the presentation of the null hypothesis to its worst case.</p>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s01_p13">The first step in hypothesis testing is to identify the null and alternative hypotheses.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch08_s01_s02" version="5.0" lang="en">
+        <h2 class="title editable block">The Logic of Hypothesis Testing</h2>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s02_p01">Although we will study hypothesis testing in situations other than for a single population mean (for example, for a population proportion instead of a mean or in comparing the means of two different populations), in this section the discussion will always be given in terms of a single population mean <em class="emphasis">μ</em>.</p>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p02">The null hypothesis always has the form <span class="inlineequation" id="shafer-20121106-125753-116700"><math xml:id="fwk-shafer-ch08-m0008" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> for a specific number <span class="inlineequation" id="shafer-20121106-125753-116717"><math xml:id="fwk-shafer-ch08-m0009" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> (in the respirator example <span class="inlineequation" id="shafer-20121106-125753-116739"><math xml:id="fwk-shafer-ch08-m0010" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>75</mn></math></span>, in the textbook example <span class="inlineequation" id="shafer-20121106-125753-116757"><math xml:id="fwk-shafer-ch08-m0011" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>127.50</mn></math></span>, and in the baked goods example <span class="inlineequation" id="shafer-20121106-125753-116772"><math xml:id="fwk-shafer-ch08-m0012" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>=</mo><mn>8.0</mn></math></span>). Since the null hypothesis is accepted unless there is strong evidence to the contrary, the test procedure is based on the initial assumption that <em class="emphasis">H</em><sub class="subscript">0</sub> is true. This point is so important that we will repeat it in a display: </p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s02_n01">
+            <p class="para" id="fwk-shafer-ch08_s01_s02_p03"><em class="emphasis">The test procedure is based on the initial assumption that</em> <em class="emphasis">H</em><sub class="subscript">0</sub> <em class="emphasis">is true.</em></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p04">The criterion for judging between <em class="emphasis">H</em><sub class="subscript">0</sub> and <em class="emphasis">H<sub class="subscript">a</sub></em> based on the sample data is: if the value of <span class="inlineequation" id="shafer-20121106-125753-116788"><math xml:id="fwk-shafer-ch08-m0013" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> would be highly unlikely to occur if <em class="emphasis">H</em><sub class="subscript">0</sub> were true, but favors the truth of <em class="emphasis">H<sub class="subscript">a</sub></em>, then we reject <em class="emphasis">H</em><sub class="subscript">0</sub> in favor of <em class="emphasis">H<sub class="subscript">a</sub></em>. Otherwise we do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p05">Supposing for now that <span class="inlineequation" id="shafer-20121106-125753-116804"><math xml:id="fwk-shafer-ch08-m0014" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> follows a normal distribution, when the null hypothesis is true the density function for the sample mean <span class="inlineequation" id="shafer-20121106-125753-116820"><math xml:id="fwk-shafer-ch08-m0015" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> must be as in <a class="xref" href="#fwk-shafer-ch08_s01_s02_f01" xrefstyle="select: label">Figure 8.1 "The Density Curve for "</a>: a bell curve centered at <span class="inlineequation" id="shafer-20121106-125753-116836"><math xml:id="fwk-shafer-ch08-m0016" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>.</mo></math></span> Thus if <em class="emphasis">H</em><sub class="subscript">0</sub> is true then <span class="inlineequation" id="shafer-20121106-125753-116852"><math xml:id="fwk-shafer-ch08-m0017" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is likely to take a value near <span class="inlineequation" id="shafer-20121106-125753-116869"><math xml:id="fwk-shafer-ch08-m0018" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and is unlikely to take values far away. Our decision procedure therefore reduces simply to: </p>
+<ol class="orderedlist" id="fwk-shafer-ch08_s01_s02_o01" numeration="arabic">                <li>if <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-116891"><math xml:id="fwk-shafer-ch08-m0019" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> then reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-116908"><math xml:id="fwk-shafer-ch08-m0020" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far to the left of <span class="inlineequation" id="shafer-20121106-125753-116924"><math xml:id="fwk-shafer-ch08-m0021" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>;</li>
+                <li>if <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-116940"><math xml:id="fwk-shafer-ch08-m0022" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> then reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-116956"><math xml:id="fwk-shafer-ch08-m0023" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far to the right of <span class="inlineequation" id="shafer-20121106-125753-116972"><math xml:id="fwk-shafer-ch08-m0024" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>;</li>
+                <li>if <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-116988"><math xml:id="fwk-shafer-ch08-m0025" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> then reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-117004"><math xml:id="fwk-shafer-ch08-m0026" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far away from <span class="inlineequation" id="shafer-20121106-125753-117027"><math xml:id="fwk-shafer-ch08-m0027" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> in either direction.</li>
+</ol>
+        <div class="figure large small-height block" id="fwk-shafer-ch08_s01_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 8.1</span> The Density Curve for <span class="inlineequation" id="shafer-20121106-125753-117044"><math xml:id="fwk-shafer-ch08-m0028" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> if <em class="emphasis">H</em><sub class="subscript">0</sub> Is True</p>
+            <img src="section_12/b91b73d0dbbd53dc069a390a463118a2.jpg">
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p06">Think of the respirator example, for which the null hypothesis is <span class="inlineequation" id="shafer-20121106-125753-117060"><math xml:id="fwk-shafer-ch08-m0029" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>75</mn></math></span>, the claim that the average time air is delivered for <em class="emphasis">all</em> respirators is 75 minutes. If the sample mean is 75 or greater then we certainly would not reject <em class="emphasis">H</em><sub class="subscript">0</sub> (since there is no issue with an emergency respirator delivering air even longer than claimed).</p>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s02_p07">If the sample mean is slightly less than 75 then we would logically attribute the difference to sampling error and also not reject <em class="emphasis">H</em><sub class="subscript">0</sub> either.</p>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p08">Values of the sample mean that are smaller and smaller are less and less likely to come from a population for which the population mean is 75. Thus if the sample mean is far less than 75, say around 60 minutes or less, then we would certainly reject <em class="emphasis">H</em><sub class="subscript">0</sub>, because we know that it is highly unlikely that the average of a sample would be so low if the population mean were 75. This is the <em class="emphasis">rare event criterion</em> for rejection: what we actually observed (<span class="inlineequation" id="shafer-20121106-125753-117076"><math xml:id="fwk-shafer-ch08-m0030" display="inline"><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">-</mo></mover></mrow><mo>&lt;</mo><mn>60</mn></math></span>) would be so rare an event if <em class="emphasis">μ</em> = 75 were true that we regard it as much more likely that the alternative hypothesis <em class="emphasis">μ</em> &lt; 75 holds.</p>
+        <p class="para block" id="fwk-shafer-ch08_s01_s02_p09">In summary, to decide between <em class="emphasis">H</em><sub class="subscript">0</sub> and <em class="emphasis">H<sub class="subscript">a</sub></em> in this example we would select a “<span class="margin_term"><a class="glossterm">rejection region</a><span class="glossdef">An interval or union of intervals such that the null hypothesis is rejected if and only if the statistic of interest lies in this region.</span></span>” of values sufficiently far to the left of 75, based on the rare event criterion, and reject <em class="emphasis">H</em><sub class="subscript">0</sub> if the sample mean <span class="inlineequation" id="shafer-20121106-125753-117092"><math xml:id="fwk-shafer-ch08-m0031" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> lies in the rejection region, but not reject <em class="emphasis">H</em><sub class="subscript">0</sub> if it does not.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch08_s01_s03" version="5.0" lang="en">
+        <h2 class="title editable block">The Rejection Region</h2>
+        <p class="para block" id="fwk-shafer-ch08_s01_s03_p01">Each different form of the alternative hypothesis <em class="emphasis">H<sub class="subscript">a</sub></em> has its own kind of rejection region: </p>
+<ol class="orderedlist" id="fwk-shafer-ch08_s01_s03_o01" numeration="arabic">                <li>if (as in the respirator example) <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-117110"><math xml:id="fwk-shafer-ch08-m0032" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, we reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-117182"><math xml:id="fwk-shafer-ch08-m0033" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far to the left of <span class="inlineequation" id="shafer-20121106-125753-117203"><math xml:id="fwk-shafer-ch08-m0034" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, that is, to the left of some number <em class="emphasis">C</em>, so the rejection region has the form of an interval (−∞,<em class="emphasis">C</em>];</li>
+                <li>if (as in the textbook example) <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-117225"><math xml:id="fwk-shafer-ch08-m0035" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, we reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-117242"><math xml:id="fwk-shafer-ch08-m0036" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far to the right of <span class="inlineequation" id="shafer-20121106-125753-117259"><math xml:id="fwk-shafer-ch08-m0037" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, that is, to the right of some number <em class="emphasis">C</em>, so the rejection region has the form of an interval [<em class="emphasis">C</em>,∞);</li>
+                <li>if (as in the baked good example) <em class="emphasis">H<sub class="subscript">a</sub></em> has the form <span class="inlineequation" id="shafer-20121106-125753-117275"><math xml:id="fwk-shafer-ch08-m0038" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, we reject <em class="emphasis">H</em><sub class="subscript">0</sub> if <span class="inlineequation" id="shafer-20121106-125753-117292"><math xml:id="fwk-shafer-ch08-m0039" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is far away from <span class="inlineequation" id="shafer-20121106-125753-117308"><math xml:id="fwk-shafer-ch08-m0040" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> in either direction, that is, either to the left of some number <em class="emphasis">C</em> or to the right of some other number <em class="emphasis">C</em>′, so the rejection region has the form of the union of two intervals (−∞,<em class="emphasis">C</em>]∪[<em class="emphasis">C</em>′,∞).</li>
+</ol>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s03_p02">The key issue in our line of reasoning is the question of how to determine the number <em class="emphasis">C</em> or numbers <em class="emphasis">C</em> and <em class="emphasis">C</em>′, called the <em class="emphasis">critical value</em> or <em class="emphasis">critical values</em> of the statistic, that determine the rejection region.</p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s03_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p03"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">critical value</a><span class="glossdef">The number or one of a pair of numbers that determines the rejection region.</span></span> <em class="emphasis">or</em> <strong class="emphasis bold">critical values</strong> <em class="emphasis">of a test of hypotheses are the number or numbers that determine the rejection region.</em></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s03_p04">Suppose the rejection region is a single interval, so we need to select a single number <em class="emphasis">C</em>. Here is the procedure for doing so. We select a small probability, denoted <span class="inlineequation" id="shafer-20121106-125753-117324"><math xml:id="fwk-shafer-ch08-m0041" display="inline"><mi>α</mi></math></span>, say 1%, which we take as our definition of “rare event:” an event is “rare” if its probability of occurrence is less than <span class="inlineequation" id="shafer-20121106-125753-117348"><math xml:id="fwk-shafer-ch08-m0042" display="inline"><mi>α</mi><mo>.</mo></math></span> (In all the examples and problems in this text the value of <span class="inlineequation" id="shafer-20121106-125753-117364"><math xml:id="fwk-shafer-ch08-m0043" display="inline"><mi>α</mi></math></span> will be given already.) The probability that <span class="inlineequation" id="shafer-20121106-125753-117380"><math xml:id="fwk-shafer-ch08-m0044" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> takes a value in an interval is the area under its density curve and above that interval, so as shown in <a class="xref" href="#fwk-shafer-ch08_s01_s03_f01" xrefstyle="select: label">Figure 8.2</a> (drawn under the assumption that <em class="emphasis">H</em><sub class="subscript">0</sub> is true, so that the curve centers at <span class="inlineequation" id="shafer-20121106-125753-117396"><math xml:id="fwk-shafer-ch08-m0045" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>) the critical value <em class="emphasis">C</em> is the value of <span class="inlineequation" id="shafer-20121106-125753-117412"><math xml:id="fwk-shafer-ch08-m0046" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> that cuts off a tail area <span class="inlineequation" id="shafer-20121106-125753-117428"><math xml:id="fwk-shafer-ch08-m0047" display="inline"><mi>α</mi></math></span> in the probability density curve of <span class="inlineequation" id="shafer-20121106-125753-117444"><math xml:id="fwk-shafer-ch08-m0048" display="inline"><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> When the rejection region is in two pieces, that is, composed of two intervals, the total area above both of them must be <span class="inlineequation" id="shafer-20121106-125753-117460"><math xml:id="fwk-shafer-ch08-m0049" display="inline"><mi>α</mi></math></span>, so the area above each one is <span class="inlineequation" id="shafer-20121106-125753-117476"><math xml:id="fwk-shafer-ch08-m0050" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn></math></span>, as also shown in <a class="xref" href="#fwk-shafer-ch08_s01_s03_f01" xrefstyle="select: label">Figure 8.2</a>.</p>
+        <div class="figure large block" id="fwk-shafer-ch08_s01_s03_f01">
+            <p class="title"><span class="title-prefix">Figure 8.2</span> </p>
+            <img src="section_12/72f0cd42fda04cdfb0341bcfe11601c1.jpg">
+            <p class="para">The number <span class="inlineequation" id="shafer-20121106-125753-117492"><math xml:id="fwk-shafer-ch08-m0051" display="inline"><mi>α</mi></math></span> is the total area of a tail or a pair of tails.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch08_s01_s03_n02">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p05">In the context of <a class="xref" href="#fwk-shafer-ch08_s01_s01_n04" xrefstyle="select: title">Note 8.9 "Example 2"</a>, suppose that it is known that the population is normally distributed with standard deviation <em class="emphasis">σ</em> = 0.15 gram, and suppose that the test of hypotheses <span class="inlineequation" id="shafer-20121106-125753-117515"><math xml:id="fwk-shafer-ch08-m0052" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>8.0</mn></math></span> versus <span class="inlineequation" id="shafer-20121106-125753-117531"><math xml:id="fwk-shafer-ch08-m0053" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>8.0</mn></math></span> will be performed with a sample of size 5. Construct the rejection region for the test for the choice <span class="inlineequation" id="shafer-20121106-125753-117547"><math xml:id="fwk-shafer-ch08-m0054" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn><mo>.</mo></math></span> Explain the decision procedure and interpret it.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p06">If <em class="emphasis">H</em><sub class="subscript">0</sub> is true then the sample mean <span class="inlineequation" id="shafer-20121106-125753-117563"><math xml:id="fwk-shafer-ch08-m0055" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is normally distributed with mean and standard deviation</p>
+            <span class="informalequation" id="shafer-20121106-125753-117579"><math xml:id="fwk-shafer-ch08-m0056" display="block"><mrow><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>8.0</mn><mo>,</mo><mtext> </mtext><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">-</mo></mover></mrow></mrow></msub><mo>=</mo><mi mathvariant="italic">σ</mi><mo stretchy="false">∕</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>=</mo><mfrac><mrow><mn>0.15</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>5</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mn>0.067</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p07">Since <em class="emphasis">H<sub class="subscript">a</sub></em> contains the ≠ symbol the rejection region will be in two pieces, each one corresponding to a tail of area <span class="inlineequation" id="shafer-20121106-125753-117595"><math xml:id="fwk-shafer-ch08-m0057" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.10</mn><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.05</mn><mo>.</mo></math></span> From <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a>, <span class="inlineequation" id="shafer-20121106-125753-117611"><math xml:id="fwk-shafer-ch08-m0058" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.645</mn></math></span>, so <em class="emphasis">C</em> and <em class="emphasis">C</em>′ are 1.645 standard deviations of <span class="inlineequation" id="shafer-20121106-125753-117628"><math xml:id="fwk-shafer-ch08-m0059" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> to the right and left of its mean 8.0:</p>
+            <span class="informalequation"><span class="mathphrase"><em class="emphasis">C</em> = 8.0 − (1.645)(0.067) = 7.89   and  <em class="emphasis">C</em>′ = 8.0 + (1.645)(0.067) = 8.11</span></span>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p08">The result is shown in <a class="xref" href="#fwk-shafer-ch08_s01_s03_f02">Figure 8.3 "Rejection Region for the Choice "</a>.</p>
+            <div class="figure medium" id="fwk-shafer-ch08_s01_s03_f02">
+                <p class="title"><span class="title-prefix">Figure 8.3</span> Rejection Region for the Choice <span class="inlineequation" id="shafer-20121106-125753-117651"><math xml:id="fwk-shafer-ch08-m0061" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn></math></span></p>
+                <img src="section_12/6ed58a35480090fa999b53b443a266a5.jpg">
+            </div>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p09">The decision procedure is: take a sample of size 5 and compute the sample mean <span class="inlineequation" id="shafer-20121106-125753-117669"><math xml:id="fwk-shafer-ch08-m0062" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> If <span class="inlineequation" id="shafer-20121106-125753-117685"><math xml:id="fwk-shafer-ch08-m0063" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is either 7.89 grams or less or 8.11 grams or more then reject the hypothesis that the average amount of fat in <em class="emphasis">all</em> servings of the product is 8.0 grams in favor of the alternative that it is different from 8.0 grams. Otherwise do not reject the hypothesis that the average amount is 8.0 grams.</p>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p10">The reasoning is that if the true average amount of fat per serving were 8.0 grams then there would be less than a 10% chance that a sample of size 5 would produce a mean of either 7.89 grams or less or 8.11 grams or more. Hence if that happened it would be more likely that the value 8.0 is incorrect (always assuming that the population standard deviation is 0.15 gram).</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s03_p11">Because the rejection regions are computed based on areas in tails of distributions, as shown in <a class="xref" href="#fwk-shafer-ch08_s01_s03_f01" xrefstyle="select: label">Figure 8.2</a>, hypothesis tests are classified according to the form of the alternative hypothesis in the following way.</p>
+        <div class="callout block" id="fwk-shafer-ch08_s01_s03_n03">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p12"><em class="emphasis">If</em> <em class="emphasis">H<sub class="subscript">a</sub></em> <em class="emphasis">has the form</em> <span class="inlineequation" id="shafer-20121106-125753-117701"><math xml:id="fwk-shafer-ch08-m0064" display="inline"><mi mathvariant="italic">μ</mi><mo>≠</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">the test is called a</em> <strong class="emphasis bold">two-tailed test</strong><em class="emphasis">.</em></p>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p13"><em class="emphasis">If</em> <em class="emphasis">H<sub class="subscript">a</sub></em> <em class="emphasis">has the form</em> <span class="inlineequation" id="shafer-20121106-125753-117717"><math xml:id="fwk-shafer-ch08-m0065" display="inline"><mi mathvariant="italic">μ</mi><mo>&lt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">the test is called a</em> <strong class="emphasis bold">left-tailed test</strong><em class="emphasis">.</em></p>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p14"><em class="emphasis">If</em> <em class="emphasis">H<sub class="subscript">a</sub></em> <em class="emphasis">has the form</em> <span class="inlineequation" id="shafer-20121106-125753-117733"><math xml:id="fwk-shafer-ch08-m0066" display="inline"><mi mathvariant="italic">μ</mi><mo>&gt;</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">the test is called a</em> <strong class="emphasis bold">right-tailed test</strong><em class="emphasis">.</em></p>
+            <p class="para" id="fwk-shafer-ch08_s01_s03_p15"><em class="emphasis">Each of the last two forms is also called a</em> <strong class="emphasis bold">one-tailed test</strong><em class="emphasis">.</em></p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch08_s01_s04" version="5.0" lang="en">
+        <h2 class="title editable block">Two Types of Errors</h2>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s04_p01">The format of the testing procedure in general terms is to take a sample and use the information it contains to come to a decision about the two hypotheses. As stated before our decision will always be either </p>
+<ol class="orderedlist" id="fwk-shafer-ch08_s01_s04_o01" numeration="arabic">                <li>reject the null hypothesis <em class="emphasis">H</em><sub class="subscript">0</sub> in favor of the alternative <em class="emphasis">H<sub class="subscript">a</sub></em> presented, or</li>
+                <li>do not reject the null hypothesis <em class="emphasis">H</em><sub class="subscript">0</sub> in favor of the alternative <em class="emphasis">H<sub class="subscript">a</sub></em> presented.</li>
+</ol>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s04_p02">There are four possible outcomes of hypothesis testing procedure, as shown in the following table:</p>
+        <div class="informaltable block">
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" rowspan="2" align="center"></td>
+                        <td colspan="2" align="center">True State of Nature</td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+<em class="emphasis">H</em><sub class="subscript">0</sub> is true</td>
+                        <td align="center">
+<em class="emphasis">H</em><sub class="subscript">0</sub> is false</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" align="center">Our Decision</td>
+                        <td align="center">Do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</td>
+                        <td align="center">Correct decision</td>
+                        <td align="center">Type II error</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</td>
+                        <td align="center">Type I error</td>
+                        <td align="center">Correct decision</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s04_p03">As the table shows, there are two ways to be right and two ways to be wrong. Typically to reject <em class="emphasis">H</em><sub class="subscript">0</sub> when it is actually true is a more serious error than to fail to reject it when it is false, so the former error is labeled “Type I” and the latter error “Type II.”</p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s04_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s04_p04"><em class="emphasis">In a test of hypotheses, a</em> <span class="margin_term"><a class="glossterm">Type I error</a><span class="glossdef">Rejection of a true null hypothesis.</span></span> <em class="emphasis">is the decision to reject</em> <em class="emphasis">H</em><sub class="subscript">0</sub> <em class="emphasis">when it is in fact true. A</em> <span class="margin_term"><a class="glossterm">Type II error</a><span class="glossdef">Failure to reject a false null hypothesis.</span></span> <em class="emphasis">is the decision not to reject</em> <em class="emphasis">H</em><sub class="subscript">0</sub> <em class="emphasis">when it is in fact not true.</em></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s04_p05">Unless we perform a census we do not have certain knowledge, so we do not know whether our decision matches the true state of nature or if we have made an error. We reject <em class="emphasis">H</em><sub class="subscript">0</sub> if what we observe would be a “rare” event if <em class="emphasis">H</em><sub class="subscript">0</sub> were true. But rare events are not impossible: they occur with probability <span class="inlineequation" id="shafer-20121106-125753-117749"><math xml:id="fwk-shafer-ch08-m0067" display="inline"><mi>α</mi><mo>.</mo></math></span> Thus when <em class="emphasis">H</em><sub class="subscript">0</sub> is true, a rare event will be observed in the proportion <span class="inlineequation" id="shafer-20121106-125753-117765"><math xml:id="fwk-shafer-ch08-m0068" display="inline"><mi>α</mi></math></span> of repeated similar tests, and <em class="emphasis">H</em><sub class="subscript">0</sub> will be erroneously rejected in those tests. Thus <span class="inlineequation" id="shafer-20121106-125753-117781"><math xml:id="fwk-shafer-ch08-m0069" display="inline"><mi>α</mi></math></span> is the probability that in following the testing procedure to decide between <em class="emphasis">H</em><sub class="subscript">0</sub> and <em class="emphasis">H<sub class="subscript">a</sub></em> we will make a Type I error.</p>
+        <div class="callout block" id="fwk-shafer-ch08_s01_s04_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s04_p06"><em class="emphasis">The number</em> <span class="inlineequation" id="shafer-20121106-125753-117803"><math xml:id="fwk-shafer-ch08-m0070" display="inline"><mi>α</mi></math></span> <em class="emphasis">that is used to determine the rejection region is called the</em> <span class="margin_term"><a class="glossterm">level of significance of the test</a><span class="glossdef">The probability <span class="inlineequation" id="shafer-20121106-125753-117820"><math xml:id="fwk-shafer-ch08-m0071" display="inline"><mi>α</mi></math></span> that defines an event as “rare;” the probability that the test procedure will lead to a Type I error.</span></span><em class="emphasis">. It is the probability that the test procedure will result in a Type I error.</em></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s04_p07">The probability of making a Type II error is too complicated to discuss in a beginning text, so we will say no more about it than this: for a fixed sample size, choosing <span class="inlineequation" id="shafer-20121106-125753-117837"><math xml:id="fwk-shafer-ch08-m0072" display="inline"><mi>α</mi></math></span> smaller in order to reduce the chance of making a Type I error has the effect of increasing the chance of making a Type II error. The only way to simultaneously reduce the chances of making either kind of error is to increase the sample size.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch08_s01_s05" version="5.0" lang="en">
+        <h2 class="title editable block">Standardizing the Test Statistic</h2>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s05_p01">Hypotheses testing will be considered in a number of contexts, and great unification as well as simplification results when the relevant sample statistic is <em class="emphasis">standardized</em> by subtracting its mean from it and then dividing by its standard deviation. The resulting statistic is called a <em class="emphasis">standardized test statistic</em>. In every situation treated in this and the following two chapters the standardized test statistic will have either the standard normal distribution or Student’s <em class="emphasis">t</em>-distribution.</p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s05_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch08_s01_s05_p02"><em class="emphasis">A</em> <span class="margin_term"><a class="glossterm">standardized test statistic</a><span class="glossdef">The standardized statistic used in performing the test.</span></span> <em class="emphasis">for a hypothesis test is the statistic that is formed by subtracting from the statistic of interest its mean and dividing by its standard deviation.</em></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch08_s01_s05_p03">For example, reviewing <a class="xref" href="#fwk-shafer-ch08_s01_s03_n02" xrefstyle="select: title">Note 8.14 "Example 3"</a>, if instead of working with the sample mean <span class="inlineequation" id="shafer-20121106-125753-117853"><math xml:id="fwk-shafer-ch08-m0073" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> we instead work with the test statistic</p>
+        <span class="informalequation block" id="shafer-20121106-125753-117869"><math xml:id="fwk-shafer-ch08-m0074" display="block"><mrow><mfrac><mrow><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>8.0</mn></mrow><mrow><mn>0.067</mn></mrow></mfrac></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch08_s01_s05_p04">then the distribution involved is standard normal and the critical values are just <span class="inlineequation" id="shafer-20121106-125753-117885"><math xml:id="fwk-shafer-ch08-m0075" display="inline"><mo>±</mo><msub><mrow><mi>z</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>.</mo></math></span> The extra work that was done to find that <em class="emphasis">C</em> = 7.89 and <span class="inlineequation" id="shafer-20121106-125753-117901"><math xml:id="fwk-shafer-ch08-m0076" display="inline"><mrow><mi>C</mi></mrow><mrow><mi>′</mi></mrow><mo>=</mo><mn>8.11</mn></math></span> is eliminated. In every hypothesis test in this book the standardized test statistic will be governed by either the standard normal distribution or Student’s <em class="emphasis">t</em>-distribution. Information about rejection regions is summarized in the following tables: </p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="3" align="center">When the test statistic has the standard normal distribution:</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Symbol in <em class="emphasis">H<sub class="subscript">a</sub></em>
+</td>
+                            <td align="center">Terminology</td>
+                            <td align="center">Rejection Region</td>
+                        </tr>
+                        <tr>
+                            <td align="center">&lt;</td>
+                            <td align="center">Left-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-117917"><math xml:id="fwk-shafer-ch08-m0077" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi></mrow></msub></mrow><mo>]</mo></mrow></math></span></td>
+                        </tr>
+                        <tr>
+                            <td align="center">&gt;</td>
+                            <td align="center">Right-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-117942"><math xml:id="fwk-shafer-ch08-m0078" display="inline"><mrow><mo>[</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span></td>
+                        </tr>
+                        <tr>
+                            <td align="center">≠</td>
+                            <td align="center">Two-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-117959"><math xml:id="fwk-shafer-ch08-m0079" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>]</mo></mrow><mo>∪</mo><mrow><mo>[</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="3" align="center">When the test statistic has Student’s <em class="emphasis">t</em>-distribution:</td>
+                        </tr>
+                        <tr>
+                            <td align="center">Symbol in <em class="emphasis">H<sub class="subscript">a</sub></em>
+</td>
+                            <td align="center">Terminology</td>
+                            <td align="center">Rejection Region</td>
+                        </tr>
+                        <tr>
+                            <td align="center">&lt;</td>
+                            <td align="center">Left-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-117975"><math xml:id="fwk-shafer-ch08-m0080" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub></mrow><mo>]</mo></mrow></math></span></td>
+                        </tr>
+                        <tr>
+                            <td align="center">&gt;</td>
+                            <td align="center">Right-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-117991"><math xml:id="fwk-shafer-ch08-m0081" display="inline"><mrow><mo>[</mo><mrow><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span></td>
+                        </tr>
+                        <tr>
+                            <td align="center">≠</td>
+                            <td align="center">Two-tailed test</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-118008"><math xml:id="fwk-shafer-ch08-m0082" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>]</mo></mrow><mo>∪</mo><mrow><mo>[</mo><mrow><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s05_p05">Every instance of hypothesis testing discussed in this and the following two chapters will have a rejection region like one of the six forms tabulated in the tables above.</p>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s05_p06">No matter what the context a test of hypotheses can always be performed by applying the following systematic procedure, which will be illustrated in the examples in the succeeding sections.</p>
+        <div class="callout editable block" id="fwk-shafer-ch08_s01_s05_n02">
+            <h3 class="title">Systematic Hypothesis Testing Procedure: Critical Value Approach</h3>
+            <ol class="orderedlist" id="fwk-shafer-ch08_s01_s05_o01" numeration="arabic">
+                <li>Identify the null and alternative hypotheses.</li>
+                <li>Identify the relevant test statistic and its distribution.</li>
+                <li>Compute from the data the value of the test statistic.</li>
+                <li>Construct the rejection region.</li>
+                <li>Compare the value computed in Step 3 to the rejection region constructed in Step 4 and make a decision. Formulate the decision in the context of the problem, if applicable.</li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch08_s01_s05_p07">The procedure that we have outlined in this section is called the “Critical Value Approach” to hypothesis testing to distinguish it from an alternative but equivalent approach that will be introduced at the end of <a class="xref" href="fwk-shafer-ch08_s03#fwk-shafer-ch08_s03">Section 8.3 "The Observed Significance of a Test"</a>.</p>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch08_s01_s05_n03">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch08_s01_s05_l01" mark="bullet">
+                <li>A test of hypotheses is a statistical process for deciding between two competing assertions about a population parameter.</li>
+                <li>The testing procedure is formalized in a five-step procedure.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch08_s01_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch08_s01_qs01_qd01">
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch08_s01_qs01_p01">State the null and alternative hypotheses for each of the following situations. (That is, identify the correct number <span class="inlineequation" id="shafer-20121106-125753-118031"><math xml:id="fwk-shafer-ch08-m0083" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and write <span class="inlineequation" id="shafer-20121106-125753-118047"><math xml:id="fwk-shafer-ch08-m0084" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and the appropriate analogous expression for <em class="emphasis">H<sub class="subscript">a</sub></em>.)</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch08_s01_qs01_o01" numeration="loweralpha">
+                            <li>The average July temperature in a region historically has been 74.5°F. Perhaps it is higher now.</li>
+                            <li>The average weight of a female airline passenger with luggage was 145 pounds ten years ago. The FAA believes it to be higher now.</li>
+                            <li>The average stipend for doctoral students in a particular discipline at a state university is $14,756. The department chairman believes that the national average is higher.</li>
+                            <li>The average room rate in hotels in a certain region is $82.53. A travel agent believes that the average in a particular resort area is different.</li>
+                            <li>The average farm size in a predominately rural state was 69.4 acres. The secretary of agriculture of that state asserts that it is less today.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch08_s01_qs01_p02">State the null and alternative hypotheses for each of the following situations. (That is, identify the correct number <span class="inlineequation" id="shafer-20121106-125753-118258"><math xml:id="fwk-shafer-ch08-m0095" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and write <span class="inlineequation" id="shafer-20121106-125753-118275"><math xml:id="fwk-shafer-ch08-m0096" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and the appropriate analogous expression for <em class="emphasis">H<sub class="subscript">a</sub></em>.)</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch08_s01_qs01_o03" numeration="loweralpha">
+                            <li>The average time workers spent commuting to work in Verona five years ago was 38.2 minutes. The Verona Chamber of Commerce asserts that the average is less now.</li>
+                            <li>The mean salary for all men in a certain profession is $58,291. A special interest group thinks that the mean salary for women in the same profession is different.</li>
+                            <li>The accepted figure for the caffeine content of an 8-ounce cup of coffee is 133 mg. A dietitian believes that the average for coffee served in a local restaurants is higher.</li>
+                            <li>The average yield per acre for all types of corn in a recent year was 161.9 bushels. An economist believes that the average yield per acre is different this year.</li>
+                            <li>An industry association asserts that the average age of all self-described fly fishermen is 42.8 years. A sociologist suspects that it is higher.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch08_s01_qs01_p03">Describe the two types of errors that can be made in a test of hypotheses.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch08_s01_qs01_p05">Under what circumstance is a test of hypotheses certain to yield a correct decision?</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch08_s01_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch08_s01_qs01_o02_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-118064_ans"><math xml:id="fwk-shafer-ch08-m0085" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>74.5</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-118081_ans"><math xml:id="fwk-shafer-ch08-m0086" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>74.5</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-118104_ans"><math xml:id="fwk-shafer-ch08-m0087" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>145</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-118138_ans"><math xml:id="fwk-shafer-ch08-m0088" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>145</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-118155_ans"><math xml:id="fwk-shafer-ch08-m0089" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>14756</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-118171_ans"><math xml:id="fwk-shafer-ch08-m0090" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>14756</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-118187_ans"><math xml:id="fwk-shafer-ch08-m0091" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>82.53</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-118203_ans"><math xml:id="fwk-shafer-ch08-m0092" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>82.53</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-118219_ans"><math xml:id="fwk-shafer-ch08-m0093" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>69.4</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-118235_ans"><math xml:id="fwk-shafer-ch08-m0094" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>69.4</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch08_s01_qs01_p04_ans">A Type I error is made when a true <em class="emphasis">H</em><sub class="subscript">0</sub> is rejected. A Type II error is made when a false <em class="emphasis">H</em><sub class="subscript">0</sub> is not rejected.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch08_s01_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-04-sample-size-considerations.html"><img src="shared/images/batch-left.png"></a> <a href="s11-04-sample-size-considerations.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-02-large-sample-tests-for-a-popul.html">Next Section</a> <a href="s12-02-large-sample-tests-for-a-popul.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

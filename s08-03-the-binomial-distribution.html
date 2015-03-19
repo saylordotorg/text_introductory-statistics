@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Binomial Distribution</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s08-02-probability-distributions-for-.html"><img src="shared/images/batch-left.png"></a> <a href="s08-02-probability-distributions-for-.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s09-01-continuous-random-variables.html">Next Section</a> <a href="s09-01-continuous-random-variables.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch04_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">4.3</span> The Binomial Distribution</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch04_s03_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch04_s03_o01" numeration="arabic">
+            <li>To learn the concept of a binomial random variable.</li>
+            <li>To learn how to recognize a random variable as being a binomial random variable.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch04_s03_p01">The experiment of tossing a fair coin three times and the experiment of observing the genders according to birth order of the children in a randomly selected three-child family are completely different, but the random variables that count the number of heads in the coin toss and the number of boys in the family (assuming the two genders are equally likely) are the same random variable, the one with probability distribution</p>
+    <span class="informalequation block" id="shafer-20121106-125753-102068"><math xml:id="fwk-shafer-ch04-m0108" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.125</mn></mrow></mtd><mtd><mrow><mn>0.375</mn></mrow></mtd><mtd><mrow><mn>0.375</mn></mrow></mtd><mtd><mrow><mn>0.125</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch04_s03_p02">A histogram that graphically illustrates this probability distribution is given in <a class="xref" href="#fwk-shafer-ch04_s03_f01">Figure 4.4 "Probability Distribution for Three Coins and Three Children"</a>. What is common to the two experiments is that we perform three identical and independent trials of the same action, each trial has only two outcomes (heads or tails, boy or girl), and the probability of success is the same number, 0.5, on every trial. The random variable that is generated is called the <span class="margin_term"><a class="glossterm">binomial random variable</a><span class="glossdef">A random variable that counts successes in a fixed number of independent, identical trials of a success/failure experiment.</span></span> <strong class="emphasis bold">with parameters</strong> <em class="emphasis">n</em> = 3 <strong class="emphasis bold">and</strong> <em class="emphasis">p</em> = 0.5. This is just one case of a general situation.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch04_s03_f01">
+        <p class="title"><span class="title-prefix">Figure 4.4</span> Probability Distribution for Three Coins and Three Children</p>
+        <img src="section_08/38928bb96eec1a3decfd6ac8e189a437.jpg">
+    </div>
+    <div class="callout editable block" id="fwk-shafer-ch04_s03_n02">
+        <h3 class="title">Definition</h3>
+        <p class="para" id="fwk-shafer-ch04_s03_p03"><em class="emphasis">Suppose a random experiment has the following characteristics.</em></p>
+        <ol class="orderedlist" id="fwk-shafer-ch04_s03_o02" numeration="arabic">
+            <li>
+<em class="emphasis">There are</em> <em class="emphasis">n</em> <em class="emphasis">identical and independent trials of a common procedure.</em>
+</li>
+            <li><em class="emphasis">There are exactly two possible outcomes for each trial, one termed “success” and the other “failure.”</em></li>
+            <li>
+<em class="emphasis">The probability of success on any one trial is the same number</em> <em class="emphasis">p</em>.</li>
+        </ol>
+        <p class="para" id="fwk-shafer-ch04_s03_p04"><em class="emphasis">Then the discrete random variable</em> <em class="emphasis">X</em> <em class="emphasis">that counts the number of successes in the</em> <em class="emphasis">n</em> <em class="emphasis">trials is the</em> <strong class="emphasis bold">binomial random variable with parameters</strong> <em class="emphasis">n</em> <strong class="emphasis bold">and</strong> <em class="emphasis">p</em><em class="emphasis">. We also say that</em> <em class="emphasis">X</em> <strong class="emphasis bold">has a binomial distribution</strong> <strong class="emphasis bold">with parameters</strong> <em class="emphasis">n</em> <strong class="emphasis bold">and</strong> <em class="emphasis">p</em>.</p>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch04_s03_p05">The following four examples illustrate the definition. Note how in every case “success” is the outcome that is counted, not the outcome that we prefer or think is better in some sense.</p>
+    <ol class="orderedlist block" id="fwk-shafer-ch04_s03_o03" numeration="arabic">
+        <li>A random sample of 125 students is selected from a large college in which the proportion of students who are females is 57%. Suppose <em class="emphasis">X</em> denotes the number of female students in the sample. In this situation there are <em class="emphasis">n</em> = 125 identical and independent trials of a common procedure, selecting a student at random; there are exactly two possible outcomes for each trial, “success” (what we are counting, that the student be female) and “failure;” and finally the probability of success on any one trial is the same number <em class="emphasis">p</em> = 0.57. <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 125 and <em class="emphasis">p</em> = 0.57.</li>
+        <li>A multiple-choice test has 15 questions, each of which has five choices. An unprepared student taking the test answers each of the questions completely randomly by choosing an arbitrary answer from the five provided. Suppose <em class="emphasis">X</em> denotes the number of answers that the student gets right. <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 15 and <span class="inlineequation" id="shafer-20121106-125753-102084"><math xml:id="fwk-shafer-ch04-m0109" display="inline"><mi>p</mi><mo>=</mo><mn>1</mn><mo>∕</mo><mn>5</mn><mo>=</mo><mn>0.20</mn><mo>.</mo></math></span>
+</li>
+        <li>In a survey of 1,000 registered voters each voter is asked if he intends to vote for a candidate Titania Queen in the upcoming election. Suppose <em class="emphasis">X</em> denotes the number of voters in the survey who intend to vote for Titania Queen. <em class="emphasis">X</em> is a binomial random variable with <em class="emphasis">n</em> = 1000 and <em class="emphasis">p</em> equal to the true proportion of voters (surveyed or not) who intend to vote for Titania Queen.</li>
+        <li>An experimental medication was given to 30 patients with a certain medical condition. Suppose <em class="emphasis">X</em> denotes the number of patients who develop severe side effects. <em class="emphasis">X</em> is a binomial random variable with <em class="emphasis">n</em> = 30 and <em class="emphasis">p</em> equal to the true probability that a patient with the underlying condition will experience severe side effects if given that medication.</li>
+    </ol>
+    <div class="section" id="fwk-shafer-ch04_s03_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Probability Formula for a Binomial Random Variable</h2>
+        <p class="para editable block" id="fwk-shafer-ch04_s03_s01_p01">Often the most difficult aspect of working a problem that involves the binomial random variable is recognizing that the random variable in question has a binomial distribution. Once that is known, probabilities can be computed using the following formula.</p>
+        <div class="callout block" id="fwk-shafer-ch04_s03_s01_n01">
+            <p class="para" id="fwk-shafer-ch04_s03_s01_p02">If <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> and <em class="emphasis">p</em>, then</p>
+            <span class="informalequation" id="shafer-20121106-125753-102101"><math xml:id="fwk-shafer-ch04-m0110" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>x</mi><mo>!</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mi>x</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mrow><mi>p</mi></mrow><mrow><mi>x</mi></mrow></msup><msup><mrow><mi>q</mi></mrow><mrow><mi>n</mi><mo>−</mo><mi>x</mi></mrow></msup></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s03_s01_p03">where <span class="inlineequation" id="shafer-20121106-125753-102117"><math xml:id="fwk-shafer-ch04-m0111" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi></math></span> and where for any counting number <em class="emphasis">m</em>, <span class="inlineequation" id="shafer-20121106-125753-102133"><math xml:id="fwk-shafer-ch04-m0112" display="inline"><mi>m</mi><mo>!</mo></math></span> (read “<em class="emphasis">m</em> factorial”) is defined by</p>
+            <span class="informalequation" id="shafer-20121106-125753-102148"><math xml:id="fwk-shafer-ch04-m0113" display="block"><mrow><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn><mo>,</mo><mtext> </mtext><mn>1</mn><mo>!</mo><mo>=</mo><mn>1</mn><mo>,</mo><mtext> </mtext><mn>2</mn><mo>!</mo><mo>=</mo><mn>1</mn><mo>·</mo><mn>2</mn><mo>,</mo><mtext> </mtext><mn>3</mn><mo>!</mo><mo>=</mo><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s03_s01_p04">and in general</p>
+            <span class="informalequation" id="shafer-20121106-125753-102171"><math xml:id="fwk-shafer-ch04-m0114" display="block"><mrow><mi>m</mi><mo>!</mo><mo>=</mo><mn>1</mn><mo>·</mo><mn>2</mn><mtext> · · · </mtext><mrow><mo>(</mo><mrow><mi>m</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mi>m</mi></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s03_s01_n02">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-shafer-ch04_s03_s01_p05">Seventeen percent of victims of financial fraud know the perpetrator of the fraud personally.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s01_o01" numeration="loweralpha">
+                <li>Use the formula to construct the probability distribution for the number <em class="emphasis">X</em> of people in a random sample of five victims of financial fraud who knew the perpetrator personally.</li>
+                <li>A investigator examines five cases of financial fraud every day. Find the most frequent number of cases each day in which the victim knew the perpetrator.</li>
+                <li>A investigator examines five cases of financial fraud every day. Find the average number of cases per day in which the victim knew the perpetrator.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s01_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">The random variable <em class="emphasis">X</em> is binomial with parameters <em class="emphasis">n</em> = 5 and <em class="emphasis">p</em> = 0.17; <span class="inlineequation" id="shafer-20121106-125753-102187"><math xml:id="fwk-shafer-ch04-m0115" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>=</mo><mn>0.83</mn><mo>.</mo></math></span> The possible values of <em class="emphasis">X</em> are 0, 1, 2, 3, 4, and 5.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102203"><math xml:id="fwk-shafer-ch04-m0116" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>5</mn><mo>!</mo></mrow><mrow><mn>0</mn><mo>!</mo><mn>5</mn><mo>!</mo></mrow></mfrac><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.17</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>0</mn></mrow></msup><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.83</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>5</mn></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn><mo>·</mo><mn>4</mn><mo>·</mo><mn>5</mn></mrow><mrow><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn><mo>·</mo><mn>4</mn><mo>·</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mtext> </mtext><mn>1</mn><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.3939040643</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.3939040643</mn><mo>≈</mo><mn>0.3939</mn></mtd></mtr></mtable></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-102219"><math xml:id="fwk-shafer-ch04-m0117" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>5</mn><mo>!</mo></mrow><mrow><mn>1</mn><mo>!</mo><mn>4</mn><mo>!</mo></mrow></mfrac><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.17</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>1</mn></mrow></msup><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.83</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>4</mn></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn><mo>·</mo><mn>4</mn><mo>·</mo><mn>5</mn></mrow><mrow><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn><mo>·</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mtext> </mtext><mrow><mo>(</mo><mrow><mn>0.17</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.47458321</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>5</mn><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.17</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.47458321</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.4033957285</mn><mo>≈</mo><mn>0.4034</mn></mtd></mtr></mtable></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-102235"><math xml:id="fwk-shafer-ch04-m0118" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>5</mn><mo>!</mo></mrow><mrow><mn>2</mn><mo>!</mo><mn>3</mn><mo>!</mo></mrow></mfrac><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.17</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><msup><mrow><mrow><mo>(</mo><mrow><mn>0.83</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>3</mn></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn><mo>·</mo><mn>4</mn><mo>·</mo><mn>5</mn></mrow><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>·</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>·</mo><mn>2</mn><mo>·</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mtext> </mtext><mrow><mo>(</mo><mrow><mn>0.0289</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.571787</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>10</mn><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.0289</mn></mrow><mo>)</mo></mrow><mo>·</mo><mrow><mo>(</mo><mrow><mn>0.571787</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.165246443</mn><mo>≈</mo><mn>0.1652</mn></mtd></mtr></mtable></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s03_s01_p06">The remaining three probabilities are computed similarly, to give the probability distribution</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102250"><math xml:id="fwk-shafer-ch04-m0119" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.3939</mn></mrow></mtd><mtd><mrow><mn>0.4034</mn></mrow></mtd><mtd><mrow><mn>0.1652</mn></mrow></mtd><mtd><mrow><mn>0.0338</mn></mrow></mtd><mtd><mrow><mn>0.0035</mn></mrow></mtd><mtd><mrow><mn>0.0001</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s03_s01_p07">The probabilities do not add up to exactly 1 because of rounding.</p>
+                    <p class="para" id="fwk-shafer-ch04_s03_s01_p08">This probability distribution is represented by the histogram in <a class="xref" href="#fwk-shafer-ch04_s03_s01_f01">Figure 4.5 "Probability Distribution of the Binomial Random Variable in "</a>, which graphically illustrates just how improbable the events <em class="emphasis">X</em> = 4 and <em class="emphasis">X</em> = 5 are. The corresponding bar in the histogram above the number 4 is barely visible, if visible at all, and the bar above 5 is far too short to be visible.</p>
+                </li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch04_s03_s01_f01">
+                <p class="title"><span class="title-prefix">Figure 4.5</span> Probability Distribution of the Binomial Random Variable in <a class="xref" href="#fwk-shafer-ch04_s03_s01_n02" xrefstyle="select: title">Note 4.29 "Example 7"</a></p>
+                <img src="section_08/2fcd12630df97eb0e8aebc3dfb3e7887.jpg">
+            </div>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s01_o03" continuation="continues" numeration="loweralpha">
+                <li>The value of <em class="emphasis">X</em> that is most likely is <em class="emphasis">X</em> = 1, so the most frequent number of cases seen each day in which the victim knew the perpetrator is one.</li>
+                <li>
+                    <p class="para">The average number of cases per day in which the victim knew the perpetrator is the mean of <em class="emphasis">X</em>, which is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102266"><math xml:id="fwk-shafer-ch04-m0120" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi mathvariant="italic">μ</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><mi>x</mi><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0</mn><mo>·</mo><mn>0.3939</mn><mo>+</mo><mn>1</mn><mo>·</mo><mn>0.4034</mn><mo>+</mo><mn>2</mn><mo>·</mo><mn>0.1652</mn><mo>+</mo><mn>3</mn><mo>·</mo><mn>0.0338</mn><mo>+</mo><mn>4</mn><mo>·</mo><mn>0.0035</mn><mo>+</mo><mn>5</mn><mo>·</mo><mn>0.0001</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.8497</mn></mtd></mtr></mtable></math></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch04_s03_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Special Formulas for the Mean and Standard Deviation of a Binomial Random Variable</h2>
+        <p class="para editable block" id="fwk-shafer-ch04_s03_s02_p01">Since a binomial random variable is a discrete random variable, the formulas for its mean, variance, and standard deviation given in the previous section apply to it, as we just saw in <a class="xref" href="#fwk-shafer-ch04_s03_s01_n02" xrefstyle="select: title">Note 4.29 "Example 7"</a> in the case of the mean. However, for the binomial random variable there are much simpler formulas.</p>
+        <div class="callout block" id="fwk-shafer-ch04_s03_s02_n01">
+            <p class="para" id="fwk-shafer-ch04_s03_s02_p02">If <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> and <em class="emphasis">p</em>, then</p>
+            <span class="informalequation" id="shafer-20121106-125753-102282"><math xml:id="fwk-shafer-ch04-m0121" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mi>n</mi><mi>p</mi><mtext> </mtext><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mi>n</mi><mi>p</mi><mi>q</mi><mtext> </mtext><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mi>n</mi><mi>p</mi><mi>q</mi></mrow></msqrt></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s03_s02_p03">where <span class="inlineequation" id="shafer-20121106-125753-102298"><math xml:id="fwk-shafer-ch04-m0122" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi></math></span></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s03_s02_n02">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch04_s03_s02_p04">Find the mean and standard deviation of the random variable <em class="emphasis">X</em> of <a class="xref" href="#fwk-shafer-ch04_s03_s01_n02" xrefstyle="select: title">Note 4.29 "Example 7"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s03_s02_p05">The random variable <em class="emphasis">X</em> is binomial with parameters <em class="emphasis">n</em> = 5 and <em class="emphasis">p</em> = 0.17, and <span class="inlineequation" id="shafer-20121106-125753-102320"><math xml:id="fwk-shafer-ch04-m0123" display="inline"><mi>q</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo>=</mo><mn>0.83</mn><mo>.</mo></math></span> Thus its mean and standard deviation are</p>
+            <span class="informalequation" id="shafer-20121106-125753-102336"><math xml:id="fwk-shafer-ch04-m0124" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mi>n</mi><mi>p</mi><mo>=</mo><mn>5</mn><mo>·</mo><mn>0.17</mn><mo>=</mo><mn>0.85</mn><mtext> </mtext><mstyle><mtext mathvariant="normal"> (exactly)</mtext></mstyle></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s03_s02_p06">and</p>
+            <span class="informalequation" id="shafer-20121106-125753-102353"><math xml:id="fwk-shafer-ch04-m0125" display="block"><mrow><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mi>n</mi><mi>p</mi><mi>q</mi></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>5</mn><mo>·</mo><mn>0.17</mn><mo>·</mo><mn>0.83</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><mo>.</mo><mn>7055</mn></mrow></msqrt><mo>≈</mo><mn>0.8399</mn></mrow></math></span>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch04_s03_s03" version="5.0" lang="en">
+        <h2 class="title editable block">The Cumulative Probability Distribution of a Binomial Random Variable</h2>
+        <p class="para block" id="fwk-shafer-ch04_s03_s03_p01">In order to allow a broader range of more realistic problems <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> contains probability tables for binomial random variables for various choices of the parameters <em class="emphasis">n</em> and <em class="emphasis">p</em>. These tables are not the probability distributions that we have seen so far, but are <em class="emphasis">cumulative</em> probability distributions. In the place of the probability <span class="inlineequation" id="shafer-20121106-125753-102368"><math xml:id="fwk-shafer-ch04-m0126" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></math></span> the table contains the probability</p>
+        <span class="informalequation block" id="shafer-20121106-125753-102384"><math xml:id="fwk-shafer-ch04-m0127" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mtext> · · · </mtext><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch04_s03_s03_p02">This is illustrated in <a class="xref" href="#fwk-shafer-ch04_s03_s03_f01">Figure 4.6 "Cumulative Probabilities"</a>. The probability entered in the table corresponds to the area of the shaded region. The reason for providing a cumulative table is that in practical problems that involve a binomial random variable typically the probability that is sought is of the form <span class="inlineequation" id="shafer-20121106-125753-102401"><math xml:id="fwk-shafer-ch04-m0128" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow></math></span> or <span class="inlineequation" id="shafer-20121106-125753-102417"><math xml:id="fwk-shafer-ch04-m0129" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>x</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> The cumulative table is much easier to use for computing <span class="inlineequation" id="shafer-20121106-125753-102433"><math xml:id="fwk-shafer-ch04-m0130" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow></math></span> since all the individual probabilities have already been computed and added. The one table suffices for both <span class="inlineequation" id="shafer-20121106-125753-102449"><math xml:id="fwk-shafer-ch04-m0131" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow></math></span> or <span class="inlineequation" id="shafer-20121106-125753-102471"><math xml:id="fwk-shafer-ch04-m0132" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>x</mi></mrow><mo>)</mo></mrow></math></span> and can be used to readily obtain probabilities of the form <span class="inlineequation" id="shafer-20121106-125753-102487"><math xml:id="fwk-shafer-ch04-m0133" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></math></span>, too, because of the following formulas. The first is just the Probability Rule for Complements.</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch04_s03_s03_f01">
+            <p class="title"><span class="title-prefix">Figure 4.6</span> Cumulative Probabilities</p>
+            <img src="section_08/a939536e3189562fdfb0f9323e6c3e68.jpg">
+        </div>
+        <div class="callout block" id="fwk-shafer-ch04_s03_s03_n01">
+            <p class="para" id="fwk-shafer-ch04_s03_s03_p03">If <em class="emphasis">X</em> is a discrete random variable, then</p>
+            <span class="informalequation" id="shafer-20121106-125753-102503"><math xml:id="fwk-shafer-ch04-m0134" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mtext> </mtext><mstyle><mtext mathvariant="normal"> and</mtext></mstyle><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s03_s03_n02">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch04_s03_s03_p04">A student takes a ten-question true/false exam.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s03_o01" numeration="loweralpha">
+                <li>Find the probability that the student gets exactly six of the questions right simply by guessing the answer on every question.</li>
+                <li>Find the probability that the student will obtain a passing grade of 60% or greater simply by guessing.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s03_s03_p05">Let <em class="emphasis">X</em> denote the number of questions that the student guesses correctly. Then <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 10 and <em class="emphasis">p</em> = 0.50.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s03_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">The probability sought is <span class="inlineequation" id="shafer-20121106-125753-102520"><math xml:id="fwk-shafer-ch04-m0135" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> The formula gives</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102536"><math xml:id="fwk-shafer-ch04-m0136" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>10</mn><mo>!</mo></mrow><mrow><mrow><mo>(</mo><mrow><mn>6</mn><mo>!</mo></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>!</mo></mrow><mo>)</mo></mrow></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mo>.</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>6</mn></mrow></msup><mo>.</mo><msup><mrow><mn>5</mn></mrow><mrow><mn>4</mn></mrow></msup><mo>=</mo><mn>0.205078125</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s03_s03_p06">Using the table,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102551"><math xml:id="fwk-shafer-ch04-m0137" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.8281</mn><mo>−</mo><mn>0.6230</mn><mo>=</mo><mn>0.2051</mn></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">The student must guess correctly on at least 60% of the questions, which is <span class="inlineequation" id="shafer-20121106-125753-102567"><math xml:id="fwk-shafer-ch04-m0138" display="inline"><mn>0.60</mn><mo>·</mo><mn>10</mn><mo>=</mo><mn>6</mn></math></span> questions. The probability sought is <em class="emphasis">not</em> <span class="inlineequation" id="shafer-20121106-125753-102589"><math xml:id="fwk-shafer-ch04-m0139" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow></math></span> (an easy mistake to make), but</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102605"><math xml:id="fwk-shafer-ch04-m0140" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>7</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>8</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>9</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>10</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s03_s03_p07">Instead of computing each of these five numbers using the formula and adding them we can use the table to obtain</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102621"><math xml:id="fwk-shafer-ch04-m0141" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.6230</mn><mo>=</mo><mn>0.3770</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s03_s03_p08">which is much less work and of sufficient accuracy for the situation at hand.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s03_s03_n03">
+            <h3 class="title">Example 10</h3>
+            <p class="para" id="fwk-shafer-ch04_s03_s03_p09">An appliance repairman services five washing machines on site each day. One-third of the service calls require installation of a particular part.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s03_o03" numeration="loweralpha">
+                <li>The repairman has only one such part on his truck today. Find the probability that the one part will be enough today, that is, that at most one washing machine he services will require installation of this particular part.</li>
+                <li>Find the minimum number of such parts he should take with him each day in order that the probability that he have enough for the day's service calls is at least 95%.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s03_s03_p10">Let <em class="emphasis">X</em> denote the number of service calls today on which the part is required. Then <em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 5 and <span class="inlineequation" id="shafer-20121106-125753-102637"><math xml:id="fwk-shafer-ch04-m0142" display="inline"><mi>p</mi><mo>=</mo><mn>1</mn><mo>∕</mo><mn>3</mn><mo>=</mo><mn>0</mn><mo>.</mo><mrow><mover accent="true"><mn>3</mn><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span></p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s03_s03_o04" numeration="loweralpha">
+                <li>
+                    <p class="para">Note that the probability in question is not <span class="inlineequation" id="shafer-20121106-125753-102653"><math xml:id="fwk-shafer-ch04-m0143" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow></math></span>, but rather <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 1). Using the cumulative distribution table in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a>,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-102669"><math xml:id="fwk-shafer-ch04-m0144" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.4609</mn></mrow></math></span>
+                </li>
+                <li>The answer is the smallest number <em class="emphasis">x</em> such that the table entry <span class="inlineequation" id="shafer-20121106-125753-102685"><math xml:id="fwk-shafer-ch04-m0145" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mi>x</mi></mrow><mo>)</mo></mrow></math></span> is at least 0.9500. Since <span class="inlineequation" id="shafer-20121106-125753-102701"><math xml:id="fwk-shafer-ch04-m0146" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.7901</mn></math></span> is less than 0.95, two parts are not enough. Since <span class="inlineequation" id="shafer-20121106-125753-102717"><math xml:id="fwk-shafer-ch04-m0147" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.9547</mn></math></span> is as large as 0.95, three parts will suffice at least 95% of the time. Thus the minimum needed is three.</li>
+            </ol>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch04_s03_s03_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch04_s03_s03_o05" mark="bullet">
+                <li>The discrete random variable <em class="emphasis">X</em> that counts the number of successes in <em class="emphasis">n</em> identical, independent trials of a procedure that always results in either of two outcomes, “success” or “failure,” and in which the probability of success on each trial is the same number <em class="emphasis">p</em>, is called the binomial random variable with parameters <em class="emphasis">n</em> and <em class="emphasis">p</em>.</li>
+                <li>There is a formula for the probability that the binomial random variable with parameters <em class="emphasis">n</em> and <em class="emphasis">p</em> will take a particular value <em class="emphasis">x</em>.</li>
+                <li>There are special formulas for the mean, variance, and standard deviation of the binomial random variable with parameters <em class="emphasis">n</em> and <em class="emphasis">p</em> that are much simpler than the general formulas that apply to all discrete random variables.</li>
+                <li>Cumulative probability distribution tables, when available, facilitate computation of probabilities encountered in typical practical situations.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch04_s03_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s03_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p01">Determine whether or not the random variable <em class="emphasis">X</em> is a binomial random variable. If so, give the values of <em class="emphasis">n</em> and <em class="emphasis">p</em>. If not, explain why not.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o01" numeration="loweralpha">
+                            <li>
+<em class="emphasis">X</em> is the number of dots on the top face of fair die that is rolled.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of hearts in a five-card hand drawn (without replacement) from a well-shuffled ordinary deck.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of defective parts in a sample of ten randomly selected parts coming from a manufacturing process in which 0.02% of all parts are defective.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of times the number of dots on the top face of a fair die is even in six rolls of the die.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of dice that show an even number of dots on the top face when six dice are rolled at once.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p02">Determine whether or not the random variable <em class="emphasis">X</em> is a binomial random variable. If so, give the values of <em class="emphasis">n</em> and <em class="emphasis">p</em>. If not, explain why not.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o03" numeration="loweralpha">
+                            <li>
+<em class="emphasis">X</em> is the number of black marbles in a sample of 5 marbles drawn randomly and without replacement from a box that contains 25 white marbles and 15 black marbles.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of black marbles in a sample of 5 marbles drawn randomly and with replacement from a box that contains 25 white marbles and 15 black marbles.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of voters in favor of proposed law in a sample 1,200 randomly selected voters drawn from the entire electorate of a country in which 35% of the voters favor the law.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of fish of a particular species, among the next ten landed by a commercial fishing boat, that are more than 13 inches in length, when 17% of all such fish exceed 13 inches in length.</li>
+                            <li>
+<em class="emphasis">X</em> is the number of coins that match at least one other coin when four coins are tossed at once.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p03"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 12 and <em class="emphasis">p</em> = 0.82. Compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o05" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102756"><math xml:id="fwk-shafer-ch04-m0149" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>11</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102773"><math xml:id="fwk-shafer-ch04-m0150" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>9</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102789"><math xml:id="fwk-shafer-ch04-m0151" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102805"><math xml:id="fwk-shafer-ch04-m0152" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>13</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p04"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 16 and <em class="emphasis">p</em> = 0.74. Compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o07" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102837"><math xml:id="fwk-shafer-ch04-m0154" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>14</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102852"><math xml:id="fwk-shafer-ch04-m0155" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102869"><math xml:id="fwk-shafer-ch04-m0156" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102892"><math xml:id="fwk-shafer-ch04-m0157" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>20</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p05"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 5, <em class="emphasis">p</em> = 0.5. Use the tables in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o09" numeration="loweralpha">
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 3)</li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≥ 3)</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102924"><math xml:id="fwk-shafer-ch04-m0159" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>3</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102940"><math xml:id="fwk-shafer-ch04-m0160" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102957"><math xml:id="fwk-shafer-ch04-m0161" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>5</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p06"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 5, <span class="inlineequation" id="shafer-20121106-125753-102972"><math xml:id="fwk-shafer-ch04-m0162" display="inline"><mi>p</mi><mo>=</mo><mn>0</mn><mo>.</mo><mrow><mover accent="true"><mn>3</mn><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span> Use the table in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o11" numeration="loweralpha">
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 2)</li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≥ 2)</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102988"><math xml:id="fwk-shafer-ch04-m0163" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-103010"><math xml:id="fwk-shafer-ch04-m0164" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-103027"><math xml:id="fwk-shafer-ch04-m0165" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>5</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p07"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Use the tables in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o13" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.25, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 6)</li>
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.75, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 6)</li>
+                            <li>
+<em class="emphasis">n</em> = 15, <em class="emphasis">p</em> = 0.75, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 6)</li>
+                            <li>
+<em class="emphasis">n</em> = 15, <em class="emphasis">p</em> = 0.75, <span class="inlineequation" id="shafer-20121106-125753-103042"><math xml:id="fwk-shafer-ch04-m0166" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>12</mn></mrow><mo>)</mo></mrow></math></span>
+</li>
+                            <li>
+<em class="emphasis">n</em> = 15, <span class="inlineequation" id="shafer-20121106-125753-103058"><math xml:id="fwk-shafer-ch04-m0167" display="inline"><mi>p</mi><mo>=</mo><mn>0</mn><mo>.</mo><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-103074"><math xml:id="fwk-shafer-ch04-m0168" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>10</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>12</mn></mrow><mo>)</mo></mrow></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p08"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Use the tables in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to compute the probability indicated.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o15" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 5, <em class="emphasis">p</em> = 0.05, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 1)</li>
+                            <li>
+<em class="emphasis">n</em> = 5, <em class="emphasis">p</em> = 0.5, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 1)</li>
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.75, <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 5)</li>
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.75, <span class="inlineequation" id="shafer-20121106-125753-103090"><math xml:id="fwk-shafer-ch04-m0169" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>12</mn></mrow><mo>)</mo></mrow></math></span>
+</li>
+                            <li>
+<em class="emphasis">n</em> = 10, <span class="inlineequation" id="shafer-20121106-125753-103106"><math xml:id="fwk-shafer-ch04-m0170" display="inline"><mi>p</mi><mo>=</mo><mn>0</mn><mo>.</mo><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-103122"><math xml:id="fwk-shafer-ch04-m0171" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>5</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>8</mn></mrow><mo>)</mo></mrow></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p09"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Use the special formulas to compute its mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em>.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o17" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 8, <em class="emphasis">p</em> = 0.43</li>
+                            <li>
+<em class="emphasis">n</em> = 47, <em class="emphasis">p</em> = 0.82</li>
+                            <li>
+<em class="emphasis">n</em> = 1200, <em class="emphasis">p</em> = 0.44</li>
+                            <li>
+<em class="emphasis">n</em> = 2100, <em class="emphasis">p</em> = 0.62</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p10"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Use the special formulas to compute its mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em>.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o19" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 14, <em class="emphasis">p</em> = 0.55</li>
+                            <li>
+<em class="emphasis">n</em> = 83, <em class="emphasis">p</em> = 0.05</li>
+                            <li>
+<em class="emphasis">n</em> = 957, <em class="emphasis">p</em> = 0.35</li>
+                            <li>
+<em class="emphasis">n</em> = 1750, <em class="emphasis">p</em> = 0.79</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p11"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Compute its mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em> in two ways, first using the tables in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> in conjunction with the general formulas <span class="inlineequation" id="shafer-20121106-125753-103138"><math xml:id="fwk-shafer-ch04-m0172" display="inline"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mtext> </mtext><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-103160"><math xml:id="fwk-shafer-ch04-m0173" display="inline"><mrow><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mtext> </mtext><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mstyle></mrow><mtext> </mtext><mo>]</mo></mrow><mo>−</mo><msup><mi mathvariant="italic">μ</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></span>, then using the special formulas <span class="inlineequation" id="shafer-20121106-125753-103176"><math xml:id="fwk-shafer-ch04-m0174" display="inline"><mi mathvariant="italic">μ</mi><mo>=</mo><mi>n</mi><mi>p</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-103192"><math xml:id="fwk-shafer-ch04-m0175" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mi>n</mi><mi>p</mi><mi>q</mi></mrow></msqrt><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o21" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 5, <span class="inlineequation" id="shafer-20121106-125753-103207"><math xml:id="fwk-shafer-ch04-m0176" display="inline"><mi>p</mi><mo>=</mo><mn>0</mn><mo>.</mo><mrow><mover accent="true"><mn>3</mn><mo stretchy="true">-</mo></mover></mrow></math></span>
+</li>
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.75</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p12"><em class="emphasis">X</em> is a binomial random variable with the parameters shown. Compute its mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em> in two ways, first using the tables in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> in conjunction with the general formulas <span class="inlineequation" id="shafer-20121106-125753-103224"><math xml:id="fwk-shafer-ch04-m0177" display="inline"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mtext> </mtext><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-103239"><math xml:id="fwk-shafer-ch04-m0178" display="inline"><mrow><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mtext> </mtext><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mstyle></mrow><mtext> </mtext><mo>]</mo></mrow><mo>−</mo><msup><mi mathvariant="italic">μ</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></span>, then using the special formulas <span class="inlineequation" id="shafer-20121106-125753-103255"><math xml:id="fwk-shafer-ch04-m0179" display="inline"><mi mathvariant="italic">μ</mi><mo>=</mo><mi>n</mi><mi>p</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-103270"><math xml:id="fwk-shafer-ch04-m0180" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mi>n</mi><mi>p</mi><mi>q</mi></mrow></msqrt><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o23" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.25</li>
+                            <li>
+<em class="emphasis">n</em> = 15, <em class="emphasis">p</em> = 0.1</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p13"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 10 and <span class="inlineequation" id="shafer-20121106-125753-103286"><math xml:id="fwk-shafer-ch04-m0181" display="inline"><mi>p</mi><mo>=</mo><mn>1</mn><mo>∕</mo><mn>3</mn><mo>.</mo></math></span> Use the cumulative probability distribution for <em class="emphasis">X</em> that is given in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to construct the probability distribution of <em class="emphasis">X</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p16"><em class="emphasis">X</em> is a binomial random variable with parameters <em class="emphasis">n</em> = 15 and <span class="inlineequation" id="shafer-20121106-125753-103362"><math xml:id="fwk-shafer-ch04-m0185" display="inline"><mi>p</mi><mo>=</mo><mn>1</mn><mo>∕</mo><mn>2</mn><mo>.</mo></math></span> Use the cumulative probability distribution for <em class="emphasis">X</em> that is given in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a> to construct the probability distribution of <em class="emphasis">X</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p19">In a certain board game a player's turn begins with three rolls of a pair of dice. If the player rolls doubles all three times there is a penalty. The probability of rolling doubles in a single roll of a pair of fair dice is 1/6. Find the probability of rolling doubles all three times.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p21">A coin is bent so that the probability that it lands heads up is 2/3. The coin is tossed ten times.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o25" numeration="loweralpha">
+                            <li>Find the probability that it lands heads up at most five times.</li>
+                            <li>Find the probability that it lands heads up more times than it lands tails up.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s03_qs01_qd02" start="17">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p22">An English-speaking tourist visits a country in which 30% of the population speaks English. He needs to ask someone directions.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o27" numeration="loweralpha">
+                            <li>Find the probability that the first person he encounters will be able to speak English.</li>
+                            <li>The tourist sees four local people standing at a bus stop. Find the probability that at least one of them will be able to speak English.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p23">The probability that an egg in a retail package is cracked or broken is 0.025.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o29" numeration="loweralpha">
+                            <li>Find the probability that a carton of one dozen eggs contains no eggs that are either cracked or broken.</li>
+                            <li>Find the probability that a carton
+of one dozen eggs has (i) at least one that is either cracked or broken; (ii) at least
+two that are cracked or broken.</li>
+                            <li>Find the average number of cracked or broken eggs in one dozen cartons.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p24">An appliance store sells 20 refrigerators each week. Ten percent of all purchasers of a refrigerator buy an extended warranty. Let <em class="emphasis">X</em> denote the number of the next 20 purchasers who do so.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o31" numeration="loweralpha">
+                            <li>Verify that <em class="emphasis">X</em> satisfies the conditions for a binomial random variable, and find <em class="emphasis">n</em> and <em class="emphasis">p</em>.</li>
+                            <li>Find the probability that <em class="emphasis">X</em> is zero.</li>
+                            <li>Find the probability that <em class="emphasis">X</em> is two, three, or four.</li>
+                            <li>Find the probability that <em class="emphasis">X</em> is at least five.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p25">Adverse growing conditions have caused 5% of grapefruit grown in a certain region to be of inferior quality. Grapefruit are sold by the dozen.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o33" numeration="loweralpha">
+                            <li>Find the average number of inferior quality grapefruit per box of a dozen.</li>
+                            <li>A box that contains two or more grapefruit of inferior quality will cause a strong adverse customer reaction. Find the probability that a box of one dozen grapefruit will contain two or more grapefruit of inferior quality.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p26">The probability that a 7-ounce skein of a discount worsted weight knitting yarn contains a knot is 0.25. Goneril buys ten skeins to crochet an afghan.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o35" numeration="loweralpha">
+                            <li>Find the probability that (i) none of
+the ten skeins will contain a knot; (ii) at most one will.</li>
+                            <li>Find the expected number of skeins that contain knots.</li>
+                            <li>Find the most likely number of skeins that contain knots.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p27">One-third of all patients who undergo a non-invasive but unpleasant medical test require a sedative. A laboratory performs 20 such tests daily. Let <em class="emphasis">X</em> denote the number of patients on any given day who require a sedative.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o37" numeration="loweralpha">
+                            <li>Verify that <em class="emphasis">X</em> satisfies the conditions for a binomial random variable, and find <em class="emphasis">n</em> and <em class="emphasis">p</em>.</li>
+                            <li>Find the probability that on any given day between five and nine patients will require a sedative (include five and nine).</li>
+                            <li>Find the average number of patients each day who require a sedative.</li>
+                            <li>Using the cumulative probability distribution for <em class="emphasis">X</em> in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12">Chapter 12 "Appendix"</a>, find the minimum number <span class="inlineequation" id="shafer-20121106-125753-103449"><math xml:id="fwk-shafer-ch04-m0190" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mstyle><mtext mathvariant="normal"> min</mtext></mstyle></mrow></msub></math></span> of doses of the sedative that should be on hand at the start of the day so that there is a 99% chance that the laboratory will not run out.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p28">About 2% of alumni give money upon receiving a solicitation from the college or university from which they graduated. Find the average number monetary gifts a college can expect from every 2,000 solicitations it sends.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p30">Of all college students who are eligible to give blood, about 18% do so on a regular basis. Each month a local blood bank sends an appeal to give blood to 250 randomly selected students. Find the average number of appeals in such mailings that are made to students who already give blood.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p32">About 12% of all individuals write with their left hands. A class of 130 students meets in a classroom with 130 individual desks, exactly 14 of which are constructed for people who write with their left hands. Find the probability that exactly 14 of the students enrolled in the class write with their left hands.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p34">A travelling salesman makes a sale on 65% of his calls on regular customers. He makes four sales calls each day.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o39" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>, the number of sales made each day.</li>
+                            <li>Find the probability that, on a randomly selected day, the salesman will make a sale.</li>
+                            <li>Assuming that the salesman makes 20 sales calls per week, find the mean and standard deviation of the number of sales made <em class="emphasis">per week</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p35">A corporation has advertised heavily to try to insure that over half the adult population recognizes the brand name of its products. In a random sample of 20 adults, 14 recognized its brand name. What is the probability that 14 or more people in such a sample would recognize its brand name if the actual proportion <em class="emphasis">p</em> of all adults who recognize the brand name were only 0.50?</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s03_qs01_qd03" start="28">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa28">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p37">When dropped on a hard surface a thumbtack lands with its sharp point touching the surface with probability 2/3; it lands with its sharp point directed up into the air with probability 1/3. The tack is dropped and its landing position observed 15 times.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o41" numeration="loweralpha">
+                            <li>Find the probability that it lands with its point in the air at least 7 times.</li>
+                            <li>If the experiment of dropping the tack 15 times is done repeatedly, what is the average number of times it lands with its point in the air?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa29">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p38">A professional proofreader has a 98% chance of detecting an error in a piece of written work (other than misspellings, double words, and similar errors that are machine detected). A work contains four errors.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o43" numeration="loweralpha">
+                            <li>Find the probability that the proofreader will miss at least one of them.</li>
+                            <li>Show that two such proofreaders working independently have a 99.96% chance of detecting an error in a piece of written work.</li>
+                            <li>Find the probability that two such proofreaders working independently will miss at least one error in a work that contains four errors.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa30">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p39">A multiple choice exam has 20 questions; there are four choices for each question.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o45" numeration="loweralpha">
+                            <li>A student guesses the answer to every question. Find the chance that he guesses correctly between four and seven times.</li>
+                            <li>Find the minimum score the instructor can set so that the probability that a student will pass just by guessing is 20% or less.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa31">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p40">In spite of the requirement that all dogs boarded in a kennel be inoculated, the chance that a healthy dog boarded in a clean, well-ventilated kennel will develop kennel cough from a carrier is 0.008.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o47" numeration="loweralpha">
+                            <li>If a carrier (not known to be such, of course) is boarded with three other dogs, what is the probability that at least one of the three healthy dogs will develop kennel cough?</li>
+                            <li>If a carrier is boarded with four other dogs, what is the probability that at least one of the four healthy dogs will develop kennel cough?</li>
+                            <li>The pattern evident from parts (a) and (b) is that if <span class="inlineequation" id="shafer-20121106-125753-103507"><math xml:id="fwk-shafer-ch04-m0193" display="inline"><mi>K</mi><mo>+</mo><mn>1</mn></math></span> dogs are boarded together, one a carrier and <em class="emphasis">K</em> healthy dogs, then the probability that at least one of the healthy dogs will develop kennel cough is <span class="inlineequation" id="shafer-20121106-125753-103524"><math xml:id="fwk-shafer-ch04-m0194" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>0.992</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>K</mi></mrow></msup></math></span>, where <em class="emphasis">X</em> is the binomial random variable that counts the number of healthy dogs that develop the condition. Experiment with different values of <em class="emphasis">K</em> in this formula to find the maximum number <span class="inlineequation" id="shafer-20121106-125753-103540"><math xml:id="fwk-shafer-ch04-m0195" display="inline"><mi>K</mi><mo>+</mo><mn>1</mn></math></span> of dogs that a kennel owner can board together so that if one of the dogs has the condition, the chance that another dog will be infected is less than 0.05.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa32">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p41">Investigators need to determine which of 600 adults have a medical condition that affects 2% of the adult population. A blood sample is taken from each of the individuals.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o49" numeration="loweralpha">
+                            <li>Show that the expected number of diseased individuals in the group of 600 is 12 individuals.</li>
+                            <li>Instead of testing all 600 blood samples to find the expected 12 diseased individuals, investigators group the samples into 60 groups of 10 each, mix a little of the blood from each of the 10 samples in each group, and test each of the 60 mixtures. Show that the probability that any such mixture will contain the blood of at least one diseased person, hence test positive, is about 0.18.</li>
+                            <li>Based on the result in (b), show that the expected number of mixtures that test positive is about 11. (Supposing that indeed 11 of the 60 mixtures test positive, then we know that none of the 490 persons whose blood was in the remaining 49 samples that tested negative has the disease. We have eliminated 490 persons from our search while performing only 60 tests.)</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch04_s03_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o02_ans" numeration="loweralpha">
+                            <li>not binomial; not success/failure.</li>
+                            <li>not binomial; trials are not independent.</li>
+                            <li>binomial; <em class="emphasis">n</em> = 10, <em class="emphasis">p</em> = 0.0002</li>
+                            <li>binomial; <em class="emphasis">n</em> = 6, <em class="emphasis">p</em> = 0.5</li>
+                            <li>binomial; <em class="emphasis">n</em> = 6, <em class="emphasis">p</em> = 0.5</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o06_ans" numeration="loweralpha">
+                            <li>0.2434</li>
+                            <li>0.2151</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-102821_ans"><math xml:id="fwk-shafer-ch04-m0153" display="inline"><mn>0.1</mn><msup><mrow><mn>8</mn></mrow><mrow><mn>12</mn></mrow></msup><mo>≈</mo><mn>0</mn></math></span></li>
+                            <li>0</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o10_ans" numeration="loweralpha">
+                            <li>0.8125</li>
+                            <li>0.5000</li>
+                            <li>0.3125</li>
+                            <li>0.0313</li>
+                            <li>0.0312</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o14_ans" numeration="loweralpha">
+                            <li>0.9965</li>
+                            <li>0.2241</li>
+                            <li>0.0042</li>
+                            <li>0.2252</li>
+                            <li>0.5390</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o18_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">μ</em> = 3.44, <em class="emphasis">σ</em> = 1.4003</li>
+                            <li>
+<em class="emphasis">μ</em> = 38.54, <em class="emphasis">σ</em> = 2.6339</li>
+                            <li>
+<em class="emphasis">μ</em> = 528, <em class="emphasis">σ</em> = 17.1953</li>
+                            <li>
+<em class="emphasis">μ</em> = 1302, <em class="emphasis">σ</em> = 22.2432</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o22_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">μ</em> = 1.6667, <em class="emphasis">σ</em> = 1.0541</li>
+                            <li>
+<em class="emphasis">μ</em> = 7.5, <em class="emphasis">σ</em> = 1.3693</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa13_ans">
+                    <div class="answer">
+                        <p class="para"> </p>
+                        <span class="informalequation" id="shafer-20121106-125753-103314_ans"><math xml:id="fwk-shafer-ch04-m0182" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.0173</mn></mrow></mtd><mtd><mrow><mn>0.0867</mn></mrow></mtd><mtd><mrow><mn>0.1951</mn></mrow></mtd><mtd><mrow><mn>0.2602</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-103330_ans"><math xml:id="fwk-shafer-ch04-m0183" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.2276</mn></mrow></mtd><mtd><mrow><mn>0.1365</mn></mrow></mtd><mtd><mrow><mn>0.0569</mn></mrow></mtd><mtd><mrow><mn>0.0163</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-103346_ans"><math xml:id="fwk-shafer-ch04-m0184" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.0030</mn></mrow></mtd><mtd><mrow><mn>0.0004</mn></mrow></mtd><mtd><mrow><mn>0.0000</mn></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p20_ans">0.0046</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="17">
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o28_ans" numeration="loweralpha">
+                            <li>0.3</li>
+                            <li>0.7599</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o32_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">n</em> = 20, <em class="emphasis">p</em> = 0.1</li>
+                            <li>0.1216</li>
+                            <li>0.5651</li>
+                            <li>0.0432</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o36_ans" numeration="loweralpha">
+                            <li>0.0563 and 0.2440</li>
+                            <li>2.5</li>
+                            <li>2</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa23_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p29_ans">40</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p33_ans">0.1019</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd02_qa27_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s03_qs01_p36_ans">0.0577</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="28">
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa29_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o44_ans" numeration="loweralpha">
+                            <li>0.0776</li>
+                            <li>0.9996</li>
+                            <li>0.0016</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa31_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s03_qs01_o48_ans" numeration="loweralpha">
+                            <li>0.0238</li>
+                            <li>0.0316</li>
+                            <li>6</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s03_qs01_qd03_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s08-02-probability-distributions-for-.html"><img src="shared/images/batch-left.png"></a> <a href="s08-02-probability-distributions-for-.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s09-01-continuous-random-variables.html">Next Section</a> <a href="s09-01-continuous-random-variables.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

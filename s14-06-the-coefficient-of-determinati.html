@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Coefficient of Determination</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-05-statistical-inferences-about-1.html"><img src="shared/images/batch-left.png"></a> <a href="s14-05-statistical-inferences-about-1.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-07-estimation-and-prediction.html">Next Section</a> <a href="s14-07-estimation-and-prediction.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s06" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.6</span> The Coefficient of Determination</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s06_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s06_o01" numeration="arabic">
+            <li>To learn what the coefficient of determination is, how to compute it, and what it tells us about the relationship between two variables <em class="emphasis">x</em> and <em class="emphasis">y</em>.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s06_p01">If the scatter diagram of a set of <span class="inlineequation" id="shafer-20121106-125753-158091"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0446" display="inline"><mrow><mo>(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo>)</mo></mrow></math></span> pairs shows neither an upward or downward trend, then the horizontal line <span class="inlineequation" id="shafer-20121106-125753-158107"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0447" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span> fits it well, as illustrated in <a class="xref" href="#fwk-shafer-ch10_s06_f01" xrefstyle="select: label">Figure 10.11</a>. The lack of any upward or downward trend means that when an element of the population is selected at random, knowing the value of the measurement <em class="emphasis">x</em> for that element is not helpful in predicting the value of the measurement <em class="emphasis">y</em>.</p>
+    <div class="figure large medium-height block" id="fwk-shafer-ch10_s06_f01">
+        <p class="title"><span class="title-prefix">Figure 10.11</span> </p>
+        <img src="section_14/e3940708a65910fcf14d0a5e9ba1f037.jpg">
+        <p class="para">The line <span class="inlineequation" id="shafer-20121106-125753-158153"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0448" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span> fits the scatter diagram well.</p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s06_p02">If the scatter diagram shows a linear trend upward or downward then it is useful to compute the least squares regression line <span class="inlineequation" id="shafer-20121106-125753-158170"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0449" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> and use it in predicting <em class="emphasis">y</em>. <a class="xref" href="#fwk-shafer-ch10_s06_f02">Figure 10.12 "Same Scatter Diagram with Two Approximating Lines"</a> illustrates this. In each panel we have plotted the height and weight data of <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01">Section 10.1 "Linear Relationships Between Variables"</a>. This is the same scatter plot as <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01_f02">Figure 10.2 "Plot of Height and Weight Pairs"</a>, with the average value line <span class="inlineequation" id="shafer-20121106-125753-158186"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0450" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span> superimposed on it in the left panel and the least squares regression line imposed on it in the right panel. The errors are indicated graphically by the vertical line segments.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch10_s06_f02">
+        <p class="title"><span class="title-prefix">Figure 10.12</span> Same Scatter Diagram with Two Approximating Lines</p>
+        <img src="section_14/ec63299e191a4e57190a20c7b48bd7ef.jpg">
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s06_p03">The sum of the squared errors computed for the regression line, <span class="inlineequation" id="shafer-20121106-125753-158203"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0451" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, is smaller than the sum of the squared errors computed for any other line. In particular it is less than the sum of the squared errors computed using the line <span class="inlineequation" id="shafer-20121106-125753-158219"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0452" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, which sum is actually the number <span class="inlineequation" id="shafer-20121106-125753-158234"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0453" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></math></span> that we have seen several times already. A measure of how useful it is to use the regression equation for prediction of <em class="emphasis">y</em> is how much smaller <span class="inlineequation" id="shafer-20121106-125753-158251"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0454" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> is than <span class="inlineequation" id="shafer-20121106-125753-158267"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0455" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> In particular, the <em class="emphasis">proportion</em> of the sum of the squared errors for the line <span class="inlineequation" id="shafer-20121106-125753-158283"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0456" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span> that is eliminated by going over to the least squares regression line is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-158306"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0457" display="block"><mrow><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s06_p04">We can think of <span class="inlineequation" id="shafer-20121106-125753-158323"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0458" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></math></span> as the proportion of the variability in <em class="emphasis">y</em> that cannot be accounted for by the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>, since it is still there even when <em class="emphasis">x</em> is taken into account in the best way possible (using the least squares regression line; remember that <span class="inlineequation" id="shafer-20121106-125753-158340"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0459" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> is the smallest the sum of the squared errors can be for any line). Seen in this light, the coefficient of determination, the complementary proportion of the variability in <em class="emphasis">y</em>, is the proportion of the variability in all the <em class="emphasis">y</em> measurements that is accounted for by the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s06_p05">In the context of linear regression the coefficient of determination is always the square of the correlation coefficient <em class="emphasis">r</em> discussed in <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>. Thus the coefficient of determination is denoted <em class="emphasis">r</em><sup class="superscript">2</sup>, and we have two additional formulas for computing it.</p>
+    <div class="callout block" id="fwk-shafer-ch10_s06_n02">
+        <h3 class="title">Definition</h3>
+        <p class="para" id="fwk-shafer-ch10_s06_p06"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">coefficient of determination</a><span class="glossdef">A number that measures the proportion of the variability in <em class="emphasis">y</em> that is explained by <em class="emphasis">x</em>.</span></span> <em class="emphasis">of a collection of</em> <span class="inlineequation" id="shafer-20121106-125753-158356"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0460" display="inline"><mrow><mo>(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo>)</mo></mrow></math></span> <em class="emphasis">pairs is the number</em> <em class="emphasis">r</em><sup class="superscript">2</sup> <em class="emphasis">computed by any of the following three expressions:</em></p>
+        <span class="informalequation" id="shafer-20121106-125753-158372"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0461" display="block"><mrow><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>S</mi><msubsup><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s06_p07"><em class="emphasis">It measures the proportion of the variability in</em> <em class="emphasis">y</em> <em class="emphasis">that is accounted for by the linear relationship between</em> <em class="emphasis">x</em> <em class="emphasis">and</em> <em class="emphasis">y</em>.</p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s06_p08">If the correlation coefficient <em class="emphasis">r</em> is already known then the coefficient of determination can be computed simply by squaring <em class="emphasis">r</em>, as the notation indicates, <span class="inlineequation" id="shafer-20121106-125753-158389"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0462" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mi>r</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span></p>
+    <div class="exercises block" id="fwk-shafer-ch10_s06_n03">
+        <h3 class="title">Example 10</h3>
+        <p class="para" id="fwk-shafer-ch10_s06_p09">The value of used vehicles of the make and model discussed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> varies widely. The most expensive automobile in the sample in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a> has value $30,500, which is nearly half again as much as the least expensive one, which is worth $20,400. Find the proportion of the variability in value that is accounted for by the linear relationship between age and value.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch10_s06_p10">The proportion of the variability in value <em class="emphasis">y</em> that is accounted for by the linear relationship between it and age <em class="emphasis">x</em> is given by the coefficient of determination, <em class="emphasis">r</em><sup class="superscript">2</sup>. Since the correlation coefficient <em class="emphasis">r</em> was already computed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> as <span class="inlineequation" id="shafer-20121106-125753-158405"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0463" display="inline"><mi>r</mi><mo>=</mo><mtext>−</mtext><mn>0.819</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-158423"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0464" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>0.819</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>0.671</mn><mo>.</mo></math></span> About 67% of the variability in the value of this vehicle can be explained by its age.</p>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch10_s06_n04">
+        <h3 class="title">Example 11</h3>
+        <p class="para" id="fwk-shafer-ch10_s06_p11">Use each of the three formulas for the coefficient of determination to compute its value for the example of ages and values of vehicles.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch10_s06_p12">In <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> we computed the exact values</p>
+        <span class="informalequation" id="shafer-20121106-125753-158447"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0465" display="block"><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>14</mn><mtext> </mtext><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mtext>−</mtext><mn>28.7</mn><mtext> </mtext><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>87.781</mn><mtext> </mtext><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.05</mn></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s06_p13">In <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s03_n03" xrefstyle="select: title">Note 10.24 "Example 5"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> we computed the exact value</p>
+        <span class="informalequation" id="shafer-20121106-125753-158464"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0466" display="block"><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mn>28.946</mn></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s06_p14">Inserting these values into the formulas in the definition, one after the other, gives</p>
+        <span class="informalequation" id="shafer-20121106-125753-158480"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0467" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>87.781</mn><mo>−</mo><mn>28.946</mn></mrow><mrow><mn>87.781</mn></mrow></mfrac><mo>=</mo><mn>0.6702475479</mn></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mi>S</mi><msubsup><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>28.7</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mrow><mo>(</mo><mrow><mn>14</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>87.781</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mn>0.6702475479</mn></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mfrac><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mfrac><mrow><mtext>−</mtext><mn>28.7</mn></mrow><mrow><mn>87.781</mn></mrow></mfrac><mo>=</mo><mn>0.6702475479</mn></mtd></mtr></mtable></math></span>
+        <p class="para" id="fwk-shafer-ch10_s06_p15">which rounds to 0.670. The discrepancy between the value here and in the previous example is because a rounded value of <em class="emphasis">r</em> from <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> was used there. The actual value of <em class="emphasis">r</em> before rounding is 0.8186864772, which when squared gives the value for <em class="emphasis">r</em><sup class="superscript">2</sup> obtained here.</p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s06_p16">The coefficient of determination <em class="emphasis">r</em><sup class="superscript">2</sup> can always be computed by squaring the correlation coefficient <em class="emphasis">r</em> if it is known. Any one of the defining formulas can also be used. Typically one would make the choice based on which quantities have already been computed. What should be avoided is trying to compute <em class="emphasis">r</em> by taking the square root of <em class="emphasis">r</em><sup class="superscript">2</sup>, if it is already known, since it is easy to make a sign error this way. To see what can go wrong, suppose <span class="inlineequation" id="shafer-20121106-125753-158496"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0468" display="inline"><msup><mi>r</mi><mn>2</mn></msup><mo>=</mo><mn>0.64</mn><mo>.</mo></math></span> Taking the square root of a positive number with any calculating device will always return a positive result. The square root of 0.64 is 0.8. However, the actual value of <em class="emphasis">r</em> might be the negative number −0.8.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch10_s06_n05">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s06_l01" mark="bullet">
+            <li>The coefficient of determination <em class="emphasis">r</em><sup class="superscript">2</sup> estimates the proportion of the variability in the variable <em class="emphasis">y</em> that is explained by the linear relationship between <em class="emphasis">y</em> and the variable <em class="emphasis">x</em>.</li>
+            <li>There are several formulas for computing <em class="emphasis">r</em><sup class="superscript">2</sup>. The choice of which one to use can be based on which quantities have already been computed so far.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s06_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s06_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <p class="para" id="fwk-shafer-ch10_s06_qs01_p01">For the Basic and Application exercises in this section use the computations that were done for the exercises with the same number in <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>, <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, and <a class="xref" href="fwk-shafer-ch10_s05#fwk-shafer-ch10_s05">Section 10.5 "Statistical Inferences About "</a>.</p>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p02">For the sample data set of Exercise 1 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158512"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0469" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p04">For the sample data set of Exercise 2 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158528"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0470" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p06">For the sample data set of Exercise 3 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158544"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0471" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p08">For the sample data set of Exercise 4 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158560"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0472" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p10">For the sample data set of Exercise 5 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158583"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0473" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p12">For the sample data set of Exercise 6 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158600"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0474" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p14">For the sample data set of Exercise 7 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158616"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0475" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mrow><mo>(</mo><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p16">For the sample data set of Exercise 8 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158632"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0476" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mrow><mo>(</mo><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p18">For the sample data set of Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158648"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0477" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mrow><mo>(</mo><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p20">For the sample data set of Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the coefficient of determination using the formula <span class="inlineequation" id="shafer-20121106-125753-158664"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0478" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mrow><mo>(</mo><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> Confirm your answer by squaring <em class="emphasis">r</em> as computed in that exercise.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s06_qs01_qd02" start="11">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p22">For the data in Exercise 11 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of age and vocabulary.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p24">For the data in Exercise 12 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of vehicle weight and braking distance.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa13">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p26">For the data in Exercise 13 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of age and resting heart rate. In the age range of the data, does age seem to be a very important factor with regard to heart rate?</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa14">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p28">For the data in Exercise 14 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of wind speed and wave height. Does wind speed seem to be a very important factor with regard to wave height?</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa15">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p30">For the data in Exercise 15 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the proportion of the variability in revenue that is explained by level of advertising.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa16">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p32">For the data in Exercise 16 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the proportion of the variability in adult height that is explained by the variation in length at age two.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa17">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p34">For the data in Exercise 17 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of course average before the final exam and score on the final exam.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa18">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p36">For the data in Exercise 18 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of acres planted and acres harvested.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa19">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p38">For the data in Exercise 19 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of the amount of the medication consumed and blood concentration of the active ingredient.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa20">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p40">For the data in Exercise 20 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> compute the coefficient of determination and interpret its value in the context of tree size and age.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa21">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p42">For the data in Exercise 21 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the proportion of the variability in 28-day strength of concrete that is accounted for by variation in 3-day strength.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa22">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p44">For the data in Exercise 22 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> find the proportion of the variability in energy demand that is accounted for by variation in average temperature.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s06_qs01_qd03" start="23">
+            <h3 class="title">Large Data Set Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa23">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p46">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students. Compute the coefficient of determination and interpret its value in the context of SAT scores and GPAs.</p>
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p47"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa24">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p49">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs). Compute the coefficient of determination and interpret its value in the context of golf scores with the two kinds of golf clubs.</p>
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p50"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa25">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p52">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions. Compute the coefficient of determination and interpret its value in the context of the number of bidders at an auction and the price of this type of antique grandfather clock.</p>
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p53"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s06_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p03_ans">0.848</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p07_ans">0.631</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p11_ans">0.5</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p15_ans">0.766</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p19_ans">0.715</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa11_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p23_ans">0.898; about 90% of the variability in vocabulary is explained by age</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa13_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p27_ans">0.503; about 50% of the variability in heart rate is explained by age. Age is a significant but not dominant factor in explaining heart rate.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa14_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa15_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p31_ans">The proportion is <em class="emphasis">r</em><sup class="superscript">2</sup> = 0.692.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa16_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa17_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p35_ans">0.563; about 56% of the variability in final exam scores is explained by course average before the final exam</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa18_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa19_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p39_ans">0.931; about 93% of the variability in the blood concentration of the active ingredient is explained by the amount of the medication consumed</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa20_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa21_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p43_ans">The proportion is <em class="emphasis">r</em><sup class="superscript">2</sup> = 0.984.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd02_qa22_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="23">
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa23_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p48_ans"><span class="inlineequation" id="shafer-20121106-125753-158681_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0479" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>21.17</mn><mi>%</mi><mo>.</mo></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa24_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s06_qs01_qd03_qa25_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s06_qs01_p54_ans"><span class="inlineequation" id="shafer-20121106-125753-158720_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0481" display="inline"><msup><mrow><mi>r</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>81.04</mn><mi>%</mi><mo>.</mo></math></span></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-05-statistical-inferences-about-1.html"><img src="shared/images/batch-left.png"></a> <a href="s14-05-statistical-inferences-about-1.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-07-estimation-and-prediction.html">Next Section</a> <a href="s14-07-estimation-and-prediction.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Chi-Square Tests for Independence</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-09-formula-list.html"><img src="shared/images/batch-left.png"></a> <a href="s14-09-formula-list.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s15-02-chi-square-one-sample-goodness.html">Next Section</a> <a href="s15-02-chi-square-one-sample-goodness.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch11_s01" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">11.1</span> Chi-Square Tests for Independence</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch11_s01_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch11_s01_o01" numeration="arabic">
+            <li>To understand what chi-square distributions are.</li>
+            <li>To understand how to use a chi-square test to judge whether two factors are independent.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch11_s01_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Chi-Square Distributions</h2>
+        <p class="para block" id="fwk-shafer-ch11_s01_s01_p01">As you know, there is a whole family of <em class="emphasis">t</em>-distributions, each one specified by a parameter called the <em class="emphasis">degrees of freedom</em>, denoted <span class="inlineequation" id="shafer-20121106-125753-162302"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0004" display="inline"><mi>d</mi><mi>f</mi><mo>.</mo></math></span> Similarly, all the chi-square distributions form a family, and each of its members is also specified by a parameter <span class="inlineequation" id="shafer-20121106-125753-162318"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0005" display="inline"><mi>d</mi><mi>f</mi></math></span>, the number of degrees of freedom. Chi is a Greek letter denoted by the symbol <span class="inlineequation" id="shafer-20121106-125753-162335"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0006" display="inline"><mi>χ</mi></math></span> and chi-square is often denoted by <span class="inlineequation" id="shafer-20121106-125753-162351"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0007" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span> <a class="xref" href="#fwk-shafer-ch11_s01_s01_f01">Figure 11.1 "Many "</a> shows several chi-square distributions for different degrees of freedom. A <span class="margin_term"><a class="glossterm">chi-square random variable</a><span class="glossdef">A random variable that follows a chi-square distribution.</span></span> is a random variable that assumes only positive values and follows a chi-square distribution.</p>
+        <div class="figure large small-height block" id="fwk-shafer-ch11_s01_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 11.1</span> Many <span class="inlineequation" id="shafer-20121106-125753-162383"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0009" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> Distributions</p>
+            <img src="section_15/5a0c7bbacb4242555e8a85c9767c03ee.jpg">
+        </div>
+        <div class="callout block" id="fwk-shafer-ch11_s01_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch11_s01_s01_p02"><em class="emphasis">The value of the chi-square random variable</em> <span class="inlineequation" id="shafer-20121106-125753-162405"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0010" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> <em class="emphasis">with</em> <span class="inlineequation" id="shafer-20121106-125753-162422"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0011" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>k</mi></math></span> <em class="emphasis">that cuts off a right tail of area</em> <em class="emphasis">c</em> <em class="emphasis">is denoted</em> <span class="inlineequation" id="shafer-20121106-125753-162438"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0012" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> <em class="emphasis">and is called a</em> <strong class="emphasis bold">critical value</strong>. <em class="emphasis">See <a class="xref" href="#fwk-shafer-ch11_s01_s01_f02">Figure 11.2</a>.</em></p>
+            <div class="figure medium" id="fwk-shafer-ch11_s01_s01_f02">
+                <p class="title"><span class="title-prefix">Figure 11.2</span> <span class="inlineequation" id="shafer-20121106-125753-162454"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0013" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> Illustrated</p>
+                <img src="section_15/34d06306c2e726f6d5cd7479d9736e5e.jpg">
+            </div>
+        </div>
+        <p class="para block" id="fwk-shafer-ch11_s01_s01_p03"><a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a> gives values of <span class="inlineequation" id="shafer-20121106-125753-162470"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0014" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>c</mi></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> for various values of <em class="emphasis">c</em> and under several chi-square distributions with various degrees of freedom.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch11_s01_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Tests for Independence</h2>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p01">Hypotheses tests encountered earlier in the book had to do with how the numerical values of two population parameters compared. In this subsection we will investigate hypotheses that have to do with whether or not two random variables take their values independently, or whether the value of one has a relation to the value of the other. Thus the hypotheses will be expressed in words, not mathematical symbols. We build the discussion around the following example.</p>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p02">There is a theory that the gender of a baby in the womb is related to the baby’s heart rate: baby girls tend to have higher heart rates. Suppose we wish to test this theory. We examine the heart rate records of 40 babies taken during their mothers’ last prenatal checkups before delivery, and to each of these 40 randomly selected records we compute the values of two random measures: 1) gender and 2) heart rate. In this context these two random measures are often called <span class="margin_term"><a class="glossterm">factors</a><span class="glossdef">A variable with several qualitative levels.</span></span>. Since the burden of proof is that heart rate and gender are related, not that they are unrelated, the problem of testing the theory on baby gender and heart rate can be formulated as a test of the following hypotheses:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-162486"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0015" display="block"><mrow><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>Baby</mtext><mtext> </mtext><mtext>gender</mtext><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mtext>baby</mtext><mtext> </mtext><mtext>heart</mtext><mtext> </mtext><mtext>rate</mtext><mtext> </mtext><mtext>are</mtext><mtext> </mtext><mtext>independent</mtext></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>a</mi></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>Baby</mtext><mtext> </mtext><mtext>gender</mtext><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mtext>baby</mtext><mtext> </mtext><mtext>heart</mtext><mtext> </mtext><mtext>rate</mtext><mtext> </mtext><mtext>are</mtext><mtext> </mtext><mi>n</mi><mi>o</mi><mi>t</mi><mtext> </mtext><mtext>independent</mtext></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p03">The factor gender has two natural categories or levels: boy and girl. We divide the second factor, heart rate, into two levels, low and high, by choosing some heart rate, say 145 beats per minute, as the cutoff between them. A heart rate below 145 beats per minute will be considered low and 145 and above considered high. The 40 records give rise to a 2 × 2 <em class="emphasis">contingency table</em>. By adjoining row totals, column totals, and a grand total we obtain the table shown as <a class="xref" href="#fwk-shafer-ch11_s01_s02_t01">Table 11.1 "Baby Gender and Heart Rate"</a>. The four entries in boldface type are counts of observations from the sample of <em class="emphasis">n</em> = 40. There were 11 girls with low heart rate, 17 boys with low heart rate, and so on. They form the <em class="emphasis">core</em> of the expanded table.</p>
+        <div class="table block" id="fwk-shafer-ch11_s01_s02_t01">
+            <p class="title"><span class="title-prefix">Table 11.1</span> Baby Gender and Heart Rate</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2" align="left"> </th>
+                        <th colspan="2" align="center">Heart Rate</th>
+                        <th align="left"></th>
+                    </tr>
+                    <tr>
+                        <th align="center">Low</th>
+                        <th align="center">High</th>
+                        <th align="center">Row Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" align="center">Gender</td>
+                        <td align="center">Girl</td>
+                        <td align="center"><strong class="emphasis bold">11</strong></td>
+                        <td align="center"><strong class="emphasis bold">7</strong></td>
+                        <td align="center">18</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Boy</td>
+                        <td align="center"><strong class="emphasis bold">17</strong></td>
+                        <td align="center"><strong class="emphasis bold">5</strong></td>
+                        <td align="center">22</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">Column Total</td>
+                        <td align="center">28</td>
+                        <td align="center">12</td>
+                        <td align="center">Total = 40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p04">In analogy with the fact that the probability of independent events is the product of the probabilities of each event, if heart rate and gender were independent then we would expect the number in each core cell to be close to the product of the row total <em class="emphasis">R</em> and column total <em class="emphasis">C</em> of the row and column containing it, divided by the sample size <em class="emphasis">n</em>. Denoting such an expected number of observations <em class="emphasis">E</em>, these four expected values are:</p>
+        <ul class="itemizedlist block" id="fwk-shafer-ch11_s01_s02_l01" mark="none">
+            <li>1st row and 1st column: <span class="inlineequation" id="shafer-20121106-125753-162501"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0016" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>18</mn><mo>×</mo><mn>28</mn><mo>∕</mo><mn>40</mn><mo>=</mo><mn>12.6</mn></math></span>
+</li>
+            <li>1st row and 2nd column: <span class="inlineequation" id="shafer-20121106-125753-162518"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0017" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>18</mn><mo>×</mo><mn>12</mn><mo>∕</mo><mn>40</mn><mo>=</mo><mn>5.4</mn></math></span>
+</li>
+            <li>2nd row and 1st column: <span class="inlineequation" id="shafer-20121106-125753-162535"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0018" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>22</mn><mo>×</mo><mn>28</mn><mo>∕</mo><mn>40</mn><mo>=</mo><mn>15.4</mn></math></span>
+</li>
+            <li>2nd row and 2nd column: <span class="inlineequation" id="shafer-20121106-125753-162557"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0019" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>22</mn><mo>×</mo><mn>12</mn><mo>∕</mo><mn>40</mn><mo>=</mo><mn>6.6</mn></math></span>
+</li>
+        </ul>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p05">We update <a class="xref" href="#fwk-shafer-ch11_s01_s02_t01">Table 11.1 "Baby Gender and Heart Rate"</a> by placing each expected value in its corresponding core cell, right under the observed value in the cell. This gives the updated table <a class="xref" href="#fwk-shafer-ch11_s01_s02_t02">Table 11.2 "Updated Baby Gender and Heart Rate"</a>.</p>
+        <div class="table block" id="fwk-shafer-ch11_s01_s02_t02">
+            <p class="title"><span class="title-prefix">Table 11.2</span> Updated Baby Gender and Heart Rate</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2" align="left"> </th>
+                        <th colspan="2" align="center">Heart Rate</th>
+                        <th align="left"></th>
+                    </tr>
+                    <tr>
+                        <th align="center">Low</th>
+                        <th align="center">High</th>
+                        <th align="center">Row Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" align="center">Gender</td>
+                        <td align="center">Girl</td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162574"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0020" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>11</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>12.6</mn></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162596"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0021" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>7</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>5.4</mn></mtd></mtr></mtable></math></span></td>
+                        <td align="center">
+<em class="emphasis">R</em> = 18</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Boy</td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162612"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0022" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>17</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>15.4</mn></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162628"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0023" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>6.6</mn></mtd></mtr></mtable></math></span></td>
+                        <td align="center">
+<em class="emphasis">R</em> = 22</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">Column Total</td>
+                        <td align="center">
+<em class="emphasis">C</em> = 28</td>
+                        <td align="center">
+<em class="emphasis">C</em> = 12</td>
+                        <td align="center">
+<em class="emphasis">n</em> = 40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para block" id="fwk-shafer-ch11_s01_s02_p06">A measure of how much the data deviate from what we would expect to see if the factors really were independent is the sum of the squares of the difference of the numbers in each core cell, or, standardizing by dividing each square by the expected number in the cell, the sum <span class="inlineequation" id="shafer-20121106-125753-162644"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0024" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>∕</mo><mi>E</mi><mo>.</mo></math></span> We would reject the null hypothesis that the factors are independent only if this number is large, so the test is right-tailed. In this example the random variable <span class="inlineequation" id="shafer-20121106-125753-162660"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0025" display="inline"><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>∕</mo><mi>E</mi></math></span> has the chi-square distribution with one degree of freedom. If we had decided at the outset to test at the 10% level of significance, the critical value defining the rejection region would be, reading from <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a>, <span class="inlineequation" id="shafer-20121106-125753-162676"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0026" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.10</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>2.706</mn></math></span>, so that the rejection region would be the interval <span class="inlineequation" id="shafer-20121106-125753-162699"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0027" display="inline"><mrow><mo>[</mo><mrow><mn>2.706</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> When we compute the value of the standardized test statistic we obtain</p>
+        <span class="informalequation block" id="shafer-20121106-125753-162716"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0028" display="block"><mrow><mi mathvariant="normal">Σ</mi><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>E</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>11</mn><mo>−</mo><mn>12.6</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>12.6</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>7</mn><mo>−</mo><mn>5.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>5.4</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>17</mn><mo>−</mo><mn>15.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>15.4</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>5</mn><mo>−</mo><mn>6.6</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>6.6</mn></mrow></mfrac><mo>=</mo><mn>1.231</mn></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p07">Since 1.231 &lt; 2.706, the decision is not to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. See <a class="xref" href="#fwk-shafer-ch11_s01_s02_f01">Figure 11.3 "Baby Gender Prediction"</a>. The data do not provide sufficient evidence, at the 10% level of significance, to conclude that heart rate and gender are related.</p>
+        <div class="figure large small-height editable block" id="fwk-shafer-ch11_s01_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 11.3</span> Baby Gender Prediction</p>
+            <img src="section_15/a2d445829c9e324c32b00dad5870eb22.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p08">With this specific example in mind, now turn to the general situation. In the general setting of testing the independence of two factors, call them <em class="emphasis">Factor 1</em> and <em class="emphasis">Factor 2</em>, the hypotheses to be tested are</p>
+        <span class="informalequation block" id="shafer-20121106-125753-162732"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0029" display="block"><mrow><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>The</mtext><mtext> </mtext><mtext>two</mtext><mtext> </mtext><mtext>factors</mtext><mtext> </mtext><mtext>are</mtext><mtext> </mtext><mtext>independent</mtext></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>a</mi></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>The</mtext><mtext> </mtext><mtext>two</mtext><mtext> </mtext><mtext>factors</mtext><mtext> </mtext><mtext>are</mtext><mtext> </mtext><mi>n</mi><mi>o</mi><mi>t</mi><mtext> </mtext><mtext>independent</mtext></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch11_s01_s02_p09">As in the example each factor is divided into a number of categories or levels. These could arise naturally, as in the boy-girl division of gender, or somewhat arbitrarily, as in the high-low division of heart rate. Suppose Factor 1 has <em class="emphasis">I</em> levels and Factor 2 has <em class="emphasis">J</em> levels. Then the information from a random sample gives rise to a general <em class="emphasis">I</em> × <em class="emphasis">J</em> contingency table, which with row totals, column totals, and a grand total would appear as shown in <a class="xref" href="#fwk-shafer-ch11_s01_s02_t03">Table 11.3 "General Contingency Table"</a>. Each cell may be labeled by a pair of indices <span class="inlineequation" id="shafer-20121106-125753-162749"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0030" display="inline"><mrow><mo>(</mo><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-162765"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0031" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></math></span> stands for the observed count of observations in the cell in row <em class="emphasis">i</em> and column <em class="emphasis">j</em>, <em class="emphasis">R<sub class="subscript">i</sub></em> for the <span class="inlineequation" id="shafer-20121106-125753-162780"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0032" display="inline"><msup><mrow><mi>i</mi></mrow><mrow><mi>t</mi><mi>h</mi></mrow></msup></math></span> row total and <em class="emphasis">C<sub class="subscript">j</sub></em> for the <span class="inlineequation" id="shafer-20121106-125753-162797"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0033" display="inline"><msup><mrow><mi>j</mi></mrow><mrow><mi>t</mi><mi>h</mi></mrow></msup></math></span> column total. To simplify the notation we will drop the indices so <a class="xref" href="#fwk-shafer-ch11_s01_s02_t03">Table 11.3 "General Contingency Table"</a> becomes <a class="xref" href="#fwk-shafer-ch11_s01_s02_t04">Table 11.4 "Simplified General Contingency Table"</a>. Nevertheless it is important to keep in mind that the <em class="emphasis">O</em>s, the <em class="emphasis">R</em>s and the <em class="emphasis">C</em>s, though denoted by the same symbols, are in fact different numbers.</p>
+        <div class="table block" id="fwk-shafer-ch11_s01_s02_t03">
+            <p class="title"><span class="title-prefix">Table 11.3</span> General Contingency Table</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2" align="left"> </th>
+                        <th colspan="5" align="center">Factor 2 Levels</th>
+                        <th align="left"></th>
+                    </tr>
+                    <tr>
+                        <th align="center">1</th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-162812"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0034" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">j</em></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-162828"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0035" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">J</em></th>
+                        <th align="center">Row Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5" align="center">Factor 1 Levels</td>
+                        <td align="center">1</td>
+                        <td align="center">
+<em class="emphasis">O</em><sub class="subscript">11</sub>
+</td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162845"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0036" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162867"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0037" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mn>1</mn><mi>j</mi></mrow></msub></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162883"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0038" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162899"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0039" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mn>1</mn><mi>J</mi></mrow></msub></math></span></td>
+                        <td align="center">
+<em class="emphasis">R</em><sub class="subscript">1</sub>
+</td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">i</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162915"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0040" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>i</mi><mn>1</mn></mrow></msub></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162931"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0041" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162947"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0042" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162963"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0043" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-162980"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0044" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>i</mi><mi>J</mi></mrow></msub></math></span></td>
+                        <td align="center"><em class="emphasis">R<sub class="subscript">i</sub></em></td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">I</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163003"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0045" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>I</mi><mn>1</mn></mrow></msub></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163019"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0046" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163035"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0047" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>I</mi><mi>j</mi></mrow></msub></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163052"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0048" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163068"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0049" display="inline"><msub><mrow><mi>O</mi></mrow><mrow><mi>I</mi><mi>J</mi></mrow></msub></math></span></td>
+                        <td align="center"><em class="emphasis">R<sub class="subscript">I</sub></em></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">Column Total</td>
+                        <td align="center">
+<em class="emphasis">C</em><sub class="subscript">1</sub>
+</td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163085"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0050" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C<sub class="subscript">j</sub></em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163101"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0051" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C<sub class="subscript">J</sub></em></td>
+                        <td align="center"><em class="emphasis">n</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table block" id="fwk-shafer-ch11_s01_s02_t04">
+            <p class="title"><span class="title-prefix">Table 11.4</span> Simplified General Contingency Table</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2" align="left"> </th>
+                        <th colspan="5" align="center">Factor 2 Levels</th>
+                        <th align="left"></th>
+                    </tr>
+                    <tr>
+                        <th align="center">1</th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-163117"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0052" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">j</em></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-163134"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0053" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">J</em></th>
+                        <th align="center">Row Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5" align="center">Factor 1 Levels</td>
+                        <td align="center">1</td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163157"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0054" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163173"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0055" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">i</em></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163189"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0056" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163206"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0057" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">I</em></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163222"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0058" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163238"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0059" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">O</em></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">Column Total</td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163254"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0060" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163270"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0061" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><em class="emphasis">n</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p10">As in the example, for each core cell in the table we compute what would be the <em class="emphasis">expected number</em> <em class="emphasis">E</em> of observations if the two factors were independent. <em class="emphasis">E</em> is computed for each core cell (each cell with an <em class="emphasis">O</em> in it) of <a class="xref" href="#fwk-shafer-ch11_s01_s02_t04">Table 11.4 "Simplified General Contingency Table"</a> by the rule applied in the example:</p>
+        <div class="callout block" id="fwk-shafer-ch11_s01_s02_n01">
+            <span class="informalequation" id="shafer-20121106-125753-163295"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0062" display="block"><mrow><mi>E</mi><mo>=</mo><mfrac><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p11">where <em class="emphasis">R</em> is the row total and <em class="emphasis">C</em> is the column total corresponding to the cell, and <em class="emphasis">n</em> is the sample size.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p12">After the expected number is computed for every cell, <a class="xref" href="#fwk-shafer-ch11_s01_s02_t04">Table 11.4 "Simplified General Contingency Table"</a> is updated to form <a class="xref" href="#fwk-shafer-ch11_s01_s02_t05">Table 11.5 "Updated General Contingency Table"</a> by inserting the computed value of <em class="emphasis">E</em> into each core cell.</p>
+        <div class="table block" id="fwk-shafer-ch11_s01_s02_t05">
+            <p class="title"><span class="title-prefix">Table 11.5</span> Updated General Contingency Table</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th colspan="2" rowspan="2" align="left"> </th>
+                        <th colspan="5" align="center">Factor 2 Levels</th>
+                        <th align="left"></th>
+                    </tr>
+                    <tr>
+                        <th align="center">1</th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-163312"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0063" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">j</em></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-163328"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0064" display="inline"><mtext> · · · </mtext></math></span></th>
+                        <th align="center"><em class="emphasis">J</em></th>
+                        <th align="center">Row Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5" align="center">Factor 1 Levels</td>
+                        <td align="center">1</td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163345"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0065" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163362"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0066" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163377"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0067" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163394"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0068" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163411"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0069" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">i</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163427"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0070" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163448"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0071" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163465"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0072" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163481"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0073" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163498"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0074" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                        <td align="center">⋮</td>
+                    </tr>
+                    <tr>
+                        <td align="center"><em class="emphasis">I</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163515"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0075" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163531"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0076" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163547"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0077" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163562"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0078" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163585"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0079" display="inline"><mtable columnspacing="0.5em"><mtr><mtd><mi>O</mi></mtd></mtr><mtr><mtd><mi>E</mi></mtd></mtr></mtable></math></span></td>
+                        <td align="center"><em class="emphasis">R</em></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">Column Total</td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163602"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0080" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163618"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0081" display="inline"><mtext> · · · </mtext></math></span></td>
+                        <td align="center"><em class="emphasis">C</em></td>
+                        <td align="center"><em class="emphasis">n</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p13">Here is the test statistic for the general hypothesis based on <a class="xref" href="#fwk-shafer-ch11_s01_s02_t05">Table 11.5 "Updated General Contingency Table"</a>, together with the conditions that it follow a chi-square distribution.</p>
+        <div class="callout block" id="fwk-shafer-ch11_s01_s02_n02">
+            <h3 class="title">Test Statistic for Testing the Independence of Two Factors</h3>
+            <span class="informalequation" id="shafer-20121106-125753-163634"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0082" display="block"><mrow><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mi mathvariant="normal">Σ</mi><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>O</mi><mo>−</mo><mi>E</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>E</mi></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p14">where the sum is over all core cells of the table.</p>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p15">If</p>
+            <ol class="orderedlist" id="fwk-shafer-ch11_s01_s02_o01" numeration="arabic">
+                <li>the two study factors are independent, and</li>
+                <li>the observed count <em class="emphasis">O</em> of each cell in <a class="xref" href="#fwk-shafer-ch11_s01_s02_t05">Table 11.5 "Updated General Contingency Table"</a> is at least 5,</li>
+            </ol>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p16">then <span class="inlineequation" id="shafer-20121106-125753-163650"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0083" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> approximately follows a chi-square distribution with <span class="inlineequation" id="shafer-20121106-125753-163666"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0084" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>I</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>×</mo><mrow><mo>(</mo><mrow><mi>J</mi><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow></math></span> degrees of freedom.</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch11_s01_s02_p17">The same five-step procedures, either the critical value approach or the <em class="emphasis">p</em>-value approach, that were introduced in <a class="xref" href="fwk-shafer-ch08_s01#fwk-shafer-ch08_s01">Section 8.1 "The Elements of Hypothesis Testing"</a> and <a class="xref" href="fwk-shafer-ch08_s03#fwk-shafer-ch08_s03">Section 8.3 "The Observed Significance of a Test"</a> of <a class="xref" href="fwk-shafer-ch08#fwk-shafer-ch08">Chapter 8 "Testing Hypotheses"</a> are used to perform the test, which is always right-tailed.</p>
+        <div class="exercises block" id="fwk-shafer-ch11_s01_s02_n03">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p18">A researcher wishes to investigate whether students’ scores on a college entrance examination (CEE) have any indicative power for future college performance as measured by GPA. In other words, he wishes to investigate whether the factors CEE and GPA are independent or not. He randomly selects <em class="emphasis">n</em> = 100 students in a college and notes each student’s score on the entrance examination and his grade point average at the end of the sophomore year. He divides entrance exam scores into two levels and grade point averages into three levels. Sorting the data according to these divisions, he forms the contingency table shown as <a class="xref" href="#fwk-shafer-ch11_s01_s02_t06">Table 11.6 "CEE versus GPA Contingency Table"</a>, in which the row and column totals have already been computed.</p>
+            <div class="table" id="fwk-shafer-ch11_s01_s02_t06">
+                <p class="title"><span class="title-prefix">Table 11.6</span> CEE versus GPA Contingency Table</p>
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th colspan="2" rowspan="2" align="left"> </th>
+                            <th colspan="3" align="center">GPA</th>
+                            <th align="left"></th>
+                        </tr>
+                        <tr>
+                            <th align="center">&lt;2.7</th>
+                            <th align="center">2.7 to 3.2</th>
+                            <th align="center">&gt;3.2</th>
+                            <th align="center">Row Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" align="center">CEE</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163682"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0085" display="inline"><mo>&lt;</mo><mn>1800</mn></math></span></td>
+                            <td align="center"><strong class="emphasis bold">35</strong></td>
+                            <td align="center"><strong class="emphasis bold">12</strong></td>
+                            <td align="center"><strong class="emphasis bold">5</strong></td>
+                            <td align="center">52</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163705"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0086" display="inline"><mo>≥</mo><mn>1800</mn></math></span></td>
+                            <td align="center"><strong class="emphasis bold">6</strong></td>
+                            <td align="center"><strong class="emphasis bold">24</strong></td>
+                            <td align="center"><strong class="emphasis bold">18</strong></td>
+                            <td align="center">48</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">Column Total</td>
+                            <td align="center">41</td>
+                            <td align="center">36</td>
+                            <td align="center">23</td>
+                            <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163722"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0087" display="inline"><mtext>Total</mtext><mo>=</mo><mn>100</mn></math></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p19">Test, at the 1% level of significance, whether these data provide sufficient evidence to conclude that CEE scores indicate future performance levels of incoming college freshmen as measured by GPA.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch11_s01_s02_p20">We perform the test using the critical value approach, following the usual five-step method outlined at the end of <a class="xref" href="fwk-shafer-ch08_s01#fwk-shafer-ch08_s01">Section 8.1 "The Elements of Hypothesis Testing"</a> in <a class="xref" href="fwk-shafer-ch08#fwk-shafer-ch08">Chapter 8 "Testing Hypotheses"</a>.</p>
+            <ul class="itemizedlist" id="fwk-shafer-ch11_s01_s02_l02" mark="none">
+                <li>
+                    <p class="para">Step 1. The hypotheses are</p>
+                    <span class="informalequation" id="shafer-20121106-125753-163738"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0088" display="block"><mrow><mtable columnspacing="0.2em"><mtr><mtd columnalign="right"><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>CEE and GPA are independent factors</mtext></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>a</mi></msub></mrow></mtd><mtd><mo>:</mo></mtd><mtd columnalign="left"><mrow><mtext>CEE and GPA are </mtext><mi>not</mi><mtext> independent factors</mtext></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+                <li>Step 2. The distribution is chi-square.</li>
+                <li>
+                    <p class="para">Step 3. To compute the value of the test statistic we must first computed the expected number for each of the six core cells (the ones whose entries are boldface):</p>
+                    <ul class="itemizedlist" id="fwk-shafer-ch11_s01_s02_l03" mark="none">
+                        <li>1st row and 1st column: <span class="inlineequation" id="shafer-20121106-125753-163754"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0089" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>41</mn><mo>×</mo><mn>52</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>21.32</mn></math></span>
+</li>
+                        <li>1st row and 2nd column: <span class="inlineequation" id="shafer-20121106-125753-163770"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0090" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>36</mn><mo>×</mo><mn>52</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>18.72</mn></math></span>
+</li>
+                        <li>1st row and 3rd column: <span class="inlineequation" id="shafer-20121106-125753-163787"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0091" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>23</mn><mo>×</mo><mn>52</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>11.96</mn></math></span>
+</li>
+                        <li>2nd row and 1st column: <span class="inlineequation" id="shafer-20121106-125753-163803"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0092" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>41</mn><mo>×</mo><mn>48</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>19.68</mn></math></span>
+</li>
+                        <li>2nd row and 2nd column: <span class="inlineequation" id="shafer-20121106-125753-163820"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0093" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>36</mn><mo>×</mo><mn>48</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>17.28</mn></math></span>
+</li>
+                        <li>2nd row and 3rd column: <span class="inlineequation" id="shafer-20121106-125753-163842"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0094" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi><mo>=</mo><mn>23</mn><mo>×</mo><mn>48</mn><mo>∕</mo><mn>100</mn><mo>=</mo><mn>11.04</mn></math></span>
+</li>
+                    </ul>
+                    <p class="para" id="fwk-shafer-ch11_s01_s02_p21"><a class="xref" href="#fwk-shafer-ch11_s01_s02_t06">Table 11.6 "CEE versus GPA Contingency Table"</a> is updated to <a class="xref" href="#fwk-shafer-ch11_s01_s02_t07">Table 11.7 "Updated CEE versus GPA Contingency Table"</a>.</p>
+                    <div class="table" id="fwk-shafer-ch11_s01_s02_t07">
+                    <p class="title"><span class="title-prefix">Table 11.7</span> Updated CEE versus GPA Contingency Table</p>
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" rowspan="2" align="left"> </th>
+                                    <th colspan="3" align="center">GPA</th>
+                                    <th align="left"></th>
+                                </tr>
+                                <tr>
+                                    <th align="center">&lt;2.7</th>
+                                    <th align="center">2.7 to 3.2</th>
+                                    <th align="center">&gt;3.2</th>
+                                    <th align="center">Row Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2" align="center">CEE</td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163859"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0095" display="inline"><mo>&lt;</mo><mn>1800</mn></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163880"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0096" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>35</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>21.32</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163896"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0097" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>12</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>18.72</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163912"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0098" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>11.96</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center">
+<em class="emphasis">R</em> = 52</td>
+                                </tr>
+                                <tr>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163928"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0099" display="inline"><mo>≥</mo><mn>1800</mn></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163945"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0100" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>6</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>19.68</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163961"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0101" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>24</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>17.28</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center"><span class="inlineequation" id="shafer-20121106-125753-163977"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0102" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>O</mi><mo>=</mo><mn>18</mn></mtd></mtr><mtr><mtd columnalign="left"><mi>E</mi><mo>=</mo><mn>11.04</mn></mtd></mtr></mtable></math></span></td>
+                                    <td align="center">
+<em class="emphasis">R</em> = 48</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">Column Total</td>
+                                    <td align="center">
+<em class="emphasis">C</em> = 41</td>
+                                    <td align="center">
+<em class="emphasis">C</em> = 36</td>
+                                    <td align="center">
+<em class="emphasis">C</em> = 23</td>
+                                    <td align="center">
+<em class="emphasis">n</em> = 100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="para" id="fwk-shafer-ch11_s01_s02_p22">The test statistic is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-164000"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0103" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mi>O</mi><mo>−</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mi>E</mi></mfrac></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>35</mn><mo>−</mo><mn>21.32</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>21.32</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>12</mn><mo>−</mo><mn>18.72</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>18.72</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>5</mn><mo>−</mo><mn>11.96</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>11.96</mn></mrow></mfrac></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="right"><mrow><mo>+</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>6</mn><mo>−</mo><mn>19.68</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>19.68</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>24</mn><mo>−</mo><mn>17.28</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>17.28</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><mn>18</mn><mo>−</mo><mn>11.04</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>11.04</mn></mrow></mfrac></mrow></mtd><mtd></mtd></mtr><mtr><mtd columnalign="left"><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>31.75</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Step 4. Since the CEE factor has two levels and the GPA factor has three, <em class="emphasis">I</em> = 2 and <em class="emphasis">J</em> = 3. Thus the test statistic follows the chi-square distribution with <span class="inlineequation" id="shafer-20121106-125753-164016"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0104" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>×</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn></math></span> degrees of freedom.</p>
+                    <p class="para" id="fwk-shafer-ch11_s01_s02_p23">Since the test is right-tailed, the critical value is <span class="inlineequation" id="shafer-20121106-125753-164033"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0105" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>.</mo></math></span> Reading from <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a>, <span class="inlineequation" id="shafer-20121106-125753-164049"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0106" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>9.210</mn></math></span>, so the rejection region is <span class="inlineequation" id="shafer-20121106-125753-164065"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0107" display="inline"><mrow><mo>[</mo><mrow><mn>9.210</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+                </li>
+                <li>Step 5. Since 31.75 &gt; 9.21 the decision is to reject the null hypothesis. See <a class="xref" href="#fwk-shafer-ch11_s01_s02_f02">Figure 11.4</a>. The data provide sufficient evidence, at the 1% level of significance, to conclude that CEE score and GPA are not independent: the entrance exam score has predictive power.</li>
+            </ul>
+            <div class="figure large small-height" id="fwk-shafer-ch11_s01_s02_f02">
+                <p class="title"><span class="title-prefix">Figure 11.4</span> <a class="xref" href="#fwk-shafer-ch11_s01_s02_n03" xrefstyle="select: title">Note 11.9 "Example 1"</a></p>
+                <img src="section_15/68bbab395044eb9d625f2e5d5ad79f81.jpg">
+            </div>
+        </div>
+        <div class="key_takeaways block" id="fwk-shafer-ch11_s01_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch11_s01_s02_l04" mark="bullet">
+                <li>Critical values of a chi-square distribution with degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-164081"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0108" display="inline"><mi>d</mi><mi>f</mi></math></span> are found in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f04">Figure 12.4 "Critical Values of Chi-Square Distributions"</a>.</li>
+                <li>A <span class="margin_term"><a class="glossterm">chi-square test</a><span class="glossdef">A test based on a chi-square statistic to check whether two factors are independent.</span></span> can be used to evaluate the hypothesis that two random variables or factors are independent.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch11_s01_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch11_s01_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p01">Find <span class="inlineequation" id="shafer-20121106-125753-164098"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0109" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> for each of the following number of degrees of freedom.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o01" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164122"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0110" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>5</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164140"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0111" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>11</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164157"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0112" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>25</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p02">Find <span class="inlineequation" id="shafer-20121106-125753-164173"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0113" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.05</mn></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> for each of the following number of degrees of freedom.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o03" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164189"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0114" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164207"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0115" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>12</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164223"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0116" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>30</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p03">Find <span class="inlineequation" id="shafer-20121106-125753-164239"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0117" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.10</mn></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> for each of the following number of degrees of freedom.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o05" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164254"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0118" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164270"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0119" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>12</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164293"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0120" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>30</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p04">Find <span class="inlineequation" id="shafer-20121106-125753-164310"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0121" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup></math></span> for each of the following number of degrees of freedom.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o07" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164326"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0122" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>7</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164342"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0123" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>10</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164359"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0124" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>20</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p05">For <span class="inlineequation" id="shafer-20121106-125753-164375"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0125" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>7</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-164391"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0126" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, find</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o09" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164413"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0127" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></msubsup></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164430"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0128" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mfrac><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mrow><mn>2</mn></mrow></msubsup></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p06">For <span class="inlineequation" id="shafer-20121106-125753-164446"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0129" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>17</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-164462"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0130" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, find</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o11" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164479"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0131" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></msubsup></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164495"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0132" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mfrac><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mrow><mn>2</mn></mrow></msubsup></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p07">A data sample is sorted into a 2 × 2 contingency table based on two factors, each of which has two levels.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx01">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="2" align="center">Factor 1</th>
+                                        <th align="left"></th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Level 1</th>
+                                        <th align="center">Level 2</th>
+                                        <th align="center">Row Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" align="center">Factor 2</td>
+                                        <td align="center">Level 1</td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164512"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0133" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>20</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164529"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0134" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>10</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><em class="emphasis">R</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Level 2</td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164551"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0135" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>15</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164568"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0136" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><em class="emphasis">R</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">Column Total</td>
+                                        <td align="center"><em class="emphasis">C</em></td>
+                                        <td align="center"><em class="emphasis">C</em></td>
+                                        <td align="center"><em class="emphasis">n</em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o13" numeration="loweralpha">
+                            <li>Find the column totals, the row totals, and the grand total, <em class="emphasis">n</em>, of the table.</li>
+                            <li>Find the expected number <em class="emphasis">E</em> of observations for each cell based on the assumption that the two factors are independent (that is, just use the formula <span class="inlineequation" id="shafer-20121106-125753-164584"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0137" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi></math></span>).</li>
+                            <li>Find the value of the chi-square test statistic <span class="inlineequation" id="shafer-20121106-125753-164600"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0138" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span>
+</li>
+                            <li>Find the number of degrees of freedom of the chi-square test statistic.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p08">A data sample is sorted into a 3 × 2 contingency table based on two factors, one of which has three levels and the other of which has two levels.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx02">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="2" align="center">Factor 1</th>
+                                        <th align="left"></th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Level 1</th>
+                                        <th align="center">Level 2</th>
+                                        <th align="center">Row Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" align="center">Factor 2</td>
+                                        <td align="center">Level 1</td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164801"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0149" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>20</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164817"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0150" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>10</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><em class="emphasis">R</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Level 2</td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164835"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0151" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>15</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164858"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0152" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><em class="emphasis">R</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Level 3</td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164874"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0153" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>10</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><span class="inlineequation" id="shafer-20121106-125753-164890"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0154" display="inline"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>20</mn></mtd></mtr></mtable></math></span></td>
+                                        <td align="center"><em class="emphasis">R</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">Column Total</td>
+                                        <td align="center"><em class="emphasis">C</em></td>
+                                        <td align="center"><em class="emphasis">C</em></td>
+                                        <td align="center"><em class="emphasis">n</em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o15" numeration="loweralpha">
+                            <li>Find the column totals, the row totals, and the grand total, <em class="emphasis">n</em>, of the table.</li>
+                            <li>Find the expected number <em class="emphasis">E</em> of observations for each cell based on the assumption that the two factors are independent (that is, just use the formula <span class="inlineequation" id="shafer-20121106-125753-164907"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0155" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>×</mo><mi>C</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi>n</mi></math></span>).</li>
+                            <li>Find the value of the chi-square test statistic <span class="inlineequation" id="shafer-20121106-125753-164923"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0156" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>.</mo></math></span>
+</li>
+                            <li>Find the number of degrees of freedom of the chi-square test statistic.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch11_s01_qs01_qd02" start="9">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p09">A child psychologist believes that children perform better on tests when they are given perceived freedom of choice. To test this belief, the psychologist carried out an experiment in which 200 third graders were randomly assigned to two groups, <em class="emphasis">A</em> and <em class="emphasis">B</em>. Each child was given the same simple logic test. However in group <em class="emphasis">B</em>, each child was given the freedom to choose a text booklet from many with various drawings on the covers. The performance of each child was rated as Very Good, Good, and Fair. The results are summarized in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to support the psychologist’s belief.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx03">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="2" align="left">Group</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center"><em class="emphasis">A</em></th>
+                                        <th align="center"><em class="emphasis">B</em></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" align="center">Performance</td>
+                                        <td align="center">Very Good</td>
+                                        <td align="center">32</td>
+                                        <td align="center">29</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Good</td>
+                                        <td align="center">55</td>
+                                        <td align="center">61</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Fair</td>
+                                        <td align="center">10</td>
+                                        <td align="center">13</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p11">In regard to wine tasting competitions, many experts claim that the first glass of wine served sets a reference taste and that a different reference wine may alter the relative ranking of the other wines in competition. To test this claim, three wines, <em class="emphasis">A</em>, <em class="emphasis">B</em> and <em class="emphasis">C</em>, were served at a wine tasting event. Each person was served a single glass of each wine, but in different orders for different guests. At the close, each person was asked to name the best of the three. One hundred seventy-two people were at the event and their top picks are given in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to support the claim that wine experts’ preference is dependent on the first served wine.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx04">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="3" align="center">Top Pick</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center"><em class="emphasis">A</em></th>
+                                        <th align="center"><em class="emphasis">B</em></th>
+                                        <th align="center"><em class="emphasis">C</em></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" align="center">First Glass</td>
+                                        <td align="center"><em class="emphasis">A</em></td>
+                                        <td align="center">12</td>
+                                        <td align="center">31</td>
+                                        <td align="center">27</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><em class="emphasis">B</em></td>
+                                        <td align="center">15</td>
+                                        <td align="center">40</td>
+                                        <td align="center">21</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"><em class="emphasis">C</em></td>
+                                        <td align="center">10</td>
+                                        <td align="center">9</td>
+                                        <td align="center">7</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p13">Is being left-handed hereditary? To answer this question, 250 adults are randomly selected and their handedness and their parents’ handedness are noted. The results are summarized in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to conclude that there is a hereditary element in handedness.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx05">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="3" align="center">Number of Parents Left-Handed</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">0</th>
+                                        <th align="center">1</th>
+                                        <th align="center">2</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" align="center">Handedness</td>
+                                        <td align="center">Left</td>
+                                        <td align="center">8</td>
+                                        <td align="center">10</td>
+                                        <td align="center">12</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Right</td>
+                                        <td align="center">178</td>
+                                        <td align="center">21</td>
+                                        <td align="center">21</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p15">Some geneticists claim that the genes that determine left-handedness also govern development of the language centers of the brain. If this claim is true, then it would be reasonable to expect that left-handed people tend to have stronger language abilities. A study designed to text this claim randomly selected 807 students who took the Graduate Record Examination (GRE). Their scores on the language portion of the examination were classified into three categories: <em class="emphasis">low</em>, <em class="emphasis">average</em>, and <em class="emphasis">high</em>, and their handedness was also noted. The results are given in the table provided. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that left-handed people tend to have stronger language abilities.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx06">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="3" align="center">GRE English Scores</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Low</th>
+                                        <th align="center">Average</th>
+                                        <th align="center">High</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2" align="center">Handedness</td>
+                                        <td align="center">Left</td>
+                                        <td align="center">18</td>
+                                        <td align="center">40</td>
+                                        <td align="center">22</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Right</td>
+                                        <td align="center">201</td>
+                                        <td align="center">360</td>
+                                        <td align="center">166</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p17">It is generally believed that children brought up in stable families tend to do well in school. To verify such a belief, a social scientist examined 290 randomly selected students’ records in a public high school and noted each student’s family structure and academic status four years after entering high school. The data were then sorted into a 2 × 3 contingency table with two factors. Factor 1 has two levels: <em class="emphasis">graduated</em> and <em class="emphasis">did not graduate</em>. Factor 2 has three levels: <em class="emphasis">no parent</em>, <em class="emphasis">one parent</em>, and <em class="emphasis">two parents</em>. The results are given in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to conclude that family structure matters in school performance of the students.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx07">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" rowspan="2" align="left"> </th>
+                                        <th colspan="2" align="center">Academic Status</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Graduated</th>
+                                        <th align="center">Did Not Graduate</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="3" align="center">Family</td>
+                                        <td align="center">No parent</td>
+                                        <td align="center">18</td>
+                                        <td align="center">31</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">One parent</td>
+                                        <td align="center">101</td>
+                                        <td align="center">44</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">Two parents</td>
+                                        <td align="center">70</td>
+                                        <td align="center">26</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p19">A large middle school administrator wishes to use celebrity influence to encourage students to make healthier choices in the school cafeteria. The cafeteria is situated at the center of an open space. Everyday at lunch time students get their lunch and a drink in three separate lines leading to three separate serving stations. As an experiment, the school administrator displayed a poster of a popular teen pop star drinking milk at each of the three areas where drinks are provided, except the milk in the poster is different at each location: one shows white milk, one shows strawberry-flavored pink milk, and one shows chocolate milk. After the first day of the experiment the administrator noted the students’ milk choices separately for the three lines. The data are given in the table provided. Test, at the 1% level of significance, whether there is sufficient evidence in the data to conclude that the posters had some impact on the students’ drink choices.</p>
+                        <div class="informaltable" id="fwk-shafer-ch11_s01_s02_tx08">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left"></th>
+                                        <th colspan="3" align="center">Student Choice</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">Regular</th>
+                                        <th align="center">Strawberry</th>
+                                        <th align="center">Chocolate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4" align="left">Poster Choice</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Regular</td>
+                                        <td align="center">38</td>
+                                        <td align="center">28</td>
+                                        <td align="center">40</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Strawberry</td>
+                                        <td align="center">18</td>
+                                        <td align="center">51</td>
+                                        <td align="center">24</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">Chocolate</td>
+                                        <td align="center">32</td>
+                                        <td align="center">32</td>
+                                        <td align="center">53</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch11_s01_qs01_qd03" start="15">
+                <h3 class="title">Large Data Set Exercise</h3>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd03_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p21">Large Data Set 8 records the result of a survey of 300 randomly selected adults who go to movie theaters regularly. For each person the gender and preferred type of movie were recorded. Test, at the 5% level of significance, whether there is sufficient evidence in the data to conclude that the factors “gender” and “preferred type of movie” are dependent.</p>
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p22"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data8.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data8.xls</a></p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch11_s01_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o02_ans" numeration="loweralpha">
+                            <li>15.09,</li>
+                            <li>24.72,</li>
+                            <li>44.31</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o06_ans" numeration="loweralpha">
+                            <li>10.64,</li>
+                            <li>18.55,</li>
+                            <li>40.26</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o10_ans" numeration="loweralpha">
+                            <li>14.07,</li>
+                            <li>16.01</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch11_s01_qs01_o14_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-164616_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0139" display="inline"><msub><mrow><mi>C</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>35</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164641_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0140" display="inline"><msub><mrow><mi>C</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>15</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164657_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0141" display="inline"><msub><mrow><mi>R</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>30</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164673_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0142" display="inline"><msub><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>20</mn></math></span>, <em class="emphasis">n</em> = 50,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-164703_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0143" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mn>11</mn></mrow></msub><mo>=</mo><mn>21</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164720_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0144" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mn>12</mn></mrow></msub><mo>=</mo><mn>9</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164736_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0145" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mn>21</mn></mrow></msub><mo>=</mo><mn>14</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-164752_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0146" display="inline"><msub><mrow><mi>E</mi></mrow><mrow><mn>22</mn></mrow></msub><mo>=</mo><mn>6</mn></math></span>,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-164769_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0147" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>0.3968</mn></math></span>,</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-164784_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0148" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>1</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="9">
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p10_ans"><span class="inlineequation" id="shafer-20121106-125753-165186_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0170" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>0.6698</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-165204_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0171" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.05</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>5.99</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p14_ans"><span class="inlineequation" id="shafer-20121106-125753-165252_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0174" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>72.35</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-165268_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0175" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>9.21</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p18_ans"><span class="inlineequation" id="shafer-20121106-125753-165325_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0178" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>21.2784</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-165341_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0179" display="inline"><msubsup><mrow><mi>χ</mi></mrow><mrow><mn>0.01</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>=</mo><mn>9.21</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="15">
+                <li class="qandaentry" id="fwk-shafer-ch11_s01_qs01_qd03_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch11_s01_qs01_p23_ans"><span class="inlineequation" id="shafer-20121106-125753-165390_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0182" display="inline"><msup><mrow><mi>χ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>28.4539</mn><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-165407_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0183" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-165423_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch11-m0184" display="inline"><mrow><mo>[</mo><mrow><mn>7.815</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Reject <em class="emphasis">H</em><sub class="subscript">0</sub> of independence.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-09-formula-list.html"><img src="shared/images/batch-left.png"></a> <a href="s14-09-formula-list.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s15-02-chi-square-one-sample-goodness.html">Next Section</a> <a href="s15-02-chi-square-one-sample-goodness.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

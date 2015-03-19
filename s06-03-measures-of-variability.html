@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Measures of Variability</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-02-measures-of-central-location.html"><img src="shared/images/batch-left.png"></a> <a href="s06-02-measures-of-central-location.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-04-relative-position-of-data.html">Next Section</a> <a href="s06-04-relative-position-of-data.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch02_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">2.3</span> Measures of Variability</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch02_s03_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch02_s03_o01" numeration="arabic">
+            <li>To learn the concept of the variability of a data set.</li>
+            <li>To learn how to compute three measures of the variability of a data set: the range, the variance, and the standard deviation.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch02_s03_p01">Look at the two data sets in <a class="xref" href="#fwk-shafer-ch02_s03_t01">Table 2.1 "Two Data Sets"</a> and the graphical representation of each, called a <em class="emphasis">dot plot</em>, in <a class="xref" href="#fwk-shafer-ch02_s03_f01">Figure 2.10 "Dot Plots of Data Sets"</a>.</p>
+    <div class="table block" id="fwk-shafer-ch02_s03_t01" frame="none">
+        <p class="title"><span class="title-prefix">Table 2.1</span> Two Data Sets</p>
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td align="left">Data Set I:</td>
+                    <td align="left">40</td>
+                    <td align="left">38</td>
+                    <td align="left">42</td>
+                    <td align="left">40</td>
+                    <td align="left">39</td>
+                    <td align="left">39</td>
+                    <td align="left">43</td>
+                    <td align="left">40</td>
+                    <td align="left">39</td>
+                    <td align="left">40</td>
+                </tr>
+                <tr>
+                    <td align="left">Data Set II:</td>
+                    <td align="left">46</td>
+                    <td align="left">37</td>
+                    <td align="left">40</td>
+                    <td align="left">33</td>
+                    <td align="left">42</td>
+                    <td align="left">36</td>
+                    <td align="left">40</td>
+                    <td align="left">47</td>
+                    <td align="left">34</td>
+                    <td align="left">45</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s03_f01">
+        <p class="title"><span class="title-prefix">Figure 2.10</span> Dot Plots of Data Sets</p>
+        <img src="section_06/732c760e23369309481d84ec3452fa93.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch02_s03_p02">The two sets of ten measurements each center at the same value: they both have mean, median, and mode 40. Nevertheless a glance at the figure shows that they are markedly different. In Data Set I the measurements vary only slightly from the center, while for Data Set II the measurements vary greatly. Just as we have attached numbers to a data set to locate its center, we now wish to associate to each data set numbers that measure quantitatively how the data either scatter away from the center or cluster close to it. These new quantities are called measures of variability, and we will discuss three of them.</p>
+    <div class="section" id="fwk-shafer-ch02_s03_s01" version="5.0" lang="en">
+        <h2 class="title editable block">The Range</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s01_p01">The first measure of variability that we discuss is the simplest.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s03_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s01_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">range</a><span class="glossdef">The variability of a data set as measured by the number <span class="inlineequation" id="shafer-20121106-125753-087159"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0186" display="inline"><mi>R</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mtext>max</mtext></msub><mo>−</mo><msub><mrow><mi>x</mi></mrow><mtext>min</mtext></msub><mo>.</mo></math></span></span></span> <em class="emphasis">of a data set is the number</em> <em class="emphasis">R</em> <em class="emphasis">defined by the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-087176"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0187" display="block"><mrow><mi>R</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mtext>max</mtext></mrow></msub><mo>−</mo><msub><mrow><mi>x</mi></mrow><mrow><mtext>min</mtext></mrow></msub></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s01_p03"><em class="emphasis">where</em> <span class="inlineequation" id="shafer-20121106-125753-087191"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0188" display="inline"><mrow><msub><mi>x</mi><mtext>max</mtext></msub></mrow></math></span> <em class="emphasis">is the largest measurement in the data set and</em> <span class="inlineequation" id="shafer-20121106-125753-087207"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0189" display="inline"><mrow><msub><mi>x</mi><mtext>min</mtext></msub></mrow></math></span> <em class="emphasis">is the smallest.</em></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s03_s01_n02">
+            <h3 class="title">Example 10</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s01_p04">Find the range of each data set in <a class="xref" href="#fwk-shafer-ch02_s03_t01">Table 2.1 "Two Data Sets"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s03_s01_p05">For Data Set I the maximum is 43 and the minimum is 38, so the range is <span class="inlineequation" id="shafer-20121106-125753-087223"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0190" display="inline"><mi>R</mi><mo>=</mo><mn>43</mn><mo>−</mo><mn>38</mn><mo>=</mo><mn>5</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch02_s03_s01_p06">For Data Set II the maximum is 47 and the minimum is 33, so the range is <span class="inlineequation" id="shafer-20121106-125753-087240"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0191" display="inline"><mi>R</mi><mo>=</mo><mn>47</mn><mo>−</mo><mn>33</mn><mo>=</mo><mn>14</mn><mo>.</mo></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s01_p07">The range is a measure of variability because it indicates the size of the interval over which the data points are distributed. A smaller range indicates less variability (less dispersion) among the data, whereas a larger range indicates the opposite.</p>
+    </div>
+    <div class="section" id="fwk-shafer-ch02_s03_s02" version="5.0" lang="en">
+        <h2 class="title editable block">The Variance and the Standard Deviation</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p01">The other two measures of variability that we will consider are more elaborate and also depend on whether the data set is just a sample drawn from a much larger population or is the whole population itself (that is, a census).</p>
+        <div class="callout block" id="fwk-shafer-ch02_s03_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p02"><em class="emphasis">The</em> <strong class="emphasis bold">sample variance</strong> <em class="emphasis">of a set of</em> <em class="emphasis">n</em> <em class="emphasis">sample data is the number</em> <em class="emphasis">s</em><sup class="superscript">2</sup> <em class="emphasis">defined by the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-087256"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0192" display="block"><mrow><msup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p03"><em class="emphasis">which by algebra is equivalent to the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-087272"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0193" display="block"><mrow><msup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p04"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">sample standard deviation</a><span class="glossdef">The variability of sample data as measured by the number <span class="inlineequation" id="shafer-20121106-125753-087288"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0194" display="inline"><mrow><msqrt><mrow><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></msqrt></mrow></math></span>.</span></span> <em class="emphasis">of a set of</em> <em class="emphasis">n</em> <em class="emphasis">sample data is the square root of the sample variance, hence is the number</em> <em class="emphasis">s</em> <em class="emphasis">given by the formulas</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-087304"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0195" display="block"><mrow><mi>s</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p05">Although the first formula in each case looks less complicated than the second, the latter is easier to use in hand computations, and is called a <strong class="emphasis bold">shortcut formula</strong>.</p>
+        <div class="exercises block" id="fwk-shafer-ch02_s03_s02_n02">
+            <h3 class="title">Example 11</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p06">Find the sample variance and the sample standard deviation of Data Set II in <a class="xref" href="#fwk-shafer-ch02_s03_t01">Table 2.1 "Two Data Sets"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p07">To use the defining formula (the first formula) in the definition we first compute for each observation <em class="emphasis">x</em> its deviation <span class="inlineequation" id="shafer-20121106-125753-087320"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0196" display="inline"><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> from the sample mean. Since the mean of the data is <span class="inlineequation" id="shafer-20121106-125753-087336"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0197" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>40</mn></math></span>, we obtain the ten numbers displayed in the second line of the supplied table.</p>
+            <span class="informalequation" id="shafer-20121106-125753-087352"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0198" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mrow><mn>46</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>37</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>40</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>33</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>42</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>36</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>40</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>47</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>34</mn></mrow></mtd><mtd columnalign="center"><mrow><mn>45</mn></mrow></mtd></mtr><mtr><mtd columnalign="center"><mrow><mi>x</mi><mo>−</mo><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mrow><mo>−</mo><mn>7</mn></mrow></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mrow><mo>−</mo><mn>4</mn></mrow></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd columnalign="center"><mn>5</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p08">Then</p>
+            <span class="informalequation" id="shafer-20121106-125753-087368"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0199" display="block"><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><msup><mrow><mn>6</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>0</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>7</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>0</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>7</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>6</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>224</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p09">so</p>
+            <span class="informalequation" id="shafer-20121106-125753-087384"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0200" display="block"><mrow><msup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>224</mn></mrow><mrow><mn>9</mn></mrow></mfrac><mo>=</mo><mn>24</mn><mo>.</mo><mrow><mover accent="true"><mn>8</mn><mo stretchy="true">-</mo></mover></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p10">and</p>
+            <span class="informalequation" id="shafer-20121106-125753-087400"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0201" display="block"><mrow><mi>s</mi><mo>=</mo><msqrt><mrow><mn>24</mn><mo>.</mo><mrow><mover accent="true"><mn>8</mn><mo stretchy="true">-</mo></mover></mrow></mrow></msqrt><mo>≈</mo><mn>4.99</mn></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch02_s03_s02_p11">The student is encouraged to compute the ten deviations for Data Set I and verify that their squares add up to 20, so that the sample variance and standard deviation of Data Set I are the much smaller numbers <span class="inlineequation" id="shafer-20121106-125753-087415"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0202" display="inline"><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mn>20</mn><mo>∕</mo><mn>9</mn><mo>=</mo><mn>2</mn><mo>.</mo><mrow><mover accent="true"><mn>2</mn><mo stretchy="true">-</mo></mover></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-087432"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0203" display="inline"><mi>s</mi><mo>=</mo><msqrt><mrow><mn>20</mn><mo>∕</mo><mn>9</mn></mrow></msqrt><mo>≈</mo><mn>1.49</mn><mo>.</mo></math></span></p>
+        <div class="exercises block" id="fwk-shafer-ch02_s03_s02_n03">
+            <h3 class="title">Example 12</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p12">Find the sample variance and the sample standard deviation of the ten GPAs in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02_s01_n04" xrefstyle="select: title">Note 2.12 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch02_s02#fwk-shafer-ch02_s02">Section 2.2 "Measures of Central Location"</a>.</p>
+            <span class="informalequation" id="shafer-20121106-125753-087447"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0204" display="block"><mrow><mtable columnspacing="0.5em" columnlines="none none none none none none none none none"><mtr><mtd columnalign="center"><mn>1.90</mn></mtd><mtd columnalign="center"><mn>3.00</mn></mtd><mtd columnalign="center"><mn>2.53</mn></mtd><mtd columnalign="center"><mn>3.71</mn></mtd><mtd columnalign="center"><mn>2.12</mn></mtd><mtd columnalign="center"><mn>1.76</mn></mtd><mtd columnalign="center"><mn>2.71</mn></mtd><mtd columnalign="center"><mn>1.39</mn></mtd><mtd columnalign="center"><mn>4.00</mn></mtd><mtd columnalign="center"><mn>3.33</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p13">Since</p>
+            <span class="informalequation" id="shafer-20121106-125753-087463"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0205" display="block"><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>1.90</mn><mo>+</mo><mn>3.00</mn><mo>+</mo><mn>2.53</mn><mo>+</mo><mn>3.71</mn><mo>+</mo><mn>2.12</mn><mo>+</mo><mn>1.76</mn><mo>+</mo><mn>2.71</mn><mo>+</mo><mn>1.39</mn><mo>+</mo><mn>4.00</mn><mo>+</mo><mn>3.33</mn><mo>=</mo><mn>26.45</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p14">and</p>
+            <span class="informalequation" id="shafer-20121106-125753-087480"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0206" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><msup><mrow><mn>1.90</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>3.00</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>2.53</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>3.71</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>2.12</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>1.76</mn></mrow><mn>2</mn></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd columnalign="right"><mrow><mo>+</mo><msup><mrow><mn>2.71</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>1.39</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>4.00</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>3.33</mn></mrow><mn>2</mn></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>76.7321</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p15">the shortcut formula gives</p>
+            <span class="informalequation" id="shafer-20121106-125753-087495"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0207" display="block"><mrow><msup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>76.7321</mn><mo>−</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>26.45</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>10</mn></mrow></mfrac></mrow><mrow><mn>10</mn><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>6.77185</mn></mrow><mrow><mn>9</mn></mrow></mfrac><mo>=</mo><mo>.</mo><mn>75242</mn><mrow><mover accent="true"><mn>7</mn><mo stretchy="true">-</mo></mover></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p16">and</p>
+            <span class="informalequation" id="shafer-20121106-125753-087511"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0208" display="block"><mrow><mi>s</mi><mo>=</mo><msqrt><mrow><mo>.</mo><mn>75242</mn><mrow><mover accent="true"><mn>7</mn><mo stretchy="true">-</mo></mover></mrow></mrow></msqrt><mo>≈</mo><mo>.</mo><mn>867</mn></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p17">The sample variance has different units from the data. For example, if the units in the data set were inches, the new units would be inches squared, or square inches. It is thus primarily of theoretical importance and will not be considered further in this text, except in passing.</p>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p18">If the data set comprises the whole population, then the <em class="emphasis">population</em> standard deviation, denoted <em class="emphasis">σ</em> (the lower case Greek letter sigma), and its square, the <em class="emphasis">population</em> variance <em class="emphasis">σ</em><sup class="superscript">2</sup>, are defined as follows.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s03_s02_n04">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p19"><em class="emphasis">The</em> <strong class="emphasis bold">population variance</strong> <em class="emphasis">and</em> <span class="margin_term"><a class="glossterm">population standard deviation</a><span class="glossdef">The variability of population data as measured by the number <span class="inlineequation" id="shafer-20121106-125753-087527"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0209" display="inline"><mrow><msup><mi mathvariant="italic">σ</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mi>N</mi></mfrac></mrow></math></span>.</span></span> <em class="emphasis">of a set of</em> <em class="emphasis">N</em> <em class="emphasis">population data are the numbers</em> <em class="emphasis">σ</em><sup class="superscript">2</sup> <em class="emphasis">and</em> <em class="emphasis">σ</em> <em class="emphasis">defined by the formulas</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-087543"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0210" display="block"><mrow><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>N</mi></mrow></mfrac><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>N</mi></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p20">Note that the denominator in the fraction is the full number of observations, not that number reduced by one, as is the case with the sample standard deviation. Since most data sets are samples, we will always work with the sample standard deviation and variance.</p>
+        <p class="para editable block" id="fwk-shafer-ch02_s03_s02_p21">Finally, in many real-life situations the most important statistical issues have to do with comparing the means and standard deviations of two data sets. <a class="xref" href="#fwk-shafer-ch02_s03_s02_f01">Figure 2.11 "Difference between Two Data Sets"</a> illustrates how a difference in one or both of the sample mean and the sample standard deviation are reflected in the appearance of the data set as shown by the curves derived from the relative frequency histograms built using the data.</p>
+        <div class="figure large editable block" id="fwk-shafer-ch02_s03_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 2.11</span> Difference between Two Data Sets</p>
+            <img src="section_06/3af2fbfa7c4c956dff2d8aaafa146d2e.jpg">
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch02_s03_s02_n05">
+            <h3 class="title">Key Takeaway</h3>
+            <p class="para" id="fwk-shafer-ch02_s03_s02_p22">The range, the standard deviation, and the variance each give a quantitative answer to the question “How variable are the data?”</p>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s03_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s03_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p01">Find the range, the variance, and the standard deviation for the following sample.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087560"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0211" display="block"><mrow><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>4</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p03">Find the range, the variance, and the standard deviation for the following sample.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087576"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0212" display="block"><mrow><mn>2</mn><mtext> </mtext><mtext>−</mtext><mn>3</mn><mtext> </mtext><mn>6</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>3</mn><mtext> </mtext><mn>1</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p05">Find the range, the variance, and the standard deviation for the following sample.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087593"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0213" display="block"><mrow><mn>2</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>2</mn><mtext> </mtext><mn>7</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p07">Find the range, the variance, and the standard deviation for the following sample.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087625"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0215" display="block"><mrow><mtext>−</mtext><mn>1</mn><mtext> </mtext><mn>0</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>4</mn><mtext> </mtext><mn>1</mn><mtext> </mtext><mn>1</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p09">Find the range, the variance, and the standard deviation for the sample represented by the data frequency table.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087641"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0216" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p11">Find the range, the variance, and the standard deviation for the sample represented by the data frequency table.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087658"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0217" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="right"><mtext>−</mtext><mn>1</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s03_qs01_qd02" start="7">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd02_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p13">Find the range, the variance, and the standard deviation for the sample of ten IQ scores randomly selected from a school for academically gifted students.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087674"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0218" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>132</mn></mrow></mtd><mtd><mrow><mn>162</mn></mrow></mtd><mtd><mrow><mn>133</mn></mrow></mtd><mtd><mrow><mn>145</mn></mrow></mtd><mtd><mrow><mn>148</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>139</mn></mrow></mtd><mtd><mrow><mn>147</mn></mrow></mtd><mtd><mrow><mn>160</mn></mrow></mtd><mtd><mrow><mn>150</mn></mrow></mtd><mtd><mrow><mn>153</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd02_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p15">Find the range, the variance and the standard deviation for the sample of ten IQ scores randomly selected from a school for academically gifted students.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087690"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0219" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>142</mn></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd><mtd><mrow><mn>138</mn></mrow></mtd><mtd><mrow><mn>145</mn></mrow></mtd><mtd><mrow><mn>148</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>139</mn></mrow></mtd><mtd><mrow><mn>147</mn></mrow></mtd><mtd><mrow><mn>155</mn></mrow></mtd><mtd><mrow><mn>150</mn></mrow></mtd><mtd><mrow><mn>153</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s03_qs01_qd03" start="9">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p17">Consider the data set represented by the table</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087707"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0220" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>26</mn></mtd><mtd columnalign="center"><mn>27</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>30</mn></mtd><mtd columnalign="center"><mn>31</mn></mtd><mtd columnalign="center"><mn>32</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>16</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o01" numeration="loweralpha">
+                            <li>Use the frequency table to find that <span class="inlineequation" id="shafer-20121106-125753-087723"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0221" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>1256</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-087740"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0222" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>35,926</mn><mo>.</mo></math></span>
+</li>
+                            <li>Use the information in part (a) to compute the sample mean and the sample standard deviation.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p19">Find the sample standard deviation for the data</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087772"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0224" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>384</mn></mtd><mtd columnalign="center"><mn>208</mn></mtd><mtd columnalign="center"><mn>98</mn></mtd><mtd columnalign="center"><mn>56</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-087788"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0225" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p21">A random sample of 49 invoices for repairs at an automotive body shop is taken. The data are arrayed in the stem and leaf diagram shown. (Stems are thousands of dollars, leaves are hundreds, so that for example the largest observation is 3,800.)</p>
+                        <span class="informalequation" id="shafer-20121106-125753-087804"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0226" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none"><mtr><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>4</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p22">For these data, <span class="inlineequation" id="shafer-20121106-125753-087821"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0227" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>101,100</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-087836"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0228" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>244,830,000</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o02" numeration="loweralpha">
+                            <li>Compute the mean, median, and mode.</li>
+                            <li>Compute the range.</li>
+                            <li>Compute the sample standard deviation.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p23">What must be true of a data set if its standard deviation is 0?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p25">A data set consisting of 25 measurements has standard deviation 0. One of the measurements has value 17. What are the other 24 measurements?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p27">Create a sample data set of size <em class="emphasis">n</em> = 3 for which the range is 0 and the sample mean is 2.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p29">Create a sample data set of size <em class="emphasis">n</em> = 3 for which the sample variance is 0 and the sample mean is 1.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p31">The sample <span class="inlineequation" id="shafer-20121106-125753-087902"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0232" display="inline"><mrow><mo stretchy="false">{</mo><mrow><mtext>−</mtext><mn>1,0,1</mn></mrow><mo stretchy="false">}</mo></mrow></math></span> has mean <span class="inlineequation" id="shafer-20121106-125753-087918"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0233" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0</mn></math></span> and standard deviation <em class="emphasis">s</em> = 1. Create a sample data set of size <em class="emphasis">n</em> = 3 for which <span class="inlineequation" id="shafer-20121106-125753-087934"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0234" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0</mn></math></span> and <em class="emphasis">s</em> is greater than 1.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p33">The sample <span class="inlineequation" id="shafer-20121106-125753-087966"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0236" display="inline"><mrow><mo stretchy="false">{</mo><mrow><mtext>−</mtext><mn>1,0,1</mn></mrow><mo stretchy="false">}</mo></mrow></math></span> has mean <span class="inlineequation" id="shafer-20121106-125753-087982"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0237" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0</mn></math></span> and standard deviation <em class="emphasis">s</em> = 1. Create a sample data set of size <em class="emphasis">n</em> = 3 for which <span class="inlineequation" id="shafer-20121106-125753-087998"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0238" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0</mn></math></span> and the standard deviation <em class="emphasis">s</em> is less than 1.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p35">Begin with the following set of data, call it Data Set I.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-088031"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0240" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mn>5</mn></mtd><mtd><mtext>−</mtext><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>14</mn></mtd><mtd><mtext>−</mtext><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>5</mn></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o04" numeration="loweralpha">
+                            <li>Compute the sample standard deviation of Data Set I.</li>
+                            <li>Form a new data set, Data Set II, by adding 3 to each number in Data Set I. Calculate the sample standard deviation of Data Set II.</li>
+                            <li>Form a new data set, Data Set III, by subtracting 6 from each number in Data Set I. Calculate the sample standard deviation of Data Set III.</li>
+                            <li>Comparing the answers to parts (a), (b), and (c), can you guess the pattern? State the general principle that you expect to be true.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s03_qs01_qd04" start="19">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p36">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p37"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o06" numeration="loweralpha">
+                            <li>Compute the range and sample standard deviation of the 1,000 SAT scores.</li>
+                            <li>Compute the range and sample standard deviation of the 1,000 GPAs.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p38">Large Data Set 1 lists the SAT scores of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p39"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o08" numeration="loweralpha">
+                            <li>Regard the data as arising from a census of all students at a high school, in which the SAT score of every student was measured. Compute the population range and population standard deviation <em class="emphasis">σ</em>.</li>
+                            <li>Regard the first 25 observations as a random sample drawn from this population. Compute the sample range and sample standard deviation <em class="emphasis">s</em> and compare them to the population range and <em class="emphasis">σ</em>.</li>
+                            <li>Regard the next 25 observations as a random sample drawn from this population. Compute the sample range and sample standard deviation <em class="emphasis">s</em> and compare them to the population range and <em class="emphasis">σ</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p40">Large Data Set 1 lists the GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p41"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o10" numeration="loweralpha">
+                            <li>Regard the data as arising from a census of all freshman at a small college at the end of their first academic year of college study, in which the GPA of every such person was measured. Compute the population range and population standard deviation <em class="emphasis">σ</em>.</li>
+                            <li>Regard the first 25 observations as a random sample drawn from this population. Compute the sample range and sample standard deviation <em class="emphasis">s</em> and compare them to the population range and <em class="emphasis">σ</em>.</li>
+                            <li>Regard the next 25 observations as a random sample drawn from this population. Compute the sample range and sample standard deviation <em class="emphasis">s</em> and compare them to the population range and <em class="emphasis">σ</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p42">Large Data Sets 7, 7A, and 7B list the survival times in days of 140 laboratory mice with thymic leukemia from onset to death.</p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p43"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p44"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7A.xls</a></p>
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p45"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data7B.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o12" numeration="loweralpha">
+                            <li>Compute the range and sample standard deviation of survival time for all mice, without regard to gender.</li>
+                            <li>Compute the range and sample standard deviation of survival time for the 65 male mice (separately recorded in Large Data Set 7A).</li>
+                            <li>Compute the range and sample standard deviation of survival time for the 75 female mice (separately recorded in Large Data Set 7B). Do you see a difference in the results for male and female mice? Does it appear to be significant?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s03_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p02_ans"><em class="emphasis">R</em> = 3, <em class="emphasis">s</em><sup class="superscript">2</sup> = 1.7, <em class="emphasis">s</em> = 1.3.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p06_ans"><em class="emphasis">R</em> = 6, <span class="inlineequation" id="shafer-20121106-125753-087609_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0214" display="inline"><msup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>7</mn><mo>.</mo><mrow><mover accent="true"><mn>3</mn><mo stretchy="true">-</mo></mover></mrow></math></span>, <em class="emphasis">s</em> = 2.7.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p10_ans"><em class="emphasis">R</em> = 6, <em class="emphasis">s</em><sup class="superscript">2</sup> = 7.3, <em class="emphasis">s</em> = 2.7.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="7">
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd02_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p14_ans"><em class="emphasis">R</em> = 30, <em class="emphasis">s</em><sup class="superscript">2</sup> = 103.2, <em class="emphasis">s</em> = 10.2.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd02_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="9">
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p18_ans"><span class="inlineequation" id="shafer-20121106-125753-087756_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0223" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>28.55</mn></math></span>, <em class="emphasis">s</em> = 1.3.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o03_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-087853_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0229" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2063</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-087869_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0230" display="inline"><mrow><mover accent="true"><mi fontsize="125%">x</mi><mo stretchy="true">~</mo></mover></mrow><mo>=</mo><mn>2000</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-087885_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0231" display="inline"><mtext>mode</mtext><mo>=</mo><mn>2000</mn><mo>.</mo></math></span>
+</li>
+                            <li>
+<em class="emphasis">R</em> = 3400.</li>
+                            <li>
+<em class="emphasis">s</em> = 869.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p26_ans">All are 17.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p30_ans">{1,1,1}</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s03_qs01_p34_ans">One example is <span class="inlineequation" id="shafer-20121106-125753-088014_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch02-m0239" display="inline"><mrow><mo>{</mo><mrow><mtext>−</mtext><mo>.</mo><mn>5,0</mn><mo>,</mo><mo>.</mo><mn>5</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd03_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="19">
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o07_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">R</em> = 1350 and <em class="emphasis">s</em> = 212.5455</li>
+                            <li>
+<em class="emphasis">R</em> = 4.00 and <em class="emphasis">s</em> = 0.7407</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s03_qs01_o11_ans" numeration="loweralpha">
+                            <li>
+<em class="emphasis">R</em> = 4.00 and <em class="emphasis">σ</em> = 0.740375</li>
+                            <li>
+<em class="emphasis">R</em> = 3.04 and <em class="emphasis">s</em> = 0.808045</li>
+                            <li>
+<em class="emphasis">R</em> = 2.49 and <em class="emphasis">s</em> = 0.657843</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s03_qs01_qd04_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-02-measures-of-central-location.html"><img src="shared/images/batch-left.png"></a> <a href="s06-02-measures-of-central-location.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-04-relative-position-of-data.html">Next Section</a> <a href="s06-04-relative-position-of-data.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

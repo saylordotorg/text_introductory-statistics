@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Estimation and Prediction</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-06-the-coefficient-of-determinati.html"><img src="shared/images/batch-left.png"></a> <a href="s14-06-the-coefficient-of-determinati.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-08-a-complete-example.html">Next Section</a> <a href="s14-08-a-complete-example.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s07" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.7</span> Estimation and Prediction</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s07_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s07_o01" numeration="arabic">
+            <li>To learn the distinction between estimation and prediction.</li>
+            <li>To learn the distinction between a confidence interval and a prediction interval.</li>
+            <li>To learn how to implement formulas for computing confidence intervals and prediction intervals.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s07_p01">Consider the following pairs of problems, in the context of <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, the automobile age and value example.</p>
+    <ol class="orderedlist editable block" id="fwk-shafer-ch10_s07_o02" numeration="arabic">
+        <li>
+            <p class="para"> </p>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s07_o03" numeration="loweralpha">
+                <li>Estimate the average value of all four-year-old automobiles of this make and model.</li>
+                <li>Construct a 95% confidence interval for the average value of all four-year-old automobiles of this make and model.</li>
+            </ol>
+        </li>
+        <li>
+            <p class="para"> </p>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s07_o04" numeration="loweralpha">
+                <li>Shylock intends to buy a four-year-old automobile of this make and model next week. Predict the value of the first such automobile that he encounters.</li>
+                <li>Construct a 95% confidence interval for the value of the first such automobile that he encounters.</li>
+            </ol>
+        </li>
+    </ol>
+    <p class="para block" id="fwk-shafer-ch10_s07_p02">The method of solution and answer to the first question in each pair, (1a) and (2a), are the same. When we set <em class="emphasis">x</em> equal to 4 in the least squares regression equation <span class="inlineequation" id="shafer-20121106-125753-158736"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0482" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mi>x</mi><mo>+</mo><mn>32.83</mn></math></span> that was computed in part (c) of <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, the number returned,</p>
+    <span class="informalequation block" id="shafer-20121106-125753-158753"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0483" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>32.83</mn><mo>=</mo><mn>24.63</mn></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s07_p03">which corresponds to value $24,630, is an estimate of precisely the number sought in question (1a): the mean <span class="inlineequation" id="shafer-20121106-125753-158769"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0484" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>y</mi></mrow><mo>)</mo></mrow></math></span> of all <em class="emphasis">y</em> values when <em class="emphasis">x</em> = 4. Since nothing is known about the first four-year-old automobile of this make and model that Shylock will encounter, our best guess as to its value is the mean value <span class="inlineequation" id="shafer-20121106-125753-158786"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0485" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>y</mi></mrow><mo>)</mo></mrow></math></span> of all such automobiles, the number 24.63 or $24,630, computed in the same way.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s07_p04">The answers to the second part of each question differ. In question (1b) we are trying to estimate a population parameter: the mean of the all the <em class="emphasis">y</em>-values in the sub-population picked out by the value <em class="emphasis">x</em> = 4, that is, the average value of all four-year-old automobiles. In question (2b), however, we are not trying to capture a fixed parameter, but the value of the random variable <em class="emphasis">y</em> in one trial of an experiment: examine the first four-year-old car Shylock encounters. In the first case we seek to construct a confidence interval in the same sense that we have done before. In the second case the situation is different, and the interval constructed has a different name, prediction interval. In the second case we are trying to “predict” where a the value of a random variable will take its value.</p>
+    <div class="callout block" id="fwk-shafer-ch10_s07_n02">
+        <h3 class="title">
+<span class="inlineequation" id="shafer-20121106-125753-158802"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0486" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow><mi>%</mi></math></span> Confidence Interval for the Mean Value of <em class="emphasis">y</em> at <span class="inlineequation" id="shafer-20121106-125753-158818"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0487" display="inline"><mi>x</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub></math></span>
+</h3>
+        <span class="informalequation" id="shafer-20121106-125753-158839"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0488" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mtext> </mtext><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mtext> </mtext><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s07_p05">where</p>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s07_o05" numeration="loweralpha">
+            <li>
+<em class="emphasis">x<sub class="subscript">p</sub></em> is a particular value of <em class="emphasis">x</em> that lies in the range of <em class="emphasis">x</em>-values in the sample data set used to construct the least squares regression line;</li>
+            <li>
+<span class="inlineequation" id="shafer-20121106-125753-158856"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0489" display="inline"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub></math></span> is the numerical value obtained when the least square regression equation is evaluated at <span class="inlineequation" id="shafer-20121106-125753-158872"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0490" display="inline"><mi>x</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub></math></span>; and</li>
+            <li>the number of degrees of freedom for <span class="inlineequation" id="shafer-20121106-125753-158889"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0491" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is <span class="inlineequation" id="shafer-20121106-125753-158905"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0492" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>n</mi><mtext>−</mtext><mn>2</mn><mo>.</mo></math></span>
+</li>
+        </ol>
+        <p class="para" id="fwk-shafer-ch10_s07_p06">The assumptions listed in <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a> must hold.</p>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s07_p07">The formula for the prediction interval is identical except for the presence of the number 1 underneath the square root sign. This means that the prediction interval is always wider than the confidence interval at the same confidence level and value of <em class="emphasis">x</em>. In practice the presence of the number 1 tends to make it much wider.</p>
+    <div class="callout block" id="fwk-shafer-ch10_s07_n03">
+        <h3 class="title">
+<span class="inlineequation" id="shafer-20121106-125753-158921"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0493" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow><mi>%</mi></math></span> Prediction Interval for an Individual New Value of <em class="emphasis">y</em> at <span class="inlineequation" id="shafer-20121106-125753-158937"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0494" display="inline"><mi>x</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub></math></span>
+</h3>
+        <span class="informalequation" id="shafer-20121106-125753-158953"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0495" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mtext> </mtext><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mtext> </mtext><msqrt><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s07_p08">where</p>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s07_o06" numeration="loweralpha">
+            <li>
+<em class="emphasis">x<sub class="subscript">p</sub></em> is a particular value of <em class="emphasis">x</em> that lies in the range of <em class="emphasis">x</em>-values in the data set used to construct the least squares regression line;</li>
+            <li>
+<span class="inlineequation" id="shafer-20121106-125753-158969"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0496" display="inline"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub></math></span> is the numerical value obtained when the least square regression equation is evaluated at <span class="inlineequation" id="shafer-20121106-125753-158985"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0497" display="inline"><mi>x</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub></math></span>; and</li>
+            <li>the number of degrees of freedom for <span class="inlineequation" id="shafer-20121106-125753-159007"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0498" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is <span class="inlineequation" id="shafer-20121106-125753-159032"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0499" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>n</mi><mtext>−</mtext><mn>2</mn><mo>.</mo></math></span>
+</li>
+        </ol>
+        <p class="para" id="fwk-shafer-ch10_s07_p09">The assumptions listed in <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a> must hold.</p>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch10_s07_n04">
+        <h3 class="title">Example 12</h3>
+        <p class="para" id="fwk-shafer-ch10_s07_p10">Using the sample data of <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, recorded in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a>, construct a 95% confidence interval for the average value of all three-and-one-half-year-old automobiles of this make and model.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch10_s07_p11">Solving this problem is merely a matter of finding the values of <span class="inlineequation" id="shafer-20121106-125753-159048"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0500" display="inline"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-159065"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0501" display="inline"><mi>α</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-159081"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0502" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-159097"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0503" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-159113"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0504" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-159135"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0505" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></math></span> and inserting them into the confidence interval formula given just above. Most of these quantities are already known. From <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, <span class="inlineequation" id="shafer-20121106-125753-159151"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0506" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>14</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-159167"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0507" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>4</mn><mo>.</mo></math></span> From <a class="xref" href="fwk-shafer-ch10_s05#fwk-shafer-ch10_s05_s01_n04" xrefstyle="select: title">Note 10.31 "Example 7"</a> in <a class="xref" href="fwk-shafer-ch10_s05#fwk-shafer-ch10_s05">Section 10.5 "Statistical Inferences About "</a>, <span class="inlineequation" id="shafer-20121106-125753-159184"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0508" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>=</mo><mn>1.902169814</mn><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch10_s07_p12">From the statement of the problem <span class="inlineequation" id="shafer-20121106-125753-159200"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0509" display="inline"><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mn>3.5</mn></math></span>, the value of <em class="emphasis">x</em> of interest. The value of <span class="inlineequation" id="shafer-20121106-125753-159216"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0510" display="inline"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub></math></span> is the number given by the regression equation, which by <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> is <span class="inlineequation" id="shafer-20121106-125753-159231"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0511" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mi>x</mi><mo>+</mo><mn>32.83</mn></math></span>, when <span class="inlineequation" id="shafer-20121106-125753-159247"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0512" display="inline"><mi>x</mi><mo>=</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub></math></span>, that is, when <em class="emphasis">x</em> = 3.5. Thus here <span class="inlineequation" id="shafer-20121106-125753-159263"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0513" display="inline"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mrow><mo>(</mo><mrow><mn>3.5</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>32.83</mn><mo>=</mo><mn>25.655</mn><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch10_s07_p13">Lastly, confidence level 95% means that <span class="inlineequation" id="shafer-20121106-125753-159283"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0514" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.95</mn><mo>=</mo><mn>0.05</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-159305"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0515" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.025</mn><mo>.</mo></math></span> Since the sample size is <em class="emphasis">n</em> = 10, there are <span class="inlineequation" id="shafer-20121106-125753-159321"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0516" display="inline"><mi>n</mi><mtext>−</mtext><mn>2</mn><mo>=</mo><mn>8</mn></math></span> degrees of freedom. By <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a>, <span class="inlineequation" id="shafer-20121106-125753-159338"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0517" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>=</mo><mn>2.306</mn><mo>.</mo></math></span> Thus</p>
+        <span class="informalequation" id="shafer-20121106-125753-159353"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0518" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mtext> </mtext><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mtext> </mtext><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt></mtd><mtd><mo>=</mo></mtd><mtd><mn>25.655</mn><mo>±</mo><mrow><mo>(</mo><mrow><mn>2.306</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>1.902169814</mn></mrow><mo>)</mo></mrow><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3.5</mn><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>14</mn></mrow></mfrac></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd><mn>25.655</mn><mo>±</mo><mn>4.386403591</mn><msqrt><mrow><mn>0.1178571429</mn></mrow></msqrt></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd><mo>=</mo></mtd><mtd><mn>25.655</mn><mo>±</mo><mn>1.506</mn></mtd></mtr></mtable></math></span>
+        <p class="para" id="fwk-shafer-ch10_s07_p14">which gives the interval <span class="inlineequation" id="shafer-20121106-125753-159369"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0519" display="inline"><mrow><mo>(</mo><mrow><mn>24</mn><mo>.</mo><mn>149,27</mn><mo>.</mo><mn>161</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch10_s07_p15">We are 95% confident that the average value of all three-and-one-half-year-old vehicles of this make and model is between $24,149 and $27,161.</p>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch10_s07_n05">
+        <h3 class="title">Example 13</h3>
+        <p class="para" id="fwk-shafer-ch10_s07_p16">Using the sample data of <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>, recorded in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a>, construct a 95% prediction interval for the predicted value of a randomly selected three-and-one-half-year-old automobile of this make and model.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch10_s07_p17">The computations for this example are identical to those of the previous example, except that now there is the extra number 1 beneath the square root sign. Since we were careful to record the intermediate results of that computation, we have immediately that the 95% prediction interval is</p>
+        <span class="informalequation" id="shafer-20121106-125753-159386"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0520" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mi>p</mi></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mtext> </mtext><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mtext> </mtext><msqrt><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>p</mi></mrow></msub><mo>−</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac></mrow></msqrt><mo>=</mo><mn>25.655</mn><mo>±</mo><mn>4.386403591</mn><msqrt><mrow><mn>1.1178571429</mn></mrow></msqrt><mo>=</mo><mn>25.655</mn><mo>±</mo><mn>4.638</mn></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s07_p18">which gives the interval <span class="inlineequation" id="shafer-20121106-125753-159401"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0521" display="inline"><mrow><mo>(</mo><mrow><mn>21</mn><mo>.</mo><mn>017,30</mn><mo>.</mo><mn>293</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+        <p class="para" id="fwk-shafer-ch10_s07_p19">We are 95% confident that the value of a randomly selected three-and-one-half-year-old vehicle of this make and model is between $21,017 and $30,293.</p>
+        <p class="para" id="fwk-shafer-ch10_s07_p20">Note what an enormous difference the presence of the extra number 1 under the square root sign made. The prediction interval is about two-and-one-half times wider than the confidence interval at the same level of confidence.</p>
+    </div>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch10_s07_n06">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s07_l01" mark="bullet">
+            <li>A confidence interval is used to estimate the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition that <em class="emphasis">x</em> have some specific value <em class="emphasis">x<sub class="subscript">p</sub></em>.</li>
+            <li>The prediction interval is used to predict the value that the random variable <em class="emphasis">y</em> will take when <em class="emphasis">x</em> has some specific value <em class="emphasis">x<sub class="subscript">p</sub></em>.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s07_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s07_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <p class="para" id="fwk-shafer-ch10_s07_qs01_p01">For the Basic and Application exercises in this section use the computations that were done for the exercises with the same number in previous sections.</p>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p02">For the sample data set of Exercise 1 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o01" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 4.</li>
+                        <li>Construct the 90% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p03">For the sample data set of Exercise 2 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o03" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 4.</li>
+                        <li>Construct the 90% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p04">For the sample data set of Exercise 3 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o05" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 7.</li>
+                        <li>Construct the 95% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p05">For the sample data set of Exercise 4 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o07" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 2.</li>
+                        <li>Construct the 80% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p06">For the sample data set of Exercise 5 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o09" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 1.</li>
+                        <li>Construct the 80% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p07">For the sample data set of Exercise 6 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o11" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 5.</li>
+                        <li>Construct the 95% confidence interval for that mean value.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p08">For the sample data set of Exercise 7 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o13" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 6.</li>
+                        <li>Construct the 99% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for <em class="emphasis">x</em> = 12? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p09">For the sample data set of Exercise 8 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o15" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 12.</li>
+                        <li>Construct the 80% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for <em class="emphasis">x</em> = 0? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p10">For the sample data set of Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o17" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 0.</li>
+                        <li>Construct the 90% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for <span class="inlineequation" id="shafer-20121106-125753-159560"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0530" display="inline"><mi>x</mi><mo>=</mo><mtext>−</mtext><mn>1</mn></math></span>? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p11">For the sample data set of Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o19" numeration="loweralpha">
+                        <li>Give a point estimate for the mean value of <em class="emphasis">y</em> in the sub-population determined by the condition <em class="emphasis">x</em> = 8.</li>
+                        <li>Construct the 95% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for <em class="emphasis">x</em> = 0? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s07_qs01_qd02" start="11">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p12">For the data in Exercise 11 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o21" numeration="loweralpha">
+                        <li>Give a point estimate for the average number of words in the vocabulary of 18-month-old children.</li>
+                        <li>Construct the 95% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for two-year-olds? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p13">For the data in Exercise 12 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o23" numeration="loweralpha">
+                        <li>Give a point estimate for the average braking distance of automobiles that weigh 3,250 pounds.</li>
+                        <li>Construct the 80% confidence interval for that mean value.</li>
+                        <li>Is it valid to make the same estimates for 5,000-pound automobiles? Explain.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa13">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p14">For the data in Exercise 13 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o25" numeration="loweralpha">
+                        <li>Give a point estimate for the resting heart rate of a man who is 35 years old.</li>
+                        <li>One of the men in the sample is 35 years old, but his resting heart rate is not what you computed in part (a). Explain why this is not a contradiction.</li>
+                        <li>Construct the 90% confidence interval for the mean resting heart rate of all 35-year-old men.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa14">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p15">For the data in Exercise 14 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o27" numeration="loweralpha">
+                        <li>Give a point estimate for the wave height when the wind speed is 13 miles per hour.</li>
+                        <li>One of the wind speeds in the sample is 13 miles per hour, but the height of waves that day is not what you computed in part (a). Explain why this is not a contradiction.</li>
+                        <li>Construct the 90% confidence interval for the mean wave height on days when the wind speed is 13 miles per hour.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa15">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p16">For the data in Exercise 15 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o29" numeration="loweralpha">
+                        <li>The business owner intends to spend $2,500 on advertising next year. Give an estimate of next year’s revenue based on this fact.</li>
+                        <li>Construct the 90% prediction interval for next year’s revenue, based on the intent to spend $2,500 on advertising.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa16">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p17">For the data in Exercise 16 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o31" numeration="loweralpha">
+                        <li>A two-year-old girl is 32.3 inches long. Predict her adult height.</li>
+                        <li>Construct the 95% prediction interval for the girl’s adult height.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa17">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p18">For the data in Exercise 17 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o33" numeration="loweralpha">
+                        <li>Lodovico has a 78.6 average in his physics class just before the final. Give a point estimate of what his final exam grade will be.</li>
+                        <li>Explain whether an interval estimate for this problem is a confidence interval or a prediction interval.</li>
+                        <li>Based on your answer to (b), construct an interval estimate for Lodovico’s final exam grade at the 90% level of confidence.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa18">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p19">For the data in Exercise 18 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o35" numeration="loweralpha">
+                        <li>This year 86.2 million acres of corn were planted. Give a point estimate of the number of acres that will be harvested this year.</li>
+                        <li>Explain whether an interval estimate for this problem is a confidence interval or a prediction interval.</li>
+                        <li>Based on your answer to (b), construct an interval estimate for the number of acres that will be harvested this year, at the 99% level of confidence.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa19">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p20">For the data in Exercise 19 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o37" numeration="loweralpha">
+                        <li>Give a point estimate for the blood concentration of the active ingredient of this medication in a man who has consumed 1.5 ounces of the medication just recently.</li>
+                        <li>Gratiano just consumed 1.5 ounces of this medication 30 minutes ago. Construct a 95% prediction interval for the concentration of the active ingredient in his blood right now.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa20">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p21">For the data in Exercise 20 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o39" numeration="loweralpha">
+                        <li>You measure the girth of a free-standing oak tree five feet off the ground and obtain the value 127 inches. How old do you estimate the tree to be?</li>
+                        <li>Construct a 90% prediction interval for the age of this tree.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa21">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p22">For the data in Exercise 21 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o41" numeration="loweralpha">
+                        <li>A test cylinder of concrete three days old fails at 1,750 psi. Predict what the 28-day strength of the concrete will be.</li>
+                        <li>Construct a 99% prediction interval for the 28-day strength of this concrete.</li>
+                        <li>Based on your answer to (b), what would be the minimum 28-day strength you could expect this concrete to exhibit?</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa22">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p23">For the data in Exercise 22 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o43" numeration="loweralpha">
+                        <li>Tomorrow’s average temperature is forecast to be 53 degrees. Estimate the energy demand tomorrow.</li>
+                        <li>Construct a 99% prediction interval for the energy demand tomorrow.</li>
+                        <li>Based on your answer to (b), what would be the minimum demand you could expect?</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s07_qs01_qd03" start="23">
+            <h3 class="title">Large Data Set Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa23">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p24">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p25"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o45" numeration="loweralpha">
+                        <li>Give a point estimate of the mean GPA of all students who score 1350 on the SAT.</li>
+                        <li>Construct a 90% confidence interval for the mean GPA of all students who score 1350 on the SAT.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa24">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p26">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs).</p>
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p27"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o47" numeration="loweralpha">
+                        <li>Thurio averages 72 strokes per round with his own clubs. Give a point estimate for his score on one round if he switches to the new clubs.</li>
+                        <li>Explain whether an interval estimate for this problem is a confidence interval or a prediction interval.</li>
+                        <li>Based on your answer to (b), construct an interval estimate for Thurio’s score on one round if he switches to the new clubs, at 90% confidence.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa25">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p28">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions.</p>
+                    <p class="para" id="fwk-shafer-ch10_s07_qs01_p29"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o49" numeration="loweralpha">
+                        <li>There are seven likely bidders at the Verona auction today. Give a point estimate for the price of such a clock at today’s auction.</li>
+                        <li>Explain whether an interval estimate for this problem is a confidence interval or a prediction interval.</li>
+                        <li>Based on your answer to (b), construct an interval estimate for the likely sale price of such a clock at today’s sale, at 95% confidence.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s07_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o02_ans" numeration="loweralpha">
+                        <li>5.647,</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159417_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0522" display="inline"><mn>5.647</mn><mo>±</mo><mn>1.253</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o06_ans" numeration="loweralpha">
+                        <li>−0.188,</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159462_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0524" display="inline"><mtext>−</mtext><mn>0.188</mn><mo>±</mo><mn>3.041</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o10_ans" numeration="loweralpha">
+                        <li>1.875,</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159495_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0526" display="inline"><mn>1.875</mn><mo>±</mo><mn>1.423</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o14_ans" numeration="loweralpha">
+                        <li>5.4,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-159529_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0528" display="inline"><mn>5.4</mn><mo>±</mo><mn>3.355</mn></math></span>,</li>
+                        <li>invalid (extrapolation)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o18_ans" numeration="loweralpha">
+                        <li>2.4,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-159577_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0531" display="inline"><mn>2.4</mn><mo>±</mo><mn>1.474</mn></math></span>,</li>
+                        <li>valid (−1 is in the range of the <em class="emphasis">x</em>-values in the data set)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa11_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o22_ans" numeration="loweralpha">
+                        <li>31.3 words,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-159618_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0533" display="inline"><mn>31.3</mn><mo>±</mo><mn>7.1</mn></math></span> words,</li>
+                        <li>not valid, since two years is 24 months, hence this is extrapolation</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa13_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o26_ans" numeration="loweralpha">
+                        <li>73.2 beats/min,</li>
+                        <li>The man’s heart rate is not the predicted average for all men his age. c. <span class="inlineequation" id="shafer-20121106-125753-159651_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0535" display="inline"><mn>73.2</mn><mo>±</mo><mn>1.2</mn></math></span> beats/min</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa14_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa15_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o30_ans" numeration="loweralpha">
+                        <li>$224,562,</li>
+                        <li>$224,562 ± $28,699</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa16_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa17_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o34_ans" numeration="loweralpha">
+                        <li>74,</li>
+                        <li>Prediction (one person, not an average for all who have average 78.6 before the final exam),</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159701_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0538" display="inline"><mn>74</mn><mo>±</mo><mn>24</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa18_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa19_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o38_ans" numeration="loweralpha">
+                        <li>0.066%,</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159741_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0540" display="inline"><mn>0.066</mn><mo>±</mo><mn>0.034</mn><mi>%</mi></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa20_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa21_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o42_ans" numeration="loweralpha">
+                        <li>4,656 psi,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-159775_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0542" display="inline"><mn>4,656</mn><mo>±</mo><mn>321</mn></math></span> psi,</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-159792_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0543" display="inline"><mn>4,656</mn><mo>−</mo><mn>321</mn><mo>=</mo><mn>4,335</mn></math></span> psi</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd02_qa22_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="23">
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa23_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o46_ans" numeration="loweralpha">
+                        <li>2.19</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159841_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0546" display="inline"><mrow><mo>(</mo><mrow><mn>2</mn><mo>.</mo><mn>1421,2</mn><mo>.</mo><mn>2316</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa24_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s07_qs01_qd03_qa25_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s07_qs01_o50_ans" numeration="loweralpha">
+                        <li>7771.39</li>
+                        <li>A prediction interval.</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-159881_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0548" display="inline"><mrow><mo>(</mo><mrow><mn>7410</mn><mo>.</mo><mn>41,8132</mn><mo>.</mo><mn>38</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-06-the-coefficient-of-determinati.html"><img src="shared/images/batch-left.png"></a> <a href="s14-06-the-coefficient-of-determinati.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-08-a-complete-example.html">Next Section</a> <a href="s14-08-a-complete-example.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

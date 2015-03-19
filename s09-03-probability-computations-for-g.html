@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Probability Computations for General Normal Random Variables</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s09-02-the-standard-normal-distributi.html"><img src="shared/images/batch-left.png"></a> <a href="s09-02-the-standard-normal-distributi.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s09-04-areas-of-tails-of-distribution.html">Next Section</a> <a href="s09-04-areas-of-tails-of-distribution.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch05_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">5.3</span> Probability Computations for General Normal Random Variables</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch05_s03_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch05_s03_n01_o01" numeration="arabic">
+            <li>To learn how to compute probabilities related to any normal random variable.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch05_s03_p01">If <em class="emphasis">X</em> is any normally distributed normal random variable then <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> can also be used to compute a probability of the form <span class="inlineequation" id="shafer-20121106-125753-104984"><math xml:id="fwk-shafer-ch05-m0085" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mi>b</mi></mrow><mo>)</mo></mrow></math></span> by means of the following equality.</p>
+    <div class="callout block" id="fwk-shafer-ch05_s03_n02">
+        <p class="para" id="fwk-shafer-ch05_s03_p02">If <em class="emphasis">X</em> is a normally distributed random variable with mean <em class="emphasis">μ</em> and standard deviation <em class="emphasis">σ</em>, then</p>
+        <span class="informalequation" id="shafer-20121106-125753-105000"><math xml:id="fwk-shafer-ch05-m0086" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mi>b</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mo>(</mo><mfrac><mrow><mi>a</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mi>b</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mo>)</mo></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch05_s03_p03">where <em class="emphasis">Z</em> denotes a standard normal random variable. <em class="emphasis">a</em> can be any decimal number or <span class="inlineequation" id="shafer-20121106-125753-105020"><math xml:id="fwk-shafer-ch05-m0087" display="inline"><mtext>−</mtext><mi>∞</mi></math></span>; <em class="emphasis">b</em> can be any decimal number or <span class="inlineequation" id="shafer-20121106-125753-105036"><math xml:id="fwk-shafer-ch05-m0088" display="inline"><mi>∞</mi><mo>.</mo></math></span></p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch05_s03_p04">The new endpoints <span class="inlineequation" id="shafer-20121106-125753-105054"><math xml:id="fwk-shafer-ch05-m0089" display="inline"><mrow><mo>(</mo><mrow><mi>a</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi mathvariant="italic">σ</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-105077"><math xml:id="fwk-shafer-ch05-m0090" display="inline"><mrow><mo>(</mo><mrow><mi>b</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow><mo>∕</mo><mi mathvariant="italic">σ</mi></math></span> are the <em class="emphasis">z</em>-scores of <em class="emphasis">a</em> and <em class="emphasis">b</em> as defined in <a class="xref" href="fwk-shafer-ch02_s04#fwk-shafer-ch02_s04_s02">Section 2.4.2</a> in <a class="xref" href="fwk-shafer-ch02#fwk-shafer-ch02">Chapter 2 "Descriptive Statistics"</a>.</p>
+    <p class="para editable block" id="fwk-shafer-ch05_s03_p05"><a class="xref" href="#fwk-shafer-ch05_s03_f01">Figure 5.14 "Probability for an Interval of Finite Length"</a> illustrates the meaning of the equality geometrically: the two shaded regions, one under the density curve for <em class="emphasis">X</em> and the other under the density curve for <em class="emphasis">Z</em>, have the same area. Instead of drawing both bell curves, though, we will always draw a single generic bell-shaped curve with both an <em class="emphasis">x</em>-axis and a <em class="emphasis">z</em>-axis below it.</p>
+    <div class="figure large small-height editable block" id="fwk-shafer-ch05_s03_f01">
+        <p class="title"><span class="title-prefix">Figure 5.14</span> Probability for an Interval of Finite Length</p>
+        <img src="section_09/f958d10c46786d0d9891e06a1f2994f0.jpg">
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch05_s03_n03">
+        <h3 class="title">Example 9</h3>
+        <p class="para" id="fwk-shafer-ch05_s03_p06">Let <em class="emphasis">X</em> be a normal random variable with mean <em class="emphasis">μ</em> = 10 and standard deviation <em class="emphasis">σ</em> = 2.5. Compute the following probabilities.</p>
+        <ol class="orderedlist" id="fwk-shafer-ch05_s03_o01" numeration="loweralpha">
+            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 14).</li>
+            <li><span class="inlineequation" id="shafer-20121106-125753-105093"><math xml:id="fwk-shafer-ch05-m0091" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>8</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>14</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+        </ol>
+        <p class="simpara">Solution:</p>
+        <ol class="orderedlist" id="fwk-shafer-ch05_s03_o02" numeration="loweralpha">
+            <li>
+                <p class="para">See <a class="xref" href="#fwk-shafer-ch05_s03_f02">Figure 5.15 "Probability Computation for a General Normal Random Variable"</a>.</p>
+                <span class="informalequation" id="shafer-20121106-125753-105110"><math xml:id="fwk-shafer-ch05-m0092" display="block"><mtable columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>14</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>14</mn><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>14</mn><mo>−</mo><mn>10</mn></mrow><mrow><mn>2.5</mn></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mn>1.60</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.9452</mn></mtd></mtr></mtable></math></span>
+            </li>
+        </ol>
+        <div class="figure large small-height" id="fwk-shafer-ch05_s03_f02">
+            <p class="title"><span class="title-prefix">Figure 5.15</span> Probability Computation for a General Normal Random Variable</p>
+            <img src="section_09/5a732b9a593ef6f25ed10e15b5cf81db.jpg">
+        </div>
+        <ol class="orderedlist" id="fwk-shafer-ch05_s03_o03" continuation="continues" numeration="loweralpha">
+            <li>
+                <p class="para">See <a class="xref" href="#fwk-shafer-ch05_s03_f03">Figure 5.16 "Probability Computation for a General Normal Random Variable"</a>.</p>
+                <span class="informalequation" id="shafer-20121106-125753-105125"><math xml:id="fwk-shafer-ch05-m0093" display="block"><mtable columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mn>8</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>14</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mfrac><mrow><mn>8</mn><mo>−</mo><mn>10</mn></mrow><mrow><mn>2.5</mn></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>14</mn><mo>−</mo><mn>10</mn></mrow><mrow><mn>2.5</mn></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>0.80</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>1.60</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.9452</mn><mo>−</mo><mn>0.2119</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.7333</mn></mtd></mtr></mtable></math></span>
+            </li>
+        </ol>
+        <div class="figure large small-height" id="fwk-shafer-ch05_s03_f03">
+            <p class="title"><span class="title-prefix">Figure 5.16</span> Probability Computation for a General Normal Random Variable</p>
+            <img src="section_09/272b0cb85ce96627d502c2ff029199ad.jpg">
+        </div>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch05_s03_n04">
+        <h3 class="title">Example 10</h3>
+        <p class="para" id="fwk-shafer-ch05_s03_p07">The lifetimes of the tread of a certain automobile tire are normally distributed with mean 37,500 miles and standard deviation 4,500 miles. Find the probability that the tread life of a randomly selected tire will be between 30,000 and 40,000 miles.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch05_s03_p08">Let <em class="emphasis">X</em> denote the tread life of a randomly selected tire. To make the numbers easier to work with we will choose thousands of miles as the units. Thus <em class="emphasis">μ</em> = 37.5, <em class="emphasis">σ</em> = 4.5, and the problem is to compute <span class="inlineequation" id="shafer-20121106-125753-105141"><math xml:id="fwk-shafer-ch05-m0094" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>30</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>40</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span> <a class="xref" href="#fwk-shafer-ch05_s03_f04">Figure 5.17 "Probability Computation for Tire Tread Wear"</a> illustrates the following computation:</p>
+        <div class="figure large small-height" id="fwk-shafer-ch05_s03_f04">
+            <p class="title"><span class="title-prefix">Figure 5.17</span> Probability Computation for Tire Tread Wear</p>
+            <img src="section_09/2712ed90b9f7e7fd3e0589acd6c734e0.jpg">
+        </div>
+        <span class="informalequation" id="shafer-20121106-125753-105157"><math xml:id="fwk-shafer-ch05-m0095" display="block"><mtable columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mn>30</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>40</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mfrac><mrow><mn>30</mn><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>40</mn><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mfrac><mrow><mn>30</mn><mo>−</mo><mn>37.5</mn></mrow><mrow><mn>4.5</mn></mrow></mfrac><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mfrac><mrow><mn>40</mn><mo>−</mo><mn>37.5</mn></mrow><mrow><mn>4.5</mn></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1.67</mn><mo>&lt;</mo><mi>Z</mi><mo>&lt;</mo><mn>0.56</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.7123</mn><mo>−</mo><mn>0.0475</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.6648</mn></mtd></mtr></mtable></math></span>
+        <p class="para" id="fwk-shafer-ch05_s03_p09">Note that the two <em class="emphasis">z</em>-scores were rounded to two decimal places in order to use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a>.</p>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch05_s03_n05">
+        <h3 class="title">Example 11</h3>
+        <p class="para" id="fwk-shafer-ch05_s03_p10">Scores on a standardized college entrance examination (<em class="emphasis">CEE</em>) are normally distributed with mean 510 and standard deviation 60. A selective university considers for admission only applicants with <em class="emphasis">CEE</em> scores over 650. Find percentage of all individuals who took the <em class="emphasis">CEE</em> who meet the university's <em class="emphasis">CEE</em> requirement for consideration for admission.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch05_s03_p11">Let <em class="emphasis">X</em> denote the score made on the <em class="emphasis">CEE</em> by a randomly selected individual. Then <em class="emphasis">X</em> is normally distributed with mean 510 and standard deviation 60. The probability that <em class="emphasis">X</em> lie in a particular interval is the same as the proportion of all exam scores that lie in that interval. Thus the solution to the problem is <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 650), expressed as a percentage. <a class="xref" href="#fwk-shafer-ch05_s03_f05">Figure 5.18 "Probability Computation for Exam Scores"</a> illustrates the following computation:</p>
+        <div class="figure large small-height" id="fwk-shafer-ch05_s03_f05">
+            <p class="title"><span class="title-prefix">Figure 5.18</span> Probability Computation for Exam Scores</p>
+            <img src="section_09/f652f315d2286107695053b9212f66de.jpg">
+        </div>
+        <span class="informalequation" id="shafer-20121106-125753-105173"><math xml:id="fwk-shafer-ch05-m0096" display="block"><mtable columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&gt;</mo><mn>650</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mi>Z</mi><mo>&gt;</mo><mfrac><mrow><mn>650</mn><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mrow><mi mathvariant="italic">σ</mi></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mstyle mathsize="1.61em"><mfenced separators="" open="(" close=""><mrow></mrow></mfenced></mstyle><mi>Z</mi><mo>&gt;</mo><mfrac><mrow><mn>650</mn><mo>−</mo><mn>510</mn></mrow><mrow><mn>60</mn></mrow></mfrac><mstyle mathsize="1.61em"><mfenced separators="" open=")" close=""><mrow></mrow></mfenced></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&gt;</mo><mn>2.33</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>1</mn><mo>−</mo><mn>0.9901</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.0099</mn></mtd></mtr></mtable></math></span>
+        <p class="para" id="fwk-shafer-ch05_s03_p12">The proportion of all <em class="emphasis">CEE</em> scores that exceed 650 is 0.0099, hence 0.99% or about 1% do.</p>
+    </div>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch05_s03_n06">
+        <h3 class="title">Key Takeaway</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch05_s03_i01" mark="bullet">
+            <li>Probabilities for a general normal random variable are computed using <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> after converting <em class="emphasis">x</em>-values to <em class="emphasis">z</em>-scores.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch05_s03_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch05_s03_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p01"><em class="emphasis">X</em> is a normally distributed random variable with mean 57 and standard deviation 6. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o01" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 59.5)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 46.2)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 52.2)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 70)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p02"><em class="emphasis">X</em> is a normally distributed random variable with mean −25 and standard deviation 4. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o03" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; −27.2)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; −14.8)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; −33.1)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; −16.5)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p03"><em class="emphasis">X</em> is a normally distributed random variable with mean 112 and standard deviation 15. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o05" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105197"><math xml:id="fwk-shafer-ch05-m0097" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>100</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>125</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105214"><math xml:id="fwk-shafer-ch05-m0098" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>91</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>107</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105230"><math xml:id="fwk-shafer-ch05-m0099" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>118</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>160</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p04"><em class="emphasis">X</em> is a normally distributed random variable with mean 72 and standard deviation 22. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o07" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105246"><math xml:id="fwk-shafer-ch05-m0100" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>78</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>127</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105263"><math xml:id="fwk-shafer-ch05-m0101" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>60</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>90</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105279"><math xml:id="fwk-shafer-ch05-m0102" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>49</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>71</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p05"><em class="emphasis">X</em> is a normally distributed random variable with mean 500 and standard deviation 25. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o09" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 400)</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105295"><math xml:id="fwk-shafer-ch05-m0103" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>466</mn><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><mn>625</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p06"><em class="emphasis">X</em> is a normally distributed random variable with mean 0 and standard deviation 0.75. Find the probability indicated.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o11" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(−4.02 &lt; <em class="emphasis">X</em> &lt; 3.82)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 4.11)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p07"><em class="emphasis">X</em> is a normally distributed random variable with mean 15 and standard deviation 1. Use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> to find the first probability listed. Find the second probability using the symmetry of the density curve. Sketch the density curve with relevant regions shaded to illustrate the computation.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o13" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 12), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 18)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 14), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 16)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 11.25), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 18.75)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 12.67), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 17.33)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p08"><em class="emphasis">X</em> is a normally distributed random variable with mean 100 and standard deviation 10. Use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> to find the first probability listed. Find the second probability using the symmetry of the density curve. Sketch the density curve with relevant regions shaded to illustrate the computation.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o15" numeration="loweralpha">
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 80), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 120)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 75), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 125)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 84.55), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 115.45)</li>
+                        <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &lt; 77.42), <em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 122.58)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p09"><em class="emphasis">X</em> is a normally distributed random variable with mean 67 and standard deviation 13. The probability that <em class="emphasis">X</em> takes a value in the union of intervals <span class="inlineequation" id="shafer-20121106-125753-105311"><math xml:id="fwk-shafer-ch05-m0104" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mn>67</mn><mo>−</mo><mi>a</mi></mrow><mo>]</mo></mrow><mo>∪</mo><mrow><mo>[</mo><mrow><mn>67</mn><mo>+</mo><mi>a</mi><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span> will be denoted <span class="inlineequation" id="shafer-20121106-125753-105327"><math xml:id="fwk-shafer-ch05-m0105" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>67</mn><mo>−</mo><mi>a</mi><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>≥</mo><mn>67</mn><mo>+</mo><mi>a</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> to find the following probabilities of this type. Sketch the density curve with relevant regions shaded to illustrate the computation. Because of the symmetry of the density curve you need to use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> only one time for each part.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o17" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105344"><math xml:id="fwk-shafer-ch05-m0106" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>57</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>77</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105366"><math xml:id="fwk-shafer-ch05-m0107" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>47</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>87</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105382"><math xml:id="fwk-shafer-ch05-m0108" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>49</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>85</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105399"><math xml:id="fwk-shafer-ch05-m0109" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>37</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>97</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p10"><em class="emphasis">X</em> is a normally distributed random variable with mean 288 and standard deviation 6. The probability that <em class="emphasis">X</em> takes a value in the union of intervals <span class="inlineequation" id="shafer-20121106-125753-105415"><math xml:id="fwk-shafer-ch05-m0110" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mn>288</mn><mo>−</mo><mi>a</mi></mrow><mo>]</mo></mrow><mo>∪</mo><mrow><mo>[</mo><mrow><mn>288</mn><mo>+</mo><mi>a</mi><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></math></span> will be denoted <span class="inlineequation" id="shafer-20121106-125753-105430"><math xml:id="fwk-shafer-ch05-m0111" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mn>288</mn><mo>−</mo><mi>a</mi><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>≥</mo><mn>288</mn><mo>+</mo><mi>a</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> to find the following probabilities of this type. Sketch the density curve with relevant regions shaded to illustrate the computation. Because of the symmetry of the density curve you need to use <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> only one time for each part.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o19" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105446"><math xml:id="fwk-shafer-ch05-m0112" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>278</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>298</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105463"><math xml:id="fwk-shafer-ch05-m0113" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>268</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>308</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105496"><math xml:id="fwk-shafer-ch05-m0114" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>273</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>303</mn></mrow><mo>)</mo></mrow></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-105513"><math xml:id="fwk-shafer-ch05-m0115" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&lt;</mo><mn>280</mn><mstyle><mtext> </mtext><mtext> </mtext><mtext>or</mtext><mtext> </mtext></mstyle><mi>X</mi><mo>&gt;</mo><mn>296</mn></mrow><mo>)</mo></mrow></math></span></li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch05_s03_qs01_qd02" start="11">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p11">The amount <em class="emphasis">X</em> of beverage in a can labeled 12 ounces is normally distributed with mean 12.1 ounces and standard deviation 0.05 ounce. A can is selected at random.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o21" numeration="loweralpha">
+                        <li>Find the probability that the can contains at least 12 ounces.</li>
+                        <li>Find the probability that the can contains between 11.9 and 12.1 ounces.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p12">The length of gestation for swine is normally distributed with mean 114 days and standard deviation 0.75 day. Find the probability that a litter will be born within one day of the mean of 114.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa13">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p14">The systolic blood pressure <em class="emphasis">X</em> of adults in a region is normally distributed with mean 112 mm Hg and standard deviation 15 mm Hg. A person is considered “prehypertensive” if his systolic blood pressure is between 120 and 130 mm Hg. Find the probability that the blood pressure of a randomly selected person is prehypertensive.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa14">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p16">Heights <em class="emphasis">X</em> of adult women are normally distributed with mean 63.7 inches and standard deviation 2.71 inches. Romeo, who is 69.25 inches tall, wishes to date only women who are shorter than he but within 4 inches of his height. Find the probability that the next woman he meets will have such a height.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa15">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p18">Heights <em class="emphasis">X</em> of adult men are normally distributed with mean 69.1 inches and standard deviation 2.92 inches. Juliet, who is 63.25 inches tall, wishes to date only men who are taller than she but within 6 inches of her height. Find the probability that the next man she meets will have such a height.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa16">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p20">A regulation hockey puck must weigh between 5.5 and 6 ounces. The weights <em class="emphasis">X</em> of pucks made by a particular process are normally distributed with mean 5.75 ounces and standard deviation 0.11 ounce. Find the probability that a puck made by this process will meet the weight standard.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa17">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p22">A regulation golf ball may not weigh more than 1.620 ounces. The weights <em class="emphasis">X</em> of golf balls made by a particular process are normally distributed with mean 1.361 ounces and standard deviation 0.09 ounce. Find the probability that a golf ball made by this process will meet the weight standard.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa18">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p24">The length of time that the battery in Hippolyta's cell phone will hold enough charge to operate acceptably is normally distributed with mean 25.6 hours and standard deviation 0.32 hour. Hippolyta forgot to charge her phone yesterday, so that at the moment she first wishes to use it today it has been 26 hours 18 minutes since the phone was last fully charged. Find the probability that the phone will operate properly.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa19">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p26">The amount of non-mortgage debt per household for households in a particular income bracket in one part of the country is normally distributed with mean $28,350 and standard deviation $3,425. Find the probability that a randomly selected such household has between $20,000 and $30,000 in non-mortgage debt.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa20">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p28">Birth weights of full-term babies in a certain region are normally distributed with mean 7.125 lb and standard deviation 1.290 lb. Find the probability that a randomly selected newborn will weigh less than 5.5 lb, the historic definition of prematurity.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa21">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p30">The distance from the seat back to the front of the knees of seated adult males is normally distributed with mean 23.8 inches and standard deviation 1.22 inches. The distance from the seat back to the back of the next seat forward in all seats on aircraft flown by a budget airline is 26 inches. Find the proportion of adult men flying with this airline whose knees will touch the back of the seat in front of them.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa22">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p32">The distance from the seat to the top of the head of seated adult males is normally distributed with mean 36.5 inches and standard deviation 1.39 inches. The distance from the seat to the roof of a particular make and model car is 40.5 inches. Find the proportion of adult men who when sitting in this car will have at least one inch of headroom (distance from the top of the head to the roof).</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch05_s03_qs01_qd03" start="23">
+            <h3 class="title">Additional Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa23">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p34">The useful life of a particular make and type of automotive tire is normally distributed with mean 57,500 miles and standard deviation 950 miles.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o23" numeration="loweralpha">
+                        <li>Find the probability that such a tire will have a useful life of between 57,000 and 58,000 miles.</li>
+                        <li>Hamlet buys four such tires. Assuming that their lifetimes are independent, find the probability that all four will last between 57,000 and 58,000 miles. (If so, the best tire will have no more than 1,000 miles left on it when the first tire fails.) Hint: There is a binomial random variable here, whose value of <em class="emphasis">p</em> comes from part (a).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa24">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p35">A machine produces large fasteners whose length must be within 0.5 inch of 22 inches. The lengths are normally distributed with mean 22.0 inches and standard deviation 0.17 inch.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o25" numeration="loweralpha">
+                        <li>Find the probability that a randomly selected fastener produced by the machine will have an acceptable length.</li>
+                        <li>The machine produces 20 fasteners per hour. The length of each one is inspected. Assuming lengths of fasteners are independent, find the probability that all 20 will have acceptable length. Hint: There is a binomial random variable here, whose value of <em class="emphasis">p</em> comes from part (a).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa25">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p36">The lengths of time taken by students on an algebra proficiency exam (if not forced to stop before completing it) are normally distributed with mean 28 minutes and standard deviation 1.5 minutes.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o27" numeration="loweralpha">
+                        <li>Find the proportion of students who will finish the exam if a 30-minute time limit is set.</li>
+                        <li>Six students are taking the exam today. Find the probability that all six will finish the exam within the 30-minute limit, assuming that times taken by students are independent. Hint: There is a binomial random variable here, whose value of <em class="emphasis">p</em> comes from part (a).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa26">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p37">Heights of adult men between 18 and 34 years of age are normally distributed with mean 69.1 inches and standard deviation 2.92 inches. One requirement for enlistment in the military is that men must stand between 60 and 80 inches tall.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o29" numeration="loweralpha">
+                        <li>Find the probability that a randomly elected man meets the height requirement for military service.</li>
+                        <li>Twenty-three men independently contact a recruiter this week. Find the probability that all of them meet the height requirement. Hint: There is a binomial random variable here, whose value of <em class="emphasis">p</em> comes from part (a).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa27">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p38">A regulation hockey puck must weigh between 5.5 and 6 ounces. In an alternative manufacturing process the mean weight of pucks produced is 5.75 ounce. The weights of pucks have a normal distribution whose standard deviation can be decreased by increasingly stringent (and expensive) controls on the manufacturing process. Find the maximum allowable standard deviation so that at most 0.005 of all pucks will fail to meet the weight standard. (Hint: The distribution is symmetric and is centered at the middle of the interval of acceptable weights.)</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa28">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p40">The amount of gasoline <em class="emphasis">X</em> delivered by a metered pump when it registers 5 gallons is a normally distributed random variable. The standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em> measures the precision of the pump; the smaller <em class="emphasis">σ</em> is the smaller the variation from delivery to delivery. A typical standard for pumps is that when they show that 5 gallons of fuel has been delivered the actual amount must be between 4.97 and 5.03 gallons (which corresponds to being off by at most about half a cup). Supposing that the mean of <em class="emphasis">X</em> is 5, find the largest that <em class="emphasis">σ</em> can be so that <em class="emphasis">P</em>(4.97 &lt; <em class="emphasis">X</em> &lt; 5.03) is 1.0000 to four decimal places when computed using <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a>, which means that the pump is sufficiently accurate. (Hint: The <em class="emphasis">z</em>-score of 5.03 will be the smallest value of <em class="emphasis">Z</em> so that <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a> gives <span class="inlineequation" id="shafer-20121106-125753-105529"><math xml:id="fwk-shafer-ch05-m0116" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>Z</mi><mo>&lt;</mo><mi>z</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1.0000</mn><mo>.</mo></math></span>)</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch05_s03_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o02_ans" numeration="loweralpha">
+                        <li>0.6628</li>
+                        <li>0.7881</li>
+                        <li>0.0359</li>
+                        <li>0.0150</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o06_ans" numeration="loweralpha">
+                        <li>0.5959</li>
+                        <li>0.2899</li>
+                        <li>0.3439</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o10_ans" numeration="loweralpha">
+                        <li>0.0000</li>
+                        <li>0.9131</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o14_ans" numeration="loweralpha">
+                        <li>0.0013, 0.0013</li>
+                        <li>0.1587, 0.1587</li>
+                        <li>0.0001, 0.0001</li>
+                        <li>0.0099, 0.0099</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o18_ans" numeration="loweralpha">
+                        <li>0.4412</li>
+                        <li>0.1236</li>
+                        <li>0.1676</li>
+                        <li>0.0208</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa11_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o22_ans" numeration="loweralpha">
+                        <li>0.9772</li>
+                        <li>0.5000</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa13_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p15_ans">0.1830</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa14_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa15_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p19_ans">0.4971</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa16_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa17_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p23_ans">0.9980</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa18_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa19_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p27_ans">0.6771</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa20_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa21_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p31_ans">0.0359</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd02_qa22_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="23">
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa23_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o24_ans" numeration="loweralpha">
+                        <li>0.4038</li>
+                        <li>0.0266</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa24_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa25_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch05_s03_qs01_o28_ans" numeration="loweralpha">
+                        <li>0.9082</li>
+                        <li>0.5612</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa26_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa27_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch05_s03_qs01_p39_ans">0.089</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch05_s03_qs01_qd03_qa28_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s09-02-the-standard-normal-distributi.html"><img src="shared/images/batch-left.png"></a> <a href="s09-02-the-standard-normal-distributi.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s09-04-areas-of-tails-of-distribution.html">Next Section</a> <a href="s09-04-areas-of-tails-of-distribution.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

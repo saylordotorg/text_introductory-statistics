@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Empirical Rule and Chebyshev’s Theorem</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-04-relative-position-of-data.html"><img src="shared/images/batch-left.png"></a> <a href="s06-04-relative-position-of-data.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-01-sample-spaces-events-and-their.html">Next Section</a> <a href="s07-01-sample-spaces-events-and-their.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch02_s05" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">2.5</span> The Empirical Rule and Chebyshev’s Theorem</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch02_s05_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch02_s05_o01" numeration="arabic">
+            <li>To learn what the value of the standard deviation of a data set implies about how the data scatter away from the mean as described by the Empirical Rule and Chebyshev’s Theorem.</li>
+            <li>To use the Empirical Rule and Chebyshev’s Theorem to draw conclusions about a data set.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch02_s05_p01">You probably have a good intuitive grasp of what the average of a data set says about that data set. In this section we begin to learn what the standard deviation has to tell us about the nature of the data set.</p>
+    <div class="section" id="fwk-shafer-ch02_s05_s01" version="5.0" lang="en">
+        <h2 class="title editable block">The Empirical Rule</h2>
+        <p class="para block" id="fwk-shafer-ch02_s05_s01_p01">We start by examining a specific set of data. <a class="xref" href="#fwk-shafer-ch02_s05_s01_t01">Table 2.2 "Heights of Men"</a> shows the heights in inches of 100 randomly selected adult men. A relative frequency histogram for the data is shown in <a class="xref" href="#fwk-shafer-ch02_s05_s01_f01">Figure 2.15 "Heights of Adult Men"</a>. The mean and standard deviation of the data are, rounded to two decimal places, <span class="inlineequation" id="shafer-20121106-125753-091256"><math xml:id="fwk-shafer-ch02-m0428" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>69.92</mn></math></span> and <em class="emphasis">s</em> = 1.70. If we go through the data and count the number of observations that are within one standard deviation of the mean, that is, that are between <span class="inlineequation" id="shafer-20121106-125753-091273"><math xml:id="fwk-shafer-ch02-m0429" display="inline"><mn>69.92</mn><mo>−</mo><mn>1.70</mn><mo>=</mo><mn>68.22</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091295"><math xml:id="fwk-shafer-ch02-m0430" display="inline"><mn>69.92</mn><mo>+</mo><mn>1.70</mn><mo>=</mo><mn>71.62</mn></math></span> inches, there are 69 of them. If we count the number of observations that are within two standard deviations of the mean, that is, that are between <span class="inlineequation" id="shafer-20121106-125753-091311"><math xml:id="fwk-shafer-ch02-m0431" display="inline"><mn>69.92</mn><mo>−</mo><mn>2</mn><mrow><mo stretchy="false">(</mo><mrow><mn>1.70</mn></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>66.52</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091327"><math xml:id="fwk-shafer-ch02-m0432" display="inline"><mn>69.92</mn><mo>+</mo><mn>2</mn><mrow><mo stretchy="false">(</mo><mrow><mn>1.70</mn></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>73.32</mn></math></span> inches, there are 95 of them. All of the measurements are within three standard deviations of the mean, that is, between <span class="inlineequation" id="shafer-20121106-125753-091343"><math xml:id="fwk-shafer-ch02-m0433" display="inline"><mn>69.92</mn><mo>−</mo><mn>3</mn><mrow><mo stretchy="false">(</mo><mrow><mn>1.70</mn></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>64.822</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091359"><math xml:id="fwk-shafer-ch02-m0434" display="inline"><mn>69.92</mn><mo>+</mo><mn>3</mn><mrow><mo stretchy="false">(</mo><mrow><mn>1.70</mn></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mn>75.02</mn></math></span> inches. These tallies are not coincidences, but are in agreement with the following result that has been found to be widely applicable.</p>
+        <div class="table block" id="fwk-shafer-ch02_s05_s01_t01" frame="none">
+            <p class="title"><span class="title-prefix">Table 2.2</span> Heights of Men</p>
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td align="left">68.7</td>
+                        <td align="left">72.3</td>
+                        <td align="left">71.3</td>
+                        <td align="left">72.5</td>
+                        <td align="left">70.6</td>
+                        <td align="left">68.2</td>
+                        <td align="left">70.1</td>
+                        <td align="left">68.4</td>
+                        <td align="left">68.6</td>
+                        <td align="left">70.6</td>
+                    </tr>
+                    <tr>
+                        <td align="left">73.7</td>
+                        <td align="left">70.5</td>
+                        <td align="left">71.0</td>
+                        <td align="left">70.9</td>
+                        <td align="left">69.3</td>
+                        <td align="left">69.4</td>
+                        <td align="left">69.7</td>
+                        <td align="left">69.1</td>
+                        <td align="left">71.5</td>
+                        <td align="left">68.6</td>
+                    </tr>
+                    <tr>
+                        <td align="left">70.9</td>
+                        <td align="left">70.0</td>
+                        <td align="left">70.4</td>
+                        <td align="left">68.9</td>
+                        <td align="left">69.4</td>
+                        <td align="left">69.4</td>
+                        <td align="left">69.2</td>
+                        <td align="left">70.7</td>
+                        <td align="left">70.5</td>
+                        <td align="left">69.9</td>
+                    </tr>
+                    <tr>
+                        <td align="left">69.8</td>
+                        <td align="left">69.8</td>
+                        <td align="left">68.6</td>
+                        <td align="left">69.5</td>
+                        <td align="left">71.6</td>
+                        <td align="left">66.2</td>
+                        <td align="left">72.4</td>
+                        <td align="left">70.7</td>
+                        <td align="left">67.7</td>
+                        <td align="left">69.1</td>
+                    </tr>
+                    <tr>
+                        <td align="left">68.8</td>
+                        <td align="left">69.3</td>
+                        <td align="left">68.9</td>
+                        <td align="left">74.8</td>
+                        <td align="left">68.0</td>
+                        <td align="left">71.2</td>
+                        <td align="left">68.3</td>
+                        <td align="left">70.2</td>
+                        <td align="left">71.9</td>
+                        <td align="left">70.4</td>
+                    </tr>
+                    <tr>
+                        <td align="left">71.9</td>
+                        <td align="left">72.2</td>
+                        <td align="left">70.0</td>
+                        <td align="left">68.7</td>
+                        <td align="left">67.9</td>
+                        <td align="left">71.1</td>
+                        <td align="left">69.0</td>
+                        <td align="left">70.8</td>
+                        <td align="left">67.3</td>
+                        <td align="left">71.8</td>
+                    </tr>
+                    <tr>
+                        <td align="left">70.3</td>
+                        <td align="left">68.8</td>
+                        <td align="left">67.2</td>
+                        <td align="left">73.0</td>
+                        <td align="left">70.4</td>
+                        <td align="left">67.8</td>
+                        <td align="left">70.0</td>
+                        <td align="left">69.5</td>
+                        <td align="left">70.1</td>
+                        <td align="left">72.0</td>
+                    </tr>
+                    <tr>
+                        <td align="left">72.2</td>
+                        <td align="left">67.6</td>
+                        <td align="left">67.0</td>
+                        <td align="left">70.3</td>
+                        <td align="left">71.2</td>
+                        <td align="left">65.6</td>
+                        <td align="left">68.1</td>
+                        <td align="left">70.8</td>
+                        <td align="left">71.4</td>
+                        <td align="left">70.2</td>
+                    </tr>
+                    <tr>
+                        <td align="left">70.1</td>
+                        <td align="left">67.5</td>
+                        <td align="left">71.3</td>
+                        <td align="left">71.5</td>
+                        <td align="left">71.0</td>
+                        <td align="left">69.1</td>
+                        <td align="left">69.5</td>
+                        <td align="left">71.1</td>
+                        <td align="left">66.8</td>
+                        <td align="left">71.8</td>
+                    </tr>
+                    <tr>
+                        <td align="left">69.6</td>
+                        <td align="left">72.7</td>
+                        <td align="left">72.8</td>
+                        <td align="left">69.6</td>
+                        <td align="left">65.9</td>
+                        <td align="left">68.0</td>
+                        <td align="left">69.7</td>
+                        <td align="left">68.7</td>
+                        <td align="left">69.8</td>
+                        <td align="left">69.7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s05_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 2.15</span> Heights of Adult Men</p>
+            <img src="section_06/b1f0ebf6c74ac069e650a08a864bea87.jpg">
+        </div>
+        <div class="callout block" id="fwk-shafer-ch02_s05_s01_n01">
+            <h3 class="title">The Empirical Rule</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p02">If a data set has an approximately bell-shaped relative frequency histogram, then (see <a class="xref" href="#fwk-shafer-ch02_s05_s01_f02">Figure 2.16 "The Empirical Rule"</a>)</p>
+            <ol class="orderedlist" id="fwk-shafer-ch02_s05_s01_o01" numeration="arabic">
+                <li>approximately 68% of the data lie within one standard deviation of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091375"><math xml:id="fwk-shafer-ch02-m0435" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091391"><math xml:id="fwk-shafer-ch02-m0436" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mi mathvariant="italic">σ</mi></math></span> for populations;</li>
+                <li>approximately 95% of the data lie within two standard deviations of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091408"><math xml:id="fwk-shafer-ch02-m0437" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mn>2</mn><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091424"><math xml:id="fwk-shafer-ch02-m0438" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mn>2</mn><mi mathvariant="italic">σ</mi></math></span> for populations; and</li>
+                <li>approximately 99.7% of the data lies within three standard deviations of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091446"><math xml:id="fwk-shafer-ch02-m0439" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mn>3</mn><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091463"><math xml:id="fwk-shafer-ch02-m0440" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mn>3</mn><mi mathvariant="italic">σ</mi></math></span> for populations.</li>
+            </ol>
+        </div>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s05_s01_f02">
+            <p class="title"><span class="title-prefix">Figure 2.16</span> The Empirical Rule</p>
+            <img src="section_06/97b4fd107e5c4ef13ba13917c2a260a4.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s05_s01_p03">Two key points in regard to the Empirical Rule are that the data distribution must be approximately <em class="emphasis">bell-shaped</em> and that the percentages are only <em class="emphasis">approximately</em> true. The Empirical Rule does not apply to data sets with severely asymmetric distributions, and the actual percentage of observations in any of the intervals specified by the rule could be either greater or less than those given in the rule. We see this with the example of the heights of the men: the Empirical Rule suggested 68 observations between 68.22 and 71.62 inches but we counted 69.</p>
+        <div class="exercises block" id="fwk-shafer-ch02_s05_s01_n02">
+            <h3 class="title">Example 19</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p04">Heights of 18-year-old males have a bell-shaped distribution with mean 69.6 inches and standard deviation 1.4 inches.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch02_s05_s01_o02" numeration="loweralpha">
+                <li>About what proportion of all such men are between 68.2 and 71 inches tall?</li>
+                <li>What interval centered on the mean should contain about 95% of all such men?</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p05">A sketch of the distribution of heights is given in <a class="xref" href="#fwk-shafer-ch02_s05_s01_f03">Figure 2.17 "Distribution of Heights"</a>.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch02_s05_s01_o03" numeration="loweralpha">
+                <li>Since the interval from 68.2 to 71.0 has endpoints <span class="inlineequation" id="shafer-20121106-125753-091479"><math xml:id="fwk-shafer-ch02-m0441" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><mi>s</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091495"><math xml:id="fwk-shafer-ch02-m0442" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mi>s</mi></math></span>, by the Empirical Rule about 68% of all 18-year-old males should have heights in this range.</li>
+                <li>
+                    <p class="para">By the Empirical Rule the shortest such interval has endpoints <span class="inlineequation" id="shafer-20121106-125753-091511"><math xml:id="fwk-shafer-ch02-m0443" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>2</mn><mi>s</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091527"><math xml:id="fwk-shafer-ch02-m0444" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mn>2</mn><mi>s</mi><mo>.</mo></math></span> Since</p>
+                    <span class="informalequation" id="shafer-20121106-125753-091543"><math xml:id="fwk-shafer-ch02-m0445" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>2</mn><mi>s</mi><mo>=</mo><mn>69.6</mn><mo>−</mo><mn>2</mn><mrow><mo>(</mo><mrow><mn>1.4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>66.8</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mn>2</mn><mi>s</mi><mo>=</mo><mn>69.6</mn><mo>+</mo><mn>2</mn><mrow><mo>(</mo><mrow><mn>1.4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>72.4</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch02_s05_s01_p06">the interval in question is the interval from 66.8 inches to 72.4 inches.</p>
+                </li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch02_s05_s01_f03">
+                <p class="title"><span class="title-prefix">Figure 2.17</span> Distribution of Heights</p>
+                <img src="section_06/f69970cbd3a0d6b096373e3825dad1c2.jpg">
+            </div>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s05_s01_n03">
+            <h3 class="title">Example 20</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p07">Scores on IQ tests have a bell-shaped distribution with mean <em class="emphasis">μ</em> = 100 and standard deviation <em class="emphasis">σ</em> = 10. Discuss what the Empirical Rule implies concerning individuals with IQ scores of 110, 120, and 130.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p08">A sketch of the IQ distribution is given in <a class="xref" href="#fwk-shafer-ch02_s05_s01_f04">Figure 2.18 "Distribution of IQ Scores"</a>. The Empirical Rule states that </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_s01_o04" numeration="arabic">                    <li>approximately 68% of the IQ scores in the population lie between 90 and 110,</li>
+                    <li>approximately 95% of the IQ scores in the population lie between 80 and 120, and</li>
+                    <li>approximately 99.7% of the IQ scores in the population lie between 70 and 130.</li>
+</ol>
+            <div class="figure large" id="fwk-shafer-ch02_s05_s01_f04">
+                <p class="title"><span class="title-prefix">Figure 2.18</span> Distribution of IQ Scores</p>
+                <img src="section_06/72a9ca7507e4a5ae776ae9ccaa950617.jpg">
+            </div>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p09">Since 68% of the IQ scores lie <em class="emphasis">within</em> the interval from 90 to 110, it must be the case that 32% lie <em class="emphasis">outside</em> that interval. By symmetry approximately half of that 32%, or 16% of all IQ scores, will lie above 110. If 16% lie above 110, then 84% lie below. We conclude that the IQ score 110 is the 84th percentile.</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p10">The same analysis applies to the score 120. Since approximately 95% of all IQ scores lie within the interval form 80 to 120, only 5% lie outside it, and half of them, or 2.5% of all scores, are above 120. The IQ score 120 is thus higher than 97.5% of all IQ scores, and is quite a high score.</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s01_p11">By a similar argument, only 15/100 of 1% of all adults, or about one or two in every thousand, would have an IQ score above 130. This fact makes the score 130 extremely high.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch02_s05_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Chebyshev’s Theorem</h2>
+        <p class="para editable block" id="fwk-shafer-ch02_s05_s02_p01">The Empirical Rule does not apply to all data sets, only to those that are bell-shaped, and even then is stated in terms of approximations. A result that applies to every data set is known as Chebyshev’s Theorem.</p>
+        <div class="callout block" id="fwk-shafer-ch02_s05_s02_n01">
+            <h3 class="title">Chebyshev’s Theorem</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s02_p02">For any numerical data set,
+</p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_s02_o01" numeration="arabic">                    <li>at least 3/4 of the data lie within two standard deviations of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091558"><math xml:id="fwk-shafer-ch02-m0446" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mn>2</mn><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091581"><math xml:id="fwk-shafer-ch02-m0447" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mn>2</mn><mi mathvariant="italic">σ</mi></math></span> for populations;</li>
+                    <li>at least 8/9 of the data lie within three standard deviations of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091596"><math xml:id="fwk-shafer-ch02-m0448" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mn>3</mn><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091613"><math xml:id="fwk-shafer-ch02-m0449" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mn>3</mn><mi mathvariant="italic">σ</mi></math></span> for populations;</li>
+                    <li>at least <span class="inlineequation" id="shafer-20121106-125753-091630"><math xml:id="fwk-shafer-ch02-m0450" display="inline"><mn>1</mn><mo>−</mo><mn>1</mn><mo>∕</mo><msup><mi>k</mi><mn>2</mn></msup></math></span> of the data lie within <em class="emphasis">k</em> standard deviations of the mean, that is, in the interval with endpoints <span class="inlineequation" id="shafer-20121106-125753-091646"><math xml:id="fwk-shafer-ch02-m0451" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mi>k</mi><mi>s</mi></math></span> for samples and with endpoints <span class="inlineequation" id="shafer-20121106-125753-091661"><math xml:id="fwk-shafer-ch02-m0452" display="inline"><mi mathvariant="italic">μ</mi><mo>±</mo><mi>k</mi><mi mathvariant="italic">σ</mi></math></span> for populations, where <em class="emphasis">k</em> is any positive whole number that is greater than 1.</li>
+</ol>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s05_s02_p03"><a class="xref" href="#fwk-shafer-ch02_s05_s02_f01">Figure 2.19 "Chebyshev’s Theorem"</a> gives a visual illustration of Chebyshev’s Theorem.</p>
+        <div class="figure large medium-height editable block" id="fwk-shafer-ch02_s05_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 2.19</span> Chebyshev’s Theorem</p>
+            <img src="section_06/41250222aa4332d8af126bb8d898dcba.jpg">
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch02_s05_s02_p04">It is important to pay careful attention to the words “at least” at the beginning of each of the three parts. The theorem gives the <em class="emphasis">minimum</em> proportion of the data which must lie within a given number of standard deviations of the mean; the true proportions found within the indicated regions could be greater than what the theorem guarantees.</p>
+        <div class="exercises block" id="fwk-shafer-ch02_s05_s02_n02">
+            <h3 class="title">Example 21</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s02_p05">A sample of size <em class="emphasis">n</em> = 50 has mean <span class="inlineequation" id="shafer-20121106-125753-091677"><math xml:id="fwk-shafer-ch02-m0453" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>28</mn></math></span> and standard deviation <em class="emphasis">s</em> = 3. Without knowing anything else about the sample, what can be said about the number of observations that lie in the interval (22,34)? What can be said about the number of observations that lie outside that interval?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s02_p06">The interval (22,34) is the one that is formed by adding and subtracting two standard deviations from the mean. By Chebyshev’s Theorem, at least 3/4 of the data are within this interval. Since 3/4 of 50 is 37.5, this means that at least 37.5 observations are in the interval. But one cannot take a fractional observation, so we conclude that at least 38 observations must lie inside the interval (22,34).</p>
+            <p class="para" id="fwk-shafer-ch02_s05_s02_p07">If at least 3/4 of the observations are in the interval, then at most 1/4 of them are outside it. Since 1/4 of 50 is 12.5, at most 12.5 observations are outside the interval. Since again a fraction of an observation is impossible, x (22,34).</p>
+            <div class="informalfigure large" id="fwk-shafer-ch02_s05_s02_fx01">
+                <img src="section_06/a86d2f0909ac477a1530f7c91e650de8.jpg">
+            </div>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch02_s05_s02_n03">
+            <h3 class="title">Example 22</h3>
+            <p class="para" id="fwk-shafer-ch02_s05_s02_p08">The number of vehicles passing through a busy intersection between 8:00 a.m. and 10:00 a.m. was observed and recorded on every weekday morning of the last year. The data set contains <em class="emphasis">n</em> = 251 numbers. The sample mean is <span class="inlineequation" id="shafer-20121106-125753-091693"><math xml:id="fwk-shafer-ch02-m0454" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>725</mn></math></span> and the sample standard deviation is <em class="emphasis">s</em> = 25. Identify which of the following statements <em class="emphasis">must</em> be true.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch02_s05_s02_o02" numeration="arabic">
+                <li>On approximately 95% of the weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was between 675 and 775.</li>
+                <li>On at least 75% of the weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was between 675 and 775.</li>
+                <li>On at least 189 weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was between 675 and 775.</li>
+                <li>On at most 25% of the weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was either less than 675 or greater than 775.</li>
+                <li>On at most 12.5% of the weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was less than 675.</li>
+                <li>On at most 25% of the weekday mornings last year the number of vehicles passing through the intersection from 8:00 a.m. to 10:00 a.m. was less than 675.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch02_s05_s02_o03" numeration="arabic">
+                <li>Since it is not stated that the relative frequency histogram of the data is bell-shaped, the Empirical Rule does not apply. Statement (1) is based on the Empirical Rule and therefore it might not be correct.</li>
+                <li>Statement (2) is a direct application of part (1) of Chebyshev’s Theorem because <span class="inlineequation" id="shafer-20121106-125753-091709"><math xml:id="fwk-shafer-ch02-m0455" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>2</mn><mi>s</mi><mo>,</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mn>2</mn><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mn>675,775</mn></mrow><mo stretchy="false">)</mo></mrow><mo>.</mo></math></span> It must be correct.</li>
+                <li>Statement (3) says the same thing as statement (2) because 75% of 251 is 188.25, so the minimum whole number of observations in this interval is 189. Thus statement (3) is definitely correct.</li>
+                <li>Statement (4) says the same thing as statement (2) but in different words, and therefore is definitely correct.</li>
+                <li>Statement (4), which is definitely correct, states that at most 25% of the time either fewer than 675 or more than 775 vehicles passed through the intersection. Statement (5) says that half of that 25% corresponds to days of light traffic. This would be correct if the relative frequency histogram of the data were known to be symmetric. But this is not stated; perhaps all of the observations outside the interval (675,775) are less than 75. Thus statement (5) might not be correct.</li>
+                <li>Statement (4) is definitely correct and statement (4) implies statement (6): even if every measurement that is outside the interval (675,775) is less than 675 (which is conceivable, since symmetry is not known to hold), even so at most 25% of all observations are less than 675. Thus statement (6) must definitely be correct.</li>
+            </ol>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch02_s05_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch02_s05_s02_l01" mark="bullet">
+                <li>The Empirical Rule is an approximation that applies only to data sets with a bell-shaped relative frequency histogram. It estimates the proportion of the measurements that lie within one, two, and three standard deviations of the mean.</li>
+                <li>Chebyshev’s Theorem is a fact that applies to all possible data sets. It describes the minimum proportion of the measurements that lie must within one, two, or more standard deviations of the mean.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s05_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s05_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p01">State the Empirical Rule.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p02">Describe the conditions under which the Empirical Rule may be applied.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p04">State Chebyshev’s Theorem.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p05">Describe the conditions under which Chebyshev’s Theorem may be applied.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p07">A sample data set with a bell-shaped distribution has mean <span class="inlineequation" id="shafer-20121106-125753-091725"><math xml:id="fwk-shafer-ch02-m0456" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>6</mn></math></span> and standard deviation <em class="emphasis">s</em> = 2. Find the approximate proportion of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o01" numeration="loweralpha">                                <li>between 4 and 8;</li>
+                                <li>between 2 and 10;</li>
+                                <li>between 0 and 12.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p08">A population data set with a bell-shaped distribution has mean <em class="emphasis">μ</em> = 6 and standard deviation <em class="emphasis">σ</em> = 2. Find the approximate proportion of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o03" numeration="loweralpha">                                <li>between 4 and 8;</li>
+                                <li>between 2 and 10;</li>
+                                <li>between 0 and 12.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p09">A population data set with a bell-shaped distribution has mean <em class="emphasis">μ</em> = 2 and standard deviation <em class="emphasis">σ</em> = 1.1. Find the approximate proportion of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o05" numeration="loweralpha">                                <li>above 2;</li>
+                                <li>above 3.1;</li>
+                                <li>between 2 and 3.1.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p10">A sample data set with a bell-shaped distribution has mean <span class="inlineequation" id="shafer-20121106-125753-091748"><math xml:id="fwk-shafer-ch02-m0457" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span> and standard deviation <em class="emphasis">s</em> = 1.1. Find the approximate proportion of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o07" numeration="loweralpha">                                <li>below −0.2;</li>
+                                <li>below 3.1;</li>
+                                <li>between −1.3 and 0.9.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p11">A population data set with a bell-shaped distribution and size <em class="emphasis">N</em> = 500 has mean <em class="emphasis">μ</em> = 2 and standard deviation <em class="emphasis">σ</em> = 1.1. Find the approximate number of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o09" numeration="loweralpha">                                <li>above 2;</li>
+                                <li>above 3.1;</li>
+                                <li>between 2 and 3.1.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p12">A sample data set with a bell-shaped distribution and size <em class="emphasis">n</em> = 128 has mean <span class="inlineequation" id="shafer-20121106-125753-091764"><math xml:id="fwk-shafer-ch02-m0458" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span> and standard deviation <em class="emphasis">s</em> = 1.1. Find the approximate number of observations in the data set that lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o11" numeration="loweralpha">                                <li>below −0.2;</li>
+                                <li>below 3.1;</li>
+                                <li>between −1.3 and 0.9.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p13">A sample data set has mean <span class="inlineequation" id="shafer-20121106-125753-091786"><math xml:id="fwk-shafer-ch02-m0459" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>6</mn></math></span> and standard deviation <em class="emphasis">s</em> = 2. Find the minimum proportion of observations in the data set that must lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o13" numeration="loweralpha">                                <li>between 2 and 10;</li>
+                                <li>between 0 and 12;</li>
+                                <li>between 4 and 8.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p14">A population data set has mean <em class="emphasis">μ</em> = 2 and standard deviation <em class="emphasis">σ</em> = 1.1. Find the minimum proportion of observations in the data set that must lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o15" numeration="loweralpha">                                <li>between −0.2 and 4.2;</li>
+                                <li>between −1.3 and 5.3.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p15">A population data set of size <em class="emphasis">N</em> = 500 has mean <em class="emphasis">μ</em> = 5.2 and standard deviation <em class="emphasis">σ</em> = 1.1. Find the minimum number of observations in the data set that must lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o17" numeration="loweralpha">                                <li>between 3 and 7.4;</li>
+                                <li>between 1.9 and 8.5.</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p16">A sample data set of size <em class="emphasis">n</em> = 128 has mean <span class="inlineequation" id="shafer-20121106-125753-091802"><math xml:id="fwk-shafer-ch02-m0460" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>2</mn></math></span> and standard deviation <em class="emphasis">s</em> = 2. Find the minimum number of observations in the data set that must lie: </p>
+<ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o19" numeration="loweralpha">                                <li>between −2 and 6 (including −2 and 6);</li>
+                                <li>between −4 and 8 (including −4 and 8).</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p17">A sample data set of size <em class="emphasis">n</em> = 30 has mean <span class="inlineequation" id="shafer-20121106-125753-091818"><math xml:id="fwk-shafer-ch02-m0461" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>6</mn></math></span> and standard deviation <em class="emphasis">s</em> = 2.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o21" numeration="loweralpha">
+                            <li>What is the maximum proportion of observations in the data set that can lie outside the interval (2,10)?</li>
+                            <li>What can be said about the proportion of observations in the data set that are below 2?</li>
+                            <li>What can be said about the proportion of observations in the data set that are above 10?</li>
+                            <li>What can be said about the number of observations in the data set that are above 10?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p18">A population data set has mean <em class="emphasis">μ</em> = 2 and standard deviation <em class="emphasis">σ</em> = 1.1.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o23" numeration="loweralpha">
+                            <li>What is the maximum proportion of observations in the data set that can lie outside the interval <span class="inlineequation" id="shafer-20121106-125753-091834"><math xml:id="fwk-shafer-ch02-m0462" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mtext>−</mtext><mn>1</mn><mo>.</mo><mn>3,5</mn><mo>.</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></math></span>?</li>
+                            <li>What can be said about the proportion of observations in the data set that are below −1.3?</li>
+                            <li>What can be said about the proportion of observations in the data set that are above 5.3?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s05_qs01_qd02" start="17">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p19">Scores on a final exam taken by 1,200 students have a bell-shaped distribution with mean 72 and standard deviation 9.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o25" numeration="loweralpha">
+                            <li>What is the median score on the exam?</li>
+                            <li>About how many students scored between 63 and 81?</li>
+                            <li>About how many students scored between 72 and 90?</li>
+                            <li>About how many students scored below 54?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p20">Lengths of fish caught by a commercial fishing boat have a bell-shaped distribution with mean 23 inches and standard deviation 1.5 inches.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o27" numeration="loweralpha">
+                            <li>About what proportion of all fish caught are between 20 inches and 26 inches long?</li>
+                            <li>About what proportion of all fish caught are between 20 inches and 23 inches long?</li>
+                            <li>About how long is the longest fish caught (only a small fraction of a percent are longer)?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p21">Hockey pucks used in professional hockey games must weigh between 5.5 and 6 ounces. If the weight of pucks manufactured by a particular process is bell-shaped, has mean 5.75 ounces and standard deviation 0.125 ounce, what proportion of the pucks will be usable in professional games?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p23">Hockey pucks used in professional hockey games must weigh between 5.5 and 6 ounces. If the weight of pucks manufactured by a particular process is bell-shaped and has mean 5.75 ounces, how large can the standard deviation be if 99.7% of the pucks are to be usable in professional games?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p25">Speeds of vehicles on a section of highway have a bell-shaped distribution with mean 60 mph and standard deviation 2.5 mph.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o29" numeration="loweralpha">
+                            <li>If the speed limit is 55 mph, about what proportion of vehicles are speeding?</li>
+                            <li>What is the median speed for vehicles on this highway?</li>
+                            <li>What is the percentile rank of the speed 65 mph?</li>
+                            <li>What speed corresponds to the 16th percentile?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p26">Suppose that, as in the previous exercise, speeds of vehicles on a section of highway have mean 60 mph and standard deviation 2.5 mph, but now the distribution of speeds is unknown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o31" numeration="loweralpha">
+                            <li>If the speed limit is 55 mph, at least what proportion of vehicles must speeding?</li>
+                            <li>What can be said about the proportion of vehicles going 65 mph or faster?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p27">An instructor announces to the class that the scores on a recent exam had a bell-shaped distribution with mean 75 and standard deviation 5.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o33" numeration="loweralpha">
+                            <li>What is the median score?</li>
+                            <li>Approximately what proportion of students in the class scored between 70 and 80?</li>
+                            <li>Approximately what proportion of students in the class scored above 85?</li>
+                            <li>What is the percentile rank of the score 85?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p28">The GPAs of all currently registered students at a large university have a bell-shaped distribution with mean 2.7 and standard deviation 0.6. Students with a GPA below 1.5 are placed on academic probation. Approximately what percentage of currently registered students at the university are on academic probation?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p30">Thirty-six students took an exam on which the average was 80 and the standard deviation was 6. A rumor says that five students had scores 61 or below. Can the rumor be true? Why or why not?</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch02_s05_qs01_qd03" start="26">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p32">For the sample data</p>
+                        <span class="informalequation" id="shafer-20121106-125753-091873"><math xml:id="fwk-shafer-ch02-m0464" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>26</mn></mtd><mtd columnalign="center"><mn>27</mn></mtd><mtd columnalign="center"><mn>28</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>30</mn></mtd><mtd columnalign="center"><mn>31</mn></mtd><mtd columnalign="center"><mn>32</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>16</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p33"><span class="inlineequation" id="shafer-20121106-125753-091889"><math xml:id="fwk-shafer-ch02-m0465" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>1,256</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-091905"><math xml:id="fwk-shafer-ch02-m0466" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>35,926</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o35" numeration="loweralpha">
+                            <li>Compute the mean and the standard deviation.</li>
+                            <li>About how many of the measurements does the Empirical Rule predict will be in the interval <span class="inlineequation" id="shafer-20121106-125753-091920"><math xml:id="fwk-shafer-ch02-m0467" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><mi>s</mi><mo>,</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow></math></span>, the interval <span class="inlineequation" id="shafer-20121106-125753-091936"><math xml:id="fwk-shafer-ch02-m0468" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>2</mn><mi>s</mi><mo>,</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mn>2</mn><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow></math></span>, and the interval <span class="inlineequation" id="shafer-20121106-125753-091953"><math xml:id="fwk-shafer-ch02-m0469" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mtext>−</mtext><mn>3</mn><mi>s</mi><mo>,</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>+</mo><mn>3</mn><mi>s</mi></mrow><mo stretchy="false">)</mo></mrow></math></span>?</li>
+                            <li>Compute the number of measurements that are actually in each of the intervals listed in part (a), and compare to the predicted numbers.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p34">A sample of size <em class="emphasis">n</em> = 80 has mean 139 and standard deviation 13, but nothing else is known about it.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o37" numeration="loweralpha">
+                            <li>What can be said about the number of observations that lie in the interval (126,152)?</li>
+                            <li>What can be said about the number of observations that lie in the interval (113,165)?</li>
+                            <li>What can be said about the number of observations that exceed 165?</li>
+                            <li>What can be said about the number of observations that either exceed 165 or are less than 113?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa28">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p35">For the sample data</p>
+                        <span class="informalequation" id="shafer-20121106-125753-091984"><math xml:id="fwk-shafer-ch02-m0471" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>84</mn></mtd><mtd columnalign="center"><mn>29</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p36"><span class="inlineequation" id="shafer-20121106-125753-092000"><math xml:id="fwk-shafer-ch02-m0472" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>168</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-092016"><math xml:id="fwk-shafer-ch02-m0473" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>300</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o39" numeration="loweralpha">
+                            <li>Compute the sample mean and the sample standard deviation.</li>
+                            <li>Considering the shape of the data set, do you expect the Empirical Rule to apply? Count the number of measurements within one standard deviation of the mean and compare it to the number predicted by the Empirical Rule.</li>
+                            <li>What does Chebyshev’s Rule say about the number of measurements within one standard deviation of the mean?</li>
+                            <li>Count the number of measurements within two standard deviations of the mean and compare it to the minimum number guaranteed by Chebyshev’s Theorem to lie in that interval.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa29">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p37">For the sample data set</p>
+                        <span class="informalequation" id="shafer-20121106-125753-092073"><math xml:id="fwk-shafer-ch02-m0476" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid none"><mtr><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mn>47</mn></mtd><mtd columnalign="center"><mn>48</mn></mtd><mtd columnalign="center"><mn>49</mn></mtd><mtd columnalign="center"><mn>50</mn></mtd><mtd columnalign="center"><mn>51</mn></mtd></mtr><mtr><mtd columnalign="center"><mi>f</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>18</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p38"><span class="inlineequation" id="shafer-20121106-125753-092092"><math xml:id="fwk-shafer-ch02-m0477" display="inline"><mi mathvariant="normal">Σ</mi><mi>x</mi><mo>=</mo><mn>1224</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-092108"><math xml:id="fwk-shafer-ch02-m0478" display="inline"><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>59,940</mn><mo>.</mo></math></span></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o41" numeration="loweralpha">
+                            <li>Compute the sample mean and the sample standard deviation.</li>
+                            <li>Considering the shape of the data set, do you expect the Empirical Rule to apply? Count the number of measurements within one standard deviation of the mean and compare it to the number predicted by the Empirical Rule.</li>
+                            <li>What does Chebyshev’s Rule say about the number of measurements within one standard deviation of the mean?</li>
+                            <li>Count the number of measurements within two standard deviations of the mean and compare it to the minimum number guaranteed by Chebyshev’s Theorem to lie in that interval.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch02_s05_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <p class="para">See the displayed statement in the text.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para">See the displayed statement in the text.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o02_ans" numeration="loweralpha">
+                            <li>0.68.</li>
+                            <li>0.95.</li>
+                            <li>0.997.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o06_ans" numeration="loweralpha">
+                            <li>0.5.</li>
+                            <li>0.16.</li>
+                            <li>0.34.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o10_ans" numeration="loweralpha">
+                            <li>250.</li>
+                            <li>80.</li>
+                            <li>170.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o14_ans" numeration="loweralpha">
+                            <li>3/4.</li>
+                            <li>8/9.</li>
+                            <li>0.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa13_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o18_ans" numeration="loweralpha">
+                            <li>375.</li>
+                            <li>445.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa15_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o22_ans" numeration="loweralpha">
+                            <li>At most 0.25.</li>
+                            <li>At most 0.25.</li>
+                            <li>At most 0.25.</li>
+                            <li>At most 7.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="17">
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o26_ans" numeration="loweralpha">
+                            <li>72.</li>
+                            <li>816.</li>
+                            <li>570.</li>
+                            <li>30.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p22_ans">0.95.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o30_ans" numeration="loweralpha">
+                            <li>0.975.</li>
+                            <li>60.</li>
+                            <li>97.5.</li>
+                            <li>57.5.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o34_ans" numeration="loweralpha">
+                            <li>75.</li>
+                            <li>0.68.</li>
+                            <li>0.025.</li>
+                            <li>0.975.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd02_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch02_s05_qs01_p31_ans">By Chebyshev’s Theorem at most 1∕9 of the scores can be below 62, so the rumor is impossible.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="26">
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa27_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o38_ans" numeration="loweralpha">
+                            <li>Nothing.</li>
+                            <li>It is at least 60.</li>
+                            <li>It is at most 20.</li>
+                            <li>It is at most 20.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch02_s05_qs01_qd03_qa29_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch02_s05_qs01_o42_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-092124_ans"><math xml:id="fwk-shafer-ch02-m0479" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>48.96</mn></math></span>, <em class="emphasis">s</em> = 0.7348.</li>
+                            <li>Roughly bell-shaped, the Empirical Rule should apply. True count: 18, predicted: 17.</li>
+                            <li>Nothing.</li>
+                            <li>True count: 23, guaranteed: at least 18.75, hence at least 19.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-04-relative-position-of-data.html"><img src="shared/images/batch-left.png"></a> <a href="s06-04-relative-position-of-data.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-01-sample-spaces-events-and-their.html">Next Section</a> <a href="s07-01-sample-spaces-events-and-their.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Sample Size Considerations</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-04-comparison-of-two-population-p.html"><img src="shared/images/batch-left.png"></a> <a href="s13-04-comparison-of-two-population-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-01-linear-relationships-between-v.html">Next Section</a> <a href="s14-01-linear-relationships-between-v.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch09_s05" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">9.5</span> Sample Size Considerations</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch09_s05_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch09_s05_o01" numeration="arabic">
+            <li>To learn how to apply formulas for estimating the size samples that will be needed in order to construct a confidence interval for the difference in two population means or proportions that meets given criteria.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch09_s05_p01">As was pointed out at the beginning of <a class="xref" href="fwk-shafer-ch07_s04#fwk-shafer-ch07_s04">Section 7.4 "Sample Size Considerations"</a> in <a class="xref" href="fwk-shafer-ch07#fwk-shafer-ch07">Chapter 7 "Estimation"</a>, sampling is typically done with definite objectives in mind. For example, a physician might wish to estimate the difference in the average amount of sleep gotten by patients suffering a certain condition with the average amount of sleep got by healthy adults, at 90% confidence and to within half an hour. Since sampling costs time, effort, and money, it would be useful to be able to estimate the smallest size samples that are likely to meet these criteria.</p>
+    <div class="section" id="fwk-shafer-ch09_s05_s01" version="5.0" lang="en">
+        <h2 class="title block">Estimating <span class="inlineequation" id="shafer-20121106-125753-147962"><math xml:id="fwk-shafer-ch09-m1095" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> with Independent Samples</h2>
+        <p class="para block" id="fwk-shafer-ch09_s05_s01_p01">Assuming that large samples will be required, the confidence interval formula for estimating the difference <span class="inlineequation" id="shafer-20121106-125753-147978"><math xml:id="fwk-shafer-ch09-m1096" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> between two population means using independent samples is <span class="inlineequation" id="shafer-20121106-125753-147994"><math xml:id="fwk-shafer-ch09-m1097" display="inline"><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>±</mo><mi>E</mi></math></span>, where</p>
+        <span class="informalequation block" id="shafer-20121106-125753-148010"><math xml:id="fwk-shafer-ch09-m1098" display="block"><mrow><mi>E</mi><mo>=</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><msqrt><mrow><mfrac><mrow><msubsup><mrow><mi>s</mi></mrow><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><msubsup><mrow><mi>s</mi></mrow><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch09_s05_s01_p02">To say that we wish to estimate the mean to within a certain number of units means that we want the margin of error <em class="emphasis">E</em> to be no larger than that number. The number <span class="inlineequation" id="shafer-20121106-125753-148026"><math xml:id="fwk-shafer-ch09-m1099" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is determined by the desired level of confidence.</p>
+        <p class="para block" id="fwk-shafer-ch09_s05_s01_p03">The numbers <em class="emphasis">s</em><sub class="subscript">1</sub> and <em class="emphasis">s</em><sub class="subscript">2</sub> are estimates of the standard deviations <span class="inlineequation" id="shafer-20121106-125753-148048"><math xml:id="fwk-shafer-ch09-m1100" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148064"><math xml:id="fwk-shafer-ch09-m1101" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> of the two populations. In analogy with what we did in <a class="xref" href="fwk-shafer-ch07_s04#fwk-shafer-ch07_s04">Section 7.4 "Sample Size Considerations"</a> in <a class="xref" href="fwk-shafer-ch07#fwk-shafer-ch07">Chapter 7 "Estimation"</a> we will assume that we either know or can reasonably approximate <span class="inlineequation" id="shafer-20121106-125753-148080"><math xml:id="fwk-shafer-ch09-m1102" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148096"><math xml:id="fwk-shafer-ch09-m1103" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span></p>
+        <p class="para block" id="fwk-shafer-ch09_s05_s01_p04">We cannot solve for both <em class="emphasis">n</em><sub class="subscript">1</sub> and <em class="emphasis">n</em><sub class="subscript">2</sub>, so we have to make an assumption about their relative sizes. We will specify that they be equal. With these assumptions we obtain the minimum sample sizes needed by solving the equation displayed just above for <span class="inlineequation" id="shafer-20121106-125753-148112"><math xml:id="fwk-shafer-ch09-m1104" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span></p>
+        <div class="callout block" id="fwk-shafer-ch09_s05_s01_n01">
+            <h3 class="title">Minimum Equal Sample Sizes for Estimating the Difference in the Means of Two Populations Using Independent Samples</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s01_p05">The estimated minimum equal sample sizes <span class="inlineequation" id="shafer-20121106-125753-148141"><math xml:id="fwk-shafer-ch09-m1105" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> needed to estimate the difference <span class="inlineequation" id="shafer-20121106-125753-148157"><math xml:id="fwk-shafer-ch09-m1106" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> in two population means to within <em class="emphasis">E</em> units at <span class="inlineequation" id="shafer-20121106-125753-148173"><math xml:id="fwk-shafer-ch09-m1107" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence is</p>
+            <span class="informalequation" id="shafer-20121106-125753-148197"><math xml:id="fwk-shafer-ch09-m1108" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mfrac><mrow><msup><mrow><mo stretchy="false">(</mo><msub><mi>z</mi><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><msubsup><mi mathvariant="italic">σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi mathvariant="italic">σ</mi><mn>2</mn><mn>2</mn></msubsup><mo stretchy="false">)</mo></mrow><mrow><msup><mi>E</mi><mn>2</mn></msup></mrow></mfrac></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mtext>rounded</mtext><mtext> </mtext><mtext>up</mtext><mo stretchy="false">)</mo></mrow></mtd></mtr></mtable></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch09_s05_s01_p06">In all the examples and exercises the population standard deviations <span class="inlineequation" id="shafer-20121106-125753-148214"><math xml:id="fwk-shafer-ch09-m1109" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148229"><math xml:id="fwk-shafer-ch09-m1110" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> will be given.</p>
+        <div class="exercises block" id="fwk-shafer-ch09_s05_s01_n02">
+            <h3 class="title">Example 13</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s01_p07">A law firm wishes to estimate the difference in the mean delivery time of documents sent between two of its offices by two different courier companies, to within half an hour and with 99.5% confidence. From their records it will randomly sample the same number <em class="emphasis">n</em> of documents as delivered by each courier company. Determine how large <em class="emphasis">n</em> must be if the estimated standard deviations of the delivery times are 0.75 hour for one company and 1.15 hours for the other.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s05_s01_p08">Confidence level 99.5% means that <span class="inlineequation" id="shafer-20121106-125753-148245"><math xml:id="fwk-shafer-ch09-m1111" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.995</mn><mo>=</mo><mn>0.005</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-148261"><math xml:id="fwk-shafer-ch09-m1112" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.0025</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-148277"><math xml:id="fwk-shafer-ch09-m1113" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.0025</mn></mrow></msub><mo>=</mo><mn>2.807</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch09_s05_s01_p09">To say that the estimate is to be “to within half an hour” means that <em class="emphasis">E</em> = 0.5. Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-148293"><math xml:id="fwk-shafer-ch09-m1114" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><msubsup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></msubsup><mo>+</mo><msubsup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.807</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>0.7</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup><mo>+</mo><mn>1.1</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow><mrow><mn>0</mn><mo>.</mo><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>59.40953746</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s05_s01_p10">which we round up to 60, since it is impossible to take a fractional observation. The law firm must sample 60 document deliveries by each company.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch09_s05_s02" version="5.0" lang="en">
+        <h2 class="title block">Estimating <span class="inlineequation" id="shafer-20121106-125753-148310"><math xml:id="fwk-shafer-ch09-m1115" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> with Paired Samples</h2>
+        <p class="para block" id="fwk-shafer-ch09_s05_s02_p01">As we mentioned at the end of <a class="xref" href="fwk-shafer-ch09_s03#fwk-shafer-ch09_s03">Section 9.3 "Comparison of Two Population Means: Paired Samples"</a>, if the sample is large (meaning that <em class="emphasis">n</em> ≥ 30) then in the formula for the confidence interval we may replace <span class="inlineequation" id="shafer-20121106-125753-148326"><math xml:id="fwk-shafer-ch09-m1116" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> by <span class="inlineequation" id="shafer-20121106-125753-148342"><math xml:id="fwk-shafer-ch09-m1117" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span>, so that the confidence interval formula becomes <span class="inlineequation" id="shafer-20121106-125753-148374"><math xml:id="fwk-shafer-ch09-m1118" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mi>E</mi></math></span> for</p>
+        <span class="informalequation block" id="shafer-20121106-125753-148390"><math xml:id="fwk-shafer-ch09-m1119" display="block"><mrow><mi>E</mi><mo>=</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi>d</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch09_s05_s02_p02">The number <em class="emphasis">s<sub class="subscript">d</sub></em> is an estimate of the standard deviations <span class="inlineequation" id="shafer-20121106-125753-148406"><math xml:id="fwk-shafer-ch09-m1120" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> of the population of differences. We must assume that we either know or can reasonably approximate <span class="inlineequation" id="shafer-20121106-125753-148422"><math xml:id="fwk-shafer-ch09-m1121" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>.</mo></math></span> Thus, assuming that large samples will be required to meet the criteria given, we can solve the displayed equation for <em class="emphasis">n</em> to obtain an estimate of the number of pairs needed in the sample.</p>
+        <div class="callout block" id="fwk-shafer-ch09_s05_s02_n01">
+            <h3 class="title">Minimum Sample Size for Estimating the Difference in the Means of Two Populations Using Paired Difference Samples</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s02_p03">The estimated minimum number of pairs <em class="emphasis">n</em> needed to estimate the difference <span class="inlineequation" id="shafer-20121106-125753-148438"><math xml:id="fwk-shafer-ch09-m1122" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> in two population means to within <em class="emphasis">E</em> units at <span class="inlineequation" id="shafer-20121106-125753-148454"><math xml:id="fwk-shafer-ch09-m1123" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence using paired difference samples is</p>
+            <span class="informalequation" id="shafer-20121106-125753-148470"><math xml:id="fwk-shafer-ch09-m1124" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mo>(</mo><msub><mi>z</mi><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>)</mo></mrow><mn>2</mn></msup><msubsup><mi mathvariant="italic">σ</mi><mi>d</mi><mn>2</mn></msubsup></mrow><mrow><msup><mi>E</mi><mn>2</mn></msup></mrow></mfrac></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mtext>rounded</mtext><mtext> </mtext><mtext>up</mtext><mo stretchy="false">)</mo></mrow></mtd></mtr></mtable></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch09_s05_s02_p04">In all the examples and exercises the population standard deviation of the differences <span class="inlineequation" id="shafer-20121106-125753-148486"><math xml:id="fwk-shafer-ch09-m1125" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> will be given.</p>
+        <div class="exercises block" id="fwk-shafer-ch09_s05_s02_n02">
+            <h3 class="title">Example 14</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s02_p05">A automotive tire manufacturer wishes to compare the mean lifetime of two tread designs under actual driving conditions. They will mount one of each type of tire on <em class="emphasis">n</em> vehicles (both on the front or both on the back) and measure the difference in remaining tread after 20,000 miles of driving. If the standard deviation of the differences is assumed to be 0.025 inch, find the minimum samples size needed to estimate the difference in mean depth (at 20,000 miles use) to within 0.01 inch at 99.9% confidence.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s05_s02_p06">Confidence level 99.9% means that <span class="inlineequation" id="shafer-20121106-125753-148514"><math xml:id="fwk-shafer-ch09-m1126" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.999</mn><mo>=</mo><mn>0.001</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-148530"><math xml:id="fwk-shafer-ch09-m1127" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.0005</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-148546"><math xml:id="fwk-shafer-ch09-m1128" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.0005</mn></mrow></msub><mo>=</mo><mn>3.291</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch09_s05_s02_p07">To say that the estimate is to be “to within 0.01 inch” means that <em class="emphasis">E</em> = 0.01. Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-148563"><math xml:id="fwk-shafer-ch09-m1129" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msubsup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3.291</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>0.025</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>0.01</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>67.69175625</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch09_s05_s02_p08">which we round up to 68. The manufacturer must test 68 pairs of tires.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch09_s05_s03" version="5.0" lang="en">
+        <h2 class="title block">Estimating <span class="inlineequation" id="shafer-20121106-125753-148579"><math xml:id="fwk-shafer-ch09-m1130" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span>
+</h2>
+        <p class="para block" id="fwk-shafer-ch09_s05_s03_p01">The confidence interval formula for estimating the difference <span class="inlineequation" id="shafer-20121106-125753-148595"><math xml:id="fwk-shafer-ch09-m1131" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> between two population proportions is <span class="inlineequation" id="shafer-20121106-125753-148611"><math xml:id="fwk-shafer-ch09-m1132" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mo>±</mo><mi>E</mi></math></span>, where</p>
+        <span class="informalequation block" id="shafer-20121106-125753-148627"><math xml:id="fwk-shafer-ch09-m1133" display="block"><mrow><mi>E</mi><mo>=</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><msqrt><mrow><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch09_s05_s03_p02">To say that we wish to estimate the mean to within a certain number of units means that we want the margin of error <em class="emphasis">E</em> to be no larger than that number. The number <span class="inlineequation" id="shafer-20121106-125753-148648"><math xml:id="fwk-shafer-ch09-m1134" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is determined by the desired level of confidence.</p>
+        <p class="para block" id="fwk-shafer-ch09_s05_s03_p03">We cannot solve for both <em class="emphasis">n</em><sub class="subscript">1</sub> and <em class="emphasis">n</em><sub class="subscript">2</sub>, so we have to make an assumption about their relative sizes. We will specify that they be equal. With these assumptions we obtain the minimum sample sizes needed by solving the displayed equation for <span class="inlineequation" id="shafer-20121106-125753-148665"><math xml:id="fwk-shafer-ch09-m1135" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>.</mo></math></span></p>
+        <div class="callout block" id="fwk-shafer-ch09_s05_s03_n01">
+            <h3 class="title">Minimum Equal Sample Sizes for Estimating the Difference in Two Population Proportions</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s03_p04">The estimated minimum equal sample sizes <span class="inlineequation" id="shafer-20121106-125753-148681"><math xml:id="fwk-shafer-ch09-m1136" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> needed to estimate the difference <span class="inlineequation" id="shafer-20121106-125753-148698"><math xml:id="fwk-shafer-ch09-m1137" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> in two population proportions to within <em class="emphasis">E</em> percentage points at <span class="inlineequation" id="shafer-20121106-125753-148713"><math xml:id="fwk-shafer-ch09-m1138" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence is</p>
+            <span class="informalequation" id="shafer-20121106-125753-148730"><math xml:id="fwk-shafer-ch09-m1139" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mrow></mtd><mtd><mo stretchy="false">(</mo><mtext>rounded</mtext><mtext> </mtext><mtext>up</mtext><mo stretchy="false">)</mo></mtd></mtr></mtable></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch09_s05_s03_p05">Here we face the same dilemma that we encountered in the case of a single population proportion: the formula for estimating how large a sample to take contains the numbers <span class="inlineequation" id="shafer-20121106-125753-148745"><math xml:id="fwk-shafer-ch09-m1140" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148762"><math xml:id="fwk-shafer-ch09-m1141" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></math></span>, which we know only after we have taken the sample. There are two ways out of this dilemma. Typically the researcher will have some idea as to the values of the population proportions <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub>, hence of what the sample proportions <span class="inlineequation" id="shafer-20121106-125753-148777"><math xml:id="fwk-shafer-ch09-m1142" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148799"><math xml:id="fwk-shafer-ch09-m1143" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></math></span> are likely to be. If so, those estimates can be used in the formula.</p>
+        <p class="para block" id="fwk-shafer-ch09_s05_s03_p06">The second approach to resolving the dilemma is simply to replace each of <span class="inlineequation" id="shafer-20121106-125753-148815"><math xml:id="fwk-shafer-ch09-m1144" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148831"><math xml:id="fwk-shafer-ch09-m1145" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></math></span> in the formula by 0.5. As in the one-population case, this is the <strong class="emphasis bold">most conservative estimate</strong>, since it gives the largest possible estimate of <em class="emphasis">n</em>. If we have an estimate of only one of <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub> we can use that estimate for it, and use the conservative estimate 0.5 for the other.</p>
+        <div class="exercises block" id="fwk-shafer-ch09_s05_s03_n02">
+            <h3 class="title">Example 15</h3>
+            <p class="para" id="fwk-shafer-ch09_s05_s03_p07">Find the minimum equal sample sizes necessary to construct a 98% confidence interval for the difference <span class="inlineequation" id="shafer-20121106-125753-148847"><math xml:id="fwk-shafer-ch09-m1146" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> with a margin of error <em class="emphasis">E</em> = 0.05,</p>
+            <ol class="orderedlist" id="fwk-shafer-ch09_s05_s03_o01" numeration="loweralpha">
+                <li>assuming that no prior knowledge about <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available; and</li>
+                <li>assuming that prior studies suggest that <span class="inlineequation" id="shafer-20121106-125753-148863"><math xml:id="fwk-shafer-ch09-m1147" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.2</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148879"><math xml:id="fwk-shafer-ch09-m1148" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.3</mn><mo>.</mo></math></span>
+</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch09_s05_s03_p08">Confidence level 98% means that <span class="inlineequation" id="shafer-20121106-125753-148894"><math xml:id="fwk-shafer-ch09-m1149" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.98</mn><mo>=</mo><mn>0.02</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-148910"><math xml:id="fwk-shafer-ch09-m1150" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.01</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-148927"><math xml:id="fwk-shafer-ch09-m1151" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>=</mo><mn>2.326</mn><mo>.</mo></math></span></p>
+            <ol class="orderedlist" id="fwk-shafer-ch09_s05_s03_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">Since there is no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> we make the most conservative estimate that <span class="inlineequation" id="shafer-20121106-125753-148949"><math xml:id="fwk-shafer-ch09-m1152" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>0.5</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-148966"><math xml:id="fwk-shafer-ch09-m1153" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>0.5</mn><mo>.</mo></math></span> Then</p>
+                    <span class="informalequation" id="shafer-20121106-125753-148982"><math xml:id="fwk-shafer-ch09-m1154" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.326</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mn>1082.0552</mn></mtd></mtr></mtable></math></span>
+                    <p class="para">which we round up to 1,083. We must take a sample of size 1,083 from each population.</p>
+                </li>
+                <li>
+                    <p class="para">Since <span class="inlineequation" id="shafer-20121106-125753-148999"><math xml:id="fwk-shafer-ch09-m1155" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.2</mn></math></span> we estimate <span class="inlineequation" id="shafer-20121106-125753-149022"><math xml:id="fwk-shafer-ch09-m1156" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> by 0.2, and since <span class="inlineequation" id="shafer-20121106-125753-149038"><math xml:id="fwk-shafer-ch09-m1157" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.3</mn></math></span> we estimate <span class="inlineequation" id="shafer-20121106-125753-149057"><math xml:id="fwk-shafer-ch09-m1158" display="inline"><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></math></span> by 0.3. Thus we obtain</p>
+                    <span class="informalequation" id="shafer-20121106-125753-149073"><math xml:id="fwk-shafer-ch09-m1159" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mrow><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.326</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mn>0.2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.8</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mn>0.3</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.7</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="left"><mo>=</mo><mn>800.720848</mn></mtd></mtr></mtable></math></span>
+                    <p class="para">which we round up to 801. We must take a sample of size 801 from each population.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="key_takeaways block" id="fwk-shafer-ch09_s05_s03_n03">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch09_s05_s03_l01" mark="bullet">
+                <li>If the population standard deviations <span class="inlineequation" id="shafer-20121106-125753-149095"><math xml:id="fwk-shafer-ch09-m1160" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149112"><math xml:id="fwk-shafer-ch09-m1161" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> are known or can be estimated, then the minimum equal sizes of independent samples needed to obtain a confidence interval for the difference <span class="inlineequation" id="shafer-20121106-125753-149128"><math xml:id="fwk-shafer-ch09-m1162" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> in two population means with a given maximum error of the estimate <em class="emphasis">E</em> and a given level of confidence can be estimated.</li>
+                <li>If the standard deviation <span class="inlineequation" id="shafer-20121106-125753-149145"><math xml:id="fwk-shafer-ch09-m1163" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub></math></span> of the population of differences in pairs drawn from two populations is known or can be estimated, then the minimum number of sample pairs needed under paired difference sampling to obtain a confidence interval for the difference <span class="inlineequation" id="shafer-20121106-125753-149166"><math xml:id="fwk-shafer-ch09-m1164" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> in two population means with a given maximum error of the estimate <em class="emphasis">E</em> and a given level of confidence can be estimated.</li>
+                <li>The minimum equal sample sizes needed to obtain a confidence interval for the difference in two population proportions with a given maximum error of the estimate and a given level of confidence can always be estimated. If there is prior knowledge of the population proportions <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub> then the estimate can be sharpened.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch09_s05_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch09_s05_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p01">Estimate the common sample size <em class="emphasis">n</em> of equally sized independent samples needed to estimate <span class="inlineequation" id="shafer-20121106-125753-149181"><math xml:id="fwk-shafer-ch09-m1165" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified when the population standard deviations are as shown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o01" numeration="loweralpha">
+                            <li>90% confidence, to within 3 units, <span class="inlineequation" id="shafer-20121106-125753-149198"><math xml:id="fwk-shafer-ch09-m1166" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>10</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149214"><math xml:id="fwk-shafer-ch09-m1167" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>7</mn></math></span>
+</li>
+                            <li>99% confidence, to within 4 units, <span class="inlineequation" id="shafer-20121106-125753-149236"><math xml:id="fwk-shafer-ch09-m1168" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>6.8</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149253"><math xml:id="fwk-shafer-ch09-m1169" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>9.3</mn></math></span>
+</li>
+                            <li>95% confidence, to within 5 units, <span class="inlineequation" id="shafer-20121106-125753-149269"><math xml:id="fwk-shafer-ch09-m1170" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>22.6</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149285"><math xml:id="fwk-shafer-ch09-m1171" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>31.8</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p02">Estimate the common sample size <em class="emphasis">n</em> of equally sized independent samples needed to estimate <span class="inlineequation" id="shafer-20121106-125753-149350"><math xml:id="fwk-shafer-ch09-m1175" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified when the population standard deviations are as shown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o03" numeration="loweralpha">
+                            <li>80% confidence, to within 2 units, <span class="inlineequation" id="shafer-20121106-125753-149373"><math xml:id="fwk-shafer-ch09-m1176" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>14</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149390"><math xml:id="fwk-shafer-ch09-m1177" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>23</mn></math></span>
+</li>
+                            <li>90% confidence, to within 0.3 units, <span class="inlineequation" id="shafer-20121106-125753-149406"><math xml:id="fwk-shafer-ch09-m1178" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>1.3</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149422"><math xml:id="fwk-shafer-ch09-m1179" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>0.8</mn></math></span>
+</li>
+                            <li>99% confidence, to within 11 units, <span class="inlineequation" id="shafer-20121106-125753-149438"><math xml:id="fwk-shafer-ch09-m1180" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mn>42</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149454"><math xml:id="fwk-shafer-ch09-m1181" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>37</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p03">Estimate the number <em class="emphasis">n</em> of pairs that must be sampled in order to estimate <span class="inlineequation" id="shafer-20121106-125753-149527"><math xml:id="fwk-shafer-ch09-m1185" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified when the standard deviation <em class="emphasis">s<sub class="subscript">d</sub></em> of the population of differences is as shown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o05" numeration="loweralpha">
+                            <li>80% confidence, to within 6 units, <span class="inlineequation" id="shafer-20121106-125753-149543"><math xml:id="fwk-shafer-ch09-m1186" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>26.5</mn></math></span>
+</li>
+                            <li>95% confidence, to within 4 units, <span class="inlineequation" id="shafer-20121106-125753-149559"><math xml:id="fwk-shafer-ch09-m1187" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>12</mn></math></span>
+</li>
+                            <li>90% confidence, to within 5.2 units, <span class="inlineequation" id="shafer-20121106-125753-149575"><math xml:id="fwk-shafer-ch09-m1188" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>11.3</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p04">Estimate the number <em class="emphasis">n</em> of pairs that must be sampled in order to estimate <span class="inlineequation" id="shafer-20121106-125753-149646"><math xml:id="fwk-shafer-ch09-m1192" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified when the standard deviation <em class="emphasis">s<sub class="subscript">d</sub></em> of the population of differences is as shown.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o07" numeration="loweralpha">
+                            <li>90% confidence, to within 20 units, <span class="inlineequation" id="shafer-20121106-125753-149663"><math xml:id="fwk-shafer-ch09-m1193" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>75.5</mn></math></span>
+</li>
+                            <li>95% confidence, to within 11 units, <span class="inlineequation" id="shafer-20121106-125753-149679"><math xml:id="fwk-shafer-ch09-m1194" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>31.4</mn></math></span>
+</li>
+                            <li>99% confidence, to within 1.8 units, <span class="inlineequation" id="shafer-20121106-125753-149695"><math xml:id="fwk-shafer-ch09-m1195" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><mn>4</mn></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p05">Estimate the minimum equal sample sizes <span class="inlineequation" id="shafer-20121106-125753-149759"><math xml:id="fwk-shafer-ch09-m1199" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> necessary in order to estimate <span class="inlineequation" id="shafer-20121106-125753-149780"><math xml:id="fwk-shafer-ch09-m1200" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o09" numeration="loweralpha">
+                            <li>
+                                <p class="para">80% confidence, to within 0.05 (five percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o10" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-149797"><math xml:id="fwk-shafer-ch09-m1201" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.20</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149813"><math xml:id="fwk-shafer-ch09-m1202" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.65</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="para">90% confidence, to within 0.02 (two percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o11" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-149829"><math xml:id="fwk-shafer-ch09-m1203" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.75</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149845"><math xml:id="fwk-shafer-ch09-m1204" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.63</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="para">95% confidence, to within 0.10 (ten percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o12" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-149861"><math xml:id="fwk-shafer-ch09-m1205" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.11</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-149878"><math xml:id="fwk-shafer-ch09-m1206" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.37</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p06">Estimate the minimum equal sample sizes <span class="inlineequation" id="shafer-20121106-125753-150002"><math xml:id="fwk-shafer-ch09-m1213" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> necessary in order to estimate <span class="inlineequation" id="shafer-20121106-125753-150018"><math xml:id="fwk-shafer-ch09-m1214" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> as specified.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o17" numeration="loweralpha">
+                            <li>
+                                <p class="para">80% confidence, to within 0.02 (two percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o18" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-150034"><math xml:id="fwk-shafer-ch09-m1215" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.78</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-150050"><math xml:id="fwk-shafer-ch09-m1216" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.65</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="para">90% confidence, to within 0.05 (two percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o19" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-150066"><math xml:id="fwk-shafer-ch09-m1217" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.12</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-150090"><math xml:id="fwk-shafer-ch09-m1218" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.24</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                            <li>
+                                <p class="para">95% confidence, to within 0.10 (ten percentage points)</p>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o20" numeration="lowerroman">
+                                    <li>when no prior knowledge of <em class="emphasis">p</em><sub class="subscript">1</sub> or <em class="emphasis">p</em><sub class="subscript">2</sub> is available</li>
+                                    <li>when prior studies indicate that <span class="inlineequation" id="shafer-20121106-125753-150106"><math xml:id="fwk-shafer-ch09-m1219" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>≈</mo><mn>0.14</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-150122"><math xml:id="fwk-shafer-ch09-m1220" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>0.21</mn></math></span>
+</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch09_s05_qs01_qd02" start="7">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p07">An educational researcher wishes to estimate the difference in average scores of elementary school children on two versions of a 100-point standardized test, at 99% confidence and to within two points. Estimate the minimum equal sample sizes necessary if it is known that the standard deviation of scores on different versions of such tests is 4.9.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p09">A university administrator wishes to estimate the difference in mean grade point averages among all men affiliated with fraternities and all unaffiliated men, with 95% confidence and to within 0.15. It is known from prior studies that the standard deviations of grade point averages in the two groups have common value 0.4. Estimate the minimum equal sample sizes necessary to meet these criteria.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p11">An automotive tire manufacturer wishes to estimate the difference in mean wear of tires manufactured with an experimental material and ordinary production tire, with 90% confidence and to within 0.5 mm. To eliminate extraneous factors arising from different driving conditions the tires will be tested in pairs on the same vehicles. It is known from prior studies that the standard deviations of the differences of wear of tires constructed with the two kinds of materials is 1.75 mm. Estimate the minimum number of pairs in the sample necessary to meet these criteria.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p13">To assess to the relative happiness of men and women in their marriages, a marriage counselor plans to administer a test measuring happiness in marriage to <em class="emphasis">n</em> randomly selected married couples, record the their test scores, find the differences, and then draw inferences on the possible difference. Let <span class="inlineequation" id="shafer-20121106-125753-150290"><math xml:id="fwk-shafer-ch09-m1230" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-150306"><math xml:id="fwk-shafer-ch09-m1231" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> be the true average levels of happiness in marriage for men and women respectively as measured by this test. Suppose it is desired to find a 90% confidence interval for estimating <span class="inlineequation" id="shafer-20121106-125753-150322"><math xml:id="fwk-shafer-ch09-m1232" display="inline"><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>=</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> to within two test points. Suppose further that, from prior studies, it is known that the standard deviation of the differences in test scores is <span class="inlineequation" id="shafer-20121106-125753-150338"><math xml:id="fwk-shafer-ch09-m1233" display="inline"><msub><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mi>d</mi></mrow></msub><mo>≈</mo><mn>10</mn><mo>.</mo></math></span> What is the minimum number of married couples that must be included in this study?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p15">A journalist plans to interview an equal number of members of two political parties to compare the proportions in each party who favor a proposal to allow citizens with a proper license to carry a concealed handgun in public parks. Let <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub> be the true proportions of members of the two parties who are in favor of the proposal. Suppose it is desired to find a 95% confidence interval for estimating <span class="inlineequation" id="shafer-20121106-125753-150378"><math xml:id="fwk-shafer-ch09-m1235" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> to within 0.05. Estimate the minimum equal number of members of each party that must be sampled to meet these criteria.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p17">A member of the state board of education wants to compare the proportions of National Board Certified (NBC) teachers in private high schools and in public high schools in the state. His study plan calls for an equal number of private school teachers and public school teachers to be included in the study. Let <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub> be these proportions. Suppose it is desired to find a 99% confidence interval that estimates <span class="inlineequation" id="shafer-20121106-125753-150411"><math xml:id="fwk-shafer-ch09-m1237" display="inline"><msub><mrow><mi>p</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>p</mi></mrow><mrow><mn>2</mn></mrow></msub></math></span> to within 0.05.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o25" numeration="loweralpha">
+                            <li>Supposing that both proportions are known, from a prior study, to be approximately 0.15, compute the minimum common sample size needed.</li>
+                            <li>Compute the minimum common sample size needed on the supposition that nothing is known about the values of <em class="emphasis">p</em><sub class="subscript">1</sub> and <em class="emphasis">p</em><sub class="subscript">2</sub>.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch09_s05_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o02_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-149302_ans"><math xml:id="fwk-shafer-ch09-m1172" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>45</mn></math></span>,</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-149318_ans"><math xml:id="fwk-shafer-ch09-m1173" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>56</mn><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-149334_ans"><math xml:id="fwk-shafer-ch09-m1174" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>234</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o06_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-149591_ans"><math xml:id="fwk-shafer-ch09-m1189" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>33</mn><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-149607_ans"><math xml:id="fwk-shafer-ch09-m1190" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>35</mn><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-149624_ans"><math xml:id="fwk-shafer-ch09-m1191" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>13</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o13_ans" numeration="loweralpha">
+                            <li>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o14_ans" numeration="lowerroman">
+                                    <li>
+<span class="inlineequation" id="shafer-20121106-125753-149895_ans"><math xml:id="fwk-shafer-ch09-m1207" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>329</mn></math></span>,</li>
+                                    <li><span class="inlineequation" id="shafer-20121106-125753-149911_ans"><math xml:id="fwk-shafer-ch09-m1208" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>255</mn><mo>.</mo></math></span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o15_ans" numeration="lowerroman">
+                                    <li>
+<span class="inlineequation" id="shafer-20121106-125753-149927_ans"><math xml:id="fwk-shafer-ch09-m1209" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>3383</mn></math></span>,</li>
+                                    <li><span class="inlineequation" id="shafer-20121106-125753-149952_ans"><math xml:id="fwk-shafer-ch09-m1210" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>2846</mn><mo>.</mo></math></span></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <ol class="orderedlist" id="fwk-shafer-ch09_s05_qs01_o16_ans" numeration="lowerroman">
+                                    <li>
+<span class="inlineequation" id="shafer-20121106-125753-149969_ans"><math xml:id="fwk-shafer-ch09-m1211" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>193</mn></math></span>,</li>
+                                    <li><span class="inlineequation" id="shafer-20121106-125753-149985_ans"><math xml:id="fwk-shafer-ch09-m1212" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>=</mo><mn>128</mn></math></span></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="7">
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p08_ans"><span class="inlineequation" id="shafer-20121106-125753-150242_ans"><math xml:id="fwk-shafer-ch09-m1227" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>80</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p12_ans"><span class="inlineequation" id="shafer-20121106-125753-150274_ans"><math xml:id="fwk-shafer-ch09-m1229" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>34</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch09_s05_qs01_p16_ans"><span class="inlineequation" id="shafer-20121106-125753-150395_ans"><math xml:id="fwk-shafer-ch09-m1236" display="inline"><msub><mrow><mi>n</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mrow><mi>n</mi></mrow><mrow><mn>2</mn></mrow></msub><mo>≈</mo><mn>769</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch09_s05_qs01_qd02_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-04-comparison-of-two-population-p.html"><img src="shared/images/batch-left.png"></a> <a href="s13-04-comparison-of-two-population-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-01-linear-relationships-between-v.html">Next Section</a> <a href="s14-01-linear-relationships-between-v.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

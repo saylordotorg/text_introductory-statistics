@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Least Squares Regression Line</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-03-modelling-linear-relationships.html"><img src="shared/images/batch-left.png"></a> <a href="s14-03-modelling-linear-relationships.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-05-statistical-inferences-about-1.html">Next Section</a> <a href="s14-05-statistical-inferences-about-1.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.4</span> The Least Squares Regression Line</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s04_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s04_o01" numeration="arabic">
+            <li>To learn how to measure how well a straight line fits a collection of data.</li>
+            <li>To learn how to construct the least squares regression line, the straight line that best fits a collection of data.</li>
+            <li>To learn the meaning of the slope of the least squares regression line.</li>
+            <li>To learn how to use the least squares regression line to estimate the response variable <em class="emphasis">y</em> in terms of the predictor variable <em class="emphasis">x</em>.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch10_s04_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Goodness of Fit of a Straight Line to Data</h2>
+        <p class="para block" id="fwk-shafer-ch10_s04_s01_p01">Once the scatter diagram of the data has been drawn and the model assumptions described in the previous sections at least visually verified (and perhaps the correlation coefficient <em class="emphasis">r</em> computed to quantitatively verify the linear trend), the next step in the analysis is to find the straight line that best fits the data. We will explain how to measure how well a straight line fits a collection of points by examining how well the line <span class="inlineequation" id="shafer-20121106-125753-152490"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0119" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> fits the data set</p>
+        <span class="informalequation block" id="shafer-20121106-125753-152508"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0120" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd></mtr></mtable></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch10_s04_s01_p02">(which will be used as a running example for the next three sections). We will write the equation of this line as <span class="inlineequation" id="shafer-20121106-125753-152524"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0121" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> with an accent on the <em class="emphasis">y</em> to indicate that the <em class="emphasis">y</em>-values computed using this equation are not from the data. We will do this with all lines approximating data sets. The line <span class="inlineequation" id="shafer-20121106-125753-152556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0122" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> was selected as one that seems to fit the data reasonably well.</p>
+        <p class="para block" id="fwk-shafer-ch10_s04_s01_p03">The idea for measuring the goodness of fit of a straight line to data is illustrated in <a class="xref" href="#fwk-shafer-ch10_s04_s01_f01">Figure 10.6 "Plot of the Five-Point Data and the Line "</a>, in which the graph of the line <span class="inlineequation" id="shafer-20121106-125753-152572"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0123" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> has been superimposed on the scatter plot for the sample data set.</p>
+        <div class="figure large medium-height block" id="fwk-shafer-ch10_s04_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 10.6</span> Plot of the Five-Point Data and the Line <span class="inlineequation" id="shafer-20121106-125753-152588"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0124" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span></p>
+            <img src="section_14/2f707e3177c1a3f56b84fb8ded3894aa.jpg">
+        </div>
+        <p class="para block" id="fwk-shafer-ch10_s04_s01_p04">To each point in the data set there is associated an “<span class="margin_term"><a class="glossterm">error</a><span class="glossdef">Using <span class="inlineequation" id="shafer-20121106-125753-152604"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0125" display="inline"><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span>, the actual <em class="emphasis">y</em>-value of a data point minus the <em class="emphasis">y</em>-value that is computed from the equation of the line fitting the data.</span></span>,” the positive or negative vertical distance from the point to the line: positive if the point is above the line and negative if it is below the line. The error can be computed as the actual <em class="emphasis">y</em>-value of the point minus the <em class="emphasis">y</em>-value <span class="inlineequation" id="shafer-20121106-125753-152620"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0126" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span> that is “predicted” by inserting the <em class="emphasis">x</em>-value of the data point into the formula for the line:</p>
+        <span class="informalequation block" id="shafer-20121106-125753-152637"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0127" display="block"><mrow><mtext>error</mtext><mtext> </mtext><mtext>at</mtext><mtext> </mtext><mtext>data</mtext><mtext> </mtext><mtext>point</mtext><mtext> </mtext><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mtext>true</mtext><mtext> </mtext><mi>y</mi><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mtext>predicted</mtext><mtext> </mtext><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow></math></span>
+        <p class="para editable block" id="fwk-shafer-ch10_s04_s01_p05">The computation of the error for each of the five points in the data set is shown in <a class="xref" href="#fwk-shafer-ch10_s04_s01_t01">Table 10.1 "The Errors in Fitting Data with a Straight Line"</a>.</p>
+        <div class="table block" id="fwk-shafer-ch10_s04_s01_t01" frame="none">
+            <p class="title"><span class="title-prefix">Table 10.1</span> The Errors in Fitting Data with a Straight Line</p>
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="left"></th>
+                        <th align="center"><em class="emphasis">x</em></th>
+                        <th align="center"><em class="emphasis">y</em></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-152653"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0128" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-152669"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0129" display="inline"><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span></th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-152686"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0130" display="inline"><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></math></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="center">2</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                    </tr>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="center">2</td>
+                        <td align="center">1</td>
+                        <td align="center">0</td>
+                        <td align="center">1</td>
+                        <td align="center">1</td>
+                    </tr>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="center">6</td>
+                        <td align="center">2</td>
+                        <td align="center">2</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                    </tr>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="center">8</td>
+                        <td align="center">3</td>
+                        <td align="center">3</td>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                    </tr>
+                    <tr>
+                        <td align="left"></td>
+                        <td align="center">10</td>
+                        <td align="center">3</td>
+                        <td align="center">4</td>
+                        <td align="center">−1</td>
+                        <td align="center">1</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Σ</td>
+                        <td align="center">-</td>
+                        <td align="center">-</td>
+                        <td align="center">-</td>
+                        <td align="center">0</td>
+                        <td align="center">2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch10_s04_s01_p06">A first thought for a measure of the goodness of fit of the line to the data would be simply to add the errors at every point, but the example shows that this cannot work well in general. The line does not fit the data perfectly (no line can), yet because of cancellation of positive and negative errors the sum of the errors (the fourth column of numbers) is zero. Instead goodness of fit is measured by the sum of the squares of the errors. Squaring eliminates the minus signs, so no cancellation can occur. For the data and line in <a class="xref" href="#fwk-shafer-ch10_s04_s01_f01">Figure 10.6 "Plot of the Five-Point Data and the Line "</a> the sum of the squared errors (the last column of numbers) is 2. This number measures the goodness of fit of the line to the data.</p>
+        <div class="callout block" id="fwk-shafer-ch10_s04_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s01_p07"><em class="emphasis">The</em> <strong class="emphasis bold">goodness of fit</strong> <em class="emphasis">of a line</em> <span class="inlineequation" id="shafer-20121106-125753-152708"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0131" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></math></span> <em class="emphasis">to a set of</em> <em class="emphasis">n</em> <em class="emphasis">pairs</em> <span class="inlineequation" id="shafer-20121106-125753-152724"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0132" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> <em class="emphasis">of numbers in a sample is the sum of the squared errors</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-152741"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0133" display="block"><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s01_p08"><em class="emphasis">(</em><em class="emphasis">n</em> <em class="emphasis">terms in the sum, one for each data pair).</em></p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch10_s04_s02" version="5.0" lang="en">
+        <h2 class="title editable block">The Least Squares Regression Line</h2>
+        <p class="para editable block" id="fwk-shafer-ch10_s04_s02_p01">Given any collection of pairs of numbers (except when all the <em class="emphasis">x</em>-values are the same) and the corresponding scatter diagram, there always exists exactly one straight line that fits the data better than any other, in the sense of minimizing the sum of the squared errors. It is called the <em class="emphasis">least squares regression line</em>. Moreover there are formulas for its slope and <em class="emphasis">y</em>-intercept.</p>
+        <div class="callout block" id="fwk-shafer-ch10_s04_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p02"><em class="emphasis">Given a collection of pairs</em> <span class="inlineequation" id="shafer-20121106-125753-152756"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0134" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> <em class="emphasis">of numbers (in which not all the</em> <em class="emphasis">x</em><em class="emphasis">-values are the same), there is a line</em> <span class="inlineequation" id="shafer-20121106-125753-152773"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0135" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">that best fits the data in the sense of minimizing the sum of the squared errors. It is called the</em> <span class="margin_term"><a class="glossterm">least squares regression line</a><span class="glossdef">The line that best fits a set of sample data in the sense of minimizing the sum of the squared errors.</span></span>. <em class="emphasis">Its slope</em> <span class="inlineequation" id="shafer-20121106-125753-152789"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0136" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> <em class="emphasis">and</em> <em class="emphasis">y</em><em class="emphasis">-intercept</em> <span class="inlineequation" id="shafer-20121106-125753-152804"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0137" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">are computed using the formulas</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-152820"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0138" display="block"><mrow><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>0</mn></msub><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p03"><em class="emphasis">where</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-152842"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0139" display="block"><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo class="MathClass-rel">=</mo><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>,</mo><mtext> </mtext><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo class="MathClass-rel">=</mo><mi mathvariant="normal">Σ</mi><mi>x</mi><mi>y</mi><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mrow><mo class="MathClass-open">(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi></mrow><mo class="MathClass-close">)</mo></mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p04"><span class="inlineequation" id="shafer-20121106-125753-152858"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0140" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></math></span> <em class="emphasis">is the mean of all the</em> <em class="emphasis">x</em><em class="emphasis">-values,</em> <span class="inlineequation" id="shafer-20121106-125753-152874"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0141" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></math></span> <em class="emphasis">is the mean of all the</em> <em class="emphasis">y</em><em class="emphasis">-values, and</em> <em class="emphasis">n</em> <em class="emphasis">is the number of pairs in the data set.</em></p>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p05"><em class="emphasis">The equation</em> <span class="inlineequation" id="shafer-20121106-125753-152889"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0142" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> <em class="emphasis">specifying the least squares regression line is called the</em> <span class="margin_term"><a class="glossterm">least squares regression equation</a><span class="glossdef">The equation <span class="inlineequation" id="shafer-20121106-125753-152905"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0143" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> of the least squares regression line.</span></span>.</p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch10_s04_s02_p06">Remember from <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a> that the line with the equation <span class="inlineequation" id="shafer-20121106-125753-152922"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0144" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> is called the population regression line. The numbers <span class="inlineequation" id="shafer-20121106-125753-152938"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0145" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-152954"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0146" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> are statistics that estimate the population parameters <span class="inlineequation" id="shafer-20121106-125753-152969"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0147" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-152991"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0148" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>.</mo></math></span></p>
+        <p class="para editable block" id="fwk-shafer-ch10_s04_s02_p07">We will compute the least squares regression line for the five-point data set, then for a more practical example that will be another running example for the introduction of new concepts in this and the next three sections.</p>
+        <div class="exercises block" id="fwk-shafer-ch10_s04_s02_n02">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p08">Find the least squares regression line for the five-point data set</p>
+            <span class="informalequation" id="shafer-20121106-125753-153007"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0149" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p09">and verify that it fits the data better than the line <span class="inlineequation" id="shafer-20121106-125753-153024"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0150" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> considered in <a class="xref" href="#fwk-shafer-ch10_s04_s01">Section 10.4.1 "Goodness of Fit of a Straight Line to Data"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p10">In actual practice computation of the regression line is done using a statistical computation package. In order to clarify the meaning of the formulas we display the computations in tabular form.</p>
+            <div class="informaltable" id="fwk-shafer-ch10_s04_s02_tx01" frame="none">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="left"></th>
+                            <th align="center"><em class="emphasis">x</em></th>
+                            <th align="center"><em class="emphasis">y</em></th>
+                            <th align="center">
+<em class="emphasis">x</em><sup class="superscript">2</sup>
+</th>
+                            <th align="center"><span class="inlineequation" id="shafer-20121106-125753-153041"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0151" display="inline"><mi>x</mi><mi>y</mi></math></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"></td>
+                            <td align="center">2</td>
+                            <td align="center">0</td>
+                            <td align="center">4</td>
+                            <td align="center">0</td>
+                        </tr>
+                        <tr>
+                            <td align="left"></td>
+                            <td align="center">2</td>
+                            <td align="center">1</td>
+                            <td align="center">4</td>
+                            <td align="center">2</td>
+                        </tr>
+                        <tr>
+                            <td align="left"></td>
+                            <td align="center">6</td>
+                            <td align="center">2</td>
+                            <td align="center">36</td>
+                            <td align="center">12</td>
+                        </tr>
+                        <tr>
+                            <td align="left"></td>
+                            <td align="center">8</td>
+                            <td align="center">3</td>
+                            <td align="center">64</td>
+                            <td align="center">24</td>
+                        </tr>
+                        <tr>
+                            <td align="left"></td>
+                            <td align="center">10</td>
+                            <td align="center">3</td>
+                            <td align="center">100</td>
+                            <td align="center">30</td>
+                        </tr>
+                        <tr>
+                            <td align="left">Σ</td>
+                            <td align="center">28</td>
+                            <td align="center">9</td>
+                            <td align="center">208</td>
+                            <td align="center">68</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p11">In the last line of the table we have the sum of the numbers in each column. Using them we compute:</p>
+            <span class="informalequation" id="shafer-20121106-125753-153057"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0152" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="right"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>208</mn><mo>−</mo><mfrac><mn>1</mn><mn>5</mn></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>28</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>51.2</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mn>68</mn><mo>−</mo><mfrac><mn>1</mn><mn>5</mn></mfrac><mo stretchy="false">(</mo><mn>28</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>9</mn><mo stretchy="false">)</mo><mo>=</mo><mn>17.6</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mfrac><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mrow><mn>28</mn></mrow><mn>5</mn></mfrac><mo>=</mo><mn>5.6</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mfrac><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>y</mi></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mn>9</mn><mn>5</mn></mfrac><mo>=</mo><mn>1.8</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p12">so that</p>
+            <span class="informalequation" id="shafer-20121106-125753-153073"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0153" display="block"><mrow><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>17.6</mn></mrow><mrow><mn>51.2</mn></mrow></mfrac><mo>=</mo><mn>0.34375</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>0</mn></msub><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1.8</mn><mo>−</mo><mo stretchy="false">(</mo><mn>0.34375</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>5.6</mn><mo stretchy="false">)</mo><mo>=</mo><mtext>−</mtext><mn>0.125</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p13">The least squares regression line for these data is</p>
+            <span class="informalequation" id="shafer-20121106-125753-153089"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0154" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mi>x</mi><mtext>−</mtext><mn>0.125</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p14">The computations for measuring how well it fits the sample data are given in <a class="xref" href="#fwk-shafer-ch10_s04_s02_t02">Table 10.2 "The Errors in Fitting Data with the Least Squares Regression Line"</a>. The sum of the squared errors is the sum of the numbers in the last column, which is 0.75. It is less than 2, the sum of the squared errors for the fit of the line <span class="inlineequation" id="shafer-20121106-125753-153106"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0155" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>x</mi><mtext>−</mtext><mn>1</mn></math></span> to this data set.</p>
+            <div class="table" id="fwk-shafer-ch10_s04_s02_t02" frame="none">
+                <p class="title"><span class="title-prefix">Table 10.2</span> The Errors in Fitting Data with the Least Squares Regression Line</p>
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><em class="emphasis">x</em></th>
+                            <th align="center"><em class="emphasis">y</em></th>
+                            <th align="center"><span class="inlineequation" id="shafer-20121106-125753-153129"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0156" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mi>x</mi><mtext>−</mtext><mn>0.125</mn></math></span></th>
+                            <th align="center"><span class="inlineequation" id="shafer-20121106-125753-153146"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0157" display="inline"><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span></th>
+                            <th align="center"><span class="inlineequation" id="shafer-20121106-125753-153162"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0158" display="inline"><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></math></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">2</td>
+                            <td align="center">0</td>
+                            <td align="center">0.5625</td>
+                            <td align="center">−0.5625</td>
+                            <td align="center">0.31640625</td>
+                        </tr>
+                        <tr>
+                            <td align="center">2</td>
+                            <td align="center">1</td>
+                            <td align="center">0.5625</td>
+                            <td align="center">0.4375</td>
+                            <td align="center">0.19140625</td>
+                        </tr>
+                        <tr>
+                            <td align="center">6</td>
+                            <td align="center">2</td>
+                            <td align="center">1.9375</td>
+                            <td align="center">0.0625</td>
+                            <td align="center">0.00390625</td>
+                        </tr>
+                        <tr>
+                            <td align="center">8</td>
+                            <td align="center">3</td>
+                            <td align="center">2.6250</td>
+                            <td align="center">0.3750</td>
+                            <td align="center">0.14062500</td>
+                        </tr>
+                        <tr>
+                            <td align="center">10</td>
+                            <td align="center">3</td>
+                            <td align="center">3.3125</td>
+                            <td align="center">−0.3125</td>
+                            <td align="center">0.09765625</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s04_s02_n03">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p15"><a class="xref" href="#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a> shows the age in years and the retail value in thousands of dollars of a random sample of ten automobiles of the same make and model.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s04_s02_o01" numeration="loweralpha">
+                <li>Construct the scatter diagram.</li>
+                <li>Compute the linear correlation coefficient <em class="emphasis">r</em>. Interpret its value in the context of the problem.</li>
+                <li>Compute the least squares regression line. Plot it on the scatter diagram.</li>
+                <li>Interpret the meaning of the slope of the least squares regression line in the context of the problem.</li>
+                <li>Suppose a four-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value.</li>
+                <li>Suppose a 20-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value. Interpret the result.</li>
+                <li>Comment on the validity of using the regression equation to predict the price of a brand new automobile of this make and model.</li>
+            </ol>
+            <div class="table" id="fwk-shafer-ch10_s04_s02_t03" frame="none">
+                <p class="title"><span class="title-prefix">Table 10.3</span> Data on Age and Value of Used Automobiles of a Specific Make and Model</p>
+                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td align="center"><em class="emphasis">x</em></td>
+                            <td align="center">2</td>
+                            <td align="center">3</td>
+                            <td align="center">3</td>
+                            <td align="center">3</td>
+                            <td align="center">4</td>
+                            <td align="center">4</td>
+                            <td align="center">5</td>
+                            <td align="center">5</td>
+                            <td align="center">5</td>
+                            <td align="center">6</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><em class="emphasis">y</em></td>
+                            <td align="center">28.7</td>
+                            <td align="center">24.8</td>
+                            <td align="center">26.0</td>
+                            <td align="center">30.5</td>
+                            <td align="center">23.8</td>
+                            <td align="center">24.6</td>
+                            <td align="center">23.8</td>
+                            <td align="center">20.4</td>
+                            <td align="center">21.6</td>
+                            <td align="center">22.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s04_s02_o02" numeration="loweralpha">
+                <li>The scatter diagram is shown in <a class="xref" href="#fwk-shafer-ch10_s04_s02_f01">Figure 10.7 "Scatter Diagram for Age and Value of Used Automobiles"</a>.</li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch10_s04_s02_f01">
+                <p class="title"><span class="title-prefix">Figure 10.7</span> Scatter Diagram for Age and Value of Used Automobiles</p>
+                <img src="section_14/afedcf81f03671c53e89f2cd1f907135.jpg">
+            </div>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s04_s02_o03" continuation="continues" numeration="loweralpha">
+                <li>
+                    <p class="para">We must first compute <span class="inlineequation" id="shafer-20121106-125753-153178"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0159" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-153195"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0160" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-153217"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0161" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></math></span>, which means computing <span class="inlineequation" id="shafer-20121106-125753-153232"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0162" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-153248"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0163" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-153270"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0164" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-153286"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0165" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle></mrow></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-153301"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0166" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mi>y</mi></mrow></mstyle></mrow><mo>.</mo></math></span> Using a computing device we obtain</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153318"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0167" display="block"><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>40</mn><mtext> </mtext><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>246.3</mn><mtext> </mtext><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>174</mn><mtext> </mtext><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>6154.15</mn><mtext> </mtext><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>956.5</mn></mrow></math></span>
+                    <p class="para">Thus</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153334"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0168" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>174</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>10</mn></mrow></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>40</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>14</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mn>956.5</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>10</mn></mrow></mfrac><mo stretchy="false">(</mo><mn>40</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>246.3</mn><mo stretchy="false">)</mo><mo>=</mo><mtext>−</mtext><mn>28.7</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mo stretchy="false">(</mo><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup><mi>y</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>6154.15</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>10</mn></mrow></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>246.3</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>87.781</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para">so that</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153350"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0169" display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>·</mo><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mtext>−</mtext><mn>28.7</mn></mrow><mrow><mpadded height="1.3em"><msqrt><mrow><mo stretchy="false">(</mo><mn>14</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>87.781</mn><mo stretchy="false">)</mo></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>0.819</mn></mrow></math></span>
+                    <p class="para">The age and value of this make and model automobile are moderately strongly negatively correlated. As the age increases, the value of the automobile tends to decrease.</p>
+                </li>
+                <li>
+                    <p class="para">Using the values of <span class="inlineequation" id="shafer-20121106-125753-153365"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0170" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-153381"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0171" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow></math></span> computed in part (b),</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153396"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0172" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mrow><mn>40</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>=</mo><mn>4</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mfrac><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mrow><mn>246.3</mn></mrow><mrow><mn>10</mn></mrow></mfrac><mo>=</mo><mn>24.63</mn></mrow></math></span>
+                    <p class="para">Thus using the values of <span class="inlineequation" id="shafer-20121106-125753-153412"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0173" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-153435"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0174" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></math></span> from part (b),</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153451"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0175" display="block"><mrow><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mtext>−</mtext><mn>28.7</mn></mrow><mrow><mn>14</mn></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mtext> </mtext><mtext>and</mtext><mtext> </mtext><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>0</mn></msub><mo>=</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>24.63</mn><mo>−</mo><mo stretchy="false">(</mo><mtext>−</mtext><mn>2.05</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo><mo>=</mo><mn>32.83</mn></mrow></math></span>
+                    <p class="para">The equation <span class="inlineequation" id="shafer-20121106-125753-153468"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0176" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> of the least squares regression line for these sample data is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153484"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0177" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mi>x</mi><mo>+</mo><mn>32.83</mn></mrow></math></span>
+                    <p class="para"><a class="xref" href="#fwk-shafer-ch10_s04_s02_f02">Figure 10.8 "Scatter Diagram and Regression Line for Age and Value of Used Automobiles"</a> shows the scatter diagram with the graph of the least squares regression line superimposed.</p>
+                </li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch10_s04_s02_f02">
+                <p class="title"><span class="title-prefix">Figure 10.8</span> Scatter Diagram and Regression Line for Age and Value of Used Automobiles</p>
+                <img src="section_14/9ee6d62cabb1f73795e6b98adf97a7be.jpg">
+            </div>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s04_s02_o04" continuation="continues" numeration="loweralpha">
+                <li>The slope −2.05 means that for each unit increase in <em class="emphasis">x</em> (additional year of age) the average value of this make and model vehicle decreases by about 2.05 units (about $2,050).</li>
+                <li>
+                    <p class="para">Since we know nothing about the automobile other than its age, we assume that it is of about average value and use the average value of all four-year-old vehicles of this make and model as our estimate. The average value is simply the value of <span class="inlineequation" id="shafer-20121106-125753-153500"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0178" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span> obtained when the number 4 is inserted for <em class="emphasis">x</em> in the least squares regression equation:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153516"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0179" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mrow><mo class="MathClass-open">(</mo><mrow><mn>4</mn></mrow><mo class="MathClass-close">)</mo></mrow><mo>+</mo><mn>32.83</mn><mo class="MathClass-rel">=</mo><mn>24.63</mn></mrow></math></span>
+                    <p class="para">which corresponds to $24,630.</p>
+                </li>
+                <li>
+                    <p class="para">Now we insert <span class="inlineequation" id="shafer-20121106-125753-153532"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0180" display="inline"><mi>x</mi><mo class="MathClass-rel">=</mo><mn>20</mn></math></span> into the least squares regression equation, to obtain</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153549"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0181" display="block"><mrow><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mrow><mo class="MathClass-open">(</mo><mrow><mn>20</mn></mrow><mo class="MathClass-close">)</mo></mrow><mo>+</mo><mn>32.83</mn><mo>=</mo><mtext>−</mtext><mn>8.17</mn></mrow></math></span>
+                    <p class="para">which corresponds to −$8,170. Something is wrong here, since a negative makes no sense. The error arose from applying the regression equation to a value of <em class="emphasis">x</em> not in the range of <em class="emphasis">x</em>-values in the original data, from two to six years.</p>
+                    <p class="para">Applying the regression equation <span class="inlineequation" id="shafer-20121106-125753-153571"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0182" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span> to a value of <em class="emphasis">x</em> outside the range of <em class="emphasis">x</em>-values in the data set is called <em class="emphasis">extrapolation</em>. It is an invalid use of the regression equation and should be avoided.</p>
+                </li>
+                <li>The price of a brand new vehicle of this make and model is the value of the automobile at age 0. If the value <span class="inlineequation" id="shafer-20121106-125753-153586"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0183" display="inline"><mi>x</mi><mo class="MathClass-rel">=</mo><mn>0</mn></math></span> is inserted into the regression equation the result is always <span class="inlineequation" id="shafer-20121106-125753-153603"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0184" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>0</mn></mrow></msub></math></span>, the <em class="emphasis">y</em>-intercept, in this case 32.83, which corresponds to $32,830. But this is a case of extrapolation, just as part (f) was, hence this result is invalid, although not obviously so. In the context of the problem, since automobiles tend to lose value much more quickly immediately after they are purchased than they do after they are several years old, the number $32,830 is probably an underestimate of the price of a new automobile of this make and model.</li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch10_s04_s02_p16">For emphasis we highlight the points raised by parts (f) and (g) of the example.</p>
+        <div class="callout editable block" id="fwk-shafer-ch10_s04_s02_n04">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s02_p17"><em class="emphasis">The process of using the least squares regression equation to estimate the value of</em> <em class="emphasis">y</em> <em class="emphasis">at a value of</em> <em class="emphasis">x</em> <em class="emphasis">that does not lie in the range of the</em> <em class="emphasis">x</em><em class="emphasis">-values in the data set that was used to form the regression line is called</em> <span class="margin_term"><a class="glossterm">extrapolation</a><span class="glossdef">The process of using the least squares regression equation to estimate the value of <em class="emphasis">y</em> at an <em class="emphasis">x</em> value not in the proper range.</span></span><em class="emphasis">. It is an invalid use of the regression equation that can lead to errors, hence should be avoided.</em></p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch10_s04_s03" version="5.0" lang="en">
+        <h2 class="title block">The Sum of the Squared Errors <span class="inlineequation" id="shafer-20121106-125753-153620"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0185" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>
+</h2>
+        <p class="para block" id="fwk-shafer-ch10_s04_s03_p01">In general, in order to measure the goodness of fit of a line to a set of data, we must compute the predicted <em class="emphasis">y</em>-value <span class="inlineequation" id="shafer-20121106-125753-153636"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0186" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></math></span> at every point in the data set, compute each error, square it, and then add up all the squares. In the case of the least squares regression line, however, the line that best fits the data, the sum of the squared errors can be computed directly from the data using the following formula.</p>
+        <div class="callout block" id="fwk-shafer-ch10_s04_s03_n01">
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p02">The sum of the squared errors for the least squares regression line is denoted by <span class="inlineequation" id="shafer-20121106-125753-153652"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0187" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo>.</mo></math></span> It can be computed using the formula</p>
+            <span class="informalequation" id="shafer-20121106-125753-153668"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0188" display="block"><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s04_s03_n02">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p03">Find the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-153685"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0189" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> for the least squares regression line for the five-point data set</p>
+            <span class="informalequation" id="shafer-20121106-125753-153707"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0190" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p04">Do so in two ways: </p>
+<ol class="orderedlist" id="fwk-shafer-ch10_s04_s03_o01" numeration="loweralpha">                    <li>using the definition <span class="inlineequation" id="shafer-20121106-125753-153724"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0191" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mstyle></mrow></math></span>;</li>
+                    <li>using the formula <span class="inlineequation" id="shafer-20121106-125753-153740"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0192" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+</ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch10_s04_s03_o02" numeration="loweralpha">
+                <li>The least squares regression line was computed in <a class="xref" href="#fwk-shafer-ch10_s04_s02_n02" xrefstyle="select: title">Note 10.18 "Example 2"</a> and is <span class="inlineequation" id="shafer-20121106-125753-153756"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0193" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mi>x</mi><mtext>−</mtext><mn>0.125</mn><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-153773"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0194" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> was found at the end of that example using the definition <span class="inlineequation" id="shafer-20121106-125753-153789"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0195" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></mstyle></mrow><mo>.</mo></math></span> The computations were tabulated in <a class="xref" href="#fwk-shafer-ch10_s04_s02_t02">Table 10.2 "The Errors in Fitting Data with the Least Squares Regression Line"</a>. <span class="inlineequation" id="shafer-20121106-125753-153805"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0196" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> is the sum of the numbers in the last column, which is 0.75.</li>
+                <li>
+                    <p class="para">The numbers <span class="inlineequation" id="shafer-20121106-125753-153821"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0197" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-153845"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0198" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> were already computed in <a class="xref" href="#fwk-shafer-ch10_s04_s02_n02" xrefstyle="select: title">Note 10.18 "Example 2"</a> in the process of finding the least squares regression line. So was the number <span class="inlineequation" id="shafer-20121106-125753-153862"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0199" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle><mo>=</mo><mn>9</mn></mrow><mo>.</mo></math></span> We must compute <span class="inlineequation" id="shafer-20121106-125753-153878"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0200" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span> To do so it is necessary to first compute <span class="inlineequation" id="shafer-20121106-125753-153894"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0201" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>=</mo><mn>0</mn><mo>+</mo><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><msup><mn>3</mn><mn>2</mn></msup><mo>=</mo><mn>23</mn></mrow><mo>.</mo></math></span> Then</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153910"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0202" display="block"><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo class="MathClass-rel">=</mo><mi mathvariant="normal">Σ</mi><msup><mrow><mi>y</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mi mathvariant="normal">Σ</mi><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo class="MathClass-rel">=</mo><mn>23</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>5</mn></mrow></mfrac><msup><mrow><mrow><mo class="MathClass-open">(</mo><mrow><mn>9</mn></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo class="MathClass-rel">=</mo><mn>6.8</mn></mrow></math></span>
+                    <p class="para">so that</p>
+                    <span class="informalequation" id="shafer-20121106-125753-153926"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0203" display="block"><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>6.8</mn><mo>−</mo><mo stretchy="false">(</mo><mn>0.34375</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>17.6</mn><mo stretchy="false">)</mo><mo>=</mo><mn>0.75</mn></mrow></math></span>
+                </li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s04_s03_n03">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p05">Find the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-153942"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0204" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> for the least squares regression line for the data set, presented in <a class="xref" href="#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a>, on age and values of used vehicles in <a class="xref" href="#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p06">From <a class="xref" href="#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> we already know that</p>
+            <span class="informalequation" id="shafer-20121106-125753-153959"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0205" display="block"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mtext>−</mtext><mn>28.7</mn><mo>,</mo><mtext> </mtext><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mo>,</mo><mtext> </mtext><mtext>and</mtext><mtext> </mtext><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle><mo>=</mo><mn>246.3</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p07">To compute <span class="inlineequation" id="shafer-20121106-125753-153975"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0206" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub></math></span> we first compute</p>
+            <span class="informalequation" id="shafer-20121106-125753-153997"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0207" display="block"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>=</mo><msup><mrow><mn>28.7</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>24.8</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>26.0</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>30.5</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>23.8</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>24.6</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>23.8</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>20.4</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>21.6</mn></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mn>22.1</mn></mrow><mn>2</mn></msup><mo>=</mo><mn>6154.15</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p08">Then</p>
+            <span class="informalequation" id="shafer-20121106-125753-154013"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0208" display="block"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mo stretchy="false">(</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>6154.15</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>10</mn></mrow></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>246.3</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>87.781</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s04_s03_p09">Therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-154029"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0209" display="block"><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow><mn>1</mn></msub><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>87.781</mn><mo>−</mo><mo stretchy="false">(</mo><mtext>−</mtext><mn>2.05</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>−</mtext><mn>28.7</mn><mo stretchy="false">)</mo><mo>=</mo><mn>28.946</mn></mrow></math></span>
+        </div>
+        <div class="key_takeaways block" id="fwk-shafer-ch10_s04_s03_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch10_s04_s03_l01" mark="bullet">
+                <li>How well a straight line fits a data set is measured by the sum of the squared errors.</li>
+                <li>The least squares regression line is the line that best fits the data. Its slope and <em class="emphasis">y</em>-intercept are computed from the data using formulas.</li>
+                <li>The slope <span class="inlineequation" id="shafer-20121106-125753-154045"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0210" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the least squares regression line estimates the size and direction of the mean change in the dependent variable <em class="emphasis">y</em> when the independent variable <em class="emphasis">x</em> is increased by one unit.</li>
+                <li>The sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154062"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0211" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> of the least squares regression line can be computed using a formula, without having to compute all the individual errors.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch10_s04_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s04_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <p class="para" id="fwk-shafer-ch10_s04_qs01_p01">For the Basic and Application exercises in this section use the computations that were done for the exercises with the same number in <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p02">Compute the least squares regression line for the data in Exercise 1 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p04">Compute the least squares regression line for the data in Exercise 2 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p06">Compute the least squares regression line for the data in Exercise 3 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p08">Compute the least squares regression line for the data in Exercise 4 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p10">For the data in Exercise 5 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o01" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154150"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0216" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the definition <span class="inlineequation" id="shafer-20121106-125753-154167"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0217" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mstyle></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154184"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0218" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154201"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0219" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p12">For the data in Exercise 6 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o02" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154250"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0222" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the definition <span class="inlineequation" id="shafer-20121106-125753-154273"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0223" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mstyle></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154289"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0224" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154305"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0225" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p14">Compute the least squares regression line for the data in Exercise 7 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p16">Compute the least squares regression line for the data in Exercise 8 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p18">For the data in Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o03" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Can you compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154387"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0230" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the definition <span class="inlineequation" id="shafer-20121106-125753-154409"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0231" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mstyle></mrow></math></span>? Explain.</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154426"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0232" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154441"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0233" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p20">For the data in Exercise 10 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o04" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Can you compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154490"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0236" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the definition <span class="inlineequation" id="shafer-20121106-125753-154506"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0237" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mstyle></mrow></math></span>? Explain.</li>
+                            <li>Compute the sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-154522"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0238" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154538"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0239" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s04_qs01_qd02" start="11">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p22">For the data in Exercise 11 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o05" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>On average, how many new words does a child from 13 to 18 months old learn each month? Explain.</li>
+                            <li>Estimate the average vocabulary of all 16-month-old children.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p23">For the data in Exercise 12 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o07" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>On average, how many additional feet are added to the braking distance for each additional 100 pounds of weight? Explain.</li>
+                            <li>Estimate the average braking distance of all cars weighing 3,000 pounds.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p24">For the data in Exercise 13 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o09" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Estimate the average resting heart rate of all 40-year-old men.</li>
+                            <li>Estimate the average resting heart rate of all newborn baby boys. Comment on the validity of the estimate.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p25">For the data in Exercise 14 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o11" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Estimate the average wave height when the wind is blowing at 10 miles per hour.</li>
+                            <li>Estimate the average wave height when there is no wind blowing. Comment on the validity of the estimate.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p26">For the data in Exercise 15 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o13" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>On average, for each additional thousand dollars spent on advertising, how does revenue change? Explain.</li>
+                            <li>Estimate the revenue if $2,500 is spent on advertising next year.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p27">For the data in Exercise 16 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o15" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>On average, for each additional inch of height of two-year-old girl, what is the change in the adult height? Explain.</li>
+                            <li>Predict the adult height of a two-year-old girl who is 33 inches tall.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p28">For the data in Exercise 17 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o17" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-154700"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0248" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154716"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0249" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Estimate the average final exam score of all students whose course average just before the exam is 85.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p29">For the data in Exercise 18 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o19" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-154748"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0251" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> using the formula <span class="inlineequation" id="shafer-20121106-125753-154764"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0252" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>−</mo><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>.</mo></math></span>
+</li>
+                            <li>Estimate the number of acres that would be harvested if 90 million acres of corn were planted.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p30">For the data in Exercise 19 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o21" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Interpret the value of the slope of the least squares regression line in the context of the problem.</li>
+                            <li>Estimate the average concentration of the active ingredient in the blood in men after consuming 1 ounce of the medication.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p31">For the data in Exercise 20 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o23" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>Interpret the value of the slope of the least squares regression line in the context of the problem.</li>
+                            <li>Estimate the age of an oak tree whose girth five feet off the ground is 92 inches.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p32">For the data in Exercise 21 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o25" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>The 28-day strength of concrete used on a certain job must be at least 3,200 psi. If the 3-day strength is 1,300 psi, would we anticipate that the concrete will be sufficiently strong on the 28th day? Explain fully.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p33">For the data in Exercise 22 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o27" numeration="loweralpha">
+                            <li>Compute the least squares regression line.</li>
+                            <li>If the power facility is called upon to provide more than 95 million watt-hours tomorrow then energy will have to be purchased from elsewhere at a premium. The forecast is for an average temperature of 42 degrees. Should the company plan on purchasing power at a premium?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s04_qs01_qd03" start="23">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd03_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p34">Verify that no matter what the data are, the least squares regression line always passes through the point with coordinates <span class="inlineequation" id="shafer-20121106-125753-154869"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0258" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>,</mo><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">-</mo></mover></mrow></mrow><mo class="MathClass-close">)</mo></mrow><mo>.</mo></math></span> Hint: Find the predicted value of <em class="emphasis">y</em> when <span class="inlineequation" id="shafer-20121106-125753-154885"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0259" display="inline"><mi>x</mi><mo class="MathClass-rel">=</mo><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd03_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p35">In Exercise 1 you computed the least squares regression line for the data in Exercise 1 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o29" numeration="loweralpha">
+                            <li>
+                                <p class="para">Reverse the roles of <em class="emphasis">x</em> and <em class="emphasis">y</em> and compute the least squares regression line for the new data set</p>
+                                <span class="informalequation" id="shafer-20121106-125753-154901"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0260" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>8</mn></mtd></mtr></mtable></mrow></math></span>
+                            </li>
+                            <li>Interchanging <em class="emphasis">x</em> and <em class="emphasis">y</em> corresponds geometrically to reflecting the scatter plot in a 45-degree line. Reflecting the regression line for the original data the same way gives a line with the equation <span class="inlineequation" id="shafer-20121106-125753-154917"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0261" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>1.346</mn><mi>x</mi><mtext>−</mtext><mn>3.600</mn><mo>.</mo></math></span> Is this the equation that you got in part (a)? Can you figure out why not? Hint: Think about how <em class="emphasis">x</em> and <em class="emphasis">y</em> are treated differently geometrically in the computation of the goodness of fit.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-154933"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0262" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> for each line and see if they fit the same, or if one fits the data better than the other.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s04_qs01_qd04" start="25">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p36">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p37"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o31" numeration="loweralpha">
+                            <li>Compute the least squares regression line with SAT score as the independent variable (<em class="emphasis">x</em>) and GPA as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Interpret the meaning of the slope <span class="inlineequation" id="shafer-20121106-125753-155004"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0266" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of regression line in the context of problem.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-155021"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0267" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, the measure of the goodness of fit of the regression line to the sample data.</li>
+                            <li>Estimate the GPA of a student whose SAT score is 1350.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p38">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs).</p>
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p39"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o33" numeration="loweralpha">
+                            <li>Compute the least squares regression line with scores using the original clubs as the independent variable (<em class="emphasis">x</em>) and scores using the new clubs as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Interpret the meaning of the slope <span class="inlineequation" id="shafer-20121106-125753-155086"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0271" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of regression line in the context of problem.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-155109"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0272" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, the measure of the goodness of fit of the regression line to the sample data.</li>
+                            <li>Estimate the score with the new clubs of a golfer whose score with the old clubs is 73.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p40">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions.</p>
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p41"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o35" numeration="loweralpha">
+                            <li>Compute the least squares regression line with the number of bidders present at the auction as the independent variable (<em class="emphasis">x</em>) and sales price as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Interpret the meaning of the slope <span class="inlineequation" id="shafer-20121106-125753-155173"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0276" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of regression line in the context of problem.</li>
+                            <li>Compute <span class="inlineequation" id="shafer-20121106-125753-155190"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0277" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span>, the measure of the goodness of fit of the regression line to the sample data.</li>
+                            <li>Estimate the sales price of a clock at an auction at which the number of bidders is seven.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch10_s04_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p03_ans"><span class="inlineequation" id="shafer-20121106-125753-154077_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0212" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.743</mn><mi>x</mi><mo>+</mo><mn>2.675</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p07_ans"><span class="inlineequation" id="shafer-20121106-125753-154117_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0214" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>0.610</mn><mi>x</mi><mo>+</mo><mn>4.082</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p11_ans"><span class="inlineequation" id="shafer-20121106-125753-154217_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0220" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.625</mn><mi>x</mi><mo>+</mo><mn>1.25</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-154233_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0221" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>5</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p15_ans"><span class="inlineequation" id="shafer-20121106-125753-154354_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0228" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.6</mn><mi>x</mi><mo>+</mo><mn>1.8</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s04_qs01_p19_ans"><span class="inlineequation" id="shafer-20121106-125753-154457_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0234" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>1.45</mn><mi>x</mi><mo>+</mo><mn>2.4</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-154474_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0235" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>50.25</mn></math></span> (cannot use the definition to compute)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="11">
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o06_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154593_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0242" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>4.848</mn><mi>x</mi><mtext>−</mtext><mn>56</mn></math></span>,</li>
+                            <li>4.8,</li>
+                            <li>21.6</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o10_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154626_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0244" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.114</mn><mi>x</mi><mo>+</mo><mn>69.222</mn></math></span>,</li>
+                            <li>73.8,</li>
+                            <li>69.2, invalid extrapolation</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa15_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o14_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154660_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0246" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>42.024</mn><mi>x</mi><mo>+</mo><mn>119.502</mn></math></span>,</li>
+                            <li>increases by $42,024,</li>
+                            <li>$224,562</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o18_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154732_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0250" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>1.045</mn><mi>x</mi><mtext>−</mtext><mn>8.527</mn></math></span>,</li>
+                            <li>2151.93367,</li>
+                            <li>80.3</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o22_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154796_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0254" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.043</mn><mi>x</mi><mo>+</mo><mn>0.001</mn></math></span>,</li>
+                            <li>For each additional ounce of medication consumed blood concentration of the active ingredient increases by 0.043 %,</li>
+                            <li>0.044%</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o26_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-154836_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0256" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>2.550</mn><mi>x</mi><mo>+</mo><mn>1.993</mn></math></span>,</li>
+                            <li>Predicted 28-day strength is 3,514 psi; sufficiently strong</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd02_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="23">
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd03_qa23_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd03_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="25">
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa25_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o32_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155037_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0268" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>0.0016</mn><mi>x</mi><mo>+</mo><mn>0.022</mn></math></span></li>
+                            <li>On average, every 100 point increase in SAT score adds 0.16 point to the GPA.</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155054_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0269" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>432.10</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155070_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0270" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>2.182</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s04_qs01_qd04_qa27_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s04_qs01_o36_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155206_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0278" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>116.62</mn><mi>x</mi><mo>+</mo><mn>6955.1</mn></math></span></li>
+                            <li>On average, every 1 additional bidder at an auction raises the price by 116.62 dollars.</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155222_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0279" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>1850314.08</mn></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-155238_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0280" display="inline"><mrow><mover accent="true"><mi>y</mi><mo stretchy="true">^</mo></mover></mrow><mo class="MathClass-rel">=</mo><mn>7771.44</mn></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-03-modelling-linear-relationships.html"><img src="shared/images/batch-left.png"></a> <a href="s14-03-modelling-linear-relationships.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-05-statistical-inferences-about-1.html">Next Section</a> <a href="s14-05-statistical-inferences-about-1.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

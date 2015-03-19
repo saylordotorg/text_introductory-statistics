@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Statistical Inferences About ?1</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-04-the-least-squares-regression-l.html"><img src="shared/images/batch-left.png"></a> <a href="s14-04-the-least-squares-regression-l.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-06-the-coefficient-of-determinati.html">Next Section</a> <a href="s14-06-the-coefficient-of-determinati.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s05" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.5</span> Statistical Inferences About <em class="emphasis">β</em><sub class="subscript">1</sub>
+</h2>
+    <div class="learning_objectives block" id="fwk-shafer-ch10_s05_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s05_o01" numeration="arabic">
+            <li>To learn how to construct a confidence interval for <span class="inlineequation" id="shafer-20121106-125753-155265"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0281" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, the slope of the population regression line.</li>
+            <li>To learn how to test hypotheses regarding <span class="inlineequation" id="shafer-20121106-125753-155282"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0282" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span>
+</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s05_p01">The parameter <span class="inlineequation" id="shafer-20121106-125753-155298"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0283" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, the slope of the population regression line, is of primary importance in regression analysis because it gives the true rate of change in the mean <span class="inlineequation" id="shafer-20121106-125753-155314"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0284" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> in response to a unit increase in the predictor variable <em class="emphasis">x</em>. For every unit increase in <em class="emphasis">x</em> the mean of the response variable <em class="emphasis">y</em> changes by <span class="inlineequation" id="shafer-20121106-125753-155330"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0285" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> units, increasing if <span class="inlineequation" id="shafer-20121106-125753-155346"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0286" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&gt;</mo><mn>0</mn></math></span> and decreasing if <span class="inlineequation" id="shafer-20121106-125753-155363"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0287" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&lt;</mo><mn>0</mn><mo>.</mo></math></span> We wish to construct confidence intervals for <span class="inlineequation" id="shafer-20121106-125753-155385"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0288" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and test hypotheses about it.</p>
+    <div class="section" id="fwk-shafer-ch10_s05_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Confidence Intervals for <em class="emphasis">β</em><sub class="subscript">1</sub>
+</h2>
+        <p class="para block" id="fwk-shafer-ch10_s05_s01_p01">The slope <span class="inlineequation" id="shafer-20121106-125753-155401"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0289" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the least squares regression line is a point estimate of <span class="inlineequation" id="shafer-20121106-125753-155417"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0290" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span> A confidence interval for <span class="inlineequation" id="shafer-20121106-125753-155432"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0291" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> is given by the following formula.</p>
+        <div class="callout block" id="fwk-shafer-ch10_s05_s01_n01">
+            <h3 class="title">
+<span class="inlineequation" id="shafer-20121106-125753-155448"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0292" display="inline"><mn>100</mn><mrow><mo class="MathClass-open">(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo class="MathClass-close">)</mo></mrow><mi>%</mi></math></span> Confidence Interval for the Slope <span class="inlineequation" id="shafer-20121106-125753-155465"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0293" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the Population Regression Line</h3>
+            <span class="informalequation" id="shafer-20121106-125753-155480"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0294" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mspace width="0.3em" class="thinspace"></mspace><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p02">where <span class="inlineequation" id="shafer-20121106-125753-155496"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0295" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo class="MathClass-rel">=</mo><msqrt><mrow><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>2</mn></mrow></mfrac></mrow></msqrt></math></span> and the number of degrees of freedom is <span class="inlineequation" id="shafer-20121106-125753-155512"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0296" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mi>n</mi><mtext>−</mtext><mn>2</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p03">The assumptions listed in <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a> must hold.</p>
+        </div>
+        <div class="callout block" id="fwk-shafer-ch10_s05_s01_n02">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p04"><em class="emphasis">The statistic</em> <span class="inlineequation" id="shafer-20121106-125753-155539"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0297" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span> <em class="emphasis">is called the</em> <span class="margin_term"><a class="glossterm">sample standard deviation of errors</a><span class="glossdef">The statistic <span class="inlineequation" id="shafer-20121106-125753-155556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0298" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></math></span>.</span></span><em class="emphasis">. It estimates the standard deviation</em> <em class="emphasis">σ</em> <em class="emphasis">of the errors in the population of</em> <em class="emphasis">y</em><em class="emphasis">-values for each fixed value of</em> <em class="emphasis">x</em> <em class="emphasis">(see <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03_f01">Figure 10.5 "The Simple Linear Model Concept"</a> in <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a>).</em></p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s05_s01_n03">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p05">Construct the 95% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-155572"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0299" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the five-point sample data set</p>
+            <span class="informalequation" id="shafer-20121106-125753-155588"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0300" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p06">The point estimate <span class="inlineequation" id="shafer-20121106-125753-155605"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0301" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of <span class="inlineequation" id="shafer-20121106-125753-155621"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0302" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> was computed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n02" xrefstyle="select: title">Note 10.18 "Example 2"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> as <span class="inlineequation" id="shafer-20121106-125753-155636"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0303" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mo>.</mo></math></span> In the same example <span class="inlineequation" id="shafer-20121106-125753-155652"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0304" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></math></span> was found to be <span class="inlineequation" id="shafer-20121106-125753-155667"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0305" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>51.2</mn><mo>.</mo></math></span> The sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-155691"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0306" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> was computed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s03_n02" xrefstyle="select: title">Note 10.23 "Example 4"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> as <span class="inlineequation" id="shafer-20121106-125753-155707"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0307" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>0.75</mn><mo>.</mo></math></span> Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-155723"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0308" display="block"><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo class="MathClass-rel">=</mo><msqrt><mrow><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>2</mn></mrow></mfrac></mrow></msqrt><mo class="MathClass-rel">=</mo><msqrt><mrow><mfrac><mrow><mn>0.75</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></msqrt><mo class="MathClass-rel">=</mo><mn>0.50</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p07">Confidence level 95% means <span class="inlineequation" id="shafer-20121106-125753-155739"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0309" display="inline"><mi>α</mi><mo class="MathClass-rel">=</mo><mn>1</mn><mo>−</mo><mn>0.95</mn><mo class="MathClass-rel">=</mo><mn>0.05</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-155756"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0310" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo class="MathClass-rel">=</mo><mn>0.025</mn><mo>.</mo></math></span> From the row labeled <span class="inlineequation" id="shafer-20121106-125753-155772"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0311" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mn>3</mn></math></span> in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-155787"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0312" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>3.182</mn><mo>.</mo></math></span> Therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-155803"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0313" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mspace width="0.3em" class="thinspace"></mspace><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mo>±</mo><mn>3.182</mn><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mn>0.50</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>51.2</mn></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo class="MathClass-rel">=</mo><mn>0.34375</mn><mo>±</mo><mn>0.2223</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p08">which gives the interval <span class="inlineequation" id="shafer-20121106-125753-155825"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0314" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mn>0</mn><mo>.</mo><mn>1215,0</mn><mo>.</mo><mn>5661</mn></mrow><mo class="MathClass-close">)</mo></mrow><mo>.</mo></math></span> We are 95% confident that the slope <span class="inlineequation" id="shafer-20121106-125753-155841"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0315" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line is between 0.1215 and 0.5661.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s05_s01_n04">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p09">Using the sample data in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_t03">Table 10.3 "Data on Age and Value of Used Automobiles of a Specific Make and Model"</a> construct a 90% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-155858"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0316" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line relating age and value of the automobiles of <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>. Interpret the result in the context of the problem.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p10">The point estimate <span class="inlineequation" id="shafer-20121106-125753-155874"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0317" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span> of <span class="inlineequation" id="shafer-20121106-125753-155890"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0318" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> was computed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a>, as was <span class="inlineequation" id="shafer-20121106-125753-155906"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0319" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>.</mo></math></span> Their values are <span class="inlineequation" id="shafer-20121106-125753-155922"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0320" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.05</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-155937"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0321" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>14</mn><mo>.</mo></math></span> The sum of the squared errors <span class="inlineequation" id="shafer-20121106-125753-155953"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0322" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi></math></span> was computed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s03_n03" xrefstyle="select: title">Note 10.24 "Example 5"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> as <span class="inlineequation" id="shafer-20121106-125753-155976"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0323" display="inline"><mi>S</mi><mi>S</mi><mi>E</mi><mo class="MathClass-rel">=</mo><mn>28.946</mn><mo>.</mo></math></span> Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-155992"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0324" display="block"><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo class="MathClass-rel">=</mo><msqrt><mrow><mfrac><mrow><mi>S</mi><mi>S</mi><mi>E</mi></mrow><mrow><mi>n</mi><mtext>−</mtext><mn>2</mn></mrow></mfrac></mrow></msqrt><mo class="MathClass-rel">=</mo><msqrt><mrow><mfrac><mrow><mn>28.946</mn></mrow><mrow><mn>8</mn></mrow></mfrac></mrow></msqrt><mo class="MathClass-rel">=</mo><mn>1.902169814</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p11">Confidence level 90% means <span class="inlineequation" id="shafer-20121106-125753-156008"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0325" display="inline"><mi>α</mi><mo class="MathClass-rel">=</mo><mn>1</mn><mo>−</mo><mn>0.90</mn><mo class="MathClass-rel">=</mo><mn>0.10</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-156023"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0326" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo class="MathClass-rel">=</mo><mn>0.05</mn><mo>.</mo></math></span> From the row labeled <span class="inlineequation" id="shafer-20121106-125753-156039"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0327" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mn>8</mn></math></span> in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-156056"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0328" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>1.860</mn><mo>.</mo></math></span> Therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-156072"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0329" display="block"><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mspace width="0.3em" class="thinspace"></mspace><mfrac><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mo>±</mo><mn>1.860</mn><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mn>1.902169814</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>14</mn></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>=</mo><mtext>−</mtext><mn>2.05</mn><mo>±</mo><mn>0.95</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s01_p12">which gives the interval <span class="inlineequation" id="shafer-20121106-125753-156100"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0330" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mtext>−</mtext><mn>3.00</mn><mo>,</mo><mtext>−</mtext><mn>1.10</mn></mrow><mo class="MathClass-close">)</mo></mrow><mo>.</mo></math></span> We are 90% confident that the slope <span class="inlineequation" id="shafer-20121106-125753-156117"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0331" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line is between −3.00 and −1.10. In the context of the problem this means that for vehicles of this make and model between two and six years old we are 90% confident that for each additional year of age the average value of such a vehicle decreases by between $1,100 and $3,000.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch10_s05_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Testing Hypotheses About <em class="emphasis">β</em><sub class="subscript">1</sub>
+</h2>
+        <p class="para block" id="fwk-shafer-ch10_s05_s02_p01">Hypotheses regarding <span class="inlineequation" id="shafer-20121106-125753-156133"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0332" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> can be tested using the same five-step procedures, either the critical value approach or the <em class="emphasis">p</em>-value approach, that were introduced in <a class="xref" href="fwk-shafer-ch08_s01#fwk-shafer-ch08_s01">Section 8.1 "The Elements of Hypothesis Testing"</a> and <a class="xref" href="fwk-shafer-ch08_s03#fwk-shafer-ch08_s03">Section 8.3 "The Observed Significance of a Test"</a> of <a class="xref" href="fwk-shafer-ch08#fwk-shafer-ch08">Chapter 8 "Testing Hypotheses"</a>. The null hypothesis always has the form <span class="inlineequation" id="shafer-20121106-125753-156150"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0333" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> where <em class="emphasis">B</em><sub class="subscript">0</sub> is a number determined from the statement of the problem. The three forms of the alternative hypothesis, with the terminology for each case, are:</p>
+        <div class="informaltable block">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="left">Form of <em class="emphasis">H<sub class="subscript">a</sub></em>
+</th>
+                        <th align="left">Terminology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-156166"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0334" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&lt;</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span></td>
+                        <td align="left">Left-tailed</td>
+                    </tr>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-156183"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0335" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&gt;</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span></td>
+                        <td align="left">Right-tailed</td>
+                    </tr>
+                    <tr>
+                        <td align="left"><span class="inlineequation" id="shafer-20121106-125753-156199"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0336" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">≠</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span></td>
+                        <td align="left">Two-tailed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="para block" id="fwk-shafer-ch10_s05_s02_p02">The value zero for <em class="emphasis">B</em><sub class="subscript">0</sub> is of particular importance since in that case the null hypothesis is <span class="inlineequation" id="shafer-20121106-125753-156216"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0337" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>0</mn></math></span>, which corresponds to the situation in which <em class="emphasis">x</em> is not useful for predicting <em class="emphasis">y</em>. For if <span class="inlineequation" id="shafer-20121106-125753-156232"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0338" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>0</mn></math></span> then the population regression line is horizontal, so the mean <span class="inlineequation" id="shafer-20121106-125753-156249"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0339" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> is the same for every value of <em class="emphasis">x</em> and we are just as well off in ignoring <em class="emphasis">x</em> completely and approximating <em class="emphasis">y</em> by its average value. Given two variables <em class="emphasis">x</em> and <em class="emphasis">y</em>, the burden of proof is that <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em>, not that it is not. Thus the phrase “test whether <em class="emphasis">x</em> is useful for prediction of <em class="emphasis">y</em>,” or words to that effect, means to perform the test</p>
+        <span class="informalequation block" id="shafer-20121106-125753-156271"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0340" display="block"><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mtext> vs. </mtext><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>≠</mo><mn>0</mn></mrow></math></span>
+        <div class="callout block" id="fwk-shafer-ch10_s05_s02_n01">
+            <h3 class="title">Standardized Test Statistic for Hypothesis Tests Concerning the Slope <span class="inlineequation" id="shafer-20121106-125753-156287"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0341" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the Population Regression Line</h3>
+            <span class="informalequation" id="shafer-20121106-125753-156303"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0342" display="block"><mrow><mi>T</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p03">The test statistic has Student’s <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-156319"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0343" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mi>n</mi><mtext>−</mtext><mn>2</mn></math></span> degrees of freedom.</p>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p04">The assumptions listed in <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a> must hold.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s05_s02_n02">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p05">Test, at the 2% level of significance, whether the variable <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em> based on the information in the five-point data set</p>
+            <span class="informalequation" id="shafer-20121106-125753-156335"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0344" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd></mtr></mtable></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p06">We will perform the test using the critical value approach.</p>
+            <ul class="itemizedlist" id="fwk-shafer-ch10_s05_s02_l01" mark="none">
+                <li>
+                    <p class="para">Step 1. Since <em class="emphasis">x</em> is useful for prediction of <em class="emphasis">y</em> precisely when the slope <span class="inlineequation" id="shafer-20121106-125753-156350"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0345" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line is nonzero, the relevant test is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156366"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0346" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>a</mi></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>≠</mo><mn>0</mn><mtext> </mtext><mo>@</mo><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.02</mn></mtd></mtr></mtable></math></span>
+                </li>
+                <li>
+                    <p class="para">Step 2. The test statistic is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156382"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0347" display="block"><mrow><mi>T</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+                    <p class="para">and has Student’s <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-156404"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0348" display="inline"><mi>n</mi><mtext>−</mtext><mn>2</mn><mo class="MathClass-rel">=</mo><mn>5</mn><mo>−</mo><mn>2</mn><mo class="MathClass-rel">=</mo><mn>3</mn></math></span> degrees of freedom.</p>
+                </li>
+                <li>
+                    <p class="para">Step 3. From <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n02" xrefstyle="select: title">Note 10.18 "Example 2"</a>, <span class="inlineequation" id="shafer-20121106-125753-156421"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0349" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>0.34375</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-156438"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0350" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>51.2</mn><mo>.</mo></math></span> From <a class="xref" href="#fwk-shafer-ch10_s05_s01_n03" xrefstyle="select: title">Note 10.30 "Example 6"</a>, <span class="inlineequation" id="shafer-20121106-125753-156454"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0351" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>0.50</mn><mo>.</mo></math></span> The value of the test statistic is therefore</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156469"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0352" display="block"><mrow><mi>T</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>0.34375</mn></mrow><mrow><mn>0.50</mn><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mn>51.2</mn></mrow></msqrt></mpadded></mrow></mfrac><mo class="MathClass-rel">=</mo><mn>4.919</mn></mrow></math></span>
+                </li>
+                <li>Step 4. Since the symbol in <em class="emphasis">H<sub class="subscript">a</sub></em> is “≠” this is a two-tailed test, so there are two critical values <span class="inlineequation" id="shafer-20121106-125753-156485"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0353" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>.</mo></math></span> Reading from the line in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> labeled <span class="inlineequation" id="shafer-20121106-125753-156501"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0354" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mn>3</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-156523"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0355" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>4.541</mn><mo>.</mo></math></span> The rejection region is <span class="inlineequation" id="shafer-20121106-125753-156540"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0356" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><mn>4.541</mn></mrow><mo class="MathClass-close">]</mo></mrow><mo>∪</mo><mrow><mo class="MathClass-open">[</mo><mrow><mn>4.541</mn><mo>,</mo><mi>∞</mi></mrow><mo class="MathClass-close">)</mo></mrow><mo>.</mo></math></span>
+</li>
+                <li>
+                    <p class="para">Step 5. As shown in <a class="xref" href="#fwk-shafer-ch10_s05_s02_f01">Figure 10.9 "Rejection Region and Test Statistic for "</a> the test statistic falls in the rejection region. The decision is to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. In the context of the problem our conclusion is:</p>
+                    <p class="para">The data provide sufficient evidence, at the 2% level of significance, to conclude that the slope of the population regression line is nonzero, so that <em class="emphasis">x</em> is useful as a predictor of <em class="emphasis">y</em>.</p>
+                </li>
+            </ul>
+            <div class="figure medium" id="fwk-shafer-ch10_s05_s02_f01">
+                <p class="title"><span class="title-prefix">Figure 10.9</span> Rejection Region and Test Statistic for <a class="xref" href="#fwk-shafer-ch10_s05_s02_n02" xrefstyle="select: title">Note 10.33 "Example 8"</a></p>
+                <img src="section_14/9f1c174c40e1d4364dca3822c4cc03d5.jpg">
+            </div>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch10_s05_s02_n03">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p07">A car salesman claims that automobiles between two and six years old of the make and model discussed in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a> in <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a> lose more than $1,100 in value each year. Test this claim at the 5% level of significance.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch10_s05_s02_p08">We will perform the test using the critical value approach.</p>
+            <ul class="itemizedlist" id="fwk-shafer-ch10_s05_s02_l02" mark="none">
+                <li>
+                    <p class="para">Step 1. In terms of the variables <em class="emphasis">x</em> and <em class="emphasis">y</em>, the salesman’s claim is that if <em class="emphasis">x</em> is increased by 1 unit (one additional year in age), then <em class="emphasis">y</em> decreases by more than 1.1 units (more than $1,100). Thus his assertion is that the slope of the population regression line is negative, and that it is more negative than −1.1. In symbols, <span class="inlineequation" id="shafer-20121106-125753-156556"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0357" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&lt;</mo><mtext>−</mtext><mn>1.1</mn><mo>.</mo></math></span> Since it contains an inequality, this has to be the alternative hypotheses. The null hypothesis has to be an equality and have the same number on the right hand side, so the relevant test is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156573"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0358" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>=</mo><mtext>−</mtext><mn>1.1</mn></mtd></mtr><mtr><mtd><mtext>vs</mtext><mo>.</mo><mtext> </mtext><msub><mi>H</mi><mi>α</mi></msub><mo>:</mo><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mo>&lt;</mo><mtext>−</mtext><mn>1.1</mn><mtext> </mtext><mo>@</mo><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.05</mn></mtd></mtr></mtable></math></span>
+                </li>
+                <li>
+                    <p class="para">Step 2. The test statistic is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156589"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0359" display="block"><mrow><mi>T</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+                    <p class="para">and has Student’s <em class="emphasis">t</em>-distribution with 8 degrees of freedom.</p>
+                </li>
+                <li>
+                    <p class="para">Step 3. From <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04_s02_n03" xrefstyle="select: title">Note 10.19 "Example 3"</a>, <span class="inlineequation" id="shafer-20121106-125753-156606"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0360" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.05</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-156623"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0361" display="inline"><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>14</mn><mo>.</mo></math></span> From <a class="xref" href="#fwk-shafer-ch10_s05_s01_n04" xrefstyle="select: title">Note 10.31 "Example 7"</a>, <span class="inlineequation" id="shafer-20121106-125753-156638"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0362" display="inline"><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo class="MathClass-rel">=</mo><mn>1.902169814</mn><mo>.</mo></math></span> The value of the test statistic is therefore</p>
+                    <span class="informalequation" id="shafer-20121106-125753-156655"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0363" display="block"><mrow><mi>T</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="65%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub><mo>−</mo><msub><mrow><mi>B</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mrow><msub><mrow><mi>s</mi></mrow><mrow><mi mathvariant="italic">ε</mi></mrow></msub><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mrow><mi>S</mi></mrow><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac><mo class="MathClass-rel">=</mo><mfrac><mrow><mtext>−</mtext><mn>2.05</mn><mo>−</mo><mrow><mo class="MathClass-open">(</mo><mrow><mtext>−</mtext><mn>1.1</mn></mrow><mo class="MathClass-close">)</mo></mrow></mrow><mrow><mn>1.902169814</mn><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mn>14</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>1.869</mn></mrow></math></span>
+                </li>
+                <li>Step 4. Since the symbol in <em class="emphasis">H<sub class="subscript">a</sub></em> is “&lt;” this is a left-tailed test, so there is a single critical value <span class="inlineequation" id="shafer-20121106-125753-156671"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0364" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>=</mo><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>.</mo></math></span> Reading from the line in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> labeled <span class="inlineequation" id="shafer-20121106-125753-156703"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0365" display="inline"><mi>d</mi><mi>f</mi><mo class="MathClass-rel">=</mo><mn>8</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-156719"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0366" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>1.860</mn><mo>.</mo></math></span> The rejection region is <span class="inlineequation" id="shafer-20121106-125753-156735"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0367" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><mn>1.860</mn></mrow><mo class="MathClass-close">]</mo></mrow><mo>.</mo></math></span>
+</li>
+                <li>
+                    <p class="para">Step 5. As shown in <a class="xref" href="#fwk-shafer-ch10_s05_s02_f02">Figure 10.10 "Rejection Region and Test Statistic for "</a> the test statistic falls in the rejection region. The decision is to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. In the context of the problem our conclusion is:</p>
+                    <p class="para">The data provide sufficient evidence, at the 5% level of significance, to conclude that vehicles of this make and model and in this age range lose more than $1,100 per year in value, on average.</p>
+                </li>
+            </ul>
+            <div class="figure medium" id="fwk-shafer-ch10_s05_s02_f02">
+                <p class="title"><span class="title-prefix">Figure 10.10</span> Rejection Region and Test Statistic for <a class="xref" href="#fwk-shafer-ch10_s05_s02_n03" xrefstyle="select: title">Note 10.34 "Example 9"</a></p>
+                <img src="section_14/da0a5676198f1c1c85bdb57bbd79e2b1.jpg">
+            </div>
+        </div>
+        <div class="key_takeaways block" id="fwk-shafer-ch10_s05_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch10_s05_s02_l03" mark="bullet">
+                <li>The parameter <span class="inlineequation" id="shafer-20121106-125753-156751"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0368" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, the slope of the population regression line, is of primary interest because it describes the average change in <em class="emphasis">y</em> with respect to unit increase in <em class="emphasis">x</em>.</li>
+                <li>The statistic <span class="inlineequation" id="shafer-20121106-125753-156767"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0369" display="inline"><msub><mrow><mrow><mover accent="true"><mi mathvariant="italic" fontsize="75%">β</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mrow><mn>1</mn></mrow></msub></math></span>, the slope of the least squares regression line, is a point estimate of <span class="inlineequation" id="shafer-20121106-125753-156784"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0370" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo>.</mo></math></span> Confidence intervals for <span class="inlineequation" id="shafer-20121106-125753-156799"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0371" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> can be computed using a formula.</li>
+                <li>Hypotheses regarding <span class="inlineequation" id="shafer-20121106-125753-156815"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0372" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> are tested using the same five-step procedures introduced in <a class="xref" href="fwk-shafer-ch08#fwk-shafer-ch08">Chapter 8 "Testing Hypotheses"</a>.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch10_s05_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s05_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <p class="para" id="fwk-shafer-ch10_s05_qs01_p01">For the Basic and Application exercises in this section use the computations that were done for the exercises with the same number in <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> and <a class="xref" href="fwk-shafer-ch10_s04#fwk-shafer-ch10_s04">Section 10.4 "The Least Squares Regression Line"</a>.</p>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p02">Construct the 95% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-156837"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0373" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the sample data set of Exercise 1 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p04">Construct the 90% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-156870"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0375" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the sample data set of Exercise 2 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p06">Construct the 90% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-156903"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0377" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the sample data set of Exercise 3 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p08">Construct the 99% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-156935"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0379" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression Exercise 4 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p10">For the data in Exercise 5 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 10% level of significance, whether <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em> (that is, whether <span class="inlineequation" id="shafer-20121106-125753-156973"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0381" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">≠</mo><mn>0</mn></math></span>).</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p12">For the data in Exercise 6 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 5% level of significance, whether <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em> (that is, whether <span class="inlineequation" id="shafer-20121106-125753-157022"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0384" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">≠</mo><mn>0</mn></math></span>).</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p14">Construct the 90% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-157070"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0387" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the sample data set of Exercise 7 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p16">Construct the 95% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-157104"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0389" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line based on the sample data set of Exercise 8 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p18">For the data in Exercise 9 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 1% level of significance, whether <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em> (that is, whether <span class="inlineequation" id="shafer-20121106-125753-157143"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0391" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">≠</mo><mn>0</mn></math></span>).</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p20">For the data in Exercise 10 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 1% level of significance, whether <em class="emphasis">x</em> is useful for predicting <em class="emphasis">y</em> (that is, whether <span class="inlineequation" id="shafer-20121106-125753-157197"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0394" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">≠</mo><mn>0</mn></math></span>).</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s05_qs01_qd02" start="11">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p22">For the data in Exercise 11 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> construct a 90% confidence interval for the mean number of new words acquired per month by children between 13 and 18 months of age.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p24">For the data in Exercise 12 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> construct a 90% confidence interval for the mean increased braking distance for each additional 100 pounds of vehicle weight.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p26">For the data in Exercise 13 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 10% level of significance, whether age is useful for predicting resting heart rate.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p28">For the data in Exercise 14 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 10% level of significance, whether wind speed is useful for predicting wave height.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p30">For the situation described in Exercise 15 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o01" numeration="loweralpha">
+                            <li>Construct the 95% confidence interval for the mean increase in revenue per additional thousand dollars spent on advertising.</li>
+                            <li>An advertising agency tells the business owner that for every additional thousand dollars spent on advertising, revenue will increase by over $25,000. Test this claim (which is the alternative hypothesis) at the 5% level of significance.</li>
+                            <li>Perform the test of part (b) at the 10% level of significance.</li>
+                            <li>Based on the results in (b) and (c), how believable is the ad agency’s claim? (This is a subjective judgement.)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p31">For the situation described in Exercise 16 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o03" numeration="loweralpha">
+                            <li>Construct the 90% confidence interval for the mean increase in height per additional inch of length at age two.</li>
+                            <li>It is claimed that for girls each additional inch of length at age two means more than an additional inch of height at maturity. Test this claim (which is the alternative hypothesis) at the 10% level of significance.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p32">For the data in Exercise 17 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 10% level of significance, whether course average before the final exam is useful for predicting the final exam grade.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p34">For the situation described in Exercise 18 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a>, an agronomist claims that each additional million acres planted results in more than 750,000 additional acres harvested. Test this claim at the 1% level of significance.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p36">For the data in Exercise 19 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 1/10th of 1% level of significance, whether, ignoring all other facts such as age and body mass, the amount of the medication consumed is a useful predictor of blood concentration of the active ingredient.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p38">For the data in Exercise 20 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a> test, at the 1% level of significance, whether for each additional inch of girth the age of the tree increases by at least two and one-half years.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p40">For the data in Exercise 21 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o05" numeration="loweralpha">
+                            <li>Construct the 95% confidence interval for the mean increase in strength at 28 days for each additional hundred psi increase in strength at 3 days.</li>
+                            <li>Test, at the 1/10th of 1% level of significance, whether the 3-day strength is useful for predicting 28-day strength.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p41">For the situation described in Exercise 22 of <a class="xref" href="fwk-shafer-ch10_s02#fwk-shafer-ch10_s02">Section 10.2 "The Linear Correlation Coefficient"</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o07" numeration="loweralpha">
+                            <li>Construct the 99% confidence interval for the mean decrease in energy demand for each one-degree drop in temperature.</li>
+                            <li>An engineer with the power company believes that for each one-degree increase in temperature, daily energy demand will decrease by more than 3.6 million watt-hours. Test this claim at the 1% level of significance.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch10_s05_qs01_qd03" start="23">
+                <h3 class="title">Large Data Set Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p42">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students.</p>
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p43"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o09" numeration="loweralpha">
+                            <li>Compute the 90% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-157748"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0426" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line with SAT score as the independent variable (<em class="emphasis">x</em>) and GPA as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that the slope of the population regression line is greater than 0.001, against the null hypothesis that it is exactly 0.001.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p44">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs).</p>
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p45"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o11" numeration="loweralpha">
+                            <li>Compute the 95% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-157851"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0432" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line with scores using the original clubs as the independent variable (<em class="emphasis">x</em>) and scores using the new clubs as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that the slope of the population regression line is different from 1, against the null hypothesis that it is exactly 1.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p46">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions.</p>
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p47"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o13" numeration="loweralpha">
+                            <li>Compute the 95% confidence interval for the slope <span class="inlineequation" id="shafer-20121106-125753-157977"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0439" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> of the population regression line with the number of bidders present at the auction as the independent variable (<em class="emphasis">x</em>) and sales price as the dependent variable (<em class="emphasis">y</em>).</li>
+                            <li>Test, at the 10% level of significance, the hypothesis that the average sales price increases by more than $90 for each additional bidder at an auction, against the default that it increases by exactly $90.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch10_s05_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p03_ans"><span class="inlineequation" id="shafer-20121106-125753-156854_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0374" display="inline"><mn>0.743</mn><mo>±</mo><mn>0.578</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p07_ans"><span class="inlineequation" id="shafer-20121106-125753-156919_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0378" display="inline"><mtext>−</mtext><mn>0.610</mn><mo>±</mo><mn>0.633</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p11_ans"><span class="inlineequation" id="shafer-20121106-125753-156990_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0382" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>1.732</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157006_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0383" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>2.353</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p15_ans"><span class="inlineequation" id="shafer-20121106-125753-157086_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0388" display="inline"><mn>0.6</mn><mo>±</mo><mn>0.451</mn></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p19_ans"><span class="inlineequation" id="shafer-20121106-125753-157160_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0392" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>4.481</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157176_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0393" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.005</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>3.355</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="11">
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p23_ans"><span class="inlineequation" id="shafer-20121106-125753-157245_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0397" display="inline"><mn>4.8</mn><mo>±</mo><mn>1.7</mn></math></span> words</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p27_ans"><span class="inlineequation" id="shafer-20121106-125753-157285_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0399" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>2.843</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157301_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0400" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>1.860</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa15_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o02_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157350_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0403" display="inline"><mn>42.024</mn><mo>±</mo><mn>28.011</mn></math></span> thousand dollars,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157366_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0404" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>1.487</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157389_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0405" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>1.943</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>;</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157405_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0406" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>1.440</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p33_ans"><span class="inlineequation" id="shafer-20121106-125753-157470_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0410" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>4.096</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157486_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0411" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>1.771</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch10_s05_qs01_p37_ans"><span class="inlineequation" id="shafer-20121106-125753-157540_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0414" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>25.524</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157562_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0415" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.0005</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>3.505</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o06_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157611_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0418" display="inline"><mn>2.550</mn><mo>±</mo><mn>0.127</mn></math></span> hundred psi,</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157628_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0419" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>41.072</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-157644_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0420" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mn>0.005</mn></mrow></msub><mo class="MathClass-rel">=</mo><mo>±</mo><mn>3.674</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd02_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="23">
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o10_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-157764_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0427" display="inline"><mrow><mo>(</mo><mrow><mn>0</mn><mo>.</mo><mn>0014,0</mn><mo>.</mo><mn>0018</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-157780_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0428" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>0.001</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-157797_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0429" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&gt;</mo><mn>0.001</mn><mo>.</mo></math></span> Test Statistic: <span class="inlineequation" id="shafer-20121106-125753-157812_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0430" display="inline"><mi>Z</mi><mo class="MathClass-rel">=</mo><mn>6.1625</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-157835_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0431" display="inline"><mrow><mo>[</mo><mrow><mn>1.28</mn><mo>,</mo><mo>+</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch10_s05_qs01_qd03_qa25_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch10_s05_qs01_o14_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-157993_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0440" display="inline"><mrow><mo>(</mo><mrow><mn>101</mn><mo>.</mo><mn>789,131</mn><mo>.</mo><mn>4435</mn></mrow><mo>)</mo></mrow></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-158010_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0441" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">=</mo><mn>90</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-158026_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0442" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class="MathClass-rel">&gt;</mo><mn>90</mn><mo>.</mo></math></span> Test Statistic: <span class="inlineequation" id="shafer-20121106-125753-158043_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0443" display="inline"><mi>T</mi><mo class="MathClass-rel">=</mo><mn>3.5938</mn><mo>.</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-158059_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0444" display="inline"><mi>d</mi><mo>.</mo><mi>f</mi><mo>.</mo><mo class="MathClass-rel">=</mo><mn>58</mn><mo>.</mo></math></span> Rejection Region: <span class="inlineequation" id="shafer-20121106-125753-158076_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0445" display="inline"><mrow><mo>[</mo><mrow><mn>1.296</mn><mo>,</mo><mo>+</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> Decision: Reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-04-the-least-squares-regression-l.html"><img src="shared/images/batch-left.png"></a> <a href="s14-04-the-least-squares-regression-l.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-06-the-coefficient-of-determinati.html">Next Section</a> <a href="s14-06-the-coefficient-of-determinati.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

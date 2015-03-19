@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Small Sample Tests for a Population Mean</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s12-03-the-observed-significance-of-a.html"><img src="shared/images/batch-left.png"></a> <a href="s12-03-the-observed-significance-of-a.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-05-large-sample-tests-for-a-popul.html">Next Section</a> <a href="s12-05-large-sample-tests-for-a-popul.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch08_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">8.4</span> Small Sample Tests for a Population Mean</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch08_s04_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch08_s04_o01" numeration="arabic">
+            <li>To learn how to apply the five-step test procedure for test of hypotheses concerning a population mean when the sample size is small.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch08_s04_p01">In the previous section hypotheses testing for population means was described in the case of large samples. The statistical validity of the tests was insured by the Central Limit Theorem, with essentially no assumptions on the distribution of the population. When sample sizes are small, as is often the case in practice, the Central Limit Theorem does not apply. One must then impose stricter assumptions on the population to give statistical validity to the test procedure. One common assumption is that the population from which the sample is taken has a normal probability distribution to begin with. Under such circumstances, if the population standard deviation is known, then the test statistic <span class="inlineequation" id="shafer-20121106-125753-123473"><math xml:id="fwk-shafer-ch08-m0395" display="inline"><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>∕</mo><mrow><mo>(</mo><mrow><mi mathvariant="italic">σ</mi><mo>∕</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></mrow><mo>)</mo></mrow></math></span> still has the standard normal distribution, as in the previous two sections. If <em class="emphasis">σ</em> is unknown and is approximated by the sample standard deviation <em class="emphasis">s</em>, then the resulting test statistic <span class="inlineequation" id="shafer-20121106-125753-123490"><math xml:id="fwk-shafer-ch08-m0396" display="inline"><mrow><mo>(</mo><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow><mo>)</mo></mrow><mo>∕</mo><mrow><mo>(</mo><mrow><mi>s</mi><mo>∕</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></mrow><mo>)</mo></mrow></math></span> follows Student’s <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-123505"><math xml:id="fwk-shafer-ch08-m0397" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn></math></span> degrees of freedom.</p>
+    <div class="callout block" id="fwk-shafer-ch08_s04_n02">
+        <h3 class="title">Standardized Test Statistics for Small Sample Hypothesis Tests Concerning a Single Population Mean</h3>
+        <span class="informalequation" id="shafer-20121106-125753-123521"><math xml:id="fwk-shafer-ch08-m0398" display="block"><mtable columnspacing="0.5em"><mtr><mtd><mtext> If </mtext><mi mathvariant="italic">σ</mi><mtext> is known:</mtext><mtext> </mtext><mi>Z</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi mathvariant="italic">σ</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mtd></mtr><mtr><mtd><mtext> If </mtext><mi mathvariant="italic">σ</mi><mtext> is unknown:</mtext><mtext> </mtext><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mtd></mtr></mtable></math></span>
+        <p class="para" id="fwk-shafer-ch08_s04_p02">The first test statistic (<em class="emphasis">σ</em> known) has the standard normal distribution.</p>
+        <p class="para" id="fwk-shafer-ch08_s04_p03">The second test statistic (<em class="emphasis">σ</em> unknown) has Student’s <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-123544"><math xml:id="fwk-shafer-ch08-m0399" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn></math></span> degrees of freedom.</p>
+        <p class="para" id="fwk-shafer-ch08_s04_p04">The population must be normally distributed.</p>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch08_s04_p05">The distribution of the second standardized test statistic (the one containing <em class="emphasis">s</em>) and the corresponding rejection region for each form of the alternative hypothesis (left-tailed, right-tailed, or two-tailed), is shown in <a class="xref" href="#fwk-shafer-ch08_s04_f01">Figure 8.11 "Distribution of the Standardized Test Statistic and the Rejection Region"</a>. This is just like <a class="xref" href="fwk-shafer-ch08_s02#fwk-shafer-ch08_s02_f01">Figure 8.4 "Distribution of the Standardized Test Statistic and the Rejection Region"</a>, except that now the critical values are from the <em class="emphasis">t</em>-distribution. <a class="xref" href="fwk-shafer-ch08_s02#fwk-shafer-ch08_s02_f01">Figure 8.4 "Distribution of the Standardized Test Statistic and the Rejection Region"</a> still applies to the first standardized test statistic (the one containing <em class="emphasis">σ</em>) since it follows the standard normal distribution.</p>
+    <div class="figure large editable block" id="fwk-shafer-ch08_s04_f01">
+        <p class="title"><span class="title-prefix">Figure 8.11</span> Distribution of the Standardized Test Statistic and the Rejection Region</p>
+        <img src="section_12/ecf5f771ca148089665859c88d8679df.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch08_s04_p06">The <em class="emphasis">p</em>-value of a test of hypotheses for which the test statistic has Student’s <em class="emphasis">t</em>-distribution can be computed using statistical software, but it is impractical to do so using tables, since that would require 30 tables analogous to <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f02">Figure 12.2 "Cumulative Normal Probability"</a>, one for each degree of freedom from 1 to 30. <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> can be used to approximate the <em class="emphasis">p</em>-value of such a test, and this is typically adequate for making a decision using the <em class="emphasis">p</em>-value approach to hypothesis testing, although not always. For this reason the tests in the two examples in this section will be made following the critical value approach to hypothesis testing summarized at the end of <a class="xref" href="fwk-shafer-ch08_s01#fwk-shafer-ch08_s01">Section 8.1 "The Elements of Hypothesis Testing"</a>, but after each one we will show how the <em class="emphasis">p</em>-value approach could have been used.</p>
+    <div class="exercises block" id="fwk-shafer-ch08_s04_n03">
+        <h3 class="title">Example 10</h3>
+        <p class="para" id="fwk-shafer-ch08_s04_p07">The price of a popular tennis racket at a national chain store is $179. Portia bought five of the same racket at an online auction site for the following prices:</p>
+        <span class="informalequation" id="shafer-20121106-125753-123561"><math xml:id="fwk-shafer-ch08-m0400" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mn>155</mn></mtd><mtd><mn>179</mn></mtd><mtd><mn>175</mn></mtd><mtd><mn>175</mn></mtd><mtd><mn>161</mn></mtd></mtr></mtable></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch08_s04_p08">Assuming that the auction prices of rackets are normally distributed, determine whether there is sufficient evidence in the sample, at the 5% level of significance, to conclude that the average price of the racket is less than $179 if purchased at an online auction.</p>
+        <p class="simpara">Solution:</p>
+        <ul class="itemizedlist" id="fwk-shafer-ch08_s04_l01" mark="none">
+            <li>
+                <p class="para">Step 1. The assertion for which evidence must be provided is that the average online price <em class="emphasis">μ</em> is less than the average price in retail stores, so the hypothesis test is</p>
+                <span class="informalequation" id="shafer-20121106-125753-123577"><math xml:id="fwk-shafer-ch08-m0401" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi></mtd><mtd><mo>=</mo></mtd><mtd><mn>179</mn></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi></mtd><mtd><mo>&lt;</mo></mtd><mtd><mn>179</mn></mtd><mtd><mi>@</mi><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.05</mn></mtd></mtr></mtable></math></span>
+            </li>
+            <li>
+                <p class="para">Step 2. The sample is small and the population standard deviation is unknown. Thus the test statistic is</p>
+                <span class="informalequation" id="shafer-20121106-125753-123593"><math xml:id="fwk-shafer-ch08-m0402" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+                <p class="para">and has the Student <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-123609"><math xml:id="fwk-shafer-ch08-m0403" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>5</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>4</mn></math></span> degrees of freedom.</p>
+            </li>
+            <li>
+                <p class="para">Step 3. From the data we compute <span class="inlineequation" id="shafer-20121106-125753-123625"><math xml:id="fwk-shafer-ch08-m0404" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>169</mn></math></span> and <em class="emphasis">s</em> = 10.39. Inserting these values into the formula for the test statistic gives</p>
+                <span class="informalequation" id="shafer-20121106-125753-123642"><math xml:id="fwk-shafer-ch08-m0405" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>169</mn><mo>−</mo><mn>179</mn></mrow><mrow><mn>10.39</mn><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mn>5</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mtext>−</mtext><mn>2.152</mn></mrow></math></span>
+            </li>
+            <li>Step 4. Since the symbol in <em class="emphasis">H<sub class="subscript">a</sub></em> is “&lt;” this is a left-tailed test, so there is a single critical value, <span class="inlineequation" id="shafer-20121106-125753-123658"><math xml:id="fwk-shafer-ch08-m0406" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi></mrow></msub><mo>=</mo><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mrow><mo>[</mo><mrow><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span> Reading from the row labeled <span class="inlineequation" id="shafer-20121106-125753-123674"><math xml:id="fwk-shafer-ch08-m0407" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></math></span> in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> its value is −2.132. The rejection region is <span class="inlineequation" id="shafer-20121106-125753-123696"><math xml:id="fwk-shafer-ch08-m0408" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><mn>2.132</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span>
+</li>
+            <li>
+                <p class="para">Step 5. As shown in <a class="xref" href="#fwk-shafer-ch08_s04_f02">Figure 8.12 "Rejection Region and Test Statistic for "</a> the test statistic falls in the rejection region. The decision is to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. In the context of the problem our conclusion is:</p>
+                <p class="para">The data provide sufficient evidence, at the 5% level of significance, to conclude that the average price of such rackets purchased at online auctions is less than $179.</p>
+            </li>
+        </ul>
+        <div class="figure medium" id="fwk-shafer-ch08_s04_f02">
+            <p class="title"><span class="title-prefix">Figure 8.12</span> Rejection Region and Test Statistic for <a class="xref" href="#fwk-shafer-ch08_s04_n03" xrefstyle="select: title">Note 8.42 "Example 10"</a></p>
+            <img src="section_12/37a4f201cad923d15a8bfab828bd7640.jpg">
+        </div>
+    </div>
+    <p class="para block" id="fwk-shafer-ch08_s04_p09">To perform the test in <a class="xref" href="#fwk-shafer-ch08_s04_n03" xrefstyle="select: title">Note 8.42 "Example 10"</a> using the <em class="emphasis">p</em>-value approach, look in the row in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> with the heading <span class="inlineequation" id="shafer-20121106-125753-123712"><math xml:id="fwk-shafer-ch08-m0409" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></math></span> and search for the two <em class="emphasis">t</em>-values that bracket the unsigned value 2.152 of the test statistic. They are 2.132 and 2.776, in the columns with headings <em class="emphasis">t</em><sub class="subscript">0.050</sub> and <em class="emphasis">t</em><sub class="subscript">0.025</sub>. They cut off right tails of area 0.050 and 0.025, so because 2.152 is between them it must cut off a tail of area between 0.050 and 0.025. By symmetry −2.152 cuts off a left tail of area between 0.050 and 0.025, hence the <em class="emphasis">p</em>-value corresponding to <span class="inlineequation" id="shafer-20121106-125753-123728"><math xml:id="fwk-shafer-ch08-m0410" display="inline"><mi>t</mi><mo>=</mo><mtext>−</mtext><mn>2.152</mn></math></span> is between 0.025 and 0.05. Although its precise value is unknown, it must be less than <span class="inlineequation" id="shafer-20121106-125753-123743"><math xml:id="fwk-shafer-ch08-m0411" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, so the decision is to reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+    <div class="exercises block" id="fwk-shafer-ch08_s04_n04">
+        <h3 class="title">Example 11</h3>
+        <p class="para" id="fwk-shafer-ch08_s04_p10">A small component in an electronic device has two small holes where another tiny part is fitted. In the manufacturing process the average distance between the two holes must be tightly controlled at 0.02 mm, else many units would be defective and wasted. Many times throughout the day quality control engineers take a small sample of the components from the production line, measure the distance between the two holes, and make adjustments if needed. Suppose at one time four units are taken and the distances are measured as</p>
+        <span class="informalequation" id="shafer-20121106-125753-123760"><math xml:id="fwk-shafer-ch08-m0412" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mn>0.021</mn></mtd><mtd><mn>0.019</mn></mtd><mtd><mn>0.023</mn></mtd><mtd><mn>0.020</mn></mtd></mtr></mtable></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch08_s04_p11">Determine, at the 1% level of significance, if there is sufficient evidence in the sample to conclude that an adjustment is needed. Assume the distances of interest are normally distributed.</p>
+        <p class="simpara">Solution:</p>
+        <ul class="itemizedlist" id="fwk-shafer-ch08_s04_l02" mark="none">
+            <li>
+                <p class="para">Step 1. The assumption is that the process is under control unless there is strong evidence to the contrary. Since a deviation of the average distance to either side is undesirable, the relevant test is</p>
+                <span class="informalequation" id="shafer-20121106-125753-123777"><math xml:id="fwk-shafer-ch08-m0413" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi></mtd><mtd><mo>=</mo></mtd><mtd><mn>0.02</mn></mtd></mtr><mtr><mtd columnalign="right"><mtext> vs.</mtext><mtext> </mtext><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi></mtd><mtd><mo>≠</mo></mtd><mtd><mn>0.02</mn></mtd><mtd><mi>@</mi><mtext> </mtext><mi>α</mi><mo>=</mo><mn>0.01</mn></mtd></mtr></mtable></math></span>
+                <p class="para">where <em class="emphasis">μ</em> denotes the mean distance between the holes.</p>
+            </li>
+            <li>
+                <p class="para">Step 2. The sample is small and the population standard deviation is unknown. Thus the test statistic is</p>
+                <span class="informalequation" id="shafer-20121106-125753-123793"><math xml:id="fwk-shafer-ch08-m0414" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+                <p class="para">and has the Student <em class="emphasis">t</em>-distribution with <span class="inlineequation" id="shafer-20121106-125753-123809"><math xml:id="fwk-shafer-ch08-m0415" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>4</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>3</mn></math></span> degrees of freedom.</p>
+            </li>
+            <li>
+                <p class="para">Step 3. From the data we compute <span class="inlineequation" id="shafer-20121106-125753-123826"><math xml:id="fwk-shafer-ch08-m0416" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>0.02075</mn></math></span> and <em class="emphasis">s</em> = 0.00171. Inserting these values into the formula for the test statistic gives</p>
+                <span class="informalequation" id="shafer-20121106-125753-123848"><math xml:id="fwk-shafer-ch08-m0417" display="block"><mrow><mi>T</mi><mo>=</mo><mfrac><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>−</mo><msub><mi mathvariant="italic">μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>0.02075</mn><mo>−</mo><mn>0.02</mn></mrow><mrow><mn>0.00171</mn><mo>∕</mo><mpadded height="1.2em"><msqrt><mrow><mn>4</mn></mrow></msqrt></mpadded></mrow></mfrac><mo>=</mo><mn>0.877</mn></mrow></math></span>
+            </li>
+            <li>Step 4. Since the symbol in <em class="emphasis">H<sub class="subscript">a</sub></em> is “≠” this is a two-tailed test, so there are two critical values, <span class="inlineequation" id="shafer-20121106-125753-123865"><math xml:id="fwk-shafer-ch08-m0418" display="inline"><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mo>=</mo><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.005</mn></mrow></msub><mrow><mo>[</mo><mrow><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn></mrow><mo>]</mo></mrow><mo>.</mo></math></span> Reading from the row in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> labeled <span class="inlineequation" id="shafer-20121106-125753-123881"><math xml:id="fwk-shafer-ch08-m0419" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn></math></span> their values are <span class="inlineequation" id="shafer-20121106-125753-123897"><math xml:id="fwk-shafer-ch08-m0420" display="inline"><mo>±</mo><mn>5.841</mn><mo>.</mo></math></span> The rejection region is <span class="inlineequation" id="shafer-20121106-125753-123914"><math xml:id="fwk-shafer-ch08-m0421" display="inline"><mrow><mo>(</mo><mrow><mtext>−</mtext><mi>∞</mi><mo>,</mo><mtext>−</mtext><mn>5.841</mn></mrow><mo>]</mo></mrow><mo>∪</mo><mrow><mo>[</mo><mrow><mn>5.841</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+            <li>
+                <p class="para">Step 5. As shown in <a class="xref" href="#fwk-shafer-ch08_s04_f03">Figure 8.13 "Rejection Region and Test Statistic for "</a> the test statistic does not fall in the rejection region. The decision is not to reject <em class="emphasis">H</em><sub class="subscript">0</sub>. In the context of the problem our conclusion is:</p>
+                <p class="para">The data do not provide sufficient evidence, at the 1% level of significance, to conclude that the mean distance between the holes in the component differs from 0.02 mm.</p>
+            </li>
+        </ul>
+        <div class="figure medium" id="fwk-shafer-ch08_s04_f03">
+            <p class="title"><span class="title-prefix">Figure 8.13</span> Rejection Region and Test Statistic for <a class="xref" href="#fwk-shafer-ch08_s04_n04" xrefstyle="select: title">Note 8.43 "Example 11"</a></p>
+            <img src="section_12/ac90ded7d10c3b0d2ccfb5daea47745f.jpg">
+        </div>
+    </div>
+    <p class="para block" id="fwk-shafer-ch08_s04_p12">To perform the test in <a class="xref" href="#fwk-shafer-ch08_s04_n04" xrefstyle="select: title">Note 8.43 "Example 11"</a> using the <em class="emphasis">p</em>-value approach, look in the row in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> with the heading <span class="inlineequation" id="shafer-20121106-125753-123930"><math xml:id="fwk-shafer-ch08-m0422" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>3</mn></math></span> and search for the two <em class="emphasis">t</em>-values that bracket the value 0.877 of the test statistic. Actually 0.877 is smaller than the smallest number in the row, which is 0.978, in the column with heading <em class="emphasis">t</em><sub class="subscript">0.200</sub>. The value 0.978 cuts off a right tail of area 0.200, so because 0.877 is to its left it must cut off a tail of area greater than 0.200. Thus the <em class="emphasis">p</em>-value, which is the double of the area cut off (since the test is two-tailed), is greater than 0.400. Although its precise value is unknown, it must be greater than <span class="inlineequation" id="shafer-20121106-125753-123946"><math xml:id="fwk-shafer-ch08-m0423" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, so the decision is not to reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch08_s04_n05">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch08_s04_l03" mark="bullet">
+            <li>There are two formulas for the test statistic in testing hypotheses about a population mean with small samples. One test statistic follows the standard normal distribution, the other Student’s <em class="emphasis">t</em>-distribution.</li>
+            <li>The population standard deviation is used if it is known, otherwise the sample standard deviation is used.</li>
+            <li>Either five-step procedure, critical value or <em class="emphasis">p</em>-value approach, is used with either test statistic.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch08_s04_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch08_s04_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p01">Find the rejection region (for the standardized test statistic) for each hypothesis test based on the information given. The population is normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o01" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-123968"><math xml:id="fwk-shafer-ch08-m0424" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>27</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-123986"><math xml:id="fwk-shafer-ch08-m0425" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>27</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124004"><math xml:id="fwk-shafer-ch08-m0426" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 12, <em class="emphasis">σ</em> = 2.2.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124020"><math xml:id="fwk-shafer-ch08-m0427" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>52</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124037"><math xml:id="fwk-shafer-ch08-m0428" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>52</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124053"><math xml:id="fwk-shafer-ch08-m0429" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 6, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124069"><math xml:id="fwk-shafer-ch08-m0430" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mtext>−</mtext><mn>105</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124091"><math xml:id="fwk-shafer-ch08-m0431" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mtext>−</mtext><mn>105</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124107"><math xml:id="fwk-shafer-ch08-m0432" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn></math></span>, <em class="emphasis">n</em> = 24, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124130"><math xml:id="fwk-shafer-ch08-m0433" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>78.8</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124147"><math xml:id="fwk-shafer-ch08-m0434" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>78.8</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124164"><math xml:id="fwk-shafer-ch08-m0435" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn></math></span>, <em class="emphasis">n</em> = 8, <em class="emphasis">σ</em> = 1.7.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p02">Find the rejection region (for the standardized test statistic) for each hypothesis test based on the information given. The population is normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o03" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124228"><math xml:id="fwk-shafer-ch08-m0439" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>17</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124244"><math xml:id="fwk-shafer-ch08-m0440" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>17</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124260"><math xml:id="fwk-shafer-ch08-m0441" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, <em class="emphasis">n</em> = 26, <em class="emphasis">σ</em> = 0.94.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124284"><math xml:id="fwk-shafer-ch08-m0442" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>880</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124300"><math xml:id="fwk-shafer-ch08-m0443" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>880</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124316"><math xml:id="fwk-shafer-ch08-m0444" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, <em class="emphasis">n</em> = 4, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124332"><math xml:id="fwk-shafer-ch08-m0445" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mtext>−</mtext><mn>12</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124348"><math xml:id="fwk-shafer-ch08-m0446" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mtext>−</mtext><mn>12</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124365"><math xml:id="fwk-shafer-ch08-m0447" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 18, <em class="emphasis">σ</em> = 1.1.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124380"><math xml:id="fwk-shafer-ch08-m0448" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>21.1</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124397"><math xml:id="fwk-shafer-ch08-m0449" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>21.1</mn></math></span>@ <span class="inlineequation" id="shafer-20121106-125753-124413"><math xml:id="fwk-shafer-ch08-m0450" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 23, <em class="emphasis">σ</em> unknown.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p03">Find the rejection region (for the standardized test statistic) for each hypothesis test based on the information given. The population is normally distributed. Identify the test as left-tailed, right-tailed, or two-tailed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o05" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124486"><math xml:id="fwk-shafer-ch08-m0454" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>141</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124503"><math xml:id="fwk-shafer-ch08-m0455" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>141</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124520"><math xml:id="fwk-shafer-ch08-m0456" display="inline"><mi>α</mi><mo>=</mo><mn>0.20</mn></math></span>, <em class="emphasis">n</em> = 29, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124535"><math xml:id="fwk-shafer-ch08-m0457" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mtext>−</mtext><mn>54</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124551"><math xml:id="fwk-shafer-ch08-m0458" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mtext>−</mtext><mn>54</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124576"><math xml:id="fwk-shafer-ch08-m0459" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 15, <em class="emphasis">σ</em> = 1.9.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124592"><math xml:id="fwk-shafer-ch08-m0460" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>98.6</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124610"><math xml:id="fwk-shafer-ch08-m0461" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>98.6</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124626"><math xml:id="fwk-shafer-ch08-m0462" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, <em class="emphasis">n</em> = 12, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124643"><math xml:id="fwk-shafer-ch08-m0463" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>3.8</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124659"><math xml:id="fwk-shafer-ch08-m0464" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>3.8</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124675"><math xml:id="fwk-shafer-ch08-m0465" display="inline"><mi>α</mi><mo>=</mo><mn>0.001</mn></math></span>, <em class="emphasis">n</em> = 27, <em class="emphasis">σ</em> unknown.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p04">Find the rejection region (for the standardized test statistic) for each hypothesis test based on the information given. The population is normally distributed. Identify the test as left-tailed, right-tailed, or two-tailed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o07" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124746"><math xml:id="fwk-shafer-ch08-m0469" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mtext>−</mtext><mn>62</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124763"><math xml:id="fwk-shafer-ch08-m0470" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mtext>−</mtext><mn>62</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124779"><math xml:id="fwk-shafer-ch08-m0471" display="inline"><mi>α</mi><mo>=</mo><mn>0.005</mn></math></span>, <em class="emphasis">n</em> = 8, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124795"><math xml:id="fwk-shafer-ch08-m0472" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>73</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124811"><math xml:id="fwk-shafer-ch08-m0473" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>73</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124828"><math xml:id="fwk-shafer-ch08-m0474" display="inline"><mi>α</mi><mo>=</mo><mn>0.001</mn><mo>,</mo></math></span> <em class="emphasis">n</em> = 22, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124843"><math xml:id="fwk-shafer-ch08-m0475" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>1124</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124867"><math xml:id="fwk-shafer-ch08-m0476" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>1124</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124883"><math xml:id="fwk-shafer-ch08-m0477" display="inline"><mi>α</mi><mo>=</mo><mn>0.001</mn></math></span>, <em class="emphasis">n</em> = 21, <em class="emphasis">σ</em> unknown.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124899"><math xml:id="fwk-shafer-ch08-m0478" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>0.12</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-124916"><math xml:id="fwk-shafer-ch08-m0479" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>0.12</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-124932"><math xml:id="fwk-shafer-ch08-m0480" display="inline"><mi>α</mi><mo>=</mo><mn>0.001</mn></math></span>, <em class="emphasis">n</em> = 14, <em class="emphasis">σ</em> = 0.026.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p05">A random sample of size 20 drawn from a normal population yielded the following results: <span class="inlineequation" id="shafer-20121106-125753-124998"><math xml:id="fwk-shafer-ch08-m0484" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>49.2</mn></math></span>, <em class="emphasis">s</em> = 1.33.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o09" numeration="loweralpha">
+                        <li>Test <span class="inlineequation" id="shafer-20121106-125753-125021"><math xml:id="fwk-shafer-ch08-m0485" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>50</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-125038"><math xml:id="fwk-shafer-ch08-m0486" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>50</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-125054"><math xml:id="fwk-shafer-ch08-m0487" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn><mo>.</mo></math></span>
+</li>
+                        <li>Estimate the observed significance of the test in part (a) and state a decision based on the <em class="emphasis">p</em>-value approach to hypothesis testing.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p06">A random sample of size 16 drawn from a normal population yielded the following results: <span class="inlineequation" id="shafer-20121106-125753-125167"><math xml:id="fwk-shafer-ch08-m0493" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mtext>−</mtext><mn>0.96</mn></math></span>, <em class="emphasis">s</em> = 1.07.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o11" numeration="loweralpha">
+                        <li>Test <span class="inlineequation" id="shafer-20121106-125753-125183"><math xml:id="fwk-shafer-ch08-m0494" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>0</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-125200"><math xml:id="fwk-shafer-ch08-m0495" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&lt;</mo><mn>0</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-125216"><math xml:id="fwk-shafer-ch08-m0496" display="inline"><mi>α</mi><mo>=</mo><mn>0.001</mn><mo>.</mo></math></span>
+</li>
+                        <li>Estimate the observed significance of the test in part (a) and state a decision based on the <em class="emphasis">p</em>-value approach to hypothesis testing.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p07">A random sample of size 8 drawn from a normal population yielded the following results: <span class="inlineequation" id="shafer-20121106-125753-125323"><math xml:id="fwk-shafer-ch08-m0502" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>289</mn></math></span>, <em class="emphasis">s</em> = 46.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o13" numeration="loweralpha">
+                        <li>Test <span class="inlineequation" id="shafer-20121106-125753-125340"><math xml:id="fwk-shafer-ch08-m0503" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>250</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-125357"><math xml:id="fwk-shafer-ch08-m0504" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>&gt;</mo><mn>250</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-125373"><math xml:id="fwk-shafer-ch08-m0505" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn><mo>.</mo></math></span>
+</li>
+                        <li>Estimate the observed significance of the test in part (a) and state a decision based on the <em class="emphasis">p</em>-value approach to hypothesis testing.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p08">A random sample of size 12 drawn from a normal population yielded the following results: <span class="inlineequation" id="shafer-20121106-125753-125460"><math xml:id="fwk-shafer-ch08-m0510" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>86.2</mn></math></span>, <em class="emphasis">s</em> = 0.63.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o15" numeration="loweralpha">
+                        <li>Test <span class="inlineequation" id="shafer-20121106-125753-125477"><math xml:id="fwk-shafer-ch08-m0511" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>=</mo><mn>85.5</mn></math></span> vs. <span class="inlineequation" id="shafer-20121106-125753-125493"><math xml:id="fwk-shafer-ch08-m0512" display="inline"><msub><mrow><mi>H</mi></mrow><mrow><mi>a</mi></mrow></msub><mo>:</mo><mi mathvariant="italic">μ</mi><mo>≠</mo><mn>85.5</mn></math></span> @ <span class="inlineequation" id="shafer-20121106-125753-125509"><math xml:id="fwk-shafer-ch08-m0513" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn><mo>.</mo></math></span>
+</li>
+                        <li>Estimate the observed significance of the test in part (a) and state a decision based on the <em class="emphasis">p</em>-value approach to hypothesis testing.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch08_s04_qs01_qd02" start="9">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p09">Researchers wish to test the efficacy of a program intended to reduce the length of labor in childbirth. The accepted mean labor time in the birth of a first child is 15.3 hours. The mean length of the labors of 13 first-time mothers in a pilot program was 8.8 hours with standard deviation 3.1 hours. Assuming a normal distribution of times of labor, test at the 10% level of significance test whether the mean labor time for all women following this program is less than 15.3 hours.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p11">A dairy farm uses the somatic cell count (SCC) report on the milk it provides to a processor as one way to monitor the health of its herd. The mean SCC from five samples of raw milk was 250,000 cells per milliliter with standard deviation 37,500 cell/ml. Test whether these data provide sufficient evidence, at the 10% level of significance, to conclude that the mean SCC of all milk produced at the dairy exceeds that in the previous report, 210,250 cell/ml. Assume a normal distribution of SCC.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p13">Six coins of the same type are discovered at an archaeological site. If their weights on average are significantly different from 5.25 grams then it can be assumed that their provenance is not the site itself. The coins are weighed and have mean 4.73 g with sample standard deviation 0.18 g. Perform the relevant test at the 0.1% (1/10th of 1%) level of significance, assuming a normal distribution of weights of all such coins.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p15">An economist wishes to determine whether people are driving less than in the past. In one region of the country the number of miles driven per household per year in the past was 18.59 thousand miles. A sample of 15 households produced a sample mean of 16.23 thousand miles for the last year, with sample standard deviation 4.06 thousand miles. Assuming a normal distribution of household driving distances per year, perform the relevant test at the 5% level of significance.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p17">The recommended daily allowance of iron for females aged 19–50 is 18 mg/day. A careful measurement of the daily iron intake of 15 women yielded a mean daily intake of 16.2 mg with sample standard deviation 4.7 mg.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o17" numeration="loweralpha">
+                        <li>Assuming that daily iron intake in women is normally distributed, perform the test that the actual mean daily intake for all women is different from 18 mg/day, at the 10% level of significance.</li>
+                        <li>The sample mean is less than 18, suggesting that the actual population mean is less than 18 mg/day. Perform this test, also at the 10% level of significance. (The computation of the test statistic done in part (a) still applies here.)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p18">The target temperature for a hot beverage the moment it is dispensed from a vending machine is 170°F. A sample of ten randomly selected servings from a new machine undergoing a pre-shipment inspection gave mean temperature 173°F with sample standard deviation 6.3°F.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o19" numeration="loweralpha">
+                        <li>Assuming that temperature is normally distributed, perform the test that the mean temperature of dispensed beverages is different from 170°F, at the 10% level of significance.</li>
+                        <li>The sample mean is greater than 170, suggesting that the actual population mean is greater than 170°F. Perform this test, also at the 10% level of significance. (The computation of the test statistic done in part (a) still applies here.)</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p19">The average number of days to complete recovery from a particular type of knee operation is 123.7 days. From his experience a physician suspects that use of a topical pain medication might be lengthening the recovery time. He randomly selects the records of seven knee surgery patients who used the topical medication. The times to total recovery were:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-125955"><math xml:id="fwk-shafer-ch08-m0539" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mn>128</mn></mtd><mtd><mn>135</mn></mtd><mtd><mn>121</mn></mtd><mtd><mn>142</mn></mtd><mtd><mn>126</mn></mtd><mtd><mn>151</mn></mtd><mtd><mn>123</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o21" numeration="loweralpha">
+                        <li>Assuming a normal distribution of recovery times, perform the relevant test of hypotheses at the 10% level of significance.</li>
+                        <li>Would the decision be the same at the 5% level of significance? Answer either by constructing a new rejection region (critical value approach) or by estimating the <em class="emphasis">p</em>-value of the test in part (a) and comparing it to <span class="inlineequation" id="shafer-20121106-125753-125971"><math xml:id="fwk-shafer-ch08-m0540" display="inline"><mi>α</mi><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p20">A 24-hour advance prediction of a day’s high temperature is “unbiased” if the long-term average of the error in prediction (true high temperature minus predicted high temperature) is zero. The errors in predictions made by one meteorological station for 20 randomly selected days were:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-126058"><math xml:id="fwk-shafer-ch08-m0545" display="block"><mrow><mtable columnspacing="0.5em"><mtr columnalign="right"><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mtext>−</mtext><mn>4</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>4</mn></mrow></mtd><mtd columnalign="right"><mn>0</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mtext>−</mtext><mn>4</mn></mrow></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>3</mn></mrow></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>4</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o23" numeration="loweralpha">
+                        <li>Assuming a normal distribution of errors, test the null hypothesis that the predictions are unbiased (the mean of the population of all errors is 0) versus the alternative that it is biased (the population mean is not 0), at the 1% level of significance.</li>
+                        <li>Would the decision be the same at the 5% level of significance? The 10% level of significance? Answer either by constructing new rejection regions (critical value approach) or by estimating the <em class="emphasis">p</em>-value of the test in part (a) and comparing it to <span class="inlineequation" id="shafer-20121106-125753-126074"><math xml:id="fwk-shafer-ch08-m0546" display="inline"><mi>α</mi><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p21">Pasteurized milk may not have a standardized plate count (SPC) above 20,000 colony-forming bacteria per milliliter (cfu/ml). The mean SPC for five samples was 21,500 cfu/ml with sample standard deviation 750 cfu/ml. Test the null hypothesis that the mean SPC for this milk is 20,000 versus the alternative that it is greater than 20,000, at the 10% level of significance. Assume that the SPC follows a normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p23">One water quality standard for water that is discharged into a particular type of stream or pond is that the average daily water temperature be at most 18°C. Six samples taken throughout the day gave the data:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-126240"><math xml:id="fwk-shafer-ch08-m0556" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mn>16.8</mn></mtd><mtd><mn>21.5</mn></mtd><mtd><mn>19.1</mn></mtd><mtd><mn>12.8</mn></mtd><mtd><mn>18.0</mn></mtd><mtd><mn>20.7</mn></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p24">The sample mean <span class="inlineequation" id="shafer-20121106-125753-126257"><math xml:id="fwk-shafer-ch08-m0557" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>18.15</mn></math></span> exceeds 18, but perhaps this is only sampling error. Determine whether the data provide sufficient evidence, at the 10% level of significance, to conclude that the mean temperature for the entire day exceeds 18°C.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch08_s04_qs01_qd03" start="19">
+            <h3 class="title">Additional Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p26">A calculator has a built-in algorithm for generating a random number according to the standard normal distribution. Twenty-five numbers thus generated have mean 0.15 and sample standard deviation 0.94. Test the null hypothesis that the mean of all numbers so generated is 0 versus the alternative that it is different from 0, at the 20% level of significance. Assume that the numbers do follow a normal distribution.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p28">At every setting a high-speed packing machine delivers a product in amounts that vary from container to container with a normal distribution of standard deviation 0.12 ounce. To compare the amount delivered at the current setting to the desired amount 64.1 ounce, a quality inspector randomly selects five containers and measures the contents of each, obtaining sample mean 63.9 ounces and sample standard deviation 0.10 ounce. Test whether the data provide sufficient evidence, at the 5% level of significance, to conclude that the mean of all containers at the current setting is less than 64.1 ounces.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p30">A manufacturing company receives a shipment of 1,000 bolts of nominal shear strength 4,350 lb. A quality control inspector selects five bolts at random and measures the shear strength of each. The data are:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-126377"><math xml:id="fwk-shafer-ch08-m0564" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd columnalign="right"><mn>4,320</mn></mtd><mtd><mn>4,290</mn></mtd><mtd><mn>4,360</mn></mtd><mtd><mn>4,350</mn></mtd><mtd><mn>4,320</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o25" numeration="loweralpha">
+                        <li>Assuming a normal distribution of shear strengths, test the null hypothesis that the mean shear strength of all bolts in the shipment is 4,350 lb versus the alternative that it is less than 4,350 lb, at the 10% level of significance.</li>
+                        <li>Estimate the <em class="emphasis">p</em>-value (observed significance) of the test of part (a).</li>
+                        <li>Compare the <em class="emphasis">p</em>-value found in part (b) to <span class="inlineequation" id="shafer-20121106-125753-126393"><math xml:id="fwk-shafer-ch08-m0565" display="inline"><mi>α</mi><mo>=</mo><mn>0.10</mn></math></span> and make a decision based on the <em class="emphasis">p</em>-value approach. Explain fully.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p31">A literary historian examines a newly discovered document possibly written by Oberon Theseus. The mean average sentence length of the surviving undisputed works of Oberon Theseus is 48.72 words. The historian counts words in sentences between five successive 101 periods in the document in question to obtain a mean average sentence length of 39.46 words with standard deviation 7.45 words. (Thus the sample size is five.)</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o27" numeration="loweralpha">
+                        <li>Determine if these data provide sufficient evidence, at the 1% level of significance, to conclude that the mean average sentence length in the document is less than 48.72.</li>
+                        <li>Estimate the <em class="emphasis">p</em>-value of the test.</li>
+                        <li>Based on the answers to parts (a) and (b), state whether or not it is likely that the document was written by Oberon Theseus.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch08_s04_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o02_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-124179_ans"><math xml:id="fwk-shafer-ch08-m0436" display="inline"><mi>Z</mi><mo>≤</mo><mtext>−</mtext><mn>1.645</mn></math></span></li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124195_ans"><math xml:id="fwk-shafer-ch08-m0437" display="inline"><mi>T</mi><mo>≤</mo><mtext>−</mtext><mn>2.571</mn></math></span> or <em class="emphasis">T</em> ≥ 2.571</li>
+                        <li>
+<em class="emphasis">T</em> ≥ 1.319</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124211_ans"><math xml:id="fwk-shafer-ch08-m0438" display="inline"><mi>Z</mi><mo>≤</mo><mtext>−</mtext><mn>1645</mn></math></span> or <em class="emphasis">Z</em> ≥ 1.645</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o06_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-124690_ans"><math xml:id="fwk-shafer-ch08-m0466" display="inline"><mi>T</mi><mo>≤</mo><mtext>−</mtext><mn>0.855</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-124707_ans"><math xml:id="fwk-shafer-ch08-m0467" display="inline"><mi>Z</mi><mo>≤</mo><mtext>−</mtext><mn>1.645</mn></math></span></li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-124730_ans"><math xml:id="fwk-shafer-ch08-m0468" display="inline"><mi>T</mi><mo>≤</mo><mtext>−</mtext><mn>2.201</mn></math></span> or <em class="emphasis">T</em> ≥ 2.201</li>
+                        <li>
+<em class="emphasis">T</em> ≥ 3.435</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o10_ans" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-125071_ans"><math xml:id="fwk-shafer-ch08-m0488" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>2.690</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125089_ans"><math xml:id="fwk-shafer-ch08-m0489" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>19</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125105_ans"><math xml:id="fwk-shafer-ch08-m0490" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.005</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.861</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-125121_ans"><math xml:id="fwk-shafer-ch08-m0491" display="inline"><mn>0.01</mn><mo>&lt;</mo><mi>p</mi><mtext> -value</mtext><mo>&lt;</mo><mn>0.02</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125144_ans"><math xml:id="fwk-shafer-ch08-m0492" display="inline"><mi>α</mi><mo>=</mo><mn>0.01</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o14_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">T</em> = 2.398, <span class="inlineequation" id="shafer-20121106-125753-125389_ans"><math xml:id="fwk-shafer-ch08-m0506" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>7</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125405_ans"><math xml:id="fwk-shafer-ch08-m0507" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.895</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-125420_ans"><math xml:id="fwk-shafer-ch08-m0508" display="inline"><mn>0.01</mn><mo>&lt;</mo><mi>p</mi><mtext> -value</mtext><mo>&lt;</mo><mn>0.025</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125438_ans"><math xml:id="fwk-shafer-ch08-m0509" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="9">
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p10_ans"><span class="inlineequation" id="shafer-20121106-125753-125601_ans"><math xml:id="fwk-shafer-ch08-m0518" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>7.560</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125618_ans"><math xml:id="fwk-shafer-ch08-m0519" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>12</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125634_ans"><math xml:id="fwk-shafer-ch08-m0520" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>1.356</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p14_ans"><span class="inlineequation" id="shafer-20121106-125753-125683_ans"><math xml:id="fwk-shafer-ch08-m0523" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>7.076</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125699_ans"><math xml:id="fwk-shafer-ch08-m0524" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>5</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125715_ans"><math xml:id="fwk-shafer-ch08-m0525" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.0005</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>6.869</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o18_ans" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-125786_ans"><math xml:id="fwk-shafer-ch08-m0529" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>1.483</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125803_ans"><math xml:id="fwk-shafer-ch08-m0530" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>14</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125819_ans"><math xml:id="fwk-shafer-ch08-m0531" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>1.761</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>;</li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-125835_ans"><math xml:id="fwk-shafer-ch08-m0532" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>1.483</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125852_ans"><math xml:id="fwk-shafer-ch08-m0533" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>14</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-125867_ans"><math xml:id="fwk-shafer-ch08-m0534" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>1.345</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>;</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o22_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">T</em> = 2.069, <span class="inlineequation" id="shafer-20121106-125753-125987_ans"><math xml:id="fwk-shafer-ch08-m0541" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126003_ans"><math xml:id="fwk-shafer-ch08-m0542" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>1.44</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>;</li>
+                        <li>
+<em class="emphasis">T</em> = 2.069, <span class="inlineequation" id="shafer-20121106-125753-126026_ans"><math xml:id="fwk-shafer-ch08-m0543" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>6</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126042_ans"><math xml:id="fwk-shafer-ch08-m0544" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.943</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p22_ans"><em class="emphasis">T</em> = 4.472, <span class="inlineequation" id="shafer-20121106-125753-126208_ans"><math xml:id="fwk-shafer-ch08-m0554" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126225_ans"><math xml:id="fwk-shafer-ch08-m0555" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>1.533</mn></math></span>, reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd02_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="19">
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch08_s04_qs01_p27_ans"><em class="emphasis">T</em> = 0.798, <span class="inlineequation" id="shafer-20121106-125753-126312_ans"><math xml:id="fwk-shafer-ch08-m0560" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>24</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126329_ans"><math xml:id="fwk-shafer-ch08-m0561" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.10</mn></mrow></msub><mo>=</mo><mn>1.318</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch08_s04_qs01_o26_ans" numeration="loweralpha">
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-126409_ans"><math xml:id="fwk-shafer-ch08-m0566" display="inline"><mi>T</mi><mo>=</mo><mtext>−</mtext><mn>1.773</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126426_ans"><math xml:id="fwk-shafer-ch08-m0567" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mn>4</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-126448_ans"><math xml:id="fwk-shafer-ch08-m0568" display="inline"><mtext>−</mtext><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mtext>−</mtext><mn>2.132</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>.</li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-126464_ans"><math xml:id="fwk-shafer-ch08-m0569" display="inline"><mn>0.05</mn><mo>&lt;</mo><mi>p</mi><mtext> -value</mtext><mo>&lt;</mo><mn>0.10</mn></math></span></li>
+                        <li>
+<span class="inlineequation" id="shafer-20121106-125753-126480_ans"><math xml:id="fwk-shafer-ch08-m0570" display="inline"><mi>α</mi><mo>=</mo><mn>0.05</mn></math></span>, do not reject <em class="emphasis">H</em><sub class="subscript">0</sub>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch08_s04_qs01_qd03_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s12-03-the-observed-significance-of-a.html"><img src="shared/images/batch-left.png"></a> <a href="s12-03-the-observed-significance-of-a.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-05-large-sample-tests-for-a-popul.html">Next Section</a> <a href="s12-05-large-sample-tests-for-a-popul.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

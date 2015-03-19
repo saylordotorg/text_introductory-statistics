@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Probability Distributions for Discrete Random Variables</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s08-01-random-variables.html"><img src="shared/images/batch-left.png"></a> <a href="s08-01-random-variables.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s08-03-the-binomial-distribution.html">Next Section</a> <a href="s08-03-the-binomial-distribution.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch04_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">4.2</span> Probability Distributions for Discrete Random Variables</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch04_s02_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch04_s02_o01" numeration="arabic">
+            <li>To learn the concept of the probability distribution of a discrete random variable.</li>
+            <li>To learn the concepts of the mean, variance, and standard deviation of a discrete random variable, and how to compute them.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-shafer-ch04_s02_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Probability Distributions</h2>
+        <p class="para block" id="fwk-shafer-ch04_s02_s01_p01">Associated to each possible value <em class="emphasis">x</em> of a discrete random variable <em class="emphasis">X</em> is the probability <span class="inlineequation" id="shafer-20121106-125753-100354"><math xml:id="fwk-shafer-ch04-m0009" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></math></span> that <em class="emphasis">X</em> will take the value <em class="emphasis">x</em> in one trial of the experiment.</p>
+        <div class="callout editable block" id="fwk-shafer-ch04_s02_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s01_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">probability distribution</a><span class="glossdef">A list of each possible value and its probability.</span></span> <em class="emphasis">of a discrete random variable</em> <em class="emphasis">X</em> <em class="emphasis">is a list of each possible value of</em> <em class="emphasis">X</em> <em class="emphasis">together with the probability that</em> <em class="emphasis">X</em> <em class="emphasis">takes that value in one trial of the experiment.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch04_s02_s01_p03">The probabilities in the probability distribution of a random variable <em class="emphasis">X</em> must satisfy the following two conditions:</p>
+        <div class="callout block" id="fwk-shafer-ch04_s02_s01_n02">
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s01_o01" numeration="arabic">
+                <li>Each probability <span class="inlineequation" id="shafer-20121106-125753-100370"><math xml:id="fwk-shafer-ch04-m0010" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></math></span> must be between 0 and 1: <span class="inlineequation" id="shafer-20121106-125753-100386"><math xml:id="fwk-shafer-ch04-m0011" display="inline"><mn>0</mn><mo>≤</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>≤</mo><mn>1</mn><mo>.</mo></math></span>
+</li>
+                <li>The sum of all the probabilities is 1: <span class="inlineequation" id="shafer-20121106-125753-100409"><math xml:id="fwk-shafer-ch04-m0012" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>1</mn></mrow></mstyle></mrow><mo>.</mo></math></span>
+</li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s01_n03">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s01_p04">A fair coin is tossed twice. Let <em class="emphasis">X</em> be the number of heads that are observed.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s01_o02" numeration="loweralpha">
+                <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                <li>Find the probability that at least one head is observed.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s01_o03" numeration="loweralpha">
+                <li>
+                    <p class="para">The possible values that <em class="emphasis">X</em> can take are 0, 1, and 2. Each of these numbers corresponds to an event in the sample space <span class="inlineequation" id="shafer-20121106-125753-100425"><math xml:id="fwk-shafer-ch04-m0013" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span> of equally likely outcomes for this experiment: <em class="emphasis">X</em> = 0 to <span class="inlineequation" id="shafer-20121106-125753-100441"><math xml:id="fwk-shafer-ch04-m0014" display="inline"><mrow><mo>{</mo><mrow><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span>, <em class="emphasis">X</em> = 1 to <span class="inlineequation" id="shafer-20121106-125753-100457"><math xml:id="fwk-shafer-ch04-m0015" display="inline"><mrow><mo>{</mo><mrow><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi></mrow><mo>}</mo></mrow></math></span>, and <em class="emphasis">X</em> = 2 to <span class="inlineequation" id="shafer-20121106-125753-100474"><math xml:id="fwk-shafer-ch04-m0016" display="inline"><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> The probability of each of these events, hence of the corresponding value of <em class="emphasis">X</em>, can be found simply by counting, to give</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100490"><math xml:id="fwk-shafer-ch04-m0017" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.50</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s02_s01_p05">This table is the probability distribution of <em class="emphasis">X</em>.</p>
+                </li>
+                <li>
+                    <p class="para">“At least one head” is the event <em class="emphasis">X</em> ≥ 1, which is the union of the mutually exclusive events <em class="emphasis">X</em> = 1 and <em class="emphasis">X</em> = 2. Thus</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100505"><math xml:id="fwk-shafer-ch04-m0018" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.50</mn><mo>+</mo><mn>0.25</mn><mo>=</mo><mn>0.75</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s02_s01_p06">A histogram that graphically illustrates the probability distribution is given in <a class="xref" href="#fwk-shafer-ch04_s02_s01_f01">Figure 4.1 "Probability Distribution for Tossing a Fair Coin Twice"</a>.</p>
+                </li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch04_s02_s01_f01">
+                <p class="title"><span class="title-prefix">Figure 4.1</span> Probability Distribution for Tossing a Fair Coin Twice</p>
+                <img src="section_08/5a6f9d6916537351ff23fd52c995f8f2.jpg">
+            </div>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s01_n04">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s01_p07">A pair of fair dice is rolled. Let <em class="emphasis">X</em> denote the sum of the number of dots on the top faces.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s01_o04" numeration="loweralpha">
+                <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                <li>Find <em class="emphasis">P</em>(<em class="emphasis">X</em> ≥ 9).</li>
+                <li>Find the probability that <em class="emphasis">X</em> takes an even value.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s02_s01_p08">The sample space of equally likely outcomes is</p>
+            <span class="informalequation" id="shafer-20121106-125753-100522"><math xml:id="fwk-shafer-ch04-m0019" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>11</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>21</mn></mrow></mtd><mtd><mrow><mn>22</mn></mrow></mtd><mtd><mrow><mn>23</mn></mrow></mtd><mtd><mrow><mn>24</mn></mrow></mtd><mtd><mrow><mn>25</mn></mrow></mtd><mtd><mrow><mn>26</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>31</mn></mrow></mtd><mtd><mrow><mn>32</mn></mrow></mtd><mtd><mrow><mn>33</mn></mrow></mtd><mtd><mrow><mn>34</mn></mrow></mtd><mtd><mrow><mn>35</mn></mrow></mtd><mtd><mrow><mn>36</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>41</mn></mrow></mtd><mtd><mrow><mn>42</mn></mrow></mtd><mtd><mrow><mn>43</mn></mrow></mtd><mtd><mrow><mn>44</mn></mrow></mtd><mtd><mrow><mn>45</mn></mrow></mtd><mtd><mrow><mn>46</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>51</mn></mrow></mtd><mtd><mrow><mn>52</mn></mrow></mtd><mtd><mrow><mn>53</mn></mrow></mtd><mtd><mrow><mn>54</mn></mrow></mtd><mtd><mrow><mn>55</mn></mrow></mtd><mtd><mrow><mn>56</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>61</mn></mrow></mtd><mtd><mrow><mn>62</mn></mrow></mtd><mtd><mrow><mn>63</mn></mrow></mtd><mtd><mrow><mn>64</mn></mrow></mtd><mtd><mrow><mn>65</mn></mrow></mtd><mtd><mrow><mn>66</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s01_o05" numeration="loweralpha">
+                <li>
+                    <p class="para">The possible values for <em class="emphasis">X</em> are the numbers 2 through 12. <em class="emphasis">X</em> = 2 is the event {11}, so <span class="inlineequation" id="shafer-20121106-125753-100545"><math xml:id="fwk-shafer-ch04-m0020" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>36</mn><mo>.</mo></math></span> <em class="emphasis">X</em> = 3 is the event {12,21}, so <span class="inlineequation" id="shafer-20121106-125753-100561"><math xml:id="fwk-shafer-ch04-m0021" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>∕</mo><mn>36</mn><mo>.</mo></math></span> Continuing this way we obtain the table</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100578"><math xml:id="fwk-shafer-ch04-m0022" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd><mtd><mrow><mn>11</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>5</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>6</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>5</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>3</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s02_s01_p09">This table is the probability distribution of <em class="emphasis">X</em>.</p>
+                </li>
+                <li>
+                    <p class="para">The event <em class="emphasis">X</em> ≥ 9 is the union of the mutually exclusive events <em class="emphasis">X</em> = 9, <em class="emphasis">X</em> = 10, <em class="emphasis">X</em> = 11, and <em class="emphasis">X</em> = 12. Thus</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100593"><math xml:id="fwk-shafer-ch04-m0023" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>9</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>9</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>10</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>11</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>12</mn></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>4</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>10</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>=</mo><mn>0.2</mn><mover accent="true"><mn>7</mn><mo stretchy="true">-</mo></mover></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Before we immediately jump to the conclusion that the probability that <em class="emphasis">X</em> takes an even value must be 0.5, note that <em class="emphasis">X</em> takes six different even values but only five different odd values. We compute</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100610"><math xml:id="fwk-shafer-ch04-m0024" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mstyle><mtext> is even</mtext></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>8</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>10</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>12</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mfrac><mrow><mn>1</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>5</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>5</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>18</mn></mrow><mrow><mn>36</mn></mrow></mfrac><mo>=</mo><mn>0.5</mn></mtd></mtr></mtable></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s02_s01_p10">A histogram that graphically illustrates the probability distribution is given in <a class="xref" href="#fwk-shafer-ch04_s02_s01_f02">Figure 4.2 "Probability Distribution for Tossing Two Fair Dice"</a>.</p>
+                </li>
+            </ol>
+            <div class="figure large medium-height" id="fwk-shafer-ch04_s02_s01_f02">
+                <p class="title"><span class="title-prefix">Figure 4.2</span> Probability Distribution for Tossing Two Fair Dice</p>
+                <img src="section_08/7a7d2ff3f3d6052070731dc4f23e5b15.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch04_s02_s02" version="5.0" lang="en">
+        <h2 class="title editable block">The Mean and Standard Deviation of a Discrete Random Variable</h2>
+        <div class="callout block" id="fwk-shafer-ch04_s02_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p01"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">mean</a><span class="glossdef">The number <span class="inlineequation" id="shafer-20121106-125753-100626"><math xml:id="fwk-shafer-ch04-m0025" display="inline"><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mtext> </mtext><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow></math></span>, measuring its average upon repeated trials.</span></span> <em class="emphasis">(also called the</em> <span class="margin_term"><a class="glossterm">expected value</a><span class="glossdef">Its mean.</span></span><em class="emphasis">) of a discrete random variable</em> <em class="emphasis">X</em> <em class="emphasis">is the number</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-100647"><math xml:id="fwk-shafer-ch04-m0026" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi mathvariant="normal">Σ</mi><mi>x</mi><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p02">The mean of a random variable may be interpreted as the average of the values assumed by the random variable in repeated trials of the experiment.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s02_n02">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p03">Find the mean of the discrete random variable <em class="emphasis">X</em> whose probability distribution is</p>
+            <span class="informalequation" id="shafer-20121106-125753-100663"><math xml:id="fwk-shafer-ch04-m0027" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>2</mn></mrow></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mn>3.5</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.21</mn></mrow></mtd><mtd><mrow><mn>0.34</mn></mrow></mtd><mtd><mrow><mn>0.24</mn></mrow></mtd><mtd><mrow><mn>0.21</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p04">The formula in the definition gives</p>
+            <span class="informalequation" id="shafer-20121106-125753-100685"><math xml:id="fwk-shafer-ch04-m0028" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><mi mathvariant="italic">μ</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><mi>x</mi><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>2</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.21</mn><mo>+</mo><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.34</mn><mo>+</mo><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.24</mn><mo>+</mo><mrow><mo>(</mo><mrow><mn>3.5</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.21</mn><mo>=</mo><mn>1.135</mn></mtd></mtr></mtable></math></span>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s02_n03">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p05">A service organization in a large town organizes a raffle each month. One thousand raffle tickets are sold for $1 each. Each has an equal chance of winning. First prize is $300, second prize is $200, and third prize is $100. Let <em class="emphasis">X</em> denote the net gain from the purchase of one ticket.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s02_o01" numeration="loweralpha">
+                <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                <li>Find the probability of winning any money in the purchase of one ticket.</li>
+                <li>Find the expected value of <em class="emphasis">X</em>, and interpret its meaning.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s02_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">If a ticket is selected as the first prize winner, the net gain to the purchaser is the $300 prize less the $1 that was paid for the ticket, hence <em class="emphasis">X</em> = 300 − 1 = 299. There is one such ticket, so <em class="emphasis">P</em>(299) = 0.001. Applying the same “income minus outgo” principle to the second and third prize winners and to the 997 losing tickets yields the probability distribution:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100702"><math xml:id="fwk-shafer-ch04-m0029" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>299</mn></mrow></mtd><mtd><mrow><mn>199</mn></mrow></mtd><mtd><mrow><mn>99</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.001</mn></mrow></mtd><mtd><mrow><mn>0.001</mn></mrow></mtd><mtd><mrow><mn>0.001</mn></mrow></mtd><mtd><mrow><mn>0.997</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Let <em class="emphasis">W</em> denote the event that a ticket is selected to win one of the prizes. Using the table</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100723"><math xml:id="fwk-shafer-ch04-m0030" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>W</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>299</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>199</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>99</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.001</mn><mo>+</mo><mn>0.001</mn><mo>+</mo><mn>0.001</mn><mo>=</mo><mn>0.003</mn></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Using the formula in the definition of expected value,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-100739"><math xml:id="fwk-shafer-ch04-m0031" display="block"><mrow><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>299</mn><mo>·</mo><mn>0.001</mn><mo>+</mo><mn>199</mn><mo>·</mo><mn>0.001</mn><mo>+</mo><mn>99</mn><mo>·</mo><mn>0.001</mn><mo>+</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.997</mn><mo>=</mo><mtext>−</mtext><mn>0.4</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch04_s02_s02_p06">The negative value means that one loses money on the average. In particular, if someone were to buy tickets repeatedly, then although he would win now and then, on average he would lose 40 cents per ticket purchased.</p>
+                </li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch04_s02_s02_p07">The concept of expected value is also basic to the insurance industry, as the following simplified example illustrates.</p>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s02_n04">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p08">A life insurance company will sell a $200,000 one-year term life insurance policy to an individual in a particular risk group for a premium of $195. Find the expected value to the company of a single policy if a person in this risk group has a 99.97% chance of surviving one year.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p09">Let <em class="emphasis">X</em> denote the net gain to the company from the sale of one such policy. There are two possibilities: the insured person lives the whole year or the insured person dies before the year is up. Applying the “income minus outgo” principle, in the former case the value of <em class="emphasis">X</em> is 195 − 0; in the latter case it is <span class="inlineequation" id="shafer-20121106-125753-100755"><math xml:id="fwk-shafer-ch04-m0032" display="inline"><mn>195</mn><mo>−</mo><mn>200,000</mn><mo>=</mo><mtext>−</mtext><mn>199,805</mn><mo>.</mo></math></span> Since the probability in the first case is 0.9997 and in the second case is <span class="inlineequation" id="shafer-20121106-125753-100772"><math xml:id="fwk-shafer-ch04-m0033" display="inline"><mn>1</mn><mo>−</mo><mn>0.9997</mn><mo>=</mo><mn>0.0003</mn></math></span>, the probability distribution for <em class="emphasis">X</em> is:</p>
+            <span class="informalequation" id="shafer-20121106-125753-100788"><math xml:id="fwk-shafer-ch04-m0034" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>195</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>199,805</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.9997</mn></mrow></mtd><mtd><mrow><mn>0.0003</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p10">Therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-100803"><math xml:id="fwk-shafer-ch04-m0035" display="block"><mrow><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi mathvariant="normal">Σ</mi><mi>x</mi><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>195</mn><mo>·</mo><mn>0.9997</mn><mo>+</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>199,805</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.0003</mn><mo>=</mo><mn>135</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p11">Occasionally (in fact, 3 times in 10,000) the company loses a large amount of money on a policy, but typically it gains $195, which by our computation of <span class="inlineequation" id="shafer-20121106-125753-100819"><math xml:id="fwk-shafer-ch04-m0036" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> works out to a net gain of $135 per policy sold, on average.</p>
+        </div>
+        <div class="callout block" id="fwk-shafer-ch04_s02_s02_n05">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p12"><em class="emphasis">The</em> <strong class="emphasis bold">variance</strong>, <span class="inlineequation" id="shafer-20121106-125753-100835"><math xml:id="fwk-shafer-ch04-m0037" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span><em class="emphasis">, of a discrete random variable</em> <em class="emphasis">X</em> <em class="emphasis">is the number</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-100858"><math xml:id="fwk-shafer-ch04-m0038" display="block"><mrow><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p13"><em class="emphasis">which by algebra is equivalent to the formula</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-100879"><math xml:id="fwk-shafer-ch04-m0039" display="block"><mrow><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mstyle mathsize="1.61em"><mfenced separators="" open="[" close=""><mrow></mrow></mfenced></mstyle><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mstyle mathsize="1.61em"><mfenced separators="" open="]" close=""><mrow></mrow></mfenced></mstyle><mo>−</mo><msup><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math></span>
+        </div>
+        <div class="callout block" id="fwk-shafer-ch04_s02_s02_n06">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p14"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">standard deviation</a><span class="glossdef">The number <span class="inlineequation" id="shafer-20121106-125753-100895"><math xml:id="fwk-shafer-ch04-m0040" display="inline"><mrow><msqrt><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mrow><mo>(</mo><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi><mo>)</mo></mrow><mn>2</mn></msup><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow></msqrt></mrow></math></span> (also computed using <span class="inlineequation" id="shafer-20121106-125753-100911"><math xml:id="fwk-shafer-ch04-m0041" display="inline"><mrow><msqrt><mrow><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow><mtext> </mtext><mo>]</mo></mrow><mo>−</mo><msup><mi mathvariant="italic">μ</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></span>), measuring its variability under repeated trials.</span></span>, <em class="emphasis">σ</em>, <em class="emphasis">of a discrete random variable</em> <em class="emphasis">X</em> <em class="emphasis">is the square root of its variance, hence is given by the formulas</em></p>
+            <span class="informalequation" id="shafer-20121106-125753-100927"><math xml:id="fwk-shafer-ch04-m0042" display="block"><mrow><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mrow></msqrt><mo>=</mo><msqrt><mrow><mstyle mathsize="1.61em"><mfenced separators="" open="[" close=""><mrow></mrow></mfenced></mstyle><mi mathvariant="normal">Σ</mi><msup><mrow><mi>x</mi></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mstyle mathsize="1.61em"><mfenced separators="" open="]" close=""><mrow></mrow></mfenced></mstyle><mo>−</mo><msup><mrow><mi mathvariant="italic">μ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch04_s02_s02_p15">The variance and standard deviation of a discrete random variable <em class="emphasis">X</em> may be interpreted as measures of the variability of the values assumed by the random variable in repeated trials of the experiment. The units on the standard deviation match those of <em class="emphasis">X</em>.</p>
+        <div class="exercises block" id="fwk-shafer-ch04_s02_s02_n07">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p16">A discrete random variable <em class="emphasis">X</em> has the following probability distribution:</p>
+            <span class="informalequation" id="shafer-20121106-125753-100943"><math xml:id="fwk-shafer-ch04-m0043" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>4</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.2</mn></mrow></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd><mtd><mi>a</mi></mtd><mtd><mrow><mn>0.1</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p17">A histogram that graphically illustrates the probability distribution is given in <a class="xref" href="#fwk-shafer-ch04_s02_s02_f01">Figure 4.3 "Probability Distribution of a Discrete Random Variable"</a>.</p>
+            <div class="figure large medium-height" id="fwk-shafer-ch04_s02_s02_f01">
+                <p class="title"><span class="title-prefix">Figure 4.3</span> Probability Distribution of a Discrete Random Variable</p>
+                <img src="section_08/e9934b4ffecff3624a1002dbfc6a247c.jpg">
+            </div>
+            <p class="para" id="fwk-shafer-ch04_s02_s02_p18">Compute each of the following quantities.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s02_o03" numeration="loweralpha">
+                <li>
+<em class="emphasis">a</em>.</li>
+                <li><span class="inlineequation" id="shafer-20121106-125753-100959"><math xml:id="fwk-shafer-ch04-m0044" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 0).</li>
+                <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≥ 0).</li>
+                <li><span class="inlineequation" id="shafer-20121106-125753-100982"><math xml:id="fwk-shafer-ch04-m0045" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≤</mo><mtext>−</mtext><mn>2</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                <li>The mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>.</li>
+                <li>The variance <span class="inlineequation" id="shafer-20121106-125753-100999"><math xml:id="fwk-shafer-ch04-m0046" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> of <em class="emphasis">X</em>.</li>
+                <li>The standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch04_s02_s02_o04" numeration="loweralpha">
+                <li>Since all probabilities must add up to 1, <span class="inlineequation" id="shafer-20121106-125753-101015"><math xml:id="fwk-shafer-ch04-m0047" display="inline"><mi>a</mi><mo>=</mo><mn>1</mn><mo>−</mo><mrow><mo>(</mo><mrow><mn>0.2</mn><mo>+</mo><mn>0.5</mn><mo>+</mo><mn>0.1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.2</mn><mo>.</mo></math></span>
+</li>
+                <li>Directly from the table, <span class="inlineequation" id="shafer-20121106-125753-101031"><math xml:id="fwk-shafer-ch04-m0048" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.5</mn><mo>.</mo></math></span>
+</li>
+                <li>From the table, <span class="inlineequation" id="shafer-20121106-125753-101047"><math xml:id="fwk-shafer-ch04-m0049" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.2</mn><mo>+</mo><mn>0.1</mn><mo>=</mo><mn>0.3</mn><mo>.</mo></math></span>
+</li>
+                <li>From the table, <span class="inlineequation" id="shafer-20121106-125753-101063"><math xml:id="fwk-shafer-ch04-m0050" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>X</mi><mo>≥</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>0</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.5</mn><mo>+</mo><mn>0.2</mn><mo>+</mo><mn>0.1</mn><mo>=</mo><mn>0.8</mn><mo>.</mo></math></span>
+</li>
+                <li>Since none of the numbers listed as possible values for <em class="emphasis">X</em> is less than or equal to −2, the event <em class="emphasis">X</em> ≤ −2 is impossible, so <em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ −2) = 0.</li>
+                <li>
+                    <p class="para">Using the formula in the definition of <em class="emphasis">μ</em>,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-101085"><math xml:id="fwk-shafer-ch04-m0051" display="block"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mi mathvariant="normal">Σ</mi><mi>x</mi><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>·</mo><mn>0.2</mn><mo>+</mo><mn>0</mn><mo>·</mo><mn>0.5</mn><mo>+</mo><mn>1</mn><mo>·</mo><mn>0.2</mn><mo>+</mo><mn>4</mn><mo>·</mo><mn>0.1</mn><mo>=</mo><mn>0.4</mn></mrow></math></span>
+                </li>
+                <li>
+                    <p class="para">Using the formula in the definition of <span class="inlineequation" id="shafer-20121106-125753-101103"><math xml:id="fwk-shafer-ch04-m0052" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> and the value of <em class="emphasis">μ</em> that was just computed,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-101118"><math xml:id="fwk-shafer-ch04-m0053" display="block"><mtable columnspacing="0.5em" columnalign="left"><mtr><mtd columnalign="right"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mtd><mtd><mo>=</mo></mtd><mtd><mi mathvariant="normal">Σ</mi><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi mathvariant="italic">μ</mi></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mtext> </mtext><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><msup><mrow><mrow><mo>(</mo><mrow><mtext>−</mtext><mn>1</mn><mo>−</mo><mn>0.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>·</mo><mn>0.2</mn><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>0</mn><mo>−</mo><mn>0.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>·</mo><mn>0.5</mn><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>0.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>·</mo><mn>0.2</mn><mo>+</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>−</mo><mn>0.4</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mo>·</mo><mn>0.1</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd><mn>1.84</mn></mtd></mtr></mtable></math></span>
+                </li>
+                <li>Using the result of part (g), <span class="inlineequation" id="shafer-20121106-125753-101134"><math xml:id="fwk-shafer-ch04-m0054" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><msqrt><mrow><mn>1.84</mn></mrow></msqrt><mo>=</mo><mn>1.3565</mn><mo>.</mo></math></span>
+</li>
+            </ol>
+        </div>
+        <div class="key_takeaways block" id="fwk-shafer-ch04_s02_s02_n08">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch04_s02_s02_l01" mark="bullet">
+                <li>The probability distribution of a discrete random variable <em class="emphasis">X</em> is a listing of each possible value <em class="emphasis">x</em> taken by <em class="emphasis">X</em> along with the probability <span class="inlineequation" id="shafer-20121106-125753-101157"><math xml:id="fwk-shafer-ch04-m0055" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>x</mi></mrow><mo>)</mo></mrow></math></span> that <em class="emphasis">X</em> takes that value in one trial of the experiment.</li>
+                <li>The mean <em class="emphasis">μ</em> of a discrete random variable <em class="emphasis">X</em> is a number that indicates the average value of <em class="emphasis">X</em> over numerous trials of the experiment. It is computed using the formula <span class="inlineequation" id="shafer-20121106-125753-101173"><math xml:id="fwk-shafer-ch04-m0056" display="inline"><mrow><mi mathvariant="italic">μ</mi><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mtext> </mtext><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mstyle></mrow><mo>.</mo></math></span>
+</li>
+                <li>The variance <span class="inlineequation" id="shafer-20121106-125753-101190"><math xml:id="fwk-shafer-ch04-m0057" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> and standard deviation <em class="emphasis">σ</em> of a discrete random variable <em class="emphasis">X</em> are numbers that indicate the variability of <em class="emphasis">X</em> over numerous trials of the experiment. They may be computed using the formula <span class="inlineequation" id="shafer-20121106-125753-101205"><math xml:id="fwk-shafer-ch04-m0058" display="inline"><mrow><msup><mi mathvariant="italic">σ</mi><mn>2</mn></msup><mo>=</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle><mtext> </mtext><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mtext> </mtext><mo>]</mo></mrow><mo>−</mo><msup><mi mathvariant="italic">μ</mi><mn>2</mn></msup></mrow></math></span>, taking the square root to obtain <em class="emphasis">σ</em>.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch04_s02_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s02_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p01">Determine whether or not the table is a valid probability distribution of a discrete random variable. Explain fully.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o01" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101221"><math xml:id="fwk-shafer-ch04-m0059" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>2</mn></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.3</mn></mrow></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd><mtd><mrow><mn>0.2</mn></mrow></mtd><mtd><mrow><mn>0.1</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101243"><math xml:id="fwk-shafer-ch04-m0060" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>0.5</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>0.4</mn></mrow></mtd><mtd><mrow><mn>0.6</mn></mrow></mtd><mtd><mrow><mn>0.8</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101259"><math xml:id="fwk-shafer-ch04-m0061" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>1.1</mn></mrow></mtd><mtd><mrow><mn>2.5</mn></mrow></mtd><mtd><mrow><mn>4.1</mn></mrow></mtd><mtd><mrow><mn>4.6</mn></mrow></mtd><mtd><mrow><mn>5.3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.14</mn></mrow></mtd><mtd><mrow><mn>0.11</mn></mrow></mtd><mtd><mrow><mn>0.27</mn></mrow></mtd><mtd><mrow><mn>0.22</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p02">Determine whether or not the table is a valid probability distribution of a discrete random variable. Explain fully.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o03" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101275"><math xml:id="fwk-shafer-ch04-m0062" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.50</mn></mrow></mtd><mtd><mrow><mn>0.35</mn></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd><mtd><mrow><mn>0.30</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101298"><math xml:id="fwk-shafer-ch04-m0063" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.325</mn></mrow></mtd><mtd><mrow><mn>0.406</mn></mrow></mtd><mtd><mrow><mn>0.164</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101315"><math xml:id="fwk-shafer-ch04-m0064" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>25</mn></mrow></mtd><mtd><mrow><mn>26</mn></mrow></mtd><mtd><mrow><mn>27</mn></mrow></mtd><mtd><mrow><mn>28</mn></mrow></mtd><mtd><mrow><mn>29</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.13</mn></mrow></mtd><mtd><mrow><mn>0.27</mn></mrow></mtd><mtd><mrow><mn>0.28</mn></mrow></mtd><mtd><mrow><mn>0.18</mn></mrow></mtd><mtd><mrow><mn>0.14</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p03">A discrete random variable <em class="emphasis">X</em> has the following probability distribution:</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101331"><math xml:id="fwk-shafer-ch04-m0065" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>77</mn></mrow></mtd><mtd><mrow><mn>78</mn></mrow></mtd><mtd><mrow><mn>79</mn></mrow></mtd><mtd><mrow><mn>80</mn></mrow></mtd><mtd><mrow><mn>81</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.15</mn></mrow></mtd><mtd><mrow><mn>0.15</mn></mrow></mtd><mtd><mrow><mn>0.20</mn></mrow></mtd><mtd><mrow><mn>0.40</mn></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p04">Compute each of the following quantities.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o05" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101350"><math xml:id="fwk-shafer-ch04-m0066" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>80</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 80).</li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 80).</li>
+                            <li>The mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>.</li>
+                            <li>The variance <span class="inlineequation" id="shafer-20121106-125753-101366"><math xml:id="fwk-shafer-ch04-m0067" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> of <em class="emphasis">X</em>.</li>
+                            <li>The standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p05">A discrete random variable <em class="emphasis">X</em> has the following probability distribution:</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101398"><math xml:id="fwk-shafer-ch04-m0069" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>18</mn></mrow></mtd><mtd><mrow><mn>20</mn></mrow></mtd><mtd><mrow><mn>24</mn></mrow></mtd><mtd><mrow><mn>27</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.22</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.20</mn></mrow></mtd><mtd><mrow><mn>0.17</mn></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p06">Compute each of the following quantities.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o07" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101414"><math xml:id="fwk-shafer-ch04-m0070" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>18</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> &gt; 18).</li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≤ 18).</li>
+                            <li>The mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>.</li>
+                            <li>The variance <span class="inlineequation" id="shafer-20121106-125753-101431"><math xml:id="fwk-shafer-ch04-m0071" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span> of <em class="emphasis">X</em>.</li>
+                            <li>The standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p07">If each die in a pair is “loaded” so that one comes up half as often as it should, six comes up half again as often as it should, and the probabilities of the other faces are unaltered, then the probability distribution for the sum <em class="emphasis">X</em> of the number of dots on the top faces when the two are rolled is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101470"><math xml:id="fwk-shafer-ch04-m0073" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>8</mn><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>12</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>16</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>22</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-101487"><math xml:id="fwk-shafer-ch04-m0074" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd><mtd><mrow><mn>11</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mn>24</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>20</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>16</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>12</mn></mrow><mrow><mn>144</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>9</mn><mrow><mn>144</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p08">Compute each of the following.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o09" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101503"><math xml:id="fwk-shafer-ch04-m0075" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>5</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>9</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<em class="emphasis">P</em>(<em class="emphasis">X</em> ≥ 7).</li>
+                            <li>The mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>. (For fair dice this number is 7.)</li>
+                            <li>The standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>. (For fair dice this number is about 2.415.)</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s02_qs01_qd02" start="6">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p09">Borachio works in an automotive tire factory. The number <em class="emphasis">X</em> of sound but blemished tires that he produces on a random day has the probability distribution</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101535"><math xml:id="fwk-shafer-ch04-m0077" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.48</mn></mrow></mtd><mtd><mrow><mn>0.36</mn></mrow></mtd><mtd><mrow><mn>0.12</mn></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o11" numeration="loweralpha">
+                            <li>Find the probability that Borachio will produce more than three blemished tires tomorrow.</li>
+                            <li>Find the probability that Borachio will produce at most two blemished tires tomorrow.</li>
+                            <li>Compute the mean and standard deviation of <em class="emphasis">X</em>. Interpret the mean in the context of the problem.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p10">In a hamster breeder's experience the number <em class="emphasis">X</em> of live pups in a litter of a female not over twelve months in age who has not borne a litter in the past six weeks has the probability distribution</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101552"><math xml:id="fwk-shafer-ch04-m0078" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.04</mn></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd><mtd><mrow><mn>0.26</mn></mrow></mtd><mtd><mrow><mn>0.31</mn></mrow></mtd><mtd><mrow><mn>0.22</mn></mrow></mtd><mtd><mrow><mn>0.05</mn></mrow></mtd><mtd><mrow><mn>0.02</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o13" numeration="loweralpha">
+                            <li>Find the probability that the next litter will produce five to seven live pups.</li>
+                            <li>Find the probability that the next litter will produce at least six live pups.</li>
+                            <li>Compute the mean and standard deviation of <em class="emphasis">X</em>. Interpret the mean in the context of the problem.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p11">The number <em class="emphasis">X</em> of days in the summer months that a construction crew cannot work because of the weather has the probability distribution</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101576"><math xml:id="fwk-shafer-ch04-m0079" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>6</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>8</mn></mtd><mtd><mn>9</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.03</mn></mrow></mtd><mtd><mrow><mn>0.08</mn></mrow></mtd><mtd><mrow><mn>0.15</mn></mrow></mtd><mtd><mrow><mn>0.20</mn></mrow></mtd><mtd><mrow><mn>0.19</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-101593"><math xml:id="fwk-shafer-ch04-m0080" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>11</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.16</mn></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd><mtd><mrow><mn>0.07</mn></mrow></mtd><mtd><mrow><mn>0.02</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o15" numeration="loweralpha">
+                            <li>Find the probability that no more than ten days will be lost next summer.</li>
+                            <li>Find the probability that from 8 to 12 days will be lost next summer.</li>
+                            <li>Find the probability that no days at all will be lost next summer.</li>
+                            <li>Compute the mean and standard deviation of <em class="emphasis">X</em>. Interpret the mean in the context of the problem.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p12">Let <em class="emphasis">X</em> denote the number of boys in a randomly selected three-child family. Assuming that boys and girls are equally likely, construct the probability distribution of <em class="emphasis">X</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p14">Let <em class="emphasis">X</em> denote the number of times a fair coin lands heads in three tosses. Construct the probability distribution of <em class="emphasis">X</em>.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p17">Five thousand lottery tickets are sold for $1 each. One ticket will win $1,000, two tickets will win $500 each, and ten tickets will win $100 each. Let <em class="emphasis">X</em> denote the net gain from the purchase of a randomly selected ticket.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o17" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101641"><math xml:id="fwk-shafer-ch04-m0083" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>. Interpret its meaning.</li>
+                            <li>Compute the standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p18">Seven thousand lottery tickets are sold for $5 each. One ticket will win $2,000, two tickets will win $750 each, and five tickets will win $100 each. Let <em class="emphasis">X</em> denote the net gain from the purchase of a randomly selected ticket.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o19" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101673"><math xml:id="fwk-shafer-ch04-m0085" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>. Interpret its meaning.</li>
+                            <li>Compute the standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p19">An insurance company will sell a $90,000 one-year term life insurance policy to an individual in a particular risk group for a premium of $478. Find the expected value to the company of a single policy if a person in this risk group has a 99.62% chance of surviving one year.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p21">An insurance company will sell a $10,000 one-year term life insurance policy to an individual in a particular risk group for a premium of $368. Find the expected value to the company of a single policy if a person in this risk group has a 97.25% chance of surviving one year.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p23">An insurance company estimates that the probability that an individual in a particular risk group will survive one year is 0.9825. Such a person wishes to buy a $150,000 one-year term life insurance policy. Let <em class="emphasis">C</em> denote how much the insurance company charges such a person for such a policy.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o21" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>. (Two entries in the table will contain <em class="emphasis">C</em>.)</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101707"><math xml:id="fwk-shafer-ch04-m0087" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>.</li>
+                            <li>Determine the value <em class="emphasis">C</em> must have in order for the company to break even on all such policies (that is, to average a net gain of zero per policy on such policies).</li>
+                            <li>Determine the value <em class="emphasis">C</em> must have in order for the company to average a net gain of $250 per policy on all such policies.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p24">An insurance company estimates that the probability that an individual in a particular risk group will survive one year is 0.99. Such a person wishes to buy a $75,000 one-year term life insurance policy. Let <em class="emphasis">C</em> denote how much the insurance company charges such a person for such a policy.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o23" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>. (Two entries in the table will contain <em class="emphasis">C</em>.)</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101764"><math xml:id="fwk-shafer-ch04-m0090" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>.</li>
+                            <li>Determine the value <em class="emphasis">C</em> must have in order for the company to break even on all such policies (that is, to average a net gain of zero per policy on such policies).</li>
+                            <li>Determine the value <em class="emphasis">C</em> must have in order for the company to average a net gain of $150 per policy on all such policies.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p25">A roulette wheel has 38 slots. Thirty-six slots are numbered from 1 to 36; half of them are red and half are black. The remaining two slots are numbered 0 and 00 and are green. In a $1 bet on red, the bettor pays $1 to play. If the ball lands in a red slot, he receives back the dollar he bet plus an additional dollar. If the ball does not land on red he loses his dollar. Let <em class="emphasis">X</em> denote the net gain to the bettor on one play of the game.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o25" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101814"><math xml:id="fwk-shafer-ch04-m0093" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>, and interpret its meaning in the context of the problem.</li>
+                            <li>Compute the standard deviation of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p26">A roulette wheel has 38 slots. Thirty-six slots are numbered from 1 to 36; the remaining two slots are numbered 0 and 00. Suppose the “number” 00 is considered not to be even, but the number 0 is still even. In a $1 bet on even, the bettor pays $1 to play. If the ball lands in an even numbered slot, he receives back the dollar he bet plus an additional dollar. If the ball does not land on an even numbered slot, he loses his dollar. Let <em class="emphasis">X</em> denote the net gain to the bettor on one play of the game.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o27" numeration="loweralpha">
+                            <li>Construct the probability distribution of <em class="emphasis">X</em>.</li>
+                            <li>Compute the expected value <span class="inlineequation" id="shafer-20121106-125753-101868"><math xml:id="fwk-shafer-ch04-m0096" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow></math></span> of <em class="emphasis">X</em>, and explain why this game is not offered in a casino (where 0 is not considered even).</li>
+                            <li>Compute the standard deviation of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p27">The time, to the nearest whole minute, that a city bus takes to go from one end of its route to the other has the probability distribution shown. As sometimes happens with probabilities computed as empirical relative frequencies, probabilities in the table add up only to a value other than 1.00 because of round-off error.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101917"><math xml:id="fwk-shafer-ch04-m0099" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>42</mn></mrow></mtd><mtd><mrow><mn>43</mn></mrow></mtd><mtd><mrow><mn>44</mn></mrow></mtd><mtd><mrow><mn>45</mn></mrow></mtd><mtd><mrow><mn>46</mn></mrow></mtd><mtd><mrow><mn>47</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.10</mn></mrow></mtd><mtd><mrow><mn>0.23</mn></mrow></mtd><mtd><mrow><mn>0.34</mn></mrow></mtd><mtd><mrow><mn>0.25</mn></mrow></mtd><mtd><mrow><mn>0.05</mn></mrow></mtd><mtd><mrow><mn>0.02</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o29" numeration="loweralpha">
+                            <li>Find the average time the bus takes to drive the length of its route.</li>
+                            <li>Find the standard deviation of the length of time the bus takes to drive the length of its route.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p28">Tybalt receives in the mail an offer to enter a national sweepstakes. The prizes and chances of winning are listed in the offer as: $5 million, one chance in 65 million; $150,000, one chance in 6.5 million; $5,000, one chance in 650,000; and $1,000, one chance in 65,000. If it costs Tybalt 44 cents to mail his entry, what is the expected value of the sweepstakes to him?</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch04_s02_qs01_qd03" start="21">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p30">The number <em class="emphasis">X</em> of nails in a randomly selected 1-pound box has the probability distribution shown. Find the average number of nails per pound.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101933"><math xml:id="fwk-shafer-ch04-m0100" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>100</mn></mrow></mtd><mtd><mrow><mn>101</mn></mrow></mtd><mtd><mrow><mn>102</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.01</mn></mrow></mtd><mtd><mrow><mn>0.96</mn></mrow></mtd><mtd><mrow><mn>0.03</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa22">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p32">Three fair dice are rolled at once. Let <em class="emphasis">X</em> denote the number of dice that land with the same number of dots on top as at least one other die. The probability distribution for <em class="emphasis">X</em> is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-101949"><math xml:id="fwk-shafer-ch04-m0101" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mi>u</mi></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mi>p</mi></mtd><mtd><mrow><mfrac><mrow><mn>15</mn></mrow><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o31" numeration="loweralpha">
+                            <li>Find the missing value <em class="emphasis">u</em> of <em class="emphasis">X</em>.</li>
+                            <li>Find the missing probability <em class="emphasis">p</em>.</li>
+                            <li>Compute the mean of <em class="emphasis">X</em>.</li>
+                            <li>Compute the standard deviation of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa23">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p33">Two fair dice are rolled at once. Let <em class="emphasis">X</em> denote the difference in the number of dots that appear on the top faces of the two dice. Thus for example if a one and a five are rolled, <em class="emphasis">X</em> = 4, and if two sixes are rolled, <em class="emphasis">X</em> = 0.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o33" numeration="loweralpha">
+                            <li>Construct the probability distribution for <em class="emphasis">X</em>.</li>
+                            <li>Compute the mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>.</li>
+                            <li>Compute the standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa24">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p34">A fair coin is tossed repeatedly until either it lands heads or a total of five tosses have been made, whichever comes first. Let <em class="emphasis">X</em> denote the number of tosses made.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o35" numeration="loweralpha">
+                            <li>Construct the probability distribution for <em class="emphasis">X</em>.</li>
+                            <li>Compute the mean <em class="emphasis">μ</em> of <em class="emphasis">X</em>.</li>
+                            <li>Compute the standard deviation <em class="emphasis">σ</em> of <em class="emphasis">X</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa25">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p35">A manufacturer receives a certain component from a supplier in shipments of 100 units. Two units in each shipment are selected at random and tested. If either one of the units is defective the shipment is rejected. Suppose a shipment has 5 defective units.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o37" numeration="loweralpha">
+                            <li>Construct the probability distribution for the number <em class="emphasis">X</em> of defective units in such a sample. (A tree diagram is helpful.)</li>
+                            <li>Find the probability that such a shipment will be accepted.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa26">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p36">Shylock enters a local branch bank at 4:30 p.m. every payday, at which time there are always two tellers on duty. The number <em class="emphasis">X</em> of customers in the bank who are either at a teller window or are waiting in a single line for the next available teller has the following probability distribution.</p>
+                        <span class="informalequation" id="shafer-20121106-125753-102021"><math xml:id="fwk-shafer-ch04-m0105" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.135</mn></mrow></mtd><mtd><mrow><mn>0.192</mn></mrow></mtd><mtd><mrow><mn>0.284</mn></mrow></mtd><mtd><mrow><mn>0.230</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <span class="informalequation" id="shafer-20121106-125753-102037"><math xml:id="fwk-shafer-ch04-m0106" display="block"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>6</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.103</mn></mrow></mtd><mtd><mrow><mn>0.051</mn></mrow></mtd><mtd><mrow><mn>0.005</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o39" numeration="loweralpha">
+                            <li>What number of customers does Shylock most often see in the bank the moment he enters?</li>
+                            <li>What number of customers waiting in line does Shylock most often see the moment he enters?</li>
+                            <li>What is the average number of customers who are waiting in line the moment Shylock enters?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa27">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p37">The owner of a proposed outdoor theater must decide whether to include a cover that will allow shows to be performed in all weather conditions. Based on projected audience sizes and weather conditions, the probability distribution for the revenue <em class="emphasis">X</em> per night if the cover is not installed is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-102053"><math xml:id="fwk-shafer-ch04-m0107" display="block"><mrow><mtable columnspacing="0.3em" columnalign="left" columnlines="solid solid none" rowlines="solid none none none none"><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Weather</mtext></mrow></mtd><mtd columnalign="center"><mi>x</mi></mtd><mtd columnalign="center"><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Clear</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>$3000</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>0</mtext><mtext>.61</mtext></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Threatening</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>$2800</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>0</mtext><mtext>.17</mtext></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Light rain</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>$1975</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>0</mtext><mtext>.11</mtext></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mtext>Show-cancelling rain</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>$0</mtext></mrow></mtd><mtd columnalign="center"><mrow><mtext>0</mtext><mtext>.11</mtext></mrow></mtd></mtr></mtable></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p38">The additional cost of the cover is $410,000. The owner will have it built if this cost can be recovered from the increased revenue the cover affords in the first ten 90-night seasons.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o41" numeration="loweralpha">
+                            <li>Compute the mean revenue per night if the cover is not installed.</li>
+                            <li>Use the answer to (a) to compute the projected total revenue per 90-night season if the cover is not installed.</li>
+                            <li>Compute the projected total revenue per season when the cover is in place. To do so assume that if the cover were in place the revenue each night of the season would be the same as the revenue on a clear night.</li>
+                            <li>Using the answers to (b) and (c), decide whether or not the additional cost of the installation of the cover will be recovered from the increased revenue over the first ten years. Will the owner have the cover installed?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch04_s02_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o02_ans" numeration="loweralpha">
+                            <li>no: the sum of the probabilities exceeds 1</li>
+                            <li>no: a negative probability</li>
+                            <li>no: the sum of the probabilities is less than 1</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o06_ans" numeration="loweralpha">
+                            <li>0.4</li>
+                            <li>0.1</li>
+                            <li>0.9</li>
+                            <li>79.15</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101382_ans"><math xml:id="fwk-shafer-ch04-m0068" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>1.5275</mn></math></span></li>
+                            <li>
+<em class="emphasis">σ</em> = 1.2359</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o10_ans" numeration="loweralpha">
+                            <li>0.6528</li>
+                            <li>0.7153</li>
+                            <li>
+<em class="emphasis">μ</em> = 7.8333</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101519_ans"><math xml:id="fwk-shafer-ch04-m0076" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup><mo>=</mo><mn>5.4866</mn></math></span></li>
+                            <li>
+<em class="emphasis">σ</em> = 2.3424</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="6">
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o14_ans" numeration="loweralpha">
+                            <li>0.79</li>
+                            <li>0.60</li>
+                            <li>
+<em class="emphasis">μ</em> = 5.8, <em class="emphasis">σ</em> = 1.2570</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa09_ans">
+                    <div class="answer">
+                        <p class="para"> </p>
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p13_ans"><span class="inlineequation" id="shafer-20121106-125753-101609_ans"><math xml:id="fwk-shafer-ch04-m0081" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo>/</mo><mn>8</mn></mrow></mtd><mtd><mrow><mn>3</mn><mo>/</mo><mn>8</mn></mrow></mtd><mtd><mrow><mn>3</mn><mo>/</mo><mn>8</mn></mrow></mtd><mtd><mrow><mn>1</mn><mo>/</mo><mn>8</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o18_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101657_ans"><math xml:id="fwk-shafer-ch04-m0084" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd><mrow><mn>999</mn></mrow></mtd><mtd><mrow><mn>499</mn></mrow></mtd><mtd><mrow><mn>99</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mn>4987</mn></mrow><mrow><mn>5000</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mrow><mn>5000</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>5000</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>10</mn></mrow><mrow><mn>5000</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>−0.4</li>
+                            <li>17.8785</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p20_ans">136</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa15_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o22_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101731_ans"><math xml:id="fwk-shafer-ch04-m0088" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mi>C</mi></mtd><mtd><mrow><mi>C</mi><mtext>−</mtext><mn>150,000</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.9825</mn></mrow></mtd><mtd><mrow><mn>0.0175</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-101749_ans"><math xml:id="fwk-shafer-ch04-m0089" display="inline"><mi>C</mi><mtext>−</mtext><mn>2625</mn></math></span></li>
+                            <li>
+<em class="emphasis">C</em> ≥ 2625</li>
+                            <li>
+<em class="emphasis">C</em> ≥ 2875</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o26_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101830_ans"><math xml:id="fwk-shafer-ch04-m0094" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mn>20</mn></mrow><mrow><mn>38</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>18</mn></mrow><mrow><mn>38</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-101846_ans"><math xml:id="fwk-shafer-ch04-m0095" display="inline"><mi>E</mi><mrow><mo>(</mo><mrow><mi>X</mi></mrow><mo>)</mo></mrow><mo>=</mo><mtext>−</mtext><mn>0.0526</mn></math></span> In many bets the bettor sustains an average loss of about 5.25 cents per bet.</li>
+                            <li>0.9986</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o30_ans" numeration="loweralpha">
+                            <li>43.54</li>
+                            <li>1.2046</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="21">
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch04_s02_qs01_p31_ans">101.02</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o34_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101965_ans"><math xml:id="fwk-shafer-ch04-m0102" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mfrac><mn>6</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mrow><mn>10</mn></mrow><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>8</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>6</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>4</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd><mtd><mrow><mfrac><mn>2</mn><mrow><mn>36</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>1.9444</li>
+                            <li>1.4326</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa25_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o38_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para"> </p>
+                                <p class="para"><span class="inlineequation" id="shafer-20121106-125753-101998_ans"><math xml:id="fwk-shafer-ch04-m0104" display="inline"><mrow><mtable columnspacing="0.3em" columnlines="solid none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mrow><mn>0.902</mn></mrow></mtd><mtd><mrow><mn>0.096</mn></mrow></mtd><mtd><mrow><mn>0.002</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                            </li>
+                            <li>0.902</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch04_s02_qs01_qd03_qa27_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch04_s02_qs01_o42_ans" numeration="loweralpha">
+                            <li>2523.25</li>
+                            <li>227,092.5</li>
+                            <li>270,000</li>
+                            <li>The owner will install the cover.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s08-01-random-variables.html"><img src="shared/images/batch-left.png"></a> <a href="s08-01-random-variables.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s08-03-the-binomial-distribution.html">Next Section</a> <a href="s08-03-the-binomial-distribution.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

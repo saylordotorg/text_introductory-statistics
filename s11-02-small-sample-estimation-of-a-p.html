@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Small Sample Estimation of a Population Mean</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-01-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-left.png"></a> <a href="s11-01-large-sample-estimation-of-a-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s11-03-large-sample-estimation-of-a-p.html">Next Section</a> <a href="s11-03-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch07_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">7.2</span> Small Sample Estimation of a Population Mean</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch07_s02_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch07_s02_o01" numeration="arabic">
+            <li>To become familiar with Student’s <em class="emphasis">t</em>-distribution.</li>
+            <li>To understand how to apply additional formulas for a confidence interval for a population mean.</li>
+        </ol>
+    </div>
+    <p class="para block" id="fwk-shafer-ch07_s02_p01">The confidence interval formulas in the previous section are based on the Central Limit Theorem, the statement that for large samples <span class="inlineequation" id="shafer-20121106-125753-113847"><math xml:id="fwk-shafer-ch07-m0107" display="inline"><mrow><mover accent="true"><mi fontsize="80%">X</mi><mo stretchy="true">-</mo></mover></mrow></math></span> is normally distributed with mean <em class="emphasis">μ</em> and standard deviation <span class="inlineequation" id="shafer-20121106-125753-113863"><math xml:id="fwk-shafer-ch07-m0108" display="inline"><mi mathvariant="italic">σ</mi><mo>∕</mo><msqrt><mrow><mi>n</mi></mrow></msqrt><mo>.</mo></math></span> When the population mean <em class="emphasis">μ</em> is estimated with a small sample (<em class="emphasis">n</em> &lt; 30), the Central Limit Theorem does not apply. In order to proceed we assume that the numerical population from which the sample is taken has a normal distribution to begin with. If this condition is satisfied then when the population standard deviation <em class="emphasis">σ</em> is known the old formula <span class="inlineequation" id="shafer-20121106-125753-113880"><math xml:id="fwk-shafer-ch07-m0109" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mrow><mo>(</mo><mrow><mi mathvariant="italic">σ</mi><mo>∕</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></mrow><mo>)</mo></mrow></math></span> can still be used to construct a <span class="inlineequation" id="shafer-20121106-125753-113896"><math xml:id="fwk-shafer-ch07-m0110" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence interval for <em class="emphasis">μ</em>.</p>
+    <p class="para block" id="fwk-shafer-ch07_s02_p02">If the population standard deviation is unknown and the sample size <em class="emphasis">n</em> is small then when we substitute the sample standard deviation <em class="emphasis">s</em> for <em class="emphasis">σ</em> the normal approximation is no longer valid. The solution is to use a different distribution, called <span class="margin_term"><a class="glossterm">Student’s <em class="emphasis">t</em>-distribution</a><span class="glossdef">A distribution of a continuous random variable that resembles that standard normal distribution but has heavier tails.</span></span> <strong class="emphasis bold">with</strong> <span class="inlineequation" id="shafer-20121106-125753-113912"><math xml:id="fwk-shafer-ch07-m0111" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn></math></span> <span class="margin_term"><a class="glossterm">degrees of freedom</a><span class="glossdef">A number that specifies a particular <em class="emphasis">t</em>-distribution and that is computed based on the sample size.</span></span>. Student’s <em class="emphasis">t</em>-distribution is very much like the standard normal distribution in that it is centered at 0 and has the same qualitative bell shape, but it has heavier tails than the standard normal distribution does, as indicated by <a class="xref" href="#fwk-shafer-ch07_s02_f05">Figure 7.5 "Student’s "</a>, in which the curve (in brown) that meets the dashed vertical line at the lowest point is the <em class="emphasis">t</em>-distribution with two degrees of freedom, the next curve (in blue) is the <em class="emphasis">t</em>-distribution with five degrees of freedom, and the thin curve (in red) is the standard normal distribution. As also indicated by the figure, as the sample size <em class="emphasis">n</em> increases, Student’s <em class="emphasis">t</em>-distribution ever more closely resembles the standard normal distribution. Although there is a different <em class="emphasis">t</em>-distribution for every value of <em class="emphasis">n</em>, once the sample size is 30 or more it is typically acceptable to use the standard normal distribution instead, as we will always do in this text.</p>
+    <div class="figure large small-height editable block" id="fwk-shafer-ch07_s02_f05">
+        <p class="title"><span class="title-prefix">Figure 7.5</span> Student’s <em class="emphasis">t</em>-Distribution</p>
+        <img src="section_11/3435a692ad23c4d5cf2b42e6aa8f5191.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch07_s02_p03">Just as the symbol <em class="emphasis">z<sub class="subscript">c</sub></em> stands for the value that cuts off a right tail of area <em class="emphasis">c</em> in the standard normal distribution, so the symbol <em class="emphasis">t<sub class="subscript">c</sub></em> stands for the value that cuts off a right tail of area <em class="emphasis">c</em> in the standard normal distribution. This gives us the following confidence interval formulas.</p>
+    <div class="callout block" id="fwk-shafer-ch07_s02_n02">
+        <h3 class="title">Small Sample <span class="inlineequation" id="shafer-20121106-125753-113927"><math xml:id="fwk-shafer-ch07-m0112" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow><mi>%</mi></math></span> Confidence Interval for a Population Mean</h3>
+        <p class="para" id="fwk-shafer-ch07_s02_p04">If <em class="emphasis">σ</em> is known: <span class="inlineequation" id="shafer-20121106-125753-113944"><math xml:id="fwk-shafer-ch07-m0113" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced></math></span></p>
+        <p class="para" id="fwk-shafer-ch07_s02_p05">If <em class="emphasis">σ</em> is unknown: <span class="inlineequation" id="shafer-20121106-125753-113967"><math xml:id="fwk-shafer-ch07-m0114" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi>s</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced></math></span> (degrees of freedom <span class="inlineequation" id="shafer-20121106-125753-113983"><math xml:id="fwk-shafer-ch07-m0115" display="inline"><mi>d</mi><mi>f</mi><mo>=</mo><mi>n</mi><mtext>−</mtext><mn>1</mn></math></span>)</p>
+        <p class="para" id="fwk-shafer-ch07_s02_p06">The population must be normally distributed.</p>
+        <p class="para" id="fwk-shafer-ch07_s02_p07">A sample is considered small when <em class="emphasis">n</em> &lt; 30.</p>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch07_s02_p08">To use the new formula we use the line in <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> that corresponds to the relevant sample size.</p>
+    <div class="exercises block" id="fwk-shafer-ch07_s02_n03">
+        <h3 class="title">Example 5</h3>
+        <p class="para" id="fwk-shafer-ch07_s02_p09">A sample of size 15 drawn from a normally distributed population has sample mean 35 and sample standard deviation 14. Construct a 95% confidence interval for the population mean, and interpret its meaning.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch07_s02_p10">Since the population is normally distributed, the sample is small, and the population standard deviation is unknown, the formula that applies is</p>
+        <span class="informalequation" id="shafer-20121106-125753-113999"><math xml:id="fwk-shafer-ch07-m0116" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi>s</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch07_s02_p11">Confidence level 95% means that <span class="inlineequation" id="shafer-20121106-125753-114015"><math xml:id="fwk-shafer-ch07-m0117" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.95</mn><mo>=</mo><mn>0.05</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-114031"><math xml:id="fwk-shafer-ch07-m0118" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.025</mn><mo>.</mo></math></span> Since the sample size is <em class="emphasis">n</em> = 15, there are <span class="inlineequation" id="shafer-20121106-125753-114046"><math xml:id="fwk-shafer-ch07-m0119" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>14</mn></math></span> degrees of freedom. By <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> <span class="inlineequation" id="shafer-20121106-125753-114062"><math xml:id="fwk-shafer-ch07-m0120" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>=</mo><mn>2.145</mn><mo>.</mo></math></span> Thus</p>
+        <span class="informalequation" id="shafer-20121106-125753-114079"><math xml:id="fwk-shafer-ch07-m0121" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi>s</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>=</mo><mn>35</mn><mo>±</mo><mn>2.145</mn><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mn>14</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>15</mn></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>=</mo><mn>35</mn><mo>±</mo><mn>7.8</mn></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch07_s02_p12">One may be 95% confident that the true value of <em class="emphasis">μ</em> is contained in the interval <span class="inlineequation" id="shafer-20121106-125753-114095"><math xml:id="fwk-shafer-ch07-m0122" display="inline"><mrow><mo>(</mo><mrow><mn>35</mn><mo>−</mo><mn>7</mn><mo>.</mo><mn>8,35</mn><mo>+</mo><mn>7.8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mn>27</mn><mo>.</mo><mn>2,42</mn><mo>.</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+    </div>
+    <div class="exercises block" id="fwk-shafer-ch07_s02_n04">
+        <h3 class="title">Example 6</h3>
+        <p class="para" id="fwk-shafer-ch07_s02_p13">A random sample of 12 students from a large university yields mean GPA 2.71 with sample standard deviation 0.51. Construct a 90% confidence interval for the mean GPA of all students at the university. Assume that the numerical population of GPAs from which the sample is taken has a normal distribution.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch07_s02_p14">Since the population is normally distributed, the sample is small, and the population standard deviation is unknown, the formula that applies is</p>
+        <span class="informalequation" id="shafer-20121106-125753-114117"><math xml:id="fwk-shafer-ch07-m0123" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi>s</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch07_s02_p15">Confidence level 90% means that <span class="inlineequation" id="shafer-20121106-125753-114133"><math xml:id="fwk-shafer-ch07-m0124" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.90</mn><mo>=</mo><mn>0.10</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-114149"><math xml:id="fwk-shafer-ch07-m0125" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.05</mn><mo>.</mo></math></span> Since the sample size is <em class="emphasis">n</em> = 12, there are <span class="inlineequation" id="shafer-20121106-125753-114165"><math xml:id="fwk-shafer-ch07-m0126" display="inline"><mi>n</mi><mtext>−</mtext><mn>1</mn><mo>=</mo><mn>11</mn></math></span> degrees of freedom. By <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> <span class="inlineequation" id="shafer-20121106-125753-114180"><math xml:id="fwk-shafer-ch07-m0127" display="inline"><msub><mrow><mi>t</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.796</mn><mo>.</mo></math></span> Thus</p>
+        <span class="informalequation" id="shafer-20121106-125753-114196"><math xml:id="fwk-shafer-ch07-m0128" display="block"><mrow><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><msub><mrow><mi>t</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mi>s</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>=</mo><mn>2.71</mn><mo>±</mo><mn>1.796</mn><mfenced separators="" open="(" close=")"><mrow><mfrac><mrow><mn>0.51</mn></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mn>12</mn></mrow></msqrt></mpadded></mrow></mfrac></mrow></mfenced><mo>=</mo><mn>2.71</mn><mo>±</mo><mn>0.26</mn></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch07_s02_p16">One may be 90% confident that the true average GPA of all students at the university is contained in the interval <span class="inlineequation" id="shafer-20121106-125753-114212"><math xml:id="fwk-shafer-ch07-m0129" display="inline"><mrow><mo>(</mo><mrow><mn>2.71</mn><mo>−</mo><mn>0</mn><mo>.</mo><mn>26,2</mn><mo>.</mo><mn>71</mn><mo>+</mo><mn>0.26</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>.</mo><mn>45,2</mn><mo>.</mo><mn>97</mn></mrow><mo>)</mo></mrow><mo>.</mo></math></span></p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch07_s02_p17">Compare <a class="xref" href="fwk-shafer-ch07_s01#fwk-shafer-ch07_s01_n06" xrefstyle="select: title">Note 7.9 "Example 4"</a> in <a class="xref" href="fwk-shafer-ch07_s01#fwk-shafer-ch07_s01">Section 7.1 "Large Sample Estimation of a Population Mean"</a> and <a class="xref" href="#fwk-shafer-ch07_s02_n04" xrefstyle="select: title">Note 7.16 "Example 6"</a>. The summary statistics in the two samples are the same, but the 90% confidence interval for the average GPA of all students at the university in <a class="xref" href="fwk-shafer-ch07_s01#fwk-shafer-ch07_s01_n06" xrefstyle="select: title">Note 7.9 "Example 4"</a> in <a class="xref" href="fwk-shafer-ch07_s01#fwk-shafer-ch07_s01">Section 7.1 "Large Sample Estimation of a Population Mean"</a>, <span class="inlineequation" id="shafer-20121106-125753-114228"><math xml:id="fwk-shafer-ch07-m0130" display="inline"><mrow><mo>(</mo><mrow><mn>2</mn><mo>.</mo><mn>63,2</mn><mo>.</mo><mn>79</mn></mrow><mo>)</mo></mrow></math></span>, is shorter than the 90% confidence interval <span class="inlineequation" id="shafer-20121106-125753-114243"><math xml:id="fwk-shafer-ch07-m0131" display="inline"><mrow><mo>(</mo><mrow><mn>2</mn><mo>.</mo><mn>45,2</mn><mo>.</mo><mn>97</mn></mrow><mo>)</mo></mrow></math></span>, in <a class="xref" href="#fwk-shafer-ch07_s02_n04" xrefstyle="select: title">Note 7.16 "Example 6"</a>. This is partly because in <a class="xref" href="fwk-shafer-ch07_s01#fwk-shafer-ch07_s01_n06" xrefstyle="select: title">Note 7.9 "Example 4"</a> the sample size is larger; there is more information pertaining to the true value of <em class="emphasis">μ</em> in the large data set than in the small one.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch07_s02_n05">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch07_s02_l01" mark="bullet">
+            <li>In selecting the correct formula for construction of a confidence interval for a population mean ask two questions: is the population standard deviation <em class="emphasis">σ</em> known or unknown, and is the sample large or small?</li>
+            <li>We can construct confidence intervals with small samples only if the population is normal.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch07_s02_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch07_s02_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p01">A random sample is drawn from a normally distributed population of known standard deviation 5. Construct a 99.8% confidence interval for the population mean based on the information given (not all of the information given need be used).</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o01" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 16, <span class="inlineequation" id="shafer-20121106-125753-114265"><math xml:id="fwk-shafer-ch07-m0132" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>98</mn></math></span>, <em class="emphasis">s</em> = 5.6</li>
+                        <li>
+<em class="emphasis">n</em> = 9, <span class="inlineequation" id="shafer-20121106-125753-114282"><math xml:id="fwk-shafer-ch07-m0133" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>98</mn></math></span>, <em class="emphasis">s</em> = 5.6</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p02">A random sample is drawn from a normally distributed population of known standard deviation 10.7. Construct a 95% confidence interval for the population mean based on the information given (not all of the information given need be used).</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o03" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 25, <span class="inlineequation" id="shafer-20121106-125753-114329"><math xml:id="fwk-shafer-ch07-m0136" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>103.3</mn></math></span>, <em class="emphasis">s</em> = 11.0</li>
+                        <li>
+<em class="emphasis">n</em> = 4, <span class="inlineequation" id="shafer-20121106-125753-114346"><math xml:id="fwk-shafer-ch07-m0137" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>103.3</mn></math></span>, <em class="emphasis">s</em> = 11.0</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p03">A random sample is drawn from a normally distributed population of unknown standard deviation. Construct a 99% confidence interval for the population mean based on the information given.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o05" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 18, <span class="inlineequation" id="shafer-20121106-125753-114400"><math xml:id="fwk-shafer-ch07-m0140" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>386</mn></math></span>, <em class="emphasis">s</em> = 24</li>
+                        <li>
+<em class="emphasis">n</em> = 7, <span class="inlineequation" id="shafer-20121106-125753-114417"><math xml:id="fwk-shafer-ch07-m0141" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>386</mn></math></span>, <em class="emphasis">s</em> = 24</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p04">A random sample is drawn from a normally distributed population of unknown standard deviation. Construct a 98% confidence interval for the population mean based on the information given.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o07" numeration="loweralpha">
+                        <li>
+<em class="emphasis">n</em> = 8, <span class="inlineequation" id="shafer-20121106-125753-114466"><math xml:id="fwk-shafer-ch07-m0144" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>58.3</mn></math></span>, <em class="emphasis">s</em> = 4.1</li>
+                        <li>
+<em class="emphasis">n</em> = 27, <span class="inlineequation" id="shafer-20121106-125753-114482"><math xml:id="fwk-shafer-ch07-m0145" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>58.3</mn></math></span>, <em class="emphasis">s</em> = 4.1</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p05">A random sample of size 14 is drawn from a normal population. The summary statistics are <span class="inlineequation" id="shafer-20121106-125753-114546"><math xml:id="fwk-shafer-ch07-m0148" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>933</mn></math></span> and <em class="emphasis">s</em> = 18.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o09" numeration="loweralpha">
+                        <li>Construct an 80% confidence interval for the population mean <em class="emphasis">μ</em>.</li>
+                        <li>Construct a 90% confidence interval for the population mean <em class="emphasis">μ</em>.</li>
+                        <li>Comment on why one interval is longer than the other.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p06">A random sample of size 28 is drawn from a normal population. The summary statistics are <span class="inlineequation" id="shafer-20121106-125753-114594"><math xml:id="fwk-shafer-ch07-m0151" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>68.6</mn></math></span> and <em class="emphasis">s</em> = 1.28.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o11" numeration="loweralpha">
+                        <li>Construct a 95% confidence interval for the population mean <em class="emphasis">μ</em>.</li>
+                        <li>Construct a 99.5% confidence interval for the population mean <em class="emphasis">μ</em>.</li>
+                        <li>Comment on why one interval is longer than the other.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch07_s02_qs01_qd02" start="7">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p07">City planners wish to estimate the mean lifetime of the most commonly planted trees in urban settings. A sample of 16 recently felled trees yielded mean age 32.7 years with standard deviation 3.1 years. Assuming the lifetimes of all such trees are normally distributed, construct a 99.8% confidence interval for the mean lifetime of all such trees.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p09">To estimate the number of calories in a cup of diced chicken breast meat, the number of calories in a sample of four separate cups of meat is measured. The sample mean is 211.8 calories with sample standard deviation 0.9 calorie. Assuming the caloric content of all such chicken meat is normally distributed, construct a 95% confidence interval for the mean number of calories in one cup of meat.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p11">A college athletic program wishes to estimate the average increase in the total weight an athlete can lift in three different lifts after following a particular training program for six weeks. Twenty-five randomly selected athletes when placed on the program exhibited a mean gain of 47.3 lb with standard deviation 6.4 lb. Construct a 90% confidence interval for the mean increase in lifting capacity all athletes would experience if placed on the training program. Assume increases among all athletes are normally distributed.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p13">To test a new tread design with respect to stopping distance, a tire manufacturer manufactures a set of prototype tires and measures the stopping distance from 70 mph on a standard test car. A sample of 25 stopping distances yielded a sample mean 173 feet with sample standard deviation 8 feet. Construct a 98% confidence interval for the mean stopping distance for these tires. Assume a normal distribution of stopping distances.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p15">A manufacturer of chokes for shotguns tests a choke by shooting 15 patterns at targets 40 yards away with a specified load of shot. The mean number of shot in a 30-inch circle is 53.5 with standard deviation 1.6. Construct an 80% confidence interval for the mean number of shot in a 30-inch circle at 40 yards for this choke with the specified load. Assume a normal distribution of the number of shot in a 30-inch circle at 40 yards for this choke.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p17">In order to estimate the speaking vocabulary of three-year-old children in a particular socioeconomic class, a sociologist studies the speech of four children. The mean and standard deviation of the sample are <span class="inlineequation" id="shafer-20121106-125753-114731"><math xml:id="fwk-shafer-ch07-m0159" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>=</mo><mn>1120</mn></math></span> and <em class="emphasis">s</em> = 215 words. Assuming that speaking vocabularies are normally distributed, construct an 80% confidence interval for the mean speaking vocabulary of all three-year-old children in this socioeconomic group.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p19">A thread manufacturer tests a sample of eight lengths of a certain type of thread made of blended materials and obtains a mean tensile strength of 8.2 lb with standard deviation 0.06 lb. Assuming tensile strengths are normally distributed, construct a 90% confidence interval for the mean tensile strength of this thread.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p21">An airline wishes to estimate the weight of the paint on a fully painted aircraft of the type it flies. In a sample of four repaintings the average weight of the paint applied was 239 pounds, with sample standard deviation 8 pounds. Assuming that weights of paint on aircraft are normally distributed, construct a 99.8% confidence interval for the mean weight of paint on all such aircraft.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p23">In a study of dummy foal syndrome, the average time between birth and onset of noticeable symptoms in a sample of six foals was 18.6 hours, with standard deviation 1.7 hours. Assuming that the time to onset of symptoms in all foals is normally distributed, construct a 90% confidence interval for the mean time between birth and onset of noticeable symptoms.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p25">A sample of 26 women’s size 6 dresses had mean waist measurement 25.25 inches with sample standard deviation 0.375 inch. Construct a 95% confidence interval for the mean waist measurement of all size 6 women’s dresses. Assume waist measurements are normally distributed.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch07_s02_qs01_qd03" start="17">
+            <h3 class="title">Additional Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p27">Botanists studying attrition among saplings in new growth areas of forests diligently counted stems in six plots in five-year-old new growth areas, obtaining the following counts of stems per acre:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-114829"><math xml:id="fwk-shafer-ch07-m0165" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>9,432</mn></mrow></mtd><mtd><mrow><mn>11,026</mn></mrow></mtd><mtd><mrow><mn>10,539</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>8,773</mn></mrow></mtd><mtd><mrow><mn>9,868</mn></mrow></mtd><mtd><mrow><mn>10,247</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p28">Construct an 80% confidence interval for the mean number of stems per acre in all five-year-old new growth areas of forests. Assume that the number of stems per acre is normally distributed.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p30">Nutritionists are investigating the efficacy of a diet plan designed to increase the caloric intake of elderly people. The increase in daily caloric intake in 12 individuals who are put on the plan is (a minus sign signifies that calories consumed went down):</p>
+                    <span class="informalequation" id="shafer-20121106-125753-114868"><math xml:id="fwk-shafer-ch07-m0167" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>121</mn></mrow></mtd><mtd><mrow><mn>284</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>94</mn></mrow></mtd><mtd><mrow><mn>295</mn></mrow></mtd><mtd><mrow><mn>183</mn></mrow></mtd><mtd><mrow><mn>312</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>188</mn></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>102</mn></mrow></mtd><mtd><mrow><mn>259</mn></mrow></mtd><mtd><mrow><mn>226</mn></mrow></mtd><mtd><mrow><mn>152</mn></mrow></mtd><mtd><mrow><mn>167</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p31">Construct a 99.8% confidence interval for the mean increase in caloric intake for all people who are put on this diet. Assume that population of differences in intake is normally distributed.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p33">A machine for making precision cuts in dimension lumber produces studs with lengths that vary with standard deviation 0.003 inch. Five trial cuts are made to check the machine’s calibration. The mean length of the studs produced is 104.998 inches with sample standard deviation 0.004 inch. Construct a 99.5% confidence interval for the mean lengths of all studs cut by this machine. Assume lengths are normally distributed. Hint: Not all the numbers given in the problem are used.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p35">The variation in time for a baked good to go through a conveyor oven at a large scale bakery has standard deviation 0.017 minute at every time setting. To check the bake time of the oven periodically four batches of goods are carefully timed. The recent check gave a mean of 27.2 minutes with sample standard deviation 0.012 minute. Construct a 99.8% confidence interval for the mean bake time of all batches baked in this oven. Assume bake times are normally distributed. Hint: Not all the numbers given in the problem are used.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p37">Wildlife researchers tranquilized and weighed three adult male polar bears. The data (in pounds) are: 926, 742, 1,109. Assume the weights of all bears are normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o13" numeration="loweralpha">
+                        <li>Construct an 80% confidence interval for the mean weight of all adult male polar bears using these data.</li>
+                        <li>Convert the three weights in pounds to weights in kilograms using the conversion 1 lb = 0.453 kg (so the first datum changes to <span class="inlineequation" id="shafer-20121106-125753-114932"><math xml:id="fwk-shafer-ch07-m0171" display="inline"><mrow><mo>(</mo><mrow><mn>926</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>0.453</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>419</mn></math></span>). Use the converted data to construct an 80% confidence interval for the mean weight of all adult male polar bears expressed in kilograms.</li>
+                        <li>Convert your answer in part (a) into kilograms directly and compare it to your answer in (b). This illustrates that if you construct a confidence interval in one system of units you can convert it directly into another system of units without having to convert all the data to the new units.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p38">Wildlife researchers trapped and measured six adult male collared lemmings. The data (in millimeters) are: 104, 99, 112, 115, 96, 109. Assume the lengths of all lemmings are normally distributed.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o15" numeration="loweralpha">
+                        <li>Construct a 90% confidence interval for the mean length of all adult male collared lemmings using these data.</li>
+                        <li>Convert the six lengths in millimeters to lengths in inches using the conversion 1 mm = 0.039 in (so the first datum changes to (104)(0.039) = 4.06). Use the converted data to construct a 90% confidence interval for the mean length of all adult male collared lemmings expressed in inches.</li>
+                        <li>Convert your answer in part (a) into inches directly and compare it to your answer in (b). This illustrates that if you construct a confidence interval in one system of units you can convert it directly into another system of units without having to convert all the data to the new units.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch07_s02_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o02_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114298_ans"><math xml:id="fwk-shafer-ch07-m0134" display="inline"><mn>98</mn><mo>±</mo><mn>3.9</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114313_ans"><math xml:id="fwk-shafer-ch07-m0135" display="inline"><mn>98</mn><mo>±</mo><mn>5.2</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o06_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114433_ans"><math xml:id="fwk-shafer-ch07-m0142" display="inline"><mn>386</mn><mo>±</mo><mn>16.4</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114449_ans"><math xml:id="fwk-shafer-ch07-m0143" display="inline"><mn>386</mn><mo>±</mo><mn>33.6</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o10_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114563_ans"><math xml:id="fwk-shafer-ch07-m0149" display="inline"><mn>933</mn><mo>±</mo><mn>6.5</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114579_ans"><math xml:id="fwk-shafer-ch07-m0150" display="inline"><mn>933</mn><mo>±</mo><mn>8.5</mn></math></span></li>
+                        <li>Asking for greater confidence requires a longer interval.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="7">
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p08_ans"><span class="inlineequation" id="shafer-20121106-125753-114643_ans"><math xml:id="fwk-shafer-ch07-m0154" display="inline"><mn>32.7</mn><mo>±</mo><mn>2.9</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p12_ans"><span class="inlineequation" id="shafer-20121106-125753-114676_ans"><math xml:id="fwk-shafer-ch07-m0156" display="inline"><mn>47.3</mn><mo>±</mo><mn>2.19</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p16_ans"><span class="inlineequation" id="shafer-20121106-125753-114715_ans"><math xml:id="fwk-shafer-ch07-m0158" display="inline"><mn>53.5</mn><mo>±</mo><mn>0.56</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p20_ans"><span class="inlineequation" id="shafer-20121106-125753-114764_ans"><math xml:id="fwk-shafer-ch07-m0161" display="inline"><mn>8.2</mn><mo>±</mo><mn>0.04</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p24_ans"><span class="inlineequation" id="shafer-20121106-125753-114796_ans"><math xml:id="fwk-shafer-ch07-m0163" display="inline"><mn>18.6</mn><mo>±</mo><mn>1.4</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd02_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="17">
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p29_ans"><span class="inlineequation" id="shafer-20121106-125753-114852_ans"><math xml:id="fwk-shafer-ch07-m0166" display="inline"><mn>9981</mn><mo>±</mo><mn>486</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch07_s02_qs01_p34_ans"><span class="inlineequation" id="shafer-20121106-125753-114901_ans"><math xml:id="fwk-shafer-ch07-m0169" display="inline"><mn>104.998</mn><mo>±</mo><mn>0.004</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch07_s02_qs01_o14_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114949_ans"><math xml:id="fwk-shafer-ch07-m0172" display="inline"><mn>926</mn><mo>±</mo><mn>200</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114964_ans"><math xml:id="fwk-shafer-ch07-m0173" display="inline"><mn>419</mn><mo>±</mo><mn>90</mn></math></span></li>
+                        <li><span class="inlineequation" id="shafer-20121106-125753-114986_ans"><math xml:id="fwk-shafer-ch07-m0174" display="inline"><mn>419</mn><mo>±</mo><mn>91</mn></math></span></li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch07_s02_qs01_qd03_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-01-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-left.png"></a> <a href="s11-01-large-sample-estimation-of-a-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s11-03-large-sample-estimation-of-a-p.html">Next Section</a> <a href="s11-03-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

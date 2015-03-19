@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Linear Relationships Between Variables</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-05-sample-size-considerations.html"><img src="shared/images/batch-left.png"></a> <a href="s13-05-sample-size-considerations.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-02-the-linear-correlation-coeffic.html">Next Section</a> <a href="s14-02-the-linear-correlation-coeffic.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s01" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.1</span> Linear Relationships Between Variables</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s01_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s01_o01" numeration="arabic">
+            <li>To learn what it means for two variables to exhibit a relationship that is close to linear but which contains an element of randomness.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s01_p01">The following table gives examples of the kinds of pairs of variables which could be of interest from a statistical point of view.</p>
+    <div class="informaltable block">
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center"><em class="emphasis">x</em></th>
+                    <th align="center"><em class="emphasis">y</em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td align="left">Predictor or independent variable</td>
+                    <td align="left">Response or dependent variable</td>
+                </tr>
+                <tr>
+                    <td align="left">Temperature in degrees Celsius</td>
+                    <td align="left">Temperature in degrees Fahrenheit</td>
+                </tr>
+                <tr>
+                    <td align="left">Area of a house (sq.ft.)</td>
+                    <td align="left">Value of the house</td>
+                </tr>
+                <tr>
+                    <td align="left">Age of a particular make and model car</td>
+                    <td align="left">Resale value of the car</td>
+                </tr>
+                <tr>
+                    <td align="left">Amount spent by a business on advertising in a year</td>
+                    <td align="left">Revenue received that year</td>
+                </tr>
+                <tr>
+                    <td align="left">Height of a 25-year-old man</td>
+                    <td align="left">Weight of the man</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s01_p02">The first line in the table is different from all the rest because in that case and no other the relationship between the variables is <strong class="emphasis bold">deterministic</strong>: once the value of <em class="emphasis">x</em> is known the value of <em class="emphasis">y</em> is completely determined. In fact there is a formula for <em class="emphasis">y</em> in terms of <em class="emphasis">x</em>: <span class="inlineequation" id="shafer-20121106-125753-150460"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0001" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac><mi>x</mi><mo>+</mo><mn>32</mn><mo>.</mo></math></span> Choosing several values for <em class="emphasis">x</em> and computing the corresponding value for <em class="emphasis">y</em> for each one using the formula gives the table</p>
+    <span class="informalequation block" id="shafer-20121106-125753-150476"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0002" display="block"><mrow><mtable columnspacing="0.5em" columnalign="right" columnlines="solid none none none none none" rowlines="solid"><mtr columnalign="right"><mtd><mi>x</mi></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>40</mn></mrow></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>15</mn></mrow></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mn>20</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>50</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd><mi>y</mi></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>40</mn></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mrow><mn>32</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>68</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>122</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+    <p class="para block" id="fwk-shafer-ch10_s01_p03">We can plot these data by choosing a pair of perpendicular lines in the plane, called the coordinate axes, as shown in <a class="xref" href="#fwk-shafer-ch10_s01_f01">Figure 10.1 "Plot of Celsius and Fahrenheit Temperature Pairs"</a>. Then to each pair of numbers in the table we associate a unique point in the plane, the point that lies <em class="emphasis">x</em> units to the right of the vertical axis (to the left if <span class="inlineequation" id="shafer-20121106-125753-150492"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0003" display="inline"><mi>x</mi><mo class="MathClass-rel">&lt;</mo><mn>0</mn></math></span>) and <em class="emphasis">y</em> units above the horizontal axis (below if <span class="inlineequation" id="shafer-20121106-125753-150508"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0004" display="inline"><mi>y</mi><mo class="MathClass-rel">&lt;</mo><mn>0</mn></math></span>). The relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> is called a <strong class="emphasis bold">linear relationship</strong> because the points so plotted all lie on a single straight line. The number <span class="inlineequation" id="shafer-20121106-125753-150536"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0005" display="inline"><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac></math></span> in the equation <span class="inlineequation" id="shafer-20121106-125753-150552"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0006" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac><mi>x</mi><mo>+</mo><mn>32</mn></math></span> is the <strong class="emphasis bold">slope</strong> of the line, and measures its steepness. It describes how <em class="emphasis">y</em> changes in response to a change in <em class="emphasis">x</em>: if <em class="emphasis">x</em> increases by 1 unit then <em class="emphasis">y</em> increases (since <span class="inlineequation" id="shafer-20121106-125753-150569"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0007" display="inline"><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac></math></span> is positive) by <span class="inlineequation" id="shafer-20121106-125753-150589"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0008" display="inline"><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac></math></span> unit. If the slope had been negative then <em class="emphasis">y</em> would have decreased in response to an increase in <em class="emphasis">x</em>. The number 32 in the formula <span class="inlineequation" id="shafer-20121106-125753-150605"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0009" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mfrac><mrow><mn>9</mn></mrow><mrow><mn>5</mn></mrow></mfrac><mi>x</mi><mo>+</mo><mn>32</mn></math></span> is the <em class="emphasis">y</em><strong class="emphasis bold">-intercept</strong> of the line; it identifies where the line crosses the <em class="emphasis">y</em>-axis. You may recall from an earlier course that every non-vertical line in the plane is described by an equation of the form <span class="inlineequation" id="shafer-20121106-125753-150621"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0010" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></math></span>, where <em class="emphasis">m</em> is the slope of the line and <em class="emphasis">b</em> is its <em class="emphasis">y</em>-intercept.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch10_s01_f01">
+        <p class="title"><span class="title-prefix">Figure 10.1</span> Plot of Celsius and Fahrenheit Temperature Pairs</p>
+        <img src="section_14/f6698546a4f99e443e31429904be4b1b.jpg">
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s01_p04">The relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> in the temperature example is deterministic because once the value of <em class="emphasis">x</em> is known, the value of <em class="emphasis">y</em> is completely determined. In contrast, all the other relationships listed in the table above have an element of randomness in them. Consider the relationship described in the last line of the table, the height <em class="emphasis">x</em> of a man aged 25 and his weight <em class="emphasis">y</em>. If we were to randomly select several 25-year-old men and measure the height and weight of each one, we might obtain a collection of <span class="inlineequation" id="shafer-20121106-125753-150638"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0011" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs something like this:</p>
+    <span class="informalequation block" id="shafer-20121106-125753-150654"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0012" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>68,151</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>69,146</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>70,157</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>70,164</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>71,171</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>72,160</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>72,163</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>72,180</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>73,170</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>73,175</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>74,178</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>75,188</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s01_p05">A plot of these data is shown in <a class="xref" href="#fwk-shafer-ch10_s01_f02">Figure 10.2 "Plot of Height and Weight Pairs"</a>. Such a plot is called a <strong class="emphasis bold">scatter diagram</strong> or <strong class="emphasis bold">scatter plot</strong>. Looking at the plot it is evident that there exists a linear relationship between height <em class="emphasis">x</em> and weight <em class="emphasis">y</em>, but not a perfect one. The points appear to be following a line, but not exactly. There is an element of randomness present.</p>
+    <div class="figure large medium-height editable block" id="fwk-shafer-ch10_s01_f02">
+        <p class="title"><span class="title-prefix">Figure 10.2</span> Plot of Height and Weight Pairs</p>
+        <img src="section_14/4c2bb10b324e3867ac83a97c18105190.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s01_p06">In this chapter we will analyze situations in which variables <em class="emphasis">x</em> and <em class="emphasis">y</em> exhibit such a linear relationship with randomness. The level of randomness will vary from situation to situation. In the introductory example connecting an electric current and the level of carbon monoxide in air, the relationship is almost perfect. In other situations, such as the height and weights of individuals, the connection between the two variables involves a high degree of randomness. In the next section we will see how to quantify the strength of the linear relationship between two variables.</p>
+    <div class="key_takeaways block" id="fwk-shafer-ch10_s01_n02">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s01_l01" mark="bullet">
+            <li>Two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> have a deterministic linear relationship if points plotted from <span class="inlineequation" id="shafer-20121106-125753-150675"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0013" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs lie exactly along a single straight line.</li>
+            <li>In practice it is common for two variables to exhibit a relationship that is close to linear but which contains an element, possibly large, of randomness.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s01_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s01_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p01">A line has equation <span class="inlineequation" id="shafer-20121106-125753-150696"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0014" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mn>0.5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>.</mo></math></span></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o01" numeration="loweralpha">
+                        <li>Pick five distinct <em class="emphasis">x</em>-values, use the equation to compute the corresponding <em class="emphasis">y</em>-values, and plot the five points obtained.</li>
+                        <li>Give the value of the slope of the line; give the value of the <em class="emphasis">y</em>-intercept.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p02">A line has equation <span class="inlineequation" id="shafer-20121106-125753-150745"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0017" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mi>x</mi><mtext>−</mtext><mn>0.5</mn><mo>.</mo></math></span></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o03" numeration="loweralpha">
+                        <li>Pick five distinct <em class="emphasis">x</em>-values, use the equation to compute the corresponding <em class="emphasis">y</em>-values, and plot the five points obtained.</li>
+                        <li>Give the value of the slope of the line; give the value of the <em class="emphasis">y</em>-intercept.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p03">A line has equation <span class="inlineequation" id="shafer-20121106-125753-150801"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0020" display="inline"><mi>y</mi><mo>=</mo><mtext>−</mtext><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>.</mo></math></span></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o05" numeration="loweralpha">
+                        <li>Pick five distinct <em class="emphasis">x</em>-values, use the equation to compute the corresponding <em class="emphasis">y</em>-values, and plot the five points obtained.</li>
+                        <li>Give the value of the slope of the line; give the value of the <em class="emphasis">y</em>-intercept.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p04">A line has equation <span class="inlineequation" id="shafer-20121106-125753-150857"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0023" display="inline"><mi>y</mi><mo>=</mo><mtext>−</mtext><mn>1.5</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>.</mo></math></span></p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o07" numeration="loweralpha">
+                        <li>Pick five distinct <em class="emphasis">x</em>-values, use the equation to compute the corresponding <em class="emphasis">y</em>-values, and plot the five points obtained.</li>
+                        <li>Give the value of the slope of the line; give the value of the <em class="emphasis">y</em>-intercept.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p05">Based on the information given about a line, determine how <em class="emphasis">y</em> will change (increase, decrease, or stay the same) when <em class="emphasis">x</em> is increased, and explain. In some cases it might be impossible to tell from the information given.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o09" numeration="loweralpha">
+                        <li>The slope is positive.</li>
+                        <li>The <em class="emphasis">y</em>-intercept is positive.</li>
+                        <li>The slope is zero.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p06">Based on the information given about a line, determine how <em class="emphasis">y</em> will change (increase, decrease, or stay the same) when <em class="emphasis">x</em> is increased, and explain. In some cases it might be impossible to tell from the information given.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o11" numeration="loweralpha">
+                        <li>The <em class="emphasis">y</em>-intercept is negative.</li>
+                        <li>The <em class="emphasis">y</em>-intercept is zero.</li>
+                        <li>The slope is negative.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p07">A data set consists of eight <span class="inlineequation" id="shafer-20121106-125753-150907"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0026" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs of numbers:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-150923"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0027" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>0,12</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>4,16</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>8,22</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>15,28</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>2,15</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>5,14</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>13,24</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>20,30</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o13" numeration="loweralpha">
+                        <li>Plot the data in a scatter diagram.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be deterministic or to involve randomness.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be linear or not linear.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p08">A data set consists of ten <span class="inlineequation" id="shafer-20121106-125753-150939"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0028" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs of numbers:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-150963"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0029" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>3,20</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>6,9</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>11,0</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>14,1</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>18,9</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo>(</mo><mrow><mn>5,13</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>8,4</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>12,0</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>17,6</mn></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mn>20,16</mn></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o15" numeration="loweralpha">
+                        <li>Plot the data in a scatter diagram.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be deterministic or to involve randomness.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be linear or not linear.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p09">A data set consists of nine <span class="inlineequation" id="shafer-20121106-125753-150979"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0030" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs of numbers:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-150996"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0031" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mo stretchy="false">(</mo><mn>8,16</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>10,4</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>12,0</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>14,4</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>16,16</mn><mo stretchy="false">)</mo></mrow></mtd></mtr><mtr><mtd><mrow><mo stretchy="false">(</mo><mn>9,9</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>11,1</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>13,1</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow><mo stretchy="false">(</mo><mn>15,9</mn><mo stretchy="false">)</mo></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o17" numeration="loweralpha">
+                        <li>Plot the data in a scatter diagram.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be deterministic or to involve randomness.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be linear or not linear.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p10">A data set consists of five <span class="inlineequation" id="shafer-20121106-125753-151012"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0032" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pairs of numbers:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151029"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0033" display="block"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">(</mo><mn>2,5</mn><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">(</mo><mn>3,7</mn><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">(</mo><mn>5,11</mn><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">(</mo><mn>8,17</mn><mo stretchy="false">)</mo></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o19" numeration="loweralpha">
+                        <li>Plot the data in a scatter diagram.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be deterministic or to involve randomness.</li>
+                        <li>Based on the plot, explain whether the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> appears to be linear or not linear.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s01_qs01_qd02" start="11">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p11">At 60°F a particular blend of automotive gasoline weights 6.17 lb/gal. The weight <em class="emphasis">y</em> of gasoline on a tank truck that is loaded with <em class="emphasis">x</em> gallons of gasoline is given by the linear equation</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151045"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0034" display="block"><mrow><mi>y</mi><mo class="MathClass-rel">=</mo><mn>6.17</mn><mi>x</mi></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o21" numeration="loweralpha">
+                        <li>Explain whether the relationship between the weight <em class="emphasis">y</em> and the amount <em class="emphasis">x</em> of gasoline is deterministic or contains an element of randomness.</li>
+                        <li>Predict the weight of gasoline on a tank truck that has just been loaded with 6,750 gallons of gasoline.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p12">The rate for renting a motor scooter for one day at a beach resort area is $25 plus 30 cents for each mile the scooter is driven. The total cost <em class="emphasis">y</em> in dollars for renting a scooter and driving it <em class="emphasis">x</em> miles is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151062"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0035" display="block"><mrow><mi>y</mi><mo class="MathClass-rel">=</mo><mn>0.30</mn><mi>x</mi><mo>+</mo><mn>25</mn></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o23" numeration="loweralpha">
+                        <li>Explain whether the relationship between the cost <em class="emphasis">y</em> of renting the scooter for a day and the distance <em class="emphasis">x</em> that the scooter is driven that day is deterministic or contains an element of randomness.</li>
+                        <li>A person intends to rent a scooter one day for a trip to an attraction 17 miles away. Assuming that the total distance the scooter is driven is 34 miles, predict the cost of the rental.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa13">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p13">The pricing schedule for labor on a service call by an elevator repair company is $150 plus $50 per hour on site.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o25" numeration="loweralpha">
+                        <li>Write down the linear equation that relates the labor cost <em class="emphasis">y</em> to the number of hours <em class="emphasis">x</em> that the repairman is on site.</li>
+                        <li>Calculate the labor cost for a service call that lasts 2.5 hours.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa14">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p14">The cost of a telephone call made through a leased line service is 2.5 cents per minute.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o27" numeration="loweralpha">
+                        <li>Write down the linear equation that relates the cost <em class="emphasis">y</em> (in cents) of a call to its length <em class="emphasis">x</em>.</li>
+                        <li>Calculate the cost of a call that lasts 23 minutes.</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s01_qs01_qd03" start="15">
+            <h3 class="title">Large Data Set Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa15">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p15">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students. Plot the scatter diagram with SAT score as the independent variable (<em class="emphasis">x</em>) and GPA as the dependent variable (<em class="emphasis">y</em>). Comment on the appearance and strength of any linear trend.</p>
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p16"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa16">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p18">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs). Plot the scatter diagram with golf score using the original clubs as the independent variable (<em class="emphasis">x</em>) and golf score using the new clubs as the dependent variable (<em class="emphasis">y</em>). Comment on the appearance and strength of any linear trend.</p>
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p19"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa17">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p21">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions. Plot the scatter diagram with the number of bidders at the auction as the independent variable (<em class="emphasis">x</em>) and the sales price as the dependent variable (<em class="emphasis">y</em>). Comment on the appearance and strength of any linear trend.</p>
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p22"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s01_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o02_ans" numeration="loweralpha">
+                        <li>Answers vary.</li>
+                        <li>Slope <span class="inlineequation" id="shafer-20121106-125753-150713_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0015" display="inline"><mi>m</mi><mo class="MathClass-rel">=</mo><mn>0.5</mn></math></span>; <em class="emphasis">y</em>-intercept <span class="inlineequation" id="shafer-20121106-125753-150729_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0016" display="inline"><mi>b</mi><mo class="MathClass-rel">=</mo><mn>2</mn><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o06_ans" numeration="loweralpha">
+                        <li>Answers vary.</li>
+                        <li>Slope <span class="inlineequation" id="shafer-20121106-125753-150818_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0021" display="inline"><mi>m</mi><mo>=</mo><mtext>−</mtext><mn>2</mn></math></span>; <em class="emphasis">y</em>-intercept <span class="inlineequation" id="shafer-20121106-125753-150834_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0022" display="inline"><mi>b</mi><mo class="MathClass-rel">=</mo><mn>4</mn><mo>.</mo></math></span>
+</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o10_ans" numeration="loweralpha">
+                        <li>
+<em class="emphasis">y</em> increases.</li>
+                        <li>Impossible to tell.</li>
+                        <li>
+<em class="emphasis">y</em> does not change.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o14_ans" numeration="loweralpha">
+                        <li>Scatter diagram needed.</li>
+                        <li>Involves randomness.</li>
+                        <li>Linear.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o18_ans" numeration="loweralpha">
+                        <li>Scatter diagram needed.</li>
+                        <li>Deterministic.</li>
+                        <li>Not linear.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa11_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o22_ans" numeration="loweralpha">
+                        <li>Deterministic.</li>
+                        <li>41,647.5 pounds.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa13_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s01_qs01_o26_ans" numeration="loweralpha">
+                        <li><span class="inlineequation" id="shafer-20121106-125753-151078_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0036" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><mn>50</mn><mi>x</mi><mo>+</mo><mn>150</mn><mo>.</mo></math></span></li>
+                        <li>b. $275.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd02_qa14_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="15">
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa15_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p17_ans">There appears to a hint of some positive correlation.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa16_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s01_qs01_qd03_qa17_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s01_qs01_p23_ans">There appears to be clear positive correlation.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s13-05-sample-size-considerations.html"><img src="shared/images/batch-left.png"></a> <a href="s13-05-sample-size-considerations.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-02-the-linear-correlation-coeffic.html">Next Section</a> <a href="s14-02-the-linear-correlation-coeffic.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

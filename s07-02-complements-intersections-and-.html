@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Complements, Intersections, and Unions</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s07-01-sample-spaces-events-and-their.html"><img src="shared/images/batch-left.png"></a> <a href="s07-01-sample-spaces-events-and-their.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-03-conditional-probability-and-in.html">Next Section</a> <a href="s07-03-conditional-probability-and-in.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch03_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">3.2</span> Complements, Intersections, and Unions</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch03_s02_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch03_s02_o01" numeration="arabic">
+            <li>To learn how some events are naturally expressible in terms of other events.</li>
+            <li>To learn how to use special formulas for the probability of an event that is expressed in terms of one or more other events.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch03_s02_p01">Some events can be naturally expressed in terms of other, sometimes simpler, events.</p>
+    <div class="section" id="fwk-shafer-ch03_s02_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Complements</h2>
+        <div class="callout editable block" id="fwk-shafer-ch03_s02_s01_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p01"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">complement of an event</a><span class="glossdef">The event does not occur.</span></span> <em class="emphasis">A</em> <em class="emphasis">in a sample space</em> <em class="emphasis">S</em>, <em class="emphasis">denoted</em> <em class="emphasis">A</em><sup class="superscript">c</sup>, <em class="emphasis">is the collection of all outcomes in</em> <em class="emphasis">S</em> <em class="emphasis">that are not elements of the set</em> <em class="emphasis">A</em>. <em class="emphasis">It corresponds to negating any description in words of the event</em> <em class="emphasis">A</em>.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s01_n02">
+            <h3 class="title">Example 10</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p02">Two events connected with the experiment of rolling a single die are <em class="emphasis">E</em>: “the number rolled is even” and <em class="emphasis">T</em>: “the number rolled is greater than two.” Find the complement of each.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p03">In the sample space <span class="inlineequation" id="shafer-20121106-125753-093988"><math xml:id="fwk-shafer-ch03-m0110" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span> the corresponding sets of outcomes are <span class="inlineequation" id="shafer-20121106-125753-094004"><math xml:id="fwk-shafer-ch03-m0111" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-094021"><math xml:id="fwk-shafer-ch03-m0112" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>3,4,5,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span> The complements are <span class="inlineequation" id="shafer-20121106-125753-094036"><math xml:id="fwk-shafer-ch03-m0113" display="inline"><msup><mrow><mi>E</mi></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,3,5</mn></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-094060"><math xml:id="fwk-shafer-ch03-m0114" display="inline"><msup><mrow><mi>T</mi></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p04">In words the complements are described by “the number rolled is not even” and “the number rolled is not greater than two.” Of course easier descriptions would be “the number rolled is odd” and “the number rolled is less than three.”</p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s01_p05">If there is a 60% chance of rain tomorrow, what is the probability of fair weather? The obvious answer, 40%, is an instance of the following general rule.</p>
+        <div class="callout block" id="fwk-shafer-ch03_s02_s01_n03">
+            <h3 class="title">Probability Rule for Complements</h3>
+            <span class="informalequation" id="shafer-20121106-125753-094076"><math xml:id="fwk-shafer-ch03-m0115" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>A</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s01_p06">This formula is particularly useful when finding the probability of an event directly is difficult.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s01_n04">
+            <h3 class="title">Example 11</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p07">Find the probability that at least one heads will appear in five tosses of a fair coin.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p08">Identify outcomes by lists of five <em class="emphasis">h</em>s and <em class="emphasis">t</em>s, such as <span class="inlineequation" id="shafer-20121106-125753-094100"><math xml:id="fwk-shafer-ch03-m0116" display="inline"><mi>t</mi><mi>t</mi><mi>h</mi><mi>t</mi><mi>t</mi></math></span> and <span class="inlineequation" id="shafer-20121106-125753-094116"><math xml:id="fwk-shafer-ch03-m0117" display="inline"><mi>h</mi><mi>h</mi><mi>t</mi><mi>t</mi><mi>t</mi><mo>.</mo></math></span> Although it is tedious to list them all, it is not difficult to count them. Think of using a tree diagram to do so. There are two choices for the first toss. For each of these there are two choices for the second toss, hence <span class="inlineequation" id="shafer-20121106-125753-094132"><math xml:id="fwk-shafer-ch03-m0118" display="inline"><mn>2</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>4</mn></math></span> outcomes for two tosses. For each of these four outcomes, there are two possibilities for the third toss, hence <span class="inlineequation" id="shafer-20121106-125753-094148"><math xml:id="fwk-shafer-ch03-m0119" display="inline"><mn>4</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>8</mn></math></span> outcomes for three tosses. Similarly, there are <span class="inlineequation" id="shafer-20121106-125753-094164"><math xml:id="fwk-shafer-ch03-m0120" display="inline"><mn>8</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>16</mn></math></span> outcomes for four tosses and finally <span class="inlineequation" id="shafer-20121106-125753-094180"><math xml:id="fwk-shafer-ch03-m0121" display="inline"><mn>16</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>32</mn></math></span> outcomes for five tosses.</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s01_p09">Let <em class="emphasis">O</em> denote the event “at least one heads.” There are many ways to obtain at least one heads, but only one way to fail to do so: all tails. Thus although it is difficult to list all the outcomes that form <em class="emphasis">O</em>, it is easy to write <span class="inlineequation" id="shafer-20121106-125753-094203"><math xml:id="fwk-shafer-ch03-m0122" display="inline"><msup><mrow><mi>O</mi></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mi>t</mi><mi>t</mi><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Since there are 32 equally likely outcomes, each has probability 1/32, so <span class="inlineequation" id="shafer-20121106-125753-094219"><math xml:id="fwk-shafer-ch03-m0123" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>O</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>32</mn></math></span>, hence <span class="inlineequation" id="shafer-20121106-125753-094235"><math xml:id="fwk-shafer-ch03-m0124" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>O</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mn>1</mn><mo>∕</mo><mn>32</mn><mo>≈</mo><mn>0.97</mn></math></span> or about a 97% chance.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch03_s02_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Intersection of Events</h2>
+        <div class="callout editable block" id="fwk-shafer-ch03_s02_s02_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p01"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">intersection of events</a><span class="glossdef">Both events occur.</span></span> <em class="emphasis">A</em> <em class="emphasis">and</em> <em class="emphasis">B</em>, <em class="emphasis">denoted</em> <em class="emphasis">A</em> ∩ <em class="emphasis">B</em>, <em class="emphasis">is the collection of all outcomes that are elements of both of the sets</em> <em class="emphasis">A</em> <em class="emphasis">and</em> <em class="emphasis">B</em>. <em class="emphasis">It corresponds to combining descriptions of the two events using the word “and.”</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s02_p02">To say that the event <em class="emphasis">A</em> ∩ <em class="emphasis">B</em> occurred means that on a particular trial of the experiment both <em class="emphasis">A</em> and <em class="emphasis">B</em> occurred. A visual representation of the intersection of events <em class="emphasis">A</em> and <em class="emphasis">B</em> in a sample space <em class="emphasis">S</em> is given in <a class="xref" href="#fwk-shafer-ch03_s02_s02_f01">Figure 3.4 "The Intersection of Events "</a>. The intersection corresponds to the shaded lens-shaped region that lies within both ovals.</p>
+        <div class="figure small editable block" id="fwk-shafer-ch03_s02_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 3.4</span> The Intersection of Events <em class="emphasis">A</em> and <em class="emphasis">B</em></p>
+            <img src="section_07/c839ee4bf3bb6c5efce796861aee5142.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s02_n02">
+            <h3 class="title">Example 12</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p03">In the experiment of rolling a single die, find the intersection <em class="emphasis">E</em> ∩ <em class="emphasis">T</em> of the events <em class="emphasis">E</em>: “the number rolled is even” and <em class="emphasis">T</em>: “the number rolled is greater than two.”</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p04">The sample space is <span class="inlineequation" id="shafer-20121106-125753-094250"><math xml:id="fwk-shafer-ch03-m0125" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4,5,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Since the outcomes that are common to <span class="inlineequation" id="shafer-20121106-125753-094266"><math xml:id="fwk-shafer-ch03-m0126" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow></math></span> and <span class="inlineequation" id="shafer-20121106-125753-094282"><math xml:id="fwk-shafer-ch03-m0127" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span> are 4 and 6, <span class="inlineequation" id="shafer-20121106-125753-094298"><math xml:id="fwk-shafer-ch03-m0128" display="inline"><mi>E</mi><mo>∩</mo><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>4,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p05">In words the intersection is described by “the number rolled is even and is greater than two.” The only numbers between one and six that are both even and greater than two are four and six, corresponding to <em class="emphasis">E</em> ∩ <em class="emphasis">T</em> given above.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s02_n03">
+            <h3 class="title">Example 13</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p06">A single die is rolled.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s02_o01" numeration="loweralpha">
+                <li>Suppose the die is fair. Find the probability that the number rolled is both even and greater than two.</li>
+                <li>Suppose the die has been “loaded” so that <span class="inlineequation" id="shafer-20121106-125753-094313"><math xml:id="fwk-shafer-ch03-m0129" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>12</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-094330"><math xml:id="fwk-shafer-ch03-m0130" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mo>∕</mo><mn>12</mn></math></span>, and the remaining four outcomes are equally likely with one another. Now find the probability that the number rolled is both even and greater than two.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p07">In both cases the sample space is <span class="inlineequation" id="shafer-20121106-125753-094352"><math xml:id="fwk-shafer-ch03-m0131" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>1,2,3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span> and the event in question is the intersection <span class="inlineequation" id="shafer-20121106-125753-094368"><math xml:id="fwk-shafer-ch03-m0132" display="inline"><mi>E</mi><mo>∩</mo><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>4,6</mn></mrow><mo>}</mo></mrow></math></span> of the previous example.</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s02_o02" numeration="loweralpha">
+                <li>Since the die is fair, all outcomes are equally likely, so by counting we have <span class="inlineequation" id="shafer-20121106-125753-094385"><math xml:id="fwk-shafer-ch03-m0133" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi><mo>∩</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>∕</mo><mn>6</mn><mo>.</mo></math></span>
+</li>
+                <li>
+                    <p class="para">The information on the probabilities of the six outcomes that we have so far is</p>
+                    <span class="informalequation" id="shafer-20121106-125753-094401"><math xml:id="fwk-shafer-ch03-m0134" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd columnalign="left"><mrow><mtext>Outcome</mtext></mrow></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="left"><mrow><mtext>Probablity</mtext></mrow></mtd><mtd columnalign="center"><mrow><mfrac><mn>1</mn><mrow><mn>12</mn></mrow></mfrac></mrow></mtd><mtd columnalign="center"><mi>p</mi></mtd><mtd columnalign="center"><mi>p</mi></mtd><mtd columnalign="center"><mi>p</mi></mtd><mtd columnalign="center"><mi>p</mi></mtd><mtd columnalign="center"><mrow><mfrac><mn>3</mn><mrow><mn>12</mn></mrow></mfrac></mrow></mtd></mtr></mtable></mrow></math></span>
+                </li>
+            </ol>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p08">Since <span class="inlineequation" id="shafer-20121106-125753-094417"><math xml:id="fwk-shafer-ch03-m0135" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mo>∕</mo><mn>12</mn><mo>=</mo><mn>1</mn><mo>∕</mo><mn>3</mn></math></span> and the probabilities of all six outcomes add up to 1,</p>
+            <span class="informalequation" id="shafer-20121106-125753-094433"><math xml:id="fwk-shafer-ch03-m0136" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mn>2</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>3</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>3</mn></mrow></mfrac></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p09">Thus <span class="inlineequation" id="shafer-20121106-125753-094449"><math xml:id="fwk-shafer-ch03-m0137" display="inline"><mn>4</mn><mi>p</mi><mo>=</mo><mn>2</mn><mo>∕</mo><mn>3</mn></math></span>, so <span class="inlineequation" id="shafer-20121106-125753-094471"><math xml:id="fwk-shafer-ch03-m0138" display="inline"><mi>p</mi><mo>=</mo><mn>1</mn><mo>∕</mo><mn>6</mn><mo>.</mo></math></span> In particular <span class="inlineequation" id="shafer-20121106-125753-094487"><math xml:id="fwk-shafer-ch03-m0139" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>6</mn><mo>.</mo></math></span> Therefore</p>
+            <span class="informalequation" id="shafer-20121106-125753-094503"><math xml:id="fwk-shafer-ch03-m0140" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi><mo>∩</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>4</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>6</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>12</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>5</mn></mrow><mrow><mn>12</mn></mrow></mfrac></mrow></math></span>
+        </div>
+        <div class="callout editable block" id="fwk-shafer-ch03_s02_s02_n04">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p10"><em class="emphasis">Events</em> <em class="emphasis">A</em> <em class="emphasis">and</em> <em class="emphasis">B</em> <em class="emphasis">are</em> <span class="margin_term"><a class="glossterm">mutually exclusive</a><span class="glossdef">Events that cannot both occur at once.</span></span> <em class="emphasis">if they have no elements in common.</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s02_p11">For <em class="emphasis">A</em> and <em class="emphasis">B</em> to have no outcomes in common means precisely that it is impossible for both <em class="emphasis">A</em> and <em class="emphasis">B</em> to occur on a single trial of the random experiment. This gives the following rule.</p>
+        <div class="callout block" id="fwk-shafer-ch03_s02_s02_n05">
+            <h3 class="title">Probability Rule for Mutually Exclusive Events</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p12">Events <em class="emphasis">A</em> and <em class="emphasis">B</em> are mutually exclusive if and only if</p>
+            <span class="informalequation" id="shafer-20121106-125753-094519"><math xml:id="fwk-shafer-ch03-m0141" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s02_p13">Any event <em class="emphasis">A</em> and its complement <em class="emphasis">A</em><sup class="superscript">c</sup> are mutually exclusive, but <em class="emphasis">A</em> and <em class="emphasis">B</em> can be mutually exclusive without being complements.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s02_n06">
+            <h3 class="title">Example 14</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p14">In the experiment of rolling a single die, find three choices for an event <em class="emphasis">A</em> so that the events <em class="emphasis">A</em> and <em class="emphasis">E</em>: “the number rolled is even” are mutually exclusive.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s02_p15">Since <span class="inlineequation" id="shafer-20121106-125753-094535"><math xml:id="fwk-shafer-ch03-m0142" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow></math></span> and we want <em class="emphasis">A</em> to have no elements in common with <em class="emphasis">E</em>, any event that does not contain any even number will do. Three choices are {1,3,5} (the complement <em class="emphasis">E</em><sup class="superscript">c</sup>, the odds), {1,3}, and {5}.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch03_s02_s03" version="5.0" lang="en">
+        <h2 class="title editable block">Union of Events</h2>
+        <div class="callout editable block" id="fwk-shafer-ch03_s02_s03_n01">
+            <h3 class="title">Definition</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p01"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">union of events</a><span class="glossdef">One or the other event occurs.</span></span> <em class="emphasis">A</em> <em class="emphasis">and</em> <em class="emphasis">B</em>, <em class="emphasis">denoted</em> <em class="emphasis">A</em> ∪ <em class="emphasis">B</em>, <em class="emphasis">is the collection of all outcomes that are elements of one or the other of the sets</em> <em class="emphasis">A</em> <em class="emphasis">and</em> <em class="emphasis">B</em>, <em class="emphasis">or of both of them. It corresponds to combining descriptions of the two events using the word “or.”</em></p>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s03_p02">To say that the event <em class="emphasis">A</em> ∪ <em class="emphasis">B</em> occurred means that on a particular trial of the experiment either <em class="emphasis">A</em> or <em class="emphasis">B</em> occurred (or both did). A visual representation of the union of events <em class="emphasis">A</em> and <em class="emphasis">B</em> in a sample space <em class="emphasis">S</em> is given in <a class="xref" href="#fwk-shafer-ch03_s02_s03_f01">Figure 3.5 "The Union of Events "</a>. The union corresponds to the shaded region.</p>
+        <div class="figure small editable block" id="fwk-shafer-ch03_s02_s03_f01">
+            <p class="title"><span class="title-prefix">Figure 3.5</span> The Union of Events <em class="emphasis">A</em> and <em class="emphasis">B</em></p>
+            <img src="section_07/2b9ac417d3f9501644f5bcc1cfdd8ebb.jpg">
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s03_n02">
+            <h3 class="title">Example 15</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p03">In the experiment of rolling a single die, find the union of the events <em class="emphasis">E</em>: “the number rolled is even” and <em class="emphasis">T</em>: “the number rolled is greater than two.”</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p04">Since the outcomes that are in either <span class="inlineequation" id="shafer-20121106-125753-094551"><math xml:id="fwk-shafer-ch03-m0143" display="inline"><mi>E</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,4,6</mn></mrow><mo>}</mo></mrow></math></span> or <span class="inlineequation" id="shafer-20121106-125753-094568"><math xml:id="fwk-shafer-ch03-m0144" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>3,4,5,6</mn></mrow><mo>}</mo></mrow></math></span> (or both) are 2, 3, 4, 5, and 6, <span class="inlineequation" id="shafer-20121106-125753-094584"><math xml:id="fwk-shafer-ch03-m0145" display="inline"><mi>E</mi><mo>∪</mo><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mn>2,3,4,5,6</mn></mrow><mo>}</mo></mrow><mo>.</mo></math></span> Note that an outcome such as 4 that is in both sets is still listed only once (although strictly speaking it is not incorrect to list it twice).</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p05">In words the union is described by “the number rolled is even or is greater than two.” Every number between one and six except the number one is either even or is greater than two, corresponding to <em class="emphasis">E</em> ∪ <em class="emphasis">T</em> given above.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s03_n03">
+            <h3 class="title">Example 16</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p06">A two-child family is selected at random. Let <em class="emphasis">B</em> denote the event that at least one child is a boy, let <em class="emphasis">D</em> denote the event that the genders of the two children differ, and let <em class="emphasis">M</em> denote the event that the genders of the two children match. Find <em class="emphasis">B</em> ∪ <em class="emphasis">D</em> and <span class="inlineequation" id="shafer-20121106-125753-094600"><math xml:id="fwk-shafer-ch03-m0146" display="inline"><mi>B</mi><mo>∪</mo><mi>M</mi><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p07">A sample space for this experiment is <span class="inlineequation" id="shafer-20121106-125753-094624"><math xml:id="fwk-shafer-ch03-m0147" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span>, where the first letter denotes the gender of the firstborn child and the second letter denotes the gender of the second child. The events <em class="emphasis">B</em>, <em class="emphasis">D</em>, and <em class="emphasis">M</em> are</p>
+            <span class="informalequation" id="shafer-20121106-125753-094639"><math xml:id="fwk-shafer-ch03-m0148" display="block"><mrow><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow><mtext> </mtext><mi>D</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow><mtext> </mtext><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p08">Each outcome in <em class="emphasis">D</em> is already in <em class="emphasis">B</em>, so the outcomes that are in at least one or the other of the sets <em class="emphasis">B</em> and <em class="emphasis">D</em> is just the set <em class="emphasis">B</em> itself: <span class="inlineequation" id="shafer-20121106-125753-094656"><math xml:id="fwk-shafer-ch03-m0149" display="inline"><mi>B</mi><mo>∪</mo><mi>D</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow><mo>=</mo><mi>B</mi><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p09">Every outcome in the whole sample space <em class="emphasis">S</em> is in at least one or the other of the sets <em class="emphasis">B</em> and <em class="emphasis">M</em>, so <span class="inlineequation" id="shafer-20121106-125753-094672"><math xml:id="fwk-shafer-ch03-m0150" display="inline"><mi>B</mi><mo>∪</mo><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow><mo>=</mo><mi>S</mi><mo>.</mo></math></span></p>
+        </div>
+        <p class="para block" id="fwk-shafer-ch03_s02_s03_p10">The following <strong class="emphasis bold">Additive Rule of Probability</strong> is a useful formula for calculating the probability of <span class="inlineequation" id="shafer-20121106-125753-094688"><math xml:id="fwk-shafer-ch03-m0151" display="inline"><mi>A</mi><mo>∪</mo><mi>B</mi><mo>.</mo></math></span></p>
+        <div class="callout block" id="fwk-shafer-ch03_s02_s03_n04">
+            <h3 class="title">Additive Rule of Probability</h3>
+            <span class="informalequation" id="shafer-20121106-125753-094704"><math xml:id="fwk-shafer-ch03-m0152" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch03_s02_s03_p11">The next example, in which we compute the probability of a union both by counting and by using the formula, shows why the last term in the formula is needed.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s03_n05">
+            <h3 class="title">Example 17</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p12">Two fair dice are thrown. Find the probabilities of the following events:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s03_o01" numeration="loweralpha">
+                <li>both dice show a four</li>
+                <li>at least one die shows a four</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p13">As was the case with tossing two identical coins, actual experience dictates that for the sample space to have equally likely outcomes we should list outcomes as if we could distinguish the two dice. We could imagine that one of them is red and the other is green. Then any outcome can be labeled as a pair of numbers as in the following display, where the first number in the pair is the number of dots on the top face of the green die and the second number in the pair is the number of dots on the top face of the red die.</p>
+            <span class="informalequation" id="shafer-20121106-125753-094721"><math xml:id="fwk-shafer-ch03-m0153" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mn>11</mn></mrow></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>21</mn></mrow></mtd><mtd><mrow><mn>22</mn></mrow></mtd><mtd><mrow><mn>23</mn></mrow></mtd><mtd><mrow><mn>24</mn></mrow></mtd><mtd><mrow><mn>25</mn></mrow></mtd><mtd><mrow><mn>26</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>31</mn></mrow></mtd><mtd><mrow><mn>32</mn></mrow></mtd><mtd><mrow><mn>33</mn></mrow></mtd><mtd><mrow><mn>34</mn></mrow></mtd><mtd><mrow><mn>35</mn></mrow></mtd><mtd><mrow><mn>36</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>41</mn></mrow></mtd><mtd><mrow><mn>42</mn></mrow></mtd><mtd><mrow><mn>43</mn></mrow></mtd><mtd><mrow><mn>44</mn></mrow></mtd><mtd><mrow><mn>45</mn></mrow></mtd><mtd><mrow><mn>46</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>51</mn></mrow></mtd><mtd><mrow><mn>52</mn></mrow></mtd><mtd><mrow><mn>53</mn></mrow></mtd><mtd><mrow><mn>54</mn></mrow></mtd><mtd><mrow><mn>55</mn></mrow></mtd><mtd><mrow><mn>56</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>61</mn></mrow></mtd><mtd><mrow><mn>62</mn></mrow></mtd><mtd><mrow><mn>63</mn></mrow></mtd><mtd><mrow><mn>64</mn></mrow></mtd><mtd><mrow><mn>65</mn></mrow></mtd><mtd><mrow><mn>66</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s03_o02" numeration="loweralpha">
+                <li>There are 36 equally likely outcomes, of which exactly one corresponds to two fours, so the probability of a pair of fours is 1/36.</li>
+                <li>
+                    <p class="para">From the table we can see that there are 11 pairs that correspond to the event in question: the six pairs in the fourth row (the green die shows a four) plus the additional five pairs other than the pair 44, already counted, in the fourth column (the red die is four), so the answer is 11/36. To see how the formula gives the same number, let <em class="emphasis">A<sub class="subscript">G</sub></em> denote the event that the green die is a four and let <em class="emphasis">A<sub class="subscript">R</sub></em> denote the event that the red die is a four. Then clearly by counting we get <span class="inlineequation" id="shafer-20121106-125753-094737"><math xml:id="fwk-shafer-ch03-m0154" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>G</mi></mrow></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn><mo>∕</mo><mn>36</mn></math></span> and <span class="inlineequation" id="shafer-20121106-125753-094760"><math xml:id="fwk-shafer-ch03-m0155" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>R</mi></mrow></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn><mo>∕</mo><mn>36</mn><mo>.</mo></math></span> Since <span class="inlineequation" id="shafer-20121106-125753-094776"><math xml:id="fwk-shafer-ch03-m0156" display="inline"><msub><mrow><mi>A</mi></mrow><mrow><mi>G</mi></mrow></msub><mo>∩</mo><msub><mrow><mi>A</mi></mrow><mrow><mi>R</mi></mrow></msub><mo>=</mo><mrow><mo>{</mo><mrow><mn>44</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-094792"><math xml:id="fwk-shafer-ch03-m0157" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>G</mi></mrow></msub><mo>∩</mo><msub><mrow><mi>A</mi></mrow><mrow><mi>R</mi></mrow></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>36</mn></math></span>; this is the computation in part (a), of course. Thus by the Additive Rule of Probability,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-094808"><math xml:id="fwk-shafer-ch03-m0158" display="block"><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>G</mi></msub><mo>∪</mo><msub><mi>A</mi><mi>R</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>G</mi></msub><mo stretchy="false">)</mo><mo>+</mo><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>R</mi></msub><mo stretchy="false">)</mo><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>G</mi></msub><mo>−</mo><msub><mi>A</mi><mi>R</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>6</mn><mrow><mn>36</mn></mrow></mfrac><mo>+</mo><mfrac><mn>6</mn><mrow><mn>36</mn></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mrow><mn>36</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>11</mn></mrow><mrow><mn>36</mn></mrow></mfrac></mrow></math></span>
+                </li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s03_n06">
+            <h3 class="title">Example 18</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p14">A tutoring service specializes in preparing adults for high school equivalence tests. Among all the students seeking help from the service, 63% need help in mathematics, 34% need help in English, and 27% need help in both mathematics and English. What is the percentage of students who need help in either mathematics or English?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p15">Imagine selecting a student at random, that is, in such a way that every student has the same chance of being selected. Let <em class="emphasis">M</em> denote the event “the student needs help in mathematics” and let <em class="emphasis">E</em> denote the event “the student needs help in English.” The information given is that <span class="inlineequation" id="shafer-20121106-125753-094824"><math xml:id="fwk-shafer-ch03-m0159" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.63</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-094840"><math xml:id="fwk-shafer-ch03-m0160" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.34</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-094856"><math xml:id="fwk-shafer-ch03-m0161" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.27</mn><mo>.</mo></math></span> The Additive Rule of Probability gives</p>
+            <span class="informalequation" id="shafer-20121106-125753-094872"><math xml:id="fwk-shafer-ch03-m0162" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∪</mo><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.63</mn><mo>+</mo><mn>0.34</mn><mo>−</mo><mn>0.27</mn><mo>=</mo><mn>0.70</mn></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch03_s02_s03_p16">Note how the naïve reasoning that if 63% need help in mathematics and 34% need help in English then 63 plus 34 or 97% need help in one or the other gives a number that is too large. The percentage that need help in both subjects must be subtracted off, else the people needing help in both are counted twice, once for needing help in mathematics and once again for needing help in English. The simple sum of the probabilities would work if the events in question were mutually exclusive, for then <span class="inlineequation" id="shafer-20121106-125753-094887"><math xml:id="fwk-shafer-ch03-m0163" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow></math></span> is zero, and makes no difference.</p>
+        <div class="exercises block" id="fwk-shafer-ch03_s02_s03_n07">
+            <h3 class="title">Example 19</h3>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p17">Volunteers for a disaster relief effort were classified according to both specialty (<em class="emphasis">C</em>: construction, <em class="emphasis">E</em>: education, <em class="emphasis">M</em>: medicine) and language ability (<em class="emphasis">S</em>: speaks a single language fluently, <em class="emphasis">T</em>: speaks two or more languages fluently). The results are shown in the following <em class="emphasis">two-way classification</em> <em class="emphasis">table</em>:</p>
+            <div class="informaltable">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" align="left">Specialty</th>
+                            <th colspan="2" align="center">Language Ability</th>
+                        </tr>
+                        <tr>
+                            <th align="center"><em class="emphasis">S</em></th>
+                            <th align="center"><em class="emphasis">T</em></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><em class="emphasis">C</em></td>
+                            <td align="center">12</td>
+                            <td align="center">1</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><em class="emphasis">E</em></td>
+                            <td align="center">4</td>
+                            <td align="center">3</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><em class="emphasis">M</em></td>
+                            <td align="center">6</td>
+                            <td align="center">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p18">The first row of numbers means that 12 volunteers whose specialty is construction speak a single language fluently, and 1 volunteer whose specialty is construction speaks at least two languages fluently. Similarly for the other two rows.</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p19">A volunteer is selected at random, meaning that each one has an equal chance of being chosen. Find the probability that:</p>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s03_o03" numeration="loweralpha">
+                <li>his specialty is medicine and he speaks two or more languages;</li>
+                <li>either his specialty is medicine or he speaks two or more languages;</li>
+                <li>his specialty is something other than medicine.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch03_s02_s03_p20">When information is presented in a two-way classification table it is typically convenient to adjoin to the table the row and column totals, to produce a new table like this:</p>
+            <div class="informaltable">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" align="left">Specialty</th>
+                            <th colspan="2" align="center">Language Ability</th>
+                            <th rowspan="2" align="center">Total</th>
+                        </tr>
+                        <tr>
+                            <th align="center"><em class="emphasis">S</em></th>
+                            <th align="center"><em class="emphasis">T</em></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><em class="emphasis">C</em></td>
+                            <td align="center">12</td>
+                            <td align="center">1</td>
+                            <td align="center">13</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><em class="emphasis">E</em></td>
+                            <td align="center">4</td>
+                            <td align="center">3</td>
+                            <td align="center">7</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><em class="emphasis">M</em></td>
+                            <td align="center">6</td>
+                            <td align="center">2</td>
+                            <td align="center">8</td>
+                        </tr>
+                        <tr>
+                            <td align="left">Total</td>
+                            <td align="center">22</td>
+                            <td align="center">6</td>
+                            <td align="center">28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ol class="orderedlist" id="fwk-shafer-ch03_s02_s03_o04" numeration="loweralpha">
+                <li>The probability sought is <span class="inlineequation" id="shafer-20121106-125753-094910"><math xml:id="fwk-shafer-ch03-m0164" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> The table shows that there are 2 such people, out of 28 in all, hence <span class="inlineequation" id="shafer-20121106-125753-094926"><math xml:id="fwk-shafer-ch03-m0165" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>∕</mo><mn>28</mn><mo>≈</mo><mn>0.07</mn></math></span> or about a 7% chance.</li>
+                <li>
+                    <p class="para">The probability sought is <span class="inlineequation" id="shafer-20121106-125753-094942"><math xml:id="fwk-shafer-ch03-m0166" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∪</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span> The third row total and the grand total in the sample give <span class="inlineequation" id="shafer-20121106-125753-094958"><math xml:id="fwk-shafer-ch03-m0167" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>8</mn><mo>∕</mo><mn>28</mn><mo>.</mo></math></span> The second column total and the grand total give <span class="inlineequation" id="shafer-20121106-125753-094974"><math xml:id="fwk-shafer-ch03-m0168" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn><mo>∕</mo><mn>28</mn><mo>.</mo></math></span> Thus using the result from part (a),</p>
+                    <span class="informalequation" id="shafer-20121106-125753-094990"><math xml:id="fwk-shafer-ch03-m0169" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∪</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>T</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>T</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>8</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>6</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>12</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>≈</mo><mn>0.43</mn></mrow></math></span>
+                    <p class="para">or about a 43% chance.</p>
+                </li>
+                <li>
+                    <p class="para">This probability can be computed in two ways. Since the event of interest can be viewed as the event <em class="emphasis">C</em> ∪ <em class="emphasis">E</em> and the events <em class="emphasis">C</em> and <em class="emphasis">E</em> are mutually exclusive, the answer is, using the first two row totals,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-095006"><math xml:id="fwk-shafer-ch03-m0170" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mi>C</mi><mo>∪</mo><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>C</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>E</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>C</mi><mo>∩</mo><mi>E</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>13</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>7</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>0</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>20</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>≈</mo><mn>0.71</mn></mrow></math></span>
+                    <p class="para">On the other hand, the event of interest can be thought of as the complement <em class="emphasis">M</em><sup class="superscript">c</sup> of <em class="emphasis">M</em>, hence using the value of <span class="inlineequation" id="shafer-20121106-125753-095022"><math xml:id="fwk-shafer-ch03-m0171" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow></math></span> computed in part (b),</p>
+                    <span class="informalequation" id="shafer-20121106-125753-095038"><math xml:id="fwk-shafer-ch03-m0172" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>M</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mn>8</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>20</mn></mrow><mrow><mn>28</mn></mrow></mfrac><mo>≈</mo><mn>0.71</mn></mrow></math></span>
+                    <p class="para">as before.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch03_s02_s03_n08">
+            <h3 class="title">Key Takeaway</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch03_s02_s03_l01" mark="bullet">
+                <li>The probability of an event that is a complement or union of events of known probability can be computed using formulas.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch03_s02_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s02_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p01">For the sample space <span class="inlineequation" id="shafer-20121106-125753-095060"><math xml:id="fwk-shafer-ch03-m0173" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi></mrow><mo>}</mo></mrow></math></span> identify the complement of each event given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o01" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095076"><math xml:id="fwk-shafer-ch03-m0174" display="inline"><mi>A</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>a</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095093"><math xml:id="fwk-shafer-ch03-m0175" display="inline"><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo>,</mo><mi>e</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><em class="emphasis">S</em></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p02">For the sample space <span class="inlineequation" id="shafer-20121106-125753-095142"><math xml:id="fwk-shafer-ch03-m0178" display="inline"><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>r</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo>,</mo><mi>u</mi><mo>,</mo><mi>v</mi></mrow><mo>}</mo></mrow></math></span> identify the complement of each event given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o03" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095158"><math xml:id="fwk-shafer-ch03-m0179" display="inline"><mi>R</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>t</mi><mo>,</mo><mi>u</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095174"><math xml:id="fwk-shafer-ch03-m0180" display="inline"><mi>T</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>r</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li>∅ (the “empty” set that has no elements)</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p03">The sample space for three tosses of a coin is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-095229"><math xml:id="fwk-shafer-ch03-m0183" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p04">Define events</p>
+                        <span class="informalequation" id="shafer-20121106-125753-095245"><math xml:id="fwk-shafer-ch03-m0184" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>H</mi><mo>:</mo><mtext mathvariant="normal">at least one head is observed</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>M</mi><mo>:</mo><mtext mathvariant="normal">more heads than tails are observed</mtext></mtd></mtr></mtable></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o05" numeration="loweralpha">
+                            <li>List the outcomes that comprise <em class="emphasis">H</em> and <em class="emphasis">M</em>.</li>
+                            <li>List the outcomes that comprise <em class="emphasis">H</em> ∩ <em class="emphasis">M</em>, <em class="emphasis">H</em> ∪ <em class="emphasis">M</em>, and <em class="emphasis">H</em><sup class="superscript">c</sup>.</li>
+                            <li>Assuming all outcomes are equally likely, find <span class="inlineequation" id="shafer-20121106-125753-095261"><math xml:id="fwk-shafer-ch03-m0185" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>H</mi><mo>∩</mo><mi>M</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095277"><math xml:id="fwk-shafer-ch03-m0186" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>H</mi><mo>∪</mo><mi>M</mi></mrow><mo>)</mo></mrow></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-095293"><math xml:id="fwk-shafer-ch03-m0187" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>H</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Determine whether or not <em class="emphasis">H</em><sup class="superscript">c</sup> and <em class="emphasis">M</em> are mutually exclusive. Explain why or why not.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p05">For the experiment of rolling a single six-sided die once, define events</p>
+                        <span class="informalequation" id="shafer-20121106-125753-095444"><math xml:id="fwk-shafer-ch03-m0196" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>T</mi><mo>:</mo><mtext mathvariant="normal">the number rolled is three</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>G</mi><mo>:</mo><mtext mathvariant="normal">the number rolled is four or greater</mtext></mtd></mtr></mtable></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o07" numeration="loweralpha">
+                            <li>List the outcomes that comprise <em class="emphasis">T</em> and <em class="emphasis">G</em>.</li>
+                            <li>List the outcomes that comprise <em class="emphasis">T</em> ∩ <em class="emphasis">G</em>, <em class="emphasis">T</em> ∪ <em class="emphasis">G</em>, <em class="emphasis">T</em><sup class="superscript">c</sup>, and <span class="inlineequation" id="shafer-20121106-125753-095460"><math xml:id="fwk-shafer-ch03-m0197" display="inline"><msup><mrow><mrow><mo>(</mo><mrow><mi>T</mi><mo>∪</mo><mi>G</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>c</mi></mrow></msup><mo>.</mo></math></span>
+</li>
+                            <li>Assuming all outcomes are equally likely, find <span class="inlineequation" id="shafer-20121106-125753-095476"><math xml:id="fwk-shafer-ch03-m0198" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>T</mi><mo>∩</mo><mi>G</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095498"><math xml:id="fwk-shafer-ch03-m0199" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>T</mi><mo>∪</mo><mi>G</mi></mrow><mo>)</mo></mrow></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-095514"><math xml:id="fwk-shafer-ch03-m0200" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>T</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>Determine whether or not <em class="emphasis">T</em> and <em class="emphasis">G</em> are mutually exclusive. Explain why or why not.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p06">A special deck of 16 cards has 4 that are blue, 4 yellow, 4 green, and 4 red. The four cards of each color are numbered from one to four. A single card is drawn at random. Define events</p>
+                        <span class="informalequation" id="shafer-20121106-125753-095681"><math xml:id="fwk-shafer-ch03-m0210" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>B</mi><mo>:</mo><mtext mathvariant="normal">the card is blue</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>R</mi><mo>:</mo><mtext mathvariant="normal">the card is red</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>N</mi><mo>:</mo><mtext mathvariant="normal">the number on the card is at most two</mtext></mtd></mtr></mtable></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o09" numeration="loweralpha">
+                            <li>List the outcomes that comprise <em class="emphasis">B</em>, <em class="emphasis">R</em>, and <em class="emphasis">N</em>.</li>
+                            <li>List the outcomes that comprise <em class="emphasis">B</em> ∩ <em class="emphasis">R</em>, <em class="emphasis">B</em> ∪ <em class="emphasis">R</em>, <em class="emphasis">B</em> ∩ <em class="emphasis">N</em>, <em class="emphasis">R</em> ∪ <em class="emphasis">N</em>, <em class="emphasis">B</em><sup class="superscript">c</sup>, and <span class="inlineequation" id="shafer-20121106-125753-095698"><math xml:id="fwk-shafer-ch03-m0211" display="inline"><msup><mrow><mrow><mo>(</mo><mrow><mi>B</mi><mo>∪</mo><mi>R</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>c</mi></mrow></msup><mo>.</mo></math></span>
+</li>
+                            <li>Assuming all outcomes are equally likely, find the probabilities of the events in the previous part.</li>
+                            <li>Determine whether or not <em class="emphasis">B</em> and <em class="emphasis">N</em> are mutually exclusive. Explain why or why not.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p07">In the context of the previous problem, define events</p>
+                        <span class="informalequation" id="shafer-20121106-125753-095969"><math xml:id="fwk-shafer-ch03-m0227" display="block"><mtable columnspacing="0.5em"><mtr><mtd columnalign="left"><mi>Y</mi><mo>:</mo><mtext mathvariant="normal">the card is yellow</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>I</mi><mo>:</mo><mtext mathvariant="normal">the number on the card is not a one</mtext></mtd></mtr><mtr><mtd columnalign="left"><mi>J</mi><mo>:</mo><mtext mathvariant="normal">the number on the card is a two or a four</mtext></mtd></mtr></mtable></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o11" numeration="loweralpha">
+                            <li>List the outcomes that comprise <em class="emphasis">Y</em>, <em class="emphasis">I</em>, and <em class="emphasis">J</em>.</li>
+                            <li>List the outcomes that comprise <em class="emphasis">Y</em> ∩ <em class="emphasis">I</em>, <em class="emphasis">Y</em> ∪ <em class="emphasis">J</em>, <em class="emphasis">I</em> ∩ <em class="emphasis">J</em>, <em class="emphasis">I</em><sup class="superscript">c</sup>, and <span class="inlineequation" id="shafer-20121106-125753-095985"><math xml:id="fwk-shafer-ch03-m0228" display="inline"><msup><mrow><mrow><mo>(</mo><mrow><mi>Y</mi><mo>∪</mo><mi>J</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>c</mi></mrow></msup><mo>.</mo></math></span>
+</li>
+                            <li>Assuming all outcomes are equally likely, find the probabilities of the events in the previous part.</li>
+                            <li>Determine whether or not <em class="emphasis">I</em><sup class="superscript">c</sup> and <em class="emphasis">J</em> are mutually exclusive. Explain why or why not.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p08">The Venn diagram provided shows a sample space and two events <em class="emphasis">A</em> and <em class="emphasis">B</em>. Suppose <span class="inlineequation" id="shafer-20121106-125753-096224"><math xml:id="fwk-shafer-ch03-m0242" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.13</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096240"><math xml:id="fwk-shafer-ch03-m0243" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.09</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096256"><math xml:id="fwk-shafer-ch03-m0244" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>c</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.27</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096273"><math xml:id="fwk-shafer-ch03-m0245" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.20</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-096288"><math xml:id="fwk-shafer-ch03-m0246" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>e</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.31</mn><mo>.</mo></math></span> Confirm that the probabilities of the outcomes add up to 1, then compute the following probabilities.</p>
+                        <div class="informalfigure medium" id="fwk-shafer-ch03_s02_qs01_fx02">
+                            <img src="section_07/3ba777e453d1118c377ee69b788d0a74.jpg">
+                        </div>
+                        <p class="para"> </p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o13" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096304"><math xml:id="fwk-shafer-ch03-m0247" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096321"><math xml:id="fwk-shafer-ch03-m0248" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096343"><math xml:id="fwk-shafer-ch03-m0249" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>A</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow></math></span> two ways: (i) by finding the outcomes in <em class="emphasis">A</em><sup class="superscript">c</sup> and adding their probabilities, and (ii) using the Probability Rule for Complements.</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096359"><math xml:id="fwk-shafer-ch03-m0250" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096375"><math xml:id="fwk-shafer-ch03-m0251" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo>)</mo></mrow></math></span> two ways: (i) by finding the outcomes in <em class="emphasis">A</em> ∪ <em class="emphasis">B</em> and adding their probabilities, and (ii) using the Additive Rule of Probability.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p09">The Venn diagram provided shows a sample space and two events <em class="emphasis">A</em> and <em class="emphasis">B</em>. Suppose <span class="inlineequation" id="shafer-20121106-125753-096392"><math xml:id="fwk-shafer-ch03-m0252" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>a</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.32</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096414"><math xml:id="fwk-shafer-ch03-m0253" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>b</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.17</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096430"><math xml:id="fwk-shafer-ch03-m0254" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>c</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.28</mn></math></span>, and <span class="inlineequation" id="shafer-20121106-125753-096446"><math xml:id="fwk-shafer-ch03-m0255" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>d</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.23</mn><mo>.</mo></math></span> Confirm that the probabilities of the outcomes add up to 1, then compute the following probabilities.</p>
+                        <div class="informalfigure medium" id="fwk-shafer-ch03_s02_qs01_fx01">
+                            <img src="section_07/cd8dc002db8c5f132bed316a3634ec00.jpg">
+                        </div>
+                        <p class="para"> </p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o15" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096462"><math xml:id="fwk-shafer-ch03-m0256" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096477"><math xml:id="fwk-shafer-ch03-m0257" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096500"><math xml:id="fwk-shafer-ch03-m0258" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>A</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow></math></span> two ways: (i) by finding the outcomes in <em class="emphasis">A</em><sup class="superscript">c</sup> and adding their probabilities, and (ii) using the Probability Rule for Complements.</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096517"><math xml:id="fwk-shafer-ch03-m0259" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096533"><math xml:id="fwk-shafer-ch03-m0260" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><mo>)</mo></mrow></math></span> two ways: (i) by finding the outcomes in <em class="emphasis">A</em> ∪ <em class="emphasis">B</em> and adding their probabilities, and (ii) using the Additive Rule of Probability.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p10">Confirm that the probabilities in the two-way contingency table add up to 1, then use it to find the probabilities of the events indicated.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left"></th>
+                                        <th align="center"><em class="emphasis">U</em></th>
+                                        <th align="center"><em class="emphasis">V</em></th>
+                                        <th align="center"><em class="emphasis">W</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">A</em></td>
+                                        <td align="center">0.15</td>
+                                        <td align="center">0.00</td>
+                                        <td align="center">0.23</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">B</em></td>
+                                        <td align="center">0.22</td>
+                                        <td align="center">0.30</td>
+                                        <td align="center">0.10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o17" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096549"><math xml:id="fwk-shafer-ch03-m0261" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096567"><math xml:id="fwk-shafer-ch03-m0262" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096583"><math xml:id="fwk-shafer-ch03-m0263" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096599"><math xml:id="fwk-shafer-ch03-m0264" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096615"><math xml:id="fwk-shafer-ch03-m0265" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>W</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096631"><math xml:id="fwk-shafer-ch03-m0266" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi><mo>∩</mo><mi>W</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096653"><math xml:id="fwk-shafer-ch03-m0267" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi><mo>∪</mo><mi>W</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096669"><math xml:id="fwk-shafer-ch03-m0268" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>V</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>Determine whether or not the events <em class="emphasis">A</em> and <em class="emphasis">U</em> are mutually exclusive; the events <em class="emphasis">A</em> and <em class="emphasis">V</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p11">Confirm that the probabilities in the two-way contingency table add up to 1, then use it to find the probabilities of the events indicated.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left"></th>
+                                        <th align="center"><em class="emphasis">R</em></th>
+                                        <th align="center"><em class="emphasis">S</em></th>
+                                        <th align="center"><em class="emphasis">T</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">M</em></td>
+                                        <td align="center">0.09</td>
+                                        <td align="center">0.25</td>
+                                        <td align="center">0.19</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">N</em></td>
+                                        <td align="center">0.31</td>
+                                        <td align="center">0.16</td>
+                                        <td align="center">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o19" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096818"><math xml:id="fwk-shafer-ch03-m0277" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>R</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096835"><math xml:id="fwk-shafer-ch03-m0278" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>S</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096851"><math xml:id="fwk-shafer-ch03-m0279" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>R</mi><mo>∩</mo><mi>S</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096866"><math xml:id="fwk-shafer-ch03-m0280" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096883"><math xml:id="fwk-shafer-ch03-m0281" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>N</mi></mrow><mo>)</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096899"><math xml:id="fwk-shafer-ch03-m0282" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>M</mi><mo>∩</mo><mi>N</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span>
+</li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096921"><math xml:id="fwk-shafer-ch03-m0283" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>R</mi><mo>∪</mo><mi>S</mi></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-096938"><math xml:id="fwk-shafer-ch03-m0284" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>R</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>.</mo></math></span></li>
+                            <li>Determine whether or not the events <em class="emphasis">N</em> and <em class="emphasis">S</em> are mutually exclusive; the events <em class="emphasis">N</em> and <em class="emphasis">T</em>.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s02_qs01_qd02" start="11">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p12">Make a statement in ordinary English that describes the complement of each event (do not simply insert the word “not”).</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o21" numeration="loweralpha">
+                            <li>In the roll of a die: “five or more.”</li>
+                            <li>In a roll of a die: “an even number.”</li>
+                            <li>In two tosses of a coin: “at least one heads.”</li>
+                            <li>In the random selection of a college student: “Not a freshman.”</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p13">Make a statement in ordinary English that describes the complement of each event (do not simply insert the word “not”).</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o23" numeration="loweralpha">
+                            <li>In the roll of a die: “two or less.”</li>
+                            <li>In the roll of a die: “one, three, or four.”</li>
+                            <li>In two tosses of a coin: “at most one heads.”</li>
+                            <li>In the random selection of a college student: “Neither a freshman nor a senior.”</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa13">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p14">The sample space that describes all three-child families according to the genders of the children with respect to birth order is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-097089"><math xml:id="fwk-shafer-ch03-m0293" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow><mo>.</mo></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p15">For each of the following events in the experiment of selecting a three-child family at random, state the complement of the event in the simplest possible terms, then find the outcomes that comprise the event and its complement.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o25" numeration="loweralpha">
+                            <li>At least one child is a girl.</li>
+                            <li>At most one child is a girl.</li>
+                            <li>All of the children are girls.</li>
+                            <li>Exactly two of the children are girls.</li>
+                            <li>The first born is a girl.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa14">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p16">The sample space that describes the two-way classification of citizens according to gender and opinion on a political issue is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-097281"><math xml:id="fwk-shafer-ch03-m0304" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>m</mi><mi>f</mi><mo>,</mo><mi>m</mi><mi>a</mi><mo>,</mo><mi>m</mi><mi>n</mi><mo>,</mo><mi>f</mi><mi>f</mi><mo>,</mo><mi>f</mi><mi>a</mi><mo>,</mo><mi>f</mi><mi>n</mi></mrow><mo>}</mo></mrow><mo>,</mo></mrow></math></span>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p17">where the first letter denotes gender (<em class="emphasis">m</em>: male, <em class="emphasis">f</em>: female) and the second opinion (<em class="emphasis">f</em>: for, <em class="emphasis">a</em>: against, <em class="emphasis">n</em>: neutral). For each of the following events in the experiment of selecting a citizen at random, state the complement of the event in the simplest possible terms, then find the outcomes that comprise the event and its complement.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o27" numeration="loweralpha">
+                            <li>The person is male.</li>
+                            <li>The person is not in favor.</li>
+                            <li>The person is either male or in favor.</li>
+                            <li>The person is female and neutral.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa15">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p18">A tourist who speaks English and German but no other language visits a region of Slovenia. If 35% of the residents speak English, 15% speak German, and 3% speak both English and German, what is the probability that the tourist will be able to talk with a randomly encountered resident of the region?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa16">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p20">In a certain country 43% of all automobiles have airbags, 27% have anti-lock brakes, and 13% have both. What is the probability that a randomly selected vehicle will have both airbags and anti-lock brakes?</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa17">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p22">A manufacturer examines its records over the last year on a component part received from outside suppliers. The breakdown on source (supplier <em class="emphasis">A</em>, supplier <em class="emphasis">B</em>) and quality (<em class="emphasis">H</em>: high, <em class="emphasis">U</em>: usable, <em class="emphasis">D</em>: defective) is shown in the two-way contingency table.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left"></th>
+                                        <th align="center"><em class="emphasis">H</em></th>
+                                        <th align="center"><em class="emphasis">U</em></th>
+                                        <th align="center"><em class="emphasis">D</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">A</em></td>
+                                        <td align="center">0.6937</td>
+                                        <td align="center">0.0049</td>
+                                        <td align="center">0.0014</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">B</em></td>
+                                        <td align="center">0.2982</td>
+                                        <td align="center">0.0009</td>
+                                        <td align="center">0.0009</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p23">The record of a part is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o29" numeration="loweralpha">
+                            <li>The part was defective.</li>
+                            <li>The part was either of high quality or was at least usable, in two ways: (i) by adding numbers in the table, and (ii) using the answer to (a) and the Probability Rule for Complements.</li>
+                            <li>The part was defective and came from supplier <em class="emphasis">B</em>.</li>
+                            <li>The part was defective or came from supplier <em class="emphasis">B</em>, in two ways: by finding the cells in the table that correspond to this event and adding their probabilities, and (ii) using the Additive Rule of Probability.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa18">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p24">Individuals with a particular medical condition were classified according to the presence (<em class="emphasis">T</em>) or absence (<em class="emphasis">N</em>) of a potential toxin in their blood and the onset of the condition (<em class="emphasis">E</em>: early, <em class="emphasis">M</em>: midrange, <em class="emphasis">L</em>: late). The breakdown according to this classification is shown in the two-way contingency table.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th align="left"></th>
+                                        <th align="center"><em class="emphasis">E</em></th>
+                                        <th align="center"><em class="emphasis">M</em></th>
+                                        <th align="center"><em class="emphasis">L</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">T</em></td>
+                                        <td align="center">0.012</td>
+                                        <td align="center">0.124</td>
+                                        <td align="center">0.013</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">N</em></td>
+                                        <td align="center">0.170</td>
+                                        <td align="center">0.638</td>
+                                        <td align="center">0.043</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p25">One of these individuals is selected at random. Find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o31" numeration="loweralpha">
+                            <li>The person experienced early onset of the condition.</li>
+                            <li>The onset of the condition was either midrange or late, in two ways: (i) by adding numbers in the table, and (ii) using the answer to (a) and the Probability Rule for Complements.</li>
+                            <li>The toxin is present in the person’s blood.</li>
+                            <li>The person experienced early onset of the condition and the toxin is present in the person’s blood.</li>
+                            <li>The person experienced early onset of the condition or the toxin is present in the person’s blood, in two ways: (i) by finding the cells in the table that correspond to this event and adding their probabilities, and (ii) using the Additive Rule of Probability.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa19">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p26">The breakdown of the students enrolled in a university course by class (<em class="emphasis">F</em>: freshman, <span class="inlineequation" id="shafer-20121106-125753-097436"><math xml:id="fwk-shafer-ch03-m0313" display="inline"><mi>S</mi><mi>o</mi></math></span>: sophomore, <em class="emphasis">J</em>: junior, <span class="inlineequation" id="shafer-20121106-125753-097452"><math xml:id="fwk-shafer-ch03-m0314" display="inline"><mi>S</mi><mi>e</mi></math></span>: senior) and academic major (<em class="emphasis">S</em>: science, mathematics, or engineering, <em class="emphasis">L</em>: liberal arts, <em class="emphasis">O</em>: other) is shown in the two-way classification table.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Major</th>
+                                        <th colspan="4" align="center">Class</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center"><em class="emphasis">F</em></th>
+                                        <th align="center"><em class="emphasis">So</em></th>
+                                        <th align="center"><em class="emphasis">J</em></th>
+                                        <th align="center"><em class="emphasis">Se</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">S</em></td>
+                                        <td align="center">92</td>
+                                        <td align="center">42</td>
+                                        <td align="center">20</td>
+                                        <td align="center">13</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">L</em></td>
+                                        <td align="center">368</td>
+                                        <td align="center">167</td>
+                                        <td align="center">80</td>
+                                        <td align="center">53</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><em class="emphasis">O</em></td>
+                                        <td align="center">460</td>
+                                        <td align="center">209</td>
+                                        <td align="center">100</td>
+                                        <td align="center">67</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p27">A student enrolled in the course is selected at random. Adjoin the row and column totals to the table and use the expanded table to find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o33" numeration="loweralpha">
+                            <li>The student is a freshman.</li>
+                            <li>The student is a liberal arts major.</li>
+                            <li>The student is a freshman liberal arts major.</li>
+                            <li>The student is either a freshman or a liberal arts major.</li>
+                            <li>The student is not a liberal arts major.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa20">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p28">The table relates the response to a fund-raising appeal by a college to its alumni to the number of years since graduation.</p>
+                        <div class="informaltable">
+                            <table cellpadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" align="left">Response</th>
+                                        <th colspan="4" align="center">Years Since Graduation</th>
+                                    </tr>
+                                    <tr>
+                                        <th align="center">0–5</th>
+                                        <th align="center">6–20</th>
+                                        <th align="center">21–35</th>
+                                        <th align="center">Over 35</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="left">Positive</td>
+                                        <td align="center">120</td>
+                                        <td align="center">440</td>
+                                        <td align="center">210</td>
+                                        <td align="center">90</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">None</td>
+                                        <td align="center">1380</td>
+                                        <td align="center">3560</td>
+                                        <td align="center">3290</td>
+                                        <td align="center">910</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p29">An alumnus is selected at random. Adjoin the row and column totals to the table and use the expanded table to find the probability of each of the following events.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o35" numeration="loweralpha">
+                            <li>The alumnus responded.</li>
+                            <li>The alumnus did not respond.</li>
+                            <li>The alumnus graduated at least 21 years ago.</li>
+                            <li>The alumnus graduated at least 21 years ago and responded.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch03_s02_qs01_qd03" start="21">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd03_qa21">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p30">The sample space for tossing three coins is</p>
+                        <span class="informalequation" id="shafer-20121106-125753-097468"><math xml:id="fwk-shafer-ch03-m0315" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></mrow></math></span>
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o37" numeration="loweralpha">
+                            <li>List the outcomes that correspond to the statement “All the coins are heads.”</li>
+                            <li>List the outcomes that correspond to the statement “Not all the coins are heads.”</li>
+                            <li>List the outcomes that correspond to the statement “All the coins are not heads.”</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch03_s02_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o02_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095109_ans"><math xml:id="fwk-shafer-ch03-m0176" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mo>,</mo><mi>c</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-095125_ans"><math xml:id="fwk-shafer-ch03-m0177" display="inline"><mrow><mo>{</mo><mrow><mi>a</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li>∅</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o06_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095309_ans"><math xml:id="fwk-shafer-ch03-m0188" display="inline"><mi>H</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>h</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095326_ans"><math xml:id="fwk-shafer-ch03-m0189" display="inline"><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi></mrow><mo>}</mo></mrow></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095348_ans"><math xml:id="fwk-shafer-ch03-m0190" display="inline"><mi>H</mi><mo>∩</mo><mi>M</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095364_ans"><math xml:id="fwk-shafer-ch03-m0191" display="inline"><mi>H</mi><mo>∪</mo><mi>M</mi><mo>=</mo><mi>H</mi></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095380_ans"><math xml:id="fwk-shafer-ch03-m0192" display="inline"><msup><mrow><mi>H</mi></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095396_ans"><math xml:id="fwk-shafer-ch03-m0193" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>H</mi><mo>∩</mo><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mo>∕</mo><mn>8</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095412_ans"><math xml:id="fwk-shafer-ch03-m0194" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>H</mi><mo>∪</mo><mi>M</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>7</mn><mo>∕</mo><mn>8</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095428_ans"><math xml:id="fwk-shafer-ch03-m0195" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>H</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>∕</mo><mn>8</mn></math></span>
+</li>
+                            <li>Mutually exclusive because they have no elements in common.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o10_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095714_ans"><math xml:id="fwk-shafer-ch03-m0212" display="inline"><mi>B</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mn>1</mn><mo>,</mo><mi>b</mi><mn>2</mn><mo>,</mo><mi>b</mi><mn>3</mn><mo>,</mo><mi>b</mi><mn>4</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095730_ans"><math xml:id="fwk-shafer-ch03-m0213" display="inline"><mi>R</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>r</mi><mn>1</mn><mo>,</mo><mi>r</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>3</mn><mo>,</mo><mi>r</mi><mn>4</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095746_ans"><math xml:id="fwk-shafer-ch03-m0214" display="inline"><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mn>1</mn><mo>,</mo><mi>b</mi><mn>2</mn><mo>,</mo><mi>y</mi><mn>1</mn><mo>,</mo><mi>y</mi><mn>2</mn><mo>,</mo><mi>g</mi><mn>1</mn><mo>,</mo><mi>g</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>1</mn><mo>,</mo><mi>r</mi><mn>2</mn></mrow><mo>}</mo></mrow></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095761_ans"><math xml:id="fwk-shafer-ch03-m0215" display="inline"><mi>B</mi><mo>∩</mo><mi>R</mi><mo>=</mo><mo>∅</mo></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095784_ans"><math xml:id="fwk-shafer-ch03-m0216" display="inline"><mi>B</mi><mo>∪</mo><mi>R</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mn>1</mn><mo>,</mo><mi>b</mi><mn>2</mn><mo>,</mo><mi>b</mi><mn>3</mn><mo>,</mo><mi>b</mi><mn>4</mn><mo>,</mo><mi>r</mi><mn>1</mn><mo>,</mo><mi>r</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>3</mn><mo>,</mo><mi>r</mi><mn>4</mn></mrow><mo>}</mo></mrow><mo>,</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-095800_ans"><math xml:id="fwk-shafer-ch03-m0217" display="inline"><mi>B</mi><mo>∩</mo><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mn>1</mn><mo>,</mo><mi>b</mi><mn>2</mn></mrow><mo>}</mo></mrow></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095816_ans"><math xml:id="fwk-shafer-ch03-m0218" display="inline"><mi>R</mi><mo>∪</mo><mi>N</mi><mo>=</mo><mrow><mo>{</mo><mrow><mi>b</mi><mn>1</mn><mo>,</mo><mi>b</mi><mn>2</mn><mo>,</mo><mi>y</mi><mn>1</mn><mo>,</mo><mi>y</mi><mn>2</mn><mo>,</mo><mi>g</mi><mn>1</mn><mo>,</mo><mi>g</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>1</mn><mo>,</mo><mi>r</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>3</mn><mo>,</mo><mi>r</mi><mn>4</mn></mrow><mo>}</mo></mrow><mo>,</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-095832_ans"><math xml:id="fwk-shafer-ch03-m0219" display="inline"><msup><mrow><mi>B</mi></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mi>y</mi><mn>1</mn><mo>,</mo><mi>y</mi><mn>2</mn><mo>,</mo><mi>y</mi><mn>3</mn><mo>,</mo><mi>y</mi><mn>4</mn><mo>,</mo><mi>g</mi><mn>1</mn><mo>,</mo><mi>g</mi><mn>2</mn><mo>,</mo><mi>g</mi><mn>3</mn><mo>,</mo><mi>g</mi><mn>4</mn><mo>,</mo><mi>r</mi><mn>1</mn><mo>,</mo><mi>r</mi><mn>2</mn><mo>,</mo><mi>r</mi><mn>3</mn><mo>,</mo><mi>r</mi><mn>4</mn></mrow><mo>}</mo></mrow><mo>,</mo></math></span> <span class="inlineequation" id="shafer-20121106-125753-095849_ans"><math xml:id="fwk-shafer-ch03-m0220" display="inline"><msup><mrow><mrow><mo>(</mo><mrow><mi>B</mi><mo>∪</mo><mi>R</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>c</mi></mrow></msup><mo>=</mo><mrow><mo>{</mo><mrow><mi>y</mi><mn>1</mn><mo>,</mo><mi>y</mi><mn>2</mn><mo>,</mo><mi>y</mi><mn>3</mn><mo>,</mo><mi>y</mi><mn>4</mn><mo>,</mo><mi>g</mi><mn>1</mn><mo>,</mo><mi>g</mi><mn>2</mn><mo>,</mo><mi>g</mi><mn>3</mn><mo>,</mo><mi>g</mi><mn>4</mn></mrow><mo>}</mo></mrow></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-095864_ans"><math xml:id="fwk-shafer-ch03-m0221" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi><mo>∩</mo><mi>R</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095881_ans"><math xml:id="fwk-shafer-ch03-m0222" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi><mo>∪</mo><mi>R</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>8</mn><mo>∕</mo><mn>16</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095897_ans"><math xml:id="fwk-shafer-ch03-m0223" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi><mo>∩</mo><mi>N</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mo>∕</mo><mn>16</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095913_ans"><math xml:id="fwk-shafer-ch03-m0224" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>R</mi><mo>∪</mo><mi>N</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>10</mn><mo>∕</mo><mn>16</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095936_ans"><math xml:id="fwk-shafer-ch03-m0225" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mi>B</mi></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>12</mn><mo>∕</mo><mn>16</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-095953_ans"><math xml:id="fwk-shafer-ch03-m0226" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>B</mi><mo>∪</mo><mi>R</mi></mrow><mo>)</mo></mrow></mrow><mrow><mi>c</mi></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>8</mn><mo>∕</mo><mn>16</mn></math></span>
+</li>
+                            <li>Not mutually exclusive because they have an element in common.</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa07_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o14_ans" numeration="loweralpha">
+                            <li>0.36</li>
+                            <li>0.78</li>
+                            <li>0.64</li>
+                            <li>0.27</li>
+                            <li>0.87</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa09_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o18_ans" numeration="loweralpha">
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096685_ans"><math xml:id="fwk-shafer-ch03-m0269" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.38</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096701_ans"><math xml:id="fwk-shafer-ch03-m0270" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.62</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096717_ans"><math xml:id="fwk-shafer-ch03-m0271" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></math></span>
+</li>
+                            <li>
+<span class="inlineequation" id="shafer-20121106-125753-096733_ans"><math xml:id="fwk-shafer-ch03-m0272" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.37</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096749_ans"><math xml:id="fwk-shafer-ch03-m0273" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>W</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0.33</mn></math></span>, <span class="inlineequation" id="shafer-20121106-125753-096765_ans"><math xml:id="fwk-shafer-ch03-m0274" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>U</mi><mo>∩</mo><mi>W</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></math></span>
+</li>
+                            <li>0.7</li>
+                            <li>0.7</li>
+                            <li>
+<em class="emphasis">A</em> and <em class="emphasis">U</em> are not mutually exclusive because <span class="inlineequation" id="shafer-20121106-125753-096787_ans"><math xml:id="fwk-shafer-ch03-m0275" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>U</mi></mrow><mo>)</mo></mrow></math></span> is the nonzero number 0.15. <em class="emphasis">A</em> and <em class="emphasis">V</em> are mutually exclusive because <span class="inlineequation" id="shafer-20121106-125753-096803_ans"><math xml:id="fwk-shafer-ch03-m0276" display="inline"><mi>P</mi><mrow><mo>(</mo><mrow><mi>A</mi><mo>∩</mo><mi>V</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn><mo>.</mo></math></span>
+</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="11">
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o22_ans" numeration="loweralpha">
+                            <li>“four or less”</li>
+                            <li>“an odd number”</li>
+                            <li>“no heads” or “all tails”</li>
+                            <li>“a freshman”</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa13_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o26_ans" numeration="loweralpha">
+                            <li>
+                                <p class="para">“All the children are boys.”</p>
+                                <p class="para">Event: <span class="inlineequation" id="shafer-20121106-125753-097105_ans"><math xml:id="fwk-shafer-ch03-m0294" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span>,</p>
+                                <p class="para">Complement: <span class="inlineequation" id="shafer-20121106-125753-097122_ans"><math xml:id="fwk-shafer-ch03-m0295" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para">“At least two of the children are girls” or “There are two or three girls.”</p>
+                                <p class="para">Event: <span class="inlineequation" id="shafer-20121106-125753-097138_ans"><math xml:id="fwk-shafer-ch03-m0296" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span>,</p>
+                                <p class="para">Complement: <span class="inlineequation" id="shafer-20121106-125753-097154_ans"><math xml:id="fwk-shafer-ch03-m0297" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para">“At least one child is a boy.”</p>
+                                <p class="para">Event: <span class="inlineequation" id="shafer-20121106-125753-097176_ans"><math xml:id="fwk-shafer-ch03-m0298" display="inline"><mrow><mo>{</mo><mrow><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span>,</p>
+                                <p class="para">Complement: <span class="inlineequation" id="shafer-20121106-125753-097191_ans"><math xml:id="fwk-shafer-ch03-m0299" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para">“There are either no girls, exactly one girl, or three girls.”</p>
+                                <p class="para">Event: <span class="inlineequation" id="shafer-20121106-125753-097207_ans"><math xml:id="fwk-shafer-ch03-m0300" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>g</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi></mrow><mo>}</mo></mrow></math></span>,</p>
+                                <p class="para">Complement: <span class="inlineequation" id="shafer-20121106-125753-097230_ans"><math xml:id="fwk-shafer-ch03-m0301" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></p>
+                            </li>
+                            <li>
+                                <p class="para">“The first born is a boy.”</p>
+                                <p class="para">Event: <span class="inlineequation" id="shafer-20121106-125753-097246_ans"><math xml:id="fwk-shafer-ch03-m0302" display="inline"><mrow><mo>{</mo><mrow><mi>g</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>g</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span>,</p>
+                                <p class="para">Complement: <span class="inlineequation" id="shafer-20121106-125753-097265_ans"><math xml:id="fwk-shafer-ch03-m0303" display="inline"><mrow><mo>{</mo><mrow><mi>b</mi><mi>b</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>b</mi><mi>g</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>b</mi><mo>,</mo><mi>b</mi><mi>g</mi><mi>g</mi></mrow><mo>}</mo></mrow></math></span></p>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch03_s02_qs01_p19_ans">0.47</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa17_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o30_ans" numeration="loweralpha">
+                            <li>0.0023</li>
+                            <li>0.9977</li>
+                            <li>0.0009</li>
+                            <li>0.3014</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o34_ans" numeration="loweralpha">
+                            <li>920/1671</li>
+                            <li>668/1671</li>
+                            <li>368/1671</li>
+                            <li>1220/1671</li>
+                            <li>1003/1671</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd02_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="21">
+                <li class="qandaentry" id="fwk-shafer-ch03_s02_qs01_qd03_qa21_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch03_s02_qs01_o38_ans" numeration="loweralpha">
+                            <li><span class="inlineequation" id="shafer-20121106-125753-097484_ans"><math xml:id="fwk-shafer-ch03-m0316" display="inline"><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>h</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-097507_ans"><math xml:id="fwk-shafer-ch03-m0317" display="inline"><mrow><mo>{</mo><mrow><mi>h</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>h</mi><mi>t</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>h</mi><mi>t</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>h</mi><mo>,</mo><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span></li>
+                            <li><span class="inlineequation" id="shafer-20121106-125753-097523_ans"><math xml:id="fwk-shafer-ch03-m0318" display="inline"><mrow><mo>{</mo><mrow><mi>t</mi><mi>t</mi><mi>t</mi></mrow><mo>}</mo></mrow></math></span></li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s07-01-sample-spaces-events-and-their.html"><img src="shared/images/batch-left.png"></a> <a href="s07-01-sample-spaces-events-and-their.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s07-03-conditional-probability-and-in.html">Next Section</a> <a href="s07-03-conditional-probability-and-in.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

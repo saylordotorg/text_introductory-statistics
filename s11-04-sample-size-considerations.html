@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Sample Size Considerations</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-03-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-left.png"></a> <a href="s11-03-large-sample-estimation-of-a-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-01-the-elements-of-hypothesis-tes.html">Next Section</a> <a href="s12-01-the-elements-of-hypothesis-tes.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch07_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">7.4</span> Sample Size Considerations</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch07_s04_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch07_s04_o01" numeration="arabic">
+            <li>To learn how to apply formulas for estimating the size sample that will be needed in order to construct a confidence interval for a population mean or proportion that meets given criteria.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch07_s04_p01">Sampling is typically done with a set of clear objectives in mind. For example, an economist might wish to estimate the mean yearly income of workers in a particular industry at 90% confidence and to within $500. Since sampling costs time, effort, and money, it would be useful to be able to estimate the smallest size sample that is likely to meet these criteria.</p>
+    <div class="section" id="fwk-shafer-ch07_s04_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Estimating <em class="emphasis">μ</em>
+</h2>
+        <p class="para block" id="fwk-shafer-ch07_s04_s01_p01">The confidence interval formulas for estimating a population mean <em class="emphasis">μ</em> have the form <span class="inlineequation" id="shafer-20121106-125753-115853"><math xml:id="fwk-shafer-ch07-m0225" display="inline"><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">-</mo></mover></mrow><mo>±</mo><mi>E</mi><mo>.</mo></math></span> When the population standard deviation <em class="emphasis">σ</em> is known,</p>
+        <span class="informalequation block" id="shafer-20121106-125753-115876"><math xml:id="fwk-shafer-ch07-m0226" display="block"><mrow><mi>E</mi><mo>=</mo><mfrac><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><mi mathvariant="italic">σ</mi></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>n</mi></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch07_s04_s01_p02">The number <span class="inlineequation" id="shafer-20121106-125753-115893"><math xml:id="fwk-shafer-ch07-m0227" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is determined by the desired level of confidence. To say that we wish to estimate the mean to within a certain number of units means that we want the margin of error <em class="emphasis">E</em> to be no larger than that number. Thus we obtain the minimum sample size needed by solving the displayed equation for <em class="emphasis">n</em>.</p>
+        <div class="callout block" id="fwk-shafer-ch07_s04_s01_n01">
+            <h3 class="title">Minimum Sample Size for Estimating a Population Mean</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p03">The estimated minimum sample size <em class="emphasis">n</em> needed to estimate a population mean <em class="emphasis">μ</em> to within <em class="emphasis">E</em> units at <span class="inlineequation" id="shafer-20121106-125753-115909"><math xml:id="fwk-shafer-ch07-m0228" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence is</p>
+            <span class="informalequation" id="shafer-20121106-125753-115926"><math xml:id="fwk-shafer-ch07-m0229" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mtext> </mtext><mo stretchy="false">(</mo><mtext>rounded</mtext><mtext> </mtext><mi>u</mi><mi>p</mi><mo stretchy="false">)</mo></mrow></math></span>
+        </div>
+        <p class="para editable block" id="fwk-shafer-ch07_s04_s01_p04">To apply the formula we must have prior knowledge of the population in order to have an estimate of its standard deviation <em class="emphasis">σ</em>. In all the examples and exercises the population standard deviation will be given.</p>
+        <div class="exercises block" id="fwk-shafer-ch07_s04_s01_n02">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p05">Find the minimum sample size necessary to construct a 99% confidence interval for <em class="emphasis">μ</em> with a margin of error <em class="emphasis">E</em> = 0.2. Assume that the population standard deviation is <em class="emphasis">σ</em> = 1.3.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p06">Confidence level 99% means that <span class="inlineequation" id="shafer-20121106-125753-115942"><math xml:id="fwk-shafer-ch07-m0230" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.99</mn><mo>=</mo><mn>0.01</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-115959"><math xml:id="fwk-shafer-ch07-m0231" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.005</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-115975"><math xml:id="fwk-shafer-ch07-m0232" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.005</mn></mrow></msub><mo>=</mo><mn>2.576</mn><mo>.</mo></math></span> Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-115992"><math xml:id="fwk-shafer-ch07-m0233" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.576</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>1.3</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>0.2</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>280.361536</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p07">which we round up to 281, since it is impossible to take a fractional observation.</p>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch07_s04_s01_n03">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p08">An economist wishes to estimate, with a 95% confidence interval, the yearly income of welders with at least five years experience to within $1,000. He estimates that the range of incomes is no more than $24,000, so using the Empirical Rule he estimates the population standard deviation to be about one-sixth as much, or about $4,000. Find the estimated minimum sample size required.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p09">Confidence level 95% means that <span class="inlineequation" id="shafer-20121106-125753-116014"><math xml:id="fwk-shafer-ch07-m0234" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.95</mn><mo>=</mo><mn>0.05</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-116031"><math xml:id="fwk-shafer-ch07-m0235" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.025</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-116047"><math xml:id="fwk-shafer-ch07-m0236" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.025</mn></mrow></msub><mo>=</mo><mn>1.960</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p10">To say that the estimate is to be “to within $1,000” means that <em class="emphasis">E</em> = 1000. Thus</p>
+            <span class="informalequation" id="shafer-20121106-125753-116063"><math xml:id="fwk-shafer-ch07-m0237" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>1.960</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><msup><mrow><mrow><mo>(</mo><mrow><mn>4000</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>1000</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>61.4656</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch07_s04_s01_p11">which we round up to 62.</p>
+        </div>
+    </div>
+    <div class="section" id="fwk-shafer-ch07_s04_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Estimating <em class="emphasis">p</em>
+</h2>
+        <p class="para block" id="fwk-shafer-ch07_s04_s02_p01">The confidence interval formula for estimating a population proportion <em class="emphasis">p</em> is <span class="inlineequation" id="shafer-20121106-125753-116079"><math xml:id="fwk-shafer-ch07-m0238" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>±</mo><mi>E</mi></math></span>, where</p>
+        <span class="informalequation block" id="shafer-20121106-125753-116096"><math xml:id="fwk-shafer-ch07-m0239" display="block"><mrow><mi>E</mi><mo>=</mo><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub><msqrt><mrow><mfrac><mrow><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><mi>n</mi></mrow></mfrac></mrow></msqrt></mrow></math></span>
+        <p class="para block" id="fwk-shafer-ch07_s04_s02_p02">The number <span class="inlineequation" id="shafer-20121106-125753-116112"><math xml:id="fwk-shafer-ch07-m0240" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></math></span> is determined by the desired level of confidence. To say that we wish to estimate the population proportion to within a certain number of percentage points means that we want the margin of error <em class="emphasis">E</em> to be no larger than that number (expressed as a proportion). Thus we obtain the minimum sample size needed by solving the displayed equation for <em class="emphasis">n</em>.</p>
+        <div class="callout block" id="fwk-shafer-ch07_s04_s02_n01">
+            <h3 class="title">Minimum Sample Size for Estimating a Population Proportion</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p03">The estimated minimum sample size <em class="emphasis">n</em> needed to estimate a population proportion <em class="emphasis">p</em> to within <em class="emphasis">E</em> at <span class="inlineequation" id="shafer-20121106-125753-116128"><math xml:id="fwk-shafer-ch07-m0241" display="inline"><mn>100</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mo>)</mo></mrow></math></span>% confidence is</p>
+            <span class="informalequation" id="shafer-20121106-125753-116152"><math xml:id="fwk-shafer-ch07-m0242" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mtext> </mtext><mo stretchy="false">(</mo><mtext>rounded</mtext><mtext> </mtext><mi>u</mi><mi>p</mi><mo stretchy="false">)</mo></mrow></math></span>
+        </div>
+        <p class="para block" id="fwk-shafer-ch07_s04_s02_p04">There is a dilemma here: the formula for estimating how large a sample to take contains the number <span class="inlineequation" id="shafer-20121106-125753-116169"><math xml:id="fwk-shafer-ch07-m0243" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span>, which we know only after we have taken the sample. There are two ways out of this dilemma. Typically the researcher will have some idea as to the value of the population proportion <em class="emphasis">p</em>, hence of what the sample proportion <span class="inlineequation" id="shafer-20121106-125753-116186"><math xml:id="fwk-shafer-ch07-m0244" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is likely to be. For example, if last month 37% of all voters thought that state taxes are too high, then it is likely that the proportion with that opinion this month will not be dramatically different, and we would use the value 0.37 for <span class="inlineequation" id="shafer-20121106-125753-116202"><math xml:id="fwk-shafer-ch07-m0245" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> in the formula.</p>
+        <p class="para block" id="fwk-shafer-ch07_s04_s02_p05">The second approach to resolving the dilemma is simply to replace <span class="inlineequation" id="shafer-20121106-125753-116218"><math xml:id="fwk-shafer-ch07-m0246" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> in the formula by 0.5. This is because if <span class="inlineequation" id="shafer-20121106-125753-116235"><math xml:id="fwk-shafer-ch07-m0247" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is large then <span class="inlineequation" id="shafer-20121106-125753-116251"><math xml:id="fwk-shafer-ch07-m0248" display="inline"><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> is small, and vice versa, which limits their product to a maximum value of 0.25, which occurs when <span class="inlineequation" id="shafer-20121106-125753-116267"><math xml:id="fwk-shafer-ch07-m0249" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.5</mn><mo>.</mo></math></span> This is called the <span class="margin_term"><a class="glossterm">most conservative estimate</a><span class="glossdef">The estimate obtained using <span class="inlineequation" id="shafer-20121106-125753-116283"><math xml:id="fwk-shafer-ch07-m0250" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.5</mn></math></span>, which gives the largest estimate of <em class="emphasis">n</em>.</span></span>, since it gives the largest possible estimate of <em class="emphasis">n</em>.</p>
+        <div class="exercises block" id="fwk-shafer-ch07_s04_s02_n02">
+            <h3 class="title">Example 10</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p06">Find the necessary minimum sample size to construct a 98% confidence interval for <em class="emphasis">p</em> with a margin of error <em class="emphasis">E</em> = 0.05,
+</p>
+<ol class="orderedlist" id="fwk-shafer-ch07_s04_s02_o01" numeration="loweralpha">                    <li>assuming that no prior knowledge about <em class="emphasis">p</em> is available; and</li>
+                    <li>assuming that prior studies suggest that <em class="emphasis">p</em> is about 0.1.</li>
+</ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p07">Confidence level 98% means that <span class="inlineequation" id="shafer-20121106-125753-116307"><math xml:id="fwk-shafer-ch07-m0251" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.98</mn><mo>=</mo><mn>0.02</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-116324"><math xml:id="fwk-shafer-ch07-m0252" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.01</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-116340"><math xml:id="fwk-shafer-ch07-m0253" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.01</mn></mrow></msub><mo>=</mo><mn>2.326</mn><mo>.</mo></math></span></p>
+            <ol class="orderedlist" id="fwk-shafer-ch07_s04_s02_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">Since there is no prior knowledge of <em class="emphasis">p</em> we make the most conservative estimate that <span class="inlineequation" id="shafer-20121106-125753-116356"><math xml:id="fwk-shafer-ch07-m0254" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.5</mn><mo>.</mo></math></span> Then</p>
+                    <span class="informalequation" id="shafer-20121106-125753-116372"><math xml:id="fwk-shafer-ch07-m0255" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.326</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>0.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>541.0276</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch07_s04_s02_p08">which we round up to 542.</p>
+                </li>
+                <li>
+                    <p class="para">Since <em class="emphasis">p</em> ≈ 0.1 we estimate <span class="inlineequation" id="shafer-20121106-125753-116389"><math xml:id="fwk-shafer-ch07-m0256" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></math></span> by 0.1, and obtain</p>
+                    <span class="informalequation" id="shafer-20121106-125753-116405"><math xml:id="fwk-shafer-ch07-m0257" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2.326</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>0.1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>0.1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0</mn><msup><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>194.769936</mn></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch07_s04_s02_p09">which we round up to 195.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="exercises block" id="fwk-shafer-ch07_s04_s02_n03">
+            <h3 class="title">Example 11</h3>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p10">A dermatologist wishes to estimate the proportion of young adults who apply sunscreen regularly before going out in the sun in the summer. Find the minimum sample size required to estimate the proportion to within three percentage points, at 90% confidence.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p11">Confidence level 90% means that <span class="inlineequation" id="shafer-20121106-125753-116421"><math xml:id="fwk-shafer-ch07-m0258" display="inline"><mi>α</mi><mo>=</mo><mn>1</mn><mo>−</mo><mn>0.90</mn><mo>=</mo><mn>0.10</mn></math></span> so <span class="inlineequation" id="shafer-20121106-125753-116437"><math xml:id="fwk-shafer-ch07-m0259" display="inline"><mi>α</mi><mo>∕</mo><mn>2</mn><mo>=</mo><mn>0.05</mn><mo>.</mo></math></span> From the last line of <a class="xref" href="fwk-shafer-ch12#fwk-shafer-ch12_f03">Figure 12.3 "Critical Values of "</a> we obtain <span class="inlineequation" id="shafer-20121106-125753-116459"><math xml:id="fwk-shafer-ch07-m0260" display="inline"><msub><mrow><mi>z</mi></mrow><mrow><mn>0.05</mn></mrow></msub><mo>=</mo><mn>1.645</mn><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p12">Since there is no prior knowledge of <em class="emphasis">p</em> we make the most conservative estimate that <span class="inlineequation" id="shafer-20121106-125753-116476"><math xml:id="fwk-shafer-ch07-m0261" display="inline"><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mo>=</mo><mn>0.5</mn><mo>.</mo></math></span> To estimate “to within three percentage points” means that <em class="emphasis">E</em> = 0.03. Then</p>
+            <span class="informalequation" id="shafer-20121106-125753-116492"><math xml:id="fwk-shafer-ch07-m0262" display="block"><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><msub><mrow><mi>z</mi></mrow><mrow><mi>α</mi><mo>∕</mo><mn>2</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mover accent="true"><mi>p</mi><mo stretchy="true">^</mo></mover></mrow></mrow><mo>)</mo></mrow></mrow><mrow><msup><mrow><mi>E</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>1.645</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mn>0.5</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>0.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0</mn><msup><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>751.6736111</mn></mrow></math></span>
+            <p class="para" id="fwk-shafer-ch07_s04_s02_p13">which we round up to 752.</p>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-shafer-ch07_s04_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-shafer-ch07_s04_s02_l01" mark="bullet">
+                <li>If the population standard deviation <em class="emphasis">σ</em> is known or can be estimated, then the minimum sample size needed to obtain a confidence interval for the population mean with a given maximum error of the estimate and a given level of confidence can be estimated.</li>
+                <li>The minimum sample size needed to obtain a confidence interval for a population proportion with a given maximum error of the estimate and a given level of confidence can always be estimated. If there is prior knowledge of the population proportion <em class="emphasis">p</em> then the estimate can be sharpened.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch07_s04_qs01" defaultlabel="number">
+            <h3 class="title">Exercises</h3>
+            <ol class="qandadiv" id="fwk-shafer-ch07_s04_qs01_qd01">
+                <h3 class="title">Basic</h3>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p01">Estimate the minimum sample size needed to form a confidence interval for the mean of a population having the standard deviation shown, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o01" numeration="loweralpha">
+                            <li>
+<em class="emphasis">σ</em> = 30, 95% confidence, <em class="emphasis">E</em> = 10</li>
+                            <li>
+<em class="emphasis">σ</em> = 30, 99% confidence, <em class="emphasis">E</em> = 10</li>
+                            <li>
+<em class="emphasis">σ</em> = 30, 95% confidence, <em class="emphasis">E</em> = 5</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p02">Estimate the minimum sample size needed to form a confidence interval for the mean of a population having the standard deviation shown, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o03" numeration="loweralpha">
+                            <li>
+<em class="emphasis">σ</em> = 4, 95% confidence, <em class="emphasis">E</em> = 1</li>
+                            <li>
+<em class="emphasis">σ</em> = 4, 99% confidence, <em class="emphasis">E</em> = 1</li>
+                            <li>
+<em class="emphasis">σ</em> = 4, 95% confidence, <em class="emphasis">E</em> = 0.5</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p03">Estimate the minimum sample size needed to form a confidence interval for the proportion of a population that has a particular characteristic, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o05" numeration="loweralpha">
+                            <li>
+<em class="emphasis">p</em> ≈ 0.37, 80% confidence, <em class="emphasis">E</em> = 0.05</li>
+                            <li>
+<em class="emphasis">p</em> ≈ 0.37, 90% confidence, <em class="emphasis">E</em> = 0.05</li>
+                            <li>
+<em class="emphasis">p</em> ≈ 0.37, 80% confidence, <em class="emphasis">E</em> = 0.01</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p04">Estimate the minimum sample size needed to form a confidence interval for the proportion of a population that has a particular characteristic, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o07" numeration="loweralpha">
+                            <li>
+<em class="emphasis">p</em> ≈ 0.81, 95% confidence, <em class="emphasis">E</em> = 0.02</li>
+                            <li>
+<em class="emphasis">p</em> ≈ 0.81, 99% confidence, <em class="emphasis">E</em> = 0.02</li>
+                            <li>
+<em class="emphasis">p</em> ≈ 0.81, 95% confidence, <em class="emphasis">E</em> = 0.01</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p05">Estimate the minimum sample size needed to form a confidence interval for the proportion of a population that has a particular characteristic, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o09" numeration="loweralpha">
+                            <li>80% confidence, <em class="emphasis">E</em> = 0.05</li>
+                            <li>90% confidence, <em class="emphasis">E</em> = 0.05</li>
+                            <li>80% confidence, <em class="emphasis">E</em> = 0.01</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p06">Estimate the minimum sample size needed to form a confidence interval for the proportion of a population that has a particular characteristic, meeting the criteria given.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o11" numeration="loweralpha">
+                            <li>95% confidence, <em class="emphasis">E</em> = 0.02</li>
+                            <li>99% confidence, <em class="emphasis">E</em> = 0.02</li>
+                            <li>95% confidence, <em class="emphasis">E</em> = 0.01</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch07_s04_qs01_qd02" start="7">
+                <h3 class="title">Applications</h3>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p07">A software engineer wishes to estimate, to within 5 seconds, the mean time that a new application takes to start up, with 95% confidence. Estimate the minimum size sample required if the standard deviation of start up times for similar software is 12 seconds.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p09">A real estate agent wishes to estimate, to within $2.50, the mean retail cost per square foot of newly built homes, with 80% confidence. He estimates the standard deviation of such costs at $5.00. Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p11">An economist wishes to estimate, to within 2 minutes, the mean time that employed persons spend commuting each day, with 95% confidence. On the assumption that the standard deviation of commuting times is 8 minutes, estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p13">A motor club wishes to estimate, to within 1 cent, the mean price of 1 gallon of regular gasoline in a certain region, with 98% confidence. Historically the variability of prices is measured by <span class="inlineequation" id="shafer-20121106-125753-116508"><math xml:id="fwk-shafer-ch07-m0263" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><mi>$</mi><mn>0.03</mn><mo>.</mo></math></span> Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa05">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p15">A bank wishes to estimate, to within $25, the mean average monthly balance in its checking accounts, with 99.8% confidence. Assuming <span class="inlineequation" id="shafer-20121106-125753-116525"><math xml:id="fwk-shafer-ch07-m0264" display="inline"><mi mathvariant="italic">σ</mi><mo>=</mo><mi>$</mi><mn>250</mn></math></span>, estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa06">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p17">A retailer wishes to estimate, to within 15 seconds, the mean duration of telephone orders taken at its call center, with 99.5% confidence. In the past the standard deviation of call length has been about 1.25 minutes. Estimate the minimum size sample required. (Be careful to express all the information in the same units.)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa07">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p19">The administration at a college wishes to estimate, to within two percentage points, the proportion of all its entering freshmen who graduate within four years, with 90% confidence. Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa08">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p21">A chain of automotive repair stores wishes to estimate, to within five percentage points, the proportion of all passenger vehicles in operation that are at least five years old, with 98% confidence. Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa09">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p23">An internet service provider wishes to estimate, to within one percentage point, the current proportion of all email that is spam, with 99.9% confidence. Last year the proportion that was spam was 71%. Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa10">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p25">An agronomist wishes to estimate, to within one percentage point, the proportion of a new variety of seed that will germinate when planted, with 95% confidence. A typical germination rate is 97%. Estimate the minimum size sample required.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa11">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p27">A charitable organization wishes to estimate, to within half a percentage point, the proportion of all telephone solicitations to its donors that result in a gift, with 90% confidence. Estimate the minimum sample size required, using the information that in the past the response rate has been about 30%.</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa12">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p29">A government agency wishes to estimate the proportion of drivers aged 16–24 who have been involved in a traffic accident in the last year. It wishes to make the estimate to within one percentage point and at 90% confidence. Find the minimum sample size required, using the information that several years ago the proportion was 0.12.</p>
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" id="fwk-shafer-ch07_s04_qs01_qd03" start="19">
+                <h3 class="title">Additional Exercises</h3>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa01">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p31">An economist wishes to estimate, to within six months, the mean time between sales of existing homes, with 95% confidence. Estimate the minimum size sample required. In his experience virtually all houses are re-sold within 40 months, so using the Empirical Rule he will estimate <em class="emphasis">σ</em> by one-sixth the range, or <span class="inlineequation" id="shafer-20121106-125753-116541"><math xml:id="fwk-shafer-ch07-m0265" display="inline"><mn>40</mn><mo>∕</mo><mn>6</mn><mo>=</mo><mn>6.7</mn><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa02">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p33">A wildlife manager wishes to estimate the mean length of fish in a large lake, to within one inch, with 80% confidence. Estimate the minimum size sample required. In his experience virtually no fish caught in the lake is over 23 inches long, so using the Empirical Rule he will estimate <em class="emphasis">σ</em> by one-sixth the range, or <span class="inlineequation" id="shafer-20121106-125753-116558"><math xml:id="fwk-shafer-ch07-m0266" display="inline"><mn>23</mn><mo>∕</mo><mn>6</mn><mo>=</mo><mn>3.8</mn><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa03">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p35">You wish to estimate the current mean birth weight of all newborns in a certain region, to within 1 ounce (1/16 pound) and with 95% confidence. A sample will cost $400 plus $1.50 for every newborn weighed. You believe the standard deviations of weight to be no more than 1.25 pounds. You have $2,500 to spend on the study.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o13" numeration="loweralpha">
+                            <li>Can you afford the sample required?</li>
+                            <li>If not, what are your options?</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa04">
+                    <div class="question">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p36">You wish to estimate a population proportion to within three percentage points, at 95% confidence. A sample will cost $500 plus 50 cents for every sample element measured. You have $1,000 to spend on the study.</p>
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o15" numeration="loweralpha">
+                            <li>Can you afford the sample required?</li>
+                            <li>If not, what are your options?</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-shafer-ch07_s04_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o02_ans" numeration="loweralpha">
+                            <li>35</li>
+                            <li>60</li>
+                            <li>139</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o06_ans" numeration="loweralpha">
+                            <li>154</li>
+                            <li>253</li>
+                            <li>3832</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa05_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o10_ans" numeration="loweralpha">
+                            <li>165</li>
+                            <li>271</li>
+                            <li>4109</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="7">
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p08_ans">23</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p12_ans">62</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p16_ans">955</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p20_ans">1692</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p24_ans">22,301</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p28_ans">22,731</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd02_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="19">
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-shafer-ch07_s04_qs01_p32_ans">5</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-shafer-ch07_s04_qs01_o14_ans" numeration="loweralpha">
+                            <li>no</li>
+                            <li>decrease the confidence level</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-shafer-ch07_s04_qs01_qd03_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s11-03-large-sample-estimation-of-a-p.html"><img src="shared/images/batch-left.png"></a> <a href="s11-03-large-sample-estimation-of-a-p.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-01-the-elements-of-hypothesis-tes.html">Next Section</a> <a href="s12-01-the-elements-of-hypothesis-tes.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

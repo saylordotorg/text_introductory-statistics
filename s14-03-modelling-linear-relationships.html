@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Modelling Linear Relationships with Randomness Present</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-02-the-linear-correlation-coeffic.html"><img src="shared/images/batch-left.png"></a> <a href="s14-02-the-linear-correlation-coeffic.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-04-the-least-squares-regression-l.html">Next Section</a> <a href="s14-04-the-least-squares-regression-l.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s03" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.3</span> Modelling Linear Relationships with Randomness Present</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s03_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s03_o01" numeration="arabic">
+            <li>To learn the framework in which the statistical analysis of the linear relationship between two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> will be done.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p01">In this chapter we are dealing with a population for which we can associate to each element two measurements, <em class="emphasis">x</em> and <em class="emphasis">y</em>. We are interested in situations in which the value of <em class="emphasis">x</em> can be used to draw conclusions about the value of <em class="emphasis">y</em>, such as predicting the resale value <em class="emphasis">y</em> of a residential house based on its size <em class="emphasis">x</em>. Since the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> is not deterministic, statistical procedures must be applied. For any statistical procedures, given in this book or elsewhere, the associated formulas are valid only under specific assumptions. The set of assumptions in simple linear regression are a mathematical description of the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>. Such a set of assumptions is known as a <strong class="emphasis bold">model</strong>.</p>
+    <p class="para block" id="fwk-shafer-ch10_s03_p02">For each fixed value of <em class="emphasis">x</em> a sub-population of the full population is determined, such as the collection of all houses with 2,100 square feet of living space. For each element of that sub-population there is a measurement <em class="emphasis">y</em>, such as the value of any 2,100-square-foot house. Let <span class="inlineequation" id="shafer-20121106-125753-151988"><math xml:id="fwk-shafer-ch10-m0089" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> denote the mean of all the <em class="emphasis">y</em>-values for each particular value of <em class="emphasis">x</em>. <span class="inlineequation" id="shafer-20121106-125753-152005"><math xml:id="fwk-shafer-ch10-m0090" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> can change from <em class="emphasis">x</em>-value to <em class="emphasis">x</em>-value, such as the mean value of all 2,100-square-foot houses, the (different) mean value for all 2,500-square foot-houses, and so on.</p>
+    <p class="para block" id="fwk-shafer-ch10_s03_p03">Our first assumption is that the relationship between <em class="emphasis">x</em> and the mean of the <em class="emphasis">y</em>-values in the sub-population determined by <em class="emphasis">x</em> is linear. This means that there exist numbers <span class="inlineequation" id="shafer-20121106-125753-152022"><math xml:id="fwk-shafer-ch10-m0091" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-152038"><math xml:id="fwk-shafer-ch10-m0092" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> such that</p>
+    <span class="informalequation block" id="shafer-20121106-125753-152054"><math xml:id="fwk-shafer-ch10-m0093" display="block"><mrow><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p04">This linear relationship is the reason for the word “linear” in “simple linear regression” below. (The word “simple” means that <em class="emphasis">y</em> depends on only one other variable and not two or more.)</p>
+    <p class="para block" id="fwk-shafer-ch10_s03_p05">Our next assumption is that for each value of <em class="emphasis">x</em> the <em class="emphasis">y</em>-values scatter about the mean <span class="inlineequation" id="shafer-20121106-125753-152070"><math xml:id="fwk-shafer-ch10-m0094" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> according to a normal distribution centered at <span class="inlineequation" id="shafer-20121106-125753-152087"><math xml:id="fwk-shafer-ch10-m0095" display="inline"><mi>E</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> and with a standard deviation <em class="emphasis">σ</em> that is the same for every value of <em class="emphasis">x</em>. This is the same as saying that there exists a normally distributed random variable <em class="emphasis">ε</em> with mean 0 and standard deviation <em class="emphasis">σ</em> so that the relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> in the whole population is</p>
+    <span class="informalequation block" id="shafer-20121106-125753-152109"><math xml:id="fwk-shafer-ch10-m0096" display="block"><mrow><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi mathvariant="italic">ε</mi></mrow></math></span>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p06">Our last assumption is that the random deviations associated with different observations are independent.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p07">In summary, the model is:</p>
+    <div class="callout block" id="fwk-shafer-ch10_s03_n02">
+        <h3 class="title">Simple Linear Regression Model</h3>
+        <p class="para" id="fwk-shafer-ch10_s03_p08">For each point <span class="inlineequation" id="shafer-20121106-125753-152125"><math xml:id="fwk-shafer-ch10-m0097" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> in data set the <em class="emphasis">y</em>-value is an independent observation of</p>
+        <span class="informalequation" id="shafer-20121106-125753-152142"><math xml:id="fwk-shafer-ch10-m0098" display="block"><mrow><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi mathvariant="italic">ε</mi></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s03_p09">where <span class="inlineequation" id="shafer-20121106-125753-152158"><math xml:id="fwk-shafer-ch10-m0099" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <span class="inlineequation" id="shafer-20121106-125753-152174"><math xml:id="fwk-shafer-ch10-m0100" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> are fixed parameters and <em class="emphasis">ε</em> is a normally distributed random variable with mean 0 and an unknown standard deviation <em class="emphasis">σ</em>.</p>
+        <p class="para" id="fwk-shafer-ch10_s03_p10">The line with equation <span class="inlineequation" id="shafer-20121106-125753-152190"><math xml:id="fwk-shafer-ch10-m0101" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> is called the <span class="margin_term"><a class="glossterm">population regression line</a><span class="glossdef">The line with equation <span class="inlineequation" id="shafer-20121106-125753-152206"><math xml:id="fwk-shafer-ch10-m0102" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> that gives the mean of the variable <em class="emphasis">y</em> over the sub-population determined by <em class="emphasis">x</em>.</span></span>.</p>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s03_p11"><a class="xref" href="#fwk-shafer-ch10_s03_f01">Figure 10.5 "The Simple Linear Model Concept"</a> illustrates the model. The symbols <span class="inlineequation" id="shafer-20121106-125753-152222"><math xml:id="fwk-shafer-ch10-m0103" display="inline"><mi>N</mi><mrow><mo class="MathClass-open">(</mo><mrow><mi mathvariant="italic">μ</mi><mo>,</mo><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow><mo class="MathClass-close">)</mo></mrow></math></span> denote a normal distribution with mean <em class="emphasis">μ</em> and variance <span class="inlineequation" id="shafer-20121106-125753-152238"><math xml:id="fwk-shafer-ch10-m0104" display="inline"><msup><mrow><mi mathvariant="italic">σ</mi></mrow><mrow><mn>2</mn></mrow></msup></math></span>, hence standard deviation <em class="emphasis">σ</em>.</p>
+    <div class="figure large editable block" id="fwk-shafer-ch10_s03_f01">
+        <p class="title"><span class="title-prefix">Figure 10.5</span> The Simple Linear Model Concept</p>
+        <img src="section_14/88a6e0919d8617c025826c1e187ad591.jpg">
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p12">It is conceptually important to view the model as a sum of two parts:</p>
+    <span class="informalequation block" id="shafer-20121106-125753-152260"><math xml:id="fwk-shafer-ch10-m0105" display="block"><mrow><mi>y</mi><mo>=</mo><mtable columnspacing="0.5em" frame="solid"><mrow><msub><mi mathvariant="italic">β</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi mathvariant="italic">β</mi><mn>0</mn></msub></mrow></mtable><mo>+</mo><mtable columnspacing="0.5em" frame="solid"><mi mathvariant="italic">ε</mi></mtable></mrow></math></span>
+    <ol class="orderedlist block" id="fwk-shafer-ch10_s03_o02" numeration="arabic">
+        <li>
+<strong class="emphasis bold">Deterministic Part.</strong> The first part <span class="inlineequation" id="shafer-20121106-125753-152276"><math xml:id="fwk-shafer-ch10-m0106" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> is the equation that describes the trend in <em class="emphasis">y</em> as <em class="emphasis">x</em> increases. The line that we seem to see when we look at the scatter diagram is an approximation of the line <span class="inlineequation" id="shafer-20121106-125753-152292"><math xml:id="fwk-shafer-ch10-m0107" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>.</mo></math></span> There is nothing random in this part, and therefore it is called the <em class="emphasis">deterministic</em> part of the model.</li>
+        <li>
+<strong class="emphasis bold">Random Part.</strong> The second part <em class="emphasis">ε</em> is a random variable, often called the <em class="emphasis">error</em> term or the <em class="emphasis">noise</em>. This part explains why the actual observed values of <em class="emphasis">y</em> are not exactly on but fluctuate near a line. Information about this term is important since only when one knows how much noise there is in the data can one know how trustworthy the detected trend is.</li>
+    </ol>
+    <p class="para block" id="fwk-shafer-ch10_s03_p13">There are three parameters in this model: <span class="inlineequation" id="shafer-20121106-125753-152308"><math xml:id="fwk-shafer-ch10-m0108" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span>, <span class="inlineequation" id="shafer-20121106-125753-152324"><math xml:id="fwk-shafer-ch10-m0109" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span>, and <em class="emphasis">σ</em>. Each has an important interpretation, particularly <span class="inlineequation" id="shafer-20121106-125753-152340"><math xml:id="fwk-shafer-ch10-m0110" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> and <em class="emphasis">σ</em>. The slope parameter <span class="inlineequation" id="shafer-20121106-125753-152356"><math xml:id="fwk-shafer-ch10-m0111" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> represents the expected change in <em class="emphasis">y</em> brought about by a unit increase in <em class="emphasis">x</em>. The standard deviation <em class="emphasis">σ</em> represents the magnitude of the noise in the data.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p14">There are procedures for checking the validity of the three assumptions, but for us it will be sufficient to visually verify the linear trend in the data. If the data set is large then the points in the scatter diagram will form a band about an apparent straight line. The normality of <em class="emphasis">ε</em> with a constant standard deviation corresponds graphically to the band being of roughly constant width, and with most points concentrated near the middle of the band.</p>
+    <p class="para editable block" id="fwk-shafer-ch10_s03_p15">Fortunately, the three assumptions do not need to hold exactly in order for the procedures and analysis developed in this chapter to be useful.</p>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch10_s03_n03">
+        <h3 class="title">Key Takeaway</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s03_l01" mark="bullet">
+            <li>Statistical procedures are valid only when certain assumptions are valid. The assumptions underlying the analyses done in this chapter are graphically summarized in <a class="xref" href="#fwk-shafer-ch10_s03_f01">Figure 10.5 "The Simple Linear Model Concept"</a>.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s03_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s03_qs01_qd01">
+            <h3 class="title"></h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p01">State the three assumptions that are the basis for the Simple Linear Regression Model.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p02">The Simple Linear Regression Model is summarized by the equation</p>
+                    <span class="informalequation" id="shafer-20121106-125753-152395"><math xml:id="fwk-shafer-ch10-m0113" display="block"><mrow><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub><mo>+</mo><mi mathvariant="italic">ε</mi></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p03">Identify the deterministic part and the random part.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p05">Is the number <span class="inlineequation" id="shafer-20121106-125753-152443"><math xml:id="fwk-shafer-ch10-m0116" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> in the equation <span class="inlineequation" id="shafer-20121106-125753-152459"><math xml:id="fwk-shafer-ch10-m0117" display="inline"><mi>y</mi><mo class="MathClass-rel">=</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> a statistic or a population parameter? Explain.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p07">Is the number <em class="emphasis">σ</em> in the Simple Linear Regression Model a statistic or a population parameter? Explain.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p09">Describe what to look for in a scatter diagram in order to check that the assumptions of the Simple Linear Regression Model are true.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p11">True or false: the assumptions of the Simple Linear Regression Model must hold exactly in order for the procedures and analysis developed in this chapter to be useful.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s03_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s03_qs01_o01_ans" numeration="loweralpha">
+                        <li>The mean of <em class="emphasis">y</em> is linearly related to <em class="emphasis">x</em>.</li>
+                        <li>For each given <em class="emphasis">x</em>, <em class="emphasis">y</em> is a normal random variable with mean <span class="inlineequation" id="shafer-20121106-125753-152372_ans"><math xml:id="fwk-shafer-ch10-m0112" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub><mi>x</mi><mo>+</mo><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span> and standard deviation <em class="emphasis">σ</em>.</li>
+                        <li>All the observations of <em class="emphasis">y</em> in the sample are independent.</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p06_ans"><span class="inlineequation" id="shafer-20121106-125753-152475_ans"><math xml:id="fwk-shafer-ch10-m0118" display="inline"><msub><mrow><mi mathvariant="italic">β</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span> is a population parameter.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s03_qs01_p10_ans">A linear trend.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s03_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-02-the-linear-correlation-coeffic.html"><img src="shared/images/batch-left.png"></a> <a href="s14-02-the-linear-correlation-coeffic.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-04-the-least-squares-regression-l.html">Next Section</a> <a href="s14-04-the-least-squares-regression-l.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

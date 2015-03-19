@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>The Linear Correlation Coefficient</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-01-linear-relationships-between-v.html"><img src="shared/images/batch-left.png"></a> <a href="s14-01-linear-relationships-between-v.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-03-modelling-linear-relationships.html">Next Section</a> <a href="s14-03-modelling-linear-relationships.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-shafer-ch10_s02" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">10.2</span> The Linear Correlation Coefficient</h2>
+    <div class="learning_objectives editable block" id="fwk-shafer-ch10_s02_n01">
+        <h3 class="title">Learning Objective</h3>
+        <ol class="orderedlist" id="fwk-shafer-ch10_s02_o01" numeration="arabic">
+            <li>To learn what the linear correlation coefficient is, how to compute it, and what it tells us about the relationship between two variables <em class="emphasis">x</em> and <em class="emphasis">y</em>.</li>
+        </ol>
+    </div>
+    <p class="para editable block" id="fwk-shafer-ch10_s02_p01"><a class="xref" href="#fwk-shafer-ch10_s02_f01">Figure 10.3 "Linear Relationships of Varying Strengths"</a> illustrates linear relationships between two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> of varying strengths. It is visually apparent that in the situation in panel (a), <em class="emphasis">x</em> could serve as a useful predictor of <em class="emphasis">y</em>, it would be less useful in the situation illustrated in panel (b), and in the situation of panel (c) the linear relationship is so weak as to be practically nonexistent. The <em class="emphasis">linear correlation coefficient</em> is a number computed directly from the data that measures the strength of the linear relationship between the two variables <em class="emphasis">x</em> and  <em class="emphasis">y</em>.</p>
+    <div class="figure large editable block" id="fwk-shafer-ch10_s02_f01">
+        <p class="title"><span class="title-prefix">Figure 10.3</span> Linear Relationships of Varying Strengths</p>
+        <img src="section_14/1a22032a1f4d609c4190985036b7f704.jpg">
+    </div>
+    <div class="callout block" id="fwk-shafer-ch10_s02_n02">
+        <h3 class="title">Definition</h3>
+        <p class="para" id="fwk-shafer-ch10_s02_p02"><em class="emphasis">The</em> <span class="margin_term"><a class="glossterm">linear correlation coefficient</a><span class="glossdef">A number computed directly from the data that measures the strength of the linear relationship between the two variables <em class="emphasis">x</em> and <em class="emphasis">y</em>.</span></span> <em class="emphasis">for a collection of</em> <em class="emphasis">n</em> <em class="emphasis">pairs</em> <span class="inlineequation" id="shafer-20121106-125753-151119"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0038" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> <em class="emphasis">of numbers in a sample is the number</em> <em class="emphasis">r</em> <em class="emphasis">given by the formula</em></p>
+        <span class="informalequation" id="shafer-20121106-125753-151135"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0039" display="block"><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><mpadded height="1.2em"><msqrt><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>·</mo><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></msqrt></mpadded></mrow></mfrac></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s02_p03"><em class="emphasis">where</em></p>
+        <span class="informalequation" id="shafer-20121106-125753-151151"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0040" display="block"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>,</mo><mtext> </mtext><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mi>y</mi></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow><mo>)</mo></mrow><mo>,</mo><mtext> </mtext><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup></mrow></math></span>
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s02_p04">The linear correlation coefficient has the following properties, illustrated in <a class="xref" href="#fwk-shafer-ch10_s02_f02">Figure 10.4 "Linear Correlation Coefficient "</a>:
+</p>
+<ol class="orderedlist" id="fwk-shafer-ch10_s02_o02" numeration="arabic">            <li>The value of <em class="emphasis">r</em> lies between −1 and 1, inclusive.</li>
+            <li>The sign of <em class="emphasis">r</em> indicates the direction of the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>: <ol class="orderedlist" id="fwk-shafer-ch10_s02_o03" numeration="loweralpha">                    <li>If <span class="inlineequation" id="shafer-20121106-125753-151167"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0041" display="inline"><mi>r</mi><mo class="MathClass-rel">&lt;</mo><mn>0</mn></math></span> then <em class="emphasis">y</em> tends to decrease as <em class="emphasis">x</em> is increased.</li>
+                    <li>If <span class="inlineequation" id="shafer-20121106-125753-151183"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0042" display="inline"><mi>r</mi><mo class="MathClass-rel">&gt;</mo><mn>0</mn></math></span> then <em class="emphasis">y</em> tends to increase as <em class="emphasis">x</em> is increased.</li>
+</ol>
+</li>
+            <li>The size of |<em class="emphasis">r</em>| indicates the strength of the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>: <ol class="orderedlist" id="fwk-shafer-ch10_s02_o04" numeration="loweralpha">                    <li>If |<em class="emphasis">r</em>| is near 1 (that is, if <em class="emphasis">r</em> is near either 1 or −1) then the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> is strong.</li>
+                    <li>If |<em class="emphasis">r</em>| is near 0 (that is, if <em class="emphasis">r</em> is near 0 and of either sign) then the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em> is weak.</li>
+</ol>
+</li>
+</ol>
+    <div class="figure large editable block" id="fwk-shafer-ch10_s02_f02">
+        <p class="title"><span class="title-prefix">Figure 10.4</span> Linear Correlation Coefficient <em class="emphasis">R</em></p>
+        <img src="section_14/07aa5db140b70615a15e8631c2d7a2c4.jpg">
+    </div>
+    <p class="para block" id="fwk-shafer-ch10_s02_p05">Pay particular attention to panel (f) in <a class="xref" href="#fwk-shafer-ch10_s02_f02">Figure 10.4 "Linear Correlation Coefficient "</a>. It shows a perfectly deterministic relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>, but <span class="inlineequation" id="shafer-20121106-125753-151199"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0043" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0</mn></math></span> because the relationship is not linear. (In this particular case the points lie on the top half of a circle.)</p>
+    <div class="exercises block" id="fwk-shafer-ch10_s02_n03">
+        <h3 class="title">Example 1</h3>
+        <p class="para" id="fwk-shafer-ch10_s02_p06">Compute the linear correlation coefficient for the height and weight pairs plotted in <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01_f02">Figure 10.2 "Plot of Height and Weight Pairs"</a>.</p>
+        <p class="simpara">Solution:</p>
+        <p class="para" id="fwk-shafer-ch10_s02_p07">Even for small data sets like this one computations are too long to do completely by hand. In actual practice the data are entered into a calculator or computer and a statistics program is used. In order to clarify the meaning of the formulas we will display the data and related quantities in tabular form. For each <span class="inlineequation" id="shafer-20121106-125753-151215"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0044" display="inline"><mrow><mo class="MathClass-open">(</mo><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo class="MathClass-close">)</mo></mrow></math></span> pair we compute three numbers: <em class="emphasis">x</em><sup class="superscript">2</sup>, <span class="inlineequation" id="shafer-20121106-125753-151231"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0045" display="inline"><mi>x</mi><mi>y</mi></math></span>, and <em class="emphasis">y</em><sup class="superscript">2</sup>, as shown in the table provided. In the last line of the table we have the sum of the numbers in each column. Using them we compute:</p>
+        <div class="informaltable" id="fwk-shafer-ch10_s02_tx01" frame="none">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th align="left"></th>
+                        <th align="center"><em class="emphasis">x</em></th>
+                        <th align="center"><em class="emphasis">y</em></th>
+                        <th align="center">
+<em class="emphasis">x</em><sup class="superscript">2</sup>
+</th>
+                        <th align="center"><span class="inlineequation" id="shafer-20121106-125753-151256"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0046" display="inline"><mi>x</mi><mi>y</mi></math></span></th>
+                        <th align="center">
+<em class="emphasis">y</em><sup class="superscript">2</sup>
+</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">68</td>
+                        <td align="center">151</td>
+                        <td align="center">4624</td>
+                        <td align="center">10268</td>
+                        <td align="center">22801</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">69</td>
+                        <td align="center">146</td>
+                        <td align="center">4761</td>
+                        <td align="center">10074</td>
+                        <td align="center">21316</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">70</td>
+                        <td align="center">157</td>
+                        <td align="center">4900</td>
+                        <td align="center">10990</td>
+                        <td align="center">24649</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">70</td>
+                        <td align="center">164</td>
+                        <td align="center">4900</td>
+                        <td align="center">11480</td>
+                        <td align="center">26896</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">71</td>
+                        <td align="center">171</td>
+                        <td align="center">5041</td>
+                        <td align="center">12141</td>
+                        <td align="center">29241</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">72</td>
+                        <td align="center">160</td>
+                        <td align="center">5184</td>
+                        <td align="center">11520</td>
+                        <td align="center">25600</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">72</td>
+                        <td align="center">163</td>
+                        <td align="center">5184</td>
+                        <td align="center">11736</td>
+                        <td align="center">26569</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">72</td>
+                        <td align="center">180</td>
+                        <td align="center">5184</td>
+                        <td align="center">12960</td>
+                        <td align="center">32400</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">73</td>
+                        <td align="center">170</td>
+                        <td align="center">5329</td>
+                        <td align="center">12410</td>
+                        <td align="center">28900</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">73</td>
+                        <td align="center">175</td>
+                        <td align="center">5329</td>
+                        <td align="center">12775</td>
+                        <td align="center">30625</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">74</td>
+                        <td align="center">178</td>
+                        <td align="center">5476</td>
+                        <td align="center">13172</td>
+                        <td align="center">31684</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                        <td align="center">75</td>
+                        <td align="center">188</td>
+                        <td align="center">5625</td>
+                        <td align="center">14100</td>
+                        <td align="center">35344</td>
+                    </tr>
+                    <tr>
+                        <td align="center">Σ</td>
+                        <td align="center">859</td>
+                        <td align="center">2003</td>
+                        <td align="center">61537</td>
+                        <td align="center">143626</td>
+                        <td align="center">336025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <span class="informalequation" id="shafer-20121106-125753-151273"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0047" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>=</mo><mn>61537</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>12</mn></mrow></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>859</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>46.91</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><mi>x</mi><mi>y</mi></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>x</mi></mstyle></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow><mo>)</mo></mrow><mo>=</mo><mn>143626</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>12</mn></mrow></mfrac><mo stretchy="false">(</mo><mn>859</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>2003</mn><mo stretchy="false">)</mo><mo>=</mo><mn>244.58</mn><mrow><mover accent="true"><mn>3</mn><mo stretchy="true">-</mo></mover></mrow></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>S</mi><msub><mi>S</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub></mrow></mtd><mtd columnalign="left"><mrow><mo>=</mo><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mstyle><mo>−</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msup><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi><mi>y</mi></mstyle></mrow><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>=</mo><mn>336025</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>12</mn></mrow></mfrac><msup><mrow><mo stretchy="false">(</mo><mn>2003</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>1690.91</mn><mrow><mover accent="true"><mn>6</mn><mo stretchy="true">-</mo></mover></mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+        <p class="para" id="fwk-shafer-ch10_s02_p08">so that</p>
+        <div class="informalfigure large small-height" id="fwk-shafer-ch10_s02_fx01">
+            <img src="section_14/45503cd320cecacf3aba836f49bab78e.jpg">
+        </div>
+        <p class="para" id="fwk-shafer-ch10_s02_p09">The number <span class="inlineequation" id="shafer-20121106-125753-151294"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0049" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0.868</mn></math></span> quantifies what is visually apparent from <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01_f02">Figure 10.2 "Plot of Height and Weight Pairs"</a>: weights tends to increase linearly with height (<em class="emphasis">r</em> is positive) and although the relationship is not perfect, it is reasonably strong (<em class="emphasis">r</em> is near 1).</p>
+    </div>
+    <div class="key_takeaways editable block" id="fwk-shafer-ch10_s02_n04">
+        <h3 class="title">Key Takeaways</h3>
+        <ul class="itemizedlist" id="fwk-shafer-ch10_s02_l01" mark="bullet">
+            <li>The linear correlation coefficient measures the strength and direction of the linear relationship between two variables <em class="emphasis">x</em> and <em class="emphasis">y</em>.</li>
+            <li>The sign of the linear correlation coefficient indicates the direction of the linear relationship between <em class="emphasis">x</em> and <em class="emphasis">y</em>.</li>
+            <li>When <em class="emphasis">r</em> is near 1 or −1 the linear relationship is strong; when it is near 0 the linear relationship is weak.</li>
+        </ul>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s02_qs01" defaultlabel="number">
+        <h3 class="title">Exercises</h3>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s02_qs01_qd01">
+            <h3 class="title">Basic</h3>
+            <p class="para" id="fwk-shafer-ch10_s02_qs01_p01">With the exception of the exercises at the end of <a class="xref" href="fwk-shafer-ch10_s03#fwk-shafer-ch10_s03">Section 10.3 "Modelling Linear Relationships with Randomness Present"</a>, the first Basic exercise in each of the following sections through <a class="xref" href="fwk-shafer-ch10_s07#fwk-shafer-ch10_s07">Section 10.7 "Estimation and Prediction"</a> uses the data from the first exercise here, the second Basic exercise uses the data from the second exercise here, and so on, and similarly for the Application exercises. Save your computations done on these exercises so that you do not need to repeat them later.</p>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa01">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p02">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151310"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0050" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>8</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>9</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o01" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa02">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p04">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151353"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0052" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>8</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o02" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa03">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p06">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151385"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0054" display="block"><mrow><mtable columnspacing="0.5em" columnalign="right" columnlines="solid none none none none none" rowlines="solid"><mtr columnalign="right"><mtd><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mn>6</mn></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd><mi>y</mi></mtd><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd columnalign="right"><mn>0</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o03" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa04">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p08">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151425"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0056" display="block"><mrow><mtable columnspacing="0.5em" columnalign="right" columnlines="solid none none none none none" rowlines="solid"><mtr columnalign="right"><mtd><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mn>7</mn></mtd><mtd columnalign="right"><mn>9</mn></mtd></mtr><mtr columnalign="right"><mtd><mi>y</mi></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mn>6</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>0</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o04" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa05">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p10">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151456"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0058" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o05" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa06">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p12">For the sample data</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151489"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0060" display="block"><mrow><mtable columnspacing="0.5em" columnalign="right" columnlines="solid none none none none none" rowlines="solid"><mtr columnalign="right"><mtd><mi>x</mi></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd><mi>y</mi></mtd><mtd columnalign="right"><mn>5</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mtext>−</mtext><mn>3</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o06" numeration="loweralpha">
+                        <li>Draw the scatter plot.</li>
+                        <li>Based on the scatter plot, predict the sign of the linear correlation coefficient. Explain your answer.</li>
+                        <li>Compute the linear correlation coefficient and compare its sign to your answer to part (b).</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa07">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p14">Compute the linear correlation coefficient for the sample data summarized by the following information:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151522"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0062" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>25</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>165</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>24</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>134</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>144</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>9</mn></mrow></mtd><mtd columnalign="left"><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa08">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p16">Compute the linear correlation coefficient for the sample data summarized by the following information:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151538"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0063" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>31</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>253</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>18</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>90</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>148</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mn>2</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>12</mn></mrow></mtd><mtd columnalign="left"><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa09">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p18">Compute the linear correlation coefficient for the sample data summarized by the following information:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151560"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0064" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mi>n</mi><mo>=</mo><mn>10</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>0</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>60</mn></mrow></mtd></mtr><mtr><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>24</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>234</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mtext>−</mtext><mn>87</mn></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>4</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>4</mn></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa10">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p20">Compute the linear correlation coefficient for the sample data summarized by the following information:</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151577"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0065" display="block"><mrow><mtable columnspacing="0.5em"><mtr><mtd><mrow><mi>n</mi><mo>=</mo><mn>10</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mtext>−</mtext><mn>3</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>263</mn></mrow></mtd></mtr><mtr><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>55</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>917</mn></mrow></mtd><mtd><mrow><msup><mrow><msup><mstyle displaystyle="true"><mi mathvariant="normal">Σ</mi></mstyle><mtext>​</mtext></msup></mrow><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mtext>−</mtext><mn>355</mn></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mtext>−</mtext><mn>10</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>10</mn></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable></mrow></math></span>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s02_qs01_qd02" start="11">
+            <h3 class="title">Applications</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa11">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p22">The age <em class="emphasis">x</em> in months and vocabulary <em class="emphasis">y</em> were measured for six children, with the results shown in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151593"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0066" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>14</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd><mtd><mrow><mn>16</mn></mrow></mtd><mtd><mrow><mn>18</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>8</mn></mtd><mtd><mrow><mn>10</mn></mrow></mtd><mtd><mrow><mn>15</mn></mrow></mtd><mtd><mrow><mn>20</mn></mrow></mtd><mtd><mrow><mn>27</mn></mrow></mtd><mtd><mrow><mn>30</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p23">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa12">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p25">The curb weight <em class="emphasis">x</em> in hundreds of pounds and braking distance <em class="emphasis">y</em> in feet, at 50 miles per hour on dry pavement, were measured for five vehicles, with the results shown in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151610"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0067" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>25</mn></mrow></mtd><mtd><mrow><mn>27.5</mn></mrow></mtd><mtd><mrow><mn>32.5</mn></mrow></mtd><mtd><mrow><mn>35</mn></mrow></mtd><mtd><mrow><mn>45</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>105</mn></mrow></mtd><mtd><mrow><mn>125</mn></mrow></mtd><mtd><mrow><mn>140</mn></mrow></mtd><mtd><mrow><mn>140</mn></mrow></mtd><mtd><mrow><mn>150</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p26">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa13">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p28">The age <em class="emphasis">x</em> and resting heart rate <em class="emphasis">y</em> were measured for ten men, with the results shown in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151626"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0068" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>20</mn></mrow></mtd><mtd><mrow><mn>23</mn></mrow></mtd><mtd><mrow><mn>30</mn></mrow></mtd><mtd><mrow><mn>37</mn></mrow></mtd><mtd><mrow><mn>35</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>72</mn></mrow></mtd><mtd><mrow><mn>71</mn></mrow></mtd><mtd><mrow><mn>73</mn></mrow></mtd><mtd><mrow><mn>74</mn></mrow></mtd><mtd><mrow><mn>74</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151643"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0069" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>45</mn></mrow></mtd><mtd><mrow><mn>51</mn></mrow></mtd><mtd><mrow><mn>55</mn></mrow></mtd><mtd><mrow><mn>60</mn></mrow></mtd><mtd><mrow><mn>63</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>73</mn></mrow></mtd><mtd><mrow><mn>72</mn></mrow></mtd><mtd><mrow><mn>79</mn></mrow></mtd><mtd><mrow><mn>75</mn></mrow></mtd><mtd><mrow><mn>77</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p29">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa14">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p31">The wind speed <em class="emphasis">x</em> in miles per hour and wave height <em class="emphasis">y</em> in feet were measured under various conditions on an enclosed deep water sea, with the results shown in the table,</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151659"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0070" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>7</mn></mtd><mtd><mn>7</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>2.0</mn></mrow></mtd><mtd><mrow><mn>0.0</mn></mrow></mtd><mtd><mrow><mn>0.3</mn></mrow></mtd><mtd><mrow><mn>0.7</mn></mrow></mtd><mtd><mrow><mn>3.3</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151681"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0071" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>9</mn></mtd><mtd><mrow><mn>13</mn></mrow></mtd><mtd><mrow><mn>20</mn></mrow></mtd><mtd><mrow><mn>22</mn></mrow></mtd><mtd><mrow><mn>31</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>4.9</mn></mrow></mtd><mtd><mrow><mn>4.9</mn></mrow></mtd><mtd><mrow><mn>3.0</mn></mrow></mtd><mtd><mrow><mn>6.9</mn></mrow></mtd><mtd><mrow><mn>5.9</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p32">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa15">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p34">The advertising expenditure <em class="emphasis">x</em> and sales <em class="emphasis">y</em> in thousands of dollars for a small retail business in its first eight years in operation are shown in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151697"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0072" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>1.4</mn></mrow></mtd><mtd><mrow><mn>1.6</mn></mrow></mtd><mtd><mrow><mn>1.6</mn></mrow></mtd><mtd><mrow><mn>2.0</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>180</mn></mrow></mtd><mtd><mrow><mn>184</mn></mrow></mtd><mtd><mrow><mn>190</mn></mrow></mtd><mtd><mrow><mn>220</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151713"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0073" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>2.0</mn></mrow></mtd><mtd><mrow><mn>2.2</mn></mrow></mtd><mtd><mrow><mn>2.4</mn></mrow></mtd><mtd><mrow><mn>2.6</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>186</mn></mrow></mtd><mtd><mrow><mn>215</mn></mrow></mtd><mtd><mrow><mn>205</mn></mrow></mtd><mtd><mrow><mn>240</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p35">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa16">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p37">The height <em class="emphasis">x</em> at age 2 and <em class="emphasis">y</em> at age 20, both in inches, for ten women are tabulated in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151730"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0074" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>31.3</mn></mrow></mtd><mtd><mrow><mn>31.7</mn></mrow></mtd><mtd><mrow><mn>32.5</mn></mrow></mtd><mtd><mrow><mn>33.5</mn></mrow></mtd><mtd><mrow><mn>34.4</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>60.7</mn></mrow></mtd><mtd><mrow><mn>61.0</mn></mrow></mtd><mtd><mrow><mn>63.1</mn></mrow></mtd><mtd><mrow><mn>64.2</mn></mrow></mtd><mtd><mrow><mn>65.9</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151746"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0075" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>35.2</mn></mrow></mtd><mtd><mrow><mn>35.8</mn></mrow></mtd><mtd><mrow><mn>32.7</mn></mrow></mtd><mtd><mrow><mn>33.6</mn></mrow></mtd><mtd><mrow><mn>34.8</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>68.2</mn></mrow></mtd><mtd><mrow><mn>67.6</mn></mrow></mtd><mtd><mrow><mn>62.3</mn></mrow></mtd><mtd><mrow><mn>64.9</mn></mrow></mtd><mtd><mrow><mn>66.8</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p38">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa17">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p40">The course average <em class="emphasis">x</em> just before a final exam and the score <em class="emphasis">y</em> on the final exam were recorded for 15 randomly selected students in a large physics class, with the results shown in the table.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151762"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0076" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>69.3</mn></mrow></mtd><mtd><mrow><mn>87.7</mn></mrow></mtd><mtd><mrow><mn>50.5</mn></mrow></mtd><mtd><mrow><mn>51.9</mn></mrow></mtd><mtd><mrow><mn>82.7</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>56</mn></mrow></mtd><mtd><mrow><mn>89</mn></mrow></mtd><mtd><mrow><mn>55</mn></mrow></mtd><mtd><mrow><mn>49</mn></mrow></mtd><mtd><mrow><mn>61</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151778"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0077" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>70.5</mn></mrow></mtd><mtd><mrow><mn>72.4</mn></mrow></mtd><mtd><mrow><mn>91.7</mn></mrow></mtd><mtd><mrow><mn>83.3</mn></mrow></mtd><mtd><mrow><mn>86.5</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>66</mn></mrow></mtd><mtd><mrow><mn>72</mn></mrow></mtd><mtd><mrow><mn>83</mn></mrow></mtd><mtd><mrow><mn>73</mn></mrow></mtd><mtd><mrow><mn>82</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151794"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0078" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>79.3</mn></mrow></mtd><mtd><mrow><mn>78.5</mn></mrow></mtd><mtd><mrow><mn>75.7</mn></mrow></mtd><mtd><mrow><mn>52.3</mn></mrow></mtd><mtd><mrow><mn>62.2</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>92</mn></mrow></mtd><mtd><mrow><mn>80</mn></mrow></mtd><mtd><mrow><mn>64</mn></mrow></mtd><mtd><mrow><mn>18</mn></mrow></mtd><mtd><mrow><mn>76</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p41">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa18">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p43">The table shows the acres <em class="emphasis">x</em> of corn planted and acres <em class="emphasis">y</em> of corn harvested, in millions of acres, in a particular country in ten successive years.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151810"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0079" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>75.7</mn></mrow></mtd><mtd><mrow><mn>78.9</mn></mrow></mtd><mtd><mrow><mn>78.6</mn></mrow></mtd><mtd><mrow><mn>80.9</mn></mrow></mtd><mtd><mrow><mn>81.8</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>68.8</mn></mrow></mtd><mtd><mrow><mn>69.3</mn></mrow></mtd><mtd><mrow><mn>70.9</mn></mrow></mtd><mtd><mrow><mn>73.6</mn></mrow></mtd><mtd><mrow><mn>75.1</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <span class="informalequation" id="shafer-20121106-125753-151834"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0080" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mrow><mn>78.3</mn></mrow></mtd><mtd><mrow><mn>93.5</mn></mrow></mtd><mtd><mrow><mn>85.9</mn></mrow></mtd><mtd><mrow><mn>86.4</mn></mrow></mtd><mtd><mrow><mn>88.2</mn></mrow></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mrow><mn>70.6</mn></mrow></mtd><mtd><mrow><mn>86.5</mn></mrow></mtd><mtd><mrow><mn>78.6</mn></mrow></mtd><mtd><mrow><mn>79.5</mn></mrow></mtd><mtd><mrow><mn>81.4</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p44">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa19">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p46">Fifty male subjects drank a measured amount <em class="emphasis">x</em> (in ounces) of a medication and the concentration <em class="emphasis">y</em> (in percent) in their blood of the active ingredient was measured 30 minutes later. The sample data are summarized by the following information.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151850"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0081" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>50</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>112.5</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>4.83</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mi mathvariant="normal">Σ</mi><mi>x</mi><mi>y</mi><mo>=</mo><mn>15.255</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>4.5</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><mi mathvariant="normal">Σ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>356.25</mn></mrow></mtd><mtd columnalign="left"><mrow><mi mathvariant="normal">Σ</mi><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>0.667</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p47">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa20">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p49">In an effort to produce a formula for estimating the age of large free-standing oak trees non-invasively, the girth <em class="emphasis">x</em> (in inches) five feet off the ground of 15 such trees of known age <em class="emphasis">y</em> (in years) was measured. The sample data are summarized by the following information.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151866"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0082" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>15</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>3368</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>6496</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>1,933,219</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>917,780</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>4,260,666</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>74</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>395</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p50">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa21">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p52">Construction standards specify the strength of concrete 28 days after it is poured. For 30 samples of various types of concrete the strength <em class="emphasis">x</em> after 3 days and the strength <em class="emphasis">y</em> after 28 days (both in hundreds of pounds per square inch) were measured. The sample data are summarized by the following information.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151882"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0083" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>30</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>501.6</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>1338.8</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>23,246.55</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>8724.74</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>61,980.14</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>11</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>22</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p53">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa22">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p55">Power-generating facilities used forecasts of temperature to forecast energy demand. The average temperature <em class="emphasis">x</em> (degrees Fahrenheit) and the day’s energy demand <em class="emphasis">y</em> (million watt-hours) were recorded on 40 randomly selected winter days in the region served by a power company. The sample data are summarized by the following information.</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151898"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0084" display="block"><mrow><mtable columnspacing="0.5em" columnalign="left"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>n</mi><mo>=</mo><mn>40</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mo>=</mo><mn>2000</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>y</mi><mo>=</mo><mn>2969</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><mi>x</mi><mi>y</mi><mo>=</mo><mn>143,042</mn></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>101,340</mn></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow></mrow></mtd><mtd columnalign="left"><mrow><msup><mi mathvariant="normal">Σ</mi><mtext>​</mtext></msup><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>243,027</mn></mrow></mtd><mtd columnalign="left"><mrow><mn>40</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>60</mn></mrow></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p56">Compute the linear correlation coefficient for these sample data and interpret its meaning in the context of the problem.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s02_qs01_qd03" start="23">
+            <h3 class="title">Additional Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa23">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p58">In each case state whether you expect the two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> indicated to have positive, negative, or zero correlation.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o07" numeration="loweralpha">
+                        <li>the number <em class="emphasis">x</em> of pages in a book and the age <em class="emphasis">y</em> of the author</li>
+                        <li>the number <em class="emphasis">x</em> of pages in a book and the age <em class="emphasis">y</em> of the intended reader</li>
+                        <li>the weight <em class="emphasis">x</em> of an automobile and the fuel economy <em class="emphasis">y</em> in miles per gallon</li>
+                        <li>the weight <em class="emphasis">x</em> of an automobile and the reading <em class="emphasis">y</em> on its odometer</li>
+                        <li>the amount <em class="emphasis">x</em> of a sedative a person took an hour ago and the time <em class="emphasis">y</em> it takes him to respond to a stimulus</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa24">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p59">In each case state whether you expect the two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> indicated to have positive, negative, or zero correlation.</p>
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o09" numeration="loweralpha">
+                        <li>the length <em class="emphasis">x</em> of time an emergency flare will burn and the length <em class="emphasis">y</em> of time the match used to light it burned</li>
+                        <li>the average length <em class="emphasis">x</em> of time that calls to a retail call center are on hold one day and the number <em class="emphasis">y</em> of calls received that day</li>
+                        <li>the length <em class="emphasis">x</em> of a regularly scheduled commercial flight between two cities and the headwind <em class="emphasis">y</em> encountered by the aircraft</li>
+                        <li>the value <em class="emphasis">x</em> of a house and the its size <em class="emphasis">y</em> in square feet</li>
+                        <li>the average temperature <em class="emphasis">x</em> on a winter day and the energy consumption <em class="emphasis">y</em> of the furnace</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa25">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p60">Changing the units of measurement on two variables <em class="emphasis">x</em> and <em class="emphasis">y</em> should not change the linear correlation coefficient. Moreover, most change of units amount to simply multiplying one unit by the other (for example, 1 foot = 12 inches). Multiply each <em class="emphasis">x</em> value in the table in Exercise 1 by two and compute the linear correlation coefficient for the new data set. Compare the new value of <em class="emphasis">r</em> to the one for the original data.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa26">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p62">Refer to the previous exercise. Multiply each <em class="emphasis">x</em> value in the table in Exercise 2 by two, multiply each <em class="emphasis">y</em> value by three, and compute the linear correlation coefficient for the new data set. Compare the new value of <em class="emphasis">r</em> to the one for the original data.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa27">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p64">Reversing the roles of <em class="emphasis">x</em> and <em class="emphasis">y</em> in the data set of Exercise 1 produces the data set</p>
+                    <span class="informalequation" id="shafer-20121106-125753-151915"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0085" display="block"><mrow><mtable columnspacing="0.5em" columnlines="solid none none none none none" rowlines="solid"><mtr><mtd><mi>x</mi></mtd><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd><mtd><mn>6</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>5</mn></mtd><mtd><mn>8</mn></mtd></mtr></mtable></mrow></math></span>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p65">Compute the linear correlation coefficient of the new set of data and compare it to what you got in Exercise 1.</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa28">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p67">In the context of the previous problem, look at the formula for <em class="emphasis">r</em> and see if you can tell why what you observed there must be true for every data set.</p>
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" id="fwk-shafer-ch10_s02_qs01_qd04" start="29">
+            <h3 class="title">Large Data Set Exercises</h3>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa29">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p69">Large Data Set 1 lists the SAT scores and GPAs of 1,000 students. Compute the linear correlation coefficient <em class="emphasis">r</em>. Compare its value to your comments on the appearance and strength of any linear trend in the scatter diagram that you constructed in the first large data set problem for <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01">Section 10.1 "Linear Relationships Between Variables"</a>.</p>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p70"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data1.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa30">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p72">Large Data Set 12 lists the golf scores on one round of golf for 75 golfers first using their own original clubs, then using clubs of a new, experimental design (after two months of familiarization with the new clubs). Compute the linear correlation coefficient <em class="emphasis">r</em>. Compare its value to your comments on the appearance and strength of any linear trend in the scatter diagram that you constructed in the second large data set problem for <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01">Section 10.1 "Linear Relationships Between Variables"</a>.</p>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p73"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data12.xls</a></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa31">
+                <div class="question">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p75">Large Data Set 13 records the number of bidders and sales price of a particular type of antique grandfather clock at 60 auctions. Compute the linear correlation coefficient <em class="emphasis">r</em>. Compare its value to your comments on the appearance and strength of any linear trend in the scatter diagram that you constructed in the third large data set problem for <a class="xref" href="fwk-shafer-ch10_s01#fwk-shafer-ch10_s01">Section 10.1 "Linear Relationships Between Variables"</a>.</p>
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p76"><a class="link" href="http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls" role="xlsx">http://www.gone.2012books.lardbucket.org/sites/all/files/data13.xls</a></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="qandaset block" id="fwk-shafer-ch10_s02_qs01_ans" defaultlabel="number">
+        <h3 class="title">Answers</h3>
+        <ol class="qandadiv">
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa01_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p03_ans"><span class="inlineequation" id="shafer-20121106-125753-151327_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0051" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0.921</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa02_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa03_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p07_ans"><span class="inlineequation" id="shafer-20121106-125753-151409_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0055" display="inline"><mi>r</mi><mo>=</mo><mtext>−</mtext><mn>0.794</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa04_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa05_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p11_ans"><span class="inlineequation" id="shafer-20121106-125753-151473_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0059" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0.707</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa06_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa07_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p15_ans">0.875</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa08_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa09_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p19_ans">−0.846</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd01_qa10_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="11">
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa11_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p24_ans">0.948</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa12_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa13_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p30_ans">0.709</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa14_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa15_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p36_ans">0.832</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa16_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa17_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p42_ans">0.751</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa18_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa19_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p48_ans">0.965</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa20_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa21_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p54_ans">0.992</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd02_qa22_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="23">
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa23_ans">
+                <div class="answer">
+                    <ol class="orderedlist" id="fwk-shafer-ch10_s02_qs01_o08_ans" numeration="loweralpha">
+                        <li>zero</li>
+                        <li>positive</li>
+                        <li>negative</li>
+                        <li>zero</li>
+                        <li>positive</li>
+                    </ol>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa24_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa25_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p61_ans">same value</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa26_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa27_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p66_ans">same value</p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd03_qa28_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+        </ol>
+        <ol class="qandadiv" start="29">
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa29_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p71_ans"><span class="inlineequation" id="shafer-20121106-125753-151931_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0086" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0.4601</mn></math></span></p>
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa30_ans" audience="instructoronly">
+                <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                </div>
+            </li>
+            <li class="qandaentry" id="fwk-shafer-ch10_s02_qs01_qd04_qa31_ans">
+                <div class="answer">
+                    <p class="para" id="fwk-shafer-ch10_s02_qs01_p77_ans"><span class="inlineequation" id="shafer-20121106-125753-151963_ans"><math xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="fwk-shafer-ch10-m0088" display="inline"><mi>r</mi><mo class="MathClass-rel">=</mo><mn>0.9002</mn></math></span></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s14-01-linear-relationships-between-v.html"><img src="shared/images/batch-left.png"></a> <a href="s14-01-linear-relationships-between-v.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s14-03-modelling-linear-relationships.html">Next Section</a> <a href="s14-03-modelling-linear-relationships.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>
